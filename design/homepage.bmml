@@ -1,24 +1,24 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1007" measuredH="1574" mockupW="846" mockupH="1568">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1007" measuredH="663" mockupW="846" mockupH="657">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="161" y="6" w="846" h="1568" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="161" y="6" w="846" h="657" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Wellcome%20to%20MLM%0Ahttp%3A//mlmsoftware.com</text>
+        <text>Wellcome%20to%20MLM%0Awww.tobe-foreveryoung.com</text>
       </controlProperties>
     </control>
-    <control controlID="55" controlTypeID="com.balsamiq.mockups::Label" x="507" y="1519" w="-1" h="-1" measuredW="109" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::Label" x="459" y="607" w="-1" h="-1" measuredW="105" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Copyright%202015%20By</text>
+        <text>Copyright%20%A9%202015</text>
       </controlProperties>
     </control>
-    <control controlID="56" controlTypeID="com.balsamiq.mockups::Link" x="620" y="1521" w="-1" h="-1" measuredW="50" measuredH="19" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::Link" x="572" y="609" w="-1" h="-1" measuredW="50" measuredH="19" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <text>7thclass</text>
       </controlProperties>
     </control>
-    <control controlID="61" controlTypeID="com.balsamiq.mockups::LinkBar" x="374" y="111" w="-1" h="-1" measuredW="376" measuredH="19" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::LinkBar" x="374" y="111" w="-1" h="-1" measuredW="439" measuredH="19" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <selectedIndex>0</selectedIndex>
-        <text>Home%2C%20Products%2C%20About%20Us%2C%20Contact%20Us%2C%20Login%2C%20Join%20Us</text>
+        <text>Home%2C%20Products%2C%20About%20Us%2C%20Contact%20Us%2C%20Join%20Us%2C%20Login%2C%20Logout%20</text>
       </controlProperties>
     </control>
     <control controlID="62" controlTypeID="com.balsamiq.mockups::Image" x="265" y="91" w="52" h="58" measuredW="105" measuredH="120" zOrder="4" locked="false" isInGroup="-1">
@@ -27,58 +27,145 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="67" controlTypeID="com.balsamiq.mockups::Paragraph" x="218" y="661" w="306" h="80" measuredW="200" measuredH="80" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::Label" x="627" y="606" w="-1" h="-1" measuredW="121" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Milleans%20Vie%20Sciences%20has%20created%20the%0Abest%20health%20and%20Aging%20Defying%20products%20on%20earth%0Abacked%20by%20one%20of%20the%20most%20lucrative%0Acompensation%20plans.</text>
+        <text>All%20Rights%20Reserved.</text>
       </controlProperties>
     </control>
-    <control controlID="69" controlTypeID="com.balsamiq.mockups::Paragraph" x="631" y="934" w="353" h="80" measuredW="200" measuredH="80" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::Label" x="416" y="177" w="316" h="-1" measuredW="145" measuredH="36" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>With%20Milleans%20Vie%20Sciences%20at%20your%20side%2C%20there%u2019s%20no%20limit%0Ato%20what%20you%20can%20accomplish%20or%20the%20number%20of%20lives%0Ayou%20will%20change%u2014forever.%20</text>
+        <size>28</size>
+        <text>Your%20Profile</text>
       </controlProperties>
     </control>
-    <control controlID="70" controlTypeID="com.balsamiq.mockups::Paragraph" x="254" y="1118" w="660" h="51" measuredW="200" measuredH="80" zOrder="7" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Every%20great%20journey%20begins%20with%20a%20single%20step.%20You%u2019ve%20taken%20that%20first%20step%20today%20toward%20impacting%20world%20health%2C%20to%20making%20a%20real%20difference%20in%20the%20lives%20of%20others%20while%20building%20A%20YOUNGER%2C%20HEALTHIER%2C%20WEALTHIER%20LIFE.</text>
-      </controlProperties>
-    </control>
-    <control controlID="71" controlTypeID="com.balsamiq.mockups::Image" x="242" y="164" w="684" h="401" measuredW="940" measuredH="605" zOrder="8" locked="false" isInGroup="-1">
-      <controlProperties>
-        <src>../../%25E7%259B%25B4%25E9%2594%2580%25E7%25B3%25BB%25E7%25BB%259F/images/changelife2.jpg</src>
-        <text/>
-      </controlProperties>
-    </control>
-    <control controlID="73" controlTypeID="com.balsamiq.mockups::Image" x="545" y="617" w="324" h="229" measuredW="888" measuredH="566" zOrder="9" locked="false" isInGroup="-1">
-      <controlProperties>
-        <src>../../%25E7%259B%25B4%25E9%2594%2580%25E7%25B3%25BB%25E7%25BB%259F/images/makemoeny.png</src>
-        <text/>
-      </controlProperties>
-    </control>
-    <control controlID="74" controlTypeID="com.balsamiq.mockups::Image" x="189" y="869" w="436" h="183" measuredW="630" measuredH="300" zOrder="10" locked="false" isInGroup="-1">
-      <controlProperties>
-        <src>../../%25E7%259B%25B4%25E9%2594%2580%25E7%25B3%25BB%25E7%25BB%259F/images/changelife1.jpg</src>
-        <text/>
-      </controlProperties>
-    </control>
-    <control controlID="75" controlTypeID="com.balsamiq.mockups::Image" x="362" y="1160" w="409" h="277" measuredW="500" measuredH="333" zOrder="11" locked="false" isInGroup="-1">
-      <controlProperties>
-        <src>../../%25E7%259B%25B4%25E9%2594%2580%25E7%25B3%25BB%25E7%25BB%259F/images/happy.jpg</src>
-        <text/>
-      </controlProperties>
-    </control>
-    <control controlID="77" controlTypeID="com.balsamiq.mockups::Paragraph" x="601" y="212" w="325" h="80" measuredW="200" measuredH="80" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::Label" x="446" y="270" w="123" h="-1" measuredW="81" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <bold>true</bold>
-        <color>0</color>
-        <size>16</size>
-        <text>The%20answer%20you%u2019ve%20been%20looking%20for%21%0AWelcome%20to%20Milleans%20Vie%20Sciences.%20We%20offer%20lifestyle%20solutions%20that%20really%20work.</text>
+        <text>First%20Name%uFF1A</text>
       </controlProperties>
     </control>
-    <control controlID="80" controlTypeID="com.balsamiq.mockups::Label" x="519" y="181" w="-1" h="-1" measuredW="398" measuredH="22" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Label" x="446" y="299" w="123" h="-1" measuredW="81" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <bold>true</bold>
-        <size>14</size>
-        <text>Milleans%20Vie%20Sciences%20offers%20solutions%20to%20transform%20your%20life</text>
+        <text>Last%20Name%uFF1A</text>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::Menu" x="184" y="221" w="174" h="-1" measuredW="150" measuredH="214" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>User%20Management%0A---%0ANew%20member%20sign%20up%0AEdit%20Profile%0AModify%20Password%0A-Search%20user-%0A---%0AAutoShip%0A%3D%0ATransaction%20history%0AEdit%20product%0AEdit%20country</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::HRule" x="414" y="209" w="289" h="-1" measuredW="100" measuredH="10" zOrder="10" locked="false" isInGroup="-1"/>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::Label" x="424" y="234" w="-1" h="-1" measuredW="121" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+        <text>Personal%20Information</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="123" controlTypeID="com.balsamiq.mockups::Link" x="574" y="275" w="-1" h="-1" measuredW="48" measuredH="19" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Michael%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="124" controlTypeID="com.balsamiq.mockups::Link" x="574" y="299" w="-1" h="-1" measuredW="34" measuredH="19" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Wang</text>
+      </controlProperties>
+    </control>
+    <control controlID="125" controlTypeID="com.balsamiq.mockups::Label" x="424" y="363" w="-1" h="-1" measuredW="118" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+        <text>Contact%20Information</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="126" controlTypeID="com.balsamiq.mockups::Label" x="446" y="400" w="123" h="-1" measuredW="52" measuredH="21" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>E-mail%uFF1A</text>
+      </controlProperties>
+    </control>
+    <control controlID="127" controlTypeID="com.balsamiq.mockups::Label" x="446" y="429" w="123" h="-1" measuredW="54" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Mobile%uFF1A</text>
+      </controlProperties>
+    </control>
+    <control controlID="128" controlTypeID="com.balsamiq.mockups::Link" x="574" y="405" w="-1" h="-1" measuredW="123" measuredH="19" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Michael%20@%20gmail.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="129" controlTypeID="com.balsamiq.mockups::Link" x="574" y="429" w="-1" h="-1" measuredW="86" measuredH="19" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%28514%29%20111%202345</text>
+      </controlProperties>
+    </control>
+    <control controlID="130" controlTypeID="com.balsamiq.mockups::Label" x="446" y="456" w="123" h="-1" measuredW="68" measuredH="21" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Phone%28o%29%uFF1A</text>
+      </controlProperties>
+    </control>
+    <control controlID="131" controlTypeID="com.balsamiq.mockups::Link" x="574" y="456" w="-1" h="-1" measuredW="89" measuredH="19" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%28514%29%20000%202121</text>
+      </controlProperties>
+    </control>
+    <control controlID="133" controlTypeID="com.balsamiq.mockups::Label" x="446" y="327" w="123" h="-1" measuredW="60" measuredH="21" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Gender%uFF1A</text>
+      </controlProperties>
+    </control>
+    <control controlID="134" controlTypeID="com.balsamiq.mockups::Link" x="574" y="327" w="-1" h="-1" measuredW="28" measuredH="19" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Male</text>
+      </controlProperties>
+    </control>
+    <control controlID="135" controlTypeID="com.balsamiq.mockups::TextInput" x="666" y="323" w="-1" h="-1" measuredW="43" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>More</text>
+      </controlProperties>
+    </control>
+    <control controlID="136" controlTypeID="com.balsamiq.mockups::TextInput" x="666" y="490" w="-1" h="-1" measuredW="43" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>More</text>
+      </controlProperties>
+    </control>
+    <control controlID="137" controlTypeID="com.balsamiq.mockups::Label" x="731" y="270" w="123" h="-1" measuredW="110" measuredH="21" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Company%20Name%uFF1A</text>
+      </controlProperties>
+    </control>
+    <control controlID="138" controlTypeID="com.balsamiq.mockups::Label" x="731" y="299" w="123" h="-1" measuredW="104" measuredH="21" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Company%20Type%uFF1A</text>
+      </controlProperties>
+    </control>
+    <control controlID="139" controlTypeID="com.balsamiq.mockups::Label" x="709" y="234" w="-1" h="-1" measuredW="126" measuredH="21" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+        <text>Company%20Information</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="140" controlTypeID="com.balsamiq.mockups::Link" x="859" y="275" w="-1" h="-1" measuredW="75" measuredH="19" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>XXXXXX%20inc.</text>
+      </controlProperties>
+    </control>
+    <control controlID="141" controlTypeID="com.balsamiq.mockups::Link" x="859" y="299" w="-1" h="-1" measuredW="68" measuredH="19" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Corporation</text>
+      </controlProperties>
+    </control>
+    <control controlID="144" controlTypeID="com.balsamiq.mockups::TextInput" x="951" y="323" w="-1" h="-1" measuredW="43" measuredH="27" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>More</text>
       </controlProperties>
     </control>
   </controls>
