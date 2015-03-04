@@ -1,17 +1,43 @@
 /**
  * 
  */
-alert("11111111111111");
+
 $(document).ready(function (){
-	alert("2222222222222222");
-	var item = $("select[@name='membertype'] option[@selected]").val();
-	alert("item=");
-	if(item == 1){
-		$("#corporate").attr("display","none");
-		$("#individual").attr("display","block");		
-	}else{
-		$("#individual").attr("display","none");
-		$("#corporate").attr("display","block");		
-	}
 	
+	$("#membertype").change(function(){
+		var selectValue=$("#membertype").val();		
+		if(selectValue == 1){
+			$("#corporate").hide();
+			$("#individual").show();		
+		}else if(selectValue == 2){			
+			$("#individual").hide();
+			$("#corporate").show();		
+		}		 
+	});
+	
+	$("#selectaship").click(function(){
+		var radioVal = $("input[name='optionsRadios']:checked").val(); 
+		if( radioVal == "yes" ){
+			window.location="registration.jsp?aship=yes";
+		}else if( radioVal == "no" ){
+			window.location="selectaccount.jsp";
+		}else{
+			alert("Select one, please!");
+		}		
+	});
+
+	
+	$("#selectpaymenttype").change(function(){
+		var selectValue=$("#selectpaymenttype").val();		
+		if(selectValue == 1){
+	        $("#addnewcreditcard").modal({
+	            keyboard:false,
+	            backdrop:"static"
+	        });		
+	        $("#selectpaymenttype").get(0).selectedIndex=0; 
+		}else if(selectValue == 2){			
+			
+		}	
+		
+	});    
 });

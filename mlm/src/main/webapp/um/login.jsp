@@ -50,20 +50,20 @@
 								<div class="form-group">
 									<label for="inputUser3" class="col-sm-3 control-label">Member
 										ID</label>
-									<div class="col-sm-9">
+									<div class="col-sm-8">
 										<input type="text" class="form-control" id="inputUser3"
 											placeholder="Enter your member ID,please">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="inputPassword3" class="col-sm-3 control-label">password</label>
-									<div class="col-sm-9">
+									<div class="col-sm-5">
 										<input type="password" class="form-control"
 											id="inputPassword3" placeholder="Enter your password,please">
 									</div>
 								</div>
 								<div class="form-group">
-									<div class="col-sm-offset-3 col-sm-9">
+									<div class="col-sm-offset-3 col-sm-8">
 										<div class="checkbox">
 											<label> <input type="checkbox">Keep me
 												logged-in<br />If this is a public or shared device, uncheck
@@ -99,7 +99,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<button class="btn btn-primary" type="button">Register</button>
+								<a href="selectautoship.jsp"><button class="btn btn-primary" type="button">Register</button></a>
 							</div>
 						</div>
 					</div>

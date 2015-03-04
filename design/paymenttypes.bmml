@@ -63,10 +63,10 @@
         <text>My%20Orders</text>
       </controlProperties>
     </control>
-    <control controlID="238" controlTypeID="com.balsamiq.mockups::Menu" x="176" y="264" w="174" h="-1" measuredW="150" measuredH="276" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="238" controlTypeID="com.balsamiq.mockups::Menu" x="176" y="264" w="174" h="-1" measuredW="150" measuredH="318" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
-        <selectedIndex>8</selectedIndex>
-        <text>User%20Management%0A---%0A%3D%0ANew%20member%20sign%20up%0AEdit%20Profile%0AModify%20Password%0A-Search%20user-%0A---%0AOrder%20Entry%0A---%0APayment%20Types%0A---%0AAutoShip%0A---%0A%3D%0ATransaction%20history%0AEdit%20product%0AEdit%20country</text>
+        <selectedIndex>10</selectedIndex>
+        <text>User%20Management%0A---%0A%3D%0ANew%20member%20sign%20up%0AEdit%20Profile%0AModify%20Password%0A-Search%20user-%0A---%0AOrder%20Entry%0A---%0APayment%20Types%0A---%0AAutoShip%0AAutoShip%20List%0A---%0A%3D%0AProduct%20Maintenance%0ACountry%20Maintenance%0ACurrency%20Maintenance%0AAddress%20Maintenance</text>
       </controlProperties>
     </control>
     <control controlID="239" controlTypeID="com.balsamiq.mockups::TextInput" x="380" y="263" w="365" h="-1" measuredW="158" measuredH="27" zOrder="11" locked="false" isInGroup="-1">

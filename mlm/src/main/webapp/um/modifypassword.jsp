@@ -11,9 +11,9 @@
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
-	<![endif]-->
+	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="../js/mlm.js"></script>		
+	<script type="text/javascript" src="../js/mlm.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -52,30 +52,23 @@
 				  </div>
 				</div>			
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<ol class="breadcrumb">						
-						<li class="active">Select autoship</li>
-					</ol>
-				</div>
-			</div>
 		</div> <!-- end header -->
 		<div id="page">
 			<div class="row">
 				<div class="col-md-3">
 					<div id="left">
 						<ul class="nav nav-pills nav-stacked">
-						    <li class="active"><a href="selectautoship.jsp">New Member Sign Up</a></li>
+						    <li><a href="selectautoship.jsp">New Member Sign Up</a></li>
 						 	<li><a href="editprofile.jsp">Edit Profile</a></li>
-						 	<li><a href="modifypassword.jsp">Modify Password</a></li>						 	
+						 	<li class="active"><a href="modifypassword.jsp">Modify Password</a></li>
 						 	<li><a href="##">Search Member</a></li>
 						    <li class="nav-divider"></li>
-						    <li><a href="##">Order Entry</a></li>
+						    <li><a href="orderentry.jsp">Order Entry</a></li>
 						    <li class="nav-divider"></li>
-						    <li><a href="##">Payment Types</a></li>
+						    <li><a href="paymenttype.jsp">Payment Types</a></li>
 						    <li class="nav-divider"></li>
-						    <li><a href="##">AutoShip</a></li>
-						    <li><a href="##">AutoShip List</a></li>
+						    <li><a href="autoship.jsp">AutoShip</a></li>
+						    <li><a href="autoshiplist.jsp">AutoShip List</a></li>
 						    <li class="nav-divider"></li>
 						    <li><a href="##">Product Maintenance</a></li>
 						    <li><a href="##">Country Maintenance</a></li>
@@ -88,42 +81,46 @@
 					<div id="content">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="h2">New Member Sign Up</div>
+								<div class="h2">Modify Password</div>
 							</div>
-						</div>
-						<br/>
+						</div>									
 						<div class="row">
-							<div class="col-md-12">
-								<div class="panel panel-primary">
-									<div class="panel-heading">AutoShip</div>
-									<div class="panel-body">
-										<div class="radio">
-											<label>
-												<input type="radio" name="optionsRadios" id="optionsRadios1" value="yes" checked>Yes,I want to enroll as an Associate and participate in the Autoship Program for an annual fee of $28, which will provide valuable benefits such as
-											</label>
-										</div>										
-										<ul>
-										    <li>Reward Pricing. Get the absolute lowest price on all products including the special paks</li>
-										    <li>Maintain active status and capture all group order volume within your organization</li>
-										    <li>Stay qualified to participate in the compensation program</li>
-										    <li>Participate in special and exclusive promotions</li>
-										</ul>
-										<br/>
-										<div class="radio">
-											<label>
-												<input type="radio" name="optionsRadios" id="optionsRadios2" value="no" >No thanks, please show me other options.
-											</label>
-										</div>										
+							<div class="col-md-12">															
+								<form class="form-horizontal" role="form" action="">
+									<div class="subtitle" >Modify Password Section</div>
+									<div class="form-group">
+										<label for="password" class="col-sm-3 control-label">Old Password:</label>
+										<div class="col-sm-4">
+											<input type="password" class="form-control" id="password">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="newpassword1" class="col-sm-3 control-label">New Password:</label>
+										<div class="col-sm-4">
+											<input type="password" class="form-control" id="newpassword1">
+										</div>
 									</div>									
-								</div>
+									<div class="form-group">
+										<label for="newpassword2" class="col-sm-3 control-label">Confirm
+											Password:
+										</label>
+										<div class="col-sm-4">
+											<input type="password" class="form-control" id="newpassword2">
+										</div>
+									</div>										
+									<br/><br/>											
+									<div class="form-group">
+										<div class="col-sm-offset-3 col-sm-2">
+											<button type="submit" class="btn btn-primary">Modify</button>
+										</div>		
+										<div class="col-sm-2">
+											<a href="modifypassword.jsp"><button type="button" class="btn btn-primary">Reset</button></a>
+										</div>																													
+									</div>
+								</form>								
 							</div>
-						</div>			
-						<div class="row text-center">
-							<div class="col-md-12">
-								<button id="selectaship" class="btn btn-primary" type="button" >Next</button> 
-							</div>
-						</div>			
-					</div>
+						</div>										
+					</div> <!-- end content -->					
 				</div>
 			</div>
 			<div id="right">

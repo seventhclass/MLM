@@ -22,10 +22,10 @@
         <text>Back</text>
       </controlProperties>
     </control>
-    <control controlID="21" controlTypeID="com.balsamiq.mockups::Menu" x="180" y="146" w="174" h="-1" measuredW="150" measuredH="214" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::Menu" x="180" y="146" w="174" h="-1" measuredW="150" measuredH="318" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
-        <selectedIndex>2</selectedIndex>
-        <text>User%20Management%0A---%0ANew%20member%20sign%20up%0AEdit%20Profile%0AModify%20Password%0ASearch%20user%0A---%0AAutoShip%0A%3D%0ATransaction%20history%0AEdit%20product%0AEdit%20country</text>
+        <selectedIndex>3</selectedIndex>
+        <text>User%20Management%0A---%0A%3D%0ANew%20member%20sign%20up%0AEdit%20Profile%0AModify%20Password%0A-Search%20user-%0A---%0AOrder%20Entry%0A---%0APayment%20Types%0A---%0AAutoShip%0AAutoShip%20List%0A---%0A%3D%0AProduct%20Maintenance%0ACountry%20Maintenance%0ACurrency%20Maintenance%0AAddress%20Maintenance</text>
       </controlProperties>
     </control>
     <control controlID="22" controlTypeID="com.balsamiq.mockups::HRule" x="402" y="134" w="289" h="-1" measuredW="100" measuredH="10" zOrder="5" locked="false" isInGroup="-1"/>

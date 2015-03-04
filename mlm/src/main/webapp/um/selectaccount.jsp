@@ -17,19 +17,42 @@
 	 <div class="container">
 		<div id="header">
 			<div class="row">
-				<div class="col-md-1">
-					<img style="width: 70px; height: 75px"
-						src="../images/logo/logo.png" alt="milleans vie science">
-				</div>
-				<div class="col-md-11">
+				<div class="col-md-12">
 					<img style="width: 100%; height: 75px" src="../images/header1.jpg"
 						alt="milleans vie science">
 				</div>
+			</div>		
+			<div class="row">
+				<div class="navbar navbar-inverse" role="navigation">
+					<div class="navbar-header">
+						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+							<span class="sr-only">Toggle Navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="##" class="navbar-brand text-center">
+						<img style="width: 25px; height: 30px" src="../images/logo/logo.png" alt="milleans vie science">
+						Milleans Vie Sciences
+						</a>
+					</div>
+				  <!-- when screen width less than 768px, the content of div.navbar-responsive-collapse will be hidden, show icon-bar, when click icon-bar, it will extend. when screen width greater than 768px, show as default. -->
+				  <div class="collapse navbar-collapse navbar-responsive-collapse">
+				    	<ul class="nav navbar-nav">
+				      		<li class="active"><a href="home.jsp">Home</a></li>
+				      		<li><a href="products.jsp">Products</a></li>
+				      		<li><a href="aboutus.jsp">About Us</a></li>
+				      		<li><a href="contactus.jsp">Contact Us</a></li>
+				      		<li><a href="selectautoship.jsp">Registration</a></li>
+				      		<li><a href="login.jsp">Login</a></li>
+				      		<li><a href="logout.jsp">Logout</a></li>
+					 	</ul>
+				  </div>
+				</div>			
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<ol class="breadcrumb">
-						<li><a href="home.jsp">Home</a></li>
+					<ol class="breadcrumb">						
 						<li><a href="selectautoship.jsp">Select autoship</a></li>
 						<li class="active">Select an account</li>
 					</ol>
@@ -41,9 +64,9 @@
 				<div class="col-md-3">
 					<div id="left">
 						<ul class="nav nav-pills nav-stacked">
-						    <li class="active"><a href="##">New Member Sign Up</a></li>
-						 	<li><a href="##">Edit Profile</a></li>
-						 	<li><a href="##">Modify Password</a></li>
+						    <li class="active"><a href="selectautoship.jsp">New Member Sign Up</a></li>
+						 	<li><a href="editprofile.jsp">Edit Profile</a></li>
+						 	<li><a href="modifypassword.jsp">Modify Password</a></li>	
 						 	<li><a href="##">Search Member</a></li>
 						    <li class="nav-divider"></li>
 						    <li><a href="##">Order Entry</a></li>
@@ -64,9 +87,10 @@
 					<div id="content">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="h1">New Member Sign Up</div>
+								<div class="h2">New Member Sign Up</div>
 							</div>
 						</div>
+						<br/>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-primary">
@@ -99,7 +123,7 @@
 								<a href="selectautoship.jsp"><button class="btn btn-primary" type="button" >Back</button></a>							
 							</div>
 							<div class="col-md-3">
-								<a href="registration.jsp"><button class="btn btn-primary" type="button" >Next</button></a>
+								<a href="registration.jsp?aship=no"><button class="btn btn-primary" type="button" >Next</button></a>
 							</div>
 							<div class="col-md-3"></div>								 								 							
 						</div>
@@ -112,7 +136,7 @@
 	</div><!-- end container -->
 	<div id="footer">		  			
 		<div class="text-center">
-			Copyright Â© 2015 <a href="http://7thclass-smallfoots.rhcloud.com/">7thclass</a> All Rights Reserved.
+			Copyright © 2015 <a href="http://7thclass-smallfoots.rhcloud.com/">7thclass</a> All Rights Reserved.
 		</div>
 	</div>
 	 	 

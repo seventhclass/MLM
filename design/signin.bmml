@@ -79,7 +79,7 @@
         <text>Forgot%20password%3F</text>
       </controlProperties>
     </control>
-    <control controlID="20" controlTypeID="com.balsamiq.mockups::Paragraph" x="329" y="324" w="226" h="80" measuredW="200" measuredH="80" zOrder="15" locked="false" isInGroup="-1">
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Paragraph" x="329" y="324" w="226" h="49" measuredW="200" measuredH="80" zOrder="15" locked="false" isInGroup="-1">
       <controlProperties>
         <text>If%20this%20is%20a%20public%20or%20shared%20device%2C%20uncheck%20and%20sign%20out%20when%20you%27re%20done%20to%20protect%20your%20account.</text>
       </controlProperties>

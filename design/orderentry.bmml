@@ -161,10 +161,10 @@
         <text>Finish%20Order</text>
       </controlProperties>
     </control>
-    <control controlID="187" controlTypeID="com.balsamiq.mockups::Menu" x="176" y="244" w="174" h="-1" measuredW="150" measuredH="250" zOrder="30" locked="false" isInGroup="-1">
+    <control controlID="187" controlTypeID="com.balsamiq.mockups::Menu" x="176" y="244" w="174" h="-1" measuredW="150" measuredH="318" zOrder="30" locked="false" isInGroup="-1">
       <controlProperties>
         <selectedIndex>8</selectedIndex>
-        <text>User%20Management%0A---%0A%3D%0ANew%20member%20sign%20up%0AEdit%20Profile%0AModify%20Password%0A-Search%20user-%0A---%0AOrder%20Entry%0A---%0AAutoShip%0A---%0A%3D%0ATransaction%20history%0AEdit%20product%0AEdit%20country</text>
+        <text>User%20Management%0A---%0A%3D%0ANew%20member%20sign%20up%0AEdit%20Profile%0AModify%20Password%0A-Search%20user-%0A---%0AOrder%20Entry%0A---%0APayment%20Types%0A---%0AAutoShip%0AAutoShip%20List%0A---%0A%3D%0AProduct%20Maintenance%0ACountry%20Maintenance%0ACurrency%20Maintenance%0AAddress%20Maintenance</text>
       </controlProperties>
     </control>
     <control controlID="188" controlTypeID="com.balsamiq.mockups::Canvas" x="902" y="263" w="264" h="83" measuredW="100" measuredH="70" zOrder="31" locked="false" isInGroup="-1">
@@ -296,7 +296,7 @@
         <text>Submit</text>
       </controlProperties>
     </control>
-    <control controlID="215" controlTypeID="com.balsamiq.mockups::Tooltip" x="848" y="597" w="307" h="36" measuredW="308" measuredH="91" zOrder="54" locked="false" isInGroup="-1">
+    <control controlID="215" controlTypeID="com.balsamiq.mockups::Tooltip" x="848" y="597" w="307" h="36" measuredW="308" measuredH="0" zOrder="54" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Click%20here%20%20goto%20%22order%20payment%20%26%20shipping%22</text>
       </controlProperties>
