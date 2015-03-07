@@ -317,10 +317,10 @@
         <text>You%20want%20to%20register%20an%20individual%20user%20or%20a%20corporate%20user%3F</text>
       </controlProperties>
     </control>
-    <control controlID="114" controlTypeID="com.balsamiq.mockups::ComboBox" x="320" y="216" w="-1" h="-1" measuredW="120" measuredH="46" zOrder="57" locked="false" isInGroup="-1">
+    <control controlID="114" controlTypeID="com.balsamiq.mockups::ComboBox" x="320" y="216" w="-1" h="-1" measuredW="120" measuredH="62" zOrder="57" locked="false" isInGroup="-1">
       <controlProperties>
         <state>up</state>
-        <text>Individual%20User%0ACorporate%20User</text>
+        <text>Individual%20User%0ACorporate%20User%0AAdministrator</text>
       </controlProperties>
     </control>
     <control controlID="115" controlTypeID="com.balsamiq.mockups::Paragraph" x="1264" y="195" w="450" h="21" measuredW="200" measuredH="80" zOrder="58" locked="false" isInGroup="-1">

@@ -79,10 +79,10 @@
 						    <li><a href="autoship.jsp">AutoShip</a></li>
 						    <li><a href="autoshiplist.jsp">AutoShip List</a></li>
 						    <li class="nav-divider"></li>
-						    <li><a href="##">Product Maintenance</a></li>
-						    <li><a href="##">Country Maintenance</a></li>
-						    <li><a href="##">Currency Maintenance</a></li>
-		  				 	<li><a href="##">Address Maintenance</a></li>
+						    <li><a href="productmaintenance.jsp">Product Maintenance</a></li>
+						    <li><a href="countrymaintenance.jsp">Country Maintenance</a></li>
+						    <li><a href="currencymaintenance.jsp">Currency Maintenance</a></li>
+		  				 	<li><a href="addressmaintenance.jsp">Address Maintenance</a></li>
 						</ul>			
 					</div>
 				</div>
@@ -109,6 +109,7 @@
 											<option selected value="0">Select Please</option>
 											<option value="1">Individual Member</option>
 											<option value="2">Corporate Member</option>
+											<option value="9">Administrator</option>																						
 										</select>
 									</div>
 								</form>							
@@ -436,7 +437,156 @@
 									</form>								
 								</div>
 							</div>						
-						</div>																								
+						</div>		
+						<div id="admin">
+							<div class="row">
+								<div class="col-md-12">															
+									<form class="form-horizontal" role="form" action="">
+										<div class="subtitle" >Personal
+											Information</div>
+										<div class="form-group">
+											<label for="adminfirstname" class="col-sm-3 control-label">First
+												Name<span class="starsymbol">*</span>
+											</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="adminfirstname"
+													placeholder="Enter your first name, please">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="adminlastname" class="col-sm-3 control-label">Last
+												Name<span class="starsymbol">*</span>
+											</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="adminlastname"
+													placeholder="Enter your last name, please">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="admingender" class="col-sm-3 control-label">Gender<span
+												class="starsymbol">*</span></label>
+											<div class="col-sm-4">
+												<label class="radio-inline"> <input type="radio"
+													name="optionsgender" value="Male" checked>Male
+												</label> <label class="radio-inline"> <input type="radio"
+													name="optionsgender" value="Female">Female
+												</label>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="adminbirthday" class="col-sm-3 control-label">Date
+												of Birth</label>
+											<div class="col-sm-3">
+												<input type="date" class="form-control" id="adminbirthday">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="adminpassword1" class="col-sm-3 control-label">Password<span
+												class="starsymbol">*</span></label>
+											<div class="col-sm-4">
+												<input type="password" class="form-control" id="adminpassword1">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="adminpassword2" class="col-sm-3 control-label">Confirm
+												Password<span class="starsymbol">*</span>
+											</label>
+											<div class="col-sm-4">
+												<input type="password" class="form-control" id="adminpassword2">
+											</div>
+										</div>
+										<div class="subtitle">Contact
+											Information</div>
+										<div class="form-group">
+											<label for="adminaddress" class="col-sm-3 control-label">Address
+											</label>
+											<div class="col-sm-6">												
+												<textarea id="adminaddress" class="form-control" rows="2"></textarea>												
+											</div>
+										</div>											
+										<div class="form-group">
+											<label for="admincountry" class="col-sm-3 control-label">Country
+											</label>
+											<div class="col-sm-3">												
+												<select class="form-control">
+												    <option>Canada</option>
+												    <option>US</option>
+												</select>
+											</div>
+										</div>												
+										<div class="form-group">
+											<label for="adminstate" class="col-sm-3 control-label">State/Province
+											</label>
+											<div class="col-sm-3">												
+												<select class="form-control">
+												    <option>Quebec</option>
+												    <option>Ontario</option>
+												    <option>British Columbia</option>
+												    <option>Alberta</option>
+												    <option>Nova Scotia</option>
+												    <option>Newfoundland and Labrador</option>
+												    <option>Saskatchewan</option>
+												    <option>Manitoba</option>
+												    <option>New Brunswick Canada</option>
+												    <option>Prince Edward Island(PEI)</option>
+												</select>
+											</div>
+										</div>	
+										<div class="form-group">
+											<label for="admincity" class="col-sm-3 control-label">City
+											</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="admincity"
+													placeholder="Enter city name, please">
+											</div>
+										</div>										
+										<div class="form-group">
+											<label for="adminzip" class="col-sm-3 control-label">Zip
+											</label>
+											<div class="col-sm-3">
+												<input type="text" class="form-control" id="adminzip">
+											</div>
+										</div>											
+										<div class="form-group">
+											<label for="adminmobilephone" class="col-sm-3 control-label">Mobile Phone<span class="starsymbol">*</span>
+											</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="adminmobilephone"
+													placeholder="Enter your mobile phone, please">
+											</div>
+										</div>										
+										<div class="form-group">
+											<label for="adminofficephone" class="col-sm-3 control-label">Phone(o)
+											</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="adminofficephone">
+											</div>
+										</div>											
+										<div class="form-group">
+											<label for="adminemail" class="col-sm-3 control-label">E-mail<span class="starsymbol">*</span>
+											</label>
+											<div class="col-sm-4">
+												<input type="email" class="form-control" id="adminemail"
+													placeholder="Enter your email, please">
+											</div>
+										</div>												
+										<br/><br/>											
+										<div class="form-group">
+											<label class="col-sm-7 control-label"><a>ACCEPT TERMS AND CONDITIONS</a><span class="starsymbol">*</span>
+											</label>
+											<div class="col-sm-1">
+												<input type="checkbox" > 
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-offset-4 col-sm-4">
+												<button type="submit" class="btn btn-primary">Register New Admin</button>
+											</div>																				
+										</div>
+									</form>								
+								</div>
+							</div>										
+						</div>																												
 					</div> <!-- end content -->					
 				</div>
 			</div>

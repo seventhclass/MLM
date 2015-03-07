@@ -66,20 +66,20 @@
 						<ul class="nav nav-pills nav-stacked">
 						    <li class="active"><a href="selectautoship.jsp">New Member Sign Up</a></li>
 						 	<li><a href="editprofile.jsp">Edit Profile</a></li>
-						 	<li><a href="modifypassword.jsp">Modify Password</a></li>	
+						 	<li><a href="modifypassword.jsp">Modify Password</a></li>						
 						 	<li><a href="##">Search Member</a></li>
 						    <li class="nav-divider"></li>
-						    <li><a href="##">Order Entry</a></li>
+						    <li><a href="orderentry.jsp">Order Entry</a></li>
 						    <li class="nav-divider"></li>
-						    <li><a href="##">Payment Types</a></li>
+						    <li><a href="paymenttype.jsp">Payment Types</a></li>
 						    <li class="nav-divider"></li>
-						    <li><a href="##">AutoShip</a></li>
-						    <li><a href="##">AutoShip List</a></li>
+						    <li><a href="autoship.jsp">AutoShip</a></li>
+						    <li><a href="autoshiplist.jsp">AutoShip List</a></li>
 						    <li class="nav-divider"></li>
-						    <li><a href="##">Product Maintenance</a></li>
-						    <li><a href="##">Country Maintenance</a></li>
-						    <li><a href="##">Currency Maintenance</a></li>
-		  				 	<li><a href="##">Address Maintenance</a></li>
+						    <li><a href="productmaintenance.jsp">Product Maintenance</a></li>
+						    <li><a href="countrymaintenance.jsp">Country Maintenance</a></li>
+						    <li><a href="currencymaintenance.jsp">Currency Maintenance</a></li>
+		  				 	<li><a href="addressmaintenance.jsp">Address Maintenance</a></li>
 						</ul>			
 					</div>
 				</div>
@@ -98,7 +98,7 @@
 									<div class="panel-body">
 										<div class="radio">
 											<label>
-												<input type="radio" name="optionsRadios" id="account1" value="1" checked>Associate Account (with AutoShip) $28 Annual Membership Cost - If you like to have the lowest possible product pricing and have the possibility to make a substantial income in the process then this is the best choice for you! Get scheduled delivery of your favorite products, paks at our lowest prices, which reflect special rewards pricing on select items. Also, enjoy the benefits of our generous Compensation Plan and exclusive special promotions. 
+												<input type="radio" name="optionsRadios" id="account1" value="1" checked>Associate Account (without AutoShip) $28 Annual Membership Cost - If you like to have the lowest possible product pricing and have the possibility to make a substantial income in the process then this is the best choice for you! Get scheduled delivery of your favorite products, paks at our lowest prices, which reflect special rewards pricing on select items. Also, enjoy the benefits of our generous Compensation Plan and exclusive special promotions. 
 											</label>
 										</div>										
 										<br/>
