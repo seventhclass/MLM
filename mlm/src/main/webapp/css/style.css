@@ -33,11 +33,7 @@
 	background-color: #ddd;
 }
 
-#individual{
-	display: none;
-}
- 
-#corporate {
+#individual, #corporate, #admin {
 	display: none;
 }
 

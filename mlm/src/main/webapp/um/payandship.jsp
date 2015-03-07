@@ -91,10 +91,10 @@
 						    <li><a href="autoship.jsp">AutoShip</a></li>
 						    <li><a href="autoshiplist.jsp">AutoShip List</a></li>
 						    <li class="nav-divider"></li>
-						    <li><a href="##">Product Maintenance</a></li>
-						    <li><a href="##">Country Maintenance</a></li>
-						    <li><a href="##">Currency Maintenance</a></li>
-		  				 	<li><a href="##">Address Maintenance</a></li>
+						    <li><a href="productmaintenance.jsp">Product Maintenance</a></li>
+						    <li><a href="countrymaintenance.jsp">Country Maintenance</a></li>
+						    <li><a href="currencymaintenance.jsp">Currency Maintenance</a></li>
+		  				 	<li><a href="addressmaintenance.jsp">Address Maintenance</a></li>
 						</ul>			
 					</div>
 				</div>
@@ -126,14 +126,14 @@
 									<div class="form-group">										
 										<div class="col-sm-2">
 											<label class="radio-inline"> <input type="radio"
-												name="optionspaytype" value="2" >Paypal
+												name="optionspaytype" value="2" >Check
 											</label> 	
 										</div>
 									</div>		
 									<div class="form-group">										
 										<div class="col-sm-offset-2 col-sm-4">
-											<a href="##">Edit Credit Card for ABCDE00001</a><br/>	
-											<a href="##">Please refresh after adding a card</a>
+											<a href="paymenttype.jsp">Edit Credit Card for ABCDE00001</a><br/>	
+											<a href="payandship.jsp">Please refresh after adding a card</a>
 										</div>
 									</div>	
 									<div class="subtitle" >Shipping Address Selection</div>
@@ -196,32 +196,60 @@
 									</div>	
 									<div class="form-group">										
 										<div class="col-sm-12">
-											<span>Create or modify address - </span><a href="##">Go to Address Maintenance</a>
+											<span>Create or modify address - </span><a href="addressmaintenance.jsp">Go to Address Maintenance</a>
 										</div>
 									</div>	
 									<div class="subtitle" >Shipping Method Selection</div>
-									<div class="form-group">										
-										<div class="col-sm-offset-6 col-sm-2">
-											<span>Sub Order Total</span>
-										</div>
-									</div>
-									<div class="form-group">										
-										<div class="col-sm-6">
-											<label class="radio-inline"> <input type="radio"
-												name="optionsshipmethod" value="1" checked>$10.00 : Shipping Frgn
-											</label> 	
-										</div>
-										<div class="col-sm-2">
-											<span>$222.00</span>
-										</div>
-									</div>
-									<div class="form-group">										
-										<div class="col-sm-6">
-											<label class="radio-inline"> <input type="radio"
-												name="optionsshipmethod" value="0" >Free Shipping
-											</label> 	
-										</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<select id="selectshipmethod" class="form-control" >
+											    <option value="1">$10.00 - Regular</option>
+											    <option value="2">$20.00 - Express</option>									    
+											</select>	
+										</div>																			
 									</div>	
+									<br/>
+									<div class="form-group">
+										<div class="col-sm-9">																
+											<div class="panel panel-danger">
+											    <div class="panel-heading text-center">Order Payment Summary</div>
+											    <div class="panel-body">
+											    	<div class="row">
+														<div class="col-sm-offset-1 col-sm-5 text-right">										
+															<span>Sub Order Total:</span>
+														</div>	
+														<div class="col-sm-2">
+															<span>$222.00</span>
+														</div>	
+													</div>	
+											    	<div class="row">
+														<div class="col-sm-offset-1 col-sm-5 text-right">
+															<span>Shipping Fee:</span>
+														</div>	
+														<div class="col-sm-2">
+															<span>$10.00</span>
+														</div>	
+													</div>	
+											    	<div class="row">
+														<div class="col-sm-offset-1 col-sm-5 text-right">
+															<span>Tax:</span>
+														</div>	
+														<div class="col-sm-2">
+															<span>$34.80</span>
+														</div>	
+													</div>	
+											    	<div class="row">
+														<div class="col-sm-offset-1 col-sm-5 text-right">
+															<span>Order Total:</span>
+														</div>	
+														<div class="col-sm-2">
+															<span>$266.80</span>
+														</div>	
+													</div>																																																				    
+												</div>
+											</div>
+										</div>									
+									</div>						
 									<br/>
 									<div class="form-group">										
 										<div class="col-sm-offset-4 col-sm-4">

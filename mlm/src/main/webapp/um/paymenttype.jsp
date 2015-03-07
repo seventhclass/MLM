@@ -110,8 +110,7 @@
 								<div class="col-sm-4">																														
 									<select id="selectpaymenttype" class="form-control" >
 									    <option selected value="0">Please Choose...</option>
-									    <option value="1">Credit Card</option>
-									    <option value="2">Paypal</option>
+									    <option value="1">Credit Card</option>								    
 									</select>
 								</div>		
 							</div>							
