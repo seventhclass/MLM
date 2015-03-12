@@ -18,7 +18,8 @@
 <body>
 	 <div class="container">
 		<div id="header">
-			<%@ include file="../includes/header.jsp"%>		
+			<%@ include file="../includes/header.jsp"%>			
+			</div>		
 		</div> <!-- end header -->
 		<div id="functionbar">
 			<%@ include file="../includes/functionbar.jsp"%>
@@ -34,53 +35,79 @@
 					<div id="content">	
 						<div class="row">
 							<div class="col-md-12">
-								<div class="h2">Currency Maintenance</div>
+								<div class="h2">Category Maintenance</div>
 							</div>
 						</div>					
 						<div class="row">
 							<div class="col-md-12">
-								<div class="subtitle" >Currency List</div>
+								<div class="subtitle" >Category List</div>
 							</div>														
 						</div>
 						<div class="row">
-							<div class="col-md-10">
+							<div class="col-md-8">
 								<div class="table-responsive ordertable">
 									<table class="table">
 										<thead>
 											<tr>
-												<th>Currency Name</th>
-												<th>Abbreviation</th>
+												<th>Category Name</th>
 											</tr>
 										</thead>
 									   <tbody>
 									     <tr>
 							           		<td>
-							           			<div class="col-sm-12">Canada Dollar</div>
-							           		</td>
-							           		<td>
-							           			<div class="col-sm-6">CAD</div>
+							           			<div class="col-sm-8">Anti-Aging</div>
 							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Edit</button>
+							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-2">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#currencycancel" data-backdrop="static" >Delete</button>
-							           			</div>							           		
+							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           			</div>
+							           		</td>
+									     </tr>
+									     <tr>
+							           		<td>
+							           			<div class="col-sm-8">Life Extension</div>
+							           			<div class="col-sm-2">
+							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
+							           			</div>
+							           			<div class="col-sm-2">
+							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           			</div>
+							           		</td>
+									     </tr> 
+									     <tr>
+							           		<td>
+							           			<div class="col-sm-8">Brain Health</div>
+							           			<div class="col-sm-2">
+							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
+							           			</div>
+							           			<div class="col-sm-2">
+							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           			</div>
 							           		</td>
 									     </tr>  
 									     <tr>
 							           		<td>
-							           			<div class="col-sm-12">United States Dollar</div>
-							           		</td>
-							           		<td>
-							           			<div class="col-sm-6">USD</div>
+							           			<div class="col-sm-8">Energy & Performance</div>
 							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Edit</button>
+							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-2">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#currencycancel" data-backdrop="static" >Delete</button>
-							           			</div>							           		
+							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           			</div>
 							           		</td>
-									     </tr> 									     
+									     </tr> 	
+									     <tr>
+							           		<td>
+							           			<div class="col-sm-8">Wealth Creation</div>
+							           			<div class="col-sm-2">
+							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
+							           			</div>
+							           			<div class="col-sm-2">
+							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           			</div>
+							           		</td>
+									     </tr> 									     								     									      									       
 										</tbody>
 									 </table>
 								</div>	
@@ -88,7 +115,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<button type="button" class="btn btn-success" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
+								<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
 							</div>
 						</div>																												
 					</div> <!-- end content -->		
@@ -102,28 +129,22 @@
 		</div>
 	</div>
 	 
-	<div class="modal fade bs-example-modal-lg currencymaintenance" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal fade bs-example-modal-lg categorymaintenance" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header" style="background-color:#428bca;color:#fff;border-top-right-radius: 3px;border-top-left-radius: 3px;padding: 5px;">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title text-center">Currency Maintenance</h4>
+					<h4 class="modal-title text-center">Category Maintenance</h4>
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" role="form" action="">
 						<div class="form-group">
-							<label for="currencyname" class="col-sm-3 control-label">Currency
+							<label for="countryname" class="col-sm-3 control-label">Category
 								Name</label>
 							<div class="col-sm-6">
-								<input type="text" class="form-control" id="currencyname">
+								<input type="text" class="form-control" id="countryname">
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="currencyabbr" class="col-sm-3 control-label">Abbreviation</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control" id="currencyabbr">
-							</div>
-						</div>						
 					</form>						
 				</div>
 				<div class="modal-footer text-center">					
@@ -133,7 +154,7 @@
 		</div>
 	</div>
 	 
-	<div id="currencycancel" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div id="categorycancel" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="modal-header" style="background-color:#428bca;color:#fff;border-top-right-radius: 3px;border-top-left-radius: 3px;padding: 5px;">

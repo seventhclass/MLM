@@ -12,75 +12,19 @@
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/mlm.js"></script>		
 </head>
 <body>
 	 <div class="container">
 		<div id="header">
-			<div class="row">
-				<div class="col-md-12">
-					<img style="width: 100%; height: 75px" src="../images/header1.jpg"
-						alt="milleans vie science">
-				</div>
-			</div>		
-			<div class="row">
-				<div class="navbar navbar-inverse" role="navigation">
-					<div class="navbar-header">
-						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-							<span class="sr-only">Toggle Navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a href="##" class="navbar-brand text-center">
-						<img style="width: 25px; height: 30px" src="../images/logo/logo.png" alt="milleans vie science">
-						Milleans Vie Sciences
-						</a>
-					</div>
-				  <!-- when screen width less than 768px, the content of div.navbar-responsive-collapse will be hidden, show icon-bar, when click icon-bar, it will extend. when screen width greater than 768px, show as default. -->
-				  <div class="collapse navbar-collapse navbar-responsive-collapse">
-				    	<ul class="nav navbar-nav">
-				      		<li class="active"><a href="home.jsp">Home</a></li>
-				      		<li><a href="products.jsp">Products</a></li>
-				      		<li><a href="aboutus.jsp">About Us</a></li>
-				      		<li><a href="contactus.jsp">Contact Us</a></li>
-				      		<li><a href="selectautoship.jsp">Registration</a></li>
-				      		<li><a href="login.jsp">Login</a></li>
-				      		<li><a href="logout.jsp">Logout</a></li>
-					 	</ul>
-				  </div>
-				</div>			
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<ol class="breadcrumb">						
-						<li><a href="selectautoship.jsp">Select autoship</a></li>
-						<li class="active">Select an account</li>
-					</ol>
-				</div>
-			</div>
+			<%@ include file="../includes/header.jsp"%>
 		</div> <!-- end header -->
 		<div id="page">
 			<div class="row">
 				<div class="col-md-3">
 					<div id="left">
-						<ul class="nav nav-pills nav-stacked">
-						    <li class="active"><a href="selectautoship.jsp">New Member Sign Up</a></li>
-						 	<li><a href="editprofile.jsp">Edit Profile</a></li>
-						 	<li><a href="modifypassword.jsp">Modify Password</a></li>						
-						 	<li><a href="##">Search Member</a></li>
-						    <li class="nav-divider"></li>
-						    <li><a href="orderentry.jsp">Order Entry</a></li>
-						    <li class="nav-divider"></li>
-						    <li><a href="paymenttype.jsp">Payment Types</a></li>
-						    <li class="nav-divider"></li>
-						    <li><a href="autoship.jsp">AutoShip</a></li>
-						    <li><a href="autoshiplist.jsp">AutoShip List</a></li>
-						    <li class="nav-divider"></li>
-						    <li><a href="productmaintenance.jsp">Product Maintenance</a></li>
-						    <li><a href="countrymaintenance.jsp">Country Maintenance</a></li>
-						    <li><a href="currencymaintenance.jsp">Currency Maintenance</a></li>
-		  				 	<li><a href="addressmaintenance.jsp">Address Maintenance</a></li>
-						</ul>			
+						<%@ include file="../includes/nav-left.jsp"%>			
 					</div>
 				</div>
 				<div class="col-md-9">
@@ -98,19 +42,19 @@
 									<div class="panel-body">
 										<div class="radio">
 											<label>
-												<input type="radio" name="optionsRadios" id="account1" value="1" checked>Associate Account (without AutoShip) $28 Annual Membership Cost - If you like to have the lowest possible product pricing and have the possibility to make a substantial income in the process then this is the best choice for you! Get scheduled delivery of your favorite products, paks at our lowest prices, which reflect special rewards pricing on select items. Also, enjoy the benefits of our generous Compensation Plan and exclusive special promotions. 
+												<input type="radio" name="optionsatype" id="account1" value="2" checked>Associate Account (without AutoShip) $28 Annual Membership Cost - If you like to have the lowest possible product pricing and have the possibility to make a substantial income in the process then this is the best choice for you! Get scheduled delivery of your favorite products, paks at our lowest prices, which reflect special rewards pricing on select items. Also, enjoy the benefits of our generous Compensation Plan and exclusive special promotions. 
 											</label>
 										</div>										
 										<br/>
 										<div class="radio">
 											<label>
-												<input type="radio" name="optionsRadios" id="account2" value="2" >Preferred Customer Account (with AutoShip) $28 Annual Membership Cost - If you are not interested in the income opportunity but still want scheduled delivery of your favorite products at wholesale prices, then this is a good choice for you! Should you decide that you don not want to pass up the chance to earn some extra cash, then upgrade to Associate Status at no additional cost anytime within your first two years. 
+												<input type="radio" name="optionsatype" id="account2" value="3" >Preferred Customer Account (with AutoShip) $28 Annual Membership Cost - If you are not interested in the income opportunity but still want scheduled delivery of your favorite products at wholesale prices, then this is a good choice for you! Should you decide that you don not want to pass up the chance to earn some extra cash, then upgrade to Associate Status at no additional cost anytime within your first two years. 
 											</label>
 										</div>	
 										<br/>
 										<div class="radio">
 											<label>
-												<input type="radio" name="optionsRadios" id="account3" value="3" >Preferred Customer Account (without Autoship) $38 Annual Membership Cost If you are not interested in the income opportunity but want to enjoy wholesale prices on products when you place your order each month, then this is the choice for you! Should you decide that you don not want to pass up the chance to earn some extra cash, then upgrade to Associate Status at no additional cost anytime within your first two years. 
+												<input type="radio" name="optionsatype" id="account3" value="4" >Preferred Customer Account (without Autoship) $38 Annual Membership Cost If you are not interested in the income opportunity but want to enjoy wholesale prices on products when you place your order each month, then this is the choice for you! Should you decide that you don not want to pass up the chance to earn some extra cash, then upgrade to Associate Status at no additional cost anytime within your first two years. 
 											</label>
 										</div>																													
 									</div>									
@@ -123,7 +67,7 @@
 								<a href="selectautoship.jsp"><button class="btn btn-primary" type="button" >Back</button></a>							
 							</div>
 							<div class="col-md-3">
-								<a href="registration.jsp?aship=no"><button class="btn btn-primary" type="button" >Next</button></a>
+								<button id="selectatype" class="btn btn-primary" type="button" >Next</button>
 							</div>
 							<div class="col-md-3"></div>								 								 							
 						</div>
@@ -136,7 +80,7 @@
 	</div><!-- end container -->
 	<div id="footer">		  			
 		<div class="text-center">
-			Copyright © 2015 <a href="http://7thclass-smallfoots.rhcloud.com/">7thclass</a> All Rights Reserved.
+			<%@ include file="../includes/footer.jsp"%>
 		</div>
 	</div>
 	 	 

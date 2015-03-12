@@ -18,76 +18,16 @@
 <body>
 	 <div class="container">
 		<div id="header">
-			<div class="row">
-				<div class="col-md-12">
-					<img style="width: 100%; height: 75px" src="../images/header1.jpg"
-						alt="milleans vie science">
-				</div>
-			</div>		
-			<div class="row">
-				<div class="navbar navbar-inverse" role="navigation">
-					<div class="navbar-header">
-						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-							<span class="sr-only">Toggle Navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a href="##" class="navbar-brand text-center">
-						<img style="width: 25px; height: 30px" src="../images/logo/logo.png" alt="milleans vie science">
-						Milleans Vie Sciences
-						</a>
-					</div>
-				  <!-- when screen width less than 768px, the content of div.navbar-responsive-collapse will be hidden, show icon-bar, when click icon-bar, it will extend. when screen width greater than 768px, show as default. -->
-				  <div class="collapse navbar-collapse navbar-responsive-collapse">
-				    	<ul class="nav navbar-nav">
-				      		<li><a href="home.jsp">Home</a></li>
-				      		<li><a href="products.jsp">Products</a></li>
-				      		<li><a href="aboutus.jsp">About Us</a></li>
-				      		<li><a href="contactus.jsp">Contact Us</a></li>
-				      		<li><a href="selectautoship.jsp">Registration</a></li>
-				      		<li><a href="login.jsp">Login</a></li>
-				      		<li><a href="logout.jsp">Logout</a></li>
-					 	</ul>
-				  </div>
-				</div>			
-			</div>		
+			<%@ include file="../includes/header.jsp"%>		
 		</div> <!-- end header -->
 		<div id="functionbar">
-			<div class="row">
-				<div class="col-md-4">
-					<p class="text-justify">Building A YOUNGER, HEALTHIER, WEALTHIER LIFE Enjoy Shopping</p>
-				</div>
-				<div class="col-md-8">
-					<div class="col-sm-offset-7 col-sm-6">
-						<a href="orderentry.jsp"><button type="button" class="btn"><span class="glyphicon glyphicon-list-alt"></span> My Order </button></a>
-						<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-shopping-cart"></span> Go Cart Settlement <span class="badge">2</span></button>
-					</div>
-				</div>
-			</div>
+			<%@ include file="../includes/functionbar.jsp"%>
 		</div>		
 		<div id="page">
 			<div class="row">
 				<div class="col-md-3">
 					<div id="left">
-						<ul class="nav nav-pills nav-stacked">
-						    <li><a href="selectautoship.jsp">New Member Sign Up</a></li>
-						 	<li><a href="editprofile.jsp">Edit Profile</a></li>
-						 	<li><a href="modifypassword.jsp">Modify Password</a></li>						
-						 	<li><a href="##">Search Member</a></li>
-						    <li class="nav-divider"></li>
-						    <li><a href="orderentry.jsp">Order Entry</a></li>
-						    <li class="nav-divider"></li>
-						    <li><a href="paymenttype.jsp">Payment Types</a></li>
-						    <li class="nav-divider"></li>
-						    <li><a href="autoship.jsp">AutoShip</a></li>
-						    <li><a href="autoshiplist.jsp">AutoShip List</a></li>
-						    <li class="nav-divider"></li>
-						    <li class="active"><a href="productmaintenance.jsp">Product Maintenance</a></li>
-						    <li><a href="countrymaintenance.jsp">Country Maintenance</a></li>
-						    <li><a href="currencymaintenance.jsp">Currency Maintenance</a></li>
-		  				 	<li><a href="addressmaintenance.jsp">Address Maintenance</a></li>
-						</ul>			
+						<%@ include file="../includes/nav-left.jsp"%>			
 					</div>
 				</div>
 				<div class="col-md-9">							
@@ -109,24 +49,24 @@
 										<thead>
 											<tr>
 												<th>Item Code</th>
+												<th>Category</th>
 												<th>Description</th>
 												<th>Currency</th>
 												<th>Price Each</th>
-												<th>Volume</th>
-												<th>Volume 2</th>
-												<th>Points Each</th>
+												<th>Volume Each</th>
+												<th>Volume2 Each</th>
 												<th></th>
 											</tr>
 										</thead>
 									   <tbody>
 									     <tr>
 											<td>A000000001</td>
+											<td>Anti-Aging</td>
 							           		<td>Prolo telomeres anti-oxidauil ....</td>
 							           		<td>CAD</td>
 							           		<td>99.00</td>
-							           		<td>90</td>
-							           		<td></td>
 							           		<td>9</td>
+							           		<td></td>
 							           		<td>
 							           			<div class="col-sm-5">
 							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
@@ -138,12 +78,12 @@
 									     </tr>  
 									     <tr>
 											<td>A000000002</td>
+											<td>Life Extension</td>
 							           		<td>Second Generation of MT-1000</td>
 							           		<td>CAD</td>
 							           		<td>41.00</td>
-							           		<td>25</td>
-							           		<td></td>
 							           		<td>4</td>
+							           		<td></td>
 							           		<td>
 							           			<div class="col-sm-5">
 							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
@@ -155,12 +95,12 @@
 									     </tr> 		
 									     <tr>
 											<td>A000000003</td>
+											<td>Brain Health</td>
 							           		<td>Preulsor of a miracle moleeule</td>
 							           		<td>CAD</td>
 							           		<td>82.00</td>
-							           		<td>30</td>
-							           		<td></td>
 							           		<td>8</td>
+							           		<td></td>
 							           		<td>
 							           			<div class="col-sm-5">
 							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
@@ -187,7 +127,7 @@
 	</div><!-- end container -->
 	<div id="footer">		  			
 		<div class="text-center">
-			Copyright © 2015 <a href="http://7thclass-smallfoots.rhcloud.com/">7thclass</a> All Rights Reserved.
+			<%@ include file="../includes/footer.jsp"%>
 		</div>
 	</div>
 	 
@@ -207,9 +147,22 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label for="category" class="col-sm-3 control-label">Category
+							</label>
+							<div class="col-sm-3">												
+								<select class="form-control">
+								    <option>Anti-Aging</option>
+								    <option>Life Extension</option>
+								    <option>Brain Health</option>
+								    <option>Energy & Performance</option>
+								    <option>Wealth Creation</option>
+								</select>
+							</div>
+						</div>							
+						<div class="form-group">
 							<label for="description" class="col-sm-3 control-label">Description</label>
 							<div class="col-sm-6">
-								<input type="text" class="form-control" id="description">
+								<textarea id="description" class="form-control" rows="2"></textarea>
 							</div>
 						</div>										
 						<div class="form-group">
@@ -235,15 +188,9 @@
 							</div>
 						</div>	
 						<div class="form-group">
-							<label for="volume2" class="col-sm-3 control-label">Volume 2</label>
+							<label for="volume2" class="col-sm-3 control-label">Volume2</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" id="volume2">
-							</div>
-						</div>	
-						<div class="form-group">
-							<label for="point" class="col-sm-3 control-label">Point</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control" id="point">
 							</div>
 						</div>																																																		
 					</form>						

@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/css/style.css=UTF-8
+encoding//src/main/webapp/images=UTF-8
+encoding//src/main/webapp/sql/milleans.sql=UTF-8
 encoding//src/main/webapp/um/login.jsp=ISO-8859-1
 encoding//src/main/webapp/um/registration.jsp=ISO-8859-1
 encoding//src/main/webapp/um/selectaccount.jsp=ISO-8859-1

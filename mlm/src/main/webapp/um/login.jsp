@@ -16,24 +16,7 @@
 <body>
 	 <div class="container">
 		<div id="header">
-			<div class="row">
-				<div class="col-md-1">
-					<img style="width: 70px; height: 75px"
-						src="../images/logo/logo.png" alt="milleans vie science">
-				</div>
-				<div class="col-md-11">
-					<img style="width: 100%; height: 75px" src="../images/header1.jpg"
-						alt="milleans vie science">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<ol class="breadcrumb">
-						<li><a href="home.jsp">Home</a></li>
-						<li class="active">Sign in</li>
-					</ol>
-				</div>
-			</div>
+			<%@ include file="../includes/header.jsp"%>
 		</div> <!-- end header -->
 		<div id="page">
 			<div class="row">
@@ -109,7 +92,7 @@
 	</div><!-- end container -->
 	<div id="footer">		  			
 		<div class="text-center">
-			Copyright © 2015 <a href="http://7thclass-smallfoots.rhcloud.com/">7thclass</a> All Rights Reserved.
+			<%@ include file="../includes/footer.jsp"%>
 		</div>
 	</div>
 	 	 

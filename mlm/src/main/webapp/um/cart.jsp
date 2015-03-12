@@ -18,53 +18,10 @@
 <body>
 	 <div class="container">
 		<div id="header">
-			<div class="row">
-				<div class="col-md-12">
-					<img style="width: 100%; height: 75px" src="../images/header1.jpg"
-						alt="milleans vie science">
-				</div>
-			</div>		
-			<div class="row">
-				<div class="navbar navbar-inverse" role="navigation">
-					<div class="navbar-header">
-						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-							<span class="sr-only">Toggle Navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a href="##" class="navbar-brand text-center">
-						<img style="width: 25px; height: 30px" src="../images/logo/logo.png" alt="milleans vie science">
-						Milleans Vie Sciences
-						</a>
-					</div>
-				  <!-- when screen width less than 768px, the content of div.navbar-responsive-collapse will be hidden, show icon-bar, when click icon-bar, it will extend. when screen width greater than 768px, show as default. -->
-				  <div class="collapse navbar-collapse navbar-responsive-collapse">
-				    	<ul class="nav navbar-nav">
-				      		<li><a href="home.jsp">Home</a></li>
-				      		<li class="active"><a href="products.jsp">Products</a></li>
-				      		<li><a href="aboutus.jsp">About Us</a></li>
-				      		<li><a href="contactus.jsp">Contact Us</a></li>
-				      		<li><a href="selectautoship.jsp">Registration</a></li>
-				      		<li><a href="login.jsp">Login</a></li>
-				      		<li><a href="logout.jsp">Logout</a></li>
-					 	</ul>
-				  </div>
-				</div>			
-			</div>
+			<%@ include file="../includes/header.jsp"%>
 		</div> <!-- end header -->
 		<div id="functionbar">
-			<div class="row">
-				<div class="col-md-4">
-					<p class="text-justify">Building A YOUNGER, HEALTHIER, WEALTHIER LIFE Enjoy Shopping</p>
-				</div>
-				<div class="col-md-8">
-					<div class="col-sm-offset-7 col-sm-6">
-						<a href="orderentry.jsp"><button type="button" class="btn"><span class="glyphicon glyphicon-list-alt"></span> My Order </button></a>
-						<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-shopping-cart"></span> Go Cart Settlement <span class="badge">2</span></button>
-					</div>
-				</div>
-			</div>
+			<%@ include file="../includes/functionbar.jsp"%>
 		</div>
 		<div id="page">
 			<div class="row">
@@ -149,7 +106,7 @@
 	</div><!-- end container -->
 	<div id="footer">		  			
 		<div class="text-center">
-			Copyright © 2015 <a href="http://7thclass-smallfoots.rhcloud.com/">7thclass</a> All Rights Reserved.
+			<%@ include file="../includes/footer.jsp"%>
 		</div>
 	</div>
 	 	 
