@@ -1,9 +1,11 @@
+target/
+out/
 mlm.iml
 mlm.ipr
 mlm.iws
-target/
-out/
-.DS_Store
 .classpath
+.DS_Store
 .project
-.settings/
+/.settings/**/*
+
+

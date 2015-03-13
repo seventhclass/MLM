@@ -1,4 +1,4 @@
-package com.milleans.entity;
+package com.milleans.model;
 
 import javax.persistence.*;
 import java.util.Date;
