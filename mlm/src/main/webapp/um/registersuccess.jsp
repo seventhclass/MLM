@@ -18,48 +18,13 @@
 <body>
 	 <div class="container">
 		<div id="header">
-			<div class="row">
-				<div class="col-md-1">
-					<img style="width: 70px; height: 75px"
-						src="../images/logo/logo.png" alt="milleans vie science">
-				</div>
-				<div class="col-md-11">
-					<img style="width: 100%; height: 75px" src="../images/header1.jpg"
-						alt="milleans vie science">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<ol class="breadcrumb">						
-						<li><a href="selectautoship.jsp">Select autoship</a></li>
-						<li><a href="selectaccount.jsp">Select an account</a></li>
-						<li class="active">Registration</li>
-					</ol>
-				</div>
-			</div>
+			<%@ include file="../includes/header.jsp"%>
 		</div> <!-- end header -->
 		<div id="page">
 			<div class="row">
 				<div class="col-md-3">
 					<div id="left">
-						<ul class="nav nav-pills nav-stacked">
-						    <li class="active"><a href="selectautoship.jsp">New Member Sign Up</a></li>
-						 	<li><a href="editprofile.jsp">Edit Profile</a></li>
-						 	<li><a href="modifypassword.jsp">Modify Password</a></li>						
-						 	<li><a href="##">Search Member</a></li>
-						    <li class="nav-divider"></li>
-						    <li><a href="orderentry.jsp">Order Entry</a></li>
-						    <li class="nav-divider"></li>
-						    <li><a href="paymenttype.jsp">Payment Types</a></li>
-						    <li class="nav-divider"></li>
-						    <li><a href="autoship.jsp">AutoShip</a></li>
-						    <li><a href="autoshiplist.jsp">AutoShip List</a></li>
-						    <li class="nav-divider"></li>
-						    <li><a href="productmaintenance.jsp">Product Maintenance</a></li>
-						    <li><a href="countrymaintenance.jsp">Country Maintenance</a></li>
-						    <li><a href="currencymaintenance.jsp">Currency Maintenance</a></li>
-		  				 	<li><a href="addressmaintenance.jsp">Address Maintenance</a></li>
-						</ul>			
+						<%@ include file="../includes/nav-left.jsp"%>			
 					</div>
 				</div>
 				<div class="col-md-9">
@@ -94,7 +59,7 @@
 	</div><!-- end container -->
 	<div id="footer">		  			
 		<div class="text-center">
-			Copyright © 2015 <a href="http://7thclass-smallfoots.rhcloud.com/">7thclass</a> All Rights Reserved.
+			<%@ include file="../includes/footer.jsp"%>
 		</div>
 	</div>
 	 	 

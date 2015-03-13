@@ -4,6 +4,15 @@
 
 $(document).ready(function (){
 	
+	var jWindow = $(window);
+	var screenWidth = jWindow.width();
+	var screenHeight = jWindow.height();
+	
+	var pageWidth = $(".pagebox").css("width");
+	var pageHeight = $(".pagebox").css("height");
+	
+	$(".content1").attr({"top":"20px","left":"100px"});
+	
 	$("#membertype").change(function(){
 		var selectValue=$("#membertype").val();		
 		if(selectValue == 1){
@@ -23,15 +32,19 @@ $(document).ready(function (){
 	
 	$("#selectaship").click(function(){
 		var radioVal = $("input[name='optionsRadios']:checked").val(); 
-		if( radioVal == "yes" ){
-			window.location="registration.jsp?aship=yes";
-		}else if( radioVal == "no" ){
+		
+		if( radioVal == "0" ){
 			window.location="selectaccount.jsp";
 		}else{
-			alert("Select one, please!");
+			window.location="registration.jsp?accounttype="+radioVal;
 		}		
 	});
 
+	$("#selectatype").click(function(){
+		var radioVal = $("input[name='optionsatype']:checked").val(); 
+		
+		window.location="registration.jsp?accounttype="+radioVal;	
+	});	
 	
 	$("#selectpaymenttype").change(function(){
 		var selectValue=$("#selectpaymenttype").val();		

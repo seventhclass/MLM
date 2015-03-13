@@ -4,15 +4,15 @@
 
 <web-app>
     <display-name>Multi Level Market -- Management</display-name>
-    <context-param>
+    <!-- <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/mlm.xml</param-value>
+        <param-value>/spring/mlm.xml</param-value>
     </context-param>
 
     <listener>
         <listener-class>
             org.springframework.web.context.ContextLoaderListener
         </listener-class>
-    </listener>
+    </listener> -->
 
 </web-app>
