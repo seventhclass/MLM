@@ -40,7 +40,7 @@
 								</div>
 								<div class="form-group">
 									<label for="inputPassword3" class="col-sm-3 control-label">password</label>
-									<div class="col-sm-5">
+									<div class="col-sm-8">
 										<input type="password" class="form-control"
 											id="inputPassword3" placeholder="Enter your password,please">
 									</div>
@@ -58,7 +58,7 @@
 								<div class="form-group">
 									<div class="col-sm-offset-3 col-sm-9">
 										<button type="submit" class="btn btn-primary">Sign In</button>
-										<a class="col-sm-offset-2" href="##"><u>Forgot
+										<a class="col-sm-offset-2" href="forgotpassword.jsp"><u>Forgot
 												password?</u></a>
 									</div>
 								</div>

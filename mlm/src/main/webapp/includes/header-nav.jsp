@@ -16,7 +16,7 @@
 	out.println(" 		<!-- when screen width less than 768px, the content of div.navbar-responsive-collapse will be hidden, show icon-bar, when click icon-bar, it will extend. when screen width greater than 768px, show as default. -->");
 	out.println("		<div class='collapse navbar-collapse navbar-responsive-collapse'>");
 	out.println("			<ul class='nav navbar-nav'>");
-	out.println("		  		<li class='active'><a href='../um/home.jsp'>Home</a></li>");
+	out.println("		  		<li><a href='../um/home.jsp'>Home</a></li>");
 	out.println("  				<li><a href='../um/products.jsp'>Products</a></li>");
 	out.println("		 		<li><a href='../um/aboutus.jsp'>About Us</a></li>");
 	out.println("		 		<li><a href='../um/contactus.jsp'>Contact Us</a></li>");
