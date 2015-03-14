@@ -15,7 +15,7 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/login")
     public ModelAndView signUp(){
         System.out.println("zzzz");
         ModelAndView modelAndView = new ModelAndView("login.jsp");
