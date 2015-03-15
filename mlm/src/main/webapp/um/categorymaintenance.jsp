@@ -6,6 +6,7 @@
 	<title>Welcome to milleans vie science</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link href="../css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
@@ -18,8 +19,7 @@
 <body>
 	 <div class="container">
 		<div id="header">
-			<%@ include file="../includes/header.jsp"%>			
-			</div>		
+			<%@ include file="../includes/header.jsp"%>				
 		</div> <!-- end header -->
 		<div id="functionbar">
 			<%@ include file="../includes/functionbar.jsp"%>

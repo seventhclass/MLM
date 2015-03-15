@@ -1,5 +1,11 @@
 @CHARSET "ISO-8859-1";
 
+.h2 {
+	font: 60px/60px 'Pacifico', Georgia, serif;
+	color:#f1c40f;
+	text-transform:capitalize;
+	opacity: 1;
+}
 
 .pagination>.active>a {
 	z-index:0;
@@ -35,6 +41,14 @@
 
 #individual, #corporate, #admin {
 	display: none;
+}
+
+#response {
+	display:none;
+}
+
+#loginForm {
+	margin-bottom:30px;
 }
 
 .subtitle {

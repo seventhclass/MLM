@@ -6,7 +6,9 @@
 	<title>Welcome to milleans vie science</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	
 	<link href="../css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
@@ -31,7 +33,7 @@
 					<div id="content">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="h2">New Member Sign Up</div>
+								<div class="h2" >New Member Sign Up</div>
 							</div>
 						</div>
 						<br/>
@@ -216,12 +218,12 @@
 											<label class="col-sm-7 control-label"><a>ACCEPT TERMS AND CONDITIONS</a><span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-1">
-												<input type="checkbox" > 
+												<input class="policycheck" type="checkbox" > 
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-4 col-sm-4">
-												<button type="submit" class="btn btn-primary">Register New Member</button>
+												<button type="submit" class="btn btn-primary btnsubmit" disabled="disabled">Register New Member</button>
 											</div>																				
 										</div>
 									</form>								
@@ -367,12 +369,13 @@
 											<label class="col-sm-7 control-label"><a>ACCEPT TERMS AND CONDITIONS</a><span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-1">
-												<input type="checkbox" > 
+												<input class="policycheck" type="checkbox" > 
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-4 col-sm-4">
-												<button type="submit" class="btn btn-primary">Register New Member</button>
+												<button class="btn btn-primary btnsubmit" type="submit" disabled="disabled">Register New Member</button>
+												 
 											</div>																			
 										</div>
 									</form>								
@@ -516,12 +519,12 @@
 											<label class="col-sm-7 control-label"><a>ACCEPT TERMS AND CONDITIONS</a><span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-1">
-												<input type="checkbox" > 
+												<input class="policycheck" type="checkbox" > 
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-4 col-sm-4">
-												<button type="submit" class="btn btn-primary">Register New Admin</button>
+												<button type="submit" class="btn btn-primary btnsubmit" disabled="disabled">Register New Admin</button>
 											</div>																				
 										</div>
 									</form>								

@@ -3,6 +3,7 @@
     
 <%	
 	out.println("<ul class='nav nav-pills nav-stacked'>");
+	out.println("	<li class='nav-divider'></li>");
 	out.println("	<li><a href='../um/selectautoship.jsp'>New Member Sign Up</a></li>");
 	out.println("	<li><a href='../um/editprofile.jsp'>Edit Profile</a></li>");
 	out.println("	<li><a href='../um/modifypassword.jsp'>Modify Password</a></li>");
@@ -21,5 +22,6 @@
 	out.println("	<li><a href='../um/currencymaintenance.jsp'>Currency Maintenance</a></li>");
 	out.println(" 	<li><a href='../um/addressmaintenance.jsp'>Address Maintenance</a></li>");
 	out.println(" 	<li><a href='../um/categorymaintenance.jsp'>Category Maintenance</a></li>");
+	out.println("	<li class='nav-divider'></li>");
 	out.println("</ul>");
 %>	    
