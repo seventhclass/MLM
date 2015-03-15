@@ -5,6 +5,7 @@
  http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
     <display-name>Archetype Created Web Application</display-name>
+ -->
 <!-- 
     <servlet>
         <servlet-name>dispatcher</servlet-name>
@@ -24,5 +25,5 @@
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener> -->
+    </listener> 
 </web-app>
