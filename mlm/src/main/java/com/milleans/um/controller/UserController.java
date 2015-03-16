@@ -10,13 +10,13 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * Created by macbookpro on 2015-03-07.
  */
-@Controller("/")
+@Controller
 public class UserController {
 
     @Autowired
     private IUserService userService;
 
-    @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
+    @RequestMapping(value ="/login", method = RequestMethod.GET)
     public ModelAndView signUp() {
         System.out.println("zzzz");
         ModelAndView modelAndView = new ModelAndView("um/login");
