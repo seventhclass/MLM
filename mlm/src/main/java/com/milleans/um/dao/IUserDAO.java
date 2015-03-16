@@ -4,19 +4,21 @@ import java.util.List;
 
 import com.milleans.model.User;
 
+import java.util.List;
+
 /**
  * Created by macbookpro on 2015-03-07.
  */
 public interface IUserDAO {
 
-	public int save(User userInfo);
 
-	public User getUser(int userId, String pwd);
+    public int update(User userInfo);
 
-	// public List<User> getUserList();
-	//
-	// public User getSponsor(int userId);
-	//
-	// public int update(User user);
+    public User save(User user);
+
+    public List<User> getAllUser();
+
+    public User getUser(int userId);
+
 
 }

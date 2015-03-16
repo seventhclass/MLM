@@ -6,7 +6,9 @@
 	<title>Welcome to milleans vie science</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	
 	<link href="../css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
@@ -14,6 +16,7 @@
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="../js/mlm.js"></script>	
+	<script type="text/javascript" src="../js/registration.js"></script>
 </head>
 <body>
 	 <div class="container">
@@ -31,7 +34,7 @@
 					<div id="content">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="h2">New Member Sign Up</div>
+								<div class="h2" >New Member Sign Up</div>
 							</div>
 						</div>
 						<br/>
@@ -56,10 +59,15 @@
 								</form>							
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-md-11">
+								<div id="response" class="alert alert-danger" role="alert"></div> 
+							</div>
+						</div>				
 						<div id="individual">
 							<div class="row">
 								<div class="col-md-12">															
-									<form class="form-horizontal" role="form" action="">
+									<form id="individualregForm" class="form-horizontal" role="form" action="">
 										<div class="subtitle" >Personal
 											Information</div>
 										<div class="form-group">
@@ -70,6 +78,7 @@
 												<input type="text" class="form-control" id="firstname"
 													placeholder="Enter your first name, please">
 											</div>
+											<div id="errmsg_fname" class="col-sm-5 text-danger"></div> 											
 										</div>
 										<div class="form-group">
 											<label for="lastname" class="col-sm-3 control-label">Last
@@ -79,6 +88,7 @@
 												<input type="text" class="form-control" id="lastname"
 													placeholder="Enter your last name, please">
 											</div>
+											<div id="errmsg_lname" class="col-sm-5 text-danger"></div>
 										</div>
 										<div class="form-group">
 											<label for="gender" class="col-sm-3 control-label">Gender<span
@@ -110,6 +120,7 @@
 											<div class="col-sm-4">
 												<input type="password" class="form-control" id="password1">
 											</div>
+											<div id="errmsg_pss" class="col-sm-5 text-danger"></div>
 										</div>
 										<div class="form-group">
 											<label for="password2" class="col-sm-3 control-label">Confirm
@@ -118,6 +129,7 @@
 											<div class="col-sm-4">
 												<input type="password" class="form-control" id="password2">
 											</div>
+											<div id="errmsg_cpass" class="col-sm-5 text-danger"></div>
 										</div>
 										<div class="subtitle">Contact
 											Information</div>
@@ -178,6 +190,7 @@
 												<input type="text" class="form-control" id="mobilephone"
 													placeholder="Enter your mobile phone, please">
 											</div>
+											<div id="errmsg_mphone" class="col-sm-5 text-danger"></div>
 										</div>										
 										<div class="form-group">
 											<label for="officephone" class="col-sm-3 control-label">Phone(o)
@@ -193,6 +206,7 @@
 												<input type="email" class="form-control" id="email"
 													placeholder="Enter your email, please">
 											</div>
+											<div id="errmsg_email" class="col-sm-5 text-danger"></div>
 										</div>											
 										<div class="subtitle">Upline
 											Information</div>	
@@ -203,6 +217,7 @@
 												<input type="text" class="form-control" id="sponsorid"
 													placeholder="Enter your sponsor id, please">
 											</div>
+											<div id="errmsg_spsid" class="col-sm-5 text-danger"></div>
 										</div>												
 										<div class="form-group">
 											<label for="sponsorname" class="col-sm-3 control-label">Sponsor Name
@@ -216,12 +231,12 @@
 											<label class="col-sm-7 control-label"><a>ACCEPT TERMS AND CONDITIONS</a><span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-1">
-												<input type="checkbox" > 
+												<input class="policycheck" name="policycheck" type="checkbox"  > 
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-4 col-sm-4">
-												<button type="submit" class="btn btn-primary">Register New Member</button>
+												<button type="submit" class="btn btn-primary btnsubmit" disabled="disabled">Register New Member</button>
 											</div>																				
 										</div>
 									</form>								
@@ -231,17 +246,18 @@
 						<div id="corporate">
 							<div class="row">
 								<div class="col-md-12">															
-									<form class="form-horizontal" role="form" action="">
+									<form id="companyregForm" class="form-horizontal" role="form" action="">
 										<div class="subtitle" >Company
 											Information</div>
 										<div class="form-group">
 											<label for="c_companyname" class="col-sm-3 control-label">Company
 												Name<span class="starsymbol">*</span>
 											</label>
-											<div class="col-sm-6">
+											<div class="col-sm-4">
 												<input type="text" class="form-control" id="c_companyname"
 													placeholder="Enter company name, please">
 											</div>
+											<div id="errmsg_cname" class="col-sm-4 text-danger"></div>
 										</div>
 										<div class="form-group">
 											<label for="c_companytype" class="col-sm-3 control-label">Company Type
@@ -261,6 +277,7 @@
 											<div class="col-sm-4">
 												<input type="password" class="form-control" id="c_password1">
 											</div>
+											<div id="errmsg_cpas" class="col-sm-5 text-danger"></div>
 										</div>
 										<div class="form-group">
 											<label for="c_password2" class="col-sm-3 control-label">Confirm
@@ -269,6 +286,7 @@
 											<div class="col-sm-4">
 												<input type="password" class="form-control" id="c_password2">
 											</div>
+											<div id="errmsg_ccpass" class="col-sm-5 text-danger"></div>
 										</div>
 										<div class="subtitle">Contact
 											Information</div>
@@ -329,6 +347,7 @@
 												<input type="text" class="form-control" id="c_mobilephone"
 													placeholder="Enter your mobile phone, please">
 											</div>
+											<div id="errmsg_cmphone" class="col-sm-5 text-danger"></div>
 										</div>										
 										<div class="form-group">
 											<label for="c_officephone" class="col-sm-3 control-label">Phone(o)
@@ -344,6 +363,7 @@
 												<input type="email" class="form-control" id="c_email"
 													placeholder="Enter your email, please">
 											</div>
+											<div id="errmsg_cemail" class="col-sm-5 text-danger"></div>
 										</div>											
 										<div class="subtitle">Upline
 											Information</div>	
@@ -354,6 +374,7 @@
 												<input type="text" class="form-control" id="c_sponsorid"
 													placeholder="Enter your sponsor id, please">
 											</div>
+											<div id="errmsg_cspsid" class="col-sm-5 text-danger"></div>
 										</div>												
 										<div class="form-group">
 											<label for="c_sponsorname" class="col-sm-3 control-label">Sponsor Name
@@ -367,12 +388,13 @@
 											<label class="col-sm-7 control-label"><a>ACCEPT TERMS AND CONDITIONS</a><span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-1">
-												<input type="checkbox" > 
+												<input class="policycheck" name="policycheck" type="checkbox" > 
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-4 col-sm-4">
-												<button type="submit" class="btn btn-primary">Register New Member</button>
+												<button class="btn btn-primary btnsubmit" type="submit" disabled="disabled">Register New Member</button>
+												 
 											</div>																			
 										</div>
 									</form>								
@@ -382,7 +404,7 @@
 						<div id="admin">
 							<div class="row">
 								<div class="col-md-12">															
-									<form class="form-horizontal" role="form" action="">
+									<form id="adminregForm" class="form-horizontal" role="form" action="">
 										<div class="subtitle" >Personal
 											Information</div>
 										<div class="form-group">
@@ -393,6 +415,7 @@
 												<input type="text" class="form-control" id="adminfirstname"
 													placeholder="Enter your first name, please">
 											</div>
+											<div id="errmsg_afname" class="col-sm-5 text-danger"></div>
 										</div>
 										<div class="form-group">
 											<label for="adminlastname" class="col-sm-3 control-label">Last
@@ -402,6 +425,7 @@
 												<input type="text" class="form-control" id="adminlastname"
 													placeholder="Enter your last name, please">
 											</div>
+											<div id="errmsg_alname" class="col-sm-5 text-danger"></div>
 										</div>
 										<div class="form-group">
 											<label for="admingender" class="col-sm-3 control-label">Gender<span
@@ -427,6 +451,7 @@
 											<div class="col-sm-4">
 												<input type="password" class="form-control" id="adminpassword1">
 											</div>
+											<div id="errmsg_apass" class="col-sm-5 text-danger"></div>
 										</div>
 										<div class="form-group">
 											<label for="adminpassword2" class="col-sm-3 control-label">Confirm
@@ -435,6 +460,7 @@
 											<div class="col-sm-4">
 												<input type="password" class="form-control" id="adminpassword2">
 											</div>
+											<div id="errmsg_acpass" class="col-sm-5 text-danger"></div>
 										</div>
 										<div class="subtitle">Contact
 											Information</div>
@@ -495,6 +521,7 @@
 												<input type="text" class="form-control" id="adminmobilephone"
 													placeholder="Enter your mobile phone, please">
 											</div>
+											<div id="errmsg_amphone" class="col-sm-5 text-danger"></div>
 										</div>										
 										<div class="form-group">
 											<label for="adminofficephone" class="col-sm-3 control-label">Phone(o)
@@ -510,18 +537,19 @@
 												<input type="email" class="form-control" id="adminemail"
 													placeholder="Enter your email, please">
 											</div>
+											<div id="errmsg_aemail" class="col-sm-5 text-danger"></div>
 										</div>												
 										<br/><br/>											
 										<div class="form-group">
 											<label class="col-sm-7 control-label"><a>ACCEPT TERMS AND CONDITIONS</a><span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-1">
-												<input type="checkbox" > 
+												<input class="policycheck" name="policycheck" type="checkbox" > 
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-4 col-sm-4">
-												<button type="submit" class="btn btn-primary">Register New Admin</button>
+												<button type="submit" class="btn btn-primary btnsubmit" disabled="disabled">Register New Admin</button>
 											</div>																				
 										</div>
 									</form>								

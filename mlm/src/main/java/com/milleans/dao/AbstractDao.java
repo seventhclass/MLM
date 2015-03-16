@@ -3,20 +3,30 @@ package com.milleans.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class AbstractDao {
+import org.springframework.beans.factory.annotation.Autowired;
 
-	private SessionFactory sessionFactory;
+import java.util.Objects;
 
-	protected Session getSessionFactory() {
-		return sessionFactory.getCurrentSession();
-	}
+/**
+ * Created by macbookpro on 2015-03-13.
+ */
+public abstract class AbstractDao {
 
-	public void persist(Object entity) {
-		this.getSessionFactory().persist(entity);
-	}
+    @Autowired
+    protected SessionFactory sessionFactory;
 
-	public void delete(Object entity) {
-		this.getSessionFactory().delete(entity);
-	}
+    public Session getSession(){
+        return sessionFactory.getCurrentSession();
+    }
+
+
+    protected void persist(Objects entity) {
+        this.getSession().persist(entity);
+    }
+
+
+    protected void delete(Object entity) {
+        this.getSession().delete(entity);
+    }
 
 }
