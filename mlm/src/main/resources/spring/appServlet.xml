@@ -25,7 +25,7 @@
         <property name="annotatedClasses">
             <list>
                 <value>com.milleans.model.User</value>
-
+			
             </list>
         </property>
         <property name="hibernateProperties">
