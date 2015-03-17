@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Created by macbookpro on 2015-03-07.
  */
+
 @Repository("userDao")
 public class UserDAOImpl extends AbstractDao implements IUserDAO {
     @Override
@@ -30,5 +31,6 @@ public class UserDAOImpl extends AbstractDao implements IUserDAO {
     public User getUser(int userId) {
         return null;
     }
+
 }
 

@@ -8,8 +8,14 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://127.0.0.1:3306/milleans"/>
+        <!-- 
         <property name="username" value="adminWahckaz"/>
         <property name="password" value="Mnpbceh8pe6y"/>
+         -->
+        
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+        
     </bean>
 
     <!-- Hibernate 4 SessionFactory Bean definition -->
@@ -18,7 +24,6 @@
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan" value="com.milleans.model" />
-
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>

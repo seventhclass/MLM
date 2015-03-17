@@ -2,6 +2,7 @@ package com.milleans.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Objects;
@@ -27,4 +28,5 @@ public abstract class AbstractDao {
     protected void delete(Object entity) {
         this.getSession().delete(entity);
     }
+
 }
