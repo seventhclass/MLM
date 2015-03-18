@@ -1,8 +1,5 @@
 package com.milleans.um.services;
 
-import javax.websocket.server.ServerEndpoint;
-
-import org.springframework.stereotype.Service;
 
 import com.milleans.model.User;
 import com.milleans.um.dao.IUserDAO;
