@@ -189,8 +189,11 @@
 								<thead>
 									<tr>
 										<th>Item Code</th>
-										<th>Product Desc</th>
-										<th>Package</th>
+										<th>Name</th>
+										<th>Whole Sale Price</th>
+										<th>Retail Price</th>
+										<th>Numbers of Capsules</th>
+										<th>Business Volumes</th>
 										<th>Qty</th>
 										<th>Sel</th>
 									</tr>
@@ -198,25 +201,44 @@
 							   <tbody>
 							     <tr>
 									<td>A000000001</td>
-					           		<td>Prolo telomeres anti-oxidauil ....</td>
-					           		<td></td>
+									<td>MT-1000</td>
+					           		<td>58$</td>
+					           		<td>79$</td>
+					           		<td>90</td>
+					           		<td>40BV</td>
 					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
 					           		<td><input type="checkbox"></td>
 							     </tr>  
 							     <tr>
 									<td>A000000002</td>
-					           		<td>Second Generation of MT-1000</td>
-					           		<td></td>
+									<td>MT-1000 Second Generation</td>
+					           		<td>63$</td>
+					           		<td>82$</td>
+					           		<td>50</td>
+					           		<td>40BV</td>
 					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
 					           		<td><input type="checkbox"></td>
 							     </tr> 		
 							     <tr>
 									<td>A000000003</td>
-					           		<td>Preulsor of a miracle moleeule</td>
-					           		<td></td>
+									<td>Rejwvenetor</td>
+					           		<td>65$</td>
+					           		<td>82$</td>
+					           		<td>60</td>
+					           		<td>40BV</td>
 					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
 					           		<td><input type="checkbox"></td>
-							     </tr>					     										       												     													     										     												           
+							     </tr>	
+							     <tr>
+									<td>A000000004</td>
+									<td>Forever Young</td>
+					           		<td>95$</td>
+					           		<td>105$</td>
+					           		<td>50</td>
+					           		<td>55BV</td>
+					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
+					           		<td><input type="checkbox"></td>
+							     </tr>								     				     										       												     													     										     												           
 							   </tbody>
 							 </table>
 						</div>
