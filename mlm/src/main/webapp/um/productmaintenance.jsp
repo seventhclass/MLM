@@ -51,11 +51,13 @@
 											<tr>
 												<th>Item Code</th>
 												<th>Category</th>
-												<th>Description</th>
-												<th>Currency</th>
-												<th>Price Each</th>
-												<th>Volume Each</th>
-												<th>Volume2 Each</th>
+												<th>Name</th>
+												<th>Whole Sale Price Each</th>
+												<th>Retail Price Each</th>
+												<th>Currency</th>	
+												<th>Numbers of Capsules</th>											
+												<th>Business Volume Each</th>
+												<th>Business Volume2 Each</th>
 												<th></th>
 											</tr>
 										</thead>
@@ -63,16 +65,18 @@
 									     <tr>
 											<td>A000000001</td>
 											<td>Anti-Aging</td>
-							           		<td>Prolo telomeres anti-oxidauil ....</td>
-							           		<td>CAD</td>
-							           		<td>99.00</td>
-							           		<td>9</td>
-							           		<td></td>
+							           		<td>MT-1000</td>
+							           		<td>58.00</td>
+							           		<td>79.00</td>
+							           		<td>CAD</td>							           									           	
+							           		<td>90</td>
+							           		<td>40BV</td>
+							           		<td></td>							           		
 							           		<td>
-							           			<div class="col-sm-5">
+							           			<div class="col-sm-7">
 							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-4">
+							           			<div class="col-sm-5">
 							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
@@ -80,13 +84,15 @@
 									     <tr>
 											<td>A000000002</td>
 											<td>Life Extension</td>
-							           		<td>Second Generation of MT-1000</td>
+							           		<td>MT-1000 Second Generation</td>
+							           		<td>63.00</td>
+							           		<td>82.00</td>								           		
 							           		<td>CAD</td>
-							           		<td>41.00</td>
-							           		<td>4</td>
+							           		<td>50</td>
+							           		<td>40BV</td>
 							           		<td></td>
 							           		<td>
-							           			<div class="col-sm-5">
+							           			<div class="col-sm-7">
 							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-4">
@@ -97,20 +103,41 @@
 									     <tr>
 											<td>A000000003</td>
 											<td>Brain Health</td>
-							           		<td>Preulsor of a miracle moleeule</td>
-							           		<td>CAD</td>
+											<td>Rejwvenetor</td>
 							           		<td>82.00</td>
-							           		<td>8</td>
+							           		<td>65.00</td>
+							           		<td>CAD</td>							           		
+							           		<td>60</td>
+							           		<td>40BV</td>
 							           		<td></td>
 							           		<td>
-							           			<div class="col-sm-5">
+							           			<div class="col-sm-7">
 							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-4">
 							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>							           		
-									     </tr>													     										       												     													     										     												           
+									     </tr>		
+									     <tr>
+											<td>A000000004</td>
+											<td>Energy&Performance</td>
+											<td>Forever Young</td>
+							           		<td>95.00</td>
+							           		<td>105.00</td>
+							           		<td>CAD</td>							           		
+							           		<td>50</td>
+							           		<td>55BV</td>
+							           		<td></td>
+							           		<td>
+							           			<div class="col-sm-7">
+							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
+							           			</div>
+							           			<div class="col-sm-4">
+							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
+							           			</div>
+							           		</td>							           		
+									     </tr>										     											     										       												     													     										     												           
 									   </tbody>
 									 </table>
 								</div>	
@@ -148,6 +175,12 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label for="name" class="col-sm-3 control-label">Name</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="name">
+							</div>
+						</div>						
+						<div class="form-group">
 							<label for="category" class="col-sm-3 control-label">Category
 							</label>
 							<div class="col-sm-3">												
@@ -159,13 +192,7 @@
 								    <option>Wealth Creation</option>
 								</select>
 							</div>
-						</div>							
-						<div class="form-group">
-							<label for="description" class="col-sm-3 control-label">Description</label>
-							<div class="col-sm-6">
-								<textarea id="description" class="form-control" rows="2"></textarea>
-							</div>
-						</div>										
+						</div>																					
 						<div class="form-group">
 							<label for="currency" class="col-sm-3 control-label">Currency</label>
 							<div class="col-sm-3">												
@@ -177,23 +204,41 @@
 							</div>
 						</div>	
 						<div class="form-group">
-							<label for="price" class="col-sm-3 control-label">Price</label>
+							<label for="w_price" class="col-sm-3 control-label">Whole Sale Price</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="price">
+								<input type="text" class="form-control" id="w_price">
 							</div>
 						</div>	
 						<div class="form-group">
-							<label for="volume" class="col-sm-3 control-label">Volume</label>
+							<label for="r_price" class="col-sm-3 control-label">Retail Price</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="r_price">
+							</div>
+						</div>		
+						<div class="form-group">
+							<label for="numbers" class="col-sm-3 control-label">Numbers of Capsules</label>
+							<div class="col-sm-3">
+								<input id="numbers" type="number" name="numbers" min="1" max="9999" value="1">
+							</div>
+						</div>												
+						<div class="form-group">
+							<label for="volume" class="col-sm-3 control-label">Business Volume</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" id="volume">
 							</div>
 						</div>	
 						<div class="form-group">
-							<label for="volume2" class="col-sm-3 control-label">Volume2</label>
+							<label for="volume2" class="col-sm-3 control-label">Business Volume2</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" id="volume2">
 							</div>
-						</div>																																																		
+						</div>	
+						<div class="form-group">
+							<label for="description" class="col-sm-3 control-label">Description</label>
+							<div class="col-sm-6">
+								<textarea id="description" class="form-control" rows="2"></textarea>
+							</div>
+						</div>																																																								
 					</form>						
 				</div>
 				<div class="modal-footer text-center">					

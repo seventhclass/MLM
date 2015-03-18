@@ -7,4 +7,7 @@ public class AutoShip {
 
     private int id;
 
+    private int date;
+
+
 }
