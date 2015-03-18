@@ -14,7 +14,7 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="../js/mlm.js"></script>	
+	<script type="text/javascript" src="../js/modifypassword.js"></script>		
 </head>
 <body>
 	 <div class="container">
@@ -37,19 +37,21 @@
 						</div>									
 						<div class="row">
 							<div class="col-md-12">															
-								<form class="form-horizontal" role="form" action="">
+								<form id="modifypassForm" class="form-horizontal" role="form" action="">
 									<div class="subtitle" >Modify Password Section</div>
 									<div class="form-group">
 										<label for="password" class="col-sm-3 control-label">Old Password:</label>
 										<div class="col-sm-4">
 											<input type="password" class="form-control" id="password">
 										</div>
+										<div id="errmsg_opass" class="col-sm-5 text-danger"></div>
 									</div>
 									<div class="form-group">
 										<label for="newpassword1" class="col-sm-3 control-label">New Password:</label>
 										<div class="col-sm-4">
 											<input type="password" class="form-control" id="newpassword1">
 										</div>
+										<div id="errmsg_npass" class="col-sm-5 text-danger"></div>
 									</div>									
 									<div class="form-group">
 										<label for="newpassword2" class="col-sm-3 control-label">Confirm
@@ -58,7 +60,11 @@
 										<div class="col-sm-4">
 											<input type="password" class="form-control" id="newpassword2">
 										</div>
-									</div>										
+										<div id="errmsg_cpass" class="col-sm-5 text-danger"></div>
+									</div>	
+									<div class="form-group">
+										<div id="response" class="col-sm-offset-1 col-sm-10 alert alert-danger" role="alert"></div> 
+									</div>																	
 									<br/><br/>											
 									<div class="form-group">
 										<div class="col-sm-offset-3 col-sm-2">
