@@ -6,23 +6,24 @@
 <title>Welcome to milleans vie science</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link rel="stylesheet"
 	href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link href="./css/reset.css" rel="stylesheet" type="text/css" />
-<link href="./css/style.css" rel="stylesheet" type="text/css" />
+<link href="./css/index.css" rel="stylesheet" type="text/css" />
 <!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="./js/mlm.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
 </head>
 <body>
 	<div class="container">
 		<div class="pagebox">
 			<div class="row">
 				<div class="col-md-12 text-center" >
-					<img id="img_page1" src="./images/cover/changelife2.jpg" alt="">
+					<img class="imagebox" id="img_page1" src="./images/cover/changelife2.jpg" alt="">
 					<div class="contentbox content1">
 						Milleans Vie Sciences offers solutions to transform your life
 						The answer you've been looking for!
@@ -34,24 +35,36 @@
 		<div class="pagebox">
 			<div class="row">
 				<div class="col-md-12 text-center" >
-					<img id="img_page2" src="./images/cover/makemoney.png" alt="">
+					<img class="imagebox" id="img_page2" src="./images/cover/makemoney.png" alt="">
 				</div>
 			</div>
 		</div>	
 		<div class="pagebox">
 			<div class="row">
 				<div class="col-md-12 text-center" >
-					<img id="img_page3" src="./images/cover/changelife1.jpg" alt="">
+					<img class="imagebox" id="img_page3" src="./images/cover/changelife1.jpg" alt="">
 				</div>
 			</div>
 		</div>	
 		<div class="pagebox">
 			<div class="row">
 				<div class="col-md-12 text-center" >
-					<img id="img_page4" src="./images/cover/happy.jpg" alt="">
+					<img class="imagebox" id="img_page4" src="./images/cover/happy.jpg" alt="">
 				</div>
 			</div>
-		</div>					
+		</div>	
+		<div class="buttonbox">
+			<div class="link link-miss">
+				<span class="icon"></span> 
+				<a href="./um/login.jsp" class="button" data="My mission is clear"> 
+					<span class="line line-top"></span>
+					<span class="line line-right"></span> 
+					<span class="line line-bottom"></span>
+					<span class="line line-left"></span> 
+					ENTER
+				</a>
+			</div>			
+		</div>				
 	</div>
 	<!-- end container -->
 	<div id="footer">

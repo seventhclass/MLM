@@ -11,7 +11,7 @@
 	out.println("				<span class='icon-bar'></span>");
 	out.println("				<span class='icon-bar'></span>");
 	out.println("			</button>");
-	out.println("			<a href='##' class='navbar-brand text-center'><img style='width: 25px; height: 30px' src='../images/logo/logo.png' alt='milleans vie science'>Milleans Vie Sciences</a>");
+	out.println("			<a href='##' class='navbar-brand text-center'><img style='width: 25px; height: 30px' src='../images/logo/logo-new.png' alt='milleans vie science'>Milleans Vie Sciences</a>");
 	out.println(" 		</div>");
 	out.println(" 		<!-- when screen width less than 768px, the content of div.navbar-responsive-collapse will be hidden, show icon-bar, when click icon-bar, it will extend. when screen width greater than 768px, show as default. -->");
 	out.println("		<div class='collapse navbar-collapse navbar-responsive-collapse'>");

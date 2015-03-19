@@ -1,12 +1,5 @@
 @CHARSET "ISO-8859-1";
 
-.h2 {
-	font: 60px/60px 'Pacifico', Georgia, serif;
-	color:#f1c40f;
-	text-transform:capitalize;
-	opacity: 1;
-}
-
 .pagination>.active>a {
 	z-index:0;
 }
@@ -126,12 +119,6 @@
 	padding:10px 0px;
 }
 
-.contentbox {
-	position:absolute;
-}
 
-.content1 {
-	position:absolute;
-}
 
 

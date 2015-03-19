@@ -6,12 +6,7 @@ $(document).ready(function (){
 	
 	var jWindow = $(window);
 	var screenWidth = jWindow.width();
-	var screenHeight = jWindow.height();
-	
-	var pageWidth = $(".pagebox").css("width");
-	var pageHeight = $(".pagebox").css("height");
-	
-	$(".content1").attr({"top":"20px","left":"100px"});	
+	var screenHeight = jWindow.height();	
 	
 	$("#selectaship").click(function(){
 		var radioVal = $("input[name='optionsRadios']:checked").val(); 
