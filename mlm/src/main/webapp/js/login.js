@@ -2,6 +2,8 @@
  * 
  */
 $(document).ready(function(){
+ 	var basePath=$('#basePath').attr("value");
+ 	
 	$('#response').hide(); 
 	
 	$('#memberid').blur(function() {
@@ -31,6 +33,7 @@ $(document).ready(function(){
 	});	
 	
     $('#loginForm').submit(function(){
+    	
     	$('#response').hide(); 
     	$("#errmsg_mid").html("");
     	$("#errmsg_pas").html("");
@@ -48,7 +51,7 @@ $(document).ready(function(){
      	
      	$('#response').html("");
      	
-        $.post('doLogin.jsp', $(this).serialize(), function(data){
+/*        $.post('/doLogin', $(this).serialize(), function(data){
             // show the response        	
             $('#response').html(data);   
             $('#response').show();
@@ -56,7 +59,29 @@ $(document).ready(function(){
             // just in case posting your form failed
             $('#response').html("Send login request failed.");
             $('#response').show(); 
-        });     	
+        });*/
+
+        $.ajax({
+        	url: basePath+'/doLogin',        	
+        	type: 'POST',
+        	data: {
+        		memberid : $('#memberid').val(), 
+        		password : $('#password').val()
+        	},
+        	success: function(responseText) {        		
+        		alert("success.");
+        	},
+        	error: function(xhr, ajaxOptions, thrownError){
+/*        		$('#response').html(responseText); 
+        		$('#response').show();*/
+        		alert("error.");        		
+        		alert(xhr.status);
+                //alert(thrownError);
+                $('#response').html(xhr.responseText);
+                $('#response').show();
+        	},
+        	cache:false
+        });   
      	
         return false;
     });        

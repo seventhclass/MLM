@@ -8,9 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<link href="../css/reset.css" rel="stylesheet" type="text/css" />
-	<link href="../css/style.css" rel="stylesheet" type="text/css" />
-	<link href="../css/style-forgotpass.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath()%>/css/style-forgotpass.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->
@@ -18,7 +18,7 @@
 <body>
 	<div class="ctn-box">
 	 	<div id="backgroundbox">
-	 		<img src="../images/h3.png" alt="">
+	 		<img src="<%=request.getContextPath()%>/images/h3.png" alt="">
 	 	</div>
 	 	<div id="contentbox">
 			 <div class="container">
@@ -26,7 +26,7 @@
 					<div class="col-md-6">					
 						<div class="panel panel-default">
 					   		<div class="panel-heading text-center h2">	
-					   			Milleans<img style='width: 20px; height: 25px' src='../images/logo/logo.png' alt=''>					   									   			
+					   			Milleans<img style='width: 20px; height: 25px' src='<%=request.getContextPath()%>/images/logo/logo.png' alt=''>					   									   			
 				   			</div>
 						    <div class="panel-body text-center">
 						    	<br/>

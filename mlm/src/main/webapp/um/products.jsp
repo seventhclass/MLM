@@ -8,13 +8,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<link href="../css/reset.css" rel="stylesheet" type="text/css" />
-	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="../js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -43,7 +43,7 @@
 							<div class="row">
 								<div class="col-xs-6 col-md-4">
 									<a href="#" class="thumbnail"> <img
-										src="../images/products/product1.png"
+										src="<%=request.getContextPath()%>/images/products/product1.png"
 										style="height: 200px; width: 150px; display: block;" alt="">
 									</a>
 									<div class="caption">
@@ -61,7 +61,7 @@
 								</div>
 								<div class="col-xs-6 col-md-4">
 									<a href="#" class="thumbnail"> <img
-										src="../images/products/product1.png"
+										src="<%=request.getContextPath()%>/images/products/product1.png"
 										style="height: 200px; width: 150px; display: block;" alt="">
 									</a>
 									<div class="caption">
@@ -79,7 +79,7 @@
 								</div>
 								<div class="col-xs-6 col-md-4">
 									<a href="#" class="thumbnail"> <img
-										src="../images/products/product1.png"
+										src="<%=request.getContextPath()%>/images/products/product1.png"
 										style="height: 200px; width: 150px; display: block;" alt="">
 									</a>
 									<div class="caption">
