@@ -14,25 +14,33 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class UserController {
-    static Logger log = Logger.getLogger(UserController.class.getName());
+	static Logger log = Logger.getLogger(UserController.class.getName());
 
-    @Autowired
-    private IUserService userService;
+	@Autowired
+	private IUserService userService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login() {
-        log.info("user login");
-        ModelAndView modelAndView = new ModelAndView("um/login");
-        log.info("login done");
-        return modelAndView;
-    }
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login() {
+		log.info("user login");
+		ModelAndView modelAndView = new ModelAndView("um/login");
+		log.info("login done");
+		return modelAndView;
+	}
 
-    @RequestMapping(value = "signup", method = RequestMethod.POST)
-    public ModelAndView signUp() {
-        User newUser=new User();
-        //newUser.setFirstName();
-        ModelAndView modelAndView = new ModelAndView("um/home");
+	@RequestMapping(value = "/doLogin", method = RequestMethod.POST)
+	public ModelAndView doLogin() {
+		log.info("user do login");
+		ModelAndView modelAndView = new ModelAndView("um/home");
+		log.info("user do login done");
+		return modelAndView;
+	}
 
-        return modelAndView;
-    }
+	@RequestMapping(value = "signup", method = RequestMethod.POST)
+	public ModelAndView signUp() {
+		User newUser = new User();
+		// newUser.setFirstName();
+		ModelAndView modelAndView = new ModelAndView("um/home");
+
+		return modelAndView;
+	}
 }
