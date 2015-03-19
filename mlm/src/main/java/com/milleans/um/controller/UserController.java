@@ -30,8 +30,10 @@ public class UserController {
 	@RequestMapping(value = "/doLogin", method = RequestMethod.POST)
 	public ModelAndView doLogin() {
 		log.info("user do login");
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>do lognin>>>>>>>>>>>");
 		ModelAndView modelAndView = new ModelAndView("um/home");
 		log.info("user do login done");
+		System.out.println("<<<<<<<<<<<<<<<<<<<<<end do login<<<<<<<<<");
 		return modelAndView;
 	}
 
