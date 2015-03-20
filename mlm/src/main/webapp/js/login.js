@@ -48,7 +48,7 @@ $(document).ready(function(){
      	
      	$('#response').html("");
      	
-        $.post('doLogin.jsp', $(this).serialize(), function(data){
+        $.post('/doLogin', $(this).serialize(), function(data){
             // show the response        	
             $('#response').html(data);   
             $('#response').show();
@@ -56,7 +56,7 @@ $(document).ready(function(){
             // just in case posting your form failed
             $('#response').html("Send login request failed.");
             $('#response').show(); 
-        });     	
+        });
      	
         return false;
     });        
