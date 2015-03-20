@@ -60,7 +60,7 @@ $(document).ready(function(){
         });*/
         
         $.ajax({
-        	url: '/doLogin/',        	
+        	url: '/doLogin',        	
         	type: 'POST',
         	data: {
         		memberid : $('#memberid').val(), 
@@ -71,10 +71,13 @@ $(document).ready(function(){
         		$('#response').show();
         		alert("success.");
         	},
-        	error: function(responseText){
-        		$('#response').html(responseText); 
-        		$('#response').show(); 
-        		alert("error.");
+        	error: function(xhr, ajaxOptions, thrownError){
+/*        		$('#response').html(responseText); 
+        		$('#response').show();*/
+        		alert("error.");        		
+        		alert(xhr.status);
+                alert(thrownError);
+                alert(xhr.responseText);
         	},
         	cache:false
         });   
