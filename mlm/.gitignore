@@ -1,6 +1,7 @@
 mlm.iml
 mlm.ipr
 mlm.iws
+mlm.*
 target/
 out/
 .DS_Store
