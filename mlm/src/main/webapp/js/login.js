@@ -68,8 +68,9 @@ $(document).ready(function(){
         		memberid : $('#memberid').val(), 
         		password : $('#password').val()
         	},
-        	success: function(responseText) {        		
-        		alert("success.");
+        	success: function(responseText) {
+				window.location.href(responseText);
+        		//alert("success.");
         	},
         	error: function(xhr, ajaxOptions, thrownError){
 /*        		$('#response').html(responseText); 
