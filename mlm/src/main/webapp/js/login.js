@@ -2,6 +2,8 @@
  * 
  */
 $(document).ready(function(){
+ 	var basePath=$('#basePath').attr("value");
+ 	
 	$('#response').hide(); 
 	
 	$('#memberid').blur(function() {
@@ -58,17 +60,15 @@ $(document).ready(function(){
             $('#response').html("Send login request failed.");
             $('#response').show(); 
         });*/
-        
+
         $.ajax({
-        	url: '/doLogin',        	
+        	url: basePath+'/doLogin',        	
         	type: 'POST',
         	data: {
         		memberid : $('#memberid').val(), 
         		password : $('#password').val()
         	},
         	success: function(responseText) {        		
-        		$('#response').html(responseText);
-        		$('#response').show();
         		alert("success.");
         	},
         	error: function(xhr, ajaxOptions, thrownError){
@@ -76,8 +76,9 @@ $(document).ready(function(){
         		$('#response').show();*/
         		alert("error.");        		
         		alert(xhr.status);
-                alert(thrownError);
-                alert(xhr.responseText);
+                //alert(thrownError);
+                $('#response').html(xhr.responseText);
+                $('#response').show();
         	},
         	cache:false
         });   

@@ -26,7 +26,7 @@ public class UserController {
 		log.info("login done");
 		return modelAndView;
 	}
-
+	// for doLogin use Post mehtod.
 	@RequestMapping(value = "/doLogin", method = RequestMethod.POST)
 	public ModelAndView doLogin() {
 		log.info("user do login");
