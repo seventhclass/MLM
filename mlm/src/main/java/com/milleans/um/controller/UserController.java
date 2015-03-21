@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -27,24 +28,30 @@ public class UserController {
         return modelAndView;
     }
 
-    // for doLogin use Post mehtod.
-    @RequestMapping(value = "/doLogin", method = RequestMethod.POST)
-    public String doLogin(String username,String password) {
+
+    @RequestMapping(
+            value = "/doLogin", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    User
+    doLogin(String username, String password) {
         log.info("user do login");
-//        if (this.checkParams(new String[]{username, password})) {
-//            ModelAndView mav = new ModelAndView("um/home");
-//            mav.addObject("username", username);
-//            mav.addObject("password", password);
-//            return mav;
-//        }
+        System.out.println("dodododod");
+        User user = new User();
+        user.setFirstName("Hu");
+        user.setCity("Montreal");
+        user.setId(11);
+        user.setRoleId(77);
         log.info("user do login done");
-        return "success";
+        return user;
+
     }
 
-    @RequestMapping(value = "/home",method = RequestMethod.GET)
-    public ModelAndView navMain() {
-        return new ModelAndView("um/home");
-    }
+//    @RequestMapping(value = "/home",method = RequestMethod.GET)
+//    public ModelAndView navMain() {
+//
+//        return new ModelAndView("um/home");
+//    }
 
     private boolean checkParams(String[] params) {
         for (String param : params) {
