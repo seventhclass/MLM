@@ -2,6 +2,7 @@ package com.milleans.um.controller;
 
 import com.milleans.model.User;
 import com.milleans.um.services.IUserService;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class UserController {
+
     static Logger log = Logger.getLogger(UserController.class.getName());
 
     @Autowired
@@ -71,4 +73,5 @@ public class UserController {
 
         return modelAndView;
     }
+
 }

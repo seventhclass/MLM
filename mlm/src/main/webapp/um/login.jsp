@@ -16,7 +16,7 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/login.js"></script>		
 </head>
-<body>
+<body>	
 	 <div class="container">
 		<div id="header">
 			<%@ include file="../includes/header.jsp"%>
@@ -76,7 +76,7 @@
 								<div class="form-group">
 									<div class="col-sm-offset-3 col-sm-9">
 										<button type="submit" class="btn btn-primary">Sign In</button>
-										<a class="col-sm-offset-2" href="<%=request.getContextPath()%>/um/forgotpassword.jsp"><u>Forgot
+										<a class="col-sm-offset-2" href="<%=request.getContextPath()%>/forgotpassword"><u>Forgot
 												password?</u></a>
 									</div>
 								</div>
