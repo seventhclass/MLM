@@ -2,6 +2,7 @@ package com.milleans.um.controller;
 
 import com.milleans.model.User;
 import com.milleans.um.services.IUserService;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,7 @@ public class UserController {
 	// for doLogin use Post mehtod.
 	@RequestMapping(value = "/doLogin", method = RequestMethod.POST)
 	public ModelAndView doLogin() {
+		System.out.println("is here.");
 		log.info("user do login");
 		ModelAndView modelAndView = new ModelAndView("um/home");
 		log.info("user do login done");

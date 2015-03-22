@@ -64,12 +64,14 @@ $(document).ready(function(){
         $.ajax({
         	url: basePath+'/doLogin',        	
         	type: 'POST',
+        	contentType: "application/json; charset=utf-8",
         	data: {
         		memberid : $('#memberid').val(), 
         		password : $('#password').val()
         	},
-        	success: function(responseText) {        		
-        		alert("success.");
+        	async: false,
+        	success: function(resposeJsonObject) {        		
+        		console.log("success."+resposeJsonObject);
         	},
         	error: function(xhr, ajaxOptions, thrownError){
 /*        		$('#response').html(responseText); 
@@ -80,7 +82,8 @@ $(document).ready(function(){
                 $('#response').html(xhr.responseText);
                 $('#response').show();
         	},
-        	cache:false
+        	cache:false,
+        	processData:false
         });   
      	
         return false;
