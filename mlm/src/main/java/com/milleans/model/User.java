@@ -18,7 +18,7 @@ public class User implements Serializable{
 	private int id;
 
 	@Column(name = "date")
-	private Date date;
+	private int date;
 
 	@Column(name = "accountid")
 	private int accountId;
@@ -83,11 +83,11 @@ public class User implements Serializable{
 	@Column(name = "status")
 	private int status;
 
-	public Date getDate() {
+	public int getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(int date) {
 		this.date = date;
 	}
 
