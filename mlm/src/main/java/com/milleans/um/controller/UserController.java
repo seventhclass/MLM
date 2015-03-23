@@ -41,9 +41,26 @@ public class UserController {
         System.out.println("dodododod");
         User user = new User();
         user.setFirstName("Hu");
+        user.setLastName("le");
         user.setCity("Montreal");
         user.setId(11);
         user.setRoleId(77);
+        user.setAddress("5004 QueenMary");
+        user.setBirthDate(20001112);
+        user.setCompanyName("7th company");
+        user.setCompanyType("type");
+        user.setCountryId(86);
+        user.setDate(20150101);
+        user.setEmail("hu.le.ca@gmail.com");
+        user.setFax("5148850513");
+        user.setGender("M");
+        user.setMobile("4385570123");
+        user.setPassWord("111111");
+        user.setPhone("5148851234");
+        user.setProvince("QC");
+        user.setSponsorid(111);
+        user.setStatus(1);
+        user.setZip("h3w 1x2");
         log.info("user do login done");
         return user;
 
