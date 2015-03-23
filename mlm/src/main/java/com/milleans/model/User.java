@@ -1,6 +1,7 @@
 package com.milleans.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "T_user")
-public class User {
+public class User implements Serializable{
 
 	@Id
 	@Column(name = "id")
@@ -17,7 +18,7 @@ public class User {
 	private int id;
 
 	@Column(name = "date")
-	private Date date;
+	private int date;
 
 	@Column(name = "accountid")
 	private int accountId;
@@ -82,11 +83,11 @@ public class User {
 	@Column(name = "status")
 	private int status;
 
-	public Date getDate() {
+	public int getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(int date) {
 		this.date = date;
 	}
 

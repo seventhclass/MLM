@@ -61,28 +61,53 @@ $(document).ready(function(){
             $('#response').show(); 
         });*/
 
+     	//Check if user has selected the "keep login" checkbox?
+     	var autoFlag = null;
+     	var radioVal = $("input[name='policycheck']:checked").val(); 
+     	
+     	if( radioVal=="on" ) {
+     		autoFlag = 1;
+     	}else{
+     		autoFlag = 0;
+     	}
+     	//send login requrest to server.
         $.ajax({
         	url: basePath+'/doLogin',        	
-        	type: 'POST',
+			cache:false,
+			async: false,
+			type:'POST',			
         	data: {
         		memberid : $('#memberid').val(), 
-        		password : $('#password').val()
+        		password : $('#password').val(),
+        		autoFlag : autoFlag
         	},
-        	success: function(responseText) {        		
-        		alert("success.");
-        	},
-        	error: function(xhr, ajaxOptions, thrownError){
-/*        		$('#response').html(responseText); 
-        		$('#response').show();*/
-        		alert("error.");        		
-        		alert(xhr.status);
-                //alert(thrownError);
-                $('#response').html(xhr.responseText);
-                $('#response').show();
-        	},
-        	cache:false
+        	dataType:'json',
+        	timeout:5000,
+        	error:	function(xhr, ajaxOptions, thrownError){
+		                $('#response').html(xhr.resposeJsonObject);
+		                $('#response').show();
+        			},        	
+        	success:	function(res) {         			
+        				loginResponse(res);
+        			}
         });   
      	
         return false;
-    });        
+    });  
+    
+    //Process user login response 
+    function loginResponse(res){
+    	var result = res.result;			//response code
+    	var message = res.message;			//response message
+    	    	
+    	if (result == "success") {
+    		window.location.href=basePath+"home";
+    	}else{
+    		if(message==null || message==""){
+    			message = "Sorry, your request is failed.";
+    		}    			
+    		$('#response').html(message);
+            $('#response').show();
+    	}    	
+    }
 });	
