@@ -1,6 +1,7 @@
 package com.milleans.um.controller;
 
 import com.milleans.model.User;
+import com.milleans.um.dto.JsonResponseDto;
 import com.milleans.um.dto.LoginDto;
 import com.milleans.um.services.IUserService;
 import org.apache.log4j.Logger;
@@ -86,7 +87,7 @@ public class UserController {
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public
     @ResponseBody
-    User getUserInfo(String memberId) {
+    JsonResponseDto getUserInfo(String memberId) {
 
         User user = new User();
         user.setFirstName("Hu");
@@ -111,7 +112,12 @@ public class UserController {
         user.setStatus(1);
         user.setZip("h3w 1x2");
 
-        return user;
+        JsonResponseDto jsonResponseDto=new JsonResponseDto();
+        jsonResponseDto.setObject(user);
+        jsonResponseDto.setResult("success");
+        jsonResponseDto.setMessage("it's really success.");
+
+        return jsonResponseDto;
     }
 
     private boolean checkParams(String[] params) {
