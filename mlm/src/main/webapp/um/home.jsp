@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath()%>/css/home.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
@@ -22,6 +23,12 @@
 			<%@ include file="../includes/header.jsp"%>
 		</div> <!-- end header -->
 		<div id="page">
+			<div class="row">
+				<div id="welcomebar" class="h4 col-md-offset-9 col-md-3">
+					<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
+					Welcome <strong style="color:red"><%=request.getParameter("firstname") %>&nbsp;<%=request.getParameter("lastname") %></strong>&nbsp;<strong>(<%=request.getParameter("id") %>)</strong>.
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-md-3">
 					<div id="left">

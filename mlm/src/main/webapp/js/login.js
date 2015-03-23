@@ -63,29 +63,39 @@ $(document).ready(function(){
 
         $.ajax({
         	url: basePath+'/doLogin',        	
-        	type: 'POST',
-        	contentType: "application/json; charset=utf-8",
+			cache:false,
+			async: false,
+			type:'POST',			
         	data: {
         		memberid : $('#memberid').val(), 
         		password : $('#password').val()
         	},
-        	async: false,
-        	success: function(resposeJsonObject) {        		
-        		console.log("success."+resposeJsonObject);
-        	},
-        	error: function(xhr, ajaxOptions, thrownError){
-/*        		$('#response').html(responseText); 
-        		$('#response').show();*/
-        		alert("error.");        		
-        		alert(xhr.status);
-                //alert(thrownError);
-                $('#response').html(xhr.responseText);
-                $('#response').show();
-        	},
-        	cache:false,
-        	processData:false
+        	dataType:'json',
+        	timeout:5000,
+        	error:	function(xhr, ajaxOptions, thrownError){
+		                $('#response').html(xhr.resposeJsonObject);
+		                $('#response').show();
+        			},        	
+        	success:	function(res) {         			
+        				console.log("success."+res);
+        				console.log("id="+res.id);
+        				console.log("firstName="+res.firstName);
+        				loginResponse(res);
+        			}
         });   
      	
         return false;
-    });        
+    });  
+    
+    function loginResponse(res){
+    	var result = res.result;
+    	var message = res.message;
+    	result="Success";
+    	if (result == "Success") {
+    		window.location.href=basePath+"um/home.jsp?id="+res.id+"&firstname="+res.firstName+"&lastname="+res.lastName;
+    	}else{
+    		$('#response').html(message);
+            $('#response').show();
+    	}    	
+    }
 });	
