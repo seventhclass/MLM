@@ -1,5 +1,3 @@
-CREATE DATABASE milleans character set utf8;
-use milleans;
 /*
 Navicat MySQL Data Transfer
 
@@ -12,31 +10,35 @@ Target Server Type    : MYSQL
 Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2015-03-07 14:40:54
+Date: 2015-03-23 23:21:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
-#----------------------------
-#Table structure for `t_account`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_account`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_account`;
 CREATE TABLE `t_account` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) NOT NULL,
   `isautoship` int(6) unsigned NOT NULL DEFAULT '1',
   `annualfee` decimal(6,2) NOT NULL,
   `min_bv` int(11) NOT NULL,
   `cpsn_id` int(6) unsigned NOT NULL DEFAULT '0',
   `promotions` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_account
-#----------------------------
+-- ----------------------------
+-- Records of t_account
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_album`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_album`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_album`;
 CREATE TABLE `t_album` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `productid` int(6) unsigned NOT NULL,
@@ -44,13 +46,14 @@ CREATE TABLE `t_album` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_album
-#----------------------------
+-- ----------------------------
+-- Records of t_album
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_autoship`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_autoship`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_autoship`;
 CREATE TABLE `t_autoship` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `date` int(10) NOT NULL,
@@ -64,13 +67,14 @@ CREATE TABLE `t_autoship` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_autoship
-#----------------------------
+-- ----------------------------
+-- Records of t_autoship
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_bank`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_bank`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_bank`;
 CREATE TABLE `t_bank` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
@@ -78,26 +82,28 @@ CREATE TABLE `t_bank` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_bank
-#----------------------------
+-- ----------------------------
+-- Records of t_bank
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_category`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_category`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_category`;
 CREATE TABLE `t_category` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_category
-#----------------------------
+-- ----------------------------
+-- Records of t_category
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_currency`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_currency`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_currency`;
 CREATE TABLE `t_currency` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
@@ -105,13 +111,14 @@ CREATE TABLE `t_currency` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_currency
-#----------------------------
+-- ----------------------------
+-- Records of t_currency
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_order`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_order`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_order`;
 CREATE TABLE `t_order` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `date` int(10) NOT NULL,
@@ -122,13 +129,14 @@ CREATE TABLE `t_order` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_order
-#----------------------------
+-- ----------------------------
+-- Records of t_order
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_orderdetails`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_orderdetails`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_orderdetails`;
 CREATE TABLE `t_orderdetails` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `seq` int(6) unsigned NOT NULL,
@@ -146,13 +154,14 @@ CREATE TABLE `t_orderdetails` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_orderdetails
-#----------------------------
+-- ----------------------------
+-- Records of t_orderdetails
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_parameter`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_parameter`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_parameter`;
 CREATE TABLE `t_parameter` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
@@ -161,13 +170,14 @@ CREATE TABLE `t_parameter` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_parameter
-#----------------------------
+-- ----------------------------
+-- Records of t_parameter
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_payment`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_payment`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_payment`;
 CREATE TABLE `t_payment` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `userid` bigint(8) unsigned NOT NULL,
@@ -184,17 +194,22 @@ CREATE TABLE `t_payment` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_payment
-#----------------------------
+-- ----------------------------
+-- Records of t_payment
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_porduct`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_porduct`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_porduct`;
 CREATE TABLE `t_porduct` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `itemcode` varchar(20) NOT NULL,
-  `price` decimal(6,2) NOT NULL,
+  `name` varchar(60) NOT NULL,
+  `capsulenumber` int(11) DEFAULT NULL,
+  `wholesaleprice` decimal(6,2) NOT NULL,
+  `retailprice` decimal(6,2) NOT NULL,
+  `date` int(10) unsigned NOT NULL,
   `currencyid` int(6) unsigned NOT NULL,
   `volume` int(11) NOT NULL,
   `volume2` int(11) DEFAULT NULL,
@@ -203,13 +218,14 @@ CREATE TABLE `t_porduct` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_porduct
-#----------------------------
+-- ----------------------------
+-- Records of t_porduct
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_shippingaddress`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_shippingaddress`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_shippingaddress`;
 CREATE TABLE `t_shippingaddress` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `userid` bigint(8) unsigned NOT NULL,
@@ -226,13 +242,14 @@ CREATE TABLE `t_shippingaddress` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_shippingaddress
-#----------------------------
+-- ----------------------------
+-- Records of t_shippingaddress
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_shippingmethod`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_shippingmethod`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_shippingmethod`;
 CREATE TABLE `t_shippingmethod` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
@@ -242,13 +259,14 @@ CREATE TABLE `t_shippingmethod` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_shippingmethod
-#----------------------------
+-- ----------------------------
+-- Records of t_shippingmethod
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_shoppingcart`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_shoppingcart`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_shoppingcart`;
 CREATE TABLE `t_shoppingcart` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `userid` bigint(8) unsigned NOT NULL,
@@ -258,13 +276,14 @@ CREATE TABLE `t_shoppingcart` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_shoppingcart
-#----------------------------
+-- ----------------------------
+-- Records of t_shoppingcart
+-- ----------------------------
 
-#----------------------------
-#Table structure for `t_user`
-#----------------------------
+-- ----------------------------
+-- Table structure for `t_user`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
   `id` bigint(8) unsigned NOT NULL AUTO_INCREMENT,
   `date` int(10) unsigned NOT NULL,
@@ -293,6 +312,6 @@ CREATE TABLE `t_user` (
   UNIQUE KEY `p_index_1` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#----------------------------
-#Records of t_user
-#----------------------------
+-- ----------------------------
+-- Records of t_user
+-- ----------------------------

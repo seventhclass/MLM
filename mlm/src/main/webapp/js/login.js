@@ -61,6 +61,16 @@ $(document).ready(function(){
             $('#response').show(); 
         });*/
 
+     	//Check if user has selected the "keep login" checkbox?
+     	var autoFlag = null;
+     	var radioVal = $("input[name='policycheck']:checked").val(); 
+     	
+     	if( radioVal=="on" ) {
+     		autoFlag = 1;
+     	}else{
+     		autoFlag = 0;
+     	}
+     	//send login requrest to server.
         $.ajax({
         	url: basePath+'/doLogin',        	
 			cache:false,
@@ -68,7 +78,8 @@ $(document).ready(function(){
 			type:'POST',			
         	data: {
         		memberid : $('#memberid').val(), 
-        		password : $('#password').val()
+        		password : $('#password').val(),
+        		autoFlag : autoFlag
         	},
         	dataType:'json',
         	timeout:5000,
@@ -77,9 +88,6 @@ $(document).ready(function(){
 		                $('#response').show();
         			},        	
         	success:	function(res) {         			
-        				console.log("success."+res);
-        				console.log("id="+res.id);
-        				console.log("firstName="+res.firstName);
         				loginResponse(res);
         			}
         });   
@@ -87,13 +95,17 @@ $(document).ready(function(){
         return false;
     });  
     
+    //Process user login response 
     function loginResponse(res){
-    	var result = res.result;
-    	var message = res.message;
-    	result="Success";
+    	var result = res.result;			//response code
+    	var message = res.message;			//response message
+    	    	
     	if (result == "Success") {
-    		window.location.href=basePath+"home?id="+res.id+"&firstname="+res.firstName+"&lastname="+res.lastName;
+    		window.location.href=basePath+"home";
     	}else{
+    		if(message==null || message==""){
+    			message = "Sorry, your request is failed.";
+    		}    			
     		$('#response').html(message);
             $('#response').show();
     	}    	

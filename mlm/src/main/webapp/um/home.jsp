@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%
+	String userId = session.getAttribute("userid")==null?null:session.getAttribute("userid").toString();
+	String userName = session.getAttribute("username")==null?null:session.getAttribute("username").toString();	
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,7 +30,7 @@
 			<div class="row">
 				<div id="welcomebar" class="h4 col-md-offset-9 col-md-3">
 					<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
-					Welcome <strong style="color:red"><%=request.getParameter("firstname") %>&nbsp;<%=request.getParameter("lastname") %></strong>&nbsp;<strong>(<%=request.getParameter("id") %>)</strong>.
+					Welcome <strong style="color:red"><%=userName %></strong>&nbsp;<strong>(<%=userId %>)</strong>.
 				</div>
 			</div>
 			<div class="row">
