@@ -1,4 +1,4 @@
-package com.milleans;
+package com.milleans.um.dto;
 
 /**
  * Created by macbookpro on 2015-03-22.
