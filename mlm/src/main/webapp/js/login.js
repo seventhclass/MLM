@@ -92,7 +92,7 @@ $(document).ready(function(){
     	var message = res.message;
     	result="Success";
     	if (result == "Success") {
-    		window.location.href=basePath+"um/home.jsp?id="+res.id+"&firstname="+res.firstName+"&lastname="+res.lastName;
+    		window.location.href=basePath+"home?id="+res.id+"&firstname="+res.firstName+"&lastname="+res.lastName;
     	}else{
     		$('#response').html(message);
             $('#response').show();
