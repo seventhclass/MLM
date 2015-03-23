@@ -19,7 +19,7 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/home.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -30,7 +30,7 @@
 			<div class="row">
 				<div id="welcomebar" class="h4 col-md-offset-9 col-md-3">
 					<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
-					Welcome <strong style="color:red"><%=userName %></strong>&nbsp;<strong>(<%=userId %>)</strong>.
+					Welcome <strong style="color:red"><%=userName %></strong>&nbsp;<strong>(<span id="memberid"><%=userId %></span>)</strong>.
 				</div>
 			</div>
 			<div class="row">
