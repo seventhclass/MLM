@@ -100,7 +100,7 @@ $(document).ready(function(){
     	var result = res.result;			//response code
     	var message = res.message;			//response message
     	    	
-    	if (result == "Success") {
+    	if (result == "success") {
     		window.location.href=basePath+"home";
     	}else{
     		if(message==null || message==""){
