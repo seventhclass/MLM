@@ -10,7 +10,7 @@ $(document).ready(function(){
  	function queryUserInfo(){
  	 	//send login requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/doQueryUserInfo',        	
+ 	    	url: basePath+'/user',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -20,7 +20,7 @@ $(document).ready(function(){
  	    	dataType:'json',
  	    	timeout:5000,
  	    	error:	function(xhr, ajaxOptions, thrownError){
- 		                alert(xhr.resposeJsonObject);
+ 		                alert(xhr.status+" "+xhr.responseText);
  	    			},        	
  	    	success:	function(res) {         			
  	    				queryUserInfoResponse(res);
@@ -34,7 +34,7 @@ $(document).ready(function(){
  		var message = res.message;			//response message
  		    	
  		if (result == "success") {
- 			
+ 			alert("Success!!!");
  		}else{
  			if(message==null || message==""){
  				message = "Sorry, get member information failed.";
