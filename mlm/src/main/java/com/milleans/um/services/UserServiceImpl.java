@@ -5,6 +5,7 @@ import com.milleans.model.User;
 import com.milleans.um.dao.IUserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 
 /**
@@ -17,11 +18,13 @@ public class UserServiceImpl implements IUserService {
     private IUserDAO userDAO;
 
     @Override
+    @Transactional
     public int signUp(User userInfo) {
-        System.out.println("user service");
+        System.out.println("user service ---------");
         return 0;
     }
 
+    @Transactional
     @Override
     public User login(int userId, String pwd) {
         System.out.println(" service login----");
