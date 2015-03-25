@@ -12,21 +12,19 @@ import java.util.Objects;
  */
 public abstract class AbstractDao {
 
-    @Autowired
-    protected SessionFactory sessionFactory;
+	@Autowired
+	protected SessionFactory sessionFactory;
 
-    public Session getSession(){
-        return sessionFactory.getCurrentSession();
-    }
+	public Session getSession() {
+		return sessionFactory.getCurrentSession();
+	}
 
+	protected void persist(Objects entity) {
+		this.getSession().persist(entity);
+	}
 
-    protected void persist(Objects entity) {
-        this.getSession().persist(entity);
-    }
-
-
-    protected void delete(Object entity) {
-        this.getSession().delete(entity);
-    }
+	protected void delete(Object entity) {
+		this.getSession().delete(entity);
+	}
 
 }

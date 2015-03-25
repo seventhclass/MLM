@@ -20,123 +20,92 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class UserController {
 
-    static Logger log = Logger.getLogger(UserController.class.getName());
+	static Logger log = Logger.getLogger(UserController.class.getName());
 
-    @Autowired
-    private IUserService userService;
+	@Autowired
+	private IUserService userService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login() {
-        log.info("user login");
-        ModelAndView modelAndView = new ModelAndView("um/login");
-        log.info("login done");
-        return modelAndView;
-    }
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login() {
+		log.info("user login");
+		ModelAndView modelAndView = new ModelAndView("um/login");
+		log.info("login done");
+		return modelAndView;
+	}
 
+	@RequestMapping(value = "/doLogin", method = RequestMethod.POST)
+	public @ResponseBody LoginDto doLogin(String memberId, String password,
+			String autoFlag, HttpSession session) {
+		log.info("user do login");
+		System.out.println("dodododod");
+		session.setAttribute("userid", 11);
+		session.setAttribute("username", "Le Hu");
 
-    @RequestMapping(
-            value = "/doLogin", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    LoginDto
-    doLogin(String memberId, String password, String autoFlag, HttpSession session) {
-        log.info("user do login");
-        System.out.println("dodododod");
-//        User user = new User();
-//        user.setFirstName("Hu");
-//        user.setLastName("le");
-//        user.setCity("Montreal");
-//        user.setId(11);
-//        user.setRoleId(77);
-//        user.setAddress("5004 QueenMary");
-//        user.setBirthDate(20001112);
-//        user.setCompanyName("7th company");
-//        user.setCompanyType("type");
-//        user.setCountryId(86);
-//        user.setDate(20150101);
-//        user.setEmail("hu.le.ca@gmail.com");
-//        user.setFax("5148850513");
-//        user.setGender("M");
-//        user.setMobile("4385570123");
-//        user.setPassWord("111111");
-//        user.setPhone("5148851234");
-//        user.setProvince("QC");
-//        user.setSponsorid(111);
-//        user.setStatus(1);
-//        user.setZip("h3w 1x2");
+		LoginDto loginDto = new LoginDto();
+		loginDto.setMessage("login success");
+		loginDto.setResult("success");
 
-        session.setAttribute("userid", 11);
-        session.setAttribute("username", "Le Hu");
+		log.info("user do login done");
+		return loginDto;
 
-        LoginDto loginDto = new LoginDto();
-        loginDto.setMessage("login success");
-        loginDto.setResult("success");
+	}
 
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public ModelAndView navMain() {
 
-        log.info("user do login done");
-        return loginDto;
+		return new ModelAndView("um/home");
+	}
 
-    }
+	@RequestMapping(value = "/user", method = RequestMethod.POST)
+	public @ResponseBody JsonResponseDto getUserInfo(String memberId) {
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public ModelAndView navMain() {
+		User user = new User();
+		user.setFirstName("Hu");
+		user.setLastName("le");
+		user.setCity("Montreal");
+		user.setId(11);
+		user.setRoleId(77);
+		user.setAddress("5004 QueenMary");
+		user.setBirthDate(20001112);
+		user.setCompanyName("7th company");
+		user.setCompanyType("type");
+		user.setCountryId(86);
+		user.setDate(20150101);
+		user.setEmail("hu.le.ca@gmail.com");
+		user.setFax("5148850513");
+		user.setGender("M");
+		user.setMobile("4385570123");
+		user.setPassWord("111111");
+		user.setPhone("5148851234");
+		user.setProvince("QC");
+		user.setSponsorid(111);
+		user.setStatus(1);
+		user.setZip("h3w 1x2");
 
-        return new ModelAndView("um/home");
-    }
+		JsonResponseDto jsonResponseDto = new JsonResponseDto();
+		jsonResponseDto.setObject(user);
+		jsonResponseDto.setResult("success");
+		jsonResponseDto.setMessage("it's really success.");
 
-    @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    JsonResponseDto getUserInfo(String memberId) {
+		return jsonResponseDto;
+	}
 
-        User user = new User();
-        user.setFirstName("Hu");
-        user.setLastName("le");
-        user.setCity("Montreal");
-        user.setId(11);
-        user.setRoleId(77);
-        user.setAddress("5004 QueenMary");
-        user.setBirthDate(20001112);
-        user.setCompanyName("7th company");
-        user.setCompanyType("type");
-        user.setCountryId(86);
-        user.setDate(20150101);
-        user.setEmail("hu.le.ca@gmail.com");
-        user.setFax("5148850513");
-        user.setGender("M");
-        user.setMobile("4385570123");
-        user.setPassWord("111111");
-        user.setPhone("5148851234");
-        user.setProvince("QC");
-        user.setSponsorid(111);
-        user.setStatus(1);
-        user.setZip("h3w 1x2");
+	private boolean checkParams(String[] params) {
+		for (String param : params) {
+			if (param == "" || param == null || param.isEmpty()) {
+				return false;
+			}
+		}
+		return true;
+	}
 
-        JsonResponseDto jsonResponseDto=new JsonResponseDto();
-        jsonResponseDto.setObject(user);
-        jsonResponseDto.setResult("success");
-        jsonResponseDto.setMessage("it's really success.");
+	@RequestMapping(value = "signup", method = RequestMethod.POST)
+	public ModelAndView signUp() {
+		User newUser = new User();
+		// newUser.setFirstName();
+		ModelAndView modelAndView = new ModelAndView("um/home");
 
-        return jsonResponseDto;
-    }
-
-    private boolean checkParams(String[] params) {
-        for (String param : params) {
-            if (param == "" || param == null || param.isEmpty()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-
-    @RequestMapping(value = "signup", method = RequestMethod.POST)
-    public ModelAndView signUp() {
-        User newUser = new User();
-        // newUser.setFirstName();
-        ModelAndView modelAndView = new ModelAndView("um/home");
-
-        return modelAndView;
-    }
+		return modelAndView;
+	}
 
 }
