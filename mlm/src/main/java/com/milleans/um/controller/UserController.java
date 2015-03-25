@@ -36,8 +36,8 @@ public class UserController {
 	@RequestMapping(value = "/doLogin", method = RequestMethod.POST)
 	public @ResponseBody LoginDto doLogin(String memberId, String password,
 			String autoFlag, HttpSession session) {
-		log.info("user do login");
-		System.out.println("dodododod");
+		log.debug("user do login");
+
 		session.setAttribute("userid", 11);
 		session.setAttribute("username", "Le Hu");
 
@@ -45,7 +45,7 @@ public class UserController {
 		loginDto.setMessage("login success");
 		loginDto.setResult("success");
 
-		log.info("user do login done");
+		log.debug("user do login done");
 		return loginDto;
 
 	}
