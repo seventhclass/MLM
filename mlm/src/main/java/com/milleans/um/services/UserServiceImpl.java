@@ -21,6 +21,8 @@ public class UserServiceImpl implements IUserService {
     @Transactional
     public int signUp(User userInfo) {
         System.out.println("user service ---------");
+        userDAO.save(userInfo);
+
         return 0;
     }
 
