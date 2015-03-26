@@ -9,12 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public abstract class AbstractDao {
 
-    @Autowired
-    protected SessionFactory sessionFactory;
-
-    public Session getSession() {
-        return sessionFactory.getCurrentSession();
-    }
-
+	@Autowired
+	protected SessionFactory sessionFactory;
 
 }
