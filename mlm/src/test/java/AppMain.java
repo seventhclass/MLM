@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class AppMain {
     public static void main(String[] args) {
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("dispatcher-servlet.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("WEB-INF/dispatcher-servlet.xml");
 
         IUserService userService =(IUserService) context.getBean("userService");
 
