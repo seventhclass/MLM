@@ -35,12 +35,22 @@ $(document).ready(function(){
  		    	
  		if (result == "success") {
  			alert("Success!!!");
+ 			if( res.companyName == null || res.companyName == "" ){
+ 				
+ 			}else{
+ 				if(res.roleId=='admin'){
+ 					
+ 				}else{
+ 					
+ 				}
+ 			}
+ 			
  		}else{
  			if(message==null || message==""){
  				message = "Sorry, get member information failed.";
  			}    			
  			alert(message);
- 		}    	
+ 		}
  	}
 
 });
