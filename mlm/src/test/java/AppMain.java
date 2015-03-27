@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class AppMain {
     public static void main(String[] args) {
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("dispatcher-servlet.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("file:src/main/webapp/WEB-INF/dispatcher-servlet.xml");
 
         IUserService userService =(IUserService) context.getBean("userService");
 
@@ -22,7 +22,7 @@ public class AppMain {
         user.setAddress("5004 QueenMary");
         user.setBirthDate(20001112);
         user.setCompanyName("7th company");
-        user.setCompanyType("type");
+        user.setCompanyType(1);
         user.setCountryId(86);
         user.setDate(20150101);
         user.setEmail("hu.le.ca@gmail.com");

@@ -2,14 +2,13 @@ package com.milleans.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Created by macbookpro on 2015-03-07.
  */
 
 @Entity
-@Table(name = "T_user")
+@Table(name = "t_user")
 public class User implements Serializable{
 
 	@Id
@@ -33,7 +32,7 @@ public class User implements Serializable{
 	private String companyName;
 
 	@Column(name = "companytype")
-	private String companyType;
+	private int companyType;
 
 	@Column(name = "gender")
 	private String gender;
@@ -123,11 +122,11 @@ public class User implements Serializable{
 		this.companyName = companyName;
 	}
 
-	public String getCompanyType() {
+	public int getCompanyType() {
 		return companyType;
 	}
 
-	public void setCompanyType(String companyType) {
+	public void setCompanyType(int companyType) {
 		this.companyType = companyType;
 	}
 

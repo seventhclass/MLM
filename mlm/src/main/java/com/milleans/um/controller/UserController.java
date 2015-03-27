@@ -68,7 +68,7 @@ public class UserController {
 		user.setAddress("5004 QueenMary");
 		user.setBirthDate(20001112);
 		user.setCompanyName("7th company");
-		user.setCompanyType("type");
+		user.setCompanyType(1);
 		user.setCountryId(86);
 		user.setDate(20150101);
 		user.setEmail("hu.le.ca@gmail.com");
