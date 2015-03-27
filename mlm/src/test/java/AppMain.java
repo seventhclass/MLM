@@ -17,7 +17,7 @@ public class AppMain {
         user.setFirstName("Hu");
         user.setLastName("le");
         user.setCity("Montreal");
-        user.setId(11);
+        //user.setId(11);
         user.setRoleId(77);
         user.setAddress("5004 QueenMary");
         user.setBirthDate(20001112);
