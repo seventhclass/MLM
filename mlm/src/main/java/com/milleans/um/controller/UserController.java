@@ -123,7 +123,14 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public ModelAndView registRegistration() {
+        ModelAndView modelAndView = new ModelAndView("um/registration");
+        return modelAndView;
+    }
+
+
+    @RequestMapping(value = "/signUp", method = RequestMethod.POST)
     public ModelAndView registration(WebRequest request) {
 
         User user = new User();
