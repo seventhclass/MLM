@@ -130,6 +130,7 @@ public class UserController {
         user.setFirstName(request.getParameter("firstname"));
         user.setFirstName(request.getParameter("lastname"));
         user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
+        user.setEmail(request.getParameter("email"));
 
         userService.signUp(user);
 

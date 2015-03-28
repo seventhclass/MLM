@@ -44,8 +44,8 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="alert alert-success" role="alert"><strong>Congratulations Michael Wang!</strong> You have successfully registered member.</div>
-								<div>Your member id is: <strong id="memberid" style="color:red">ABCDE00001</strong> keep in mind,plese.</div>
-								<div>At the same time we have sent the registration information to your mailbox(<strong style="color:blue">michael@gmail.com</strong>), please check and properly preserved.</div>								
+								<div>Your member id is: <strong id="memberid" style="color:red"><%=user.getLastName()%></strong> keep in mind,plese.</div>
+								<div>At the same time we have sent the registration information to your mailbox(<strong style="color:blue"><%=user.getEmail()%></strong>), please check and properly preserved.</div>
 								<div>Thank you!</div>
 							</div>
 						</div> 
