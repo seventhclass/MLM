@@ -2,15 +2,13 @@
  * 
  */
 $(document).ready(function(){
+ 	var basePath=$('#basePath').attr("value");
  	
-	var basePath=$('#basePath').attr("value");
-	
  	queryUserInfo();   
 
  	//Query user information
  	function queryUserInfo(){
- 		
- 	 	//send requrest to server.
+ 	 	//send login requrest to server.
  	    $.ajax({
  	    	url: basePath+'/user',        	
  			cache:false,
@@ -29,7 +27,7 @@ $(document).ready(function(){
  	    			}
  	    });    	
  	}
- 	
+
  	//Process query user information response 
  	function queryUserInfoResponse(res){
  		var result = res.result;			//response code
@@ -54,17 +52,34 @@ $(document).ready(function(){
  				{
  					$('#c_companytype').val("Cooperative");
  				}
- 				$('#c_email').val(res.object.email);
+ 				$('#c_address').val(res.object.address);
+ 				$("#c_countryid").val(res.object.countryId);
+ 				$("#c_provinceid").val(res.object.province); 
+ 				$("#c_city").val(res.object.city);
+ 				$("#c_zip").val(res.object.zip); 				
  				$('#c_mobilephone').val(res.object.mobile);
- 				$('#c_officephone').val(res.object.phone); 				
+ 				$('#c_officephone').val(res.object.phone);  				
+ 				$('#c_email').val(res.object.email);				
  			}else{
  				$('#corporate').hide();
  				$('#individual').show();
  				$('#firstname').val(res.object.firstName);
- 				$('#lastname').val(res.object.lastName);
+ 				$('#lastname').val(res.object.lastName); 				
+ 				if(res.object.gender == "M"){
+ 					jQuery("input[type='radio'][name='optionsgender'][value='Male']").attr("checked", "checked");
+ 				}else{
+ 					jQuery("input[type='radio'][name='optionsgender'][value='Female']").attr("checked", "checked");
+ 				}
+ 				$('#birthday').val(res.object.birthDate);
+ 				$('#ssn').val(res.object.ssn);
+ 				$('#address').val(res.object.address);
+ 				$("#countryid").val(res.object.countryId); 
+ 				$("#provinceid").val(res.object.province); 
+ 				$("#city").val(res.object.city);
+ 				$("#zip").val(res.object.zip);
+ 				$("#mobilephone").val(res.object.mobile);
+ 				$("#officephone").val(res.object.phone); 				
  				$('#email').val(res.object.email);
- 				$('#mobilephone').val(res.object.mobile);
- 				$('#officephone').val(res.object.phone); 				
  			} 			
  		}else{
  			if(message==null || message==""){
@@ -72,6 +87,7 @@ $(document).ready(function(){
  			}    			
  			alert(message);
  		}
- 	}  	
+ 	}
+
 });
 

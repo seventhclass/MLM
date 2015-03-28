@@ -14,7 +14,7 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/editprofile.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -22,6 +22,9 @@
 			<%@ include file="../includes/header.jsp"%>
 		</div> <!-- end header -->
 		<div id="page">
+			<div id="welcombar">
+				<%@ include file="../includes/welcomebar.jsp"%>
+			</div>		
 			<div class="row">
 				<div class="col-md-3">
 					<div id="left">
@@ -93,9 +96,9 @@
 											<label for="country" class="col-sm-3 control-label">Country:
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Canada</option>
-												    <option>US</option>
+												<select id="countryid" name="countryid" class="form-control">
+												    <option value="86">Canada</option>
+												    <option value="87">US</option>
 												</select>
 											</div>
 										</div>												
@@ -103,17 +106,17 @@
 											<label for="state" class="col-sm-3 control-label">State/Province:
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Quebec</option>
-												    <option>Ontario</option>
-												    <option>British Columbia</option>
-												    <option>Alberta</option>
-												    <option>Nova Scotia</option>
-												    <option>Newfoundland and Labrador</option>
-												    <option>Saskatchewan</option>
-												    <option>Manitoba</option>
-												    <option>New Brunswick Canada</option>
-												    <option>Prince Edward Island(PEI)</option>
+												<select id="provinceid" name="provinceid" class="form-control">
+												    <option value="QC">Quebec</option>
+												    <option value="p002">Ontario</option>
+												    <option value="p003">British Columbia</option>
+												    <option value="p004">Alberta</option>
+												    <option value="p005">Nova Scotia</option>
+												    <option value="p006">Newfoundland and Labrador</option>
+												    <option value="p007">Saskatchewan</option>
+												    <option value="p008">Manitoba</option>
+												    <option value="p009">New Brunswick Canada</option>
+												    <option value="p010">Prince Edward Island(PEI)</option>
 												</select>
 											</div>
 										</div>	
@@ -180,7 +183,7 @@
 											<label for="c_companytype" class="col-sm-3 control-label">Company Type:
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
+												<select id="companytype" class="form-control">
 												    <option>Sole Proprietorship</option>
 												    <option>Partnership</option>
 												    <option>Corporation</option>
@@ -201,9 +204,9 @@
 											<label for="c_country" class="col-sm-3 control-label">Country:
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Canada</option>
-												    <option>US</option>
+												<select id="c_countryid" name="c_countryid" class="form-control">
+												    <option value="86">Canada</option>
+												    <option value="87">US</option>
 												</select>
 											</div>
 										</div>												
@@ -211,17 +214,17 @@
 											<label for="c_state" class="col-sm-3 control-label">State/Province:
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Quebec</option>
-												    <option>Ontario</option>
-												    <option>British Columbia</option>
-												    <option>Alberta</option>
-												    <option>Nova Scotia</option>
-												    <option>Newfoundland and Labrador</option>
-												    <option>Saskatchewan</option>
-												    <option>Manitoba</option>
-												    <option>New Brunswick Canada</option>
-												    <option>Prince Edward Island(PEI)</option>
+												<select id="c_provinceid" name="c_provinceid" class="form-control">
+												    <option value="QC">Quebec</option>
+												    <option value="p002">Ontario</option>
+												    <option value="p003">British Columbia</option>
+												    <option value="p004">Alberta</option>
+												    <option value="p005">Nova Scotia</option>
+												    <option value="p006">Newfoundland and Labrador</option>
+												    <option value="p007">Saskatchewan</option>
+												    <option value="p008">Manitoba</option>
+												    <option value="p009">New Brunswick Canada</option>
+												    <option value="p010">Prince Edward Island(PEI)</option>
 												</select>
 											</div>
 										</div>	

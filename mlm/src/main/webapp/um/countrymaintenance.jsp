@@ -15,6 +15,7 @@
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/countrymaintenance.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -44,31 +45,38 @@
 							</div>														
 						</div>
 						<div class="row">
-							<div class="col-md-8">
+							<div class="col-md-12">
 								<div class="table-responsive ordertable">
 									<table class="table">
 										<thead>
 											<tr>
+												<th>ID</th>
 												<th>Country Name</th>
-											</tr>
+												<th>Country Code</th>
+												<th></th>	
+											</tr>																																									
 										</thead>
-									   <tbody>
+									   <tbody id="countrylist">
 									     <tr>
+									     	<td>1</td>
+							           		<td>Canada</td>
+						           			<td>86</td>
 							           		<td>
-							           			<div class="col-sm-8">Canada</div>
-							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".countrymaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-offset-1 col-sm-4 cnt_maintenance">
+							           				<button type="button" class="btn btn-success editcountrybtn" data-toggle="modal" data-target=".countrymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-2">
+							           			<div class="col-sm-4">
 							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#countrycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr>  
 									     <tr>
+									     	<td>2</td>
+							           		<td>US</td>
+							           		<td>87</td>
 							           		<td>
-							           			<div class="col-sm-8">US</div>
-							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".countrymaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-offset-1 col-sm-4 cnt_maintenance">
+							           				<button type="button" class="btn btn-success editcountrybtn" data-toggle="modal" data-target=".countrymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-2">
 							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#countrycancel" data-backdrop="static" >Delete</button>
@@ -76,24 +84,28 @@
 							           		</td>
 									     </tr> 
 									     <tr>
-							           		<td>
-							           			<div class="col-sm-8">China</div>
-							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".countrymaintenance" data-backdrop="static" >Edit</button>
+									     	<td>3</td>
+									     	<td>China</td>
+						           			<td>88</td>
+						           			<td>
+							           			<div class="col-sm-offset-1 col-sm-4 cnt_maintenance">
+							           				<button type="button" class="btn btn-success editcountrybtn" data-toggle="modal" data-target=".countrymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-2">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#countrycancel" data-backdrop="static" >Delete</button>
+							           			<button type="button" class="btn btn-danger delcountrybtn" data-toggle="modal" data-target="#countrycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr> 	
 									     <tr>
-							           		<td>
-							           			<div class="col-sm-8">France</div>
-							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".countrymaintenance" data-backdrop="static" >Edit</button>
+									     	<td>4</td>
+							           		<td>France</td>
+						           			<td>89</td>
+						           			<td>
+							           			<div class="col-sm-offset-1 col-sm-4 cnt_maintenance">
+							           				<button type="button" class="btn btn-success editcountrybtn" data-toggle="modal" data-target=".countrymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-2">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#countrycancel" data-backdrop="static" >Delete</button>
+							           			<div class="col-sm-2 cnt_maintenance">
+							           			<button type="button" class="btn btn-danger delcountrybtn" data-toggle="modal" data-target="#countrycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr> 									     								     									     
@@ -103,8 +115,8 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
-								<button type="button" class="btn btn-success" data-toggle="modal" data-target=".countrymaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
+							<div class="col-md-12 cnt_maintenance">
+								<button type="button" class="btn btn-success addcountrybtn" data-toggle="modal" data-target=".countrymaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
 							</div>
 						</div>																												
 					</div> <!-- end content -->		
@@ -126,7 +138,7 @@
 					<h4 class="modal-title text-center">Country Maintenance</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal" role="form" action="">
+					<form id="editCountryForm" class="form-horizontal" role="form" action="" method="post">
 						<div class="form-group">
 							<label for="countryname" class="col-sm-3 control-label">Country
 								Name</label>
@@ -134,6 +146,13 @@
 								<input type="text" class="form-control" id="countryname">
 							</div>
 						</div>
+						<div class="form-group">
+							<label for="countrycode" class="col-sm-3 control-label">Country
+								Code</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="countrycode">
+							</div>
+						</div>						
 					</form>						
 				</div>
 				<div class="modal-footer text-center">					
@@ -153,7 +172,7 @@
 				<div class="modal-body">
 					<div class="h2 text-center">Alert</div>
 					<div class="text-center">You sure you want to delete record?</div>
-					<form class="form-horizontal" role="form" action="">
+					<form id="cancelCountryForm" class="form-horizontal" role="form" action="">
 						<input type="hidden" id="p_id" value="">					
 					</form>
 				</div>
