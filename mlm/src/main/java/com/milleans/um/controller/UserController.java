@@ -10,9 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -131,18 +131,36 @@ public class UserController {
 
 
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-    public ModelAndView registration(WebRequest request) {
+    public ModelAndView registration(HttpServletRequest request) {
 
         User user = new User();
-        user.setFirstName(request.getParameter("firstname"));
-        user.setFirstName(request.getParameter("lastname"));
         user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
+        user.setFirstName(request.getParameter("firstname"));
+        user.setLastName(request.getParameter("lastname"));
+        user.setGender(request.getParameter("optionsgender"));
+        //user.setBirthDate();
+        user.setSsn(request.getParameter("ssn"));
+        user.setPassWord(request.getParameter("password1"));
+        user.setAddress(request.getParameter("address"));
+        user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
+        user.setProvince(request.getParameter("provincecode"));
+        user.setCity(request.getParameter("city"));
+        user.setZip(request.getParameter("zip"));
+        user.setMobile(request.getParameter("mobilephone"));
+        user.setPhone(request.getParameter("officephone"));
+        user.setSponsorid(Integer.valueOf(request.getParameter("sponsorid")));
+        user.setCompanyName(request.getParameter("companyname"));
+        if (request.getParameter("companytype") != null) {
+            user.setCompanyType(Integer.valueOf(request.getParameter("companytype")));
+        }
         user.setEmail(request.getParameter("email"));
+
+        user.setDate(20150315);
 
         userService.signUp(user);
 
         ModelAndView modelAndView = new ModelAndView("um/registersuccess");
-        modelAndView.addObject("user",user);
+        modelAndView.addObject("user", user);
 
         return modelAndView;
     }
