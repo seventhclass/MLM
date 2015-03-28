@@ -34,17 +34,37 @@ $(document).ready(function(){
  		var message = res.message;			//response message
  		    	
  		if (result == "success") {
- 			alert("Success!!!");
- 			if( res.companyName == null || res.companyName == "" ){
- 				
- 			}else{
- 				if(res.roleId=='admin'){
- 					
- 				}else{
- 					
+ 			res.object.companyName = "";
+ 			if( res.object.companyName != null && res.object.companyName != "" ){
+ 				$('#individual').hide();
+ 				$('#corporate').show();
+ 				$('#c_companyname').val(res.object.companyName);
+ 				if( res.object.companyType == 1 )
+ 				{
+ 					$('#c_companytype').val("Sole Proprietorship");
+ 				}else if(res.object.companyType == 2)
+ 				{
+ 					$('#c_companytype').val("Partnership");
+ 				}else if(res.object.companyType == 3)
+ 				{
+ 					$('#c_companytype').val("Corporation");
+ 				}else
+ 				{
+ 					$('#c_companytype').val("Cooperative");
  				}
- 			}
- 			
+ 				$('#c_email').val(res.object.email);
+ 				$('#c_mobilephone').val(res.object.mobile);
+ 				$('#c_officephone').val(res.object.phone); 				
+ 			}else{
+ 				$('#corporate').hide();
+ 				$('#individual').show();
+ 				$('#firstname').val(res.object.firstName);
+ 				$('#lastname').val(res.object.lastName);
+ 				$('#email').val(res.object.email);
+ 				$('#mobilephone').val(res.object.mobile);
+ 				$('#officephone').val(res.object.phone);
+ 				$('#officephone').val(res.object.phone);
+ 			} 			
  		}else{
  			if(message==null || message==""){
  				message = "Sorry, get member information failed.";

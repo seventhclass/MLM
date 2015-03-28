@@ -264,10 +264,10 @@
 											</label>
 											<div class="col-sm-3">												
 												<select class="form-control">
-												    <option>Sole Proprietorship</option>
-												    <option>Partnership</option>
-												    <option>Corporation</option>
-												    <option>Cooperative</option>
+												    <option value="1">Sole Proprietorship</option>
+												    <option value="2">Partnership</option>
+												    <option value="3">Corporation</option>
+												    <option value="4">Cooperative</option>
 												</select>
 											</div>
 										</div>											
