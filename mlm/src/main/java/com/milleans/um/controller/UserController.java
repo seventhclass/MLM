@@ -7,10 +7,10 @@ import com.milleans.um.services.IUserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -124,11 +124,18 @@ public class UserController {
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public ModelAndView registration(@ModelAttribute User user) {
+    public ModelAndView registration(WebRequest request) {
 
-        System.out.println("user form ="+user.getFirstName());
+        User user = new User();
+        user.setFirstName(request.getParameter("firstname"));
+        user.setFirstName(request.getParameter("lastname"));
+        user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
+
+        userService.signUp(user);
 
         ModelAndView modelAndView = new ModelAndView("um/registersuccess");
+        modelAndView.addObject("user",user);
+
         return modelAndView;
     }
 }
