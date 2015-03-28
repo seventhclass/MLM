@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function (){
+	var basePath=$('#basePath').attr("value");
 	
 	var jWindow = $(window);
 	var screenWidth = jWindow.width();
@@ -12,16 +13,16 @@ $(document).ready(function (){
 		var radioVal = $("input[name='optionsRadios']:checked").val(); 
 		
 		if( radioVal == "0" ){
-			window.location="selectaccount.jsp";
+			window.location=basePath+"selectAccount";
 		}else{
-			window.location="registration.jsp?accounttype="+radioVal;
+			window.location=basePath+"registration?accounttype="+radioVal;
 		}		
 	});
 
 	$("#selectatype").click(function(){
 		var radioVal = $("input[name='optionsatype']:checked").val(); 
 		
-		window.location="registration.jsp?accounttype="+radioVal;	
+		window.location=basePath+"registration?accounttype="+radioVal;	
 	});	
 	
 	$("#selectpaymenttype").change(function(){
