@@ -3,8 +3,8 @@ package com.milleans.um.dao;
 import com.milleans.dao.AbstractDao;
 import com.milleans.model.User;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ import java.util.List;
  */
 
 @Repository("userDao")
+@Transactional
 public class UserDAOImpl extends AbstractDao implements IUserDAO {
     @Override
     public int update(User userInfo) {
@@ -21,11 +22,11 @@ public class UserDAOImpl extends AbstractDao implements IUserDAO {
 
     @Override
     public User save(User user) {
-        Session session = this.sessionFactory.openSession();
-        Transaction tx = session.beginTransaction();
+        Session session = this.getCurrentSession();
+        //Transaction tx = session.beginTransaction();
         session.save(user);
-        tx.commit();
-        session.close();
+        //tx.commit();
+        //session.close();
         return user;
     }
 
@@ -36,7 +37,11 @@ public class UserDAOImpl extends AbstractDao implements IUserDAO {
 
     @Override
     public User getUser(int userId) {
-        return null;
+
+        User user = (User)
+                this.getCurrentSession().get(User.class, userId);
+
+        return user;
     }
 
 }

@@ -26,10 +26,13 @@ public class UserServiceImpl implements IUserService {
         return 0;
     }
 
-    @Transactional
     @Override
-    public User login(int userId, String pwd) {
+    @Transactional
+    public User getUser(int userId) {
         System.out.println(" service login----");
-        return null;
+        User user =
+                userDAO.getUser(userId);
+        return user;
     }
+
 }
