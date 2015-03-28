@@ -101,8 +101,7 @@ public class UserController {
     }
 
 
-
-    @RequestMapping(value = "signup", method = RequestMethod.POST)
+    @RequestMapping(value = "/signUp", method = RequestMethod.POST)
     public ModelAndView signUp() {
         User newUser = new User();
         // newUser.setFirstName();
@@ -111,4 +110,21 @@ public class UserController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/selectAutoship", method = RequestMethod.GET)
+    public ModelAndView registAutoShip() {
+        ModelAndView modelAndView = new ModelAndView("um/selectautoship");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/selectAccount", method = RequestMethod.GET)
+    public ModelAndView registAccount() {
+        ModelAndView modelAndView = new ModelAndView("um/selectaccount");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public ModelAndView registration() {
+        ModelAndView modelAndView = new ModelAndView("um/registration");
+        return modelAndView;
+    }
 }
