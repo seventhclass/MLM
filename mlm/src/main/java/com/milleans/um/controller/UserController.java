@@ -102,14 +102,14 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-    public ModelAndView signUp() {
-        User newUser = new User();
-        // newUser.setFirstName();
-        ModelAndView modelAndView = new ModelAndView("um/home");
-
-        return modelAndView;
-    }
+//    @RequestMapping(value = "/signUp", method = RequestMethod.POST)
+//    public ModelAndView signUp() {
+//        User newUser = new User();
+//        // newUser.setFirstName();
+//        ModelAndView modelAndView = new ModelAndView("um/home");
+//
+//        return modelAndView;
+//    }
 
     @RequestMapping(value = "/selectAutoship", method = RequestMethod.GET)
     public ModelAndView registAutoShip() {
