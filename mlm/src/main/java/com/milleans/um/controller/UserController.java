@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -37,7 +38,7 @@ public class UserController {
     @RequestMapping(value = "/doLogin", method = RequestMethod.POST)
     public
     @ResponseBody
-    LoginDto doLogin(String memberId, String password,
+    LoginDto doLogin(@RequestParam String memberId, @RequestParam String password,
                      String autoFlag, HttpSession session) {
         log.debug("user do login");
         User user = userService.getUser(Integer.valueOf(memberId));
@@ -162,6 +163,12 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView("um/registersuccess");
         modelAndView.addObject("user", user);
 
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/wecome", method = RequestMethod.GET)
+    public ModelAndView welcome(User user) {
+        ModelAndView modelAndView = new ModelAndView("um/registersuccess");
         return modelAndView;
     }
 }
