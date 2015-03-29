@@ -18,7 +18,8 @@ $(document).ready(function(){
  	    	dataType:'json',
  	    	timeout:5000,
  	    	error:	function(xhr, ajaxOptions, thrownError){
- 		                alert(xhr.status+" "+xhr.responseText);
+ 		                //alert(xhr.status+"\n"+xhr.responseText);
+ 		                $('#content').html(xhr.responseText); 		               
  	    			},        	
  	    	success:	function(res) {
  	    				queryCountryInfoResponse(res);

@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function(){
+	var basePath=$('#basePath').attr("value");
 	
 	$("#membertype").change(function(){
 		$('#response').hide(); 
@@ -38,7 +39,8 @@ $(document).ready(function(){
                 $('#firstname').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_fname").html("");
+                $("#errmsg_fname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+                //$("#errmsg_fname").html("");
         }
         return true;
 	});	
@@ -50,7 +52,7 @@ $(document).ready(function(){
                 $('#lastname').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_lname").html("");
+                $("#errmsg_lname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});	
@@ -62,7 +64,7 @@ $(document).ready(function(){
                 $('#password1').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_pss").html("");
+                $("#errmsg_pss").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
                 //clear "confirm password" field and focus it.
                 $('#password2').val("");
                 $('#password2').focus();
@@ -79,7 +81,7 @@ $(document).ready(function(){
         } else {  //confirm password has values
         	
             $(this).css("border-color", "#999");
-            $("#errmsg_cpass").html("");
+            $("#errmsg_cpass").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
             
         	//password is empty at this moment.
         	if( $('#password1').val()==null || $('#password1').val()==""){
@@ -108,7 +110,7 @@ $(document).ready(function(){
                 $('#mobilephone').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_mphone").html("");
+                $("#errmsg_mphone").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
@@ -120,7 +122,7 @@ $(document).ready(function(){
                 $('#email').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_email").html("");
+                $("#errmsg_email").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
@@ -132,7 +134,7 @@ $(document).ready(function(){
                 $('#sponsorid').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_spsid").html("");
+                $("#errmsg_spsid").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
@@ -188,7 +190,7 @@ $(document).ready(function(){
      	}      	
      	
      	$('#response').html("");    	
-		
+		     
 		$.post('doRegistration.jsp', $(this).serialize(), function(data){
 			// show the response        	
 			$('#response').html(data);   
@@ -212,7 +214,7 @@ $(document).ready(function(){
                 $('#c_companyname').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_cname").html("");
+                $("#errmsg_cname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});	
@@ -224,7 +226,7 @@ $(document).ready(function(){
                 $('#c_password1').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_cpas").html("");
+                $("#errmsg_cpas").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
                 //clear "confirm password" field and focus it.
                 $('#c_password2').val("");
                 $('#c_password2').focus();
@@ -241,7 +243,7 @@ $(document).ready(function(){
         } else {  //confirm password has values
         	
             $(this).css("border-color", "#999");
-            $("#errmsg_ccpass").html("");
+            $("#errmsg_ccpass").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
             
         	//password is empty at this moment.
         	if( $('#c_password1').val()==null || $('#c_password1').val()==""){
@@ -270,7 +272,7 @@ $(document).ready(function(){
                 $('#c_mobilephone').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_cmphone").html("");
+                $("#errmsg_cmphone").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
@@ -282,7 +284,7 @@ $(document).ready(function(){
                 $('#c_email').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_cemail").html("");
+                $("#errmsg_cemail").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
@@ -294,7 +296,7 @@ $(document).ready(function(){
                 $('#c_sponsorid').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_cspsid").html("");
+                $("#errmsg_cspsid").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
@@ -367,7 +369,7 @@ $(document).ready(function(){
                 $('#adminfirstname').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_afname").html("");
+                $("#errmsg_afname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});	
@@ -379,7 +381,7 @@ $(document).ready(function(){
                 $('#adminlastname').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_alname").html("");
+                $("#errmsg_alname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});	
@@ -391,7 +393,7 @@ $(document).ready(function(){
                 $('#adminpassword1').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_apass").html("");
+                $("#errmsg_apass").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
                 //clear "confirm password" field and focus it.
                 $('#adminpassword2').val("");
                 $('#adminpassword2').focus();
@@ -408,7 +410,7 @@ $(document).ready(function(){
         } else {  //confirm password has values
         	
             $(this).css("border-color", "#999");
-            $("#errmsg_acpass").html("");
+            $("#errmsg_acpass").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
             
         	//password is empty at this moment.
         	if( $('#adminpassword1').val()==null || $('#adminpassword1').val()==""){
@@ -437,7 +439,7 @@ $(document).ready(function(){
                 $('#adminmobilephone').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_amphone").html("");
+                $("#errmsg_amphone").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
@@ -449,7 +451,7 @@ $(document).ready(function(){
                 $('#adminemail').focus();
         } else {
                 $(this).css("border-color", "#999");
-                $("#errmsg_aemail").html("");
+                $("#errmsg_aemail").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});			
