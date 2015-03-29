@@ -3,7 +3,7 @@
     
 <ul class='nav nav-pills nav-stacked'>
 <li class='nav-divider'></li>
-	<li><a href='<%=request.getContextPath()%>/selectautoship'>New Member Sign Up</a></li>
+	<li><a href='<%=request.getContextPath()%>/selectAutoship'>New Member Sign Up</a></li>
 	<li><a href='<%=request.getContextPath()%>/editprofile'>Edit Profile</a></li>
 	<li><a href='<%=request.getContextPath()%>/modifypassword'>Modify Password</a></li>
 	<li><a href='##'>Search Member</a></li>

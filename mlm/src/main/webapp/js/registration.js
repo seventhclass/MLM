@@ -1,6 +1,10 @@
 /**
  * 
  */
+var searchString = location.search.slice(1);
+var formString = searchString.replace(/\+/g, " ");
+var dataString = unescape(formString);
+var data = dataString.split(/[&=]/g);
 
 $(document).ready(function(){
 	var basePath=$('#basePath').attr("value");
@@ -148,6 +152,10 @@ $(document).ready(function(){
     	$("#errmsg_email").html("");
     	$("#errmsg_spsid").html("");
     	
+    	//get accouttype from url and set it to accounttype
+    	//alert("type="+data[1])
+    	$('.accounttype').val(data[1]);
+    	
      	if($('#firstname').val() == ""){
      		$("#errmsg_fname").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;First name can not be empty.").css("color", "red");
      		$('#firstname').focus();
@@ -191,7 +199,7 @@ $(document).ready(function(){
      	
      	$('#response').html("");    	
 		     
-		$.post('doRegistration.jsp', $(this).serialize(), function(data){
+		$.post(basePath+'signUp', $(this).serialize(), function(data){
 			// show the response        	
 			$('#response').html(data);   
 			$('#response').show();

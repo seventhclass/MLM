@@ -1,9 +1,20 @@
 /**
  * 
  */
+
+var searchString = location.search.slice(1);
+var formString = searchString.replace(/\+/g, " ");
+var dataString = unescape(formString);
+var data = dataString.split(/[&=]/g);
+
 $(document).ready(function(){
  	var basePath=$('#basePath').attr("value");
  	
+ 	if(data){
+ 		if(data[0]=="memberid"){
+ 			
+ 		}
+ 	}
 	$('#response').hide(); 
 	
 	$('#memberid').blur(function() {

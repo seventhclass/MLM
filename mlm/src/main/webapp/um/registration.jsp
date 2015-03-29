@@ -70,6 +70,7 @@
 									<form id="individualregForm" class="form-horizontal" role="form" action="">
 										<div class="subtitle" >Personal
 											Information</div>
+										<input type="hidden" class="form-control accounttype" id="accountid" >
 										<div class="form-group">
 											<label for="firstname" class="col-sm-3 control-label">First
 												Name<span class="starsymbol">*</span>
@@ -144,9 +145,9 @@
 											<label for="country" class="col-sm-3 control-label">Country
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Canada</option>
-												    <option>US</option>
+												<select name="countrycode" class="form-control">
+												    <option value="86">Canada</option>
+												    <option value="87">US</option>
 												</select>
 											</div>
 										</div>												
@@ -154,9 +155,9 @@
 											<label for="state" class="col-sm-3 control-label">State/Province
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Quebec</option>
-												    <option>Ontario</option>
+												<select name="provincecode" class="form-control">
+												    <option value="QC">Quebec</option>
+												    <option value="ON">Ontario</option>
 												    <option>British Columbia</option>
 												    <option>Alberta</option>
 												    <option>Nova Scotia</option>
@@ -249,6 +250,7 @@
 									<form id="companyregForm" class="form-horizontal" role="form" action="">
 										<div class="subtitle" >Company
 											Information</div>
+										<input type="hidden" class="form-control accounttype">											
 										<div class="form-group">
 											<label for="c_companyname" class="col-sm-3 control-label">Company
 												Name<span class="starsymbol">*</span>
@@ -263,7 +265,7 @@
 											<label for="c_companytype" class="col-sm-3 control-label">Company Type
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
+												<select name="companytype" class="form-control">
 												    <option value="1">Sole Proprietorship</option>
 												    <option value="2">Partnership</option>
 												    <option value="3">Corporation</option>
@@ -301,9 +303,9 @@
 											<label for="c_country" class="col-sm-3 control-label">Country
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Canada</option>
-												    <option>US</option>
+												<select name="countrycode" class="form-control">
+												    <option value="86">Canada</option>
+												    <option value="87">US</option>
 												</select>
 											</div>
 										</div>												
@@ -311,9 +313,9 @@
 											<label for="c_state" class="col-sm-3 control-label">State/Province
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Quebec</option>
-												    <option>Ontario</option>
+												<select name="provincecode" class="form-control">
+												    <option value="QC">Quebec</option>
+												    <option value="ON">Ontario</option>
 												    <option>British Columbia</option>
 												    <option>Alberta</option>
 												    <option>Nova Scotia</option>
@@ -407,6 +409,7 @@
 									<form id="adminregForm" class="form-horizontal" role="form" action="">
 										<div class="subtitle" >Personal
 											Information</div>
+										<input type="hidden" class="form-control accounttype">
 										<div class="form-group">
 											<label for="adminfirstname" class="col-sm-3 control-label">First
 												Name<span class="starsymbol">*</span>
@@ -475,9 +478,9 @@
 											<label for="admincountry" class="col-sm-3 control-label">Country
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Canada</option>
-												    <option>US</option>
+												<select name="countrycode" class="form-control">
+												    <option value="86">Canada</option>
+												    <option value="87">US</option>
 												</select>
 											</div>
 										</div>												
@@ -485,9 +488,9 @@
 											<label for="adminstate" class="col-sm-3 control-label">State/Province
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Quebec</option>
-												    <option>Ontario</option>
+												<select name="provincecode" class="form-control">
+												    <option value="QC">Quebec</option>
+												    <option value="ON">Ontario</option>
 												    <option>British Columbia</option>
 												    <option>Alberta</option>
 												    <option>Nova Scotia</option>
