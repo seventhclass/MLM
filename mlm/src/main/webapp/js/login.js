@@ -98,6 +98,7 @@ $(document).ready(function(){
         	dataType:'json',
         	timeout:5000,
         	error:	function(xhr, ajaxOptions, thrownError){
+        				//alert(xhr.status+"\n"+xhr.responseText);
 		                $('#response').html(xhr.resposeJsonObject);
 		                $('#response').show();
         			},        	
@@ -113,7 +114,8 @@ $(document).ready(function(){
     function loginResponse(res){
     	var result = res.result;			//response code
     	var message = res.message;			//response message
-    	    	
+//    	alert("result="+res.result);
+//    	alert("message="+res.message);
     	if (result == "success") {
     		window.location.href=basePath+"home";
     	}else{
