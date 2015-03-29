@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -38,19 +40,26 @@ public class UserController {
     @RequestMapping(value = "/doLogin", method = RequestMethod.POST)
     public
     @ResponseBody
-    LoginDto doLogin(@RequestParam String memberId, @RequestParam String password,
-                     String autoFlag, HttpSession session) {
+    LoginDto doLogin(@RequestParam("memberId") String memberid, @RequestParam("password") String password,
+                     String autoFlag, HttpSession session, HttpServletResponse response) {
         log.debug("user do login");
-        User user = userService.getUser(Integer.valueOf(memberId));
+        User user = userService.getUser(Integer.valueOf(memberid));
         LoginDto loginDto = new LoginDto();
         if (user.getPassWord().equals(password)) {
             loginDto.setMessage("login success");
             loginDto.setResult("success");
 
             if (autoFlag.equals("1")) {
-                session.setAttribute("userid", 11);
-                session.setAttribute("username", "Le Hu");
+
+                Cookie cookieMemberId = new Cookie("memberId", memberid);
+                Cookie cookiePwd = new Cookie("passoword", password);
+
+                response.addCookie(cookieMemberId);
+                response.addCookie(cookiePwd);
+
             }
+            session.setAttribute("userid", 11);
+            session.setAttribute("username", "Le Hu");
             return loginDto;
         } else {
             loginDto.setMessage("login fail");
