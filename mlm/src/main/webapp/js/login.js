@@ -11,10 +11,13 @@ $(document).ready(function(){
  	var basePath=$('#basePath').attr("value");
  	
  	if(data){
+// 		alert(data[0]);
+// 		alert(data[1]);
  		if(data[0]=="memberid"){
- 			
+ 			$('#memberid').val(data[1]);
  		}
  	}
+ 	
 	$('#response').hide(); 
 	
 	$('#memberid').blur(function() {
