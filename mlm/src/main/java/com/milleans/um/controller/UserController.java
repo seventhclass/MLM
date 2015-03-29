@@ -52,7 +52,11 @@ public class UserController {
             if (autoFlag.equals("1")) {
 
                 Cookie cookieMemberId = new Cookie("memberId", memberid);
+                cookieMemberId.setMaxAge(1 * 24 * 60 * 60);
+
                 Cookie cookiePwd = new Cookie("passoword", password);
+                cookieMemberId.setMaxAge(1 * 24 * 60 * 60);
+
 
                 response.addCookie(cookieMemberId);
                 response.addCookie(cookiePwd);
