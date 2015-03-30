@@ -68,16 +68,12 @@ $(document).ready(function(){
 	});
 	
 	function initData(){		
-		$('#currencyname').val("");
-		$('#currencycode').val("");
-		$('#currencyabbr').val("");
+		$('#categoryname').val("");
 	}
 	
 	function getAndSetData(e){
 		var $td = $(e.target).parents("tr").children("td");	
-		$('#currencycode').val($td.eq(1).text());
-		$('#currencyname').val($td.eq(2).text());
-		$('#currencyabbr').val($td.eq(3).text());
+		$('#categoryname').val($td.eq(1).text());
 	}
 });
 

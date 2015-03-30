@@ -76,7 +76,7 @@
 							           				<button type="button" class="btn btn-success editcategorybtn" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-4">
-							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           				<button type="button" class="btn btn-danger delcategorybtn" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr> 
@@ -88,7 +88,7 @@
 							           				<button type="button" class="btn btn-success editcategorybtn" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-4">
-							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           				<button type="button" class="btn btn-danger delcategorybtn" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr>  
@@ -100,7 +100,7 @@
 							           				<button type="button" class="btn btn-success editcategorybtn" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-4">
-							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           				<button type="button" class="btn btn-danger delcategorybtn" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr> 	
@@ -112,7 +112,7 @@
 							           				<button type="button" class="btn btn-success editcategorybtn" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-4">
-							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           				<button type="button" class="btn btn-danger delcategorybtn" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr> 									     								     									      									       
@@ -122,7 +122,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 cat_maintenance">
 								<button type="button" class="btn btn-success addcategorybtn" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
 							</div>
 						</div>																												
