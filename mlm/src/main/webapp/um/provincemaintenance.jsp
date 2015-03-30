@@ -38,12 +38,12 @@
 							<div class="col-md-12">
 								<div class="h2">Province Maintenance</div>
 							</div>
-						</div>					
+						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<div class="subtitle" >Province List</div>
+								<div class="subtitle" >Country Selection</div>
 							</div>														
-						</div>
+						</div>						
 						<div class="row">
 							<label for="country" class="col-sm-3 control-label">Country</label>
 							<div class="col-sm-3">												
@@ -52,6 +52,11 @@
 								    <option value="87">US</option>
 								</select>
 							</div>						
+						</div>											
+						<div class="row">
+							<div class="col-md-12">
+								<div class="subtitle" >Province List</div>
+							</div>														
 						</div>
 						<div class="row">
 							<div class="col-md-12">

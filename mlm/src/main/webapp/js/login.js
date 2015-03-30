@@ -84,9 +84,10 @@ $(document).ready(function(){
      	}else{
      		autoFlag = 0;
      	}
+
      	//send login requrest to server.
         $.ajax({
-        	url: basePath+'/doLogin',        	
+        	url: basePath+'/doLogin', 
 			cache:false,
 			async: false,
 			type:'POST',			
@@ -98,7 +99,7 @@ $(document).ready(function(){
         	dataType:'json',
         	timeout:5000,
         	error:	function(xhr, ajaxOptions, thrownError){
-        				//alert(xhr.status+"\n"+xhr.responseText);
+        				alert(xhr.status+"\n"+xhr.responseText);
 		                $('#response').html(xhr.resposeJsonObject);
 		                $('#response').show();
         			},        	

@@ -38,19 +38,19 @@ public class UserController {
     @RequestMapping(value = "/doLogin", method = RequestMethod.POST)
     public
     @ResponseBody
-    LoginDto doLogin(@RequestParam String memberId, @RequestParam String password,
+    LoginDto doLogin(@RequestParam String memberid, @RequestParam String password,
                      String autoFlag, HttpSession session) {
         log.debug("user do login");
-        User user = userService.getUser(Integer.valueOf(memberId));
+        User user = userService.getUser(Integer.valueOf(memberid));
         LoginDto loginDto = new LoginDto();
         if (user.getPassWord().equals(password)) {
             loginDto.setMessage("login success");
             loginDto.setResult("success");
 
-            if (autoFlag.equals("1")) {
+            //if (autoFlag.equals("1")) {
                 session.setAttribute("userid", 11);
                 session.setAttribute("username", "Le Hu");
-            }
+            //}
             return loginDto;
         } else {
             loginDto.setMessage("login fail");
