@@ -1,12 +1,12 @@
 package com.milleans.um.services;
 
-
 import com.milleans.model.User;
 import com.milleans.um.dao.IUserDAO;
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 /**
  * Created by macbookpro on 2015-03-07.
@@ -14,22 +14,25 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service("userService")
 public class UserServiceImpl implements IUserService {
-    @Autowired
-    private IUserDAO userDAO;
 
-    @Override
-    @Transactional
-    public int signUp(User userInfo) {
-        System.out.println("user service ---------");
-        userDAO.save(userInfo);
+	static Logger log = Logger.getLogger(UserServiceImpl.class.getName());
 
-        return 0;
-    }
+	@Autowired
+	private IUserDAO userDAO;
 
-    @Transactional
-    @Override
-    public User login(int userId, String pwd) {
-        System.out.println(" service login----");
-        return null;
-    }
+	@Override
+	@Transactional
+	public User signUp(User userInfo) {
+		log.info("userService signUp-----------------");
+		User user = userDAO.save(userInfo);
+		log.info("userService signUp done-----------");
+		return user;
+	}
+
+	@Transactional
+	@Override
+	public User login(int userId, String pwd) {
+		System.out.println(" service login----");
+		return null;
+	}
 }

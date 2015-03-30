@@ -4,11 +4,13 @@ import com.milleans.model.User;
 import com.milleans.um.dto.JsonResponseDto;
 import com.milleans.um.dto.LoginDto;
 import com.milleans.um.services.IUserService;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -99,12 +101,11 @@ public class UserController {
 		return true;
 	}
 
-	@RequestMapping(value = "signup", method = RequestMethod.POST)
-	public ModelAndView signUp() {
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public ModelAndView signUp(@RequestParam User user) {
 		User newUser = new User();
-		// newUser.setFirstName();
-		ModelAndView modelAndView = new ModelAndView("um/home");
-
+		// ModelAndView modelAndView = new ModelAndView("um/login");
+		ModelAndView modelAndView = this.login();
 		return modelAndView;
 	}
 

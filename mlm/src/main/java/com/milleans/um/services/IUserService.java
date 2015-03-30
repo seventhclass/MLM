@@ -7,7 +7,7 @@ import com.milleans.model.User;
  */
 public interface IUserService {
 
-    public int signUp(User userInfo);
+	public User signUp(User userInfo);
 
-    public User login(int userId, String pwd);
+	public User login(int userId, String pwd);
 }
