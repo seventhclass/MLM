@@ -15,6 +15,7 @@
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/currencymaintenance.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -49,37 +50,40 @@
 									<table class="table">
 										<thead>
 											<tr>
+												<th>ID</th>
+												<th>Currency Code</th>
 												<th>Currency Name</th>
 												<th>Abbreviation</th>
+												<th></th>
 											</tr>
 										</thead>
-									   <tbody>
+									   <tbody id="currencylist">
 									     <tr>
+							           		<td>1</td>
+							           		<td>86</td>									     
+							           		<td>Canada Dollar</td>
+							           		<td>CA</td>
 							           		<td>
-							           			<div class="col-sm-12">Canada Dollar</div>
-							           		</td>
-							           		<td>
-							           			<div class="col-sm-6">CAD</div>
-							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-offset-1 col-sm-4 cur_maintenance">
+							           				<button type="button" class="btn btn-success editcurrencybtn" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-2">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#currencycancel" data-backdrop="static" >Delete</button>
-							           			</div>							           		
-							           		</td>
+							           			<div class="col-sm-4">
+							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#currencycancel" data-backdrop="static" >Delete</button>
+							           			</div>
+							           		</td>						           		
 									     </tr>  
 									     <tr>
+									     	<td>2</td>
+									     	<td>87</td>
+							           		<td>United States Dollar</td>
+							           		<td>US</td>
 							           		<td>
-							           			<div class="col-sm-12">United States Dollar</div>
-							           		</td>
-							           		<td>
-							           			<div class="col-sm-6">USD</div>
-							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-offset-1 col-sm-4 cur_maintenance">
+							           				<button type="button" class="btn btn-success editcurrencybtn" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-2">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#currencycancel" data-backdrop="static" >Delete</button>
-							           			</div>							           		
+							           			<div class="col-sm-4">
+							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#currencycancel" data-backdrop="static" >Delete</button>
+							           			</div>
 							           		</td>
 									     </tr> 									     
 										</tbody>
@@ -88,8 +92,8 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
-								<button type="button" class="btn btn-success" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
+							<div class="col-md-12 cur_maintenance">
+								<button type="button" class="btn btn-success addcurrencybtn" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
 							</div>
 						</div>																												
 					</div> <!-- end content -->		
@@ -111,7 +115,7 @@
 					<h4 class="modal-title text-center">Currency Maintenance</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal" role="form" action="">
+					<form id="editCurrencyForm" class="form-horizontal" role="form" action="" method="post">
 						<div class="form-group">
 							<label for="currencyname" class="col-sm-3 control-label">Currency
 								Name</label>
@@ -119,6 +123,13 @@
 								<input type="text" class="form-control" id="currencyname">
 							</div>
 						</div>
+						<div class="form-group">
+							<label for="currencycode" class="col-sm-3 control-label">Currency
+								Code</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="currencycode">
+							</div>
+						</div>						
 						<div class="form-group">
 							<label for="currencyabbr" class="col-sm-3 control-label">Abbreviation</label>
 							<div class="col-sm-3">
@@ -144,8 +155,8 @@
 				<div class="modal-body">
 					<div class="h2 text-center">Alert</div>
 					<div class="text-center">You sure you want to delete record?</div>
-					<form class="form-horizontal" role="form" action="">
-						<input type="hidden" id="p_id" value="">					
+					<form id="cancelCurrencyForm" class="form-horizontal" role="form" action="" method="post">
+						<input type="hidden" id="c_id" value="">					
 					</form>
 				</div>
 				<div class="modal-footer">

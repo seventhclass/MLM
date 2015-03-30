@@ -45,7 +45,7 @@
 							</div>														
 						</div>						
 						<div class="row">
-							<label for="country" class="col-sm-3 control-label">Country</label>
+							<label for="country" class="col-sm-offset-1 col-sm-1 control-label">Country</label>
 							<div class="col-sm-3">												
 								<select id="countrymenu" class="form-control">
 								    <option value="86">Canada</option>
@@ -93,11 +93,10 @@
 							           				<button type="button" class="btn btn-success editprovincebtn" data-toggle="modal" data-target=".provincemaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-4">
-							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#provincecancel" data-backdrop="static" >Delete</button>
+							           				<button type="button" class="btn btn-danger delprovincebtn" data-toggle="modal" data-target="#provincecancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
-									     </tr> 
-									     									     
+									     </tr> 									     									    
 										</tbody>
 									 </table>
 								</div>	

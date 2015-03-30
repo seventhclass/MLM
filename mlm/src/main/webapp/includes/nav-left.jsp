@@ -18,6 +18,7 @@
 	<li><a href='<%=request.getContextPath()%>/accounttypemaintenance'>Account Type Maintenance</a></li>
 	<li><a href='<%=request.getContextPath()%>/productmaintenance'>Product Maintenance</a></li>
 	<li><a href='<%=request.getContextPath()%>/countrymaintenance'>Country Maintenance</a></li>
+	<li><a href='<%=request.getContextPath()%>/provincemaintenance'>Province Maintenance</a></li>	
 	<li><a href='<%=request.getContextPath()%>/currencymaintenance'>Currency Maintenance</a></li>
  	<li><a href='<%=request.getContextPath()%>/addressmaintenance'>Address Maintenance</a></li>
  	<li><a href='<%=request.getContextPath()%>/categorymaintenance'>Category Maintenance</a></li>

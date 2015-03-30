@@ -14,7 +14,8 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/categorymaintenance.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -49,62 +50,69 @@
 									<table class="table">
 										<thead>
 											<tr>
+												<th>ID</th>
 												<th>Category Name</th>
+												<th></th>
 											</tr>
 										</thead>
-									   <tbody>
+									   <tbody id="categorylist">
 									     <tr>
+									     	<td>1</td>
+									     	<td>Anti-Aging</td>
 							           		<td>
-							           			<div class="col-sm-8">Anti-Aging</div>
-							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-offset-1 col-sm-4 cat_maintenance">
+							           				<button type="button" class="btn btn-success editcategorybtn" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-2">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           			<div class="col-sm-4">
+							           				<button type="button" class="btn btn-danger delcategorybtn" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr>
 									     <tr>
+							           		<td>2</td>
+							           		<td>Life Extension</td>
 							           		<td>
-							           			<div class="col-sm-8">Life Extension</div>
-							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-offset-1 col-sm-4 cat_maintenance">
+							           				<button type="button" class="btn btn-success editcategorybtn" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-2">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           			<div class="col-sm-4">
+							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr> 
 									     <tr>
+									     	<td>3</td>
+									     	<td>Brain Health</td>
 							           		<td>
-							           			<div class="col-sm-8">Brain Health</div>
-							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-offset-1 col-sm-4 cat_maintenance">
+							           				<button type="button" class="btn btn-success editcategorybtn" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-2">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           			<div class="col-sm-4">
+							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr>  
 									     <tr>
+									     	<td>4</td>
+									     	<td>Energy & Performance</td>
 							           		<td>
-							           			<div class="col-sm-8">Energy & Performance</div>
-							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-offset-1 col-sm-4 cat_maintenance">
+							           				<button type="button" class="btn btn-success editcategorybtn" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-2">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           			<div class="col-sm-4">
+							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr> 	
 									     <tr>
+									     	<td>5</td>
+									     	<td>Wealth Creation</td>
 							           		<td>
-							           			<div class="col-sm-8">Wealth Creation</div>
-							           			<div class="col-sm-2">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-offset-1 col-sm-4 cat_maintenance">
+							           				<button type="button" class="btn btn-success editcategorybtn" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-2">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
+							           			<div class="col-sm-4">
+							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr> 									     								     									      									       
@@ -115,7 +123,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<button type="button" class="btn btn-success" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
+								<button type="button" class="btn btn-success addcategorybtn" data-toggle="modal" data-target=".categorymaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
 							</div>
 						</div>																												
 					</div> <!-- end content -->		
@@ -137,12 +145,12 @@
 					<h4 class="modal-title text-center">Category Maintenance</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal" role="form" action="">
+					<form id="editCategoryForm" class="form-horizontal" role="form" action="" method="post">
 						<div class="form-group">
 							<label for="countryname" class="col-sm-3 control-label">Category
 								Name</label>
 							<div class="col-sm-6">
-								<input type="text" class="form-control" id="countryname">
+								<input type="text" class="form-control" id="categoryname">
 							</div>
 						</div>
 					</form>						
@@ -164,8 +172,8 @@
 				<div class="modal-body">
 					<div class="h2 text-center">Alert</div>
 					<div class="text-center">You sure you want to delete record?</div>
-					<form class="form-horizontal" role="form" action="">
-						<input type="hidden" id="p_id" value="">					
+					<form id="cancelCategoryForm" class="form-horizontal" role="form" action="">
+						<input type="hidden" id="c_id" value="">					
 					</form>
 				</div>
 				<div class="modal-footer">

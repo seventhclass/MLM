@@ -18,8 +18,8 @@
 	}
 %>    
 <div class="row">
-	<div class="h4 col-md-offset-9 col-md-3">
+	<div class="h4 col-md-5">
 		<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
-		Welcome <strong style="color:red"><%=userName %></strong>&nbsp;<strong>(<span id="memberid"><%=userId %></span>)</strong>.
+		Welcome <strong style="color:red"><%=userName %></strong>&nbsp;<strong>(<span id="memberid"><%=userId %></span>)</strong>
 	</div>
 </div>
