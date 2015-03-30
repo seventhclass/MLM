@@ -39,30 +39,49 @@ public class UserController {
 
 	@RequestMapping(value = "/doLogin", method = RequestMethod.POST)
 	public @ResponseBody LoginDto doLogin(
-			@RequestParam("memberId") String memberid,
+			@RequestParam("memberid") String memberid,
 			@RequestParam("password") String password, String autoFlag,
-			HttpSession session, HttpServletResponse response) {
+			HttpSession session,HttpServletRequest request, HttpServletResponse response) {
 		log.debug("user do login");
 		User user = userService.getUser(Integer.valueOf(memberid));
 		LoginDto loginDto = new LoginDto();
 		if (user.getPassWord().equals(password)) {
 			loginDto.setMessage("login success");
 			loginDto.setResult("success");
-
+			
+			String username;
+			if(user.getCompanyName()==null || user.getCompanyName()==""){
+				username=user.getLastName()+" "+user.getFirstName();
+			}else{
+				username=user.getCompanyName();
+			}
+			
 			if (autoFlag.equals("1")) {
 
-				Cookie cookieMemberId = new Cookie("memberId", memberid);
+				Cookie cookieMemberId = new Cookie("userid", memberid);
 				cookieMemberId.setMaxAge(1 * 24 * 60 * 60);
 
-				Cookie cookiePwd = new Cookie("passoword", password);
+				Cookie cookiePwd = new Cookie("username", username);
 				cookieMemberId.setMaxAge(1 * 24 * 60 * 60);
 
 				response.addCookie(cookieMemberId);
 				response.addCookie(cookiePwd);
 
+			}else{
+				Cookie[] cookies = request.getCookies();
+				if(cookies!=null && cookies.length>0){
+					for(Cookie c:cookies){
+						if(c.getName().equals("userid") || c.getName().equals("username")){
+							c.setMaxAge(0);
+							response.addCookie(c);
+						}
+					}
+				}				
 			}
-			session.setAttribute("userid", 11);
-			session.setAttribute("username", "Le Hu");
+				
+			session.setAttribute("userid", memberid);
+			session.setAttribute("username", username);
+			
 			return loginDto;
 		} else {
 			loginDto.setMessage("login fail");
