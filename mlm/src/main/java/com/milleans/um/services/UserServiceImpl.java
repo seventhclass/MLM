@@ -15,24 +15,23 @@ import org.springframework.transaction.annotation.Transactional;
 @Service("userService")
 public class UserServiceImpl implements IUserService {
 
-	static Logger log = Logger.getLogger(UserServiceImpl.class.getName());
-
 	@Autowired
 	private IUserDAO userDAO;
 
 	@Override
 	@Transactional
 	public User signUp(User userInfo) {
-		log.info("userService signUp-----------------");
+		System.out.println("user service ---------");
 		User user = userDAO.save(userInfo);
-		log.info("userService signUp done-----------");
 		return user;
 	}
 
-	@Transactional
 	@Override
-	public User login(int userId, String pwd) {
+	@Transactional
+	public User getUser(int userId) {
 		System.out.println(" service login----");
-		return null;
+		User user = userDAO.getUser(userId);
+		return user;
 	}
+
 }

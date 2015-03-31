@@ -9,5 +9,6 @@ public interface IUserService {
 
 	public User signUp(User userInfo);
 
-	public User login(int userId, String pwd);
+	public User getUser(int userId);
+
 }

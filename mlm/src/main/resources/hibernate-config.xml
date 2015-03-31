@@ -7,13 +7,11 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://127.0.0.1:3306/mlm"/>
-		<!-- 
-        <property name="username" value="adminXpZv6aa"/>
-        <property name="password" value="Tg7m3IL4KgiC"/>
-		 -->
-		 <!-- for local db test -->
-		 <property name="username" value="root"/>
-         <property name="password" value="root"/>        
+
+<!--         <property name="username" value="adminXpZv6aa"/>
+        <property name="password" value="Tg7m3IL4KgiC"/> -->
+        <property name="username" value="root"/>
+        <property name="password" value=""/>        
 
     </bean>
 
@@ -26,7 +24,8 @@
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-                <prop key="hibernate.current_session_context_class">thread</prop>
+                <!--Exception in thread "main" org.hibernate.HibernateException: save is not valid without active transaction-->
+                <!--<prop key="hibernate.current_session_context_class">thread</prop>-->
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>

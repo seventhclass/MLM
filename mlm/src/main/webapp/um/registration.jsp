@@ -70,12 +70,13 @@
 									<form id="individualregForm" class="form-horizontal" role="form" action="">
 										<div class="subtitle" >Personal
 											Information</div>
+										<input type="hidden" class="form-control accounttype" id="accountid" name="accountid">
 										<div class="form-group">
 											<label for="firstname" class="col-sm-3 control-label">First
 												Name<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="firstname"
+												<input type="text" class="form-control" id="firstname" name="firstname"
 													placeholder="Enter your first name, please">
 											</div>
 											<div id="errmsg_fname" class="col-sm-5 text-danger"></div> 											
@@ -85,7 +86,7 @@
 												Name<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="lastname"
+												<input type="text" class="form-control" id="lastname" name="lastname"
 													placeholder="Enter your last name, please">
 											</div>
 											<div id="errmsg_lname" class="col-sm-5 text-danger"></div>
@@ -105,20 +106,20 @@
 											<label for="birthday" class="col-sm-3 control-label">Date
 												of Birth</label>
 											<div class="col-sm-3">
-												<input type="date" class="form-control" id="birthday">
+												<input type="date" class="form-control" id="birthday" name="birthday">
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="ssn" class="col-sm-3 control-label">SSN</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="ssn">
+												<input type="text" class="form-control" id="ssn" name="ssn">
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="password1" class="col-sm-3 control-label">Password<span
 												class="starsymbol">*</span></label>
 											<div class="col-sm-4">
-												<input type="password" class="form-control" id="password1">
+												<input type="password" class="form-control" id="password1" name="password1">
 											</div>
 											<div id="errmsg_pss" class="col-sm-5 text-danger"></div>
 										</div>
@@ -127,7 +128,7 @@
 												Password<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="password" class="form-control" id="password2">
+												<input type="password" class="form-control" id="password2" name="password2">
 											</div>
 											<div id="errmsg_cpass" class="col-sm-5 text-danger"></div>
 										</div>
@@ -137,16 +138,16 @@
 											<label for="address" class="col-sm-3 control-label">Address
 											</label>
 											<div class="col-sm-6">												
-												<textarea id="address" class="form-control" rows="2"></textarea>												
+												<textarea id="address" name="address" class="form-control" rows="2"></textarea>												
 											</div>
 										</div>											
 										<div class="form-group">
 											<label for="country" class="col-sm-3 control-label">Country
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Canada</option>
-												    <option>US</option>
+												<select name="countrycode" class="form-control">
+												    <option value="86">Canada</option>
+												    <option value="87">US</option>
 												</select>
 											</div>
 										</div>												
@@ -154,9 +155,9 @@
 											<label for="state" class="col-sm-3 control-label">State/Province
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Quebec</option>
-												    <option>Ontario</option>
+												<select name="provincecode" class="form-control">
+												    <option value="QC">Quebec</option>
+												    <option value="ON">Ontario</option>
 												    <option>British Columbia</option>
 												    <option>Alberta</option>
 												    <option>Nova Scotia</option>
@@ -172,7 +173,7 @@
 											<label for="city" class="col-sm-3 control-label">City
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="city"
+												<input type="text" class="form-control" id="city" name="city"
 													placeholder="Enter city name, please">
 											</div>
 										</div>										
@@ -180,14 +181,14 @@
 											<label for="zip" class="col-sm-3 control-label">Zip
 											</label>
 											<div class="col-sm-3">
-												<input type="text" class="form-control" id="zip">
+												<input type="text" class="form-control" id="zip" name="zip">
 											</div>
 										</div>											
 										<div class="form-group">
 											<label for="mobilephone" class="col-sm-3 control-label">Mobile Phone<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="mobilephone"
+												<input type="text" class="form-control" id="mobilephone" name="mobilephone"
 													placeholder="Enter your mobile phone, please">
 											</div>
 											<div id="errmsg_mphone" class="col-sm-5 text-danger"></div>
@@ -196,14 +197,14 @@
 											<label for="officephone" class="col-sm-3 control-label">Phone(o)
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="officephone">
+												<input type="text" class="form-control" id="officephone" name="officephone">
 											</div>
 										</div>											
 										<div class="form-group">
 											<label for="email" class="col-sm-3 control-label">E-mail<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="email" class="form-control" id="email"
+												<input type="email" class="form-control" id="email" name="email"
 													placeholder="Enter your email, please">
 											</div>
 											<div id="errmsg_email" class="col-sm-5 text-danger"></div>
@@ -214,7 +215,7 @@
 											<label for="sponsorid" class="col-sm-3 control-label">Sponsor ID<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="sponsorid"
+												<input type="text" class="form-control" id="sponsorid" name="sponsorid"
 													placeholder="Enter your sponsor id, please">
 											</div>
 											<div id="errmsg_spsid" class="col-sm-5 text-danger"></div>
@@ -223,7 +224,7 @@
 											<label for="sponsorname" class="col-sm-3 control-label">Sponsor Name
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="sponsorname" disabled>
+												<input type="text" class="form-control" id="sponsorname" name="sponsorname" disabled>
 											</div>
 										</div>	
 										<br/><br/>											
@@ -249,12 +250,13 @@
 									<form id="companyregForm" class="form-horizontal" role="form" action="">
 										<div class="subtitle" >Company
 											Information</div>
+										<input type="hidden" class="form-control accounttype">											
 										<div class="form-group">
 											<label for="c_companyname" class="col-sm-3 control-label">Company
 												Name<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="c_companyname"
+												<input type="text" class="form-control" id="c_companyname" name="companyname"
 													placeholder="Enter company name, please">
 											</div>
 											<div id="errmsg_cname" class="col-sm-4 text-danger"></div>
@@ -263,11 +265,11 @@
 											<label for="c_companytype" class="col-sm-3 control-label">Company Type
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Sole Proprietorship</option>
-												    <option>Partnership</option>
-												    <option>Corporation</option>
-												    <option>Cooperative</option>
+												<select name="companytype" class="form-control">
+												    <option value="1">Sole Proprietorship</option>
+												    <option value="2">Partnership</option>
+												    <option value="3">Corporation</option>
+												    <option value="4">Cooperative</option>
 												</select>
 											</div>
 										</div>											
@@ -275,7 +277,7 @@
 											<label for="c_password1" class="col-sm-3 control-label">Password<span
 												class="starsymbol">*</span></label>
 											<div class="col-sm-4">
-												<input type="password" class="form-control" id="c_password1">
+												<input type="password" class="form-control" id="c_password1" name="password1">
 											</div>
 											<div id="errmsg_cpas" class="col-sm-5 text-danger"></div>
 										</div>
@@ -284,7 +286,7 @@
 												Password<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="password" class="form-control" id="c_password2">
+												<input type="password" class="form-control" id="c_password2" name="password2">
 											</div>
 											<div id="errmsg_ccpass" class="col-sm-5 text-danger"></div>
 										</div>
@@ -294,16 +296,16 @@
 											<label for="c_address" class="col-sm-3 control-label">Address
 											</label>
 											<div class="col-sm-6">												
-												<textarea id="c_address" class="form-control" rows="2"></textarea>												
+												<textarea id="c_address" name="address" class="form-control" rows="2"></textarea>												
 											</div>
 										</div>											
 										<div class="form-group">
 											<label for="c_country" class="col-sm-3 control-label">Country
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Canada</option>
-												    <option>US</option>
+												<select name="countrycode" class="form-control">
+												    <option value="86">Canada</option>
+												    <option value="87">US</option>
 												</select>
 											</div>
 										</div>												
@@ -311,9 +313,9 @@
 											<label for="c_state" class="col-sm-3 control-label">State/Province
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Quebec</option>
-												    <option>Ontario</option>
+												<select name="provincecode" class="form-control">
+												    <option value="QC">Quebec</option>
+												    <option value="ON">Ontario</option>
 												    <option>British Columbia</option>
 												    <option>Alberta</option>
 												    <option>Nova Scotia</option>
@@ -329,7 +331,7 @@
 											<label for="c_city" class="col-sm-3 control-label">City
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="c_city"
+												<input type="text" class="form-control" id="c_city" name="city"
 													placeholder="Enter city name, please">
 											</div>
 										</div>										
@@ -337,14 +339,14 @@
 											<label for="c_zip" class="col-sm-3 control-label">Zip
 											</label>
 											<div class="col-sm-3">
-												<input type="text" class="form-control" id="c_zip">
+												<input type="text" class="form-control" id="c_zip" name="zip">
 											</div>
 										</div>											
 										<div class="form-group">
 											<label for="c_mobilephone" class="col-sm-3 control-label">Mobile Phone<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="c_mobilephone"
+												<input type="text" class="form-control" id="c_mobilephone" name="mobilephone"
 													placeholder="Enter your mobile phone, please">
 											</div>
 											<div id="errmsg_cmphone" class="col-sm-5 text-danger"></div>
@@ -353,14 +355,14 @@
 											<label for="c_officephone" class="col-sm-3 control-label">Phone(o)
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="c_officephone">
+												<input type="text" class="form-control" id="c_officephone" name="officephone">
 											</div>
 										</div>											
 										<div class="form-group">
 											<label for="c_email" class="col-sm-3 control-label">E-mail<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="email" class="form-control" id="c_email"
+												<input type="email" class="form-control" id="c_email" name="email"
 													placeholder="Enter your email, please">
 											</div>
 											<div id="errmsg_cemail" class="col-sm-5 text-danger"></div>
@@ -371,7 +373,7 @@
 											<label for="c_sponsorid" class="col-sm-3 control-label">Sponsor ID<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="c_sponsorid"
+												<input type="text" class="form-control" id="c_sponsorid" name="sponsorid"
 													placeholder="Enter your sponsor id, please">
 											</div>
 											<div id="errmsg_cspsid" class="col-sm-5 text-danger"></div>
@@ -380,7 +382,7 @@
 											<label for="c_sponsorname" class="col-sm-3 control-label">Sponsor Name
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="c_sponsorname" disabled>
+												<input type="text" class="form-control" id="c_sponsorname" name="sponsorname" disabled>
 											</div>
 										</div>	
 										<br/><br/>											
@@ -407,12 +409,13 @@
 									<form id="adminregForm" class="form-horizontal" role="form" action="">
 										<div class="subtitle" >Personal
 											Information</div>
+										<input type="hidden" class="form-control accounttype">
 										<div class="form-group">
 											<label for="adminfirstname" class="col-sm-3 control-label">First
 												Name<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="adminfirstname"
+												<input type="text" class="form-control" id="adminfirstname" name="firstname"
 													placeholder="Enter your first name, please">
 											</div>
 											<div id="errmsg_afname" class="col-sm-5 text-danger"></div>
@@ -422,7 +425,7 @@
 												Name<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="adminlastname"
+												<input type="text" class="form-control" id="adminlastname" name="lastname"
 													placeholder="Enter your last name, please">
 											</div>
 											<div id="errmsg_alname" class="col-sm-5 text-danger"></div>
@@ -442,14 +445,14 @@
 											<label for="adminbirthday" class="col-sm-3 control-label">Date
 												of Birth</label>
 											<div class="col-sm-3">
-												<input type="date" class="form-control" id="adminbirthday">
+												<input type="date" class="form-control" id="adminbirthday" name="birthday">
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="adminpassword1" class="col-sm-3 control-label">Password<span
 												class="starsymbol">*</span></label>
 											<div class="col-sm-4">
-												<input type="password" class="form-control" id="adminpassword1">
+												<input type="password" class="form-control" id="adminpassword1" name="password1">
 											</div>
 											<div id="errmsg_apass" class="col-sm-5 text-danger"></div>
 										</div>
@@ -458,7 +461,7 @@
 												Password<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="password" class="form-control" id="adminpassword2">
+												<input type="password" class="form-control" id="adminpassword2" name="password2">
 											</div>
 											<div id="errmsg_acpass" class="col-sm-5 text-danger"></div>
 										</div>
@@ -468,16 +471,16 @@
 											<label for="adminaddress" class="col-sm-3 control-label">Address
 											</label>
 											<div class="col-sm-6">												
-												<textarea id="adminaddress" class="form-control" rows="2"></textarea>												
+												<textarea id="adminaddress" name="address" class="form-control" rows="2"></textarea>												
 											</div>
 										</div>											
 										<div class="form-group">
 											<label for="admincountry" class="col-sm-3 control-label">Country
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Canada</option>
-												    <option>US</option>
+												<select name="countrycode" class="form-control">
+												    <option value="86">Canada</option>
+												    <option value="87">US</option>
 												</select>
 											</div>
 										</div>												
@@ -485,9 +488,9 @@
 											<label for="adminstate" class="col-sm-3 control-label">State/Province
 											</label>
 											<div class="col-sm-3">												
-												<select class="form-control">
-												    <option>Quebec</option>
-												    <option>Ontario</option>
+												<select name="provincecode" class="form-control">
+												    <option value="QC">Quebec</option>
+												    <option value="ON">Ontario</option>
 												    <option>British Columbia</option>
 												    <option>Alberta</option>
 												    <option>Nova Scotia</option>
@@ -503,7 +506,7 @@
 											<label for="admincity" class="col-sm-3 control-label">City
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="admincity"
+												<input type="text" class="form-control" id="admincity" name="city"
 													placeholder="Enter city name, please">
 											</div>
 										</div>										
@@ -511,14 +514,14 @@
 											<label for="adminzip" class="col-sm-3 control-label">Zip
 											</label>
 											<div class="col-sm-3">
-												<input type="text" class="form-control" id="adminzip">
+												<input type="text" class="form-control" id="adminzip" name="zip">
 											</div>
 										</div>											
 										<div class="form-group">
 											<label for="adminmobilephone" class="col-sm-3 control-label">Mobile Phone<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="adminmobilephone"
+												<input type="text" class="form-control" id="adminmobilephone" name="mobilephone"
 													placeholder="Enter your mobile phone, please">
 											</div>
 											<div id="errmsg_amphone" class="col-sm-5 text-danger"></div>
@@ -527,14 +530,14 @@
 											<label for="adminofficephone" class="col-sm-3 control-label">Phone(o)
 											</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="adminofficephone">
+												<input type="text" class="form-control" id="adminofficephone" name="officephone">
 											</div>
 										</div>											
 										<div class="form-group">
 											<label for="adminemail" class="col-sm-3 control-label">E-mail<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
-												<input type="email" class="form-control" id="adminemail"
+												<input type="email" class="form-control" id="adminemail" name="email"
 													placeholder="Enter your email, please">
 											</div>
 											<div id="errmsg_aemail" class="col-sm-5 text-danger"></div>

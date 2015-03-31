@@ -1,8 +1,22 @@
 /**
  * 
  */
+
+var searchString = location.search.slice(1);
+var formString = searchString.replace(/\+/g, " ");
+var dataString = unescape(formString);
+var data = dataString.split(/[&=]/g);
+
 $(document).ready(function(){
  	var basePath=$('#basePath').attr("value");
+ 	
+ 	if(data){
+// 		alert(data[0]);
+// 		alert(data[1]);
+ 		if(data[0]=="memberid"){
+ 			$('#memberid').val(data[1]);
+ 		}
+ 	}
  	
 	$('#response').hide(); 
 	
@@ -70,9 +84,10 @@ $(document).ready(function(){
      	}else{
      		autoFlag = 0;
      	}
+
      	//send login requrest to server.
         $.ajax({
-        	url: basePath+'/doLogin',        	
+        	url: basePath+'/doLogin', 
 			cache:false,
 			async: false,
 			type:'POST',			
@@ -84,6 +99,7 @@ $(document).ready(function(){
         	dataType:'json',
         	timeout:5000,
         	error:	function(xhr, ajaxOptions, thrownError){
+        				alert(xhr.status+"\n"+xhr.responseText);
 		                $('#response').html(xhr.resposeJsonObject);
 		                $('#response').show();
         			},        	
@@ -99,7 +115,8 @@ $(document).ready(function(){
     function loginResponse(res){
     	var result = res.result;			//response code
     	var message = res.message;			//response message
-    	    	
+//    	alert("result="+res.result);
+//    	alert("message="+res.message);
     	if (result == "success") {
     		window.location.href=basePath+"home";
     	}else{

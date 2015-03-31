@@ -19,7 +19,7 @@
   				<li><a href='<%=request.getContextPath()%>/products'>Products</a></li>
 		 		<li><a href='<%=request.getContextPath()%>/aboutus'>About Us</a></li>
 		 		<li><a href='<%=request.getContextPath()%>/contactus'>Contact Us</a></li>
-  				<li><a href='<%=request.getContextPath()%>/selectautoship'>Registration</a></li>
+  				<li><a href='<%=request.getContextPath()%>/selectAutoship'>Registration</a></li>
   				<li><a href='<%=request.getContextPath()%>/login'>Login</a></li>
   				<li><a href='<%=request.getContextPath()%>/logout'>Logout</a></li>
 		 	</ul>

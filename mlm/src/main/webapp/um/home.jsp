@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%
-	String userId = session.getAttribute("userid")==null?null:session.getAttribute("userid").toString();
-	String userName = session.getAttribute("username")==null?null:session.getAttribute("username").toString();	
-%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,7 +15,7 @@
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>	
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/home.js"></script>	
 </head>
 <body>
@@ -27,11 +24,8 @@
 			<%@ include file="../includes/header.jsp"%>
 		</div> <!-- end header -->
 		<div id="page">
-			<div class="row">
-				<div id="welcomebar" class="h4 col-md-offset-9 col-md-3">
-					<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
-					Welcome <strong style="color:red"><%=userName %></strong>&nbsp;<strong>(<span id="memberid"><%=userId %></span>)</strong>.
-				</div>
+			<div id="welcombar">
+				<%@ include file="../includes/welcomebar.jsp"%>
 			</div>
 			<div class="row">
 				<div class="col-md-3">

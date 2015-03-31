@@ -15,7 +15,7 @@
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/currencymaintenance.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/provincemaintenance.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -36,64 +36,75 @@
 					<div id="content">	
 						<div class="row">
 							<div class="col-md-12">
-								<div class="h2">Currency Maintenance</div>
+								<div class="h2">Province Maintenance</div>
 							</div>
-						</div>					
+						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<div class="subtitle" >Currency List</div>
+								<div class="subtitle" >Country Selection</div>
+							</div>														
+						</div>						
+						<div class="row">
+							<label for="country" class="col-sm-offset-1 col-sm-1 control-label">Country</label>
+							<div class="col-sm-3">												
+								<select id="countrymenu" class="form-control">
+								    <option value="86">Canada</option>
+								    <option value="87">US</option>
+								</select>
+							</div>						
+						</div>											
+						<div class="row">
+							<div class="col-md-12">
+								<div class="subtitle" >Province List</div>
 							</div>														
 						</div>
 						<div class="row">
-							<div class="col-md-10">
+							<div class="col-md-12">
 								<div class="table-responsive ordertable">
 									<table class="table">
 										<thead>
 											<tr>
 												<th>ID</th>
-												<th>Currency Code</th>
-												<th>Currency Name</th>
-												<th>Abbreviation</th>
-												<th></th>
-											</tr>
+												<th>Province Name</th>
+												<th>Province Code</th>
+												<th></th>	
+											</tr>																																									
 										</thead>
-									   <tbody id="currencylist">
+									   <tbody id="provincelist">
 									     <tr>
-							           		<td>1</td>
-							           		<td>86</td>									     
-							           		<td>Canada Dollar</td>
-							           		<td>CA</td>
+									     	<td>1</td>
+							           		<td>Quebec</td>
+						           			<td>QC</td>
 							           		<td>
-							           			<div class="col-sm-offset-1 col-sm-4 cur_maintenance">
-							           				<button type="button" class="btn btn-success editcurrencybtn" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-offset-1 col-sm-4 pvn_maintenance">
+							           				<button type="button" class="btn btn-success editprovincebtn" data-toggle="modal" data-target=".provincemaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-4">
-							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#currencycancel" data-backdrop="static" >Delete</button>
+							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#provincecancel" data-backdrop="static" >Delete</button>
 							           			</div>
-							           		</td>						           		
+							           		</td>
 									     </tr>  
 									     <tr>
 									     	<td>2</td>
-									     	<td>87</td>
-							           		<td>United States Dollar</td>
-							           		<td>US</td>
+							           		<td>Ontario</td>
+						           			<td>ON</td>
 							           		<td>
-							           			<div class="col-sm-offset-1 col-sm-4 cur_maintenance">
-							           				<button type="button" class="btn btn-success editcurrencybtn" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-offset-1 col-sm-4 pvn_maintenance">
+							           				<button type="button" class="btn btn-success editprovincebtn" data-toggle="modal" data-target=".provincemaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
 							           			<div class="col-sm-4">
-							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#currencycancel" data-backdrop="static" >Delete</button>
+							           				<button type="button" class="btn btn-danger delprovincebtn" data-toggle="modal" data-target="#provincecancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
-									     </tr> 									     
+									     </tr> 									     									    
 										</tbody>
 									 </table>
 								</div>	
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 cur_maintenance">
-								<button type="button" class="btn btn-success addcurrencybtn" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
+							<div class="col-md-12 pvn_maintenance">
+								<button type="button" class="btn btn-success addprovincebtn" data-toggle="modal" data-target=".provincemaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
 							</div>
 						</div>																												
 					</div> <!-- end content -->		
@@ -107,33 +118,28 @@
 		</div>
 	</div>
 	 
-	<div class="modal fade bs-example-modal-lg currencymaintenance" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal fade bs-example-modal-lg provincemaintenance" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header" style="background-color:#428bca;color:#fff;border-top-right-radius: 3px;border-top-left-radius: 3px;padding: 5px;">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title text-center">Currency Maintenance</h4>
+					<h4 class="modal-title text-center">Province Maintenance</h4>
 				</div>
 				<div class="modal-body">
-					<form id="editCurrencyForm" class="form-horizontal" role="form" action="" method="post">
+					<form id="editProvinceForm" class="form-horizontal" role="form" action="" method="post">
+						<input type="hidden" class="form-control" id="countryid" >				
 						<div class="form-group">
-							<label for="currencyname" class="col-sm-3 control-label">Currency
+							<label for="provincename" class="col-sm-3 control-label">Province
 								Name</label>
 							<div class="col-sm-6">
-								<input type="text" class="form-control" id="currencyname">
+								<input type="text" class="form-control" id="provincename">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="currencycode" class="col-sm-3 control-label">Currency
+							<label for="provincecode" class="col-sm-3 control-label">Province
 								Code</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="currencycode">
-							</div>
-						</div>						
-						<div class="form-group">
-							<label for="currencyabbr" class="col-sm-3 control-label">Abbreviation</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control" id="currencyabbr">
+								<input type="text" class="form-control" id="provincecode">
 							</div>
 						</div>						
 					</form>						
@@ -145,7 +151,7 @@
 		</div>
 	</div>
 	 
-	<div id="currencycancel" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div id="provincecancel" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="modal-header" style="background-color:#428bca;color:#fff;border-top-right-radius: 3px;border-top-left-radius: 3px;padding: 5px;">
@@ -155,8 +161,8 @@
 				<div class="modal-body">
 					<div class="h2 text-center">Alert</div>
 					<div class="text-center">You sure you want to delete record?</div>
-					<form id="cancelCurrencyForm" class="form-horizontal" role="form" action="" method="post">
-						<input type="hidden" id="c_id" value="">					
+					<form id="cancelProvinceForm" class="form-horizontal" role="form" action="">
+						<input type="hidden" id="p_id" value="">					
 					</form>
 				</div>
 				<div class="modal-footer">
