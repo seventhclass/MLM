@@ -14,7 +14,8 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/productmaintenance.js"></script>		
 </head>
 <body>
 	 <div class="container">
@@ -61,7 +62,7 @@
 												<th></th>
 											</tr>
 										</thead>
-									   <tbody>
+									   <tbody id="productlist">
 									     <tr>
 											<td>A000000001</td>
 											<td>Anti-Aging</td>
@@ -73,11 +74,11 @@
 							           		<td>40BV</td>
 							           		<td></td>							           		
 							           		<td>
-							           			<div class="col-sm-7">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-7 pdt_maintenance">
+							           				<button type="button" class="btn btn-success editproductbtn" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-5">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
+							           			<div class="col-sm-5 pdt_maintenance">
+							           			<button type="button" class="btn btn-danger delproductbtn" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr>  
@@ -92,14 +93,13 @@
 							           		<td>40BV</td>
 							           		<td></td>
 							           		<td>
-							           			<div class="col-sm-7">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-7 pdt_maintenance">
+							           				<button type="button" class="btn btn-success editproductbtn" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-4">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
+							           			<div class="col-sm-5 pdt_maintenance">
+							           			<button type="button" class="btn btn-danger delproductbtn" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
 							           			</div>
-							           		</td>							           		
-									     </tr> 		
+							           		</td>									     </tr> 		
 									     <tr>
 											<td>A000000003</td>
 											<td>Brain Health</td>
@@ -111,11 +111,11 @@
 							           		<td>40BV</td>
 							           		<td></td>
 							           		<td>
-							           			<div class="col-sm-7">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-7 pdt_maintenance">
+							           				<button type="button" class="btn btn-success editproductbtn" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-4">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
+							           			<div class="col-sm-5 pdt_maintenance">
+							           			<button type="button" class="btn btn-danger delproductbtn" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>							           		
 									     </tr>		
@@ -130,22 +130,22 @@
 							           		<td>55BV</td>
 							           		<td></td>
 							           		<td>
-							           			<div class="col-sm-7">
-							           				<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
+							           			<div class="col-sm-7 pdt_maintenance">
+							           				<button type="button" class="btn btn-success editproductbtn" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-4">
-							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
+							           			<div class="col-sm-5 pdt_maintenance">
+							           			<button type="button" class="btn btn-danger delproductbtn" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>							           		
 									     </tr>										     											     										       												     													     										     												           
 									   </tbody>
 									 </table>
-								</div>	
+								</div>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
-								<button type="button" class="btn btn-success" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
+							<div class="col-md-12 pdt_maintenance">
+								<button type="button" class="btn btn-success addproductbtn" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Add New Item <span class="glyphicon glyphicon-plus-sign"></span></button>
 							</div>
 						</div>																												
 					</div> <!-- end content -->		
@@ -167,7 +167,7 @@
 					<h4 class="modal-title text-center">Products Maintenance</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal" role="form" action="">
+					<form id="editProductForm" class="form-horizontal" role="form" action="">
 						<div class="form-group">
 							<label for="itemcode" class="col-sm-3 control-label">Item Code</label>
 							<div class="col-sm-3">
@@ -184,7 +184,7 @@
 							<label for="category" class="col-sm-3 control-label">Category
 							</label>
 							<div class="col-sm-3">												
-								<select class="form-control">
+								<select name="categoryselect" class="form-control">
 								    <option>Anti-Aging</option>
 								    <option>Life Extension</option>
 								    <option>Brain Health</option>
@@ -196,7 +196,7 @@
 						<div class="form-group">
 							<label for="currency" class="col-sm-3 control-label">Currency</label>
 							<div class="col-sm-3">												
-								<select class="form-control">
+								<select name="currencyselect" class="form-control">
 								    <option selected value="0">Please Choose...</option>
 								    <option value="1">CAD Dollars</option>
 								    <option value="2">US Dollars</option>
@@ -258,7 +258,7 @@
 				<div class="modal-body">
 					<div class="h2 text-center">Alert</div>
 					<div class="text-center">You sure you want to delete record?</div>
-					<form class="form-horizontal" role="form" action="">
+					<form id="cancelProductForm" class="form-horizontal" role="form" action="">
 						<input type="hidden" id="p_id" value="">					
 					</form>
 				</div>

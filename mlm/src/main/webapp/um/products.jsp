@@ -14,13 +14,14 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/produts.js"></script>		
 </head>
 <body>
 	 <div class="container">
 		<div id="header">
 			<%@ include file="../includes/header.jsp"%>
-		</div> <!-- end header -->
+		</div> <!-- end header -->	
 		<div id="functionbar">
 			<%@ include file="../includes/functionbar.jsp"%>
 		</div>
@@ -28,34 +29,37 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div id="left">
-						<div class="btn-group-vertical">
-							<button class="btn btn-success" type="button">Anti-Aging             </button>
-							<button class="btn btn-success" type="button">Life Extension         </button>
-							<button class="btn btn-success" type="button">Brain Health           </button>
-							<button class="btn btn-success" type="button">Energy & Performance   </button>
-							<button class="btn btn-success" type="button">Wealth Creation        </button>
+						<div class="btn-group-vertical categorybox">
+							<button id="btn_category_1" class="btn btn-success" type="button">Anti-Aging             </button>
+							<button id="btn_category_2" class="btn btn-success" type="button">Life Extension         </button>
+							<button id="btn_category_3" class="btn btn-success" type="button">Brain Health           </button>
+							<button id="btn_category_4" class="btn btn-success" type="button">Energy & Performance   </button>
+							<button id="btn_category_5" class="btn btn-success" type="button">Wealth Creation        </button>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-9">
 					<div id="content">
 						<div id="shopwindow">
-							<div class="row">
+							<div id="productslist" class="row">
 								<div class="col-xs-6 col-md-4">
-									<a href="#" class="thumbnail"> <img
-										src="<%=request.getContextPath()%>/images/products/product1.png"
+									<a href="#" class="thumbnail"> 
+										<img src="<%=request.getContextPath()%>/images/products/product1.png"
 										style="height: 200px; width: 150px; display: block;" alt="">
 									</a>
-									<div class="caption">
-										<h3>MT-1000</h3>
-										<p>Prolo telomeres anti-oxidauil ....</p>
-										<p>90 Counts</p>
-										<p>Reatil 99.00$ / Assoc 58$ / 40BV</p>
+									<div class="caption">																		
+										<h3 class="p_name">MT-1000</h3>
+										<p class="p_itemCode">A000000001</p>																				
+										<p><span class="p_rPrice">Reatil 99.00$</span><span>&nbsp;&#47;&nbsp;</span>
+										<span class="p_wPrice">Assoc 58$</span><span>&nbsp;&#47;&nbsp;</span>
+										<span class="p_BV">40BV</span>
+										</p>
+										<p class="p_numbers">90 Counts</p>										
 										<p>
-											Quantity:<input type="number" name="quantity" min="0"
-												max="999" value="0"> <a href="cart.jsp"
-												class="btn btn-danger"><span
-												class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</a>
+											Quantity:<input type="number" name="quantity" min="1"
+												max="999" value="1"> 
+												<button type="button" class="btn btn-danger addtocart_btn"><span
+												class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Add to Cart</button>												
 										</p>
 									</div>
 								</div>
@@ -65,15 +69,18 @@
 										style="height: 200px; width: 150px; display: block;" alt="">
 									</a>
 									<div class="caption">
-										<h3>MT-1000B</h3>
-										<p>Second Generation of MT-1000</p>
-										<p>25 Counts</p>
-										<p>Reatil 41.00$ / Assoc 31$ / 20BV</p>
+										<h3 class="p_name">MT-1000B</h3>
+										<p class="p_itemCode">A000000002</p>																				
+										<p><span class="p_rPrice">Reatil 41.00$</span><span>&nbsp;&#47;&nbsp;</span>
+										<span class="p_wPrice">Assoc 31.00$</span><span>&nbsp;&#47;&nbsp;</span>
+										<span class="p_BV">20BV</span>
+										</p>
+										<p class="p_numbers">25 Counts</p>
 										<p>
-											Quantity:<input type="number" name="quantity" min="0"
-												max="999" value="0"> <a href="cart.jsp"
-												class="btn btn-danger"><span
-												class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</a>
+											Quantity:<input type="number" name="quantity" min="1"
+												max="999" value="1"> 
+											<button type="button" class="btn btn-danger addtocart_btn"><span
+												class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Add to Cart</button>
 										</p>
 									</div>
 								</div>
@@ -83,15 +90,18 @@
 										style="height: 200px; width: 150px; display: block;" alt="">
 									</a>
 									<div class="caption">
-										<h3>Rejwvienator</h3>
-										<p>Preulsor of a miracle moleeule</p>
-										<p>30 Counts</p>
-										<p>Reatil 82.00$ / Assoc 62$ / 40BV</p>
+										<h3 class="p_name">Rejwvienator</h3>
+										<p class="p_itemCode">A000000003</p>																				
+										<p><span class="p_rPrice">Reatil 82.00$</span><span>&nbsp;&#47;&nbsp;</span>
+										<span class="p_wPrice">Assoc 62.00$</span><span>&nbsp;&#47;&nbsp;</span>
+										<span class="p_BV">40BV</span>
+										</p>
+										<p class="p_numbers">30 Counts</p>
 										<p>
-											Quantity:<input type="number" name="quantity" min="0"
-												max="999" value="0"> <a href="cart.jsp"
-												class="btn btn-danger"><span
-												class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</a>
+											Quantity:<input type="number" name="quantity" min="1"
+												max="999" value="1"> 
+											<button type="button" class="btn btn-danger addtocart_btn"><span
+												class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Add to Cart</button>
 										</p>
 									</div>
 								</div>
