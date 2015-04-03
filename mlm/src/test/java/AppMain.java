@@ -12,11 +12,13 @@ import java.util.Date;
  * Created by macbookpro on 2015-03-25.
  */
 public class AppMain {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("file:src/main/webapp/WEB-INF/dispatcher-servlet.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"file:src/main/webapp/WEB-INF/dispatcher-servlet.xml");
 
-        IUserService userService =(IUserService) context.getBean("userService");
+		IUserService userService = (IUserService) context
+				.getBean("userService");
 
         User user = new User();
         user.setFirstName("Hu");
@@ -50,7 +52,6 @@ public class AppMain {
         user.setStatus(1);
         user.setZip("h3w 1x2");
 
-        userService.signUp(user);
 
-    }
+	}
 }

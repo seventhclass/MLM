@@ -3,6 +3,7 @@ package com.milleans.um.dao;
 import com.milleans.dao.AbstractDao;
 import com.milleans.model.User;
 import org.hibernate.Criteria;
+
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -52,4 +53,3 @@ public class UserDAOImpl extends AbstractDao implements IUserDAO {
     }
 
 }
-

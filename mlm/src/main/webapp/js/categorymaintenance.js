@@ -40,7 +40,7 @@ $(document).ready(function(){
  					$('#categorylist').append(
 					    "<tr>"
 			           	+"	<td>"+item.categoryId+"</td>"
-			           	+"	<td>"+item.provinceName+"</td>"
+			           	+"	<td>"+item.categoryName+"</td>"
 			           	+"  <td>"
 			           	+"		<div class='col-sm-offset-1 col-sm-4 cat_maintenance'>"
 			           	+"			<button type='button' class='btn btn-success editcategorybtn' data-toggle='modal' data-target='.categorymaintenance' data-backdrop='static' >Edit</button>"

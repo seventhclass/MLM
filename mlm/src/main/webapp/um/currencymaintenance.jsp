@@ -81,8 +81,8 @@
 							           			<div class="col-sm-offset-1 col-sm-4 cur_maintenance">
 							           				<button type="button" class="btn btn-success editcurrencybtn" data-toggle="modal" data-target=".currencymaintenance" data-backdrop="static" >Edit</button>
 							           			</div>
-							           			<div class="col-sm-4">
-							           				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#currencycancel" data-backdrop="static" >Delete</button>
+							           			<div class="col-sm-4 cur_maintenance">
+							           				<button type="button" class="btn btn-danger delcurrencybtn" data-toggle="modal" data-target="#currencycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
 									     </tr> 									     

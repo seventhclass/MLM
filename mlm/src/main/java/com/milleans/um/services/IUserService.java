@@ -10,4 +10,5 @@ public interface IUserService {
     public User signUp(User userInfo);
 
     public User getUser(String userId);
+
 }

@@ -1,12 +1,12 @@
 package com.milleans.um.services;
 
-
 import com.milleans.model.User;
 import com.milleans.um.dao.IUserDAO;
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 /**
  * Created by macbookpro on 2015-03-07.
@@ -34,5 +34,6 @@ public class UserServiceImpl implements IUserService {
                 userDAO.getUser(userId);
         return user;
     }
+
 
 }

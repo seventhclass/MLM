@@ -56,7 +56,10 @@ html,body{height:100%}
 }
 
 .link-miss .icon{
+	height:100px;
+	weight:100px;
 	background: url(../images/logo/logo-new.png) no-repeat center center;	
+	background-size: 65px 70px ;
 }
 
 .link .icon:hover {
