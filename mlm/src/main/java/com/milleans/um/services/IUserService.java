@@ -11,4 +11,9 @@ public interface IUserService {
 
     public User getUser(String userId);
 
+
+    public String checkEmail(String email);
+
+    public String getSponorId(String userId);
+
 }

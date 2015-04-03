@@ -48,7 +48,7 @@ public class AppMain {
         user.setPassWord("111111");
         user.setPhone("5148851234");
         user.setProvince("QC");
-        user.setSponsorid(111);
+        user.setSponsorId("11111");
         user.setStatus(1);
         user.setZip("h3w 1x2");
 

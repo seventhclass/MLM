@@ -42,7 +42,7 @@ public class User implements Serializable {
     private String gender;
 
     @Column(name = "sponsorid")
-    private int sponsorid;
+    private String sponsorId;
 
     @Column(name = "password")
     private String passWord;
@@ -150,12 +150,12 @@ public class User implements Serializable {
         this.gender = gender;
     }
 
-    public int getSponsorid() {
-        return sponsorid;
+    public String getSponsorId() {
+        return sponsorId;
     }
 
-    public void setSponsorid(int sponsorid) {
-        this.sponsorid = sponsorid;
+    public void setSponsorId(String sponsorId) {
+        this.sponsorId = sponsorId;
     }
 
     public String getPassWord() {

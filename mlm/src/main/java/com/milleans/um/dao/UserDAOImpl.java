@@ -3,7 +3,6 @@ package com.milleans.um.dao;
 import com.milleans.dao.AbstractDao;
 import com.milleans.model.User;
 import org.hibernate.Criteria;
-
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -51,5 +50,44 @@ public class UserDAOImpl extends AbstractDao implements IUserDAO {
         } else
             return list.get(0);
     }
+
+    @Override
+    public String getEmail(String email) {
+
+        Criteria criteria = this.getCurrentSession().createCriteria(User.class);
+        criteria.add(Restrictions.eq("email", email));
+        List<User> list = criteria.list();
+
+        if (list == null || list.size() == 0) {
+            return null;
+        } else {
+            User tmp = (User) list.get(0);
+            return tmp.getEmail();
+        }
+    }
+
+    @Override
+    public String getSponsorId(String sponsorId) {
+
+        Criteria criteria = this.getCurrentSession().createCriteria(User.class);
+        criteria.add(Restrictions.eq("sponsorid", sponsorId));
+
+        List<User> list = criteria.list();
+
+        if (list == null || list.size() == 0) {
+            return null;
+        } else {
+            User tmp = (User) list.get(0);
+            return tmp.getSponsorId();
+        }
+
+
+    }
+
+    @Override
+    public String getRefenerceId(String userId) {
+        return null;
+    }
+
 
 }

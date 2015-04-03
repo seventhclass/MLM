@@ -5,7 +5,6 @@ import com.milleans.tools.Utils;
 import com.milleans.um.dto.JsonResponseDto;
 import com.milleans.um.dto.LoginDto;
 import com.milleans.um.services.IUserService;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +26,7 @@ import java.util.Date;
 /**
  * Created by macbookpro on 2015-03-07.
  */
-@Controller
+@Controller("userController")
 public class UserController {
 
     static Logger log = Logger.getLogger(UserController.class.getName());
@@ -110,7 +109,7 @@ public class UserController {
     @ResponseBody
     JsonResponseDto getUserInfo(@RequestParam String memberId) {
 
-        User user= userService.getUser(memberId);
+        User user = userService.getUser(memberId);
 
         JsonResponseDto jsonResponseDto = new JsonResponseDto();
         jsonResponseDto.setObject(user);
@@ -157,7 +156,7 @@ public class UserController {
         user.setZip(request.getParameter("zip"));
         user.setMobile(request.getParameter("mobilephone"));
         user.setPhone(request.getParameter("officephone"));
-        user.setSponsorid(Integer.valueOf(request.getParameter("sponsorid")));
+        user.setSponsorId(request.getParameter("sponsorid"));
         user.setCompanyName(request.getParameter("companyname"));
         if (request.getParameter("companytype") != null) {
             user.setCompanyType(Integer.valueOf(request
@@ -189,4 +188,29 @@ public class UserController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/checkEmail", method = RequestMethod.GET)
+    public JsonResponseDto getEmail(@RequestParam("email") String email) {
+
+        String _email = userService.checkEmail(email);
+
+        JsonResponseDto jsonResponseDto = new JsonResponseDto();
+        jsonResponseDto.setObject(_email);
+        jsonResponseDto.setResult("success");
+        jsonResponseDto.setMessage("it's really success.");
+
+        return jsonResponseDto;
+    }
+
+    @RequestMapping(value = "/sponsorId",method = RequestMethod.GET)
+    public JsonResponseDto getSponsorId(@RequestParam("userId") String userId) {
+        String sponsorId = null;
+        sponsorId = userService.getSponorId(userId);
+
+        JsonResponseDto jsonResponseDto = new JsonResponseDto();
+        jsonResponseDto.setObject(sponsorId);
+        jsonResponseDto.setResult("success");
+        jsonResponseDto.setMessage("it's really success.");
+
+        return jsonResponseDto;
+    }
 }

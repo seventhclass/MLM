@@ -19,4 +19,9 @@ public interface IUserDAO {
     public User getUser(String userId);
 
 
+    public String getEmail(String email);
+
+    public String getSponsorId(String userId);
+
+    public String getRefenerceId(String userId);
 }
