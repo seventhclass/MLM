@@ -2,7 +2,9 @@ package com.milleans.um.dao;
 
 import com.milleans.dao.AbstractDao;
 import com.milleans.model.User;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,12 +38,17 @@ public class UserDAOImpl extends AbstractDao implements IUserDAO {
     }
 
     @Override
-    public User getUser(int userId) {
+    public User getUser(String userId) {
 
-        User user = (User)
-                this.getCurrentSession().get(User.class, userId);
+        Criteria criteria = this.getCurrentSession().createCriteria(User.class);
+        criteria.add(Restrictions.eq("userId", userId));
 
-        return user;
+        List<User> list = criteria.list();
+
+        if (list == null || list.size() == 0) {
+            return null;
+        } else
+            return list.get(0);
     }
 
 }

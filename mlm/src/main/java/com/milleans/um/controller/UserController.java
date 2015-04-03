@@ -1,6 +1,7 @@
 package com.milleans.um.controller;
 
 import com.milleans.model.User;
+import com.milleans.tools.Utils;
 import com.milleans.um.dto.JsonResponseDto;
 import com.milleans.um.dto.LoginDto;
 import com.milleans.um.services.IUserService;
@@ -18,6 +19,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by macbookpro on 2015-03-07.
@@ -46,7 +50,7 @@ public class UserController {
             @RequestParam("password") String password, String autoFlag,
             HttpSession session, HttpServletRequest request, HttpServletResponse response) {
         log.debug("user do login");
-        User user = userService.getUser(Integer.valueOf(memberid));
+        User user = userService.getUser(memberid);
         LoginDto loginDto = new LoginDto();
         if (user.getPassWord().equals(password)) {
             loginDto.setMessage("login success");
@@ -103,30 +107,9 @@ public class UserController {
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public
     @ResponseBody
-    JsonResponseDto getUserInfo(String memberId) {
+    JsonResponseDto getUserInfo(@RequestParam String memberId) {
 
-        User user = new User();
-        user.setFirstName("Hu");
-        user.setLastName("le");
-        user.setCity("Montreal");
-        user.setId(11);
-        // user.setRoleId(77);
-        user.setAddress("5004 QueenMary");
-        user.setBirthDate(20001112);
-        user.setCompanyName("7th company");
-        user.setCompanyType(1);
-        user.setCountryId(86);
-        user.setDate(20150101);
-        user.setEmail("hu.le.ca@gmail.com");
-        user.setFax("5148850513");
-        user.setGender("M");
-        user.setMobile("4385570123");
-        user.setPassWord("111111");
-        user.setPhone("5148851234");
-        user.setProvince("QC");
-        user.setSponsorid(111);
-        user.setStatus(1);
-        user.setZip("h3w 1x2");
+        User user= userService.getUser(memberId);
 
         JsonResponseDto jsonResponseDto = new JsonResponseDto();
         jsonResponseDto.setObject(user);
@@ -136,14 +119,6 @@ public class UserController {
         return jsonResponseDto;
     }
 
-    // @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-    // public ModelAndView signUp() {
-    // User newUser = new User();
-    // // newUser.setFirstName();
-    // ModelAndView modelAndView = new ModelAndView("um/home");
-    //
-    // return modelAndView;
-    // }
 
     @RequestMapping(value = "/selectAutoship", method = RequestMethod.GET)
     public ModelAndView registAutoShip() {
@@ -189,9 +164,20 @@ public class UserController {
         }
         user.setEmail(request.getParameter("email"));
 
-        user.setDate(20150315);
+        String birthdayStr = request.getParameter("birthday");
 
-        userService.signUp(user);
+        if (birthdayStr != null) {
+
+            SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
+            try {
+                Date convertedCurrentDate = sdf.parse(birthdayStr);
+                user.setBirthDate(convertedCurrentDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        user.setDate(new Date());
+        user = userService.signUp(user);
 
         ModelMap model = new ModelMap();
         model.addAttribute("user", user);

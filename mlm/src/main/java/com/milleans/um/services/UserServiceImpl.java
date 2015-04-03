@@ -19,16 +19,16 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     @Transactional
-    public int signUp(User userInfo) {
+    public User signUp(User userInfo) {
         System.out.println("user service ---------");
-        userDAO.save(userInfo);
+        User user=userDAO.save(userInfo);
 
-        return 0;
+        return user;
     }
 
     @Override
     @Transactional
-    public User getUser(int userId) {
+    public User getUser(String userId) {
         System.out.println(" service login----");
         User user =
                 userDAO.getUser(userId);

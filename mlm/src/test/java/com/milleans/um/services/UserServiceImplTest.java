@@ -1,11 +1,16 @@
 package com.milleans.um.services;
 
 import com.milleans.model.User;
+import com.milleans.tools.Utils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class UserServiceImplTest {
 
@@ -25,16 +30,25 @@ public class UserServiceImplTest {
 
         User user = new User();
         user.setFirstName("Hu");
+        user.setUserId(Utils.getUserId());
         user.setLastName("le");
         user.setCity("Montreal");
-        //user.setId(11);
         user.setRoleId(77);
+        user.setUserId("abc111");
         user.setAddress("5004 QueenMary");
-        user.setBirthDate(20001112);
+        String birthdayStr="2009-02-11";
+        SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
+        Date convertedCurrentDate = null;
+        try {
+            convertedCurrentDate = sdf.parse(birthdayStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        user.setBirthDate(convertedCurrentDate);
         user.setCompanyName("7th company");
         user.setCompanyType(1);
         user.setCountryId(86);
-        user.setDate(20150101);
+        user.setDate(new Date());
         user.setEmail("hu.le.ca@gmail.com");
         user.setFax("5148850513");
         user.setGender("M");
@@ -54,9 +68,10 @@ public class UserServiceImplTest {
 
         IUserService userService = (IUserService) context.getBean("userService");
         User user =
-                userService.getUser(1);
+                userService.getUser("abc111");
 
-        System.out.println("user =" + user);
+        System.out.println("===================");
+        System.out.println("user =" + user.getUserId());
 
         Assert.assertNotNull(user);
 
