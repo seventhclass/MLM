@@ -281,19 +281,20 @@ CREATE TABLE `t_shoppingcart` (
 DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
   `id` bigint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `date` int(10) unsigned NOT NULL,
+  'userId' VARCHAR(30) NOT NULL,
+  `date` DATE  NOT NULL,
   `accountid` int(6) unsigned DEFAULT NULL,
   `firstname` varchar(30) DEFAULT NULL,
   `lastname` varchar(30) DEFAULT NULL,
   `companyname` varchar(60) DEFAULT NULL,
   `companytype` int(6) unsigned DEFAULT NULL,
   `gender` varchar(10) DEFAULT NULL,
-  `sponsorid` bigint(8) unsigned DEFAULT NULL,
+  `sponsorid` VARCHAR(30) DEFAULT NULL,
   `password` char(32) NOT NULL,
   `mobile` varchar(20) NOT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `fax` varchar(20) DEFAULT NULL,
-  `birthday` int(10) DEFAULT NULL,
+  `birthday` DATE DEFAULT NULL,
   `email` varchar(60) NOT NULL,
   `address` varchar(60) DEFAULT NULL,
   `countryid` int(6) unsigned DEFAULT NULL,
@@ -303,10 +304,10 @@ CREATE TABLE `t_user` (
   `roleid` int(6) unsigned NOT NULL,
   `SSN` varchar(30) DEFAULT NULL,
   `status` int(6) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `p_index_1` (`id`)
+  PRIMARY KEY (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
+

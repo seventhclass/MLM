@@ -7,8 +7,13 @@ import com.milleans.model.User;
  */
 public interface IUserService {
 
-	public User signUp(User userInfo);
+    public User signUp(User userInfo);
 
-	public User getUser(int userId);
+    public User getUser(String userId);
+
+
+    public String checkEmail(String email);
+
+    public String getSponorId(String userId);
 
 }

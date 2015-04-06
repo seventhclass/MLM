@@ -1,7 +1,5 @@
 package com.milleans.um.dao;
 
-import java.util.List;
-
 import com.milleans.model.User;
 
 import java.util.List;
@@ -18,7 +16,12 @@ public interface IUserDAO {
 
     public List<User> getAllUser();
 
-    public User getUser(int userId);
+    public User getUser(String userId);
 
 
+    public String getEmail(String email);
+
+    public String getSponsorId(String userId);
+
+    public String getRefenerceId(String userId);
 }
