@@ -10,11 +10,13 @@
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath()%>/css/orderentry.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/orderentry.js"></script>		
 </head>
 <body>
 	 <div class="container">
@@ -39,10 +41,10 @@
 							    <div class="list-group-item">
 									<div class="row">	
 										<div class="col-sm-3">	
-											Member ID: ABCDE00001
+											Member ID: <span id="memberId">ABCDE00001</span>
 										</div>
 										<div class="col-sm-4">	
-											Michael Wang
+											<span id="memberName">Michael Wang</span>
 										</div>	
 										<div class="col-sm-5">
 											<div class="list-group">
@@ -54,14 +56,14 @@
 														</div>
 														<div class="col-sm-7 text-right">
 															<div class="row">
-																Shopping Cart Item: 3
+																Shopping Cart Item: <span id="shoppingCartItemNumber">3</span>
 															</div>
 															<div class="row">
-																Total: $222.00 CAD
+																Total: $<span id="shoppingCartTotalAmt">222.00</span> CAD
 															</div>
 															<div id="order_cart">
 																<div class="row">
-																	<a href="#">[Clear]</a> <a href="#">[Checkout]</a>
+																	<a id="clearShoppingCart" href="#">[Clear]</a> <a id="checkoutShoppingCart" href="#">[Checkout]</a>
 																</div>
 															</div>
 														</div>							    														
@@ -77,8 +79,9 @@
 											<table class="table">
 												<thead>
 													<tr>
+														<th>Date</th>
 														<th>Item Code</th>
-														<th>Description</th>
+														<th>Name</th>
 														<th>Qty</th>
 														<th>Currency</th>
 														<th>Price Each</th>
@@ -86,66 +89,73 @@
 														<th>Volume 2</th>
 														<th>Price Total</th>
 														<th>Points Total</th>
+														<th></th>
 													</tr>
 												</thead>
-											   <tbody>
+											   <tbody id="myOrderList">
 											     <tr>
+											     	<td>2015-03-15 10:20</td>
 													<td>A000000001</td>
-									           		<td>Prolo telomeres anti-oxidauil ....</td>
-									           		<td>1</td>
+									           		<td>MT-1000</td>
+									           		<td><input class="numbers" type="number" name="numbers" data-id="1" data-seq="1" min="1" max="9999" value="1"></td>
 									           		<td>CAD</td>
 									           		<td>99.00</td>
 									           		<td>90</td>
 									           		<td></td>
-									           		<td>$99.00</td>
-									           		<td>9</td>
+									           		<td id="subPriceTotal_id_11">$99.00</td>
+									           		<td id="subPointsTotal_id_11">9</td>
+									           		<td style="width:30px"><span data-id="1" data-seq="1" class="glyphicon glyphicon-remove-sign close_item" style="color:red"></span></td>
 											     </tr>  
 											     <tr>
+											     	<td>2015-03-15 10:20</td>
 													<td>A000000002</td>
-									           		<td>Second Generation of MT-1000</td>
-									           		<td>1</td>
+									           		<td>MT-1000B</td>
+									           		<td><input class="numbers" type="number" name="numbers" data-id="1" data-seq="2" min="1" max="9999" value="2"></td>
 									           		<td>CAD</td>
 									           		<td>41.00</td>
 									           		<td>25</td>
 									           		<td></td>
-									           		<td>$41.00</td>
-									           		<td>4</td>
+									           		<td id="subPriceTotal_id_12">$41.00</td>
+									           		<td id="subPointsTotal_id_12">4</td>
+									           		<td style="width:30px"><span data-id="1" data-seq="2" class="glyphicon glyphicon-remove-sign close_item" style="color:red"></span></td>
 											     </tr> 		
 											     <tr>
+											     	<td>2015-04-04 13:22</td>
 													<td>A000000003</td>
-									           		<td>Preulsor of a miracle moleeule</td>
-									           		<td>1</td>
+									           		<td>Rejwvienator</td>
+									           		<td><input class="numbers" type="number" name="numbers" data-id="1" data-seq="3" min="1" max="9999" value="1"></td>
 									           		<td>CAD</td>
 									           		<td>82.00</td>
 									           		<td>30</td>
 									           		<td></td>
-									           		<td>$82.00</td>
-									           		<td>8</td>
+									           		<td id="subPriceTotal_id_13">$82.00</td>
+									           		<td id="subPointsTotal_id_13">8</td>
+									           		<td style="width:30px"><span data-id="1" data-seq="3" class="glyphicon glyphicon-remove-sign close_item" style="color:red"></span></td>
 											     </tr>
 											     <tr>
-											     	<td colspan="3"></td>
+											     	<td colspan="4"></td>
 											     	<td>Total:</td>
 											     	<td></td>
-											     	<td>145</td>
+											     	<td id="VolumTotal">145</td>
 											     	<td></td>
-											     	<td>$222.00</td>
-											     	<td>21</td>
+											     	<td id="PriceTotal">$222.00</td>
+											     	<td id="PointsTotal">21</td>
 											     </tr> 													     										       												     													     										     												           
 											   </tbody>
 											 </table>
 										</div>	
 										<div>											
-											<form class="form-horizontal" role="form" action="">
+											<form id="addProductForm" class="form-horizontal" role="form" action="">
 												<div class="form-group">
 													<div class="col-sm-2">													
-														<button type="button" class="btn btn-success" data-toggle="modal" data-target="#productlist" data-backdrop="static" >Products List <span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+														<button type="button" class="btn btn-success productsList_btn" data-toggle="modal" data-target="#productlist" data-backdrop="static" >Products List <span class="glyphicon glyphicon-circle-arrow-down"></span></button>
 													</div>
 													<div class="col-sm-2">
 														<input type="text" class="form-control" id="itemcode"
 															placeholder="Item Code">														
 													</div>
 													<div class="col-sm-2">
-														Qty:<input type="number" name="quantity" min="1" max="999" value="1">
+														Qty:<input id="itemqty" type="number" name="quantity" min="1" max="999" value="1">
 													</div>
 													<div class="col-sm-offset-4 col-sm-2">
 														<button type="submit" class="btn btn-success">Add Item <span class="glyphicon glyphicon-plus-sign"></span></button>
@@ -192,52 +202,57 @@
 										<th>Name</th>
 										<th>Whole Sale Price</th>
 										<th>Retail Price</th>
+										<th>Currency</th>
 										<th>Numbers of Capsules</th>
 										<th>Business Volumes</th>
 										<th>Qty</th>
 										<th>Sel</th>
 									</tr>
 								</thead>
-							   <tbody>
+							   <tbody id="productsList">
 							     <tr>
 									<td>A000000001</td>
 									<td>MT-1000</td>
 					           		<td>58$</td>
 					           		<td>79$</td>
+					           		<td>CAD</td>
 					           		<td>90</td>
 					           		<td>40BV</td>
 					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
-					           		<td><input type="checkbox"></td>
+					           		<td><input type="checkbox" data-id="1"></td>
 							     </tr>  
 							     <tr>
 									<td>A000000002</td>
 									<td>MT-1000 Second Generation</td>
 					           		<td>63$</td>
 					           		<td>82$</td>
+					           		<td>CAD</td>
 					           		<td>50</td>
 					           		<td>40BV</td>
 					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
-					           		<td><input type="checkbox"></td>
+					           		<td><input type="checkbox" data-id="2"></td>
 							     </tr> 		
 							     <tr>
 									<td>A000000003</td>
 									<td>Rejwvenetor</td>
 					           		<td>65$</td>
 					           		<td>82$</td>
+					           		<td>CAD</td>
 					           		<td>60</td>
 					           		<td>40BV</td>
 					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
-					           		<td><input type="checkbox"></td>
+					           		<td><input type="checkbox" data-id="3"></td>
 							     </tr>	
 							     <tr>
 									<td>A000000004</td>
 									<td>Forever Young</td>
 					           		<td>95$</td>
 					           		<td>105$</td>
+					           		<td>CAD</td>
 					           		<td>50</td>
 					           		<td>55BV</td>
 					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
-					           		<td><input type="checkbox"></td>
+					           		<td><input type="checkbox" data-id="4"></td>
 							     </tr>								     				     										       												     													     										     												           
 							   </tbody>
 							 </table>
@@ -260,7 +275,7 @@
 						</div>					
 				</div>
 				<div class="modal-footer">					
-					<button type="button" class="btn btn-primary">Submit</button>
+					<button type="button" class="btn btn-primary selectProducts">Submit</button>
 				</div>
 			</div>
 		</div>

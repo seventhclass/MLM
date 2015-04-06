@@ -1,25 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%
-	String userId = session.getAttribute("userid")==null?null:session.getAttribute("userid").toString();
-	String userName = session.getAttribute("username")==null?null:session.getAttribute("username").toString();	
-	if(userId==null || userId==""){
-		Cookie[] cookies = request.getCookies();
-		if(cookies!=null && cookies.length>0){
-			for(Cookie c:cookies){
-				if(c.getName().equals("userid")){
-					userId = c.getValue();
-				}
-				if(c.getName().equals("username")){
-					userName = c.getValue();
-				}
-			}
-		}		
-	}
-%>    
+    pageEncoding="ISO-8859-1"%>  
 <div class="row">
 	<div class="h4 col-md-5">
 		<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
-		Welcome <strong style="color:red"><%=userName %></strong>&nbsp;<strong>(<span id="memberid"><%=userId %></span>)</strong>
+		Welcome <strong style="color:red" id="membername"></strong>&nbsp;<strong>&#40;<span id="memberid"></span>&#41;</strong>
 	</div>
 </div>
+<script>
+	$(document).ready(function(){		
+		$('#memberid').val($('#get_userInfo').attr('data-userid'));
+		$('#membername').val($('#get_userInfo').attr('data-username'));
+	});
+</script> 

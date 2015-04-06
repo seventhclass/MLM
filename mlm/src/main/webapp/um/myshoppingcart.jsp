@@ -10,11 +10,13 @@
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath()%>/css/myshoppingcart.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/myshoppingcart.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -36,45 +38,66 @@
 										<div class="panel-body">
 											<div class="p_item">
 												<table class="table">
-												   <tbody>
+												   <tbody id="shoppingCartList">
 												     <tr>
-												       <td rowspan="4"><img src="<%=request.getContextPath()%>/images/products/product1.png"
-										           style="height: 50px; width: 55px;" alt=""></td>
+														<td class="itemImage" rowspan="5"><img src="../images/products/product1.png"
+										           			style="height: 110px; width: 105px;" alt=""></td>
+										           		<td class="itemName">Name:</td>
 										           		<td>Mt-1000</td>
-												     </tr>    
+										           		<td rowspan="5" style="width:30px"><span data-id="1" class="glyphicon glyphicon-remove-sign close_item" style="color:red"></span></td>
+												     </tr>     
 												     <tr>
-										           		<td>Prolo telomeres anti-oxidauil ....</td>
-												     </tr>  
-												     <tr>
+												     	<td class="itemName">Capsule Number:</td>
 										           		<td>90 Counts</td>
 												     </tr> 		
 												     <tr>
-										           		<td>99.00$ x 1</td>
+												     	<td class="itemName">Price Each:</td>
+										           		<td>99.00$</td>										           		
 												     </tr> 
 												     <tr>
-												       <td rowspan="4"><img src="<%=request.getContextPath()%>/images/products/product1.png"
-										           style="height: 50px; width: 55px;" alt=""></td>
+														<td class="itemName item_qty">Quantity:</td>
+														<td><input class="numbers" type="number" name="numbers" data-id="1" data-price="99.00" min="1" max="9999" value="1"></td>												     
+												     </tr>
+												     <tr>
+												     	<td class="itemName item_sub_price">Subtotal Price:</td>
+												     	<td id="subtotal_id_1" >99.00$</td>
+												     </tr>
+												     <tr>
+														<td class="itemImage" rowspan="5"><img src="../images/products/product1.png"
+										           			style="height: 110px; width: 105px;" alt=""></td>
+										           		<td class="itemName">Name:</td>
 										           		<td>Mt-1000B</td>
-												     </tr>    
+										           		<td rowspan="5" style="width:30px"><span data-id="2" class="glyphicon glyphicon-remove-sign close_item" style="color:red"></span></td>
+												     </tr>     
 												     <tr>
-										           		<td>Second Generation of MT-1000</td>
-												     </tr>  
-												     <tr>
+												     	<td class="itemName">Capsule Number:</td>
 										           		<td>25 Counts</td>
 												     </tr> 		
 												     <tr>
-										           		<td>41.00$ x 1</td>
-												     </tr> 												     													     										     												           
+												     	<td class="itemName">Price Each:</td>
+										           		<td><span class="item_price">41.00</span>$</td>										           		
+												     </tr> 
+												     <tr>
+														<td class="itemName">Quantity:</td>
+														<td><input class="numbers" type="number" name="numbers" data-id="2" data-price="41.00" min="1" max="9999" value="1"></td>												     
+												     </tr>
+												     <tr>
+												     	<td class="itemName">Subtotal Price:</td>
+												     	<td id="subtotal_id_2">41.00$</td>
+												     </tr>
+<!-- 												     <tr>
+												     	<td align="center" colspan="4"><button id="saveShoppingCart_btn" type="button" class="btn btn-success">Save Shopping Cart</button></td>
+												     </tr> -->												     													     										     												           
 												   </tbody>
 												 </table>
 											</div>	
 										</div>
 										<div class="panel-footer">
-											<p class="list-group-item-text">Total Quantity: 2</p>
-											<p class="list-group-item-text">Total Amount: $140.00</p>										
+											<p class="list-group-item-text">Total Quantity: <span id="total_qty">2</span></p>
+											<p class="list-group-item-text">Total Amount: $<span id="total_amt">140.00</span></p>										
 										</div>									
 										<div class="panel-footer text-center">
-											<button type="button" class="btn btn-danger">Go Cart Settlement</button>
+											<button id="makeOrder_btn" type="button" class="btn btn-danger">Make Order</button>
 											<a href="products.jsp"><button type="button" class="btn btn-primary">Continue Shopping</button></a>
 										</div>
 									</div>							
