@@ -183,7 +183,6 @@ public class UserController {
         model.addAttribute("user", user);
 
         ModelAndView modelAndView = new ModelAndView("um/registersuccess", model);
-        //modelAndView.addObject("user", user);
 
         return modelAndView;
     }
@@ -201,7 +200,7 @@ public class UserController {
         return jsonResponseDto;
     }
 
-    @RequestMapping(value = "/sponsorId",method = RequestMethod.GET)
+    @RequestMapping(value = "/sponsorId", method = RequestMethod.GET)
     public JsonResponseDto getSponsorId(@RequestParam("userId") String userId) {
         String sponsorId = null;
         sponsorId = userService.getSponorId(userId);
@@ -213,4 +212,23 @@ public class UserController {
 
         return jsonResponseDto;
     }
+
+    @RequestMapping(value = "/editprofile", method = RequestMethod.GET)
+    public ModelAndView editProfile(@RequestParam("userId")
+                                    String userId) {
+
+        ModelAndView modelAndView = new ModelAndView("um/editprofile");
+        modelAndView.addObject("userId", userId);
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/modifypassword",method = RequestMethod.GET)
+    public ModelAndView modifyPassword() {
+        ModelAndView modelAndView = new ModelAndView("um/modifypassword");
+        //modelAndView.addObject("userId",)
+        return modelAndView;
+    }
+
+
 }
