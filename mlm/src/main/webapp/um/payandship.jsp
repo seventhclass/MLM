@@ -14,7 +14,8 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/payandship.js"></script>		
 </head>
 <body>
 	 <div class="container">
@@ -49,35 +50,37 @@
 						<div class="row">
 							<div class="col-md-12">
 								<form class="form-horizontal" role="form" action="">
-									<div class="subtitle" >Order Payment Selection</div>
-									<div class="form-group">										
-										<div class="col-sm-2">
-											<label class="radio-inline"> <input type="radio"
-												name="optionspaytype" value="1" checked>Credit Card
-											</label> 	
+									<div class="subtitle" ><span style="color:#00FF00" class='glyphicon glyphicon-credit-card'></span>&nbsp;&nbsp;Order Payment Selection</div>
+									<div id="orderPaymentSection">
+										<div class="form-group">										
+											<div class="col-sm-2">
+												<label class="radio-inline"> <input type="radio"
+													name="optionspaytype" value="1" checked>Credit Card
+												</label> 	
+											</div>	
+											<div class="col-sm-4">																														
+												<select class="form-control c_cardlist">
+												    <option>RBC BANK -   12345678901234</option>
+												    <option>BMO - 22210214998332</option>
+												    <option>TD - 3453408937349274</option>
+												</select>
+											</div>
 										</div>	
-										<div class="col-sm-4">																														
-											<select class="form-control">
-											    <option>RBC BANK -   12345678901234</option>
-											    <option>BMO - 22210214998332</option>
-											    <option>TD - 3453408937349274</option>
-											</select>
-										</div>
-									</div>	
-									<div class="form-group">										
-										<div class="col-sm-2">
-											<label class="radio-inline"> <input type="radio"
-												name="optionspaytype" value="2" >Check
-											</label> 	
-										</div>
-									</div>		
+										<div class="form-group">										
+											<div class="col-sm-2">
+												<label class="radio-inline"> <input type="radio"
+													name="optionspaytype" value="2" >Check
+												</label> 	
+											</div>
+										</div>		
+									</div>
 									<div class="form-group">										
 										<div class="col-sm-offset-2 col-sm-4">
-											<a href="paymenttype.jsp">Edit Credit Card for ABCDE00001</a><br/>	
+											<a href="paymenttype.jsp">Edit Credit Card for <span class="p_userid">ABCDE00001</span></a><br/>	
 											<a href="payandship.jsp">Please refresh after adding a card</a>
 										</div>
 									</div>	
-									<div class="subtitle" >Shipping Address Selection</div>
+									<div class="subtitle" ><span style="color:#00FF00" class='glyphicon glyphicon-home'></span>&nbsp;&nbsp;Shipping Address Selection</div>
 									<div class="form-group">										
 										<div class="col-sm-12">
 											<div class="table-responsive ordertable">
@@ -85,48 +88,53 @@
 														<thead>
 															<tr>
 																<th>Choice</th>
-																<th>Type</th>
-																<th>First Name</th>
-																<th>Last Name</th>
+																<th>Name</th>
 																<th>Address</th>
+																<th>City</th>
+																<th>Province</th>
+																<th>Country</th>
 																<th>Zip</th>
 																<th>Phone</th>
 															</tr>
 														</thead>
-													   <tbody>
+													   <tbody id="shippingAddressList">
 													     <tr>
 															<td><input type="radio" name="shipaddress" value="1" checked></td>
-											           		<td>shipping</td>
-											           		<td>Michael</td>
-											           		<td>Wang</td>
-											           		<td>1234 Rue cote-des-neiges apt. 10 Montreal QC Canada</td>
+											           		<td>Michael Wang</td>
+											           		<td>1234 Rue cote-des-neiges apt. 10</td>
+											           		<td>Montreal</td>
+											           		<td>QC</td>
+											           		<td>Canada</td>
 											           		<td>A5W 1S3</td>
 											           		<td>514 888 1234</td>
 													     </tr>	
 													     <tr>
 															<td><input type="radio" name="shipaddress" value="1" ></td>
-											           		<td>shipping</td>
-											           		<td>Michael</td>
-											           		<td>Wang</td>
-											           		<td>1234 Rue cote-des-neiges apt. 10 Montreal QC Canada</td>
+											           		<td>Michael Wang</td>
+											           		<td>1234 Rue cote-des-neiges apt. 10</td>
+											           		<td>Montreal</td>
+											           		<td>QC</td>
+											           		<td>Canada</td>											           		
 											           		<td>A5W 1S3</td>
 											           		<td>514 888 1234</td>
 													     </tr>
 													     <tr>
 															<td><input type="radio" name="shipaddress" value="1" ></td>
-											           		<td>shipping</td>
-											           		<td>Michael</td>
-											           		<td>Wang</td>
-											           		<td>1234 Rue cote-des-neiges apt. 10 Montreal QC Canada</td>
+											           		<td>Michael Wang</td>
+											           		<td>1234 Rue cote-des-neiges apt. 10</td>
+											           		<td>Montreal</td>
+											           		<td>QC</td>
+											           		<td>Canada</td>											           		
 											           		<td>A5W 1S3</td>
 											           		<td>514 888 1234</td>
 													     </tr>
 													     <tr>
 															<td><input type="radio" name="shipaddress" value="1" ></td>
-											           		<td>shipping</td>
-											           		<td>Michael</td>
-											           		<td>Wang</td>
-											           		<td>1234 Rue cote-des-neiges apt. 10 Montreal QC Canada</td>
+											           		<td>Michael Wang</td>
+											           		<td>1234 Rue cote-des-neiges apt. 10</td>
+											           		<td>Montreal</td>
+											           		<td>QC</td>
+											           		<td>Canada</td>											           		
 											           		<td>A5W 1S3</td>
 											           		<td>514 888 1234</td>
 													     </tr>											     											     											     
@@ -140,14 +148,23 @@
 											<span>Create or modify address - </span><a href="addressmaintenance.jsp">Go to Address Maintenance</a>
 										</div>
 									</div>	
-									<div class="subtitle" >Shipping Method Selection</div>
+									<div class="subtitle" ><span style="color:#00FF00" class='glyphicon glyphicon-plane'></span>&nbsp;&nbsp;Shipping Method Selection</div>
 									<div class="form-group">
 										<div class="col-sm-4">
 											<select id="selectshipmethod" class="form-control" >
 											    <option value="1">$10.00 - Regular</option>
 											    <option value="2">$20.00 - Express</option>									    
 											</select>	
-										</div>																			
+										</div>	
+<!-- 										<div class="col-sm-1 text-right">
+											<span style="color:#FE642E" class='glyphicon glyphicon-star-empty'></span>
+										</div>
+										<div class="col-sm-7 text-left shippingmethoddesc">
+											sldkfjsl;kdfjskljfsl;kjfsldkfjsfdsfsdfsdf
+											dfsdfasfsefsdfsdfsvbefrvsdf
+											sadfsadfsadfsdfsdfsdfasdf
+											sdfsdfsdfsdfs
+										</div>	 -->																											
 									</div>	
 									<br/>
 									<div class="form-group">
@@ -160,7 +177,7 @@
 															<span>Sub Order Total:</span>
 														</div>	
 														<div class="col-sm-2">
-															<span>$222.00</span>
+															$<span id="ordersummary_subordertotal">222.00</span>
 														</div>	
 													</div>	
 											    	<div class="row">
@@ -168,7 +185,7 @@
 															<span>Shipping Fee:</span>
 														</div>	
 														<div class="col-sm-2">
-															<span>$10.00</span>
+															$<span id="ordersummary_shippingfee">10.00</span>
 														</div>	
 													</div>	
 											    	<div class="row">
@@ -176,7 +193,7 @@
 															<span>Tax:</span>
 														</div>	
 														<div class="col-sm-2">
-															<span>$34.80</span>
+															$<span id="ordersummary_tax">34.80</span>
 														</div>	
 													</div>	
 											    	<div class="row">
@@ -184,7 +201,7 @@
 															<span>Order Total:</span>
 														</div>	
 														<div class="col-sm-2">
-															<span>$266.80</span>
+															$<span id="ordersummary_ordertotal">266.80</span>
 														</div>	
 													</div>																																																				    
 												</div>

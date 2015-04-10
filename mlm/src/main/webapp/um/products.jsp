@@ -15,7 +15,7 @@
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/produts.js"></script>		
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/products.js"></script>		
 </head>
 <body>
 	 <div class="container">
@@ -50,13 +50,13 @@
 									<div class="caption">																		
 										<h3 class="p_name">MT-1000</h3>
 										<p class="p_itemCode">A000000001</p>																				
-										<p><span class="p_rPrice">Reatil 99.00$</span><span>&nbsp;&#47;&nbsp;</span>
-										<span class="p_wPrice">Assoc 58$</span><span>&nbsp;&#47;&nbsp;</span>
-										<span class="p_BV">40BV</span>
+										<p>Reatil&nbsp;<span class="p_rPrice">99.00</span>$<span>&nbsp;&#47;&nbsp;</span>
+										Assoc&nbsp;<span class="p_wPrice">58.00</span>$<span>&nbsp;&#47;&nbsp;</span>
+										<span class="p_BV">40</span>BV
 										</p>
-										<p class="p_numbers">90 Counts</p>										
+										<p><span class="p_numbers">90</span>&nbsp;Counts</p>										
 										<p>
-											Quantity:<input type="number" name="quantity" min="1"
+											Quantity:<input class="p_quantity" type="number" name="quantity" min="1"
 												max="999" value="1"> 
 												<button type="button" class="btn btn-danger addtocart_btn"><span
 												class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Add to Cart</button>												
@@ -71,13 +71,13 @@
 									<div class="caption">
 										<h3 class="p_name">MT-1000B</h3>
 										<p class="p_itemCode">A000000002</p>																				
-										<p><span class="p_rPrice">Reatil 41.00$</span><span>&nbsp;&#47;&nbsp;</span>
-										<span class="p_wPrice">Assoc 31.00$</span><span>&nbsp;&#47;&nbsp;</span>
-										<span class="p_BV">20BV</span>
+										<p>Reatil&nbsp;<span class="p_rPrice">41.00</span>$<span>&nbsp;&#47;&nbsp;</span>
+										Assoc&nbsp;<span class="p_wPrice">31.00</span>$<span>&nbsp;&#47;&nbsp;</span>
+										<span class="p_BV">40</span>BV
 										</p>
-										<p class="p_numbers">25 Counts</p>
+										<p><span class="p_numbers">25</span>&nbsp;Counts</p>
 										<p>
-											Quantity:<input type="number" name="quantity" min="1"
+											Quantity:<input class="p_quantity" type="number" name="quantity" min="1"
 												max="999" value="1"> 
 											<button type="button" class="btn btn-danger addtocart_btn"><span
 												class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Add to Cart</button>
@@ -92,13 +92,13 @@
 									<div class="caption">
 										<h3 class="p_name">Rejwvienator</h3>
 										<p class="p_itemCode">A000000003</p>																				
-										<p><span class="p_rPrice">Reatil 82.00$</span><span>&nbsp;&#47;&nbsp;</span>
-										<span class="p_wPrice">Assoc 62.00$</span><span>&nbsp;&#47;&nbsp;</span>
-										<span class="p_BV">40BV</span>
+										<p>Reatil&nbsp;<span class="p_rPrice">82.00</span>$<span>&nbsp;&#47;&nbsp;</span>
+										Assoc&nbsp;<span class="p_wPrice">62.00</span>$<span>&nbsp;&#47;&nbsp;</span>
+										<span class="p_BV">40</span>BV
 										</p>
-										<p class="p_numbers">30 Counts</p>
+										<p><span class="p_numbers">30</span>&nbsp;Counts</p>
 										<p>
-											Quantity:<input type="number" name="quantity" min="1"
+											Quantity:<input class="p_quantity" type="number" name="quantity" min="1"
 												max="999" value="1"> 
 											<button type="button" class="btn btn-danger addtocart_btn"><span
 												class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Add to Cart</button>

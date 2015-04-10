@@ -10,11 +10,13 @@
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath()%>/css/cart.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/cart.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -57,35 +59,31 @@
 									<div class="panel-body">
 										<div class="p_item">
 											<table class="table">
-											   <tbody>
-											     <tr>
-											       <td rowspan="4"><img src="../images/products/product1.png"
-									           style="height: 50px; width: 55px;" alt=""></td>
-									           		<td>Mt-1000</td>
-											     </tr>    
-											     <tr>
-									           		<td>Prolo telomeres anti-oxidauil ....</td>
-											     </tr>  
-											     <tr>
-									           		<td>90 Counts</td>
-											     </tr> 		
-											     <tr>
-									           		<td>99.00$ x 1</td>
-											     </tr> 
-											     <tr>
-											       <td rowspan="4"><img src="../images/products/product1.png"
-									           style="height: 50px; width: 55px;" alt=""></td>
-									           		<td>Mt-1000B</td>
-											     </tr>    
-											     <tr>
-									           		<td>Second Generation of MT-1000</td>
-											     </tr>  
-											     <tr>
-									           		<td>25 Counts</td>
-											     </tr> 		
-											     <tr>
-									           		<td>41.00$ x 1</td>
-											     </tr> 												     													     										     												           
+											   <tbody id="shoppingCartList">										   											  
+												     <tr>
+												       <td rowspan="3"><img src="../images/products/product1.png"
+										           style="height: 50px; width: 55px;" alt=""></td>
+										           		<td>Mt-1000</td>
+										           		<td rowspan="3" style="width:30px"><span data-id="1" class="glyphicon glyphicon-remove-sign close_item" style="color:red"></span></td>
+												     </tr>    
+												     <tr>
+										           		<td>90 Counts</td>
+												     </tr> 		
+												     <tr>
+										           		<td>99.00$ x 1</td>
+												     </tr>
+												     <tr>
+												       <td rowspan="3"><img src="../images/products/product1.png"
+										           style="height: 50px; width: 55px;" alt=""></td>
+										           		<td>Mt-1000B</td>
+										           		<td rowspan="3" style="width:30px"><span data-id="2" class="glyphicon glyphicon-remove-sign close_item" style="color:red"></span></td>
+												     </tr>     
+												     <tr>
+										           		<td>25 Counts</td>
+												     </tr> 		
+												     <tr>
+										           		<td>41.00$ x 1</td>
+												     </tr> 												     													     										     												           
 											   </tbody>
 											 </table>
 										</div>	

@@ -85,16 +85,13 @@ $(document).ready(function(){
  						+"		<img src='"+basePath+"/images/products/"+item.imgname+"' style='height: 200px; width: 150px; display: block;' alt=''>"
  						+"	</a>"
  						+"	<div class='caption'>"
- 						+"		<h3>"+item.itemCode+"</h3>"
- 						+"		<p>"+item.productName+"</p>"
- 						+"		<p>"+item.description+"</p>"
- 						+"		<p>"+item.number+"</p>"
- 						+"		<p>Reatil "+item.retailPrice+"$ / Assoc "+item.wholeSalePrice+"$ / "+item.businessVolume+"BV</p>"
+ 						+"		<h3 class='p_name'>"+item.productName+"</h3>"
+ 						+"		<p class='p_itemCode'>"+item.itemCode+"</p>"
+ 						+"		<p>Reatil&nbsp;<span class='p_rPrice'>"+item.retailPrice+"</span>$<span>&nbsp;&#47;&nbsp;</span>Assoc&nbsp;<span class='p_wPrice'>"+item.wholeSalePrice+"</span>$<span>&nbsp;&#47;&nbsp;</span><span class='p_BV'>"+item.businessVolume+"</span>BV</p>"
+ 						+"		<p><span class='p_numbers'>"+item.number+"</span>&nbsp;Counts</p>" 						
  						+"		<p>"
-						+"			Quantity:<input type='number' name='quantity' min='1' max='999' value='1'> " +
-						+"			<a href='"+basePath+"/cart?memberid="+ +"' class='btn btn-danger'>" +
-						+"				<span class='glyphicon glyphicon-shopping-cart'></span>Add to Cart" +
-						+"			</a>"
+						+"			Quantity:<input class='p_quantity' type='number' name='quantity' min='1' max='999' value='1'> " +
+						+"			<button type='button' class='btn btn-danger addtocart_btn'><spanclass='glyphicon glyphicon-shopping-cart'></span>&nbsp;Add to Cart</button>"
 						+"		</p>"
 			           	+"	</div>"
 			           	+"</div>"
@@ -106,18 +103,67 @@ $(document).ready(function(){
  		}
  	}
  	
- 	$('.caption').click(function(e){
- 		alert("111");
+ 	$('.caption').click(function(e){ 		
 		if($(e.target).is('.addtocart_btn')){
 			addProducts2Cart(e);
-		}else{
-			initData();
-		}
-		
+		}		
 	});
  	
  	function addProducts2Cart(e){
- 		alert("is here!");
+ 		
+ 		var $name = $(e.target).parents("div").children(".p_name").html();
+ 		var $itemCode = $(e.target).parents("div").children(".p_itemCode").html();
+ 		var $rPrice = $(e.target).parents("div").children().children(".p_rPrice").html();
+ 		var $wPrice = $(e.target).parents("div").children().children(".p_wPrice").html();
+ 		var $bVolume = $(e.target).parents("div").children().children(".p_BV").html();
+ 		var $numbers = $(e.target).parents("div").children().children(".p_numbers").html();
+ 		var $quantity = $(e.target).parents("div").children().children(".p_quantity").val(); 		
+ 		
+		alert("name="+$name);	
+		alert("itemcode="+$itemCode);
+		alert("rprice="+$rPrice);
+		alert("wprice="+$wPrice);
+		alert("volume="+$bVolume);
+		alert("numbers="+$numbers);
+		alert("quantity="+$quantity);
+		
+ 	 	//send requrest to server.
+ 	    $.ajax({
+ 	    	url: basePath+'/add2cart',        	
+ 			cache:false,
+ 			async: false,
+ 			type:'POST',
+ 			data:{
+ 				name: $name,
+ 				itemCode: $itemCode,
+ 				rPrice: $rPrice,
+ 				wPrice: $wPrice,
+ 				bVolume: $bVolume,
+ 				numbers: $numbers,
+ 				quantity: $quantity
+ 			},
+ 	    	dataType:'json',
+ 	    	timeout:5000,
+ 	    	error:	function(xhr, ajaxOptions, thrownError){
+ 		                alert(xhr.status+"\n"+xhr.responseText);
+ 		                //$('#content').html(xhr.responseText); 		               
+ 	    			},        	
+ 	    	success:	function(res) {
+ 	    		addProducts2CartResponse(res);
+ 	    			}
+ 	    });  		
  	}
+ 	
+ 	function addProducts2CartResponse(res){
+ 		var result = res.result;			//response code
+ 		var message = res.message;			//response message
+ 		
+ 		if (result == "success") {
+ 				;
+ 		}else{
+ 				alert("Sorry, adding products to shopping cart failed! Try again, please. ");
+ 		}
+ 	}
+ 	
 });
 
