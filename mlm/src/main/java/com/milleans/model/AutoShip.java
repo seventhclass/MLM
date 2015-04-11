@@ -2,6 +2,7 @@ package com.milleans.model;
 
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by macbookpro on 2015-03-17.
@@ -17,7 +18,7 @@ public class AutoShip {
     private int id;
 
     @Column(name = "date")
-    private int date;
+    private Date date;
 
     @Column(name = "shipdate")
     private int shipdate;
@@ -48,11 +49,11 @@ public class AutoShip {
         this.id = id;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

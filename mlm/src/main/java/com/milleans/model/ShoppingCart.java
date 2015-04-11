@@ -1,6 +1,7 @@
 package com.milleans.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by macbookpro on 2015-03-18.
@@ -18,7 +19,7 @@ public class ShoppingCart {
     private int userid;
 
     @Column(name = "date")
-    private int date;
+    private Date date;
 
     @Column(name = "productid")
     private int productId;
@@ -42,14 +43,14 @@ public class ShoppingCart {
         this.userid = userid;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+
+    public void setDate(Date date) {
         this.date = date;
     }
-
 
     public int getProductId() {
         return productId;
