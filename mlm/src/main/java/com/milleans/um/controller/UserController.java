@@ -183,7 +183,6 @@ public class UserController {
         model.addAttribute("user", user);
 
         ModelAndView modelAndView = new ModelAndView("um/registersuccess", model);
-        //modelAndView.addObject("user", user);
 
         return modelAndView;
     }
@@ -201,7 +200,7 @@ public class UserController {
         return jsonResponseDto;
     }
 
-    @RequestMapping(value = "/sponsorId",method = RequestMethod.GET)
+    @RequestMapping(value = "/sponsorId", method = RequestMethod.GET)
     public JsonResponseDto getSponsorId(@RequestParam("userId") String userId) {
         String sponsorId = null;
         sponsorId = userService.getSponorId(userId);
@@ -212,5 +211,58 @@ public class UserController {
         jsonResponseDto.setMessage("it's really success.");
 
         return jsonResponseDto;
+    }
+
+    @RequestMapping(value = "/editprofile", method = RequestMethod.GET)
+    public ModelAndView editProfile(@RequestParam("userId")
+                                    String userId) {
+
+        ModelAndView modelAndView = new ModelAndView("um/editprofile");
+        modelAndView.addObject("userId", userId);
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/modifypassword", method = RequestMethod.GET)
+    public ModelAndView modifyPassword() {
+        ModelAndView modelAndView = new ModelAndView("um/modifypassword");
+        //modelAndView.addObject("userId",)
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/autoshiplist")
+    public ModelAndView autoShip() {
+        ModelAndView modelAndView = new ModelAndView("um/autoship");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/accounttypemaintenance")
+    public ModelAndView accountTypeMaintenance() {
+        return new ModelAndView("um/accounttypemaintenance");
+    }
+
+    @RequestMapping(value = "/countrymaintenance")
+    public ModelAndView countryMaintenance() {
+        return new ModelAndView("um/countrymaintenance");
+    }
+
+    @RequestMapping(value = "/provincemaintenance")
+    public ModelAndView provinceMaintenance() {
+        return new ModelAndView("um/provincemaintenance");
+    }
+
+    @RequestMapping(value = "/currencymaintenance")
+    public ModelAndView currentMaintenance() {
+        return new ModelAndView("um/currencymaintenance");
+    }
+
+    @RequestMapping(value = "/addressmaintenance")
+    public ModelAndView addressMaintenance() {
+        return new ModelAndView("um/addressmaintenance");
+    }
+
+    @RequestMapping(value = "/categorymaintenance")
+    public ModelAndView categoryMaintenance() {
+        return new ModelAndView("um/categorymaintenance");
     }
 }
