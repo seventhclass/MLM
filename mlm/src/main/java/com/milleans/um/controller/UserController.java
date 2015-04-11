@@ -223,12 +223,46 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/modifypassword",method = RequestMethod.GET)
+    @RequestMapping(value = "/modifypassword", method = RequestMethod.GET)
     public ModelAndView modifyPassword() {
         ModelAndView modelAndView = new ModelAndView("um/modifypassword");
         //modelAndView.addObject("userId",)
         return modelAndView;
     }
 
+    @RequestMapping(value = "/autoshiplist")
+    public ModelAndView autoShip() {
+        ModelAndView modelAndView = new ModelAndView("um/autoship");
+        return modelAndView;
+    }
 
+    @RequestMapping(value = "/accounttypemaintenance")
+    public ModelAndView accountTypeMaintenance() {
+        return new ModelAndView("um/accounttypemaintenance");
+    }
+
+    @RequestMapping(value = "/countrymaintenance")
+    public ModelAndView countryMaintenance() {
+        return new ModelAndView("um/countrymaintenance");
+    }
+
+    @RequestMapping(value = "/provincemaintenance")
+    public ModelAndView provinceMaintenance() {
+        return new ModelAndView("um/provincemaintenance");
+    }
+
+    @RequestMapping(value = "/currencymaintenance")
+    public ModelAndView currentMaintenance() {
+        return new ModelAndView("um/currencymaintenance");
+    }
+
+    @RequestMapping(value = "/addressmaintenance")
+    public ModelAndView addressMaintenance() {
+        return new ModelAndView("um/addressmaintenance");
+    }
+
+    @RequestMapping(value = "/categorymaintenance")
+    public ModelAndView categoryMaintenance() {
+        return new ModelAndView("um/categorymaintenance");
+    }
 }
