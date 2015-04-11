@@ -63,7 +63,8 @@
 											</tr>
 										</thead>
 									   <tbody id="productlist">
-									     <tr>
+									   <tr><td colspan="10">No Items.</td></tr>
+<!-- 									     <tr>
 											<td>A000000001</td>
 											<td>Anti-Aging</td>
 							           		<td>MT-1000</td>
@@ -81,63 +82,7 @@
 							           			<button type="button" class="btn btn-danger delproductbtn" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
-									     </tr>  
-									     <tr>
-											<td>A000000002</td>
-											<td>Life Extension</td>
-							           		<td>MT-1000 Second Generation</td>
-							           		<td>63.00</td>
-							           		<td>82.00</td>								           		
-							           		<td>CAD</td>
-							           		<td>50</td>
-							           		<td>40BV</td>
-							           		<td></td>
-							           		<td>
-							           			<div class="col-sm-7 pdt_maintenance">
-							           				<button type="button" class="btn btn-success editproductbtn" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
-							           			</div>
-							           			<div class="col-sm-5 pdt_maintenance">
-							           			<button type="button" class="btn btn-danger delproductbtn" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
-							           			</div>
-							           		</td>									     </tr> 		
-									     <tr>
-											<td>A000000003</td>
-											<td>Brain Health</td>
-											<td>Rejwvenetor</td>
-							           		<td>82.00</td>
-							           		<td>65.00</td>
-							           		<td>CAD</td>							           		
-							           		<td>60</td>
-							           		<td>40BV</td>
-							           		<td></td>
-							           		<td>
-							           			<div class="col-sm-7 pdt_maintenance">
-							           				<button type="button" class="btn btn-success editproductbtn" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
-							           			</div>
-							           			<div class="col-sm-5 pdt_maintenance">
-							           			<button type="button" class="btn btn-danger delproductbtn" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
-							           			</div>
-							           		</td>							           		
-									     </tr>		
-									     <tr>
-											<td>A000000004</td>
-											<td>Energy&Performance</td>
-											<td>Forever Young</td>
-							           		<td>95.00</td>
-							           		<td>105.00</td>
-							           		<td>CAD</td>							           		
-							           		<td>50</td>
-							           		<td>55BV</td>
-							           		<td></td>
-							           		<td>
-							           			<div class="col-sm-7 pdt_maintenance">
-							           				<button type="button" class="btn btn-success editproductbtn" data-toggle="modal" data-target=".productmaintenance" data-backdrop="static" >Edit</button>
-							           			</div>
-							           			<div class="col-sm-5 pdt_maintenance">
-							           			<button type="button" class="btn btn-danger delproductbtn" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
-							           			</div>
-							           		</td>							           		
-									     </tr>										     											     										       												     													     										     												           
+									     </tr>  --> 										     											     										       												     													     										     												           
 									   </tbody>
 									 </table>
 								</div>
@@ -184,7 +129,7 @@
 							<label for="category" class="col-sm-3 control-label">Category
 							</label>
 							<div class="col-sm-3">												
-								<select name="categoryselect" class="form-control">
+								<select id="categoryselect" name="categoryselect" class="form-control">
 								    <option>Anti-Aging</option>
 								    <option>Life Extension</option>
 								    <option>Brain Health</option>

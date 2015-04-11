@@ -54,7 +54,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/product',        	
+ 	    	url: basePath+'/productList',        	
  			cache:false,
  			async: false,
  			type:'POST',			

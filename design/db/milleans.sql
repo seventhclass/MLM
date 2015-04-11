@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : mysql(xampp)
 Source Server Version : 50620
 Source Host           : localhost:3306
-Source Database       : milleans
+Source Database       : mlm
 
 Target Server Type    : MYSQL
 Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2015-03-23 23:21:28
+Date: 2015-04-11 15:26:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -101,6 +101,21 @@ CREATE TABLE `t_category` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for `t_country`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_country`;
+CREATE TABLE `t_country` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(20) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_country
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `t_currency`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_currency`;
@@ -175,34 +190,27 @@ CREATE TABLE `t_parameter` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `t_payment`
+-- Table structure for `t_paymentmethod`
 -- ----------------------------
-DROP TABLE IF EXISTS `t_payment`;
-CREATE TABLE `t_payment` (
+DROP TABLE IF EXISTS `t_paymentmethod`;
+CREATE TABLE `t_paymentmethod` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
-  `userid` bigint(8) unsigned NOT NULL,
-  `paymentmethod` int(6) unsigned NOT NULL,
-  `firstname` varchar(30) DEFAULT NULL,
-  `lastname` varchar(30) DEFAULT NULL,
-  `bankid` int(11) unsigned NOT NULL,
-  `accountno` varchar(50) DEFAULT NULL,
-  `cardno` varchar(50) DEFAULT NULL,
-  `csv` varchar(10) DEFAULT NULL,
-  `username` varchar(50) DEFAULT NULL,
-  `password` char(32) DEFAULT NULL,
-  `defaultpayment` tinyint(1) unsigned NOT NULL,
+  `paymentmethodid` int(6) unsigned NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `status` tinyint(1) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of t_payment
+-- Records of t_paymentmethod
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `t_porduct`
+-- Table structure for `t_product`
 -- ----------------------------
-DROP TABLE IF EXISTS `t_porduct`;
-CREATE TABLE `t_porduct` (
+DROP TABLE IF EXISTS `t_product`;
+CREATE TABLE `t_product` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `itemcode` varchar(20) NOT NULL,
   `name` varchar(60) NOT NULL,
@@ -219,7 +227,23 @@ CREATE TABLE `t_porduct` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of t_porduct
+-- Records of t_product
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `t_province`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_province`;
+CREATE TABLE `t_province` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `countryid` int(6) unsigned NOT NULL,
+  `code` varchar(20) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_province
 -- ----------------------------
 
 -- ----------------------------
@@ -310,8 +334,33 @@ CREATE TABLE `t_user` (
   `status` int(6) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `p_index_1` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_user
+-- ----------------------------
+INSERT INTO `t_user` VALUES ('1', '20150315', '3', '111', '111', null, '0', 'Male', '111', '111', '111', '1111', null, '0', 'gaopleo@gmail.com', '111111', '86', 'QC', '1111', '111', '0', '11', '0');
+
+-- ----------------------------
+-- Table structure for `t_userpayment`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_userpayment`;
+CREATE TABLE `t_userpayment` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `userid` bigint(8) unsigned NOT NULL,
+  `paymentmethodid` int(6) unsigned NOT NULL,
+  `firstname` varchar(30) DEFAULT NULL,
+  `lastname` varchar(30) DEFAULT NULL,
+  `bankid` int(11) unsigned NOT NULL,
+  `accountno` varchar(50) DEFAULT NULL,
+  `cardno` varchar(50) DEFAULT NULL,
+  `csv` varchar(10) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `password` char(32) DEFAULT NULL,
+  `defaultpayment` tinyint(1) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_userpayment
 -- ----------------------------
