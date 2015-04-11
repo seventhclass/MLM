@@ -60,7 +60,7 @@ CREATE TABLE `t_album` (
 DROP TABLE IF EXISTS `t_autoship`;
 CREATE TABLE `t_autoship` (
   `id`           INT(6) UNSIGNED    NOT NULL AUTO_INCREMENT,
-  `date`         INT(10)            NOT NULL,
+  `date`         DATE            NOT NULL,
   `shipdate`     INT(10)            NOT NULL,
   `userid`       BIGINT(8) UNSIGNED NOT NULL,
   `addressid`    INT(6) UNSIGNED    NOT NULL,
@@ -150,7 +150,7 @@ CREATE TABLE `t_currency` (
 DROP TABLE IF EXISTS `t_order`;
 CREATE TABLE `t_order` (
   `id`         INT(6) UNSIGNED    NOT NULL AUTO_INCREMENT,
-  `date`       INT(10)            NOT NULL,
+  `date`       DATE            NOT NULL,
   `userid`     BIGINT(8) UNSIGNED NOT NULL,
   `autoshipid` INT(6) UNSIGNED    NOT NULL,
   `paymentid`  INT(6) UNSIGNED    NOT NULL,
@@ -171,7 +171,7 @@ DROP TABLE IF EXISTS `t_orderdetails`;
 CREATE TABLE `t_orderdetails` (
   `id`          INT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
   `seq`         INT(6) UNSIGNED NOT NULL,
-  `date`        INT(10)         NOT NULL,
+  `date`        DATE         NOT NULL,
   `productid`   INT(6) UNSIGNED NOT NULL,
   `itemcode`    VARCHAR(20)     NOT NULL,
   `price`       DECIMAL(6, 2)   NOT NULL,
@@ -239,11 +239,11 @@ CREATE TABLE `t_product` (
   `capsulenumber`  INT(11)                   DEFAULT NULL,
   `wholesaleprice` DECIMAL(6, 2)    NOT NULL,
   `retailprice`    DECIMAL(6, 2)    NOT NULL,
-  `date`           INT(10) UNSIGNED NOT NULL,
+  `date`           DATE NOT NULL,
   `currencyid`     INT(6) UNSIGNED  NOT NULL,
   `volume`         INT(11)          NOT NULL,
   `volume2`        INT(11)                   DEFAULT NULL,
-  `description`    VARCHAR(255)              DEFAULT NULL,
+  `description`    VARCHAR(255),
   `categoryid`     INT(6) UNSIGNED  NOT NULL,
   PRIMARY KEY (`id`)
 )
@@ -324,7 +324,7 @@ DROP TABLE IF EXISTS `t_shoppingcart`;
 CREATE TABLE `t_shoppingcart` (
   `id`        INT(6) UNSIGNED    NOT NULL AUTO_INCREMENT,
   `userid`    BIGINT(8) UNSIGNED NOT NULL,
-  `date`      INT(10)            NOT NULL,
+  `date`      DATE            NOT NULL,
   `productid` INT(6) UNSIGNED    NOT NULL,
   `quantity`  INT(11)            NOT NULL,
   PRIMARY KEY (`id`)
