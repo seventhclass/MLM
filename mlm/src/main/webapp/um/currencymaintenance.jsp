@@ -51,7 +51,6 @@
 										<thead>
 											<tr>
 												<th>ID</th>
-												<th>Currency Code</th>
 												<th>Currency Name</th>
 												<th>Abbreviation</th>
 												<th></th>
@@ -59,8 +58,7 @@
 										</thead>
 									   <tbody id="currencylist">
 									     <tr>
-							           		<td>1</td>
-							           		<td>86</td>									     
+							           		<td>1</td>							     
 							           		<td>Canada Dollar</td>
 							           		<td>CA</td>
 							           		<td>
@@ -74,7 +72,6 @@
 									     </tr>  
 									     <tr>
 									     	<td>2</td>
-									     	<td>87</td>
 							           		<td>United States Dollar</td>
 							           		<td>US</td>
 							           		<td>
@@ -122,14 +119,7 @@
 							<div class="col-sm-6">
 								<input type="text" class="form-control" id="currencyname">
 							</div>
-						</div>
-						<div class="form-group">
-							<label for="currencycode" class="col-sm-3 control-label">Currency
-								Code</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control" id="currencycode">
-							</div>
-						</div>						
+						</div>					
 						<div class="form-group">
 							<label for="currencyabbr" class="col-sm-3 control-label">Abbreviation</label>
 							<div class="col-sm-3">

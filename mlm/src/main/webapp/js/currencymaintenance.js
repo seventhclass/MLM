@@ -39,10 +39,9 @@ $(document).ready(function(){
  				$.each(res.currencyinfo,function(i, item){
  					$('#currencylist').append(
 					    "<tr>"
-			           	+"	<td>"+item.currencyId+"</td>"
-			           	+"	<td>"+item.provinceCode+"</td>"
-			           	+"	<td>"+item.provinceName+"</td>"
-			           	+"	<td>"+item.Abbreviation+"</td>"
+			           	+"	<td>"+item.id+"</td>"
+			           	+"	<td>"+item.name+"</td>"
+			           	+"	<td>"+item.symbol+"</td>"
 			           	+"  <td>"
 			           	+"		<div class='col-sm-offset-1 col-sm-4 cur_maintenance'>"
 			           	+"			<button type='button' class='btn btn-success editcurrencybtn' data-toggle='modal' data-target='.currencymaintenance' data-backdrop='static' >Edit</button>"
@@ -71,15 +70,13 @@ $(document).ready(function(){
 	
 	function initData(){		
 		$('#currencyname').val("");
-		$('#currencycode').val("");
 		$('#currencyabbr').val("");
 	}
 	
 	function getAndSetData(e){
 		var $td = $(e.target).parents("tr").children("td");	
-		$('#currencycode').val($td.eq(1).text());
-		$('#currencyname').val($td.eq(2).text());
-		$('#currencyabbr').val($td.eq(3).text());
+		$('#currencyname').val($td.eq(1).text());
+		$('#currencyabbr').val($td.eq(2).text());
 	}
 });
 

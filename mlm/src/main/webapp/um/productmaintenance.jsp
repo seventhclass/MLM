@@ -112,7 +112,7 @@
 					<h4 class="modal-title text-center">Products Maintenance</h4>
 				</div>
 				<div class="modal-body">
-					<form id="editProductForm" class="form-horizontal" role="form" action="">
+					<form id="editProductForm" class="form-horizontal" role="form" action="" method="post">
 						<div class="form-group">
 							<label for="itemcode" class="col-sm-3 control-label">Item Code</label>
 							<div class="col-sm-3">
@@ -141,7 +141,7 @@
 						<div class="form-group">
 							<label for="currency" class="col-sm-3 control-label">Currency</label>
 							<div class="col-sm-3">												
-								<select name="currencyselect" class="form-control">
+								<select id="currencyselect" name="currencyselect" class="form-control">
 								    <option selected value="0">Please Choose...</option>
 								    <option value="1">CAD Dollars</option>
 								    <option value="2">US Dollars</option>
