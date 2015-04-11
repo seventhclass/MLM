@@ -24,18 +24,5 @@ $(document).ready(function (){
 		
 		window.location=basePath+"registration?accounttype="+radioVal;	
 	});	
-	
-	$("#selectpaymenttype").change(function(){
-		var selectValue=$("#selectpaymenttype").val();		
-		if(selectValue == 1){
-	        $("#addnewcreditcard").modal({
-	            keyboard:false,
-	            backdrop:"static"
-	        });		
-	        $("#selectpaymenttype").get(0).selectedIndex=0; 
-		}else if(selectValue == 2){			
-			
-		}	
-		
-	});    
+	    
 });

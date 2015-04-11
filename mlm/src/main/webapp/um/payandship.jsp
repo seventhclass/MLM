@@ -49,7 +49,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<form class="form-horizontal" role="form" action="">
+								<form id="userTotalOrderForm" class="form-horizontal" role="form" action="">
 									<div class="subtitle" ><span style="color:#00FF00" class='glyphicon glyphicon-credit-card'></span>&nbsp;&nbsp;Order Payment Selection</div>
 									<div id="orderPaymentSection">
 										<div class="form-group">										

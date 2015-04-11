@@ -58,7 +58,7 @@ $(document).ready(function(){
  	 					if(res.orderPaymentInfo.cardInfo && res.orderPaymentInfo.cardInfo.length>0){
  	 						$('.c_cardlist').html("");	
 	 	 					$.each(res.orderPaymentInfo.cardInfo,function(j, cardInfo){
-	 	 	 					$('.c_cardlist').append("<option>"+cardInfo.bankname+" - "+cardInfo.cartno+"</option>"); 	 						
+	 	 	 					$('.c_cardlist').append("<option value='"+cardInfo.paymentid+">"+cardInfo.bankname+" - "+cardInfo.cartno+"</option>"); 	 						
 	 	 					});
  	 					}
  					}
@@ -202,6 +202,29 @@ $(document).ready(function(){
  			$('#ordersummary_ordertotal').html(); 			
  		}		
  	} 	
+ 	
+ 	$('#userTotalOrderForm').submit(function(){
+		$.post(basePath+'doOrderProcess', $(this).serialize(), function(res){
+			processOrderResponse(res);        				
+		}).fail(function(xhr, ajaxOptions, thrownError) {             	
+			// just in case posting your form failed
+			alert(xhr.status+"\n"+xhr.responseText);
+			alert("Send process order request failed.");			
+		}); 
+		return false;
+ 	});
+ 	
+ 	function processOrderResponse(res){
+    	var result = res.result;			//response code
+    	var message = res.message;			//response message
+
+    	if (result != "success") {
+    		if(message==null || message==""){
+    			message = "Sorry, process your order request failed.";
+    		}    			
+    		alert(message);
+    	}
+ 	}
  	
  });
 

@@ -10,11 +10,13 @@
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath()%>/css/paymenttype.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/paymenttype.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -39,7 +41,7 @@
 									<div class="subtitle" >Payment Type Summary</div>
 								</div>
 								<div class="col-sm-6">		
-									<div class="subtitle" >Distributor: ABCDE00001</div>
+									<div class="subtitle" >Distributor: <span class="p_userid">ABCDE00001</span></div>
 								</div>			
 							</div>														
 						</div>
@@ -51,23 +53,27 @@
 								<div class="col-sm-4">																														
 									<select id="selectpaymenttype" class="form-control" >
 									    <option selected value="0">Please Choose...</option>
-									    <option value="1">Credit Card</option>								    
+									    <option value="1">Credit Card</option>
+									    <option value="2">Check</option>
+									    <option value="3">Paypal</option>
+									    <option value="4">Personal Points</option>
+									    <option value="5">Cash</option>								    
 									</select>
-								</div>		
-							</div>							
+								</div>
+							</div>
 						</div>
 						<div id="paymenttypelist">						
 							<div class="row">
 								<div id="pt_list_title" class="col-md-8">
-									<div class="h4" >ABCDE00001 has the following accounts stored in the system:</div>
+									<div class="h4" >Payment type list for <span style="color:blue" class="p_userid">ABCDE00001</span>:</div>
 								</div>								
 							</div>
 							<div class="row">
-								<div class="col-md-12">
+								<div id="main_box" class="col-md-12">
 									<div class="panel panel-danger">
 										<div class="panel-heading">Payment Type: <strong>Credit Card</strong></div>
 										<div class="panel-body">
-											<form class="form-horizontal" role="form" action="">	
+											<form class="form-horizontal" role="form" action="" method="post">	
 												<div class="form-group">
 													<label for="firstname" class="col-sm-offset-1 col-sm-3 control-label">First
 														Name:</label>
@@ -104,23 +110,18 @@
 													<div class="col-sm-4">
 														<input type="text" class="form-control" id="cscno" value="123">
 													</div>
-												</div>										
-												<div class="form-group">										
-													<div class="col-sm-offset-1 col-sm-7 text-right">
-														<input type="checkbox" name="defaultaccount" checked> This is the Default Account	
-													</div>
-												</div>																																																								
+												</div>																																																																		
 											</form>												
 										</div>
 										<div class="panel-footer text-right">
-											<button type="submit" class="btn btn-success">Save</button>	
-											<button type="submit" class="btn btn-danger">Delete</button>																			
+											<button type="submit" class="btn btn-success savepaymenttype">Save</button>	
+											<button type="button" data-paymentid="1" class="btn btn-danger delpaymenttype">Delete</button>																			
 										</div>
 									</div>	
 									<div class="panel panel-danger">
 										<div class="panel-heading">Payment Type: <strong>Credit Card</strong></div>
 										<div class="panel-body">
-											<form class="form-horizontal" role="form" action="">	
+											<form class="form-horizontal" role="form" action="" method="post">	
 												<div class="form-group">
 													<label for="firstname" class="col-sm-offset-1 col-sm-3 control-label">First
 														Name:</label>
@@ -157,23 +158,18 @@
 													<div class="col-sm-4">
 														<input type="text" class="form-control" id="cscno" value="321">
 													</div>
-												</div>										
-												<div class="form-group">										
-													<div class="col-sm-offset-1 col-sm-7 text-right">
-														<input type="checkbox" name="defaultaccount" > This is the Default Account	
-													</div>
-												</div>																																																								
+												</div>																																																																	
 											</form>												
 										</div>
 										<div class="panel-footer text-right">
-											<button type="submit" class="btn btn-success">Save</button>	
-											<button type="submit" class="btn btn-danger">Delete</button>																			
+											<button type="submit" class="btn btn-success savepaymenttype">Save</button>	
+											<button type="button" data-paymentid="2" class="btn btn-danger delpaymenttype">Delete</button>																			
 										</div>
 									</div>	
 									<div class="panel panel-danger">
 										<div class="panel-heading">Payment Type: <strong>Paypal</strong></div>
 										<div class="panel-body">
-											<form class="form-horizontal" role="form" action="">	
+											<form class="form-horizontal" role="form" action="" method="post">	
 												<div class="form-group">
 													<label for="username" class="col-sm-offset-1 col-sm-3 control-label">User
 														Name:</label>
@@ -192,17 +188,12 @@
 													<div class="col-sm-4">
 														<input type="password" class="form-control" id="password2" value="123456">
 													</div>
-												</div>	
-												<div class="form-group">										
-													<div class="col-sm-offset-1 col-sm-7 text-right">
-														<input type="checkbox" name="defaultaccount" > This is the Default Account	
-													</div>
 												</div>																																																																			
 											</form>												
 										</div>
 										<div class="panel-footer text-right">
-											<button type="submit" class="btn btn-success">Save</button>	
-											<button type="submit" class="btn btn-danger">Delete</button>																			
+											<button type="submit" class="btn btn-success savepaymenttype">Save</button>	
+											<button type="button" data-paymentid="3" class="btn btn-danger delpaymenttype">Delete</button>																			
 										</div>
 									</div>																																
 								</div>
