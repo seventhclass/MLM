@@ -14,4 +14,9 @@ public class productController {
     public ModelAndView products() {
         return new ModelAndView("um/products");
     }
+
+    @RequestMapping(value = "/productmaintenance")
+    public ModelAndView productMaintenance() {
+        return new ModelAndView("um/productmaintenance");
+    }
 }

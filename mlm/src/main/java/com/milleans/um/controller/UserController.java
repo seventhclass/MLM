@@ -209,11 +209,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "/editprofile", method = RequestMethod.GET)
-    public ModelAndView editProfile(@RequestParam("userId")
-                                    String userId) {
+    public ModelAndView editProfile() {
 
         ModelAndView modelAndView = new ModelAndView("um/editprofile");
-        modelAndView.addObject("userId", userId);
+       // modelAndView.addObject("userId", userId);
 
         return modelAndView;
     }
@@ -225,11 +224,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/autoshiplist")
-    public ModelAndView autoShip() {
-        ModelAndView modelAndView = new ModelAndView("um/autoship");
-        return modelAndView;
-    }
+
 
     @RequestMapping(value = "/accounttypemaintenance")
     public ModelAndView accountTypeMaintenance() {
