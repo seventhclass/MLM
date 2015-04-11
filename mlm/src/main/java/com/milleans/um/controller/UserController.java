@@ -98,11 +98,6 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public ModelAndView navMain() {
-
-        return new ModelAndView("um/home");
-    }
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public
