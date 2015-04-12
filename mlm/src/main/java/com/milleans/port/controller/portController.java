@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by macbookpro on 2015-04-10.
  */
 @Controller("portController")
-public class portController {
+public class PortController {
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public ModelAndView navMain() {
