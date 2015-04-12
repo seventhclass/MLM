@@ -12,7 +12,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/category',        	
+ 	    	url: basePath+'/common/category',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -52,7 +52,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/currency',        	
+ 	    	url: basePath+'/common/currency',        	
  			cache:false,
  			async: false,
  			type:'POST',			

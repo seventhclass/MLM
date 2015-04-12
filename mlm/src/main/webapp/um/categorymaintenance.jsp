@@ -56,7 +56,7 @@
 											</tr>
 										</thead>
 									   <tbody id="categorylist">
-									     <tr>
+<!-- 									     <tr>
 									     	<td>1</td>
 									     	<td>Anti-Aging</td>
 							           		<td>
@@ -115,7 +115,7 @@
 							           				<button type="button" class="btn btn-danger delcategorybtn" data-toggle="modal" data-target="#categorycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
-									     </tr> 									     								     									      									       
+									     </tr> 	 -->								     								     									      									       
 										</tbody>
 									 </table>
 								</div>	
@@ -145,12 +145,12 @@
 					<h4 class="modal-title text-center">Category Maintenance</h4>
 				</div>
 				<div class="modal-body">
-					<form id="editCategoryForm" class="form-horizontal" role="form" action="" method="post">
+					<form id="editCategoryForm" class="form-horizontal" role="form" action="/common/addCategory" method="post">
 						<div class="form-group">
-							<label for="countryname" class="col-sm-3 control-label">Category
-								Name</label>
+							<label for="countryname" class="col-sm-3 control-label">Category Name</label>
+							<input type="hidden" name="categoryId" data-model="" id="categoryid">
 							<div class="col-sm-6">
-								<input type="text" class="form-control" id="categoryname">
+								<input type="text" class="form-control" name="categoryName" id="categoryname">
 							</div>
 						</div>
 					</form>						

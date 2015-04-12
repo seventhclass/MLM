@@ -60,12 +60,69 @@ $(document).ready(function(){
  	
 	$('.cat_maintenance').click(function(e){
 		if($(e.target).is('.editcategorybtn')){
-			getAndSetData(e);
+			editCategroy(e);
+		}else if($(e.target).is('.addcategorybtn')){
+			addCategroy(e);
+		}else if($(e.target).is('.delcategorybtn')){
+			delCategroy(e);
 		}else{
-			initData();
-		}
-		
+			alert("Your operation is not available. ");
+		}		
 	});
+	
+	function editCategory(e){
+		getAndSetData(e);
+		$('#categoryid').attr("data-model","upd");
+		sendRequestOfEditCategory(); 		
+	}
+	
+	function addCategory(e){
+		initData();
+		$('#categoryid').attr("data-model","add");
+		sendRequestOfEditCategory(); 		
+	}	
+	
+	function delCategroy(e){
+		getAndSetData(e);
+		$('#categoryid').attr("data-model","del");
+		sendRequestOfEditCategory(); 		
+	}		
+	
+	function sendRequestOfEditCategory(){
+ 	    $.ajax({
+ 	    	url: basePath+'/common/editcategory',        	
+ 			cache:false,
+ 			async: false,
+ 			type:'POST',
+ 			data: {
+ 				model: $('#categoryid').attr("data-model"),
+ 				id: $('#categoryid').val(),
+ 	    		name: $('#categoryname').val()
+ 			},
+ 	    	dataType:'json',
+ 	    	timeout:5000,
+ 	    	error:	function(xhr, ajaxOptions, thrownError){
+ 		                alert(xhr.status+"\n"+xhr.responseText);		               
+ 	    			},        	
+ 	    	success:	function(res) {
+ 	    		sendRequestOfEditCategoryResponse(res);
+ 	    			}
+ 	    });		
+	}
+	 	
+ 	function sendRequestOfEditCategoryResponse(res){
+ 		var result = res.result;			//response code
+ 		var message = res.message;			//response message
+ 		
+ 		if (result == "success") {
+ 			;
+		}else{
+    		if(message==null || message==""){
+    			message = "Sorry, your request is failed.";
+    		}    			
+    		alert(message);
+		}
+ 	}
 	
 	function initData(){		
 		$('#categoryname').val("");
@@ -73,6 +130,7 @@ $(document).ready(function(){
 	
 	function getAndSetData(e){
 		var $td = $(e.target).parents("tr").children("td");	
+		$('#categoryid').val($td.eq(0).text());
 		$('#categoryname').val($td.eq(1).text());
 	}
 });
