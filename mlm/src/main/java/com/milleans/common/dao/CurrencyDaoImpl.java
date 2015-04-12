@@ -1,5 +1,6 @@
-package com.milleans.dao;
+package com.milleans.common.dao;
 
+import com.milleans.dao.AbstractDao;
 import com.milleans.model.Currency;
 import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;

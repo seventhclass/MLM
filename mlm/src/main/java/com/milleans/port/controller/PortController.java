@@ -27,4 +27,9 @@ public class PortController {
     public ModelAndView contactus() {
         return new ModelAndView("um/contactus");
     }
+
+    @RequestMapping(value = "/currencymaintenance")
+    public ModelAndView currentMaintenance() {
+        return new ModelAndView("um/currencymaintenance");
+    }
 }
