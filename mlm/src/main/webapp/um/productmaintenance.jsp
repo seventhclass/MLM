@@ -55,8 +55,8 @@
 												<th>Name</th>
 												<th>Whole Sale Price Each</th>
 												<th>Retail Price Each</th>
-												<th>Currency</th>	
-												<th>Numbers of Capsules</th>											
+												<th>Currency</th>
+												<th>Numbers of Capsules</th>
 												<th>Business Volume Each</th>
 												<th>Business Volume2 Each</th>
 												<th></th>

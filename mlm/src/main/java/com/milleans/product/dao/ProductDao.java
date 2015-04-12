@@ -2,8 +2,10 @@ package com.milleans.product.dao;
 
 import com.milleans.dao.AbstractDao;
 import com.milleans.model.Product;
+
 import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -11,6 +13,7 @@ import java.util.List;
  * Created by macbookpro on 2015-04-11.
  */
 @Repository("productDao")
+@Transactional
 public class ProductDao extends AbstractDao implements IProductDao {
     @Override
     public Product save(Product product) {
