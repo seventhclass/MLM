@@ -62,7 +62,7 @@ CREATE TABLE `t_autoship` (
   `id`           INT(6) UNSIGNED    NOT NULL AUTO_INCREMENT,
   `date`         DATE            NOT NULL,
   `shipdate`     INT(10)            NOT NULL,
-  `userid`       BIGINT(8) UNSIGNED NOT NULL,
+  `userid`       INT(8) UNSIGNED NOT NULL,
   `addressid`    INT(6) UNSIGNED    NOT NULL,
   `shipmethodid` INT(6) UNSIGNED    NOT NULL,
   `volume`       DECIMAL(6, 2)               DEFAULT NULL,
