@@ -14,7 +14,7 @@ import java.util.List;
  * Created by macbookpro on 2015-04-10.
  */
 @Controller("productController")
-public class productController {
+public class ProductController {
 
     @Autowired
     private IProductService productService;
