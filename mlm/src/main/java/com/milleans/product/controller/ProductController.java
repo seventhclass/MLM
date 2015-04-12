@@ -19,6 +19,8 @@ public class ProductController {
     @Autowired
     private IProductService productService;
 
+
+
     @RequestMapping(value = "/products")
     public ModelAndView products() {
         return new ModelAndView("um/products");

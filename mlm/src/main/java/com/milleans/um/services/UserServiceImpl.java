@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by macbookpro on 2015-03-07.
  */
 
+@Transactional
 @Service("userService")
 public class UserServiceImpl implements IUserService {
     @Autowired
