@@ -2,10 +2,12 @@ package com.milleans.product.controller;
 
 import com.milleans.model.Product;
 import com.milleans.product.services.IProductService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -30,6 +32,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/productList", method = RequestMethod.POST)
+    @ResponseBody
     public String productList() {
 
         List<Product> productList =
