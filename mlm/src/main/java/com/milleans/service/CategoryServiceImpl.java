@@ -12,6 +12,7 @@ import java.util.List;
  * Created by macbookpro on 2015-04-12.
  */
 @Service("categoryService")
+@Transactional
 public class CategoryServiceImpl implements ICategoryService {
 
     @Autowired
