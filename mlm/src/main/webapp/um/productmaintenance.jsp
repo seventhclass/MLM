@@ -112,7 +112,7 @@
 					<h4 class="modal-title text-center">Products Maintenance</h4>
 				</div>
 				<div class="modal-body">
-					<form id="editProductForm" class="form-horizontal" role="form" action="" method="post">
+					<form id="editProductForm" class="form-horizontal" role="form" action="/addProduct" method="post">
 						<div class="form-group">
 							<label for="itemcode" class="col-sm-3 control-label">Item Code</label>
 							<div class="col-sm-3">
@@ -151,13 +151,13 @@
 						<div class="form-group">
 							<label for="w_price" class="col-sm-3 control-label">Whole Sale Price</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="w_price">
+								<input type="text" class="form-control" id="w_price" name="r_price">
 							</div>
 						</div>	
 						<div class="form-group">
 							<label for="r_price" class="col-sm-3 control-label">Retail Price</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="r_price">
+								<input type="text" class="form-control" id="r_price" name="r_price">
 							</div>
 						</div>		
 						<div class="form-group">
@@ -169,22 +169,22 @@
 						<div class="form-group">
 							<label for="volume" class="col-sm-3 control-label">Business Volume</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="volume">
+								<input type="text" name="volume" class="form-control" id="volume">
 							</div>
 						</div>	
 						<div class="form-group">
 							<label for="volume2" class="col-sm-3 control-label">Business Volume2</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="volume2">
+								<input type="text" name="volume2" class="form-control" id="volume2">
 							</div>
 						</div>	
 						<div class="form-group">
 							<label for="description" class="col-sm-3 control-label">Description</label>
 							<div class="col-sm-6">
-								<textarea id="description" class="form-control" rows="2"></textarea>
+								<textarea id="description" name="description" class="form-control" rows="2"></textarea>
 							</div>
 						</div>																																																								
-					</form>						
+					</form>
 				</div>
 				<div class="modal-footer text-center">					
 					<button type="submit" class="btn btn-primary">Save</button>
