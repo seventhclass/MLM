@@ -9,7 +9,6 @@ import java.util.List;
  */
 public interface IUserDAO {
 
-
     public int update(User userInfo);
 
     public User save(User user);
