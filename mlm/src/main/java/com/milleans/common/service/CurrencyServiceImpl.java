@@ -1,6 +1,6 @@
-package com.milleans.service;
+package com.milleans.common.service;
 
-import com.milleans.dao.ICurrencyDao;
+import com.milleans.common.dao.ICurrencyDao;
 import com.milleans.model.Currency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

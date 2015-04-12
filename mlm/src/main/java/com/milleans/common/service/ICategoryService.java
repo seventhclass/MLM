@@ -1,4 +1,4 @@
-package com.milleans.service;
+package com.milleans.common.service;
 
 import com.milleans.model.Category;
 
@@ -11,4 +11,10 @@ public interface ICategoryService {
 
     public List<Category> getAllCategory();
 
+    public int save(Category category);
+
+    void remove(Category category);
+
+    void update(Category category);
 }
+

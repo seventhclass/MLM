@@ -241,10 +241,7 @@ public class UserController {
         return new ModelAndView("um/provincemaintenance");
     }
 
-    @RequestMapping(value = "/currencymaintenance")
-    public ModelAndView currentMaintenance() {
-        return new ModelAndView("um/currencymaintenance");
-    }
+
 
     @RequestMapping(value = "/addressmaintenance")
     public ModelAndView addressMaintenance() {

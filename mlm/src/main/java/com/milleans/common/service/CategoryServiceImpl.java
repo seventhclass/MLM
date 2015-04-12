@@ -1,6 +1,6 @@
-package com.milleans.service;
+package com.milleans.common.service;
 
-import com.milleans.dao.ICategoryDao;
+import com.milleans.common.dao.ICategoryDao;
 import com.milleans.model.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,5 +23,21 @@ public class CategoryServiceImpl implements ICategoryService {
     public List<Category> getAllCategory() {
         List<Category> rs = categoryDao.getAllCategory();
         return rs;
+    }
+
+    @Override
+    public int save(Category category) {
+        Category _category = categoryDao.save(category);
+        return _category == null ? -1 : 0;
+    }
+
+    @Override
+    public void remove(Category category) {
+        categoryDao.remove(category);
+    }
+
+    @Override
+    public void update(Category category) {
+        categoryDao.update(category);
     }
 }
