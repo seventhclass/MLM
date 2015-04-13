@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
-import java.util.*;
+
+import java.util.List;
 
 /**
- * Created by macbookpro on 2015-04-12.
+ * Created by LeHu on 2015-04-12.
  */
 @Controller("commonController")
 @RequestMapping("/common")
@@ -34,9 +35,9 @@ public class CommonController {
     @RequestMapping(value = "/category", method = RequestMethod.POST)
     @ResponseBody
     public CategoryJs getCategory() {
-        List<Category> rl=categoryService.getAllCategory();
+        List<Category> rl = categoryService.getAllCategory();
         System.out.println(rl);
-        CategoryJs categoryJs=new CategoryJs();
+        CategoryJs categoryJs = new CategoryJs();
 
         categoryJs.setList(rl);
         categoryJs.setMessage("success");
@@ -56,31 +57,36 @@ public class CommonController {
 
         CategoryJs categoryJs = new CategoryJs();
 
-        if (model.equals("add")) { // save
-            category.setName(name);
-            if (categoryService.save(category) == 0) {
-                categoryJs.setMessage("add success!");
+
+        try {
+            if (model.equals("add")) { // save
+                category.setName(name);
+                if (categoryService.save(category) == 0) {
+                    categoryJs.setMessage("add success!");
+                    categoryJs.setResult("success");
+                } else {
+                    categoryJs.setMessage("add fail!");
+                    categoryJs.setResult("fail");
+                }
+            } else if (model.equals("del")) { //del
+                category.setId(Integer.valueOf(id));
+                categoryService.remove(category);
+
+                categoryJs.setMessage("remove success!");
                 categoryJs.setResult("success");
-            } else {
-                categoryJs.setMessage("add fail!");
-                categoryJs.setResult("fail");
+            } else { // update
+                category.setId(Integer.valueOf(id));
+                category.setName(name);
+                categoryService.update(category);
+
+                categoryJs.setMessage("update success!");
+                categoryJs.setResult("success");
             }
-        } else if (model.equals("del")) { //del
-            category.setId(Integer.valueOf(id));
-            categoryService.remove(category);
-
-            categoryJs.setMessage("remove success!");
-            categoryJs.setResult("success");
-        } else { // update
-            category.setId(Integer.valueOf(id));
-            category.setName(name);
-            categoryService.update(category);
-
-            categoryJs.setMessage("update success!");
-            categoryJs.setResult("success");
+        } catch (Exception e) {
+            categoryJs.setMessage(e.getMessage());
+            categoryJs.setResult("fail");
+            e.printStackTrace();
         }
-
-        System.out.println("--->"+categoryJs);
 
         return categoryJs;
     }

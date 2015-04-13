@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface ICurrencyService {
     public List<Currency> getAllCurrency();
+
+    public void save(Currency currency);
 }

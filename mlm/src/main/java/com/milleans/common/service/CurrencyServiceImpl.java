@@ -23,4 +23,9 @@ public class CurrencyServiceImpl implements ICurrencyService {
     public List<Currency> getAllCurrency() {
         return currencyDao.getAllCurrency();
     }
+
+    @Override
+    public void save(Currency currency) {
+        save(currency);
+    }
 }
