@@ -1,5 +1,9 @@
 package com.milleans.common.dto;
 
+import com.milleans.model.Category;
+
+import java.util.List;
+
 /**
  * Created by LeHu on 2015-04-12.
  */
@@ -9,13 +13,13 @@ public class CategoryJs {
 
     private String message;
 
-    private String list;
+    private List<Category> list;
 
-    public String getList() {
+    public List<Category> getList() {
         return list;
     }
 
-    public void setList(String list) {
+    public void setList(List<Category> list) {
         this.list = list;
     }
 

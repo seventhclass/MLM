@@ -37,7 +37,8 @@ public class CommonController {
         List<Category> rl=categoryService.getAllCategory();
         System.out.println(rl);
         CategoryJs categoryJs=new CategoryJs();
-        categoryJs.setList(rl.toString());
+
+        categoryJs.setList(rl);
         categoryJs.setMessage("success");
         categoryJs.setResult("success");
         return categoryJs;
@@ -45,7 +46,7 @@ public class CommonController {
 
     @RequestMapping(value = "/editcategory", method = RequestMethod.POST)
     @ResponseBody
-    public String updateCategory(WebRequest webRequest) {
+    public CategoryJs updateCategory(WebRequest webRequest) {
 
         String model = webRequest.getParameter("model");
         String id = webRequest.getParameter("id");
@@ -81,7 +82,7 @@ public class CommonController {
 
         System.out.println("--->"+categoryJs);
 
-        return categoryJs.toString();
+        return categoryJs;
     }
 
 }
