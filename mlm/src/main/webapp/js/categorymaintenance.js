@@ -12,7 +12,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/category',        	
+ 	    	url: basePath+'/common/category',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -62,6 +62,7 @@ $(document).ready(function(){
 		if($(e.target).is('.editcategorybtn')){
 			editCategroy(e);
 		}else if($(e.target).is('.addcategorybtn')){
+			alert("111");
 			addCategroy(e);
 		}else if($(e.target).is('.delcategorybtn')){
 			delCategroy(e);
@@ -76,7 +77,7 @@ $(document).ready(function(){
 		sendRequestOfEditCategory(); 		
 	}
 	
-	function addCategory(e){
+	function addCategroy(e){
 		initData();
 		$('#categoryid').attr("data-model","add");
 		sendRequestOfEditCategory(); 		

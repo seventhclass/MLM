@@ -24,7 +24,8 @@ public class CategoryDaoImpl extends AbstractDao implements ICategoryDao {
 
     @Override
     public Category save(Category category) {
-        return (Category) this.getCurrentSession().save(category);
+    	this.getCurrentSession().save(category);
+       return category; 
     }
 
     @Override
