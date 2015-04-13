@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
+import java.util.*;
 
 /**
  * Created by macbookpro on 2015-04-12.
@@ -32,8 +33,14 @@ public class CommonController {
 
     @RequestMapping(value = "/category", method = RequestMethod.POST)
     @ResponseBody
-    public String getCategory() {
-        return categoryService.getAllCategory().toString();
+    public CategoryJs getCategory() {
+        List<Category> rl=categoryService.getAllCategory();
+        System.out.println(rl);
+        CategoryJs categoryJs=new CategoryJs();
+        categoryJs.setList(rl.toString());
+        categoryJs.setMessage("success");
+        categoryJs.setResult("success");
+        return categoryJs;
     }
 
     @RequestMapping(value = "/editcategory", method = RequestMethod.POST)
@@ -71,6 +78,8 @@ public class CommonController {
             categoryJs.setMessage("update success!");
             categoryJs.setResult("success");
         }
+
+        System.out.println("--->"+categoryJs);
 
         return categoryJs.toString();
     }

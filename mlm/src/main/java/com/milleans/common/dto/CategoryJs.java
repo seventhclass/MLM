@@ -9,6 +9,16 @@ public class CategoryJs {
 
     private String message;
 
+    private String list;
+
+    public String getList() {
+        return list;
+    }
+
+    public void setList(String list) {
+        this.list = list;
+    }
+
     public String getResult() {
         return result;
     }
