@@ -110,7 +110,7 @@ $(document).ready(function(){
 		var i_id = $('#currencyid').val();
 		var i_name = $('#currencyname').val();
 		var i_abbr = $('#currencyabbr').val();
-
+alert("model="+i_model+", id="+i_id+", name="+i_name+", abbr="+i_abbr);
  	    $.ajax({
  	    	url: basePath+'/common/editcurrency',        	
  			cache:false,
