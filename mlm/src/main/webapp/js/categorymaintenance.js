@@ -62,7 +62,6 @@ $(document).ready(function(){
 		if($(e.target).is('.editcategorybtn')){
 			editCategroy(e);
 		}else if($(e.target).is('.addcategorybtn')){
-			alert("111");
 			addCategroy(e);
 		}else if($(e.target).is('.delcategorybtn')){
 			delCategroy(e);
@@ -74,20 +73,24 @@ $(document).ready(function(){
 	function editCategory(e){
 		getAndSetData(e);
 		$('#categoryid').attr("data-model","upd");
-		sendRequestOfEditCategory(); 		
+		//sendRequestOfEditCategory(); 		
 	}
 	
 	function addCategroy(e){
 		initData();
 		$('#categoryid').attr("data-model","add");
-		sendRequestOfEditCategory(); 		
+		//sendRequestOfEditCategory(); 		
 	}	
 	
 	function delCategroy(e){
 		getAndSetData(e);
 		$('#categoryid').attr("data-model","del");
-		sendRequestOfEditCategory(); 		
+		//sendRequestOfEditCategory(); 		
 	}		
+		
+	$('#editCategorybtn').click(function(){		
+		sendRequestOfEditCategory();
+	});
 	
 	function sendRequestOfEditCategory(){
  	    $.ajax({

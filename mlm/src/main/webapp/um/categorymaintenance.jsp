@@ -145,7 +145,7 @@
 					<h4 class="modal-title text-center">Category Maintenance</h4>
 				</div>
 				<div class="modal-body">
-					<form id="editCategoryForm" class="form-horizontal" role="form" action="/common/addCategory" method="post">
+					<form class="form-horizontal" role="form" action="" method="post">
 						<div class="form-group">
 							<label for="countryname" class="col-sm-3 control-label">Category Name</label>
 							<input type="hidden" name="categoryId" data-model="" id="categoryid">
@@ -156,7 +156,7 @@
 					</form>						
 				</div>
 				<div class="modal-footer text-center">					
-					<button type="submit" class="btn btn-primary">Save</button>
+					<button id="editCategorybtn" type="button" class="btn btn-primary">Save</button>
 				</div>
 			</div>
 		</div>
