@@ -44,6 +44,41 @@ public class CommonController {
         return currencyJs;
     }
 
+    @RequestMapping(value = "/editcurrency",method = RequestMethod.POST)
+    public  CurrencyJs editCurrency(WebRequest webRequest){
+
+        String model = webRequest.getParameter("model");
+        String id = webRequest.getParameter("id");
+        String name = webRequest.getParameter("name");
+        String abbr= webRequest.getParameter("abbr");
+
+        Currency currency=new Currency();
+        currency.setId(Integer.valueOf(id));
+        currency.setName(name);
+        currency.setSymbol(abbr);
+
+        CurrencyJs currencyJs=new CurrencyJs();
+
+        try {
+            if (model.equals("add")) { // save
+                currency.setName(name);
+                currencyService.save(currency);
+            } else if (model.equals("del")) { //del
+                currencyService.remove(currency);
+            } else { // update
+                currencyService.update(currency);
+            }
+        } catch (Exception e) {
+            currencyJs.setMessage(e.getMessage());
+            currencyJs.setResult("fail");
+            e.printStackTrace();
+        }
+
+        currencyService.update(currency);
+
+        return currencyJs;
+    }
+
     @RequestMapping(value = "/category", method = RequestMethod.POST)
     @ResponseBody
     public CategoryJs getCategory() {
