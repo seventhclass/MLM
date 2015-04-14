@@ -10,13 +10,13 @@ import java.util.List;
  */
 public class CurrencyJs extends BaseJs {
 
-    private List<Currency> currencyList;
+    private List<Currency> symbol;
 
-    public List<Currency> getCurrencyList() {
-        return currencyList;
+    public List<Currency> getSymbol() {
+        return symbol;
     }
 
-    public void setCurrencyList(List<Currency> currencyList) {
-        this.currencyList = currencyList;
+    public void setSymbol(List<Currency> symbol) {
+        this.symbol = symbol;
     }
 }

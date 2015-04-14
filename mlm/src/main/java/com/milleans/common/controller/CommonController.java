@@ -1,9 +1,11 @@
 package com.milleans.common.controller;
 
 import com.milleans.common.dto.CategoryJs;
+import com.milleans.common.dto.CurrencyJs;
 import com.milleans.common.service.ICategoryService;
 import com.milleans.common.service.ICurrencyService;
 import com.milleans.model.Category;
+import com.milleans.model.Currency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,15 +30,24 @@ public class CommonController {
 
     @RequestMapping(value = "/currency", method = RequestMethod.POST)
     @ResponseBody
-    public String getCurrencyList() {
-        return currencyService.getAllCurrency().toString();
+    public CurrencyJs getCurrencyList() {
+        List<Currency> rs=currencyService.getAllCurrency();
+        CurrencyJs currencyJs=new CurrencyJs();
+        try {
+            currencyJs.setSymbol(rs);
+            currencyJs.setMessage("success");
+            currencyJs.setResult("success");
+        } catch (Exception e) {
+            currencyJs.setMessage("fail");
+            currencyJs.setResult("fail");
+        }
+        return currencyJs;
     }
 
     @RequestMapping(value = "/category", method = RequestMethod.POST)
     @ResponseBody
     public CategoryJs getCategory() {
         List<Category> rl = categoryService.getAllCategory();
-        System.out.println(rl);
         CategoryJs categoryJs = new CategoryJs();
 
         categoryJs.setList(rl);
