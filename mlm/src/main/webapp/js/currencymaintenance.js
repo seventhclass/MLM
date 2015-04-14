@@ -35,8 +35,8 @@ $(document).ready(function(){
  		
  		if (result == "success") {
  			$('#currencylist').html("");	
- 			if(res.currencyinfo && res.currencyinfo.length>0){
- 				$.each(res.currencyinfo,function(i, item){
+ 			if(res.symbol && res.symbol.length>0){
+ 				$.each(res.symbol,function(i, item){
  					$('#currencylist').append(
 					    "<tr>"
 			           	+"	<td>"+item.id+"</td>"
@@ -101,6 +101,7 @@ $(document).ready(function(){
 	
 	function getAndSetData(e){
 		var $td = $(e.target).parents("tr").children("td");	
+		$('#currencyid').val($td.eq(0).text());
 		$('#currencyname').val($td.eq(1).text());
 		$('#currencyabbr').val($td.eq(2).text());
 	}
@@ -110,7 +111,7 @@ $(document).ready(function(){
 		var i_id = $('#currencyid').val();
 		var i_name = $('#currencyname').val();
 		var i_abbr = $('#currencyabbr').val();
-alert("model="+i_model+", id="+i_id+", name="+i_name+", abbr="+i_abbr);
+//alert("model="+i_model+", id="+i_id+", name="+i_name+", abbr="+i_abbr);
  	    $.ajax({
  	    	url: basePath+'/common/editcurrency',        	
  			cache:false,

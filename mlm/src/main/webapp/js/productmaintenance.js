@@ -75,8 +75,8 @@ $(document).ready(function(){
  		
  		if (result == "success") {
  			$('#currencyselect').html("");	
- 			if(res.currencyinfo && res.currencyinfo.length>0){
- 				$.each(res.currencyinfo,function(i, item){
+ 			if(res.symbol && res.symbol.length>0){
+ 				$.each(res.symbol,function(i, item){
  					$('#currencyselect').append(
 					    "<option value='"+item.id+"'>"+item.symbol+" - "+item.name+"</option>"
  					);
