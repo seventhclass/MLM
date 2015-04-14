@@ -130,11 +130,11 @@
 							</label>
 							<div class="col-sm-3">												
 								<select id="categoryselect" name="categoryselect" class="form-control">
-								    <option>Anti-Aging</option>
+<!-- 								    <option>Anti-Aging</option>
 								    <option>Life Extension</option>
 								    <option>Brain Health</option>
 								    <option>Energy & Performance</option>
-								    <option>Wealth Creation</option>
+								    <option>Wealth Creation</option> -->
 								</select>
 							</div>
 						</div>																					
@@ -142,9 +142,9 @@
 							<label for="currency" class="col-sm-3 control-label">Currency</label>
 							<div class="col-sm-3">												
 								<select id="currencyselect" name="currencyselect" class="form-control">
-								    <option selected value="0">Please Choose...</option>
+<!-- 								    <option selected value="0">Please Choose...</option>
 								    <option value="1">CAD Dollars</option>
-								    <option value="2">US Dollars</option>
+								    <option value="2">US Dollars</option> -->
 								</select>
 							</div>
 						</div>	
