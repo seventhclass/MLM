@@ -12,7 +12,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/currency',        	
+ 	    	url: basePath+'/common/currency',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -43,10 +43,10 @@ $(document).ready(function(){
 			           	+"	<td>"+item.name+"</td>"
 			           	+"	<td>"+item.symbol+"</td>"
 			           	+"  <td>"
-			           	+"		<div class='col-sm-offset-1 col-sm-4 cur_maintenance'>"
+			           	+"		<div class='col-sm-offset-1 col-sm-4'>"
 			           	+"			<button type='button' class='btn btn-success editcurrencybtn' data-toggle='modal' data-target='.currencymaintenance' data-backdrop='static' >Edit</button>"
 			           	+"		</div>"
-			           	+"		<div class='col-sm-2 cur_maintenance'>"
+			           	+"		<div class='col-sm-2'>"
 			           	+"			<button type='button' class='btn btn-danger delcurrencybtn' data-toggle='modal' data-target='#currencycancel' data-backdrop='static' >Delete</button>"
 			           	+"		</div>"
 			           	+"	</td>"
@@ -61,12 +61,38 @@ $(document).ready(function(){
  	
 	$('.cur_maintenance').click(function(e){
 		if($(e.target).is('.editcurrencybtn')){
-			getAndSetData(e);
+			editCurrency(e);
+		}else if($(e.target).is('.addcurrencybtn')){
+			addCurrency(e);
+		}else if($(e.target).is('.delcurrencybtn')){
+			delCurrency(e);
 		}else{
-			initData();
-		}
-		
+			alert("Your operation is not available. ");
+		}		
 	});
+	
+	function editCurrency(e){
+		getAndSetData(e);
+		$('#currencyid').attr("data-model","upd");
+	}
+	
+	function addCurrency(e){
+		initData();
+		$('#currencyid').attr("data-model","add");
+	}	
+	
+	function delCurrency(e){
+		getAndSetData(e);
+		$('#currencyid').attr("data-model","del");
+	}		
+	
+	$('#editCurrencybtn').click(function(){		
+		sendRequestOfEditCurrency();
+	});
+	
+	$('#delCurrencybtn').click(function(){		
+		sendRequestOfEditCurrency();
+	})
 	
 	function initData(){		
 		$('#currencyname').val("");
@@ -78,5 +104,47 @@ $(document).ready(function(){
 		$('#currencyname').val($td.eq(1).text());
 		$('#currencyabbr').val($td.eq(2).text());
 	}
+	
+	function sendRequestOfEditCurrency(){
+		var i_model = $('#currencyid').attr("data-model");
+		var i_id = $('#currencyid').val();
+		var i_name = $('#currencyname').val();
+		var i_abbr = $('#currencyabbr').val();
+
+ 	    $.ajax({
+ 	    	url: basePath+'/common/editcurrency',        	
+ 			cache:false,
+ 			async: false,
+ 			type:'POST',
+ 			data: {
+ 				model: i_model,
+ 				id: i_id,
+ 	    		name: i_name,
+ 	    		abbr: i_abbr
+ 			},
+ 	    	dataType:'json',
+ 	    	timeout:5000,
+ 	    	error:	function(xhr, ajaxOptions, thrownError){
+ 		                alert(xhr.status+"\n"+xhr.responseText);		               
+ 	    			},        	
+ 	    	success:	function(res) {
+ 	    		sendRequestOfEditCurrencyResponse(res);
+ 	    			}
+ 	    });		
+	}
+	 	
+ 	function sendRequestOfEditCurrencyResponse(res){
+ 		var result = res.result;			//response code
+ 		var message = res.message;			//response message
+ 		
+ 		if (result == "success") {
+ 			window.location.href=basePath+"currencymaintenance";
+		}else{
+    		if(message==null || message==""){
+    			message = "Sorry, your request is failed.";
+    		}    			
+    		alert(message);
+		}
+ 	}	
 });
 

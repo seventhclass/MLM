@@ -55,7 +55,7 @@
 												<th></th>
 											</tr>
 										</thead>
-									   <tbody id="categorylist">
+									   <tbody id="categorylist" class="cat_maintenance">
 <!-- 									     <tr>
 									     	<td>1</td>
 									     	<td>Anti-Aging</td>
@@ -178,7 +178,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" data-dismiss="modal">No</button>					
-					<button type="submit" class="btn btn-primary">Yes</button>				
+					<button id="delCategorybtn" type="button" class="btn btn-primary">Yes</button>				
 				</div>
 			</div>
 		</div>
