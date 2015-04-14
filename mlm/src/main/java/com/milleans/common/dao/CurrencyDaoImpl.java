@@ -29,4 +29,9 @@ public class CurrencyDaoImpl extends AbstractDao implements ICurrencyDao {
     public void remove(Currency currency) {
         this.remove(currency);
     }
+
+    @Override
+    public void save(Currency currency) {
+        this.getCurrentSession().save(currency);
+    }
 }

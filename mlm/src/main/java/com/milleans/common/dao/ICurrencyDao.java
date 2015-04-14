@@ -14,4 +14,6 @@ public interface ICurrencyDao {
     void update(Currency currency);
 
     void remove(Currency currency);
+
+    void save(Currency currency);
 }

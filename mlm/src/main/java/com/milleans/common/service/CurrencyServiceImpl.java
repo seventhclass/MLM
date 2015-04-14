@@ -27,7 +27,7 @@ public class CurrencyServiceImpl implements ICurrencyService {
     @Override
     @Transactional
     public void save(Currency currency) {
-        save(currency);
+       this.currencyDao.save(currency);
     }
 
     @Override
