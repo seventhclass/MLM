@@ -56,8 +56,8 @@
 												<th></th>
 											</tr>
 										</thead>
-									   <tbody id="currencylist">
-									     <tr>
+									   <tbody id="currencylist" class="cur_maintenance">
+<!-- 									     <tr>
 							           		<td>1</td>							     
 							           		<td>Canada Dollar</td>
 							           		<td>CA</td>
@@ -82,7 +82,7 @@
 							           				<button type="button" class="btn btn-danger delcurrencybtn" data-toggle="modal" data-target="#currencycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
-									     </tr> 									     
+									     </tr> 	 -->								     
 										</tbody>
 									 </table>
 								</div>	
@@ -116,20 +116,21 @@
 						<div class="form-group">
 							<label for="currencyname" class="col-sm-3 control-label">Currency
 								Name</label>
+							<input type="hidden" name="currencyId" data-model="" id="currencyid">
 							<div class="col-sm-6">
-								<input type="text" class="form-control" id="currencyname">
+								<input type="text" name="currencyName" class="form-control" id="currencyname">
 							</div>
 						</div>					
 						<div class="form-group">
 							<label for="currencyabbr" class="col-sm-3 control-label">Abbreviation</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="currencyabbr">
+								<input type="text" name="currencyAbbr" class="form-control" id="currencyabbr">
 							</div>
 						</div>						
 					</form>						
 				</div>
 				<div class="modal-footer text-center">					
-					<button type="submit" class="btn btn-primary">Save</button>
+					<button id="editCurrencybtn" type="button" class="btn btn-primary">Save</button>
 				</div>
 			</div>
 		</div>
@@ -151,7 +152,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" data-dismiss="modal">No</button>					
-					<button type="submit" class="btn btn-primary">Yes</button>				
+					<button id="delCurrencybtn" type="button" class="btn btn-primary">Yes</button>				
 				</div>
 			</div>
 		</div>

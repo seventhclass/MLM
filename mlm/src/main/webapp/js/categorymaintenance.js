@@ -35,17 +35,17 @@ $(document).ready(function(){
  		
  		if (result == "success") {
  			$('#categorylist').html("");	
- 			if(res.categoryinfo && res.categoryinfo.length>0){
- 				$.each(res.categoryinfo,function(i, item){
+ 			if(res.list && res.list.length>0){
+ 				$.each(res.list,function(i, item){
  					$('#categorylist').append(
 					    "<tr>"
-			           	+"	<td>"+item.categoryId+"</td>"
-			           	+"	<td>"+item.categoryName+"</td>"
+			           	+"	<td>"+item.id+"</td>"
+			           	+"	<td>"+item.name+"</td>"
 			           	+"  <td>"
-			           	+"		<div class='col-sm-offset-1 col-sm-4 cat_maintenance'>"
+			           	+"		<div class='col-sm-offset-1 col-sm-4'>"
 			           	+"			<button type='button' class='btn btn-success editcategorybtn' data-toggle='modal' data-target='.categorymaintenance' data-backdrop='static' >Edit</button>"
 			           	+"		</div>"
-			           	+"		<div class='col-sm-2 cat_maintenance'>"
+			           	+"		<div class='col-sm-2'>"
 			           	+"			<button type='button' class='btn btn-danger delcategorybtn' data-toggle='modal' data-target='#categorycancel' data-backdrop='static' >Delete</button>"
 			           	+"		</div>"
 			           	+"	</td>"
@@ -58,13 +58,13 @@ $(document).ready(function(){
  		}
  	}
  	
-	$('.cat_maintenance').click(function(e){
+	$('.cat_maintenance').click(function(e){		
 		if($(e.target).is('.editcategorybtn')){
-			editCategroy(e);
+			editCategory(e);
 		}else if($(e.target).is('.addcategorybtn')){
-			addCategroy(e);
+			addCategory(e);
 		}else if($(e.target).is('.delcategorybtn')){
-			delCategroy(e);
+			delCategory(e);
 		}else{
 			alert("Your operation is not available. ");
 		}		
@@ -76,13 +76,13 @@ $(document).ready(function(){
 		//sendRequestOfEditCategory(); 		
 	}
 	
-	function addCategroy(e){
+	function addCategory(e){
 		initData();
 		$('#categoryid').attr("data-model","add");
 		//sendRequestOfEditCategory(); 		
 	}	
 	
-	function delCategroy(e){
+	function delCategory(e){
 		getAndSetData(e);
 		$('#categoryid').attr("data-model","del");
 		//sendRequestOfEditCategory(); 		
@@ -92,16 +92,23 @@ $(document).ready(function(){
 		sendRequestOfEditCategory();
 	});
 	
+	$('#delCategorybtn').click(function(){		
+		sendRequestOfEditCategory();
+	});
+
 	function sendRequestOfEditCategory(){
+		var i_model = $('#categoryid').attr("data-model");
+		var i_id = $('#categoryid').val();
+		var i_name = $('#categoryname').val();
  	    $.ajax({
  	    	url: basePath+'/common/editcategory',        	
  			cache:false,
  			async: false,
  			type:'POST',
  			data: {
- 				model: $('#categoryid').attr("data-model"),
- 				id: $('#categoryid').val(),
- 	    		name: $('#categoryname').val()
+ 				model: i_model,
+ 				id: i_id,
+ 	    		name: i_name
  			},
  	    	dataType:'json',
  	    	timeout:5000,
@@ -119,7 +126,7 @@ $(document).ready(function(){
  		var message = res.message;			//response message
  		
  		if (result == "success") {
- 			;
+ 			window.location.href=basePath+"categorymaintenance";
 		}else{
     		if(message==null || message==""){
     			message = "Sorry, your request is failed.";
