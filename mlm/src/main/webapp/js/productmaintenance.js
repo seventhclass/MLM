@@ -35,14 +35,14 @@ $(document).ready(function(){
  		
  		if (result == "success") {
  			$('.categoryselect').html("");	
- 			if(res.categoryinfo && res.categoryinfo.length>0){
- 				$.each(res.categoryinfo,function(i, item){
- 					$('.categoryselect').append(
-					    "<option value='"+item.categoryId+"'>"+item.categoryName+"</option>"
+ 			if(res.list && res.list.length>0){
+ 				$.each(res.list,function(i, item){
+ 					$('#categoryselect').append(
+					    "<option value='"+item.id+"'>"+item.name+"</option>"
  					);
  				});
  			}else{
- 				$("<option>No Any Category Item</option>").insertAfter('.categoryselect');
+ 				$("<option>No Any Category Item</option>").insertAfter('#categoryselect');
  			}
  		}
  	} 	 	 	
