@@ -11,4 +11,8 @@ public interface ICurrencyService {
     public List<Currency> getAllCurrency();
 
     public void save(Currency currency);
+
+    void update(Currency currency);
+
+    void remove(Currency currency);
 }

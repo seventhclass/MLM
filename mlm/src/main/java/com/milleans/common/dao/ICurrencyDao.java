@@ -10,4 +10,8 @@ import java.util.List;
 public interface ICurrencyDao {
 
     public List<Currency> getAllCurrency();
+
+    void update(Currency currency);
+
+    void remove(Currency currency);
 }
