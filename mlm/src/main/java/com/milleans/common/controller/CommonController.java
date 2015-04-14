@@ -45,6 +45,7 @@ public class CommonController {
     }
 
     @RequestMapping(value = "/editcurrency",method = RequestMethod.POST)
+    @ResponseBody
     public  CurrencyJs editCurrency(WebRequest webRequest){
 
         String model = webRequest.getParameter("model");
