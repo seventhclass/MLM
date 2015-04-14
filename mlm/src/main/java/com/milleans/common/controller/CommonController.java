@@ -53,19 +53,21 @@ public class CommonController {
         String abbr= webRequest.getParameter("abbr");
 
         Currency currency=new Currency();
-        currency.setId(Integer.valueOf(id));
-        currency.setName(name);
-        currency.setSymbol(abbr);
 
         CurrencyJs currencyJs=new CurrencyJs();
 
         try {
             if (model.equals("add")) { // save
+                currency.setSymbol(abbr);
                 currency.setName(name);
                 currencyService.save(currency);
             } else if (model.equals("del")) { //del
+                currency.setId(Integer.valueOf(id));
                 currencyService.remove(currency);
             } else { // update
+                currency.setId(Integer.valueOf(id));
+                currency.setName(name);
+                currency.setSymbol(abbr);
                 currencyService.update(currency);
             }
         } catch (Exception e) {
