@@ -26,19 +26,43 @@ public class CurrencyServiceImpl implements ICurrencyService {
 
     @Override
     @Transactional
-    public void save(Currency currency) {
-       this.currencyDao.save(currency);
+    public void save(Object object) {
+        currencyDao.save(object);
     }
 
     @Override
     @Transactional
-    public void update(Currency currency) {
-      currencyDao.update(currency);
+    public void remove(Object object) {
+        currencyDao.remove(object);
     }
 
     @Override
     @Transactional
-    public void remove(Currency currency) {
-        currencyDao.remove(currency);
+    public void update(Object object) {
+        currencyDao.update(object);
     }
+
+    @Override
+    @Transactional
+    public Object getItemById(String id) {
+        return null;
+    }
+
+//    @Override
+//    @Transactional
+//    public void save(Currency currency) {
+//       this.currencyDao.save(currency);
+//    }
+//
+//    @Override
+//    @Transactional
+//    public void update(Currency currency) {
+//      currencyDao.update(currency);
+//    }
+//
+//    @Override
+//    @Transactional
+//    public void remove(Currency currency) {
+//        currencyDao.remove(currency);
+//    }
 }

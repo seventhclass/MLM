@@ -20,18 +20,23 @@ public class CurrencyDaoImpl extends AbstractDao implements ICurrencyDao {
         return criteria.list();
     }
 
-    @Override
-    public void update(Currency currency) {
-       this.getCurrentSession().update(currency);
-    }
-
-    @Override
-    public void remove(Currency currency) {
-        this.getCurrentSession().delete(currency);
-    }
-
-    @Override
-    public void save(Currency currency) {
-        this.getCurrentSession().save(currency);
-    }
+//    @Override
+//    public void update(Currency currency) {
+//       this.getCurrentSession().update(currency);
+//    }
+//
+//    @Override
+//    public void remove(Currency currency) {
+//        this.getCurrentSession().delete(currency);
+//    }
+//
+//    @Override
+//    public void save(Currency currency) {
+//        this.getCurrentSession().save(currency);
+//    }
+//
+//    @Override
+//    public Object getItembyId(String id) {
+//        return null;
+//    }
 }

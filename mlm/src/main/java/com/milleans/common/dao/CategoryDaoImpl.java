@@ -3,7 +3,6 @@ package com.milleans.common.dao;
 import com.milleans.dao.AbstractDao;
 import com.milleans.model.Category;
 import org.hibernate.Criteria;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,33 +21,49 @@ public class CategoryDaoImpl extends AbstractDao implements ICategoryDao {
         return rl;
     }
 
-    @Override
-    public Category save(Category category) {
-    	this.getCurrentSession().save(category);
-       return category; 
-    }
+//    @Override
+//    public Category save(Category category) {
+//        return null;
+//    }
 
-    @Override
-    public boolean getItemById(int id) {
-        Criteria criteria = this.getCurrentSession().createCriteria(Category.class);
-        criteria.add(Restrictions.eq("id", id));
+//    @Override
+//    public Category save(Category category) {
+//    	this.getCurrentSession().save(category);
+//       return category;
+//    }
 
-        List<Category> rl = criteria.list();
+//    @Override
+//    public boolean getItemById(int id) {
+//        Criteria criteria = this.getCurrentSession().createCriteria(Category.class);
+//        criteria.add(Restrictions.eq("id", id));
+//
+//        List<Category> rl = criteria.list();
+//
+//        if (rl == null || rl.size() == 0) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
 
-        if (rl == null || rl.size() == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+//    @Override
+//    public void remove(Category category) {
+//
+//    }
+//
+//    @Override
+//    public void update(Category category) {
+//
+//    }
 
-    @Override
-    public void remove(Category category) {
-        this.getCurrentSession().delete(category);
-    }
+//    @Override
+//    public void remove(Category category) {
+//        this.getCurrentSession().delete(category);
+//    }
+//
+//    @Override
+//    public void update(Category category) {
+//        this.getCurrentSession().update(category);
+//    }
 
-    @Override
-    public void update(Category category) {
-        this.getCurrentSession().update(category);
-    }
 }

@@ -1,5 +1,6 @@
 package com.milleans.common.dto;
 
+import com.milleans.dto.BaseJs;
 import com.milleans.model.Category;
 
 import java.util.List;
@@ -7,11 +8,8 @@ import java.util.List;
 /**
  * Created by LeHu on 2015-04-12.
  */
-public class CategoryJs {
+public class CategoryJs extends BaseJs {
 
-    private String result;
-
-    private String message;
 
     private List<Category> list;
 
@@ -23,19 +21,5 @@ public class CategoryJs {
         this.list = list;
     }
 
-    public String getResult() {
-        return result;
-    }
 
-    public void setResult(String result) {
-        this.result = result;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }

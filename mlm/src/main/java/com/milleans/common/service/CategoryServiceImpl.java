@@ -26,18 +26,42 @@ public class CategoryServiceImpl implements ICategoryService {
     }
 
     @Override
-    public int save(Category category) {
-        Category _category = categoryDao.save(category);
-        return _category == null ? -1 : 0;
+    @Transactional
+    public void save(Object object) {
+       categoryDao.save(object);
     }
 
     @Override
-    public void remove(Category category) {
-        categoryDao.remove(category);
+    @Transactional
+    public void remove(Object object) {
+        categoryDao.remove(object);
     }
 
     @Override
-    public void update(Category category) {
-        categoryDao.update(category);
+    @Transactional
+    public void update(Object object) {
+        categoryDao.update(object);
     }
+
+    @Override
+    @Transactional
+    public Object getItemById(String id) {
+        return null;
+    }
+
+//    @Override
+//    public int save(Category category) {
+//        Category _category = categoryDao.save(category);
+//        return _category == null ? -1 : 0;
+//    }
+//
+//    @Override
+//    public void remove(Category category) {
+//        categoryDao.remove(category);
+//    }
+//
+//    @Override
+//    public void update(Category category) {
+//        categoryDao.update(category);
+//    }
 }

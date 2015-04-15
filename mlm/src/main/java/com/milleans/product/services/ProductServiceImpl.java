@@ -13,6 +13,7 @@ import java.util.List;
  * Created by macbookpro on 2015-04-11.
  */
 @Service("productService")
+@Transactional
 public class ProductServiceImpl implements IProductService {
 
     @Autowired
@@ -25,9 +26,33 @@ public class ProductServiceImpl implements IProductService {
         return productDao.getAllList();
     }
 
+//    @Override
+//    @Transactional
+//    public Product save(Product product) {
+//        return productDao.save(product);
+//    }
+
     @Override
     @Transactional
-    public Product save(Product product) {
-        return productDao.save(product);
+    public void save(Object object) {
+        productDao.save(object);
+    }
+
+    @Override
+    @Transactional
+    public void remove(Object object) {
+        productDao.remove(object);
+    }
+
+    @Override
+    @Transactional
+    public void update(Object object) {
+        productDao.update(object);
+    }
+
+    @Override
+    @Transactional
+    public Object getItemById(String id) {
+        return null;
     }
 }
