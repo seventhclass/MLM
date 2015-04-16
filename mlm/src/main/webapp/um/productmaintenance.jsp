@@ -62,11 +62,11 @@
 												<th></th>
 											</tr>
 										</thead>
-									   <tbody id="productlist">
+									   <tbody id="productlist" class="pdt_maintenance">
 									   <tr><td colspan="10">No Items.</td></tr>
 <!-- 									     <tr>
 											<td>A000000001</td>
-											<td>Anti-Aging</td>
+											<td value='1'>Anti-Aging</td>
 							           		<td>MT-1000</td>
 							           		<td>58.00</td>
 							           		<td>79.00</td>
@@ -113,6 +113,7 @@
 				</div>
 				<div class="modal-body">
 					<form id="editProductForm" class="form-horizontal" role="form" action="/addProduct" method="post">
+						<input type="hidden" name="productId" data-model="" id="productid">
 						<div class="form-group">
 							<label for="itemcode" class="col-sm-3 control-label">Item Code</label>
 							<div class="col-sm-3">
@@ -151,7 +152,7 @@
 						<div class="form-group">
 							<label for="w_price" class="col-sm-3 control-label">Whole Sale Price</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="w_price" name="r_price">
+								<input type="text" class="form-control" id="w_price" name="w_price">
 							</div>
 						</div>	
 						<div class="form-group">
@@ -187,7 +188,7 @@
 					</form>
 				</div>
 				<div class="modal-footer text-center">					
-					<button type="submit" class="btn btn-primary">Save</button>
+					<button id="editProductbtn" type="submit" class="btn btn-primary">Save</button>
 				</div>
 			</div>
 		</div>
@@ -209,7 +210,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" data-dismiss="modal">No</button>					
-					<button type="submit" class="btn btn-primary">Yes</button>				
+					<button id="delProductbtn" type="submit" class="btn btn-primary">Yes</button>				
 				</div>
 			</div>
 		</div>
