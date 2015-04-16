@@ -50,7 +50,7 @@ public class ProductController {
         return productListJs;
     }
 
-    @RequestMapping(value = "/editProduct", method = RequestMethod.POST)
+    @RequestMapping(value = "/editproduct", method = RequestMethod.POST)
     @ResponseBody
     public BaseJs editProduct(WebRequest webRequest) {
 
@@ -64,7 +64,7 @@ public class ProductController {
         String numbers = webRequest.getParameter("numbers");
         String volume = webRequest.getParameter("volume");
         String volume2 = webRequest.getParameter("volume2");
-        String description = webRequest.getParameter("description");
+        String description =webRequest.getParameter("description");
         String id = webRequest.getParameter("id");
 
         BaseJs baseJs = new BaseJs();
