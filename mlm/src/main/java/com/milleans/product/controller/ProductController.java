@@ -1,8 +1,8 @@
 package com.milleans.product.controller;
 
 import com.milleans.model.Product;
+import com.milleans.product.dto.ProductListJs;
 import com.milleans.product.services.IProductService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +22,6 @@ public class ProductController {
     private IProductService productService;
 
 
-
     @RequestMapping(value = "/products")
     public ModelAndView products() {
         return new ModelAndView("um/products");
@@ -35,17 +34,22 @@ public class ProductController {
 
     @RequestMapping(value = "/productList", method = RequestMethod.POST)
     @ResponseBody
-    public String productList() {
+    public ProductListJs productList() {
 
-        List<Product> productList =
-                productService.getAllProduct();
+        ProductListJs productListJs = new ProductListJs();
+        try {
+            List<Product> productList =
+                    productService.getAllProduct();
+        } catch (Exception e) {
+           productListJs.setMessage(e.getMessage());
+            productListJs.setResult("fail");
+        }
 
-        return productList.toString();
+        return productListJs;
     }
 
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     public ModelAndView addProduct() {
-
 
 
         return this.productMaintenance();
