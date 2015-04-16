@@ -194,13 +194,13 @@ $(document).ready(function(){
 		var i_currencyid = $('#currencyselect').val();
 		var i_wprice = $('#w_price').val();
 		var i_rprice = $('#r_price').val();
-		var i_numbers = $('#number').val();
+		var i_numbers = $('#numbers').val();
 		var i_volume = $('#volume').val();
 		var i_volume2 = $('#volume2').val();
-		var i_desc = $('#description').text();
-
+		var i_desc = $('#description').val();
+alert("model="+i_model+", id="+i_id+", itemcode="+i_itemcode+", name="+i_name+", categoryid="+i_categoryid+", currencyid="+i_currencyid+", wprice="+i_wprice+", rprice="+i_rprice+", numbers="+i_numbers+", volume="+i_volume+", volume2="+i_volume2+", description="+i_desc);
  	    $.ajax({
- 	    	url: basePath+'/common/editproduct',        	
+ 	    	url: basePath+'/editproduct',        	
  			cache:false,
  			async: false,
  			type:'POST',
