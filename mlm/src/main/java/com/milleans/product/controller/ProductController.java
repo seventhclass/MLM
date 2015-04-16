@@ -51,6 +51,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/editProduct", method = RequestMethod.POST)
+    @ResponseBody
     public BaseJs editProduct(WebRequest webRequest) {
 
         String model = webRequest.getParameter("model");

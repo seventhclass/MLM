@@ -5,9 +5,10 @@ package com.milleans.dto;
  */
 public class BaseJs {
 
-    private String message="success";
+    protected String message = "success";
 
-    private String result="success";
+    protected String result = "success";
+
 
     public String getMessage() {
         return message;
