@@ -115,8 +115,8 @@ $(document).ready(function(){
  		
  		if (result == "success") {
  			$('#productlist').html("");	
- 			if(res.productinfo && res.productinfo.length>0){
- 				$.each(res.productinfo,function(i, item){
+ 			if(res.productInfo && res.productInfo.length>0){
+ 				$.each(res.productInfo,function(i, item){
  					$('#productlist').append(
 					    "<tr>"
 			           	+"	<td value='"+item.id+"'>"+item.itemCode+"</td>"
