@@ -2,14 +2,43 @@
  *
  */
 
+<<<<<<< HEAD
 $(document).ready(function () {
     var basePath = $('#basePath').attr("value");
+=======
+$(document).ready(function(){
+ 	var basePath=$('#basePath').attr("value");
+ 	 	 	
+ 	//queryProductInfo();   
+ 	
+ 	//Query category information
+ 	function queryCategoryInfo(){
+ 		
+ 	 	//send requrest to server.
+ 	    $.ajax({
+ 	    	url: basePath+'/common/category',        	
+ 			cache:false,
+ 			async: false,
+ 			type:'POST',			
+ 	    	dataType:'json',
+ 	    	timeout:5000,
+ 	    	error:	function(xhr, ajaxOptions, thrownError){
+ 		                alert(xhr.status+"\n"+xhr.responseText);
+ 		                //$('#content').html(xhr.responseText); 		               
+ 	    			},        	
+ 	    	success:	function(res) {
+ 	    				queryCategoryInfoResponse(res);
+ 	    			}
+ 	    });    	
+ 	}
+>>>>>>> ea576469025d8b143b96fd97d122955ea92c088d
 
     queryProductInfo();
 
     //Query category information
     function queryCategoryInfo() {
 
+<<<<<<< HEAD
         //send requrest to server.
         $.ajax({
             url: basePath + '/common/category',
@@ -27,6 +56,92 @@ $(document).ready(function () {
             }
         });
     }
+=======
+ 	//Process query product information response 
+ 	function queryProductInfoResponse(res){
+ 		var result = res.result;			//response code
+ 		var message = res.message;			//response message
+ 		
+ 		if (result == "success") {
+ 			$('#productlist').html("");	
+ 			if(res.productinfo && res.productinfo.length>0){
+ 				$.each(res.productinfo,function(i, item){
+ 					$('#productlist').append(
+					    "<tr>"
+			           	+"	<td value='"+item.id+"'>"+item.itemCode+"</td>"
+			           	+"	<td value='"+item.categoryId+"'>"+item.category+"</td>"
+			           	+"	<td>"+item.productName+"</td>"
+			           	+"	<td>"+item.wholeSalePrice+"</td>"
+			           	+"	<td>"+item.retailPrice+"</td>"
+			           	+"	<td value='"+item.currencyId+"'>"+item.currency+"</td>"
+			           	+"	<td>"+item.number+"</td>"
+			           	+"	<td>"+item.businessVolume+"</td>"
+			           	+"	<td>"+item.businessVolume2+"</td>"
+			           	+"  <td>"
+			           	+"		<div class='col-sm-7'>"
+			           	+"			<button type='button' class='btn btn-success editproductbtn' data-toggle='modal' data-target='.productmaintenance' data-backdrop='static' >Edit</button>"
+			           	+"		</div>"
+			           	+"		<div class='col-sm-5 '>"
+			           	+"			<button type='button' class='btn btn-danger delproductbtn' data-toggle='modal' data-productid='"+item.id+"' data-target='#productcancel' data-backdrop='static' >Delete</button>"
+			           	+"		</div>"
+			           	+"		<div class='col-sm-5 pdt_maintenance'>"
+						+"	 		<button type='button' class='btn btn-danger addproductimgbtn' data-toggle='modal' data-target='.productimg' data-backdrop='static' >Image</button>"
+						+"	  	</div>"
+			           	+"	</td>"
+					    +" </tr>"
+ 					);
+ 				});
+ 			}else{
+ 				$("<tr><td>No items. </td></tr>").insertAfter('#productlist');
+ 			}
+ 		}
+ 	}
+ 	
+	$('.pdt_maintenance').click(function(e){
+		
+		queryCategoryInfo();
+		queryCurrencyInfo();  
+		
+		if($(e.target).is('.editproductbtn')){
+			editProduct(e);
+		}else if($(e.target).is('.addproductbtn')){
+			addProduct(e);
+		}else if($(e.target).is('.delproductbtn')){
+			delProduct(e);
+		}else if($(e.target).is('.editproductimgbtn')){
+			editProductImage(e);
+		}else{
+			alert("Your operation is not available. ");
+		}			
+	});
+	
+	function editProductImage(e){
+		;
+	}
+	
+	function editProduct(e){
+		getAndSetData(e);
+		$('#productid').attr("data-model","upd");
+	}
+	
+	function addProduct(e){
+		initData();
+		$('#productid').attr("data-model","add");
+	}	
+	
+	function delProduct(e){
+		getAndSetData(e);
+		$('#productid').attr("data-model","del");
+	}			
+	
+	$('#editProductbtn').click(function(){		
+		sendRequestOfEditProduct();
+	});
+	
+	$('#delProductbtn').click(function(){		
+		sendRequestOfEditProduct();
+	});
+>>>>>>> ea576469025d8b143b96fd97d122955ea92c088d
 
     //Process query category information response
     function queryCategoryInfoResponse(res) {
