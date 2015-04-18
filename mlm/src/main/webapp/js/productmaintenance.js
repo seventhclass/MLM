@@ -119,15 +119,16 @@ $(document).ready(function(){
  				$.each(res.productInfo,function(i, item){
  					$('#productlist').append(
 					    "<tr>"
-			           	+"	<td value='"+item.id+"'>"+item.itemCode+"</td>"
-			           	+"	<td value='"+item.categoryId+"'>"+item.category+"</td>"
+			           	+"	<td data-value='"+item.id+"'>"+item.itemCode+"</td>"
+			           	+"	<td data-value='"+item.categoryId+"'>"+item.category+"</td>"
 			           	+"	<td>"+item.name+"</td>"
 			           	+"	<td>"+item.wholesalePrice+"</td>"
 			           	+"	<td>"+item.retailPrice+"</td>"
-			           	+"	<td value='"+item.currencyId+"'>"+item.currency+"</td>"
+			           	+"	<td data-value='"+item.currencyId+"'>"+item.currency+"</td>"
 			           	+"	<td>"+item.capsuleNumber+"</td>"
 			           	+"	<td>"+item.volume+"</td>"
 			           	+"	<td>"+item.volume2+"</td>"
+			           	+"  <td style='display:none;'>"+item.description+"</td>"
 			           	+"  <td>"
 			           	+"		<div class='col-sm-7'>"
 			           	+"			<button type='button' class='btn btn-success editproductbtn' data-toggle='modal' data-target='.productmaintenance' data-backdrop='static' >Edit</button>"
@@ -264,17 +265,18 @@ alert("model="+i_model+", id="+i_id+", itemcode="+i_itemcode+", name="+i_name+",
 	function getAndSetData(e){
 		
 		var $td = $(e.target).parents("tr").children("td");	
-		
-		$('#productid').val($td.eq(0).val());
+
+		$('#productid').val($td.eq(0).attr("data-value"));
 		$('#itemcode').val($td.eq(0).text());
-		$("#categoryselect").val($td.eq(1).val());
+		$("#categoryselect").val($td.eq(1).attr("data-value"));
 		$('#name').val($td.eq(2).text());		
 		$('#w_price').val($td.eq(3).text());
 		$('#r_price').val($td.eq(4).text());
-		$('#currencyselect').val($td.eq(5).val());
+		$('#currencyselect').val($td.eq(5).attr("data-value"));
 		$('#numbers').val($td.eq(6).text());
 		$('#volume').val($td.eq(7).text());
 		$('#volume2').val($td.eq(8).text());
+		$('#description').val($td.eq(9).text());
 	}
 });
 
