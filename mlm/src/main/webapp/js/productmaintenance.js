@@ -200,7 +200,7 @@ $(document).ready(function(){
 		var i_desc = $('#description').val();
 alert("model="+i_model+", id="+i_id+", itemcode="+i_itemcode+", name="+i_name+", categoryid="+i_categoryid+", currencyid="+i_currencyid+", wprice="+i_wprice+", rprice="+i_rprice+", numbers="+i_numbers+", volume="+i_volume+", volume2="+i_volume2+", description="+i_desc);
  	    $.ajax({
- 	    	url: basePath+'/editproduct',        	
+ 	    	url: basePath+'editproduct',        	
  			cache:false,
  			async: false,
  			type:'POST',
