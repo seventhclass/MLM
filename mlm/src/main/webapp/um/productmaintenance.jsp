@@ -82,7 +82,7 @@
 							           			<button type="button" class="btn btn-danger delproductbtn" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
 							           			</div>
 												<div class="col-sm-5 pdt_maintenance">
-							           			<button type="button" class="btn btn-danger editproductimgbtn" data-toggle="modal" data-target=".productimg" data-backdrop="static" >Image</button>
+							           			<button type="button" class="btn btn-danger editproductimgbtn" data-productid="1" data-toggle="modal" data-target=".productimg" data-backdrop="static" >Image</button>
 							           			</div>							           			
 							           		</td>
 									     </tr>   -->										     											     										       												     													     										     												           
@@ -259,14 +259,14 @@
 					</form>
 				</div>
 				<div class="modal-footer text-center">					
-					<form id="uploadProductImgForm" class="form-horizontal" role="form" action="/uploadFile" method="post" enctype="multipart/form-data">  
+					<form id="uploadProductImgForm" class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">  
 						<div class="form-group">
 							<label for="uploadfile" class="col-sm-3 control-label">Select upload file:</label>
 							<div class="col-sm-6">
-		    					<input type="file" name="uploadfile" siez="16" class="form-control" ><br>  
+		    					<input type="file" id="uploadFile" name="uploadFile" siez="16" class="form-control" ><br>  
 							</div>
 							<div class="col-sm-3 text-center">
-								<button type="submit" class="btn btn-primary">Upload</button>
+								<button id="uploadFilebtn" type="submit" data-productid="" class="btn btn-primary">Upload</button>
 							</div>
 						</div>
 					</form>  					

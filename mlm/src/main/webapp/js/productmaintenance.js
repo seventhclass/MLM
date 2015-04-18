@@ -137,7 +137,7 @@ $(document).ready(function(){
 			           	+"			<button type='button' class='btn btn-danger delproductbtn' data-toggle='modal' data-productid='"+item.id+"' data-target='#productcancel' data-backdrop='static' >Delete</button>"
 			           	+"		</div>"
 			           	+"		<div class='col-sm-5 pdt_maintenance'>"
-						+"	 		<button type='button' class='btn btn-warning addproductimgbtn' data-toggle='modal' data-target='.productimg' data-backdrop='static' >Image</button>"
+						+"	 		<button type='button' class='btn btn-warning addproductimgbtn' data-toggle='modal' data-productid='"+item.id+"' data-target='.productimg' data-backdrop='static' >Image</button>"
 						+"	  	</div>"
 			           	+"	</td>"
 					    +" </tr>"
@@ -166,9 +166,59 @@ $(document).ready(function(){
 	});
 	
 	function editProductImage(e){
-		;
+		var id = $(e.target).attr("data-productid");
+		queryProductImages(id);
 	}
 	
+	function queryProductImages(id){
+		$('#uploadFilebtn').attr("data-productid",id);
+
+ 	 	//send requrest to server.
+ 	    $.ajax({
+ 	    	url: basePath+'/productImages',        	
+ 			cache:false,
+ 			async: false,
+ 			type:'POST',			
+ 			data: {
+ 				productId:  id
+ 			},
+ 	    	dataType:'json',
+ 	    	timeout:5000,
+ 	    	error:	function(xhr, ajaxOptions, thrownError){
+ 		                alert(xhr.status+"\n"+xhr.responseText);
+ 		                //$('#content').html(xhr.responseText); 		               
+ 	    			},        	
+ 	    	success:	function(res) {
+ 	    		queryProductImagesResponse(res);
+ 	    			}
+ 	    });    	
+ 	}
+
+ 	function queryProductImagesResponse(res){
+ 		var result = res.result;			//response code
+ 		var message = res.message;			//response message
+ 		
+ 		if (result == "success") {
+ 			$('#editProductImgForm').html("");	
+ 			if(res.albumInfo && res.albumInfo.length>0){
+ 				$.each(res.albumInfo,function(i, item){
+ 					$('#editProductImgForm').append(
+					    "<div class='form-group'>"
+						+"	<div class='col-sm-1'>"
+						+"		<input type='checkbox' name='productimage' vaue='"+item.id+"'>"
+						+"	</div>"
+						+"	<div class='col-sm-6'>"
+						+"		<img src='"+basePath+"/images/products/"+item.imageName+"' style='height: 80px; width: 50px; display: block;' alt=''>"
+						+"	</div>"
+						+"</div>"
+ 					);
+ 				});
+ 			}else{
+ 				$("<div class='form-group'><div>No items. </div>").insertAfter('#editProductImgForm');
+ 			}
+ 		}
+ 	}
+
 	function editProduct(e){
 		getAndSetData(e);
 		$('#productid').attr("data-model","upd");
@@ -191,6 +241,47 @@ $(document).ready(function(){
 	$('#delProductbtn').click(function(){		
 		sendRequestOfEditProduct();
 	});
+
+	$('#uploadFilebtn').click(function(e){		
+		sendRequestOfUploadFile(e);
+	});
+
+	function sendRequestOfUploadFile(e){
+		var id = $('#uploadFilebtn').attr("data-productid");
+
+	 	    $.ajax({
+ 	    	url: basePath+'uploadImageFile',        	
+ 			cache:false,
+ 			async: false,
+ 			type:'POST',
+ 			data: {
+ 					productId: id,
+ 					file: $('#uploadFile').val()
+ 			},
+ 	    	dataType:'json',
+ 	    	timeout:5000,
+ 	    	error:	function(xhr, ajaxOptions, thrownError){
+ 		                alert(xhr.status+"\n"+xhr.responseText);		               
+ 	    			},        	
+ 	    	success:	function(res) {
+ 	    		sendRequestOfUploadFileResponse(res,id);
+ 	    			}
+ 	    });		
+	}
+
+ 	function sendRequestOfUploadFileResponse(res,id){
+ 		var result = res.result;			//response code
+ 		var message = res.message;			//response message
+ 		
+ 		if (result == "success") {
+ 			queryProductImages(id);
+		}else{
+    		if(message==null || message==""){
+    			message = "Sorry, your request is failed.";
+    		}    			
+    		alert(message);
+		}
+ 	}
 
 	function sendRequestOfEditProduct(){
 		var i_model = $('#productid').attr("data-model");
