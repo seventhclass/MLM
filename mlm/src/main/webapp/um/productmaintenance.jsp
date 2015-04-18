@@ -227,7 +227,7 @@
 					<h4 class="modal-title text-center">Products Image Maintenance</h4>
 				</div>
 				<div class="modal-body">
-					<form id="editProductImgForm" class="form-horizontal" role="form" action="/delProductImages" method="post">
+					<form id="editProductImgForm" class="form-horizontal" role="form" action="<%=request.getContextPath()%>/delProductImages" method="post">
 						<div class="form-group">
 							<div class="col-sm-1">
 								<input type="checkbox" name="productimage" vaue="1">
