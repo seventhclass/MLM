@@ -230,7 +230,7 @@
 					<form id="editProductImgForm" class="form-horizontal" role="form" action="<%=request.getContextPath()%>/delProductImages" method="post">
 						<div class="form-group">
 							<div class="col-sm-1">
-								<input type="checkbox" name="productimage" vaue="1">
+								<input type="checkbox" name="productimage" value="1">
 							</div>
 							<div class="col-sm-6">
 								<img src="<%=request.getContextPath()%>/images/products/product1.png"
@@ -239,7 +239,7 @@
 						</div>	
 						<div class="form-group">
 							<div class="col-sm-1">
-								<input type="checkbox" name="productimage" vaue="2">
+								<input type="checkbox" name="productimage" value="2">
 							</div>
 							<div class="col-sm-6">
 								<img src="<%=request.getContextPath()%>/images/products/product1.png"
@@ -248,7 +248,7 @@
 						</div>
 						<div class="form-group">
 							<div class="col-sm-1">
-								<input type="checkbox" name="productimage" vaue="3">
+								<input type="checkbox" name="productimage" value="3">
 							</div>
 							<div class="col-sm-6">
 								<img src="<%=request.getContextPath()%>/images/products/product1.png"
