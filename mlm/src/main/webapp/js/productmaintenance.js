@@ -137,7 +137,7 @@ $(document).ready(function(){
 			           	+"			<button type='button' class='btn btn-danger delproductbtn' data-toggle='modal' data-productid='"+item.id+"' data-target='#productcancel' data-backdrop='static' >Delete</button>"
 			           	+"		</div>"
 			           	+"		<div class='col-sm-5 pdt_maintenance'>"
-						+"	 		<button type='button' class='btn btn-danger addproductimgbtn' data-toggle='modal' data-target='.productimg' data-backdrop='static' >Image</button>"
+						+"	 		<button type='button' class='btn btn-warning addproductimgbtn' data-toggle='modal' data-target='.productimg' data-backdrop='static' >Image</button>"
 						+"	  	</div>"
 			           	+"	</td>"
 					    +" </tr>"
