@@ -44,6 +44,7 @@ public class ProductController {
                     productService.getAllProduct();
             productListJs.setProductInfo(productList);
         } catch (Exception e) {
+            e.printStackTrace();
             productListJs.setMessage(e.getMessage());
             productListJs.setResult("fail");
         }

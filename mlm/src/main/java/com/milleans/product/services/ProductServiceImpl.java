@@ -2,7 +2,6 @@ package com.milleans.product.services;
 
 import com.milleans.model.Product;
 import com.milleans.product.dao.IProductDao;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +22,9 @@ public class ProductServiceImpl implements IProductService {
     @Override
     @Transactional
     public List<Product> getAllProduct() {
+       // List<Product> tmp=productDao.getAllList();
+       // List<ProductTable> productTables=new ArrayList<ProductTable>();
+
         return productDao.getAllList();
     }
 
