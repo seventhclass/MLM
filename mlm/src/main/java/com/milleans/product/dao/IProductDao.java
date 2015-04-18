@@ -12,4 +12,5 @@ public interface IProductDao extends IDao{
 
     public List<Product> getAllList();
 
+    Product getItemById(String id);
 }

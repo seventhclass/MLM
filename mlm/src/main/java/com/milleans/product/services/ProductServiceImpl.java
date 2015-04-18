@@ -22,8 +22,8 @@ public class ProductServiceImpl implements IProductService {
     @Override
     @Transactional
     public List<Product> getAllProduct() {
-       // List<Product> tmp=productDao.getAllList();
-       // List<ProductTable> productTables=new ArrayList<ProductTable>();
+        // List<Product> tmp=productDao.getAllList();
+        // List<ProductTable> productTables=new ArrayList<ProductTable>();
 
         return productDao.getAllList();
     }
@@ -55,6 +55,8 @@ public class ProductServiceImpl implements IProductService {
     @Override
     @Transactional
     public Object getItemById(String id) {
-        return null;
+
+        return productDao.getItemById(id);
+
     }
 }

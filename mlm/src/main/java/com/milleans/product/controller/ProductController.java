@@ -90,8 +90,9 @@ public class ProductController {
                 product.setId(Integer.valueOf(id));
                 productService.remove(product);
             } else {//upd
-                Product product = new Product();
-                product.setId(Integer.valueOf(id));
+
+                Product product=(Product) productService.getItemById(id);
+
                 product.setItemCode(itemcode);
                 product.setName(name);
                 product.setCategoryId(Integer.valueOf(categoryid));

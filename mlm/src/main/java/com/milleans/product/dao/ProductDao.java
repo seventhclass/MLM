@@ -3,6 +3,7 @@ package com.milleans.product.dao;
 import com.milleans.dao.AbstractDao;
 import com.milleans.model.Product;
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +25,20 @@ public class ProductDao extends AbstractDao implements IProductDao {
         Criteria criteria = this.getCurrentSession().createCriteria(Product.class);
         List<Product> list = criteria.list();
         return list;
+    }
+
+    @Override
+    public Product getItemById(String id) {
+        int _id = Integer.valueOf(id);
+        Criteria criteria = this.getCurrentSession().createCriteria(Product.class);
+        criteria.add(Restrictions.eq("id", _id));
+
+        List<Product> list = criteria.list();
+
+        if (list == null || list.size() == 0) {
+            return null;
+        } else
+            return list.get(0);
     }
 
 
