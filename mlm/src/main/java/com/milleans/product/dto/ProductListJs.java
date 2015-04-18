@@ -9,13 +9,13 @@ import java.util.List;
  */
 public class ProductListJs extends BaseJs {
 
-    private List<Product> productList;
+    private List<Product> productInfo;
 
-    public List<Product> getProductList() {
-        return productList;
+    public List<Product> getProductInfo() {
+        return productInfo;
     }
 
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
+    public void setProductInfo(List<Product> productInfo) {
+        this.productInfo = productInfo;
     }
 }

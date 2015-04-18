@@ -42,7 +42,7 @@ public class ProductController {
         try {
             List<Product> productList =
                     productService.getAllProduct();
-            productListJs.setProductList(productList);
+            productListJs.setProductInfo(productList);
         } catch (Exception e) {
             productListJs.setMessage(e.getMessage());
             productListJs.setResult("fail");
