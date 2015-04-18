@@ -34,7 +34,7 @@ $(document).ready(function(){
  		var message = res.message;			//response message
  		
  		if (result == "success") {
- 			$('.categoryselect').html("");	
+ 			$('#categoryselect').html("");	
  			if(res.list && res.list.length>0){
  				$.each(res.list,function(i, item){
  					$('#categoryselect').append(
@@ -121,13 +121,13 @@ $(document).ready(function(){
 					    "<tr>"
 			           	+"	<td value='"+item.id+"'>"+item.itemCode+"</td>"
 			           	+"	<td value='"+item.categoryId+"'>"+item.category+"</td>"
-			           	+"	<td>"+item.productName+"</td>"
-			           	+"	<td>"+item.wholeSalePrice+"</td>"
+			           	+"	<td>"+item.name+"</td>"
+			           	+"	<td>"+item.wholesalePrice+"</td>"
 			           	+"	<td>"+item.retailPrice+"</td>"
 			           	+"	<td value='"+item.currencyId+"'>"+item.currency+"</td>"
-			           	+"	<td>"+item.number+"</td>"
-			           	+"	<td>"+item.businessVolume+"</td>"
-			           	+"	<td>"+item.businessVolume2+"</td>"
+			           	+"	<td>"+item.capsuleNumber+"</td>"
+			           	+"	<td>"+item.volume+"</td>"
+			           	+"	<td>"+item.volume2+"</td>"
 			           	+"  <td>"
 			           	+"		<div class='col-sm-7'>"
 			           	+"			<button type='button' class='btn btn-success editproductbtn' data-toggle='modal' data-target='.productmaintenance' data-backdrop='static' >Edit</button>"
@@ -143,7 +143,7 @@ $(document).ready(function(){
  					);
  				});
  			}else{
- 				$("<tr><td>No items. </td></tr>").insertAfter('#productlist');
+ 				$("<tr><td colspan='10'>No items. </td></tr>").insertAfter('#productlist');
  			}
  		}
  	}
@@ -161,8 +161,6 @@ $(document).ready(function(){
 			delProduct(e);
 		}else if($(e.target).is('.editproductimgbtn')){
 			editProductImage(e);
-		}else{
-			alert("Your operation is not available. ");
 		}			
 	});
 	
