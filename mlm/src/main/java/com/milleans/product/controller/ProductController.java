@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -81,6 +82,7 @@ public class ProductController {
                 product.setVolume(Integer.valueOf(volume));
                 product.setVolume2(Integer.valueOf(volume2));
                 product.setDescription(description);
+                product.setDate(new Date());
                 productService.save(product);
             } else if (model.equals("del")) {
                 Product product = new Product();
@@ -103,6 +105,7 @@ public class ProductController {
                 productService.update(product);
             }
         } catch (Exception e) {
+            e.printStackTrace();
             baseJs.setMessage(e.getMessage());
             baseJs.setResult("fail");
         }
