@@ -229,7 +229,7 @@
 				<div class="modal-body">
 					<form id="editProductImgForm" class="form-horizontal" role="form" action="/delProductImages" method="post">
 						<div class="form-group">
-							<div class="col-sm-3">
+							<div class="col-sm-1">
 								<input type="checkbox" name="productimage" vaue="1">
 							</div>
 							<div class="col-sm-6">
@@ -238,7 +238,7 @@
 							</div>
 						</div>	
 						<div class="form-group">
-							<div class="col-sm-3">
+							<div class="col-sm-1">
 								<input type="checkbox" name="productimage" vaue="2">
 							</div>
 							<div class="col-sm-6">
@@ -247,7 +247,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-sm-3">
+							<div class="col-sm-1">
 								<input type="checkbox" name="productimage" vaue="3">
 							</div>
 							<div class="col-sm-6">
@@ -265,10 +265,8 @@
 							<div class="col-sm-6">
 		    					<input type="file" name="uploadfile" siez="16" class="form-control" ><br>  
 							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-11 text-center">
-							    <input type="submit" value="Upload">   
+							<div class="col-sm-3 text-center">
+								<button type="submit" class="btn btn-primary">Upload</button>
 							</div>
 						</div>
 					</form>  					
