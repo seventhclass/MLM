@@ -81,6 +81,9 @@
 							           			<div class="col-sm-5 pdt_maintenance">
 							           			<button type="button" class="btn btn-danger delproductbtn" data-toggle="modal" data-target="#productcancel" data-backdrop="static" >Delete</button>
 							           			</div>
+												<div class="col-sm-5 pdt_maintenance">
+							           			<button type="button" class="btn btn-danger editproductimgbtn" data-toggle="modal" data-target=".productimg" data-backdrop="static" >Image</button>
+							           			</div>							           			
 							           		</td>
 									     </tr>  										     											     										       												     													     										     												           
 									   </tbody>
@@ -215,7 +218,64 @@
 			</div>
 		</div>
 	</div>
-	 		 
+	 		
+	<div class="modal fade bs-example-modal-lg productimg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header" style="background-color:#428bca;color:#fff;border-top-right-radius: 3px;border-top-left-radius: 3px;padding: 5px;">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title text-center">Products Image Maintenance</h4>
+				</div>
+				<div class="modal-body">
+					<form id="editProductImgForm" class="form-horizontal" role="form" action="/delProductImages" method="post">
+						<div class="form-group">
+							<div class="col-sm-3">
+								<input type="checkbox" name="productimage" vaue="1">
+							</div>
+							<div class="col-sm-6">
+								<img src="<%=request.getContextPath()%>/images/products/product1.png"
+										style="height: 80px; width: 50px; display: block;" alt="">
+							</div>
+						</div>	
+						<div class="form-group">
+							<div class="col-sm-3">
+								<input type="checkbox" name="productimage" vaue="2">
+							</div>
+							<div class="col-sm-6">
+								<img src="<%=request.getContextPath()%>/images/products/product1.png"
+										style="height: 80px; width: 50px; display: block;" alt="">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-3">
+								<input type="checkbox" name="productimage" vaue="3">
+							</div>
+							<div class="col-sm-6">
+								<img src="<%=request.getContextPath()%>/images/products/product1.png"
+										style="height: 80px; width: 50px; display: block;" alt="">
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary">Delete</button>
+					</form>
+				</div>
+				<div class="modal-footer text-center">					
+					<form id="uploadProductImgForm" class="form-horizontal" role="form" action="/uploadFile" method="post" enctype="multipart/form-data">  
+						<div class="form-group">
+							<label for="uploadfile" class="col-sm-3 control-label">Select upload file:</label>
+							<div class="col-sm-6">
+		    					<input type="file" name="uploadfile" siez="16" class="form-control" ><br>  
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-11 text-center">
+							    <input type="submit" value="Upload">   
+							</div>
+						</div>
+					</form>  					
+				</div>
+			</div>
+		</div>
+	</div>	 		 
 	 		 	 	 		 	 
 	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 	

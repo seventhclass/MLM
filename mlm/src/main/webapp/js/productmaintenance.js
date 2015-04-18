@@ -5,7 +5,7 @@
 $(document).ready(function(){
  	var basePath=$('#basePath').attr("value");
  	 	 	
- 	queryProductInfo();   
+ 	//queryProductInfo();   
  	
  	//Query category information
  	function queryCategoryInfo(){
@@ -135,6 +135,9 @@ $(document).ready(function(){
 			           	+"		<div class='col-sm-5 '>"
 			           	+"			<button type='button' class='btn btn-danger delproductbtn' data-toggle='modal' data-productid='"+item.id+"' data-target='#productcancel' data-backdrop='static' >Delete</button>"
 			           	+"		</div>"
+			           	+"		<div class='col-sm-5 pdt_maintenance'>"
+						+"	 		<button type='button' class='btn btn-danger addproductimgbtn' data-toggle='modal' data-target='.productimg' data-backdrop='static' >Image</button>"
+						+"	  	</div>"
 			           	+"	</td>"
 					    +" </tr>"
  					);
@@ -156,11 +159,16 @@ $(document).ready(function(){
 			addProduct(e);
 		}else if($(e.target).is('.delproductbtn')){
 			delProduct(e);
+		}else if($(e.target).is('.editproductimgbtn')){
+			editProductImage(e);
 		}else{
 			alert("Your operation is not available. ");
 		}			
-		
 	});
+	
+	function editProductImage(e){
+		;
+	}
 	
 	function editProduct(e){
 		getAndSetData(e);
