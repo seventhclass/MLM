@@ -64,7 +64,7 @@
 										</thead>
 									   <tbody id="productlist" class="pdt_maintenance">
 									   <tr><td colspan="10">No Items.</td></tr>
-									     <tr>
+<!-- 									     <tr>
 											<td>A000000001</td>
 											<td value='1'>Anti-Aging</td>
 							           		<td>MT-1000</td>
@@ -85,7 +85,7 @@
 							           			<button type="button" class="btn btn-danger editproductimgbtn" data-toggle="modal" data-target=".productimg" data-backdrop="static" >Image</button>
 							           			</div>							           			
 							           		</td>
-									     </tr>  										     											     										       												     													     										     												           
+									     </tr>   -->										     											     										       												     													     										     												           
 									   </tbody>
 									 </table>
 								</div>

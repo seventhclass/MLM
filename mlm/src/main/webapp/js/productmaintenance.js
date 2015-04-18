@@ -5,7 +5,7 @@
 $(document).ready(function(){
  	var basePath=$('#basePath').attr("value");
  	 	 	
- 	//queryProductInfo();   
+ 	queryProductInfo();   
  	
  	//Query category information
  	function queryCategoryInfo(){
