@@ -26,4 +26,10 @@ public class ProductDao extends AbstractDao implements IProductDao {
         return list;
     }
 
+
+    public void test() {
+        Criteria criteria = this.getCurrentSession().createCriteria(Product.class);
+    }
+
+
 }

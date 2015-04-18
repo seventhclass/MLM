@@ -12,6 +12,4 @@ public interface IProductService extends ICrud {
 
     public List<Product> getAllProduct();
 
-    //public Product save(Product product);
-
 }
