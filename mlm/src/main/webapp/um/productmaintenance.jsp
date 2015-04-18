@@ -52,7 +52,7 @@
 											<tr>
 												<th>Item Code</th>
 												<th>Category</th>
-												<th>Name</th>
+												<th>Product Name</th>
 												<th>Whole Sale Price Each</th>
 												<th>Retail Price Each</th>
 												<th>Currency</th>
@@ -63,8 +63,8 @@
 											</tr>
 										</thead>
 									   <tbody id="productlist" class="pdt_maintenance">
-									   <tr><td colspan="10">No Items.</td></tr>
-<!-- 									     <tr>
+<!-- 								   		<tr><td colspan="10">No Items.</td></tr>
+									     <tr>
 											<td>A000000001</td>
 											<td value='1'>Anti-Aging</td>
 							           		<td>MT-1000</td>
