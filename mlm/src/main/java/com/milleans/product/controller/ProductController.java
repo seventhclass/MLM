@@ -150,7 +150,7 @@ public class ProductController {
     @RequestMapping(value = "/uploadImageFile", method = RequestMethod.POST)
     @ResponseBody
     public BaseJs uploadImageFile(@RequestParam String productId, @RequestParam String name,
-                                  @RequestParam("file") MultipartFile file) {
+                                  @RequestParam("uploadFile") MultipartFile file) {
         BaseJs baseJs = new BaseJs();
         if (!file.isEmpty()) {
             try {
