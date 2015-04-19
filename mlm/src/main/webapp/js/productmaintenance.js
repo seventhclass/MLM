@@ -137,7 +137,7 @@ $(document).ready(function(){
 			           	+"			<button type='button' class='btn btn-danger btn-sm delproductbtn' data-toggle='modal' data-productid='"+item.id+"' data-target='#productcancel' data-backdrop='static' >Delete</button>"
 			           	+"		</div>"
 			           	+"		<div class='pdt_maintenance'>"
-						+"	 		<button type='button' class='btn btn-warning btn-sm addproductimgbtn' data-toggle='modal' data-productid='"+item.id+"' data-target='.productimg' data-backdrop='static' >Image</button>"
+						+"	 		<button type='button' class='btn btn-warning btn-sm editproductimgbtn' data-toggle='modal' data-productid='"+item.id+"' data-target='.productimg' data-backdrop='static' >Image</button>"
 						+"	  	</div>"
 			           	+"	</td>"
 					    +" </tr>"
@@ -256,11 +256,11 @@ $(document).ready(function(){
         formData = new FormData();
         formData.append('file', $('input[name=uploadFile]', this).get(0).files[0]);
 
-	 	    $.ajax({
- 	    	url: basePath+'uploadImageFile',        	
-            contentType:"multipart/form-data",
-// 			cache:false,
-// 			async: false,
+ 	    $.ajax({
+ 	    	url: basePath+'/uploadImageFile',        	
+            contentType: "multipart/form-data",
+ 			cache:false,
+ 			async: false,
             processData: false,
  			type:'POST',
  			data: {
@@ -273,9 +273,11 @@ $(document).ready(function(){
  		                alert(xhr.status+"\n"+xhr.responseText);		               
  	    			},        	
  	    	success:	function(res) {
+ 	    		alert("success!!!!");
  	    		sendRequestOfUploadFileResponse(res,id);
  	    			}
  	    });		
+ 	    return false;
 	}
 
  	function sendRequestOfUploadFileResponse(res,id){
