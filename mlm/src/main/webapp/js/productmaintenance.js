@@ -180,8 +180,7 @@ $(document).ready(function(){
  			async: false,
  			type:'POST',			
  			data: {
- 				productId:  id,
- 				uploadFile: $('#uploadFile').val()
+ 				productId:  id
  			},
  	    	dataType:'json',
  	    	timeout:5000,
@@ -249,15 +248,23 @@ $(document).ready(function(){
 
 	function sendRequestOfUploadFile(e){
 		var id = $('#uploadFilebtn').attr("data-productid");
+        alert("file="+$('#uploadFile').val());
+		
+        var formData;
+
+        formData = new FormData();
+        formData.append('file', $('input[name=uploadFile]', this).get(0).files[0]);
 
 	 	    $.ajax({
  	    	url: basePath+'uploadImageFile',        	
- 			cache:false,
- 			async: false,
+            contentType:"multipart/form-data",
+// 			cache:false,
+// 			async: false,
+            processData: false,
  			type:'POST',
  			data: {
  					productId: id,
- 					file: $('#uploadFile').val()
+ 					uploadFile: formData 
  			},
  	    	dataType:'json',
  	    	timeout:5000,
