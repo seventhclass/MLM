@@ -147,7 +147,7 @@ public class ProductController {
     @RequestMapping(value = "/uploadImageFile", method = RequestMethod.POST)
     @ResponseBody
     public BaseJs uploadImageFile(@RequestParam("productId") String productId,
-                                  @RequestParam("file") MultipartFile file) {
+                                  @RequestParam("uploadFile") MultipartFile uploadFile) {
         BaseJs baseJs = new BaseJs();
         System.out.println("zzzzzzz");
 
