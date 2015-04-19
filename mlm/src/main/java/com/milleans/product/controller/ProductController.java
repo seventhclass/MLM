@@ -149,13 +149,14 @@ public class ProductController {
 
     @RequestMapping(value = "/uploadImageFile", method = RequestMethod.POST)
     @ResponseBody
-    public BaseJs uploadImageFile(@RequestParam String productId, @RequestParam String uploadFile,
+    public BaseJs uploadImageFile(String productId,
                                   @RequestParam("file") MultipartFile file) {
         BaseJs baseJs = new BaseJs();
+        System.out.println("zzzzzzz");
         if (!file.isEmpty()) {
             try {
                 byte[] bytes = file.getBytes();
-                File destination = new File("/" + productId + "/" + uploadFile);
+                File destination = new File("/" + productId + "/" + Math.random());
                 BufferedOutputStream stream =
                         new BufferedOutputStream(new FileOutputStream(destination));
                 stream.write(bytes);
