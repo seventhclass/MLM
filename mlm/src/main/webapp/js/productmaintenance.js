@@ -248,6 +248,7 @@ $(document).ready(function(){
 
 	function sendRequestOfUploadFile(e){
 		var id = $('#uploadFilebtn').attr("data-productid");
+		alert("id="+id);
         alert("file="+$('#uploadFile').val());
 		
         var formData;
