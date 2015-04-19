@@ -180,7 +180,8 @@ $(document).ready(function(){
  			async: false,
  			type:'POST',			
  			data: {
- 				productId:  id
+ 				productId:  id,
+ 				uploadFile: $('#uploadFile').val()
  			},
  	    	dataType:'json',
  	    	timeout:5000,
