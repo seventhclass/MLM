@@ -1,17 +1,26 @@
 package com.milleans.product.controller;
 
 import com.milleans.dto.BaseJs;
+import com.milleans.model.Album;
 import com.milleans.model.Product;
+import com.milleans.product.dto.ImageJs;
+import com.milleans.product.dto.ImageListJs;
 import com.milleans.product.dto.ProductListJs;
 import com.milleans.product.services.IProductService;
+import com.milleans.product.services.IalbumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +32,9 @@ public class ProductController {
 
     @Autowired
     private IProductService productService;
+
+    @Autowired
+    private IalbumService albumService;
 
 
     @RequestMapping(value = "/products")
@@ -66,7 +78,7 @@ public class ProductController {
         String numbers = webRequest.getParameter("numbers");
         String volume = webRequest.getParameter("volume");
         String volume2 = webRequest.getParameter("volume2");
-        String description =webRequest.getParameter("description");
+        String description = webRequest.getParameter("description");
         String id = webRequest.getParameter("id");
 
         BaseJs baseJs = new BaseJs();
@@ -91,7 +103,7 @@ public class ProductController {
                 productService.remove(product);
             } else {//upd
 
-                Product product=(Product) productService.getItemById(id);
+                Product product = (Product) productService.getItemById(id);
 
                 product.setItemCode(itemcode);
                 product.setName(name);
@@ -113,4 +125,64 @@ public class ProductController {
         }
         return baseJs;
     }
+
+    @RequestMapping(value = "/delProductImages", method = RequestMethod.POST)
+    @ResponseBody
+    public ImageJs editImage(@RequestParam String[] productimage) {
+
+        ImageJs imageJs = new ImageJs();
+
+        try {
+            for (String imgId : productimage) {
+                Album album = new Album();
+                album.setId(Integer.valueOf(imgId));
+                albumService.remove(album);
+            }
+
+        } catch (NumberFormatException | NullPointerException e) {
+            e.printStackTrace();
+            imageJs.setMessage(e.getMessage());
+            imageJs.setResult("fail");
+        }
+        return imageJs;
+    }
+
+    @RequestMapping(value = "/uploadImageFile", method = RequestMethod.POST)
+    @ResponseBody
+    public BaseJs uploadImageFile(@RequestParam String productId, @RequestParam String name,
+                                  @RequestParam("uploadFile") MultipartFile file) {
+        BaseJs baseJs = new BaseJs();
+        if (!file.isEmpty()) {
+            try {
+                byte[] bytes = file.getBytes();
+                File destination = new File("/" + productId + "/" + name);
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(destination));
+                stream.write(bytes);
+                stream.close();
+            } catch (Exception e) {
+                baseJs.setMessage(e.getMessage());
+                baseJs.setResult("fail");
+            }
+        }
+        return baseJs;
+    }
+
+
+    @RequestMapping(value = "/productImages", method = RequestMethod.POST)
+    @ResponseBody
+    public ImageListJs getImageList(@RequestParam String productId) {
+
+        ImageListJs imageListJs = new ImageListJs();
+
+        try {
+            imageListJs.setAlbumLInfo(albumService.getAlbumByProductId(productId));
+        } catch (Exception e) {
+            e.printStackTrace();
+            imageListJs.setMessage(e.getMessage());
+            imageListJs.setResult("fail");
+        }
+        return imageListJs;
+    }
+
 }
