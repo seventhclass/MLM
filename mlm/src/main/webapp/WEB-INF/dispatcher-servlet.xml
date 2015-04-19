@@ -20,7 +20,7 @@
     <context:component-scan base-package="com.milleans.*"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
-	
+
     <context:annotation-config></context:annotation-config>
 
     <import resource="classpath:hibernate-config.xml"/>
@@ -34,5 +34,6 @@
         <property name="extractValueFromSingleKeyModel" value="true"/>
     </bean>
 
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 
 </beans>
