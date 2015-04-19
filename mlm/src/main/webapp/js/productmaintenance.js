@@ -248,16 +248,14 @@ $(document).ready(function(){
 
 	function sendRequestOfUploadFile(e){
 		var id = $('#uploadFilebtn').attr("data-productid");
-		alert("id="+id);
-        alert("file="+$('#uploadFile').val());
-		
         var formData;
-
+		alert("id="+id);
         formData = new FormData();
-        formData.append('file', $('input[name=uploadFile]', this).get(0).files[0]);
+        formData.append('file', $('input[name=uploadFile]').get(0).files[0]);
 
+        alert("formData="+formData);
  	    $.ajax({
- 	    	url: basePath+'/uploadImageFile',        	
+ 	    	url: basePath+'uploadImageFile',        	
             contentType: "multipart/form-data",
  			cache:false,
  			async: false,
