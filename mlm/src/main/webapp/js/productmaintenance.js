@@ -246,6 +246,22 @@ $(document).ready(function(){
 		sendRequestOfUploadFile(e);
 	});
 
+/*	function sendRequestOfUploadFile(e){
+alert("1111");
+		$.ajaxFileUpload({
+			  url:basePath+'uploadImageFile',
+			  secureuri:false,
+			  fileElementId:'uploadFile',
+			  dataType: 'json',
+ 	    	error:	function(xhr, ajaxOptions, thrownError){
+ 		                alert(xhr.status+"\n"+xhr.responseText);		               
+ 	    			},        	
+ 	    	success:	function(res) {
+ 	    		alert("success!!!!");
+ 	    		sendRequestOfUploadFileResponse(res,id);
+ 	    			}
+			});		
+	}*/
 	function sendRequestOfUploadFile(e){
 		var id = $('#uploadFilebtn').attr("data-productid");
         var formData;
@@ -263,7 +279,7 @@ $(document).ready(function(){
  			type:'POST',
  			data: {
  					productId: id,
- 					uploadFile: formData 
+ 					uploadFile: $('input[name=uploadFile]').get(0).files[0]
  			},
  	    	dataType:'json',
  	    	timeout:5000,
