@@ -18,6 +18,10 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.List;
 
@@ -147,27 +151,37 @@ public class ProductController {
     @RequestMapping(value = "/uploadImageFile", method = RequestMethod.POST)
     @ResponseBody
     public BaseJs uploadImageFile(@RequestParam("productId") String productId,
-                                  @RequestParam("uploadFile") MultipartFile uploadFile) {
+                                  @RequestParam("uploadFile") MultipartFile uploadFile, HttpSession httpSession) {
         BaseJs baseJs = new BaseJs();
-        System.out.println("zzzzzzz");
 
-//        if (!file.isEmpty()) {
-//            try {
-//                byte[] bytes = file.getBytes();
-//                File destination = new File("/" + productId + "/" + new Date().getTime()+".jpg");
-//                if(!destination.exists()){
-//                    destination.createNewFile();
-//                }
-//                BufferedOutputStream stream =
-//                        new BufferedOutputStream(new FileOutputStream(destination));
-//                stream.write(bytes);
-//                stream.close();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//                baseJs.setMessage(e.getMessage());
-//                baseJs.setResult("fail");
-//            }
-//        }
+
+        String fileName = uploadFile.getOriginalFilename();
+
+        String uploadDir = httpSession.getServletContext().getRealPath(File.separator) + "/images/product/" + productId;
+
+        if (!new File(uploadDir).exists()) {
+            File dir = new File(uploadDir);
+            dir.mkdir();
+        }
+
+        if (!uploadFile.isEmpty()) {
+            try {
+                byte[] bytes = uploadFile.getBytes();
+//                File destination = new File("/" + productId + "/" + new Date().getTime() + ".jpg");
+                File destination = new File(uploadDir + fileName);
+                if (!destination.exists()) {
+                    destination.createNewFile();
+                }
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(destination));
+                stream.write(bytes);
+                stream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+                baseJs.setMessage(e.getMessage());
+                baseJs.setResult("fail");
+            }
+        }
         return baseJs;
     }
 
