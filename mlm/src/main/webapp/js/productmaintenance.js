@@ -246,7 +246,7 @@ $(document).ready(function(){
 		sendRequestOfUploadFile(e);
 	});
 
-	function sendRequestOfUploadFile(e){
+/*	function sendRequestOfUploadFile(e){
 alert("1111");
 		$.ajaxFileUpload({
 			  url:basePath+'uploadImageFile',
@@ -261,8 +261,8 @@ alert("1111");
  	    		sendRequestOfUploadFileResponse(res,id);
  	    			}
 			});		
-	}
-/*	function sendRequestOfUploadFile(e){
+	}*/
+	function sendRequestOfUploadFile(e){
 		var id = $('#uploadFilebtn').attr("data-productid");
         var formData;
 		alert("id="+id);
@@ -306,7 +306,7 @@ alert("1111");
     		}    			
     		alert(message);
 		}
- 	}*/
+ 	}
 
 	function sendRequestOfEditProduct(){
 		var i_model = $('#productid').attr("data-model");
