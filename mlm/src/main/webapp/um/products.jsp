@@ -30,11 +30,11 @@
 				<div class="col-md-3">
 					<div id="left">
 						<div class="btn-group-vertical categorybox">
-							<button id="btn_category_1" class="btn btn-success" type="button">Anti-Aging             </button>
-							<button id="btn_category_2" class="btn btn-success" type="button">Life Extension         </button>
-							<button id="btn_category_3" class="btn btn-success" type="button">Brain Health           </button>
-							<button id="btn_category_4" class="btn btn-success" type="button">Energy & Performance   </button>
-							<button id="btn_category_5" class="btn btn-success" type="button">Wealth Creation        </button>
+							<button class="btn btn-success category_btn" data-categoryid="1" type="button">Anti-Aging             </button>
+							<button class="btn btn-success category_btn" data-categoryid="2" type="button">Life Extension         </button>
+							<button class="btn btn-success category_btn" data-categoryid="3" type="button">Brain Health           </button>
+							<button class="btn btn-success category_btn" data-categoryid="4" type="button">Energy & Performance   </button>
+							<button class="btn btn-success category_btn" data-categoryid="5" type="button">Wealth Creation        </button>
 						</div>
 					</div>
 				</div>
@@ -42,7 +42,7 @@
 					<div id="content">
 						<div id="shopwindow">
 							<div id="productslist" class="row">
-								<div class="col-xs-6 col-md-4">
+								<%-- <div class="col-xs-6 col-md-4">
 									<a href="#" class="thumbnail"> 
 										<img src="<%=request.getContextPath()%>/images/products/product1.png"
 										style="height: 200px; width: 150px; display: block;" alt="">
@@ -104,10 +104,10 @@
 												class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Add to Cart</button>
 										</p>
 									</div>
-								</div>
+								</div> --%>
 							</div>
 						</div> <!-- end shopwindow -->
-						<div id="pagination">
+						<!-- <div id="pagination">
 							<div class="row text-center">
 								<div class="col-md-12">
 									<ul class="pagination pagination-sm">
@@ -123,7 +123,7 @@
 									</ul>   									
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div> <!-- end content -->					
 				</div>
 			</div>
