@@ -8,7 +8,7 @@
 	 	
 	 	//Query my shopping cart summary information
 	 	function queryMyShoppingCartSummary(){
-	 		
+	 		alert("userid="+$('#get_userInfo').attr('data-userid'));
 	 	 	//send requrest to server.
 	 	    $.ajax({
 	 	    	url: basePath+'common/shoppingCartSummary',        	
@@ -37,7 +37,7 @@
 	 		if (result == "success") {
 	 			$('.myshoppingcartitemnumber').html("");	
 	 			if(res.number){
-		 			$('.myshoppingcartitemnumber').html(res.number);	
+		 			$('.myshoppingcartitemnumber').html(res.total_quantity);	
 	 			}
 	 		}else{
 	    		if(message==null || message==""){

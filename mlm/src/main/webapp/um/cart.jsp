@@ -33,7 +33,7 @@
 						<div id="succes-info">										
 							<div class="row">	
 								<div class="col-sm-offset-1 col-sm-10">							
-									<img style="width: 25px; height: 30px" src="../images/logo/ok.png" alt="">
+									<img style="width: 25px; height: 30px" src="<%=request.getContextPath()%>/images/logo/ok.png" alt="">
 									<span class="h4">Products have been successfully added to shopping cart!</span>
 								</div>
 							</div>
@@ -61,7 +61,7 @@
 											<table class="table">
 											   <tbody id="shoppingCartList">										   											  
 												     <tr>
-												       <td rowspan="3"><img src="../images/products/product1.png"
+												       <td rowspan="3"><img src="<%=request.getContextPath()%>/images/products/product1.png"
 										           style="height: 50px; width: 55px;" alt=""></td>
 										           		<td>Mt-1000</td>
 										           		<td rowspan="3" style="width:30px"><span data-id="1" class="glyphicon glyphicon-remove-sign close_item" style="color:red"></span></td>
@@ -73,7 +73,7 @@
 										           		<td>99.00$ x 1</td>
 												     </tr>
 												     <tr>
-												       <td rowspan="3"><img src="../images/products/product1.png"
+												       <td rowspan="3"><img src="<%=request.getContextPath()%>/images/products/product1.png"
 										           style="height: 50px; width: 55px;" alt=""></td>
 										           		<td>Mt-1000B</td>
 										           		<td rowspan="3" style="width:30px"><span data-id="2" class="glyphicon glyphicon-remove-sign close_item" style="color:red"></span></td>
