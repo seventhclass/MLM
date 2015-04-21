@@ -12,7 +12,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/shoppingcart',        	
+ 	    	url: basePath+'shoppingcart',        	
  			cache:false,
  			async: false,
  			type:'POST',			
