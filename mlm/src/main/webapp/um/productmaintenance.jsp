@@ -260,14 +260,14 @@
 					</form>
 				</div>
 				<div class="modal-footer text-center">					
-					<form id="uploadProductImgForm" class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">  
+					<form id="uploadProductImgForm" class="form-horizontal" role="form">
 						<div class="form-group">
 							<label for="uploadfile" class="col-sm-3 control-label">Select upload file:</label>
 							<div class="col-sm-6">
 		    					<input type="file" id="uploadFile" name="uploadFile" siez="16" class="form-control" ><br>  
 							</div>
 							<div class="col-sm-3 text-center">
-								<button id="uploadFilebtn" type="submit" data-productid="" class="btn btn-primary">Upload</button>
+								<button id="uploadFilebtn" type="submit" class="btn btn-primary">Upload</button>
 							</div>
 						</div>
 					</form>  					
