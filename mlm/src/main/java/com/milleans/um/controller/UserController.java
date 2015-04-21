@@ -103,7 +103,6 @@ public class UserController {
     public
     @ResponseBody
     JsonResponseDto getUserInfo(@RequestParam String memberId) {
-
         User user = userService.getUser(memberId);
 
         JsonResponseDto jsonResponseDto = new JsonResponseDto();
@@ -252,4 +251,6 @@ public class UserController {
     public ModelAndView categoryMaintenance() {
         return new ModelAndView("um/categorymaintenance");
     }
+
+
 }

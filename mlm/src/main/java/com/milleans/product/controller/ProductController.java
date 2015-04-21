@@ -157,7 +157,7 @@ public class ProductController {
 
         String fileName = uploadFile.getOriginalFilename();
 
-        String uploadDir = httpSession.getServletContext().getRealPath(File.separator) + "/images/product/" + productId;
+        String uploadDir = httpSession.getServletContext().getRealPath(File.separator) + "images/product/" + productId + "/";
 
         if (!new File(uploadDir).exists()) {
             File dir = new File(uploadDir);
