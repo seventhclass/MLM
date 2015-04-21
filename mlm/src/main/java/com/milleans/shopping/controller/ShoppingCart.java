@@ -16,4 +16,10 @@ public class ShoppingCart {
     public ModelAndView myShoppingCart() {
         return new ModelAndView("um/myshoppingcart");
     }
+
+
+    @RequestMapping(value = "/cart", method = RequestMethod.GET)
+    public ModelAndView cart() {
+        return new ModelAndView("um/cart");
+    }
 }

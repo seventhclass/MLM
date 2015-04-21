@@ -161,7 +161,7 @@ public class ProductController {
 
         if (!new File(uploadDir).exists()) {
             File dir = new File(uploadDir);
-            dir.mkdir();
+            dir.mkdirs();
         }
 
         if (!uploadFile.isEmpty()) {
