@@ -1,4 +1,4 @@
-package com.milleans.shipping.controller;
+package com.milleans.service;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
