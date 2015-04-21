@@ -34,7 +34,7 @@ $(document).ready(function(){
  	function makeOrder(){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/makeOrder',        	
+ 	    	url: basePath+'makeOrder',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -59,7 +59,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/shoppingcart',        	
+ 	    	url: basePath+'shoppingcart',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -125,7 +125,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/delcartitem',        	
+ 	    	url: basePath+'delcartitem',        	
  			cache:false,
  			async: false,
  			type:'POST',
@@ -158,7 +158,7 @@ $(document).ready(function(){
  	function updateShoppingCartItem(id,qty){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/updateshoppingcart',        	
+ 	    	url: basePath+'updateshoppingcart',        	
  			cache:false,
  			async: false,
  			type:'POST',

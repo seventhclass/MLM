@@ -11,7 +11,7 @@
 	 		
 	 	 	//send requrest to server.
 	 	    $.ajax({
-	 	    	url: basePath+'/common/shoppingCartSummary',        	
+	 	    	url: basePath+'common/shoppingCartSummary',        	
 	 			cache:false,
 	 			async: false,
 	 			type:'POST',			

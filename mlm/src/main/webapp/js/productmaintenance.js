@@ -12,7 +12,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/common/category',        	
+ 	    	url: basePath+'common/category',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -52,7 +52,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/common/currency',        	
+ 	    	url: basePath+'common/currency',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -92,7 +92,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/productList',        	
+ 	    	url: basePath+'productList',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -122,8 +122,8 @@ $(document).ready(function(){
 			           	+"	<td data-value='"+item.id+"'>"+item.itemCode+"</td>"
 			           	+"	<td data-value='"+item.categoryId+"'>"+item.category+"</td>"
 			           	+"	<td>"+item.name+"</td>"
-			           	+"	<td>$"+parseFloat(item.wholesalePrice).toFixed(2)+"</td>"
-			           	+"	<td>$"+parseFloat(item.retailPrice).toFixed(2)+"</td>"
+			           	+"	<td>"+parseFloat(item.wholesalePrice).toFixed(2)+"</td>"
+			           	+"	<td>"+parseFloat(item.retailPrice).toFixed(2)+"</td>"
 			           	+"	<td data-value='"+item.currencyId+"'>"+item.currency+"</td>"
 			           	+"	<td>"+item.capsuleNumber+"</td>"
 			           	+"	<td>"+item.volume+"</td>"
@@ -175,7 +175,7 @@ $(document).ready(function(){
 
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/productImages',        	
+ 	    	url: basePath+'productImages',        	
  			cache:false,
  			async: false,
  			type:'POST',			

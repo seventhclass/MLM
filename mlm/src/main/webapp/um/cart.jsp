@@ -44,7 +44,7 @@
 									<button type="button" class="btn btn-danger">Go Cart Settlement</button>
 								</div>
 								<div class="col-sm-5" style="margin-top:6px;">
-									You can also <a href="products.jsp">continue shopping</a>
+									You can also <a href="<%=request.getContextPath()%>/products">continue shopping</a>
 								</div>
 							</div>
 						</div>
@@ -55,7 +55,7 @@
 						<div id="cartlist">
 							<div class="row">
 								<div class="panel panel-info">
-									<div class="panel-heading text-center"><a href="myshoppingcart.jsp"><span class="glyphicon glyphicon-shopping-cart"></span>		My shopping cart</a></div>
+									<div class="panel-heading text-center"><a href="<%=request.getContextPath()%>/myshoppingcart"><span class="glyphicon glyphicon-shopping-cart"></span>		My shopping cart</a></div>
 									<div class="panel-body">
 										<div class="p_item">
 											<table class="table">

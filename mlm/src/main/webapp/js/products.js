@@ -14,7 +14,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/common/category',        	
+ 	    	url: basePath+'common/category',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -53,7 +53,7 @@ $(document).ready(function(){
  	function queryProductsInfo(){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/productList',        	
+ 	    	url: basePath+'productList',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -122,7 +122,7 @@ $(document).ready(function(){
  		//alert("categoryId="+categoryId);
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/productList',        	
+ 	    	url: basePath+'productList',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -161,7 +161,7 @@ $(document).ready(function(){
 		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/add2cart',        	
+ 	    	url: basePath+'add2cart',        	
  			cache:false,
  			async: false,
  			type:'POST',
