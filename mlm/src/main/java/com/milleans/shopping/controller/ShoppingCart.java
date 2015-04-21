@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * Created by LeHu on 2015-04-20 10:42 PM.
  */
-@Controller
+@Controller("shoppingCart")
 public class ShoppingCart {
 
 
