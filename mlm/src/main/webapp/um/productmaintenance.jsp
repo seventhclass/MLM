@@ -117,7 +117,7 @@
 				</div>
 				<div class="modal-body">
 					<form id="editProductForm" class="form-horizontal" role="form" action="/addProduct" method="post">
-						<input type="hidden" name="productId" data-model="" id="productid">
+						<input type="hidden" name="productid" data-model="" id="productid">
 						<div class="form-group">
 							<label for="itemcode" class="col-sm-3 control-label">Item Code</label>
 							<div class="col-sm-3">
@@ -267,7 +267,7 @@
 							<label for="uploadfile" class="col-sm-3 control-label">Select upload file:</label>
 							<div class="col-sm-6">
 		    					<input type="file" id="uploadFile" name="uploadFile" siez="16" class="form-control"/>
-								<input type="hidden" name="productId" value=""/>
+								<input type="hidden" id="productId" name="productId" value=""/>
 								<br>
 							</div>
 							<div class="col-sm-3 text-center">

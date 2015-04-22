@@ -172,6 +172,7 @@ $(document).ready(function () {
 
     function queryProductImages(id) {
         $('#uploadFilebtn').attr("data-productid", id);
+        $('#productId').val(id);
 
         //send requrest to server.
         $.ajax({
