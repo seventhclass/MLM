@@ -191,9 +191,9 @@ $(document).ready(function(){
  		var message = res.message;			//response message
  		
  		if (result == "success") {
- 				;
+ 			window.location.href=basePath+"cart";
  		}else{
- 				alert("Sorry, adding products to shopping cart failed! Try again, please. ");
+ 			alert("Sorry, adding products to shopping cart failed! Try again, please. ");
  		}
  	}
  	

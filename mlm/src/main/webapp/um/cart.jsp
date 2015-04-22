@@ -41,7 +41,7 @@
 						<div id="settle-btn">
 							<div class="row">
 								<div class="col-sm-offset-2 col-sm-3">
-									<button type="button" class="btn btn-danger">Go Cart Settlement</button>
+									<a href='<%=request.getContextPath()%>/myshoppingcart'><button type="button" class="btn btn-danger">Go Cart Settlement</button></a>
 								</div>
 								<div class="col-sm-5" style="margin-top:6px;">
 									You can also <a href="<%=request.getContextPath()%>/products">continue shopping</a>
@@ -50,7 +50,7 @@
 						</div>
 					</div>
 				</div> <!-- end content -->	
-				<div id="showcart">
+				<%-- <div id="showcart">
 					<div class="col-md-4">
 						<div id="cartlist">
 							<div class="row">
@@ -93,13 +93,13 @@
 										<p class="list-group-item-text">Total Amount: $140.00</p>										
 									</div>									
 									<div class="panel-footer text-center">
-										<button type="button" class="btn btn-danger">Go Cart Settlement</button>
+										<a href='<%=request.getContextPath()%>/myshoppingcart'><button type="button" class="btn btn-danger">Go Cart Settlement</button></a>
 									</div>
 								</div>							
 							</div>
 						</div>
 					</div>
-				</div> <!-- end showcart -->					
+				</div>  --%><!-- end showcart -->					
 			</div>
 		</div>  <!-- end page -->
 	</div><!-- end container -->

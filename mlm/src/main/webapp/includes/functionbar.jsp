@@ -8,16 +8,12 @@
 	 	
 	 	//Query my shopping cart summary information
 	 	function queryMyShoppingCartSummary(){
-	 		alert("userid="+$('#get_userInfo').attr('data-userid'));
 	 	 	//send requrest to server.
 	 	    $.ajax({
 	 	    	url: basePath+'common/shoppingCartSummary',        	
 	 			cache:false,
 	 			async: false,
 	 			type:'POST',			
-	 			data: {
-	 				userid: $('#get_userInfo').attr('data-userid')
-	 			},
 	 	    	dataType:'json',
 	 	    	timeout:5000,
 	 	    	error:	function(xhr, ajaxOptions, thrownError){
@@ -36,8 +32,11 @@
 	 		
 	 		if (result == "success") {
 	 			$('.myshoppingcartitemnumber').html("");	
-	 			if(res.number){
+	 			if(res.total_quantity){
 		 			$('.myshoppingcartitemnumber').html(res.total_quantity);	
+	 			}
+	 			if(res.total_amount){
+	 				$('.myshoppingcartitemnumber').attr('data-totalamount',res.total_amount);
 	 			}
 	 		}else{
 	    		if(message==null || message==""){
@@ -55,7 +54,7 @@
 	<div class='col-md-8'>
 		<div class='col-sm-offset-7 col-sm-6'>
 			<a class="myorder_btn" href='<%=request.getContextPath()%>/orderentry'><button type='button' class='btn btn-info'><span class='glyphicon glyphicon-list-alt'></span> My Order </button></a>
-			<a class="myshoppingcart_btn" href='<%=request.getContextPath()%>/myshoppingcart'><button type='button' class='btn btn-danger'><span class='glyphicon glyphicon-shopping-cart'></span> My Shopping Cart <span class='badge myshoppingcartitemnumber'>2</span></button></a>
+			<a class="myshoppingcart_btn" href='<%=request.getContextPath()%>/myshoppingcart'><button type='button' class='btn btn-danger'><span class='glyphicon glyphicon-shopping-cart'></span> My Shopping Cart <span data-totalamount="" class='badge myshoppingcartitemnumber'>2</span></button></a>
 		</div>
 	</div>
 </div>
