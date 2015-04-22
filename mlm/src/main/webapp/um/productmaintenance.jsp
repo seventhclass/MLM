@@ -260,14 +260,19 @@
 					</form>
 				</div>
 				<div class="modal-footer text-center">					
-					<form id="uploadProductImgForm" class="form-horizontal" role="form">
+					<form id="uploadProductImgForm" class="form-horizontal" role="form"
+						  action="<%=request.getContextPath()%>/uploadImageFile"
+						  method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="uploadfile" class="col-sm-3 control-label">Select upload file:</label>
 							<div class="col-sm-6">
-		    					<input type="file" id="uploadFile" name="uploadFile" siez="16" class="form-control" ><br>  
+		    					<input type="file" id="uploadFile" name="uploadFile" siez="16" class="form-control"/>
+								<input type="hidden" name="productId" value=""/>
+								<br>
 							</div>
 							<div class="col-sm-3 text-center">
-								<button id="uploadFilebtn" type="submit" class="btn btn-primary">Upload</button>
+								<%--<button id="uploadFilebtn" type="submit" class="btn btn-primary">Upload</button>--%>
+								<input type="submit" value="Upload" class="btn btn-primary"/>
 							</div>
 						</div>
 					</form>  					
