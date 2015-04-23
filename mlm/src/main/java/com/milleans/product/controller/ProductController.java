@@ -8,6 +8,7 @@ import com.milleans.product.dto.ImageListJs;
 import com.milleans.product.dto.ProductListJs;
 import com.milleans.product.services.IProductService;
 import com.milleans.product.services.IalbumService;
+import com.milleans.tools.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -154,18 +155,15 @@ public class ProductController {
                                   @RequestParam("uploadFile") MultipartFile uploadFile, HttpSession httpSession) {
         BaseJs baseJs = new BaseJs();
 
+        try {
+            String fileName = uploadFile.getOriginalFilename();
+            String uploadDir = httpSession.getServletContext().getRealPath(File.separator) + Constant.AlbumPath + productId + "/";
+            if (!new File(uploadDir).exists()) {
+                File dir = new File(uploadDir);
+                dir.mkdirs();
+            }
+            if (!uploadFile.isEmpty()) {
 
-        String fileName = uploadFile.getOriginalFilename();
-
-        String uploadDir = httpSession.getServletContext().getRealPath(File.separator) + "images/product/" + productId + "/";
-
-        if (!new File(uploadDir).exists()) {
-            File dir = new File(uploadDir);
-            dir.mkdirs();
-        }
-
-        if (!uploadFile.isEmpty()) {
-            try {
                 byte[] bytes = uploadFile.getBytes();
 //                File destination = new File("/" + productId + "/" + new Date().getTime() + ".jpg");
                 File destination = new File(uploadDir + fileName);
@@ -176,11 +174,15 @@ public class ProductController {
                         new BufferedOutputStream(new FileOutputStream(destination));
                 stream.write(bytes);
                 stream.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-                baseJs.setMessage(e.getMessage());
-                baseJs.setResult("fail");
             }
+            Album album = new Album();
+            album.setProductId(Integer.valueOf(productId));
+            album.setImageName(Constant.AlbumPath + "/" + productId + "/" + fileName);
+            albumService.save(album);
+        } catch (Exception e) {
+            e.printStackTrace();
+            baseJs.setMessage(e.getMessage());
+            baseJs.setResult("fail");
         }
         return baseJs;
     }

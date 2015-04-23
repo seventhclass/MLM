@@ -260,9 +260,11 @@
 					</form>
 				</div>
 				<div class="modal-footer text-center">					
-					<form id="uploadProductImgForm" class="form-horizontal" role="form"
+					<form id="uploadProductImgForm" class="form-horizontal"
+						  role="form"
 						  action="<%=request.getContextPath()%>/uploadImageFile"
-						  method="post" enctype="multipart/form-data">
+						  method="post"
+						  enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="uploadfile" class="col-sm-3 control-label">Select upload file:</label>
 							<div class="col-sm-6">
