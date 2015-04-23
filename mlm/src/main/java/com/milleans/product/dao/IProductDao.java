@@ -2,6 +2,7 @@ package com.milleans.product.dao;
 
 import com.milleans.dao.IDao;
 import com.milleans.model.Product;
+import com.milleans.product.dto.ProductTable;
 
 import java.util.*;
 
@@ -11,6 +12,8 @@ import java.util.*;
 public interface IProductDao extends IDao{
 
     public List<Product> getAllList();
+
+    public List<ProductTable> getProductList();
 
     Product getItemById(String id);
 }

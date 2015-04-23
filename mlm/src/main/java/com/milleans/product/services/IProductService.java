@@ -1,6 +1,7 @@
 package com.milleans.product.services;
 
 import com.milleans.model.Product;
+import com.milleans.product.dto.ProductTable;
 import com.milleans.service.ICrud;
 
 import java.util.List;
@@ -12,4 +13,5 @@ public interface IProductService extends ICrud {
 
     public List<Product> getAllProduct();
 
+    public List<ProductTable> getProduct();
 }

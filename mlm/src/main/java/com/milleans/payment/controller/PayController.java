@@ -16,4 +16,9 @@ public class PayController {
     public ModelAndView paymentType() {
         return new ModelAndView("um/paymenttype");
     }
+
+    @RequestMapping(value = "/payandship",method = RequestMethod.GET)
+    public ModelAndView payandShip() {
+        return new ModelAndView("um/payandship");
+    }
 }
