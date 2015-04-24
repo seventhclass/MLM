@@ -91,7 +91,7 @@ $(document).ready(function(){
  						+"		<p><span class='p_numbers'>"+item.capsuleNumber+"</span>&nbsp;Counts</p>" 						
  						+"		<p>"
 						+"			Quantity:<input class='p_quantity' type='number' name='quantity' min='1' max='999' value='1'> " 
-						+"			<button type='button' class='btn btn-danger addtocart_btn'><span class='glyphicon glyphicon-shopping-cart'></span>&nbsp;Add to Cart</button>"
+						+"			<button type='button' data-productid='"+item.id+"' class='btn btn-danger addtocart_btn'><span class='glyphicon glyphicon-shopping-cart'></span>&nbsp;Add to Cart</button>"
 						+"		</p>"
 			           	+"	</div>"
 			           	+"</div>"
@@ -142,7 +142,7 @@ $(document).ready(function(){
  	}
 
  	function addProducts2Cart(e){
- 		
+ 		var $id = (e.target).attr("data-productid");
  		var $name = $(e.target).parents("div").children(".p_name").html();
  		var $itemCode = $(e.target).parents("div").children(".p_itemCode").html();
  		var $rPrice = $(e.target).parents("div").children().children(".p_rPrice").html();
@@ -150,7 +150,8 @@ $(document).ready(function(){
  		var $bVolume = $(e.target).parents("div").children().children(".p_BV").html();
  		var $numbers = $(e.target).parents("div").children().children(".p_numbers").html();
  		var $quantity = $(e.target).parents("div").children().children(".p_quantity").val(); 		
- 		
+ 		var $price;
+		alert("id="+$id);	
 		alert("name="+$name);	
 		alert("itemcode="+$itemCode);
 		alert("rprice="+$rPrice);
@@ -158,7 +159,9 @@ $(document).ready(function(){
 		alert("volume="+$bVolume);
 		alert("numbers="+$numbers);
 		alert("quantity="+$quantity);
-		
+
+		$price = $rPrice;
+
  	 	//send requrest to server.
  	    $.ajax({
  	    	url: basePath+'add2cart',        	
@@ -166,12 +169,8 @@ $(document).ready(function(){
  			async: false,
  			type:'POST',
  			data:{
- 				name: $name,
- 				itemCode: $itemCode,
- 				rPrice: $rPrice,
- 				wPrice: $wPrice,
- 				bVolume: $bVolume,
- 				numbers: $numbers,
+ 				id: $id,
+ 				price: $price,
  				quantity: $quantity
  			},
  	    	dataType:'json',
