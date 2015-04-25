@@ -243,37 +243,11 @@ $(document).ready(function () {
         sendRequestOfEditProduct();
     });
 
-    //$('#uploadFilebtn').click(function(e){
-    //	alert("zzzzzzzzzz");
-    //	//sendRequestOfUploadFile(e);
-    //	uploadImage(e);
-    //});
-
-    function uploadImage(e) {
-        var form = $('#uploadProductImgForm');
-        $.ajax({
-            url: basePath + 'uploadImageFile',
-            contentType: "multipart/form-data",
-            cache: false,
-            async: false,
-            processData: false,
-            type: 'POST',
-            data: {
-                productId: id,
-                uploadFile: $("#uploadFile")
-            },
-            dataType: 'json',
-            timeout: 5000,
-            error: function (xhr, ajaxOptions, thrownError) {
-                //alert(xhr.status+"\n"+xhr.responseText);
-            },
-            success: function (res) {
-                alert("success!!!!");
-                //sendRequestOfUploadFileResponse(res,id);
-            }
-        });
-
-    }
+//    $('#uploadFilebtn').click(function(e){
+//    	alert("zzzzzzzzzz");
+//    	sendRequestOfUploadFile(e);
+//    	uploadImage(e);
+//    });
 
     /*	function sendRequestOfUploadFile(e){
      alert("1111");
@@ -291,37 +265,36 @@ $(document).ready(function () {
      }
      });
      }*/
-    //function sendRequestOfUploadFile(e){
-    //	var id = $('#uploadFilebtn').attr("data-productid");
-    //   var formData;
-    //	alert("id="+id);
-    //   formData = new FormData();
-    //   formData.append('file', $('input[name=uploadFile]').get(0).files[0]);
-    //
-    //   alert("formData="+formData);
-    //    $.ajax({
-    //    	url: basePath+'uploadImageFile',
-    //       contentType: "multipart/form-data",
-    //		cache:false,
-    //		async: false,
-    //       processData: false,
-    //		type:'POST',
-    //		data: {
-    //				productId: id,
-    //				uploadFile: $('input[name=uploadFile]').get(0).files[0]
-    //		},
-    //    	dataType:'json',
-    //    	timeout:5000,
-    //    	error:	function(xhr, ajaxOptions, thrownError){
-    //	                alert(xhr.status+"\n"+xhr.responseText);
-    //    			},
-    //    	success:	function(res) {
-    //    		alert("success!!!!");
-    //    		sendRequestOfUploadFileResponse(res,id);
-    //    			}
-    //    });
-    //    return false;
-    //}
+//    function sendRequestOfUploadFile(e){
+//    	var id = $('#uploadFilebtn').attr("data-productid");
+//    	alert("id="+id);
+//       formData = new FormData();
+//       formData.append('file', $('input[name=uploadFile]').get(0).files[0]);
+//    
+//       alert("formData="+formData);
+//        $.ajax({
+//        	url: basePath+'uploadImageFile',
+//           contentType: "multipart/form-data",
+//    		cache:false,
+//    		async: false,
+//           processData: false,
+//    		type:'POST',
+//    		data: {
+//    				productId: id,
+//    				uploadFile: $('input[name=uploadFile]').get(0).files[0]
+//    		},
+//        	dataType:'json',
+//        	timeout:5000,
+//        	error:	function(xhr, ajaxOptions, thrownError){
+//    	                alert(xhr.status+"\n"+xhr.responseText);
+//        			},
+//        	success:	function(res) {
+//        		alert("success!!!!");
+//        		sendRequestOfUploadFileResponse(res,id);
+//        			}
+//        });
+//        return false;
+//    }
 
     function sendRequestOfUploadFileResponse(res, id) {
         var result = res.result;			//response code
