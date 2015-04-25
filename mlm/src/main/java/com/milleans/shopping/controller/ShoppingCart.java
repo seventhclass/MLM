@@ -56,11 +56,12 @@ public class ShoppingCart {
 
         BaseJs baseJs = new BaseJs();
 
+        String productId= webRequest.getParameter("productid");
         String price = webRequest.getParameter("price");
-        String numbers = webRequest.getParameter("numbers");
         String quantity = webRequest.getParameter("quantity");
 
         try {
+
 
             System.out.println("ssss");
         } catch (Exception e) {

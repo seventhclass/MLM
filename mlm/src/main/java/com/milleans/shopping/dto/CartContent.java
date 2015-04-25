@@ -9,7 +9,7 @@ public class CartContent {
 
     private String name;
 
-    private int id;
+    private int cartId;
 
     private String capsuleNumber;
 
@@ -33,12 +33,12 @@ public class CartContent {
         this.name = name;
     }
 
-    public int getId() {
-        return id;
+    public int getCartId() {
+        return cartId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCartId(int cartId) {
+        this.cartId = cartId;
     }
 
     public String getCapsuleNumber() {

@@ -29,6 +29,13 @@ public class ProductServiceImplTest {
     }
 
     @Test
+    public void testGetProductByCart() throws Exception {
+
+        productService.getProductByCart("");
+
+    }
+
+    @Test
     public void testUpdate() throws Exception {
 
     }
