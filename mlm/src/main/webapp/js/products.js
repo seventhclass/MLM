@@ -169,7 +169,7 @@ $(document).ready(function(){
  			async: false,
  			type:'POST',
  			data:{
- 				id: $id,
+ 				productid: $id,
  				price: $price,
  				quantity: $quantity
  			},
