@@ -55,7 +55,9 @@ public class ProductDao extends AbstractDao implements IProductDao {
 
             productTable.setCapsuleNumber(product.getCapsuleNumber());
             productTable.setCategoryName(category.getName());
+            productTable.setCategoryId(category.getId());
             productTable.setCurrencyName(currency.getName());
+            productTable.setCurrrencyId(currency.getId());
             productTable.setDate(product.getDate());
             productTable.setDescription(product.getDescription());
             productTable.setId(product.getId());

@@ -23,6 +23,8 @@ public class ProductTable {
 
     public String currencyName;
 
+    public int currrencyId;
+
     public int volume;
 
     public int volume2;
@@ -31,6 +33,23 @@ public class ProductTable {
 
     public String categoryName;
 
+    public int categoryId;
+
+    public int getCurrrencyId() {
+        return currrencyId;
+    }
+
+    public void setCurrrencyId(int currrencyId) {
+        this.currrencyId = currrencyId;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
 
     public int getId() {
         return id;
