@@ -172,7 +172,7 @@ public class ProductController {
 
             String realFileName = System.currentTimeMillis() + fileType;
 
-            String uploadDir = httpSession.getServletContext().getRealPath(File.separator) + Constant.AlbumPath + productId + "/";
+            String uploadDir = httpSession.getServletContext().getRealPath(File.separator) + Constant.AlbumPath + "/";
             if (!new File(uploadDir).exists()) {
                 File dir = new File(uploadDir);
                 dir.mkdirs();
