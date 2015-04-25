@@ -5,7 +5,8 @@ import com.milleans.model.Album;
 import com.milleans.model.Product;
 import com.milleans.product.dto.ImageJs;
 import com.milleans.product.dto.ImageListJs;
-import com.milleans.product.dto.ProductListJs;
+import com.milleans.product.dto.ProductTable;
+import com.milleans.product.dto.ProductTableJs;
 import com.milleans.product.services.IProductService;
 import com.milleans.product.services.IalbumService;
 import com.milleans.tools.Constant;
@@ -51,19 +52,29 @@ public class ProductController {
 
     @RequestMapping(value = "/productList", method = RequestMethod.POST)
     @ResponseBody
-    public ProductListJs productList() {
-        ProductListJs productListJs = new ProductListJs();
+    public ProductTableJs productList() {
+
+//        ProductListJs productListJs = new ProductListJs();
+//        try {
+//            List<Product> productList =
+//                    productService.getAllProduct();
+//            productListJs.setProductInfo(productList);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            productListJs.setMessage(e.getMessage());
+//            productListJs.setResult("fail");
+//        }
+        ProductTableJs productTableJs = new ProductTableJs();
         try {
-            List<Product> productList =
-                    productService.getAllProduct();
-            productListJs.setProductInfo(productList);
+            List<ProductTable> productTableList = productService.getProduct();
+            productTableJs.setProductInfo(productTableList);
         } catch (Exception e) {
-            e.printStackTrace();
-            productListJs.setMessage(e.getMessage());
-            productListJs.setResult("fail");
+
+            productTableJs.setMessage(e.getMessage());
+            productTableJs.setResult("fail");
         }
 
-        return productListJs;
+        return productTableJs;
     }
 
     @RequestMapping(value = "/editproduct", method = RequestMethod.POST)
@@ -157,6 +168,10 @@ public class ProductController {
 
         try {
             String fileName = uploadFile.getOriginalFilename();
+            String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+
+            String realFileName = System.currentTimeMillis() + fileType;
+
             String uploadDir = httpSession.getServletContext().getRealPath(File.separator) + Constant.AlbumPath + productId + "/";
             if (!new File(uploadDir).exists()) {
                 File dir = new File(uploadDir);
@@ -166,7 +181,7 @@ public class ProductController {
 
                 byte[] bytes = uploadFile.getBytes();
 //                File destination = new File("/" + productId + "/" + new Date().getTime() + ".jpg");
-                File destination = new File(uploadDir + fileName);
+                File destination = new File(uploadDir + realFileName);
                 if (!destination.exists()) {
                     destination.createNewFile();
                 }
@@ -177,7 +192,7 @@ public class ProductController {
             }
             Album album = new Album();
             album.setProductId(Integer.valueOf(productId));
-            album.setImageName(Constant.AlbumPath + "/" + productId + "/" + fileName);
+            album.setImageName(realFileName);
             albumService.save(album);
         } catch (Exception e) {
             e.printStackTrace();
