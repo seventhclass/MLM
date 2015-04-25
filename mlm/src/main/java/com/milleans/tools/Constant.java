@@ -5,6 +5,6 @@ package com.milleans.tools;
  */
 public class Constant {
 
-    public static String AlbumPath="images/products/";
+    public static String AlbumPath="images/product/";
 
 }

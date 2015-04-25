@@ -44,27 +44,24 @@ public class ShoppingCart {
         String uid = (String) httpSession.getAttribute("userid");
 
 
-
-
-
         return null;
     }
 
 
     @RequestMapping(value = "/add2cart", method = RequestMethod.POST)
     @ResponseBody
-    public BaseJs add2cart(WebRequest webRequest) {
+    public BaseJs add2cart(WebRequest webRequest, HttpSession session) {
 
         BaseJs baseJs = new BaseJs();
 
-        String productId= webRequest.getParameter("productid");
+        String productId = webRequest.getParameter("productid");
         String price = webRequest.getParameter("price");
         String quantity = webRequest.getParameter("quantity");
 
+        String uid = session.getAttribute("userid").toString();
+
         try {
-
-//           ShoppingCart shoppingCart=
-
+            ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(uid);
 
 
             System.out.println("ssss");
