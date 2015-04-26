@@ -20,10 +20,12 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -54,16 +56,6 @@ public class ProductController {
     @ResponseBody
     public ProductTableJs productList() {
 
-//        ProductListJs productListJs = new ProductListJs();
-//        try {
-//            List<Product> productList =
-//                    productService.getAllProduct();
-//            productListJs.setProductInfo(productList);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            productListJs.setMessage(e.getMessage());
-//            productListJs.setResult("fail");
-//        }
         ProductTableJs productTableJs = new ProductTableJs();
         try {
             List<ProductTable> productTableList = productService.getProduct();
@@ -158,6 +150,53 @@ public class ProductController {
             imageJs.setResult("fail");
         }
         return imageJs;
+    }
+
+    @RequestMapping(value = "/uploadTest", method = RequestMethod.POST)
+    public HttpServletResponse uploadTest(@RequestParam("productId") String productId,
+                                          @RequestParam("uploadFile") MultipartFile uploadFile, HttpSession httpSession, HttpServletResponse httpServletResponse) {
+        try {
+            String fileName = uploadFile.getOriginalFilename();
+            String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+
+            String realFileName = System.currentTimeMillis() + fileType;
+
+            String uploadDir = httpSession.getServletContext().getRealPath(File.separator) + Constant.AlbumPath + "/";
+            if (!new File(uploadDir).exists()) {
+                File dir = new File(uploadDir);
+                dir.mkdirs();
+            }
+            if (!uploadFile.isEmpty()) {
+
+                byte[] bytes = uploadFile.getBytes();
+//                File destination = new File("/" + productId + "/" + new Date().getTime() + ".jpg");
+                File destination = new File(uploadDir + realFileName);
+                if (!destination.exists()) {
+                    destination.createNewFile();
+                }
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(destination));
+                stream.write(bytes);
+                stream.close();
+            }
+            Album album = new Album();
+            album.setProductId(Integer.valueOf(productId));
+            album.setImageName(realFileName);
+            albumService.save(album);
+        } catch (Exception e) {
+            e.printStackTrace();
+            // baseJs.setMessage(e.getMessage());
+            //  baseJs.setResult("fail");
+        }
+
+        try {
+            httpServletResponse.getOutputStream().print("<script>parent.classback('upload file success')</script>");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return httpServletResponse;
+
     }
 
     @RequestMapping(value = "/uploadImageFile", method = RequestMethod.POST)
