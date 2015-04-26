@@ -206,7 +206,7 @@ $(document).ready(function () {
                     $('#editProductImgForm').append(
                         "<div class='form-group'>"
                         + "	<div class='col-sm-1'>"
-                        + "		<input type='checkbox' name='productimage' vaue='" + item.id + "'>"
+                        + "		<input type='checkbox' name='productimage' value='" + item.id + "'>"
                         + "	</div>"
                         + "	<div class='col-sm-6'>"
                         + "		<img src='" + basePath + "/images/products/" + item.imageName + "' style='height: 80px; width: 50px; display: block;' alt=''>"
@@ -215,6 +215,7 @@ $(document).ready(function () {
                     );
                 });
 
+                $('#editProductImgForm').append("<button type='submit' class='btn btn-primary'>Delete</button>");
             } else {
                 $("<div class='form-group'><div>No items. </div>").insertAfter('#editProductImgForm');
             }

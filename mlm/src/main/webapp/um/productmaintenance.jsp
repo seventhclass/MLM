@@ -264,9 +264,9 @@
 						  role="form"
 						  action="<%=request.getContextPath()%>/uploadImageFile"
 						  method="post"
-						  enctype="multipart/form-data">
+						  enctype="multipart/form-data"
+						  target="hidden_frame" >
 						<div class="form-group">
-							<label for="uploadfile" class="col-sm-3 control-label">Select upload file:</label>
 							<div class="col-sm-6">
 		    					<input type="file" id="uploadFile" name="uploadFile" siez="16" class="form-control"/>
 								<input type="hidden" id="productId" name="productId" value=""/>
@@ -275,7 +275,11 @@
 							<div class="col-sm-3 text-center">
 								<input type="submit" value="Upload" class="btn btn-primary"/>
 							</div>
+							<div>
+								<span id="msg"></span>
+							</div>
 						</div>
+                        <iframe name='hidden_frame' id="hidden_frame" style='display:none'></iframe>
 					</form>  					
 					<!-- <form id="uploadProductImgForm" class="form-horizontal"
 						  role="form"
@@ -302,5 +306,12 @@
 	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 	
 		 
+<script type="text/javascript">
+function callback(msg)
+{   
+    document.getElementById("uploadFile").outerHTML = document.getElementById("uploadFile").outerHTML;   
+    document.getElementById("msg").innerHTML = "<font color=red>"+msg+"</font>";   
+}
+</script>
 </body>
 </html>
