@@ -167,6 +167,7 @@ $(document).ready(function () {
 
     function editProductImage(e) {
         var id = $(e.target).attr("data-productid");
+        $('#msg').html("");
         queryProductImages(id);
     }
 
@@ -398,5 +399,16 @@ $(document).ready(function () {
         $('#volume2').val($td.eq(8).text());
         $('#description').val($td.eq(9).text());
     }
+    
+    function callback(msg)
+    {   
+        document.getElementById("uploadFile").outerHTML = document.getElementById("uploadFile").outerHTML;   
+        document.getElementById("msg").innerHTML = "<font color=red>Upload file "+msg+".</font>";   
+    	if(msg=="Success"){
+    		var productid = document.getElementById("productId").value;
+    		alert("productid="+productid);
+    		queryProductImages(productid);
+    	}
+    }    
 });
 

@@ -310,7 +310,12 @@
 function callback(msg)
 {   
     document.getElementById("uploadFile").outerHTML = document.getElementById("uploadFile").outerHTML;   
-    document.getElementById("msg").innerHTML = "<font color=red>"+msg+"</font>";   
+    document.getElementById("msg").innerHTML = "<font color=red>Upload file "+msg+".</font>";   
+	if(msg=="Success"){
+		var productid = document.getElementById("productId").value;
+		alert("productid="+productid);
+		queryProductImages(productid);
+	}
 }
 </script>
 </body>

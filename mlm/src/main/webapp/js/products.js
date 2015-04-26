@@ -142,7 +142,7 @@ $(document).ready(function(){
  	}
 
  	function addProducts2Cart(e){
- 		var $id = (e.target).attr("data-productid");
+ 		var $id = $(e.target).attr("data-productid");
  		var $name = $(e.target).parents("div").children(".p_name").html();
  		var $itemCode = $(e.target).parents("div").children(".p_itemCode").html();
  		var $rPrice = $(e.target).parents("div").children().children(".p_rPrice").html();
