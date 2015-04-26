@@ -17,6 +17,7 @@
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/plugin/ajaxfileupload.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/productmaintenance.js"></script>		
+		
 </head>
 <body>
 	 <div class="container">
@@ -90,6 +91,7 @@
 									   </tbody>
 									 </table>
 								</div>
+								
 							</div>
 						</div>
 						<div class="row">
@@ -304,19 +306,22 @@
 	</div>	 		 
 	 		 	 	 		 	 
 	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 	
-		 
-<script type="text/javascript">
-function callback(msg)
-{   
-    document.getElementById("uploadFile").outerHTML = document.getElementById("uploadFile").outerHTML;   
-    document.getElementById("msg").innerHTML = "<font color=red>Upload file "+msg+".</font>";   
-	if(msg=="Success"){
-		var productid = document.getElementById("productId").value;
-		alert("productid="+productid);
-		queryProductImages(productid);
-	}
-}
-</script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/mlm/js/productmaintenance.js"></script>	
+	<script type="text/javascript">
+		function callback(msg) {
+
+ 			document.getElementById("uploadFile").outerHTML = document
+				.getElementById("uploadFile").outerHTML;
+			document.getElementById("msg").innerHTML = "<font color=red>Upload file "
+				+ msg + ".</font>"; 
+			if (msg == "Success") {
+				var productid = document.getElementById("productId").value;
+				alert("productid=" + productid);
+				queryProductImages(productid);
+			}
+		}
+	</script>
+
 </body>
 </html>

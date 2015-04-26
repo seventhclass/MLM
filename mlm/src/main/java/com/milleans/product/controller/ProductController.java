@@ -193,7 +193,7 @@ public class ProductController {
 			// baseJs.setResult("fail");
 			try {
 				httpServletResponse.getOutputStream().print(
-						"<script>parent.callback('Failed')</script>");
+						"<script>parent.callback('Failed'); </script>");
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -202,7 +202,8 @@ public class ProductController {
 
 		try {
 			httpServletResponse.getOutputStream().print(
-					"<script>parent.callback('Success')</script>");
+					"<script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.min.js'></script>"
+			+"<script>parent.callback('Success')</script>");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

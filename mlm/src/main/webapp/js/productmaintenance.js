@@ -4,7 +4,6 @@
 
 $(document).ready(function () {
     var basePath = $('#basePath').attr("value");
-
     queryProductInfo();
 
     //Query category information
@@ -136,7 +135,7 @@ $(document).ready(function () {
                         + "		<div >"
                         + "			<button type='button' class='btn btn-danger btn-sm delproductbtn' data-toggle='modal' data-productid='" + item.id + "' data-target='#productcancel' data-backdrop='static' >Delete</button>"
                         + "		</div>"
-                        + "		<div class='pdt_maintenance'>"
+                        + "		<div >"
                         + "	 		<button type='button' class='btn btn-warning btn-sm editproductimgbtn' data-toggle='modal' data-productid='" + item.id + "' data-target='.productimg' data-backdrop='static' >Image</button>"
                         + "	  	</div>"
                         + "	</td>"
@@ -174,7 +173,7 @@ $(document).ready(function () {
     function queryProductImages(id) {
         $('#uploadFilebtn').attr("data-productid", id);
         $('#productId').val(id);
-
+alert("ididididid="+id)
         //send requrest to server.
         $.ajax({
             url: basePath + 'productImages',
@@ -299,19 +298,19 @@ $(document).ready(function () {
 //        return false;
 //    }
 
-    function sendRequestOfUploadFileResponse(res, id) {
-        var result = res.result;			//response code
-        var message = res.message;			//response message
-
-        if (result == "success") {
-            queryProductImages(id);
-        } else {
-            if (message == null || message == "") {
-                message = "Sorry, your request is failed.";
-            }
-            alert(message);
-        }
-    }
+//    function sendRequestOfUploadFileResponse(res, id) {
+//        var result = res.result;			//response code
+//        var message = res.message;			//response message
+//
+//        if (result == "success") {
+//            queryProductImages(id);
+//        } else {
+//            if (message == null || message == "") {
+//                message = "Sorry, your request is failed.";
+//            }
+//            alert(message);
+//        }
+//    }
 
     function sendRequestOfEditProduct() {
         var i_model = $('#productid').attr("data-model");
@@ -400,15 +399,15 @@ $(document).ready(function () {
         $('#description').val($td.eq(9).text());
     }
     
-    function callback(msg)
+/*    function callback(msg)
     {   
         document.getElementById("uploadFile").outerHTML = document.getElementById("uploadFile").outerHTML;   
         document.getElementById("msg").innerHTML = "<font color=red>Upload file "+msg+".</font>";   
     	if(msg=="Success"){
     		var productid = document.getElementById("productId").value;
     		alert("productid="+productid);
-    		queryProductImages(productid);
+    		parent.queryProductImages(productid);
     	}
-    }    
+    } */   
 });
 
