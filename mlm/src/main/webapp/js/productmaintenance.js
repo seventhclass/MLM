@@ -120,11 +120,11 @@ $(document).ready(function () {
                     $('#productlist').append(
                         "<tr>"
                         + "	<td data-value='" + item.id + "'>" + item.itemCode + "</td>"
-                        + "	<td data-value='" + item.categoryId + "'>" + item.category + "</td>"
+                        + "	<td data-value='" + item.categoryId + "'>" + item.categoryName + "</td>"
                         + "	<td>" + item.name + "</td>"
                         + "	<td>" + parseFloat(item.wholesalePrice).toFixed(2) + "</td>"
                         + "	<td>" + parseFloat(item.retailPrice).toFixed(2) + "</td>"
-                        + "	<td data-value='" + item.currencyId + "'>" + item.currency + "</td>"
+                        + "	<td data-value='" + item.currencyId + "'>" + item.currencySymbol + "</td>"
                         + "	<td>" + item.capsuleNumber + "</td>"
                         + "	<td>" + item.volume + "</td>"
                         + "	<td>" + item.volume2 + "</td>"
@@ -214,6 +214,7 @@ $(document).ready(function () {
                         + "</div>"
                     );
                 });
+
             } else {
                 $("<div class='form-group'><div>No items. </div>").insertAfter('#editProductImgForm');
             }

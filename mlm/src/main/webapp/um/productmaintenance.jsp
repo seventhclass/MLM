@@ -273,7 +273,6 @@
 								<br>
 							</div>
 							<div class="col-sm-3 text-center">
-								<button id="uploadFilebtn" type="submit" class="btn btn-primary">Upload</button>
 								<input type="submit" value="Upload" class="btn btn-primary"/>
 							</div>
 						</div>

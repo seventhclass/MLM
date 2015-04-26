@@ -23,6 +23,8 @@ public class ProductTable {
 
     public String currencyName;
 
+    public String currencySymbol;
+
     public int currrencyId;
 
     public int volume;
@@ -111,7 +113,16 @@ public class ProductTable {
         return currencyName;
     }
 
-    public void setCurrencyName(String currencyName) {
+
+    public String getCurrencySymbol() {
+		return currencySymbol;
+	}
+
+	public void setCurrencySymbol(String currencySymbol) {
+		this.currencySymbol = currencySymbol;
+	}
+
+	public void setCurrencyName(String currencyName) {
         this.currencyName = currencyName;
     }
 

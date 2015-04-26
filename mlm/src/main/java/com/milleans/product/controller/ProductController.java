@@ -249,7 +249,7 @@ public class ProductController {
         ImageListJs imageListJs = new ImageListJs();
 
         try {
-            imageListJs.setAlbumLInfo(albumService.getAlbumByProductId(productId));
+            imageListJs.setAlbumInfo(albumService.getAlbumByProductId(productId));
         } catch (Exception e) {
             e.printStackTrace();
             imageListJs.setMessage(e.getMessage());

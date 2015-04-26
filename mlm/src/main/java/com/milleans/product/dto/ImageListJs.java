@@ -12,13 +12,13 @@ import java.util.List;
 public class ImageListJs extends BaseJs {
 
 
-    private List<Album> albumLInfo;
+    private List<Album> albumInfo;
 
-    public List<Album> getAlbumLInfo() {
-        return albumLInfo;
-    }
+	public List<Album> getAlbumInfo() {
+		return albumInfo;
+	}
 
-    public void setAlbumLInfo(List<Album> albumLInfo) {
-        this.albumLInfo = albumLInfo;
-    }
+	public void setAlbumInfo(List<Album> albumInfo) {
+		this.albumInfo = albumInfo;
+	}
 }
