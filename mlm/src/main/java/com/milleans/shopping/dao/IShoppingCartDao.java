@@ -1,7 +1,7 @@
 package com.milleans.shopping.dao;
 
 import com.milleans.dao.IDao;
-import com.milleans.shopping.controller.ShoppingCart;
+import com.milleans.model.ShoppingCart;
 
 /**
  * Created by LeHu on 4/24/15 10:41 PM.

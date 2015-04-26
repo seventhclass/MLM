@@ -1,7 +1,7 @@
 package com.milleans.shopping.dao;
 
 import com.milleans.dao.AbstractDao;
-import com.milleans.shopping.controller.ShoppingCart;
+import com.milleans.model.ShoppingCart;
 import org.springframework.stereotype.Repository;
 
 /**

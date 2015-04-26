@@ -27,6 +27,17 @@ public class ShoppingCart {
     @Column(name = "quantity")
     private int quantity;
 
+    @Column(name = "transactionprice")
+    private float transactionPrice;
+
+    public float getTransactionPrice() {
+        return transactionPrice;
+    }
+
+    public void setTransactionPrice(float transactionPrice) {
+        this.transactionPrice = transactionPrice;
+    }
+
     public int getId() {
         return id;
     }
