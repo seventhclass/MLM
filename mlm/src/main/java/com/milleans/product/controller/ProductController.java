@@ -224,6 +224,7 @@ public class ProductController {
         return new BaseJs();
     }
 
+
 	/*
      * @RequestMapping(value = "/uploadImageFile", method = RequestMethod.POST)
 	 * 
