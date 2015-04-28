@@ -160,7 +160,7 @@ public class UserController {
 
         String birthdayStr = request.getParameter("birthday");
 
-        if (birthdayStr != null) {
+        if (birthdayStr != null && !birthdayStr.equals("")) {
 
             SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
             try {
@@ -171,7 +171,12 @@ public class UserController {
             }
         }
         user.setDate(new Date());
-        user = userService.signUp(user);
+        user.setUserId(Utils.getUserId());
+        try {
+            user = userService.signUp(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         ModelMap model = new ModelMap();
         model.addAttribute("user", user);
@@ -211,7 +216,7 @@ public class UserController {
     public ModelAndView editProfile() {
 
         ModelAndView modelAndView = new ModelAndView("um/editprofile");
-       // modelAndView.addObject("userId", userId);
+        // modelAndView.addObject("userId", userId);
 
         return modelAndView;
     }
@@ -222,7 +227,6 @@ public class UserController {
         //modelAndView.addObject("userId",)
         return modelAndView;
     }
-
 
 
     @RequestMapping(value = "/accounttypemaintenance")
@@ -239,7 +243,6 @@ public class UserController {
     public ModelAndView provinceMaintenance() {
         return new ModelAndView("um/provincemaintenance");
     }
-
 
 
     @RequestMapping(value = "/addressmaintenance")

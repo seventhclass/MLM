@@ -4,7 +4,7 @@ import com.milleans.dto.BaseJs;
 import com.milleans.model.ShoppingCart;
 import com.milleans.product.services.IProductService;
 import com.milleans.shopping.dto.CartContentJs;
-import com.milleans.shopping.services.IShoppingCart;
+import com.milleans.shopping.services.IShoppingCartService;
 import com.milleans.tools.Utils;
 import com.milleans.um.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ import java.util.Date;
 public class ShoppingCartController {
 
     @Autowired
-    private IShoppingCart shoppingCartService;
+    private IShoppingCartService shoppingCartService;
 
     @Autowired
     private IProductService productService;
@@ -47,8 +47,11 @@ public class ShoppingCartController {
 
     @RequestMapping(value = "/shoppingcart")
     public CartContentJs getShoppingCart(HttpSession httpSession) {
-        String uid = (String) httpSession.getAttribute("userid");
+        String suid = (String) httpSession.getAttribute("userid");
 
+//        int uid=userService.getUser(suid).getId();
+
+//        shoppingCartService.getCart(suid);
 
         return null;
     }
@@ -64,12 +67,12 @@ public class ShoppingCartController {
         String price = webRequest.getParameter("price");
         String quantity = webRequest.getParameter("quantity");
 
-        String userId=session.getAttribute("userid").toString();
+        String userId = session.getAttribute("userid").toString();
 
-        String uid = session.getAttribute("userid").toString();
+        // String uid = session.getAttribute("userid").toString();
 
         try {
-            ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(uid);
+            ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(userId);
             if (shoppingCart == null) {
                 int _uis = userService.getUser(userId).getId();
                 shoppingCart = new ShoppingCart();
@@ -81,10 +84,10 @@ public class ShoppingCartController {
             shoppingCart.setQuantity(Integer.valueOf(quantity));
             shoppingCart.setTransactionPrice(Float.valueOf(price));
 
-            
-
+            shoppingCartService.saveOrUpdate(shoppingCart);
 
         } catch (Exception e) {
+            e.printStackTrace();
             baseJs = Utils.getFailMessage(e.getMessage());
         }
         return baseJs;

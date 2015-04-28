@@ -3,10 +3,12 @@ package com.milleans.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by macbookpro on 2015-03-13.
  */
+@Transactional
 public abstract class AbstractDao implements IDao {
 
     @Autowired

@@ -5036,15 +5036,15 @@ Returning cached instance of singleton bean 'org.springframework.transaction.con
 Finished creating instance of bean 'shipController'
 Creating shared instance of singleton bean 'shoppingCartController'
 Creating instance of bean 'shoppingCartController'
-Registered injected element on class [com.milleans.shopping.controller.ShoppingCart]: AutowiredFieldElement for private com.milleans.shopping.services.IShoppingCart com.milleans.shopping.controller.ShoppingCart.shoppingCartService
+Registered injected element on class [com.milleans.shopping.controller.ShoppingCart]: AutowiredFieldElement for private com.milleans.shopping.services.IShoppingCartService com.milleans.shopping.controller.ShoppingCart.shoppingCartService
 Registered injected element on class [com.milleans.shopping.controller.ShoppingCart]: AutowiredFieldElement for private com.milleans.product.services.IProductService com.milleans.shopping.controller.ShoppingCart.productService
 Eagerly caching bean 'shoppingCartController' to allow for resolving potential circular references
-Processing injected method of bean 'shoppingCartController': AutowiredFieldElement for private com.milleans.shopping.services.IShoppingCart com.milleans.shopping.controller.ShoppingCart.shoppingCartService
+Processing injected method of bean 'shoppingCartController': AutowiredFieldElement for private com.milleans.shopping.services.IShoppingCartService com.milleans.shopping.controller.ShoppingCart.shoppingCartService
 Creating shared instance of singleton bean 'shoppingCartService'
 Creating instance of bean 'shoppingCartService'
-Registered injected element on class [com.milleans.shopping.services.ShoppingCartImpl]: AutowiredFieldElement for private com.milleans.shopping.dao.IShoppingCartDao com.milleans.shopping.services.ShoppingCartImpl.shoppingCartDao
+Registered injected element on class [com.milleans.shopping.services.ShoppingCartServiceImpl]: AutowiredFieldElement for private com.milleans.shopping.dao.IShoppingCartDao com.milleans.shopping.services.ShoppingCartServiceImpl.shoppingCartDao
 Eagerly caching bean 'shoppingCartService' to allow for resolving potential circular references
-Processing injected method of bean 'shoppingCartService': AutowiredFieldElement for private com.milleans.shopping.dao.IShoppingCartDao com.milleans.shopping.services.ShoppingCartImpl.shoppingCartDao
+Processing injected method of bean 'shoppingCartService': AutowiredFieldElement for private com.milleans.shopping.dao.IShoppingCartDao com.milleans.shopping.services.ShoppingCartServiceImpl.shoppingCartDao
 Creating shared instance of singleton bean 'shoppingCartDao'
 Creating instance of bean 'shoppingCartDao'
 Registered injected element on class [com.milleans.shopping.dao.ShoppingCartDaoImpl]: AutowiredFieldElement for private org.hibernate.SessionFactory com.milleans.dao.AbstractDao.sessionFactory

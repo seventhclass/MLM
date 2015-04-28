@@ -7,4 +7,8 @@ import com.milleans.dto.BaseJs;
  */
 public class CartContentJs extends BaseJs{
 
+    private String imageName;
+
+    //private
+
 }

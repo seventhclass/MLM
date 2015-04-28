@@ -107,7 +107,7 @@ public class ProductDao extends AbstractDao implements IProductDao {
             Object[] objects=(Object[])object;
             Product product=(Product)objects[0];
 
-            cartContent.setCapsuleNumber(String.valueOf(product.getCapsuleNumber()));
+//            cartContent.setCapsuleNumber(String.valueOf(product.getCapsuleNumber()));
            // cartContent.setId();
             //cartContent.setCartId();
 
