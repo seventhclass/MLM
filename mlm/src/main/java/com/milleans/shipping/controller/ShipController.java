@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by macbookpro on 2015-04-11.
  */
 @Controller("shipController")
-public class shipController {
+public class ShipController {
 
 
     @RequestMapping(value = "/autoship")

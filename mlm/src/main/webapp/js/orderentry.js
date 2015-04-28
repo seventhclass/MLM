@@ -4,8 +4,13 @@
 
 $(document).ready(function(){
  	var basePath=$('#basePath').attr("value"); 	
- 	
- 	queryShoppingCartSummaryInfo();
+
+ 	$('#memberId').val($('#get_userInfo').attr("data-userid"));
+ 	$('#memberName').val($('#get_userInfo').attr("data-username"));
+
+	$('#shoppingCartItemNumber').html($('.myshoppingcartitemnumber').html());
+	$('#shoppingCartTotalAmt').html($('.myshoppingcartitemnumber').attr("data-totalamount"));
+
  	queryOrderInfo();  	 	
  	
  	$('.table tr').hover(function(e){
@@ -59,38 +64,6 @@ $(document).ready(function(){
         return false;
     });
 	
-	
- 	function queryShoppingCartSummaryInfo(){
- 	 	//send requrest to server.
- 	    $.ajax({
- 	    	url: basePath+'/shoppingCartSummary',        	
- 			cache:false,
- 			async: false,
- 			type:'POST',
- 	    	dataType:'json',
- 	    	timeout:5000,
- 	    	error:	function(xhr, ajaxOptions, thrownError){
- 		                alert(xhr.status+"\n"+xhr.responseText);
- 		                //$('#content').html(xhr.responseText); 		               
- 	    			},        	
- 	    	success:	function(res) {
- 	    		queryShoppingCartSummaryInfoResponse(res);
- 	    			}
- 	    });   		
- 	}
- 	
- 	function queryShoppingCartSummaryInfoResponse(res){
- 		var result = res.result;			//response code
- 		var message = res.message;			//response message
- 		
- 		if (result == "success") {
- 			if(res.shoppingCartSummaryInfo && res.shoppingCartSummaryInfo.length>0){
- 				$('#shoppingCartItemNumber').html(res.shoppingCartSummaryInfo.quantity);
- 				$('#shoppingCartTotalAmt').html(res.shoppingCartSummaryInfo.amount);
- 			}
- 		} 		
- 	}
- 	
  	function queryOrderInfo(){
  	 	//send requrest to server.
  	    $.ajax({

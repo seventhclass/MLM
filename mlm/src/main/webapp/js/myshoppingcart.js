@@ -34,7 +34,7 @@ $(document).ready(function(){
  	function makeOrder(){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/makeOrder',        	
+ 	    	url: basePath+'makeOrder',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -51,7 +51,15 @@ $(document).ready(function(){
  	}
  	
  	function makeOrderResponse(){
- 		;
+ 		var result = res.result;			//response code
+ 		var message = res.message;			//response message
+ 		
+ 		if (result == "success") {
+ 			window.location.href=basePath+"orderentry";;
+ 		}else{
+			alert("Sorry, make order failed! Try again, please. ");
+ 			window.location.href=basePath+"myshoppingcart";;
+ 		}	
  	}
  	
  	//Query shopping cart information
@@ -59,7 +67,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/shoppingcart',        	
+ 	    	url: basePath+'shoppingcart',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -125,7 +133,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/delcartitem',        	
+ 	    	url: basePath+'delcartitem',        	
  			cache:false,
  			async: false,
  			type:'POST',
@@ -149,16 +157,17 @@ $(document).ready(function(){
  		var message = res.message;			//response message
  		
  		if (result == "success") {
- 				;
+ 			window.location.href=basePath+"myshoppingcart";;
  		}else{
- 				alert("Sorry, delete item from shopping cart failed! Try again, please. ");
+			alert("Sorry, delete item from shopping cart failed! Try again, please. ");
+ 			window.location.href=basePath+"myshoppingcart";;
  		}
  	}
  	
  	function updateShoppingCartItem(id,qty){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/updateshoppingcart',        	
+ 	    	url: basePath+'updateshoppingcart',        	
  			cache:false,
  			async: false,
  			type:'POST',
@@ -184,18 +193,16 @@ $(document).ready(function(){
  		 		
  		//get quantity from server and set back to front-end page.
  		if (result == "success") {
- 				;
+ 			$(this).val(res.shoppingCart.quantity); 		
+ 		 	var i_subtotal = (res.shoppingCart.quantity * res.shoppingCart.price).toFixed(2); 		
+ 		 	$('#subtotal_id_'+res.shoppingCart.id).html(i_subtotal+"$");
+ 		 	$('#total_qty').html(res.shoppingCart.totalQuantity);
+ 		 	$('#total_amt').html(res.shoppingCart.totalAmount);
  		}else{
- 				alert("Sorry, update item from shopping cart failed! Try again, please. ");
+			alert("Sorry, update item from shopping cart failed! Try again, please. ");
+ 			window.location.href=basePath+"myshoppingcart";
  		} 
  		
- 		$(this).val(res.shoppingCart.quantity); 		
- 		
- 		var i_subtotal = (res.shoppingCart.quantity * res.shoppingCart.price).toFixed(2); 		
- 		$('#subtotal_id_'+res.shoppingCart.id).html(i_subtotal+"$");
- 		
- 		$('#total_qty').html(res.shoppingCart.totalQuantity);
- 		$('#total_amt').html(res.shoppingCart.totalAmount);
  	}
 });
 

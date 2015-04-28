@@ -144,7 +144,7 @@
 											   </tbody>
 											 </table>
 										</div>	
-										<div>											
+										<!-- <div>											
 											<form id="addProductForm" class="form-horizontal" role="form" action="">
 												<div class="form-group">
 													<div class="col-sm-2">													
@@ -162,14 +162,14 @@
 													</div>
 												</div>											
 											</form>
-										</div>
+										</div> -->
 										<div id="finish_order" class="text-center">
-											<a href="payandship.jsp"><button type="button" class="btn btn-primary">Finished Order <span class="glyphicon glyphicon-ok-sign"></span></button></a>
+											<a href="<%=request.getContextPath()%>/payandship"><button type="button" class="btn btn-primary">Finished Order <span class="glyphicon glyphicon-ok-sign"></span></button></a>
 										</div>
 								</div>	
 							    <div class="list-group-item">
 									<div class="text-center">
-										<a href="products.jsp">Countinue Shopping</a>
+										<a href="<%=request.getContextPath()%>/products">Countinue Shopping</a>
 									</div>
 								</div>															
 							</div>

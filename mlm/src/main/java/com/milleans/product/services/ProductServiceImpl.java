@@ -2,11 +2,13 @@ package com.milleans.product.services;
 
 import com.milleans.model.Product;
 import com.milleans.product.dao.IProductDao;
-
+import com.milleans.product.dto.ProductTable;
+import com.milleans.shopping.dto.CartContent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,7 +25,25 @@ public class ProductServiceImpl implements IProductService {
     @Override
     @Transactional
     public List<Product> getAllProduct() {
+        // List<Product> tmp=productDao.getAllList();
+        // List<ProductTable> productTables=new ArrayList<ProductTable>();
+
         return productDao.getAllList();
+    }
+
+    @Override
+    public List<ProductTable> getProduct() {
+
+        List list = productDao.getProductList();
+
+        return list;
+    }
+
+    @Override
+    public List<CartContent> getProductByCart(String userId) {
+        List<CartContent> cartContents = new ArrayList<CartContent>();
+
+        return null;
     }
 
 //    @Override
@@ -53,6 +73,8 @@ public class ProductServiceImpl implements IProductService {
     @Override
     @Transactional
     public Object getItemById(String id) {
-        return null;
+
+        return productDao.getItemById(id);
+
     }
 }

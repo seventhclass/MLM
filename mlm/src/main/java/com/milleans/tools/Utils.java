@@ -1,5 +1,6 @@
 package com.milleans.tools;
 
+import com.milleans.dto.BaseJs;
 import org.springframework.util.Base64Utils;
 
 import java.util.Calendar;
@@ -35,5 +36,12 @@ public class Utils {
         String endode= Utils.getEncode(test);
         System.out.println("encode=" + endode);
         System.out.println("decode=" + Utils.getDecode(endode));
+    }
+
+    public static BaseJs getFailMessage(String message) {
+        BaseJs baseJs=new BaseJs();
+        baseJs.setMessage(message);
+        baseJs.setResult("fail");
+        return  baseJs;
     }
 }

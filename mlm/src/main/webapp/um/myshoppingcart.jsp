@@ -98,7 +98,7 @@
 										</div>									
 										<div class="panel-footer text-center">
 											<button id="makeOrder_btn" type="button" class="btn btn-danger">Make Order</button>
-											<a href="products.jsp"><button type="button" class="btn btn-primary">Continue Shopping</button></a>
+											<a href="<%=request.getContextPath()%>/products"><button type="button" class="btn btn-primary">Continue Shopping</button></a>
 										</div>
 									</div>							
 								</div>

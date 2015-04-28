@@ -100,7 +100,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<a href="<%=request.getContextPath()%>/selectautoship"><button class="btn btn-primary" type="button">Register</button></a>
+								<a href="<%=request.getContextPath()%>/selectAutoship"><button class="btn btn-primary" type="button">Register</button></a>
 							</div>
 						</div>
 					</div>
