@@ -42,15 +42,9 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public List<CartContent> getProductByCart(String userId) {
         List<CartContent> cartContents = new ArrayList<CartContent>();
-
-        return null;
+        cartContents = productDao.getProductOfCart(userId);
+        return cartContents;
     }
-
-//    @Override
-//    @Transactional
-//    public Product save(Product product) {
-//        return productDao.save(product);
-//    }
 
     @Override
     @Transactional

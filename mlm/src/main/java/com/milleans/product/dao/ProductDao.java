@@ -1,9 +1,7 @@
 package com.milleans.product.dao;
 
 import com.milleans.dao.AbstractDao;
-import com.milleans.model.Category;
-import com.milleans.model.Currency;
-import com.milleans.model.Product;
+import com.milleans.model.*;
 import com.milleans.product.dto.ProductTable;
 import com.milleans.shopping.dto.CartContent;
 import org.hibernate.Criteria;
@@ -106,14 +104,20 @@ public class ProductDao extends AbstractDao implements IProductDao {
 
             Object[] objects=(Object[])object;
             Product product=(Product)objects[0];
+            ShoppingCart shoppingCart=(ShoppingCart)objects[1];
+            Album album=(Album)objects[2];
 
-//            cartContent.setCapsuleNumber(String.valueOf(product.getCapsuleNumber()));
-           // cartContent.setId();
-            //cartContent.setCartId();
+            cartContent.setCapsuleNumber(product.getCapsuleNumber());
+            cartContent.setImageName(album.getImageName());
+            cartContent.setName(product.getName());
+            cartContent.setQuantity(shoppingCart.getQuantity());
+            cartContent.setTransactionPrice(shoppingCart.getTransactionPrice());
+
+            cartContent.setProductId(product.getId());
 
         }
 
-        return null;
+        return rl;
     }
 
 

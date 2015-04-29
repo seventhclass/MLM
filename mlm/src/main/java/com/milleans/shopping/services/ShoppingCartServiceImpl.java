@@ -2,12 +2,9 @@ package com.milleans.shopping.services;
 
 import com.milleans.model.ShoppingCart;
 import com.milleans.shopping.dao.IShoppingCartDao;
-import com.milleans.shopping.dto.CartContent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 /**
  * Created by LeHu on 4/24/15 10:38 PM.
@@ -48,8 +45,8 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
         shoppingCartDao.saveOrUpdate(shoppingCart);
     }
 
-    @Override
-    public List<CartContent> getProducts(String userId) {
-       return shoppingCartDao.getProductList(userId);
-    }
+//    @Override
+//    public List<CartContent> getProducts(String userId) {
+//       return shoppingCartDao.getProductList(userId);
+//    }
 }

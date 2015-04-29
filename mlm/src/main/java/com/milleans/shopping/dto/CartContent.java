@@ -5,15 +5,25 @@ package com.milleans.shopping.dto;
  */
 public class CartContent {
 
+    private int productId;
+
     private String imageName;
 
     private String name;
 
     private int capsuleNumber;
 
-    private float transactionprice;
+    private float transactionPrice;
 
     private int quantity;
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 
     public int getCapsuleNumber() {
         return capsuleNumber;
@@ -23,12 +33,12 @@ public class CartContent {
         this.capsuleNumber = capsuleNumber;
     }
 
-    public float getTransactionprice() {
-        return transactionprice;
+    public float getTransactionPrice() {
+        return transactionPrice;
     }
 
-    public void setTransactionprice(float transactionprice) {
-        this.transactionprice = transactionprice;
+    public void setTransactionPrice(float transactionPrice) {
+        this.transactionPrice = transactionPrice;
     }
 
     public int getQuantity() {

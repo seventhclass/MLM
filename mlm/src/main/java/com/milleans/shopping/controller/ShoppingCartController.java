@@ -3,6 +3,7 @@ package com.milleans.shopping.controller;
 import com.milleans.dto.BaseJs;
 import com.milleans.model.ShoppingCart;
 import com.milleans.product.services.IProductService;
+import com.milleans.shopping.dto.CartContent;
 import com.milleans.shopping.dto.CartContentJs;
 import com.milleans.shopping.services.IShoppingCartService;
 import com.milleans.tools.Utils;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by LeHu on 2015-04-20 10:42 PM.
@@ -49,9 +51,16 @@ public class ShoppingCartController {
     public CartContentJs getShoppingCart(HttpSession httpSession) {
         String suid = (String) httpSession.getAttribute("userid");
 
-//        int uid=userService.getUser(suid).getId();
+        CartContentJs cartContentJs = new CartContentJs();
+        try {
 
-//        shoppingCartService.getCart(suid);
+
+            List<CartContent> rs = productService.getProductByCart(suid);
+            cartContentJs.setCartContentList(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Utils.getFailMessage(e.getMessage());
+        }
 
         return null;
     }
@@ -68,8 +77,6 @@ public class ShoppingCartController {
         String quantity = webRequest.getParameter("quantity");
 
         String userId = session.getAttribute("userid").toString();
-
-        // String uid = session.getAttribute("userid").toString();
 
         try {
             ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(userId);
