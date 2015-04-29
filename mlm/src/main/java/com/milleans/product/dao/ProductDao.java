@@ -38,11 +38,10 @@ public class ProductDao extends AbstractDao implements IProductDao {
         String hql= "select p, ca, cu from Product as p, Category as ca, Currency as cu " +
                     "where p.categoryId=ca.id and p.currencyId=cu.id";
 
-        List<ProductTable> lsTable = new ArrayList<ProductTable>();
+        List<ProductTable> lsTable = new ArrayList<>();
         org.hibernate.Query query= this.getCurrentSession().createQuery(hql);
 
         List rl=query.list();
-
 
         for (Object object : rl) {
             ProductTable productTable=new ProductTable();
@@ -90,10 +89,9 @@ public class ProductDao extends AbstractDao implements IProductDao {
     public List<CartContent> getProductOfCart(String userId) {
 
         String hql="select p,c,a.imageName from Product as p, User as u, ShoppingCart c, Album as a where u.userId="
-                +userId+" and u.id=c.id and c.productId=p.id and  p.id=(select sp.id from Product as sp,Album as al" +
-                " where p.id=al.productId limit 1)";
+                +userId+" and u.id=c.id and c.productId=p.id and a.productId=p.id";
 
-        List<CartContent> rl = new ArrayList<CartContent>();
+        List<CartContent> rl = new ArrayList<>();
 
         Query query = this.getCurrentSession().createQuery(hql);
 

@@ -43,7 +43,7 @@ public class ProductServiceImplTest {
     @Test
     public void testGetProduct() throws Exception {
 
-        List list=productService.getProduct();
-
+        List list = productService.getProductByCart("1430073874041");
+        System.out.println(list);
     }
 }

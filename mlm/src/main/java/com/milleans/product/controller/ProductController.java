@@ -60,7 +60,7 @@ public class ProductController {
             List<ProductTable> productTableList = productService.getProduct();
             productTableJs.setProductInfo(productTableList);
         } catch (Exception e) {
-
+            e.printStackTrace();
             productTableJs.setMessage(e.getMessage());
             productTableJs.setResult("fail");
         }
