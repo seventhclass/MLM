@@ -148,18 +148,24 @@ $(document).ready(function () {
         }
     }
 
-    $('.pdt_maintenance').click(function (e) {
+    $('.pdt_maintenance').click( function(e) {
 
         queryCategoryInfo();
         queryCurrencyInfo();
 
-        if ($(e.target).is('.editproductbtn')) {
+        if ( $(e.target).is('.editproductbtn') ) {
             editProduct(e);
-        } else if ($(e.target).is('.addproductbtn')) {
+        } 
+        else if ( $(e.target).is('.addproductbtn') ) 
+        {
             addProduct(e);
-        } else if ($(e.target).is('.delproductbtn')) {
+        } 
+        else if ( $(e.target).is('.delproductbtn') ) 
+        {
             delProduct(e);
-        } else if ($(e.target).is('.editproductimgbtn')) {
+        } 
+        else if ( $(e.target).is('.editproductimgbtn') ) 
+        {
             editProductImage(e);
         }
     });
@@ -173,7 +179,6 @@ $(document).ready(function () {
     function queryProductImages(id) {
         $('#uploadFilebtn').attr("data-productid", id);
         $('#productId').val(id);
-alert("ididididid="+id)
         //send requrest to server.
         $.ajax({
             url: basePath + 'productImages',

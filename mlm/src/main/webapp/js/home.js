@@ -12,7 +12,7 @@ $(document).ready(function(){
  		
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/user',        	
+ 	    	url: basePath+'user',        	
  			cache:false,
  			async: false,
  			type:'POST',			

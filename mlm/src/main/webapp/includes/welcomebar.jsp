@@ -8,7 +8,7 @@
 </div>
 <script>
 	$(document).ready(function(){		
-		$('#memberid').val($('#get_userInfo').attr('data-userid'));
-		$('#membername').val($('#get_userInfo').attr('data-username'));
+		$('#memberid'). html($('#get_userInfo').attr('data-userid'));
+		$('#membername').html($('#get_userInfo').attr('data-username'));
 	});
 </script> 
