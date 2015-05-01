@@ -6,9 +6,12 @@
 		Welcome <strong style="color:red" id="membername"></strong>&nbsp;<strong>&#40;<span id="memberid"></span>&#41;</strong>
 	</div>
 </div>
-<script>
+<script type="text/javascript">
 	$(document).ready(function(){		
-		$('#memberid'). html($('#get_userInfo').attr('data-userid'));
-		$('#membername').html($('#get_userInfo').attr('data-username'));
+		var id = $('#get_userInfo').attr('data-userid');
+		var name = $('#get_userInfo').attr('data-username');
+		alert("id="+id+", name="+name);
+		$('#memberid'). html(id);
+		$('#membername').html(name);
 	});
 </script> 

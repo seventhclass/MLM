@@ -87,7 +87,7 @@ $(document).ready(function(){
 
      	//send login requrest to server.
         $.ajax({
-        	url: basePath+'/doLogin', 
+        	url: basePath+'doLogin', 
 			cache:false,
 			async: false,
 			type:'POST',			
