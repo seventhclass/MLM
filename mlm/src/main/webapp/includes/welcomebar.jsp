@@ -10,7 +10,7 @@
 	$(document).ready(function(){		
 		var id = $('#get_userInfo').attr('data-userid');
 		var name = $('#get_userInfo').attr('data-username');
-		alert("id="+id+", name="+name);
+		//alert("id="+id+", name="+name);
 		$('#memberid'). html(id);
 		$('#membername').html(name);
 	});

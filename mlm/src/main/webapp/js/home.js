@@ -10,7 +10,7 @@ $(document).ready(function(){
  	//Query user information
  	function queryUserInfo(){
  		var id = $('#get_userInfo').attr('data-userid');
- 		alert("memberid="+id);
+ 		//alert("memberid="+id);
  	 	//send requrest to server.
  	    $.ajax({
  	    	url: basePath+'user',        	
