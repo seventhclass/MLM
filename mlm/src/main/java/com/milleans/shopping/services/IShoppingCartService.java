@@ -1,5 +1,6 @@
 package com.milleans.shopping.services;
 
+import com.milleans.common.dto.CartSummary;
 import com.milleans.model.ShoppingCart;
 import com.milleans.service.ICrud;
 
@@ -9,6 +10,8 @@ import com.milleans.service.ICrud;
 public interface IShoppingCartService extends ICrud {
 
     public void saveOrUpdate(ShoppingCart shoppingCart);
+
+    CartSummary getCartSummary(String userId);
 
 
 //    public List<CartContent> getProducts(String userId);

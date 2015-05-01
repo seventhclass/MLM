@@ -1,5 +1,6 @@
 package com.milleans.shopping.dao;
 
+import com.milleans.common.dto.CartSummary;
 import com.milleans.dao.AbstractDao;
 import com.milleans.model.ShoppingCart;
 import org.springframework.stereotype.Repository;
@@ -35,6 +36,14 @@ public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao
     @Transactional
     public void saveOrUpdate(ShoppingCart shoppingCart) {
         this.getCurrentSession().saveOrUpdate(shoppingCart);
+    }
+
+    @Override
+    public CartSummary getCartSummary(String userId) {
+
+        String hql= "";
+
+        return null;
     }
 
 
