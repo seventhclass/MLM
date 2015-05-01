@@ -102,8 +102,8 @@ public class UserController {
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public
     @ResponseBody
-    JsonResponseDto getUserInfo(@RequestParam String memberId) {
-        User user = userService.getUser(memberId);
+    JsonResponseDto getUserInfo(@RequestParam String memberid) {
+        User user = userService.getUser(memberid);
 
         JsonResponseDto jsonResponseDto = new JsonResponseDto();
         jsonResponseDto.setObject(user);
