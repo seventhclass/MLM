@@ -49,12 +49,7 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
     public CartSummary getCartSummary(String userId) {
 
         CartSummary cartSummary = shoppingCartDao.getCartSummary(userId);
-
         return cartSummary;
     }
 
-//    @Override
-//    public List<CartContent> getProducts(String userId) {
-//       return shoppingCartDao.getProductList(userId);
-//    }
 }

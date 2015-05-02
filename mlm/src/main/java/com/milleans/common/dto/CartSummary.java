@@ -5,23 +5,23 @@ package com.milleans.common.dto;
  */
 public class CartSummary {
 
-    private int totalQuantily;
+    private long totalQuantily;
 
-    private int totalAmount;
+    private Double totalAmount;
 
-    public int getTotalQuantily() {
+    public long getTotalQuantily() {
         return totalQuantily;
     }
 
-    public void setTotalQuantily(int totalQuantily) {
+    public void setTotalQuantily(long totalQuantily) {
         this.totalQuantily = totalQuantily;
     }
 
-    public int getTotalAmount() {
+    public Double getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(int totalAmount) {
+    public void setTotalAmount(Double totalAmount) {
         this.totalAmount = totalAmount;
     }
 }

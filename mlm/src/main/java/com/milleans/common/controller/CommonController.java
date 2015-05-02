@@ -133,10 +133,17 @@ public class CommonController {
     @ResponseBody
     public CartSummeryJs getShoppingCartSummery(HttpSession httpSession) {
 
-        String userId = httpSession.getAttribute("userid").toString();
+        String userId = null;
+        if (httpSession.getAttribute("userid") != null) {
+            userId = httpSession.getAttribute("userid").toString();
+        }
+
+
         CartSummeryJs cartSummeryJs = new CartSummeryJs();
         try {
+            userId = "1430073874041";
             CartSummary cartSummary = shoppingCartService.getCartSummary(userId);
+            cartSummeryJs.setCartSummary(cartSummary);
         } catch (Exception e) {
             e.printStackTrace();
             //Utils.getFailMessage(e.getMessage());
