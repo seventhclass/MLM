@@ -199,7 +199,7 @@ $(document).ready(function(){
      	
      	$('#response').html("");    	
 		     
-		$.post(basePath+'signUp', $(this).serialize(), function(data){
+		$.post(basePath+'signUp?type=individual', $(this).serialize(), function(data){
 			// show the response        	
 			$('#response').html(data);   
 			$('#response').show();
@@ -207,7 +207,7 @@ $(document).ready(function(){
 			// just in case posting your form failed
 			$('#response').html("<span class='glyphicon glyphicon-exclamation-sign'></span>&nbsp;Send register request failed.");
 			$('#response').show(); 
-		});     	
+		});      	
 	 	
 	    return false;
 	});    
@@ -355,7 +355,7 @@ $(document).ready(function(){
      	
      	$('#response').html("");    	
 		
-		$.post('doRegistration.jsp', $(this).serialize(), function(data){
+		$.post(basePath+'signUp?type=company', $(this).serialize(), function(data){
 			// show the response        	
 			$('#response').html(data);   
 			$('#response').show();
@@ -510,7 +510,7 @@ $(document).ready(function(){
      	
      	$('#response').html("");    	
 		
-		$.post('doRegistration.jsp', $(this).serialize(), function(data){
+		$.post(basePath+'signUp?type=admin', $(this).serialize(), function(data){
 			// show the response        	
 			$('#response').html(data);   
 			$('#response').show();

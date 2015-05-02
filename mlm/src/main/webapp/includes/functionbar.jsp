@@ -32,11 +32,9 @@
 	 		
 	 		if (result == "success") {
 	 			$('.myshoppingcartitemnumber').html("");	
-	 			if(res.total_quantity){
-		 			$('.myshoppingcartitemnumber').html(res.total_quantity);	
-	 			}
-	 			if(res.total_amount){
-	 				$('.myshoppingcartitemnumber').attr('data-totalamount',res.total_amount);
+	 			if(res.cartSummary && res.cartSummary.length>0){
+		 			$('.myshoppingcartitemnumber').html(res.cartSummary.totalQuantily);	
+	 				$('.myshoppingcartitemnumber').attr('data-totalamount',res.cartSummary.totalAmount);
 	 			}
 	 		}else{
 	    		if(message==null || message==""){
