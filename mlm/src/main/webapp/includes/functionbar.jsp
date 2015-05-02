@@ -32,10 +32,8 @@
 	 		
 	 		if (result == "success") {
 	 			$('.myshoppingcartitemnumber').html("");	
-	 			if(res.cartSummary && res.cartSummary.length>0){
-		 			$('.myshoppingcartitemnumber').html(res.cartSummary.totalQuantily);	
-	 				$('.myshoppingcartitemnumber').attr('data-totalamount',res.cartSummary.totalAmount);
-	 			}
+		 		$('.myshoppingcartitemnumber').html(res.cartSummary.totalQuantily);	
+	 			$('.myshoppingcartitemnumber').attr('data-totalamount',res.cartSummary.totalAmount);
 	 		}else{
 	    		if(message==null || message==""){
 	    			message = "Sorry, loading shopping cart information failed.";
@@ -52,7 +50,7 @@
 	<div class='col-md-8'>
 		<div class='col-sm-offset-7 col-sm-6'>
 			<a class="myorder_btn" href='<%=request.getContextPath()%>/orderentry'><button type='button' class='btn btn-info'><span class='glyphicon glyphicon-list-alt'></span> My Order </button></a>
-			<a class="myshoppingcart_btn" href='<%=request.getContextPath()%>/myshoppingcart'><button type='button' class='btn btn-danger'><span class='glyphicon glyphicon-shopping-cart'></span> My Shopping Cart <span data-totalamount="" class='badge myshoppingcartitemnumber'>2</span></button></a>
+			<a class="myshoppingcart_btn" href='<%=request.getContextPath()%>/myshoppingcart'><button type='button' class='btn btn-danger'><span class='glyphicon glyphicon-shopping-cart'></span> My Shopping Cart <span data-totalamount="" class='badge myshoppingcartitemnumber'></span></button></a>
 		</div>
 	</div>
 </div>
