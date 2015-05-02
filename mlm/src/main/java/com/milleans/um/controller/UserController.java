@@ -103,13 +103,16 @@ public class UserController {
     public
     @ResponseBody
     JsonResponseDto getUserInfo(@RequestParam String memberid) {
-        User user = userService.getUser(memberid);
-
         JsonResponseDto jsonResponseDto = new JsonResponseDto();
-        jsonResponseDto.setObject(user);
-        jsonResponseDto.setResult("success");
-        jsonResponseDto.setMessage("it's really success.");
-
+        try {
+            User user = userService.getUser(memberid);
+            jsonResponseDto.setObject(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Utils.getFailMessage(e.getMessage());
+        }
+        //jsonResponseDto.setResult("success");
+        //jsonResponseDto.setMessage("it's really success.");
         return jsonResponseDto;
     }
 

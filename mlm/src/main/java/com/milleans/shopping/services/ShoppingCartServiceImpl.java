@@ -1,5 +1,6 @@
 package com.milleans.shopping.services;
 
+import com.milleans.common.dto.CartSummary;
 import com.milleans.model.ShoppingCart;
 import com.milleans.shopping.dao.IShoppingCartDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,6 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
 
     @Autowired
     private IShoppingCartDao shoppingCartDao;
-
 
 
     @Override
@@ -45,8 +45,11 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
         shoppingCartDao.saveOrUpdate(shoppingCart);
     }
 
-//    @Override
-//    public List<CartContent> getProducts(String userId) {
-//       return shoppingCartDao.getProductList(userId);
-//    }
+    @Override
+    public CartSummary getCartSummary(String userId) {
+
+        CartSummary cartSummary = shoppingCartDao.getCartSummary(userId);
+        return cartSummary;
+    }
+
 }

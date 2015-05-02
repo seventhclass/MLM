@@ -22,17 +22,13 @@ public class ProductServiceImplTest {
     @Test
     public void testGetAllProduct() throws Exception {
         List<Product> lp = productService.getAllProduct();
-
         Product product = lp.get(0);
-
         System.out.println(product.getCategoryId());
     }
 
     @Test
     public void testGetProductByCart() throws Exception {
-
         productService.getProductByCart("");
-
     }
 
     @Test

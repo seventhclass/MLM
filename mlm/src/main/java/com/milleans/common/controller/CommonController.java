@@ -1,11 +1,14 @@
 package com.milleans.common.controller;
 
+import com.milleans.common.dto.CartSummary;
+import com.milleans.common.dto.CartSummeryJs;
 import com.milleans.common.dto.CategoryJs;
 import com.milleans.common.dto.CurrencyJs;
 import com.milleans.common.service.ICategoryService;
 import com.milleans.common.service.ICurrencyService;
 import com.milleans.model.Category;
 import com.milleans.model.Currency;
+import com.milleans.shopping.services.IShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -27,6 +31,9 @@ public class CommonController {
 
     @Autowired
     private ICategoryService categoryService;
+
+    @Autowired
+    private IShoppingCartService shoppingCartService;
 
     @RequestMapping(value = "/currency", method = RequestMethod.POST)
     @ResponseBody
@@ -122,4 +129,32 @@ public class CommonController {
         return categoryJs;
     }
 
+    @RequestMapping(value = "/shoppingCartSummary", method = RequestMethod.POST)
+    @ResponseBody
+    public CartSummeryJs getShoppingCartSummery(HttpSession httpSession) {
+
+        String userId = null;
+        CartSummeryJs cartSummeryJs = new CartSummeryJs();
+
+        try {
+            if (httpSession.getAttribute("userid") != null) {
+                userId = httpSession.getAttribute("userid").toString();
+                CartSummary cartSummary = shoppingCartService.getCartSummary(userId);
+                cartSummeryJs.setCartSummary(cartSummary);
+            } else {
+                cartSummeryJs.setMessage("userid is null");
+                cartSummeryJs.setResult("fail");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            //Utils.getFailMessage(e.getMessage());
+            cartSummeryJs.setMessage(e.getMessage());
+            cartSummeryJs.setResult("fail");
+        }
+
+        return cartSummeryJs;
+    }
+
 }
+

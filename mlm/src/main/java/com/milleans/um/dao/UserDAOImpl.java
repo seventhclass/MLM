@@ -47,8 +47,10 @@ public class UserDAOImpl extends AbstractDao implements IUserDAO {
 
         if (list == null || list.size() == 0) {
             return null;
-        } else
-            return list.get(0);
+        } else{
+            User user=(User)list.get(0);
+            return user;
+        }
     }
 
     @Override
