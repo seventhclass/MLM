@@ -33,9 +33,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public List<ProductTable> getProduct() {
-
         List list = productDao.getProductList();
-
         return list;
     }
 

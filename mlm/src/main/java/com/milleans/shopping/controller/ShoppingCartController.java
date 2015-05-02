@@ -53,8 +53,6 @@ public class ShoppingCartController {
 
         CartContentJs cartContentJs = new CartContentJs();
         try {
-
-
             List<CartContent> rs = productService.getProductByCart(suid);
             cartContentJs.setCartContentList(rs);
         } catch (Exception e) {
@@ -62,7 +60,7 @@ public class ShoppingCartController {
             Utils.getFailMessage(e.getMessage());
         }
 
-        return null;
+        return cartContentJs;
     }
 
 
