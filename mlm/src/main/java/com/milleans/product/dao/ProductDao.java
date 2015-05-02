@@ -112,16 +112,11 @@ public class ProductDao extends AbstractDao implements IProductDao {
             cartContent.setTransactionPrice(shoppingCart.getTransactionPrice());
 
             cartContent.setProductId(product.getId());
-
         }
 
         return rl;
     }
 
-
-    public void test() {
-        Criteria criteria = this.getCurrentSession().createCriteria(Product.class);
-    }
 
 
 }

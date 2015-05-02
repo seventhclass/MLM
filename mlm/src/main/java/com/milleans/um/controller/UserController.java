@@ -142,6 +142,7 @@ public class UserController {
     public ModelAndView registration(@RequestParam("type") String type, HttpServletRequest request) {
 
         ModelAndView modelAndView = null;
+//        String forwardUrl=null;
         if (type.equals("individual")) {
             modelAndView = this.signIndividual(request);
         } else if (type.equals("company")) {
@@ -149,115 +150,123 @@ public class UserController {
         } else {
             modelAndView = this.signAdmin(request);
         }
-
-
         return modelAndView;
     }
 
     private ModelAndView signAdmin(HttpServletRequest request) {
 
-        User user = new User();
-        user.setFirstName(request.getParameter("firstname"));
-        user.setLastName(request.getParameter("lastname"));
-        user.setGender(request.getParameter("optionsgender"));
+        ModelAndView modelAndView = new ModelAndView("um/login");
+        try {
+            User user = new User();
+            user.setFirstName(request.getParameter("firstname"));
+            user.setLastName(request.getParameter("lastname"));
+            user.setGender(request.getParameter("optionsgender"));
 
 //        user.setPassWord(request.getParameter("password1"));
-        user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
+            user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
 
-        user.setAddress(request.getParameter("address"));
-        user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
-        user.setProvince(request.getParameter("provincecode"));
-        user.setCity(request.getParameter("city"));
-        user.setZip(request.getParameter("zip"));
-        user.setMobile(request.getParameter("mobilephone"));
-        user.setPhone(request.getParameter("officephone"));
+            user.setAddress(request.getParameter("address"));
+            user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
+            user.setProvince(request.getParameter("provincecode"));
+            user.setCity(request.getParameter("city"));
+            user.setZip(request.getParameter("zip"));
+            user.setMobile(request.getParameter("mobilephone"));
+            user.setPhone(request.getParameter("officephone"));
 
-        user.setEmail(request.getParameter("email"));
+            user.setEmail(request.getParameter("email"));
 
-        String birthdayStr = request.getParameter("birthday");
-        if (birthdayStr != null && !birthdayStr.equals("")) {
-            SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
-            try {
-                Date convertedCurrentDate = sdf.parse(birthdayStr);
-                user.setBirthDate(convertedCurrentDate);
-            } catch (ParseException e) {
-                e.printStackTrace();
+            String birthdayStr = request.getParameter("birthday");
+            if (birthdayStr != null && !birthdayStr.equals("")) {
+                SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
+                try {
+                    Date convertedCurrentDate = sdf.parse(birthdayStr);
+                    user.setBirthDate(convertedCurrentDate);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        user.setDate(new Date());
-        user.setUserId(Utils.getUserId());
-        try {
+            user.setDate(new Date());
+            user.setUserId(Utils.getUserId());
             user = userService.signUp(user);
+
+            ModelMap model = new ModelMap();
+            model.addAttribute("user", user);
+
+            modelAndView = new ModelAndView("um/registersuccess", model);
+
         } catch (Exception e) {
             e.printStackTrace();
+            modelAndView = new ModelAndView("um/registerfail");
         }
-
-        ModelMap model = new ModelMap();
-        model.addAttribute("user", user);
-
-        ModelAndView modelAndView = new ModelAndView("um/registersuccess", model);
-
         return modelAndView;
 
     }
 
     private ModelAndView signCompany(HttpServletRequest request) {
-        User user = new User();
 
-        user.setCompanyName(request.getParameter("companyname"));
-        user.setCompanyType(Integer.valueOf(request.getParameter("companytype")));
+        ModelAndView modelAndView = this.login();
+        try {
+
+            User user = new User();
+
+            user.setCompanyName(request.getParameter("companyname"));
+            user.setCompanyType(Integer.valueOf(request.getParameter("companytype")));
 
 //        user.setPassWord(request.getParameter("password1"));
 
-        user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
+            user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
 
-        user.setAddress(request.getParameter("address"));
-        user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
-        user.setProvince(request.getParameter("provincecode"));
-        user.setCity(request.getParameter("city"));
-        user.setZip(request.getParameter("zip"));
-        user.setMobile(request.getParameter("mobilephone"));
-        user.setPhone(request.getParameter("officephone"));
-        user.setSponsorId(request.getParameter("sponsorid"));
+            user.setAddress(request.getParameter("address"));
+            user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
+            user.setProvince(request.getParameter("provincecode"));
+            user.setCity(request.getParameter("city"));
+            user.setZip(request.getParameter("zip"));
+            user.setMobile(request.getParameter("mobilephone"));
+            user.setPhone(request.getParameter("officephone"));
+            user.setSponsorId(request.getParameter("sponsorid"));
 
-        user.setEmail(request.getParameter("email"));
+            user.setEmail(request.getParameter("email"));
 
-        user.setDate(new Date());
-        user.setUserId(Utils.getUserId());
-        try {
+            user.setDate(new Date());
+            user.setUserId(Utils.getUserId());
             user = userService.signUp(user);
+
+            ModelMap model = new ModelMap();
+            model.addAttribute("user", user);
+
+
+            modelAndView = new ModelAndView("um/registersuccess", model);
         } catch (Exception e) {
             e.printStackTrace();
+            modelAndView = new ModelAndView("um/registerfail");
         }
-
-        ModelMap model = new ModelMap();
-        model.addAttribute("user", user);
-
-        ModelAndView modelAndView = new ModelAndView("um/registersuccess", model);
 
         return modelAndView;
     }
 
     private ModelAndView signIndividual(HttpServletRequest request) {
-        User user = new User();
-        user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
-        user.setFirstName(request.getParameter("firstname"));
-        user.setLastName(request.getParameter("lastname"));
-        user.setGender(request.getParameter("optionsgender"));
-        // user.setBirthDate();
-        user.setSsn(request.getParameter("ssn"));
+
+        ModelAndView modelAndView = new ModelAndView("um/login");
+        try {
+            User user = new User();
+            user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
+            user.setFirstName(request.getParameter("firstname"));
+            user.setLastName(request.getParameter("lastname"));
+            user.setGender(request.getParameter("optionsgender"));
+            // user.setBirthDate();
+            user.setSsn(request.getParameter("ssn"));
 //        user.setPassWord(request.getParameter("password1"));
 
-        user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
+            user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
 
-        user.setAddress(request.getParameter("address"));
-        user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
-        user.setProvince(request.getParameter("provincecode"));
-        user.setCity(request.getParameter("city"));
-        user.setZip(request.getParameter("zip"));
-        user.setMobile(request.getParameter("mobilephone"));
-        user.setPhone(request.getParameter("officephone"));
-        user.setSponsorId(request.getParameter("sponsorid"));
+            user.setAddress(request.getParameter("address"));
+            user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
+            user.setProvince(request.getParameter("provincecode"));
+            user.setCity(request.getParameter("city"));
+            user.setZip(request.getParameter("zip"));
+            user.setMobile(request.getParameter("mobilephone"));
+            user.setPhone(request.getParameter("officephone"));
+            user.setSponsorId(request.getParameter("sponsorid"));
 
 //        user.setCompanyName(request.getParameter("companyname"));
 //        if (request.getParameter("companytype") != null) {
@@ -265,30 +274,30 @@ public class UserController {
 //                    .getParameter("companytype")));
 //        }
 
-        user.setEmail(request.getParameter("email"));
-        String birthdayStr = request.getParameter("birthday");
-        if (birthdayStr != null && !birthdayStr.equals("")) {
-            SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
-            try {
-                Date convertedCurrentDate = sdf.parse(birthdayStr);
-                user.setBirthDate(convertedCurrentDate);
-            } catch (ParseException e) {
-                e.printStackTrace();
+            user.setEmail(request.getParameter("email"));
+            String birthdayStr = request.getParameter("birthday");
+            if (birthdayStr != null && !birthdayStr.equals("")) {
+                SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
+                try {
+                    Date convertedCurrentDate = sdf.parse(birthdayStr);
+                    user.setBirthDate(convertedCurrentDate);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        user.setDate(new Date());
-        user.setUserId(Utils.getUserId());
-        try {
+            user.setDate(new Date());
+            user.setUserId(Utils.getUserId());
             user = userService.signUp(user);
+
+            ModelMap model = new ModelMap();
+            model.addAttribute("user", user);
+
+            modelAndView =
+                    new ModelAndView("um/registersuccess", model);
         } catch (Exception e) {
             e.printStackTrace();
+            modelAndView = new ModelAndView("um/registerfail");
         }
-
-        ModelMap model = new ModelMap();
-        model.addAttribute("user", user);
-
-        ModelAndView modelAndView = new ModelAndView("um/registersuccess", model);
-
         return modelAndView;
     }
 
