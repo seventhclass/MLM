@@ -136,8 +136,100 @@ public class UserController {
     }
 
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-    public ModelAndView registration(HttpServletRequest request) {
+    public ModelAndView registration(@RequestParam("type") String type, HttpServletRequest request) {
 
+        ModelAndView modelAndView = null;
+        if (type.equals("individual")) {
+            modelAndView = this.signIndividual(request);
+        } else if (type.equals("company")) {
+            modelAndView = this.signCompany(request);
+        } else {
+            modelAndView = this.signAmin(request);
+        }
+
+
+        return modelAndView;
+    }
+
+    private ModelAndView signAmin(HttpServletRequest request) {
+
+        User user = new User();
+        user.setFirstName(request.getParameter("firstname"));
+        user.setLastName(request.getParameter("lastname"));
+        user.setGender(request.getParameter("optionsgender"));
+        user.setPassWord(request.getParameter("password1"));
+        user.setAddress(request.getParameter("address"));
+        user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
+        user.setProvince(request.getParameter("provincecode"));
+        user.setCity(request.getParameter("city"));
+        user.setZip(request.getParameter("zip"));
+        user.setMobile(request.getParameter("mobilephone"));
+        user.setPhone(request.getParameter("officephone"));
+
+        user.setEmail(request.getParameter("email"));
+
+        String birthdayStr = request.getParameter("birthday");
+        if (birthdayStr != null && !birthdayStr.equals("")) {
+            SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
+            try {
+                Date convertedCurrentDate = sdf.parse(birthdayStr);
+                user.setBirthDate(convertedCurrentDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        user.setDate(new Date());
+        user.setUserId(Utils.getUserId());
+        try {
+            user = userService.signUp(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ModelMap model = new ModelMap();
+        model.addAttribute("user", user);
+
+        ModelAndView modelAndView = new ModelAndView("um/registersuccess", model);
+
+        return modelAndView;
+
+    }
+
+    private ModelAndView signCompany(HttpServletRequest request) {
+        User user = new User();
+
+        user.setCompanyName(request.getParameter("companyname"));
+        user.setCompanyType(Integer.valueOf(request.getParameter("companytype")));
+
+        user.setPassWord(request.getParameter("password1"));
+        user.setAddress(request.getParameter("address"));
+        user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
+        user.setProvince(request.getParameter("provincecode"));
+        user.setCity(request.getParameter("city"));
+        user.setZip(request.getParameter("zip"));
+        user.setMobile(request.getParameter("mobilephone"));
+        user.setPhone(request.getParameter("officephone"));
+        user.setSponsorId(request.getParameter("sponsorid"));
+
+        user.setEmail(request.getParameter("email"));
+
+        user.setDate(new Date());
+        user.setUserId(Utils.getUserId());
+        try {
+            user = userService.signUp(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ModelMap model = new ModelMap();
+        model.addAttribute("user", user);
+
+        ModelAndView modelAndView = new ModelAndView("um/registersuccess", model);
+
+        return modelAndView;
+    }
+
+    private ModelAndView signIndividual(HttpServletRequest request) {
         User user = new User();
         user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
         user.setFirstName(request.getParameter("firstname"));
@@ -154,17 +246,16 @@ public class UserController {
         user.setMobile(request.getParameter("mobilephone"));
         user.setPhone(request.getParameter("officephone"));
         user.setSponsorId(request.getParameter("sponsorid"));
-        user.setCompanyName(request.getParameter("companyname"));
-        if (request.getParameter("companytype") != null) {
-            user.setCompanyType(Integer.valueOf(request
-                    .getParameter("companytype")));
-        }
+
+//        user.setCompanyName(request.getParameter("companyname"));
+//        if (request.getParameter("companytype") != null) {
+//            user.setCompanyType(Integer.valueOf(request
+//                    .getParameter("companytype")));
+//        }
+
         user.setEmail(request.getParameter("email"));
-
         String birthdayStr = request.getParameter("birthday");
-
         if (birthdayStr != null && !birthdayStr.equals("")) {
-
             SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
             try {
                 Date convertedCurrentDate = sdf.parse(birthdayStr);
