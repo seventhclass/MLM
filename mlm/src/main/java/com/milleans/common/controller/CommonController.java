@@ -134,22 +134,25 @@ public class CommonController {
     public CartSummeryJs getShoppingCartSummery(HttpSession httpSession) {
 
         String userId = null;
-        if (httpSession.getAttribute("userid") != null) {
-            userId = httpSession.getAttribute("userid").toString();
-        }
-
-
         CartSummeryJs cartSummeryJs = new CartSummeryJs();
+
         try {
-            userId = "1430073874041";
-            CartSummary cartSummary = shoppingCartService.getCartSummary(userId);
-            cartSummeryJs.setCartSummary(cartSummary);
+            if (httpSession.getAttribute("userid") != null) {
+                userId = httpSession.getAttribute("userid").toString();
+                CartSummary cartSummary = shoppingCartService.getCartSummary(userId);
+                cartSummeryJs.setCartSummary(cartSummary);
+            } else {
+                cartSummeryJs.setMessage("userid is null");
+                cartSummeryJs.setResult("fail");
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
             //Utils.getFailMessage(e.getMessage());
             cartSummeryJs.setMessage(e.getMessage());
             cartSummeryJs.setResult("fail");
         }
+
         return cartSummeryJs;
     }
 
