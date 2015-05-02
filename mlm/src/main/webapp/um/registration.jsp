@@ -63,11 +63,11 @@
 							<div class="col-md-11">
 								<div id="response" class="alert alert-danger" role="alert"></div> 
 							</div>
-						</div>				
+						</div>	
 						<div id="individual">
 							<div class="row">
 								<div class="col-md-12">															
-									<form id="individualregForm" class="form-horizontal" role="form" action="">
+									<form id="individualregForm" class="form-horizontal" role="form" action="<%=request.getContextPath()%>/signUp?type=individual" method="post">
 										<div class="subtitle" >Personal
 											Information</div>
 										<input type="hidden" class="form-control accounttype" id="accountid" name="accountid">

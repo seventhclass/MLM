@@ -142,7 +142,8 @@ $(document).ready(function(){
         }
         return true;
 	});		
-	$('#individualregForm').submit(function(){
+//	$('#individualregForm').submit(function(){
+	$('.btnsubmit').click(function(){
     	$('#response').hide(); 
     	$("#errmsg_fname").html("");
     	$("#errmsg_lname").html("");		
@@ -153,7 +154,7 @@ $(document).ready(function(){
     	$("#errmsg_spsid").html("");
     	
     	//get accouttype from url and set it to accounttype
-    	//alert("type="+data[1])
+    	alert("type="+data[1])
     	$('.accounttype').val(data[1]);
     	
      	if($('#firstname').val() == ""){
@@ -197,9 +198,11 @@ $(document).ready(function(){
      		return false;
      	}      	
      	
+     	$('#individualregForm').submit();
+     	/*	
      	$('#response').html("");    	
 		     
-		$.post(basePath+'signUp?type=individual', $(this).serialize(), function(data){
+	$.post(basePath+'signUp?type=individual', $(this).serialize(), function(data){
 			// show the response        	
 			$('#response').html(data);   
 			$('#response').show();
@@ -207,7 +210,7 @@ $(document).ready(function(){
 			// just in case posting your form failed
 			$('#response').html("<span class='glyphicon glyphicon-exclamation-sign'></span>&nbsp;Send register request failed.");
 			$('#response').show(); 
-		});      	
+		});  */    	
 	 	
 	    return false;
 	});    
