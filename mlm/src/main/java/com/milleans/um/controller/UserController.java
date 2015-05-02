@@ -52,7 +52,10 @@ public class UserController {
         log.debug("user do login");
         User user = userService.getUser(memberid);
         LoginDto loginDto = new LoginDto();
-        if (user.getPassWord().equals(password)) {
+
+//        if (user.getPassWord().equals(password)) {
+
+        if (Utils.match(password, user.getPassWord())) {
             loginDto.setMessage("login success");
             loginDto.setResult("success");
 
@@ -144,20 +147,23 @@ public class UserController {
         } else if (type.equals("company")) {
             modelAndView = this.signCompany(request);
         } else {
-            modelAndView = this.signAmin(request);
+            modelAndView = this.signAdmin(request);
         }
 
 
         return modelAndView;
     }
 
-    private ModelAndView signAmin(HttpServletRequest request) {
+    private ModelAndView signAdmin(HttpServletRequest request) {
 
         User user = new User();
         user.setFirstName(request.getParameter("firstname"));
         user.setLastName(request.getParameter("lastname"));
         user.setGender(request.getParameter("optionsgender"));
-        user.setPassWord(request.getParameter("password1"));
+
+//        user.setPassWord(request.getParameter("password1"));
+        user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
+
         user.setAddress(request.getParameter("address"));
         user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
         user.setProvince(request.getParameter("provincecode"));
@@ -201,7 +207,10 @@ public class UserController {
         user.setCompanyName(request.getParameter("companyname"));
         user.setCompanyType(Integer.valueOf(request.getParameter("companytype")));
 
-        user.setPassWord(request.getParameter("password1"));
+//        user.setPassWord(request.getParameter("password1"));
+
+        user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
+
         user.setAddress(request.getParameter("address"));
         user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
         user.setProvince(request.getParameter("provincecode"));
@@ -237,7 +246,10 @@ public class UserController {
         user.setGender(request.getParameter("optionsgender"));
         // user.setBirthDate();
         user.setSsn(request.getParameter("ssn"));
-        user.setPassWord(request.getParameter("password1"));
+//        user.setPassWord(request.getParameter("password1"));
+
+        user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
+
         user.setAddress(request.getParameter("address"));
         user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
         user.setProvince(request.getParameter("provincecode"));

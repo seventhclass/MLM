@@ -1,6 +1,7 @@
 package com.milleans.tools;
 
 import com.milleans.dto.BaseJs;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.Base64Utils;
 
 import java.util.Calendar;
@@ -33,15 +34,32 @@ public class Utils {
 
         // Utils.getUserId();
         String test = "Happy";
-        String endode= Utils.getEncode(test);
+        String endode = Utils.getEncode(test);
         System.out.println("encode=" + endode);
         System.out.println("decode=" + Utils.getDecode(endode));
     }
 
     public static BaseJs getFailMessage(String message) {
-        BaseJs baseJs=new BaseJs();
+        BaseJs baseJs = new BaseJs();
         baseJs.setMessage(message);
         baseJs.setResult("fail");
-        return  baseJs;
+        return baseJs;
+    }
+
+    public static String getHashPassword(String password) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String hashedPassword = passwordEncoder.encode(password);
+
+        System.out.println(hashedPassword);
+        return hashedPassword;
+    }
+
+    public static boolean match(String rawPassword, String hashPwd) {
+
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        boolean br = passwordEncoder.matches(rawPassword, hashPwd);
+        System.out.println("br=====>" + br);
+        return br;
+
     }
 }
