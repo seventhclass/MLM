@@ -1,4 +1,3 @@
-<%@ page import="com.milleans.model.User" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,23 +15,15 @@
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/registersuccess.js"></script>		
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/registerfail.js"></script>		
 </head>
 <body>
-	<%
-		User user=(User)request.getAttribute("user");
-	%>
 	 <div class="container">
 		<div id="header">
 			<%@ include file="../includes/header.jsp"%>
 		</div> <!-- end header -->
 		<div id="page">
 			<div class="row">
-<%-- 				<div class="col-md-3">
-					<div id="left">
-						<%@ include file="../includes/nav-left.jsp"%>			
-					</div>
-				</div> --%>
 				<div class="col-md-offset-2 col-md-8 ">
 					<div id="content">
 						<div class="row">
@@ -43,16 +34,13 @@
 						<br/>
 						<div class="row">
 							<div class="col-md-12">
-								<div class="alert alert-success" role="alert"><strong>Congratulations <% String username; username=(user.getCompanyName()!=""&&user.getCompanyName()!=null) ? user.getCompanyName() : user.getLastName()+" "+user.getFirstName(); out.print(username);  %>!</strong> You have successfully registered member.</div>
-								<div>Your member id is: <strong id="memberid" style="color:red"><%=user.getUserId()%></strong> keep in mind,plese.</div>
-								<div>At the same time we have sent the registration information to your mailbox(<strong style="color:blue"><%=user.getEmail()%></strong>), please check and properly preserved.</div>
-								<div>Thank you!</div>
+								<div class="alert alert-danger" role="alert"><strong>Sorry</strong>, your registration is failed. Please try again or contact your system administrator.</div>
 							</div>
 						</div> 
 						<div class="row text-center">
-							<div id="regsuccess" >
+							<div id="regfail" >
 								<div class="col-md-12">
-									<button id="goLogin_btn" type="button" class="btn btn-primary">OK</button>
+									<button id="goReg_btn" type="button" class="btn btn-warning">Try Again</button>
 								</div>									
 							</div>
 						</div>
