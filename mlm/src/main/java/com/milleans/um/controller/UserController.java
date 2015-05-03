@@ -158,6 +158,7 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView("um/login");
         try {
             User user = new User();
+            user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
             user.setFirstName(request.getParameter("firstname"));
             user.setLastName(request.getParameter("lastname"));
             user.setGender(request.getParameter("optionsgender"));
@@ -209,6 +210,7 @@ public class UserController {
 
             User user = new User();
 
+            user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
             user.setCompanyName(request.getParameter("companyname"));
             user.setCompanyType(Integer.valueOf(request.getParameter("companytype")));
 

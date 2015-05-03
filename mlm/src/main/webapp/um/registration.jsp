@@ -237,7 +237,7 @@
 										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-4 col-sm-4">
-												<button type="submit" class="btn btn-primary btnsubmit" disabled="disabled">Register New Member</button>
+												<button type="submit" class="btn btn-primary btnsubmit sm_individal" disabled="disabled">Register New Member</button>
 											</div>																				
 										</div>
 									</form>								
@@ -247,10 +247,10 @@
 						<div id="corporate">
 							<div class="row">
 								<div class="col-md-12">															
-									<form id="companyregForm" class="form-horizontal" role="form" action="">
+									<form id="companyregForm" class="form-horizontal" role="form" action="<%=request.getContextPath()%>/signUp?type=company" method="post">
 										<div class="subtitle" >Company
 											Information</div>
-										<input type="hidden" class="form-control accounttype">											
+										<input type="hidden" class="form-control accounttype" id="accountid" name="accountid">
 										<div class="form-group">
 											<label for="c_companyname" class="col-sm-3 control-label">Company
 												Name<span class="starsymbol">*</span>
@@ -395,8 +395,7 @@
 										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-4 col-sm-4">
-												<button class="btn btn-primary btnsubmit" type="submit" disabled="disabled">Register New Member</button>
-												 
+												<button class="btn btn-primary btnsubmit sm_company" type="submit" disabled="disabled">Register New Member</button>
 											</div>																			
 										</div>
 									</form>								
@@ -406,10 +405,10 @@
 						<div id="admin">
 							<div class="row">
 								<div class="col-md-12">															
-									<form id="adminregForm" class="form-horizontal" role="form" action="">
+									<form id="adminregForm" class="form-horizontal" role="form" action="<%=request.getContextPath()%>/signUp?type=admin" method="post">
 										<div class="subtitle" >Personal
 											Information</div>
-										<input type="hidden" class="form-control accounttype">
+										<input type="hidden" class="form-control accounttype" id="accountid" name="accountid">
 										<div class="form-group">
 											<label for="adminfirstname" class="col-sm-3 control-label">First
 												Name<span class="starsymbol">*</span>
@@ -552,7 +551,7 @@
 										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-4 col-sm-4">
-												<button type="submit" class="btn btn-primary btnsubmit" disabled="disabled">Register New Admin</button>
+												<button type="submit" class="btn btn-primary btnsubmit sm_admin" disabled="disabled">Register New Admin</button>
 											</div>																				
 										</div>
 									</form>								
