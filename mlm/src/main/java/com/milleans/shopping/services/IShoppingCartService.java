@@ -4,6 +4,8 @@ import com.milleans.common.dto.CartSummary;
 import com.milleans.model.ShoppingCart;
 import com.milleans.service.ICrud;
 
+import java.util.List;
+
 /**
  * Created by LeHu on 4/24/15 10:36 PM.
  */
@@ -13,6 +15,7 @@ public interface IShoppingCartService extends ICrud {
 
     CartSummary getCartSummary(String userId);
 
+    public List<Integer> getExistProduct(String userId);
 
 //    public List<CartContent> getProducts(String userId);
 

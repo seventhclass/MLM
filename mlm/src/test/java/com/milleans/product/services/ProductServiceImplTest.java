@@ -1,6 +1,5 @@
 package com.milleans.product.services;
 
-import com.milleans.model.Product;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -21,9 +20,8 @@ public class ProductServiceImplTest {
 
     @Test
     public void testGetAllProduct() throws Exception {
-        List<Product> lp = productService.getAllProduct();
-        Product product = lp.get(0);
-        System.out.println(product.getCategoryId());
+        List list=productService.getProduct();
+        System.out.println(list.size());
     }
 
     @Test
@@ -42,4 +40,5 @@ public class ProductServiceImplTest {
         List list = productService.getProductByCart("1430073874041");
         System.out.println(list);
     }
+
 }

@@ -47,7 +47,7 @@ public class ShoppingCartController {
         return new ModelAndView("um/cart");
     }
 
-    @RequestMapping(value = "/shoppingcart")
+    @RequestMapping(value = "/shoppingcart",method = RequestMethod.POST)
     public CartContentJs getShoppingCart(HttpSession httpSession) {
         String suid = (String) httpSession.getAttribute("userid");
 
@@ -78,6 +78,7 @@ public class ShoppingCartController {
 
         try {
             ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(userId);
+
             if (shoppingCart == null) {
                 int _uis = userService.getUser(userId).getId();
                 shoppingCart = new ShoppingCart();
@@ -87,9 +88,8 @@ public class ShoppingCartController {
                 shoppingCart.setDate(new Date());
                 shoppingCart.setQuantity(Integer.valueOf(quantity));
                 shoppingCart.setTransactionPrice(Float.valueOf(price));
-            }else {
 
-
+            } else {
 
 
             }
