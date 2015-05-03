@@ -82,7 +82,7 @@ $(document).ready(function(){
  					$('#productslist').append(
 					    "<div class='col-xs-6 col-md-4'>"
  						+"	<a href='"+basePath+"productDetail?id="+item.id+"' class='thumbnail'>"
- 						+"		<img src='"+basePath+"images/products/"+item.imgname+"' style='height: 200px; width: 150px; display: block;' alt=''>"
+ 						+"		<img src='"+basePath+"images/products/"+item.imageName+"' style='height: 200px; width: 150px; display: block;' alt=''>"
  						+"	</a>"
  						+"	<div class='caption'>"
  						+"		<h3 class='p_name'>"+item.name+"</h3>"

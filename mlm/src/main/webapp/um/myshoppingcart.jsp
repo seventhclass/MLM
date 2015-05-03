@@ -39,7 +39,7 @@
 											<div class="p_item">
 												<table class="table">
 												   <tbody id="shoppingCartList">
-												     <tr>
+<!-- 												     <tr>
 														<td class="itemImage" rowspan="5"><img src="../images/products/product1.png"
 										           			style="height: 110px; width: 105px;" alt=""></td>
 										           		<td class="itemName">Name:</td>
@@ -85,16 +85,16 @@
 												     	<td class="itemName">Subtotal Price:</td>
 												     	<td id="subtotal_id_2">41.00$</td>
 												     </tr>
-<!-- 												     <tr>
+												     <tr>
 												     	<td align="center" colspan="4"><button id="saveShoppingCart_btn" type="button" class="btn btn-success">Save Shopping Cart</button></td>
-												     </tr> -->												     													     										     												           
+												     </tr>	 -->											     													     										     												           
 												   </tbody>
 												 </table>
 											</div>	
 										</div>
 										<div class="panel-footer">
-											<p class="list-group-item-text">Total Quantity: <span id="total_qty">2</span></p>
-											<p class="list-group-item-text">Total Amount: $<span id="total_amt">140.00</span></p>										
+											<p class="list-group-item-text">Total Quantity: <span id="total_qty"></span></p>
+											<p class="list-group-item-text">Total Amount: $<span id="total_amt"></span></p>										
 										</div>									
 										<div class="panel-footer text-center">
 											<button id="makeOrder_btn" type="button" class="btn btn-danger">Make Order</button>
