@@ -20,7 +20,7 @@ public class ProductServiceImplTest {
 
     @Test
     public void testGetAllProduct() throws Exception {
-        List list=productService.getProduct();
+        List list = productService.getProduct();
         System.out.println(list.size());
     }
 

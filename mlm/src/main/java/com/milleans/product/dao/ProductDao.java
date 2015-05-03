@@ -30,8 +30,8 @@ public class ProductDao extends AbstractDao implements IProductDao {
     @Override
     public List<ProductTable> getProductList() {
 
-//        String hql = "select p, ca, cu , a.imageName from  Category as ca, Currency as cu, Album as a ," +
-//                "Product as p left join Album as b on p.id=b.productId " +
+//        String hql = "select p, ca, cu ,b.imageName from  Category as ca, Currency as cu, " +
+//                " Product as p left join fetch p.id " +
 //                " where p.categoryId=ca.id and p.currencyId=cu.id " +
 //                " group by p.id";
 //
@@ -64,13 +64,42 @@ public class ProductDao extends AbstractDao implements IProductDao {
 //
 //            lsTable.add(productTable);
 //        }
-
+//
 //        return lsTable;
 
-        String sql="";
+        String sql = "SELECT p.id,p.itemcode,p.name AS 'pname', p.capsulenumber,p.wholesaleprice," +
+                "p.retailprice,p.date,p.currencyid " +
+                ",p.volume,p.volume2,p.description,p.categoryid, c.name, cu.symbol, a.imagename  " +
+                " FROM t_product p left join t_album a on p.id=a.productid, t_category c,t_currency cu "
+                +" where p.categoryid=c.id and p.currencyid=cu.id group by p.id;";
 
-        List<ProductTable> listTable=new ArrayList<>();
+        List<ProductTable> listTable = new ArrayList<>();
 
+        Query query = this.getCurrentSession().createSQLQuery(sql);
+
+        List list = query.list();
+
+        for (Object object : list) {
+            ProductTable productTable = new ProductTable();
+            Object[] objects = (Object[]) object;
+
+            productTable.setId(Integer.valueOf(objects[0].toString()));
+            productTable.setItemCode(objects[1].toString());
+            productTable.setName(objects[2] == null ? null : objects[2].toString());
+            productTable.setCapsuleNumber(Integer.valueOf(objects[3].toString()));
+            productTable.setWholesalePrice(Float.valueOf(objects[4].toString()));
+            productTable.setRetailPrice(Float.valueOf(objects[5].toString()));
+            productTable.setCurrrencyId(Integer.valueOf(objects[7].toString()));
+            productTable.setVolume(Integer.valueOf(objects[8].toString()));
+            productTable.setVolume2(Integer.valueOf(objects[9].toString()));
+            productTable.setDescription(objects[10] != null ? objects[10].toString() : null);
+            productTable.setCategoryId(Integer.valueOf(objects[11].toString()));
+            productTable.setCategoryName(objects[12].toString());
+            productTable.setCurrencySymbol(objects[13].toString());
+            productTable.setImageName(objects[14] != null ? objects[14].toString() : null);
+
+            listTable.add(productTable);
+        }
 
         return listTable;
 
