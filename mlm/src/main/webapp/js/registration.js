@@ -137,13 +137,13 @@ $(document).ready(function(){
                 $("#errmsg_spsid").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Sponsor id can not be empty.").css("color", "red");
                 $('#sponsorid').focus();
         } else {
-                $(this).css("border-color", "#999");
+                $(thbtnsubmit1is).css("border-color", "#999");
                 $("#errmsg_spsid").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
 //	$('#individualregForm').submit(function(){
-	$('.btnsubmit').click(function(){
+	$('.sm_individal').click(function(){
     	$('#response').hide(); 
     	$("#errmsg_fname").html("");
     	$("#errmsg_lname").html("");		
@@ -154,7 +154,7 @@ $(document).ready(function(){
     	$("#errmsg_spsid").html("");
     	
     	//get accouttype from url and set it to accounttype
-    	alert("type="+data[1])
+    	//alert("type="+data[1]);
     	$('.accounttype').val(data[1]);
     	
      	if($('#firstname').val() == ""){
@@ -311,7 +311,8 @@ $(document).ready(function(){
         }
         return true;
 	});		
-	$('#companyregForm').submit(function(){
+	//$('#companyregForm').submit(function(){
+	$('.sm_company').click(function(){
     	$('#response').hide(); 
     	$("#errmsg_cname").html("");	
     	$("#errmsg_cpas").html("");
@@ -320,6 +321,9 @@ $(document).ready(function(){
     	$("#errmsg_cemail").html("");
     	$("#errmsg_cspsid").html("");
     	
+    	//alert("type="+data[1]);
+    	$('.accounttype').val(data[1]);
+
      	if($('#c_companyname').val() == ""){
      		$("#errmsg_cname").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Company name can not be empty.").css("color", "red");
      		$('#c_companyname').focus();
@@ -356,7 +360,9 @@ $(document).ready(function(){
      		return false;
      	}      	
      	
-     	$('#response').html("");    	
+     	$('#companyregForm').submit();
+
+/*     	$('#response').html("");    	
 		
 		$.post(basePath+'signUp?type=company', $(this).serialize(), function(data){
 			// show the response        	
@@ -366,7 +372,7 @@ $(document).ready(function(){
 			// just in case posting your form failed
 			$('#response').html("<span class='glyphicon glyphicon-exclamation-sign'></span>&nbsp;Send register request failed.");
 			$('#response').show(); 
-		});     	
+		});  */   	
 	 	
 	    return false;
 	});	
@@ -466,7 +472,9 @@ $(document).ready(function(){
         }
         return true;
 	});			
-	$('#adminregForm').submit(function(){
+	
+	//$('#adminregForm').submit(function(){
+	$('.sm_admin').click(function(){
     	$('#response').hide(); 
     	$("#errmsg_afname").html("");
     	$("#errmsg_alname").html("");		
@@ -474,6 +482,9 @@ $(document).ready(function(){
     	$("#errmsg_acpass").html("");	
     	$("#errmsg_amphone").html("");	
     	$("#errmsg_aemail").html("");
+    	
+    	//alert("type="+data[1]);
+    	$('.accounttype').val(data[1]);
     	
      	if($('#adminfirstname').val() == ""){
      		$("#errmsg_afname").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;First name can not be empty.").css("color", "red");
@@ -511,7 +522,9 @@ $(document).ready(function(){
      		return false;
      	}        	
      	
-     	$('#response').html("");    	
+     	$('#adminregForm').submit();
+
+/*     	$('#response').html("");    	
 		
 		$.post(basePath+'signUp?type=admin', $(this).serialize(), function(data){
 			// show the response        	
@@ -521,7 +534,7 @@ $(document).ready(function(){
 			// just in case posting your form failed
 			$('#response').html("<span class='glyphicon glyphicon-exclamation-sign'></span>&nbsp;Send register request failed.");
 			$('#response').show(); 
-		});     	
+		}); */    	
 	 	
 	    return false;
 	});   	
