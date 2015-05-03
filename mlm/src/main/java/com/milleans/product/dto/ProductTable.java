@@ -37,6 +37,16 @@ public class ProductTable {
 
     public int categoryId;
 
+    public String imageName;
+
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
     public int getCurrrencyId() {
         return currrencyId;
     }

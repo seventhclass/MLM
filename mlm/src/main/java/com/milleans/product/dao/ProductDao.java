@@ -33,22 +33,22 @@ public class ProductDao extends AbstractDao implements IProductDao {
     }
 
     @Override
-    public List<ProductTable> getProductList(){
+    public List<ProductTable> getProductList() {
 
-        String hql= "select p, ca, cu from Product as p, Category as ca, Currency as cu " +
-                    "where p.categoryId=ca.id and p.currencyId=cu.id";
+        String hql = "select p, ca, cu,a from Product as p, Category as ca, Currency as cu, Album as a " +
+                "where p.categoryId=ca.id and p.currencyId=cu.id and p.id=a.productId group by p.id";
 
         List<ProductTable> lsTable = new ArrayList<>();
-        org.hibernate.Query query= this.getCurrentSession().createQuery(hql);
+        org.hibernate.Query query = this.getCurrentSession().createQuery(hql);
 
-        List rl=query.list();
+        List rl = query.list();
 
         for (Object object : rl) {
-            ProductTable productTable=new ProductTable();
-            Object[] objects=(Object[])object;
-            Product product=(Product)objects[0];
-            Category category=(Category)objects[1];
-            Currency currency=(Currency)objects[2];
+            ProductTable productTable = new ProductTable();
+            Object[] objects = (Object[]) object;
+            Product product = (Product) objects[0];
+            Category category = (Category) objects[1];
+            Currency currency = (Currency) objects[2];
 
             productTable.setCapsuleNumber(product.getCapsuleNumber());
             productTable.setCategoryName(category.getName());
@@ -88,22 +88,20 @@ public class ProductDao extends AbstractDao implements IProductDao {
     @Override
     public List<CartContent> getProductOfCart(String userId) {
 
-        String hql="select p,c,a.imageName from Product as p, User as u, ShoppingCart c, Album as a where u.userId="
-                +userId+" and u.id=c.id and c.productId=p.id and a.productId=p.id";
+        String hql = "select p,c,a from Product as p, User as u, ShoppingCart c, Album a where u.userId="
+                + userId + " and u.id=c.id and c.productId=p.id and p.id= a.productId group by p.id";
 
         List<CartContent> rl = new ArrayList<>();
-
         Query query = this.getCurrentSession().createQuery(hql);
-
-        List ls=query.list();
+        List ls = query.list();
 
         for (Object object : ls) {
-            CartContent cartContent=new CartContent();
+            CartContent cartContent = new CartContent();
 
-            Object[] objects=(Object[])object;
-            Product product=(Product)objects[0];
-            ShoppingCart shoppingCart=(ShoppingCart)objects[1];
-            Album album=(Album)objects[2];
+            Object[] objects = (Object[]) object;
+            Product product = (Product) objects[0];
+            ShoppingCart shoppingCart = (ShoppingCart) objects[1];
+            Album album = (Album) objects[2];
 
             cartContent.setCapsuleNumber(product.getCapsuleNumber());
             cartContent.setImageName(album.getImageName());
@@ -116,7 +114,5 @@ public class ProductDao extends AbstractDao implements IProductDao {
 
         return rl;
     }
-
-
 
 }

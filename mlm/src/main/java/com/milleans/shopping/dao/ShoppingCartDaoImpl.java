@@ -33,18 +33,18 @@ public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao
     @Override
     public ShoppingCart getCurrentCart(String userId) {
 
-        String hql="select c from ShoppingCart as c, User as u " +
-                " where c.userid=u.id and u.userid="+userId;
+        String hql = "select c from ShoppingCart as c, User as u " +
+                " where c.userid=u.id and u.userid=" + userId;
 
         Query query = this.getCurrentSession().createQuery(hql);
 
-        List list=query.list();
+        List list = query.list();
 
-        ShoppingCart shoppingCart=null;
+        ShoppingCart shoppingCart = null;
 
         for (Object object : list) {
-            Object[] objects=(Object[])object;
-            shoppingCart=(ShoppingCart)objects[0];
+            Object[] objects = (Object[]) object;
+            shoppingCart = (ShoppingCart) objects[0];
         }
 
         return shoppingCart;
@@ -59,34 +59,43 @@ public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao
     @Override
     public CartSummary getCartSummary(String userId) {
 
-       // ShoppingCart shoppingCart = this.getCurrentCart(userId);
+        // ShoppingCart shoppingCart = this.getCurrentCart(userId);
 
-        String hql="select sum(c.quantity), sum(c.quantity*c.transactionPrice) from ShoppingCart as c, User as u " +
-                " where c.userid=u.id and u.userId="+userId;
+        String hql = "select sum(c.quantity), sum(c.quantity*c.transactionPrice) from ShoppingCart as c, User as u " +
+                " where c.userid=u.id and u.userId=" + userId;
 
         Query query = this.getCurrentSession().createQuery(hql);
 
-        CartSummary cartSummary=new CartSummary();
+        CartSummary cartSummary = new CartSummary();
 
-        List list=query.list();
+        List list = query.list();
 
         for (Object object : list) {
 
-            Object[] objects=(Object[])object;
-            cartSummary.setTotalQuantily(((Long) objects[0]));
-            cartSummary.setTotalAmount((Double)objects[1]);
+            Object[] objects = (Object[]) object;
 
+            if (objects[0] == null) {
+                cartSummary.setTotalQuantily(0);
+            } else {
+
+                cartSummary.setTotalQuantily(((Long) objects[0]));
+            }
+            if (objects[1] == null) {
+                cartSummary.setTotalAmount(0.0);
+            } else {
+                cartSummary.setTotalAmount((Double) objects[1]);
+            }
         }
         return cartSummary;
     }
 
-    public int getProductAmount(String userId,String productId) {
+    public int getProductAmount(String userId, String productId) {
 
         return 0;
     }
 
 
-    public float getAmountTranscationPrice(String userId,String productId){
+    public float getAmountTranscationPrice(String userId, String productId) {
 
 
         return 0;

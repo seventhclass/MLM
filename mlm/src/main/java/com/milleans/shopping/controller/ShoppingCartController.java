@@ -53,8 +53,6 @@ public class ShoppingCartController {
 
         CartContentJs cartContentJs = new CartContentJs();
         try {
-
-
             List<CartContent> rs = productService.getProductByCart(suid);
             cartContentJs.setCartContentList(rs);
         } catch (Exception e) {
@@ -62,7 +60,7 @@ public class ShoppingCartController {
             Utils.getFailMessage(e.getMessage());
         }
 
-        return null;
+        return cartContentJs;
     }
 
 
@@ -84,12 +82,17 @@ public class ShoppingCartController {
                 int _uis = userService.getUser(userId).getId();
                 shoppingCart = new ShoppingCart();
                 shoppingCart.setUserid(_uis);
-            }
 
-            shoppingCart.setProductId(Integer.valueOf(productId));
-            shoppingCart.setDate(new Date());
-            shoppingCart.setQuantity(Integer.valueOf(quantity));
-            shoppingCart.setTransactionPrice(Float.valueOf(price));
+                shoppingCart.setProductId(Integer.valueOf(productId));
+                shoppingCart.setDate(new Date());
+                shoppingCart.setQuantity(Integer.valueOf(quantity));
+                shoppingCart.setTransactionPrice(Float.valueOf(price));
+            }else {
+
+
+
+
+            }
 
             shoppingCartService.saveOrUpdate(shoppingCart);
 
