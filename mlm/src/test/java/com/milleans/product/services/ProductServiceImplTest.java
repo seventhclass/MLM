@@ -26,7 +26,9 @@ public class ProductServiceImplTest {
 
     @Test
     public void testGetProductByCart() throws Exception {
-        productService.getProductByCart("");
+
+       List list= productService.getProductByCart("1430599049710");
+        System.out.println(list.size());
     }
 
     @Test
