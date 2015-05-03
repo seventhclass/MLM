@@ -82,12 +82,17 @@ public class ShoppingCartController {
                 int _uis = userService.getUser(userId).getId();
                 shoppingCart = new ShoppingCart();
                 shoppingCart.setUserid(_uis);
-            }
 
-            shoppingCart.setProductId(Integer.valueOf(productId));
-            shoppingCart.setDate(new Date());
-            shoppingCart.setQuantity(Integer.valueOf(quantity));
-            shoppingCart.setTransactionPrice(Float.valueOf(price));
+                shoppingCart.setProductId(Integer.valueOf(productId));
+                shoppingCart.setDate(new Date());
+                shoppingCart.setQuantity(Integer.valueOf(quantity));
+                shoppingCart.setTransactionPrice(Float.valueOf(price));
+            }else {
+
+
+
+
+            }
 
             shoppingCartService.saveOrUpdate(shoppingCart);
 
