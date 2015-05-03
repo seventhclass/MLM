@@ -6,7 +6,8 @@ $(document).ready(function(){
  	var basePath=$('#basePath').attr("value"); 	
  	
  	queryShoppingCartInfo(); 	
- 	 	
+ 	queryMyShoppingCartSummary();
+ 	
  	$('.table tr').hover(function(e){
  		$('.close_item').show();
  	},function(){
@@ -90,11 +91,11 @@ $(document).ready(function(){
  		
  		if (result == "success") {
  			$('#shoppingCartList').html("");	
- 			if(res.shoppingCartInfo && res.shoppingCartInfo.length>0){
- 				$.each(res.shoppingCartInfo,function(i, item){
+ 			if(res.cartContentList && res.cartContentList.length>0){
+ 				$.each(res.cartContentList,function(i, item){
  					$('#shoppingCartList').append(
  						"<tr>"
- 						+"	<td class='itemImage' rowspan='5'><img src='"+basePath+"/images/products/"+item.imageNname+"' style='height: 110px; width: 105px;' alt=''></td>"
+ 						+"	<td class='itemImage' rowspan='5'><img src='"+basePath+"images/products/"+item.imageName+"' style='height: 110px; width: 105px;' alt=''></td>"
  						+"	<td class='itemName'>Name:</td>"
  						+"	<td>"+item.name+"</td>"
  						+"	<td rowspan='5' style='width:30px'><span data-id='"+item.id+"' class='glyphicon glyphicon-remove-sign close_item' style='color:red'></span></td>"
@@ -105,7 +106,7 @@ $(document).ready(function(){
  						+"</tr>"
  						+"<tr>"
  						+"	<td class='itemName'>Price Each:</td>"
- 						+"	<td>"+item.price+"$</td>"
+ 						+"	<td>$"+parseFloat(item.transactionPrice).toFixed(2)+"</td>"
  						+"</tr>"
  						+"<tr>"
  						+"	<td class='itemName'>Quantity:</td>"
@@ -113,7 +114,7 @@ $(document).ready(function(){
  						+"</tr>"
 					    +"<tr>"
 				     	+"<td class='itemName'>Subtotal Price:</td>"
-				     	+"<td class='subtotal_price'>"+(item.price*item.quantity)+"$</td>"
+				     	+"<td class='subtotal_price'>$"+parseFloat(item.transactionPrice*item.quantity).toFixed(2)+"</td>"
 				     	+"</tr>" 						
  					);
  				});
@@ -203,6 +204,36 @@ $(document).ready(function(){
  			window.location.href=basePath+"myshoppingcart";
  		} 
  		
+ 	}
+ 	
+ 	//Query my shopping cart summary information
+ 	function queryMyShoppingCartSummary(){
+ 	 	//send requrest to server.
+ 	    $.ajax({
+ 	    	url: basePath+'common/shoppingCartSummary',        	
+ 			cache:false,
+ 			async: false,
+ 			type:'POST',			
+ 	    	dataType:'json',
+ 	    	timeout:5000,
+ 	    	error:	function(xhr, ajaxOptions, thrownError){
+ 		                alert(xhr.status+"\n"+xhr.responseText);
+ 		                //$('#content').html(xhr.responseText); 		               
+ 	    			},        	
+ 	    	success:	function(res) {
+ 	    		queryMyShoppingCartSummaryResponse(res);
+ 	    			}
+ 	    });    	
+ 	}
+ 	
+ 	function queryMyShoppingCartSummaryResponse(res){
+ 		var result = res.result;			//response code
+ 		var message = res.message;			//response message
+ 		
+ 		if (result == "success") {
+ 			$('#total_qty').html(res.cartSummary.totalQuantily);	
+ 			$('#total_amt').html(parseFloat(res.cartSummary.totalAmount).toFixed(2));
+ 		}
  	}
 });
 
