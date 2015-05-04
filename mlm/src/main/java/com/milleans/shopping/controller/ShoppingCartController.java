@@ -17,7 +17,6 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -78,22 +77,8 @@ public class ShoppingCartController {
         String userId = session.getAttribute("userid").toString();
 
         try {
-            ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(userId);
 
-            if (shoppingCart == null) {
-                int _uis = userService.getUser(userId).getId();
-                shoppingCart = new ShoppingCart();
-                shoppingCart.setUserid(_uis);
-
-                shoppingCart.setProductId(Integer.valueOf(productId));
-                shoppingCart.setDate(new Date());
-                shoppingCart.setQuantity(Integer.valueOf(quantity));
-                shoppingCart.setTransactionPrice(Float.valueOf(price));
-
-            } else {
-
-
-            }
+            ShoppingCart shoppingCart=shoppingCartService.getCart(Integer.valueOf(productId),userId);
 
             shoppingCartService.saveOrUpdate(shoppingCart);
 

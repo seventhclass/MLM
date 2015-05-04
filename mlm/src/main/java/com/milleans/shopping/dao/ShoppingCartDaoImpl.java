@@ -3,7 +3,9 @@ package com.milleans.shopping.dao;
 import com.milleans.common.dto.CartSummary;
 import com.milleans.dao.AbstractDao;
 import com.milleans.model.ShoppingCart;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -87,6 +89,23 @@ public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao
             }
         }
         return cartSummary;
+    }
+
+    @Override
+    public ShoppingCart getCart(int productId, String userId) {
+
+        Criteria criteria = this.getCurrentSession().createCriteria(ShoppingCart.class);
+
+        criteria.add(Restrictions.eq("productId", productId));
+        criteria.add(Restrictions.eq("userId", userId));
+
+        List<ShoppingCart> list = criteria.list();
+
+        if (list.size() == 0) {
+            return null;
+        } else {
+            return list.get(0);
+        }
     }
 
     public int getProductAmount(String userId, String productId) {
