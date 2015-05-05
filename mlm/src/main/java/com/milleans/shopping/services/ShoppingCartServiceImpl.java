@@ -41,9 +41,15 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
         return null;
     }
 
+
     @Override
     public List<Integer> getExistProduct(String userId) {
         return null;
+    }
+
+    @Override
+    public ShoppingCart getCart(int productId, String userId) {
+        return shoppingCartDao.getCart(productId,userId);
     }
 
     @Override

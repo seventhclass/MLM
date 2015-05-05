@@ -15,5 +15,7 @@ public interface IShoppingCartDao extends IDao {
 
     CartSummary getCartSummary(String userId);
 
+    ShoppingCart getCart(int productId, String userId);
+
 //    List<CartContent> getProductList(String userId);
 }
