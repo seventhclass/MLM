@@ -122,8 +122,8 @@ public class ProductDao extends AbstractDao implements IProductDao {
     @Override
     public List<CartContent> getProductOfCart(String userId) {
 
-        String hql = "select p,c,a from  User as u, ShoppingCart as c,Album as a, Product as p left join Album b on p.id=b.productId " +
-                " where u.userId=" + userId + " and u.id=c.id and c.productId=p.id group by p.id";
+        //String hql = "select p,c,a from  User as u, ShoppingCart as c,Album as a, Product as p left join Album b on p.id=b.productId " +
+         //       " where u.userId=" + userId + " and u.id=c.id and c.productId=p.id group by p.id";
 
         String sql = "select p.id,al.imagename,p.name,c.quantity,c.transactionPrice,p.capsulenumber from  t_user as u, t_shoppingcart as c, t_product as p " +
                 " left join t_album al on p.id = al.productid " +
