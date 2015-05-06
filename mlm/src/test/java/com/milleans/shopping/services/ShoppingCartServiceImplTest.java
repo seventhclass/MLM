@@ -36,4 +36,7 @@ public class ShoppingCartServiceImplTest extends AbsTest {
 
         shoppingCartService.getCartSummary("1430073874041");
     }
+
+
+
 }
