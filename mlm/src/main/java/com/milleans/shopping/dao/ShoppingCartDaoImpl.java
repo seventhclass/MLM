@@ -51,7 +51,7 @@ public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao
         // ShoppingCart shoppingCart = this.getCurrentCart(userId);
 
 
-        String hql = "select sum(c.quantity), sum(c.quantity*p.retailPrice) from ShoppingCart as c, User as u ,Product as p" +
+        String hql = "select sum(c.quantity), sum(c.quantity*p.wholesalePrice) from ShoppingCart as c, User as u ,Product as p" +
                 " where c.userId=u.id and u.userId=" + userId + " and c.productId=p.id";
 
         Query query = this.getCurrentSession().createQuery(hql);
