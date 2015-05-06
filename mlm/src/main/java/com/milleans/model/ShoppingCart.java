@@ -16,7 +16,7 @@ public class ShoppingCart {
     private int id;
 
     @Column(name = "userid")
-    private int userid;
+    private int userId;
 
     @Column(name = "date")
     private Date date;
@@ -46,12 +46,12 @@ public class ShoppingCart {
         this.id = id;
     }
 
-    public int getUserid() {
-        return userid;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUserid(int userid) {
-        this.userid = userid;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public Date getDate() {
