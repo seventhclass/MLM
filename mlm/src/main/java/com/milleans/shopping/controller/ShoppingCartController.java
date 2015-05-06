@@ -46,7 +46,7 @@ public class ShoppingCartController {
         return new ModelAndView("um/cart");
     }
 
-    @RequestMapping(value = "/shoppingcart",method = RequestMethod.POST)
+    @RequestMapping(value = "/shoppingcart", method = RequestMethod.POST)
     @ResponseBody
     public CartContentJs getShoppingCart(HttpSession httpSession) {
         String suid = (String) httpSession.getAttribute("userid");
@@ -71,16 +71,24 @@ public class ShoppingCartController {
         BaseJs baseJs = new BaseJs();
 
         String productId = webRequest.getParameter("productid");
-        String price = webRequest.getParameter("price");
+        //String price = webRequest.getParameter("price");
         String quantity = webRequest.getParameter("quantity");
 
         String userId = session.getAttribute("userid").toString();
 
         try {
 
-            ShoppingCart shoppingCart=shoppingCartService.getCart(Integer.valueOf(productId),userId);
+            ShoppingCart shoppingCart = shoppingCartService.getCart(Integer.valueOf(productId), userId);
 
-            shoppingCartService.saveOrUpdate(shoppingCart);
+            if (shoppingCart == null) {
+                shoppingCartService.save(shoppingCart);
+
+            } else {
+                int amount = shoppingCart.getQuantity();
+                amount = amount + Integer.valueOf(quantity);
+                shoppingCart.setQuantity(amount);
+                shoppingCartService.saveOrUpdate(shoppingCart);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();

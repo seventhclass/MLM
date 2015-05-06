@@ -29,7 +29,8 @@ public abstract class AbstractDao implements IDao {
     }
 
     public void update(Object object) {
-        this.getCurrentSession().saveOrUpdate(object);
+//        this.getCurrentSession().saveOrUpdate(object);
+        this.getCurrentSession().update(object);
     }
 
     // public List<T> getItemById(String id){

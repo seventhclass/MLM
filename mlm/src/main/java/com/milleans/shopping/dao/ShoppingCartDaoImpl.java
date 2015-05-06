@@ -17,20 +17,7 @@ import java.util.List;
 @Transactional
 @Repository("shoppingCartDao")
 public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao {
-    @Override
-    public void save(Object object) {
 
-    }
-
-    @Override
-    public void remove(Object object) {
-
-    }
-
-    @Override
-    public void update(Object object) {
-
-    }
 
     @Override
     public ShoppingCart getCurrentCart(String userId) {
@@ -106,18 +93,6 @@ public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao
         } else {
             return list.get(0);
         }
-    }
-
-    public int getProductAmount(String userId, String productId) {
-
-        return 0;
-    }
-
-
-    public float getAmountTranscationPrice(String userId, String productId) {
-
-
-        return 0;
     }
 
 
