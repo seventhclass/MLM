@@ -210,19 +210,19 @@ public class ProductController {
 
     }
 
-    @RequestMapping(value = "uploadTest", method = RequestMethod.POST)
-    @ResponseBody
-    public BaseJs uploadTest(@RequestParam("productId") String productId, @RequestParam("uploadFile") MultipartFile uploadFile, HttpSession
-            httpSession) {
-
-        String fileName = uploadFile.getOriginalFilename();
-        String fileType = fileName.substring(fileName.lastIndexOf("."),
-                fileName.length());
-
-        String realFileName = System.currentTimeMillis() + fileType;
-
-        return new BaseJs();
-    }
+//    @RequestMapping(value = "uploadTest", method = RequestMethod.POST)
+//    @ResponseBody
+//    public BaseJs uploadTest(@RequestParam("productId") String productId, @RequestParam("uploadFile") MultipartFile uploadFile, HttpSession
+//            httpSession) {
+//
+//        String fileName = uploadFile.getOriginalFilename();
+//        String fileType = fileName.substring(fileName.lastIndexOf("."),
+//                fileName.length());
+//
+//        String realFileName = System.currentTimeMillis() + fileType;
+//
+//        return new BaseJs();
+//    }
 
 
 	/*

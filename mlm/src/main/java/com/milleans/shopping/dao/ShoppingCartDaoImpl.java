@@ -19,6 +19,10 @@ import java.util.List;
 public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao {
 
 
+
+
+
+
     @Override
     public ShoppingCart getCurrentCart(String userId) {
 

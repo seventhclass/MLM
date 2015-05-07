@@ -100,16 +100,18 @@ public class ShoppingCartController {
 
     @RequestMapping(value = "/delcartitem", method = RequestMethod.POST)
     @ResponseBody
-    public BaseJs delItemInCart(@RequestParam("productId") String pid, HttpSession httpSession) {
+    public BaseJs delItemInCart(@RequestParam("id") String pid, HttpSession httpSession) {
 
         BaseJs baseJs = new BaseJs();
-
-        String userId = httpSession.getAttribute("uid").toString();
+        //String userId = httpSession.getAttribute("uid").toString();
 
         try {
+            ShoppingCart tmp=new ShoppingCart();
+            tmp.setId(Integer.valueOf(pid));
+            //ShoppingCart shoppingCart = shoppingCartService.getItemById(pid);
 
-            ShoppingCart shoppingCart = shoppingCartService.getCart(Integer.valueOf(pid), userId);
-            shoppingCartService.remove(shoppingCart);
+            shoppingCartService.remove(tmp);
+
         } catch (Exception e) {
             e.printStackTrace();
 
