@@ -143,12 +143,12 @@ $(document).ready(function(){
 
  	function addProducts2Cart(e){
  		var $id = $(e.target).attr("data-productid");
- 		var $name = $(e.target).parents("div").children(".p_name").html();
- 		var $itemCode = $(e.target).parents("div").children(".p_itemCode").html();
- 		var $rPrice = $(e.target).parents("div").children().children(".p_rPrice").html();
+ 		//var $name = $(e.target).parents("div").children(".p_name").html();
+ 		//var $itemCode = $(e.target).parents("div").children(".p_itemCode").html();
+ 		//var $rPrice = $(e.target).parents("div").children().children(".p_rPrice").html();
  		var $wPrice = $(e.target).parents("div").children().children(".p_wPrice").html();
- 		var $bVolume = $(e.target).parents("div").children().children(".p_BV").html();
- 		var $numbers = $(e.target).parents("div").children().children(".p_numbers").html();
+ 		//var $bVolume = $(e.target).parents("div").children().children(".p_BV").html();
+ 		//var $numbers = $(e.target).parents("div").children().children(".p_numbers").html();
  		var $quantity = $(e.target).parents("div").children().children(".p_quantity").val(); 		
  		var $price;
 /*		alert("id="+$id);	
@@ -160,7 +160,7 @@ $(document).ready(function(){
 		alert("numbers="+$numbers);
 		alert("quantity="+$quantity);*/
 
-		$price = $rPrice;
+		$price = $wPrice;
 
  	 	//send requrest to server.
  	    $.ajax({
