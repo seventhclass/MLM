@@ -110,7 +110,7 @@ $(document).ready(function(){
  						+"</tr>"
  						+"<tr>"
  						+"	<td class='itemName'>Quantity:</td>"
- 						+"	<td><input class='numbers' type='number' name='numbers' min='1' max='9999' value='"+item.quantity+"'></td>"
+ 						+"	<td><input class='numbers' type='number' name='numbers' data-id='"+item.id+"' data-price='"+item.transactionPrice+"' min='1' max='9999' value='"+item.quantity+"'></td>"
  						+"</tr>"
 					    +"<tr>"
 				     	+"<td class='itemName'>Subtotal Price:</td>"
@@ -166,6 +166,9 @@ $(document).ready(function(){
  	}
  	
  	function updateShoppingCartItem(id,price,qty){
+ 		alert("id="+id);
+ 		alert("price="+price);
+ 		alert("qty="+qty);
  	 	//send requrest to server. ** add2cart has the same function with updatecart, so we use add2cart instead of updatecart.
  	    $.ajax({
  	    	url: basePath+'add2cart',        	
