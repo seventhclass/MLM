@@ -92,6 +92,7 @@ public class UserController {
             session.setAttribute("userid", memberid);
             session.setAttribute("username", username);
             session.setAttribute("autoType",user.getAccountId());
+            session.setAttribute("uid",user.getId());
 
             return loginDto;
         } else {

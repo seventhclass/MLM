@@ -84,8 +84,8 @@ public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao
 
         Criteria criteria = this.getCurrentSession().createCriteria(ShoppingCart.class);
 
-        criteria.add(Restrictions.eq("productId", String.valueOf(productId)));
-        criteria.add(Restrictions.eq("userId", userId));
+        criteria.add(Restrictions.eq("productId", productId));
+        criteria.add(Restrictions.eq("userId", Integer.valueOf(userId)));
 
         List<ShoppingCart> list = criteria.list();
 

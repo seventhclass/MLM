@@ -137,12 +137,12 @@ public class CommonController {
         CartSummeryJs cartSummeryJs = new CartSummeryJs();
 
         try {
-            if (httpSession.getAttribute("userid") != null) {
-                userId = httpSession.getAttribute("userid").toString();
+            if (httpSession.getAttribute("uid") != null) {
+                userId = httpSession.getAttribute("uid").toString();
                 CartSummary cartSummary = shoppingCartService.getCartSummary(userId);
                 cartSummeryJs.setCartSummary(cartSummary);
             } else {
-                cartSummeryJs.setMessage("userid is null");
+                cartSummeryJs.setMessage("uid is null");
                 cartSummeryJs.setResult("fail");
             }
 
