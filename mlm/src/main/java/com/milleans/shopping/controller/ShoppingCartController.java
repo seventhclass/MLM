@@ -76,10 +76,11 @@ public class ShoppingCartController {
         String quantity = webRequest.getParameter("quantity");
 
         String userId = session.getAttribute("uid").toString();
+        String sid = session.getAttribute("id").toString();
 
         try {
 
-            ShoppingCart shoppingCart = shoppingCartService.getCart(Integer.valueOf(productId), userId);
+            ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(sid);
 
             if (shoppingCart == null) {
                 shoppingCartService.save(shoppingCart);
@@ -106,7 +107,7 @@ public class ShoppingCartController {
         //String userId = httpSession.getAttribute("uid").toString();
 
         try {
-            ShoppingCart tmp=new ShoppingCart();
+            ShoppingCart tmp = new ShoppingCart();
             tmp.setId(Integer.valueOf(pid));
             //ShoppingCart shoppingCart = shoppingCartService.getItemById(pid);
 
