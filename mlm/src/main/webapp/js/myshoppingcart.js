@@ -24,7 +24,7 @@ $(document).ready(function(){
  		alert("qty="+i_qty);
  		alert("price="+i_price);
  		alert("sub="+i_subtotal);*/
- 		updateShoppingCartItem(i_id,i_qty);
+ 		updateShoppingCartItem(i_id,i_price,i_qty);
  		 		
  	});
  	
@@ -165,15 +165,16 @@ $(document).ready(function(){
  		}
  	}
  	
- 	function updateShoppingCartItem(id,qty){
- 	 	//send requrest to server.
+ 	function updateShoppingCartItem(id,price,qty){
+ 	 	//send requrest to server. ** add2cart has the same function with updatecart, so we use add2cart instead of updatecart.
  	    $.ajax({
- 	    	url: basePath+'updateshoppingcart',        	
+ 	    	url: basePath+'add2cart',        	
  			cache:false,
  			async: false,
  			type:'POST',
  			data: {
- 				id: id,
+ 				productid: id,
+ 				price: price,
  				quantity: qty
  			},
  	    	dataType:'json',
@@ -194,11 +195,12 @@ $(document).ready(function(){
  		 		
  		//get quantity from server and set back to front-end page.
  		if (result == "success") {
- 			$(this).val(res.shoppingCart.quantity); 		
+ 			/*$(this).val(res.shoppingCart.quantity); 		
  		 	var i_subtotal = (res.shoppingCart.quantity * res.shoppingCart.price).toFixed(2); 		
  		 	$('#subtotal_id_'+res.shoppingCart.id).html(i_subtotal+"$");
  		 	$('#total_qty').html(res.shoppingCart.totalQuantity);
- 		 	$('#total_amt').html(res.shoppingCart.totalAmount);
+ 		 	$('#total_amt').html(res.shoppingCart.totalAmount);*/
+ 			queryMyShoppingCartSummary();
  		}else{
 			alert("Sorry, update item from shopping cart failed! Try again, please. ");
  			window.location.href=basePath+"myshoppingcart";
