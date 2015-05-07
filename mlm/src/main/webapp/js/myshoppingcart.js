@@ -139,7 +139,7 @@ $(document).ready(function(){
  			async: false,
  			type:'POST',
  			data:{
- 				id: $id
+				productId: $id
  			},
  	    	dataType:'json',
  	    	timeout:5000,

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
@@ -96,4 +97,28 @@ public class ShoppingCartController {
         }
         return baseJs;
     }
+
+    @RequestMapping(value = "/delcartitem", method = RequestMethod.POST)
+    @ResponseBody
+    public BaseJs delItemInCart(@RequestParam("productId") String pid, HttpSession httpSession) {
+
+        BaseJs baseJs = new BaseJs();
+
+        String userId = httpSession.getAttribute("uid").toString();
+
+        try {
+
+            ShoppingCart shoppingCart = shoppingCartService.getCart(Integer.valueOf(pid), userId);
+            shoppingCartService.remove(shoppingCart);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            baseJs = Utils.getFailMessage(e.getMessage());
+        }
+
+
+        return baseJs;
+    }
+
 }
+
