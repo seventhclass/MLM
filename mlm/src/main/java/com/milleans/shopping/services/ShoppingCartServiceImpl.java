@@ -27,7 +27,7 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
 
     @Override
     public void remove(Object object) {
-
+        shoppingCartDao.remove(object);
     }
 
     @Override
