@@ -5,6 +5,8 @@ package com.milleans.shopping.dto;
  */
 public class CartContent {
 
+    private int id;
+
     private int productId;
 
     private String imageName;
@@ -13,9 +15,17 @@ public class CartContent {
 
     private int capsuleNumber;
 
-    private float transactionPrice;
+    private float wholesalePrice;
 
     private int quantity;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getProductId() {
         return productId;
@@ -33,12 +43,12 @@ public class CartContent {
         this.capsuleNumber = capsuleNumber;
     }
 
-    public float getTransactionPrice() {
-        return transactionPrice;
+    public float getWholesalePrice() {
+        return wholesalePrice;
     }
 
-    public void setTransactionPrice(float transactionPrice) {
-        this.transactionPrice = transactionPrice;
+    public void setWholesalePrice(float wholesalePrice) {
+        this.wholesalePrice = wholesalePrice;
     }
 
     public int getQuantity() {

@@ -122,10 +122,7 @@ public class ProductDao extends AbstractDao implements IProductDao {
     @Override
     public List<CartContent> getProductOfCart(String userId) {
 
-        //String hql = "select p,c,a from  User as u, ShoppingCart as c,Album as a, Product as p left join Album b on p.id=b.productId " +
-         //       " where u.userId=" + userId + " and u.id=c.id and c.productId=p.id group by p.id";
-
-        String sql = "select p.id,al.imagename,p.name,c.quantity,c.transactionPrice,p.capsulenumber from  t_user as u, t_shoppingcart as c, t_product as p " +
+        String sql = "select p.id,al.imagename,p.name,c.quantity,c.wholesaleprice,p.capsulenumber,c.id from  t_user as u, t_shoppingcart as c, t_product as p " +
                 " left join t_album al on p.id = al.productid " +
                 " where u.userId=" + userId + " and u.id=c.userid and c.productid=p.id group by p.id";
 
@@ -144,8 +141,9 @@ public class ProductDao extends AbstractDao implements IProductDao {
             cartContent.setImageName(objects[1] == null ? null : objects[1].toString());
             cartContent.setName(objects[2] == null ? null : objects[2].toString());
             cartContent.setQuantity(objects[3] == null ? 0 : Integer.valueOf(objects[3].toString()));
-            cartContent.setTransactionPrice(objects[4] == null ? null : Float.valueOf(objects[4].toString()));
+            cartContent.setWholesalePrice(objects[4] == null ? null : Float.valueOf(objects[4].toString()));
             cartContent.setCapsuleNumber(objects[5] == null ? 0 : Integer.valueOf(objects[5].toString()));
+            cartContent.setId(Integer.valueOf(objects[6].toString()));
 
             list.add(cartContent);
         }
