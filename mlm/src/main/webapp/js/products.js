@@ -151,14 +151,14 @@ $(document).ready(function(){
  		//var $numbers = $(e.target).parents("div").children().children(".p_numbers").html();
  		var $quantity = $(e.target).parents("div").children().children(".p_quantity").val(); 		
  		var $price;
-/*		alert("id="+$id);	
-		alert("name="+$name);	
-		alert("itemcode="+$itemCode);
-		alert("rprice="+$rPrice);
+		alert("id="+$id);	
+		//alert("name="+$name);	
+		//alert("itemcode="+$itemCode);
+		//alert("rprice="+$rPrice);
 		alert("wprice="+$wPrice);
-		alert("volume="+$bVolume);
-		alert("numbers="+$numbers);
-		alert("quantity="+$quantity);*/
+		//alert("volume="+$bVolume);
+		//alert("numbers="+$numbers);
+		alert("quantity="+$quantity);
 
 		$price = $wPrice;
 

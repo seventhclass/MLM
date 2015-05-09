@@ -24,7 +24,7 @@ $(document).ready(function(){
  		alert("qty="+i_qty);
  		alert("price="+i_price);
  		alert("sub="+i_subtotal);*/
- 		updateShoppingCartItem(i_id,i_price,i_qty);
+ 		updateShoppingCartItem(i_id,i_qty);
  		 		
  	});
  	
@@ -106,15 +106,15 @@ $(document).ready(function(){
  						+"</tr>"
  						+"<tr>"
  						+"	<td class='itemName'>Price Each:</td>"
- 						+"	<td>$"+parseFloat(item.transactionPrice).toFixed(2)+"</td>"
+ 						+"	<td>$"+parseFloat(item.wholesalePrice).toFixed(2)+"</td>"
  						+"</tr>"
  						+"<tr>"
  						+"	<td class='itemName'>Quantity:</td>"
- 						+"	<td><input class='numbers' type='number' name='numbers' data-id='"+item.id+"' data-price='"+item.transactionPrice+"' min='1' max='9999' value='"+item.quantity+"'></td>"
+ 						+"	<td><input class='numbers' type='number' name='numbers' data-id='"+item.id+"' data-price='"+item.wholesalePrice+"' min='1' max='9999' value='"+item.quantity+"'></td>"
  						+"</tr>"
 					    +"<tr>"
 				     	+"<td class='itemName'>Subtotal Price:</td>"
-				     	+"<td class='subtotal_price'>$"+parseFloat(item.transactionPrice*item.quantity).toFixed(2)+"</td>"
+				     	+"<td class='subtotal_price'>$"+parseFloat(item.wholesalePrice*item.quantity).toFixed(2)+"</td>"
 				     	+"</tr>" 						
  					);
  				});
@@ -131,7 +131,7 @@ $(document).ready(function(){
  	
  	function delShoppingCartItem(id){
  		var $id = id;
- 		
+ 		alert("id="+id);
  	 	//send requrest to server.
  	    $.ajax({
  	    	url: basePath+'delcartitem',        	
@@ -139,7 +139,7 @@ $(document).ready(function(){
  			async: false,
  			type:'POST',
  			data:{
-				productId: $id
+				id: $id
  			},
  	    	dataType:'json',
  	    	timeout:5000,
@@ -165,19 +165,17 @@ $(document).ready(function(){
  		}
  	}
  	
- 	function updateShoppingCartItem(id,price,qty){
+ 	function updateShoppingCartItem(id,qty){
  		alert("id="+id);
- 		alert("price="+price);
  		alert("qty="+qty);
  	 	//send requrest to server. ** add2cart has the same function with updatecart, so we use add2cart instead of updatecart.
  	    $.ajax({
- 	    	url: basePath+'add2cart',        	
+ 	    	url: basePath+'updatecart',        	
  			cache:false,
  			async: false,
  			type:'POST',
  			data: {
- 				productid: id,
- 				price: price,
+ 				id: id,
  				quantity: qty
  			},
  	    	dataType:'json',
