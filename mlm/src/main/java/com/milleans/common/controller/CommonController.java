@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -154,6 +155,12 @@ public class CommonController {
         }
 
         return cartSummeryJs;
+    }
+
+
+    @RequestMapping(value = "/contactus",method = RequestMethod.GET)
+    public ModelAndView getContactus(){
+        return new ModelAndView("um/contactus");
     }
 
 }
