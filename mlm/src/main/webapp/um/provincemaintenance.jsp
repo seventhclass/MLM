@@ -48,8 +48,9 @@
 							<label for="country" class="col-sm-offset-1 col-sm-1 control-label">Country</label>
 							<div class="col-sm-3">												
 								<select id="countrymenu" class="form-control">
-								    <option value="86">Canada</option>
-								    <option value="87">US</option>
+								    <option value="">None</option>
+								    <!-- <option value="86">Canada</option>
+								    <option value="87">US</option> -->
 								</select>
 							</div>						
 						</div>											
@@ -71,7 +72,7 @@
 											</tr>																																									
 										</thead>
 									   <tbody id="provincelist">
-									     <tr>
+									     <!-- <tr>
 									     	<td>1</td>
 							           		<td>Quebec</td>
 						           			<td>QC</td>
@@ -96,7 +97,7 @@
 							           				<button type="button" class="btn btn-danger delprovincebtn" data-toggle="modal" data-target="#provincecancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
-									     </tr> 									     									    
+									     </tr>  -->									     									    
 										</tbody>
 									 </table>
 								</div>	

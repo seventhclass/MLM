@@ -57,7 +57,7 @@
 											</tr>																																									
 										</thead>
 									   <tbody id="countrylist">
-									     <tr>
+									     <!-- <tr>
 									     	<td>1</td>
 							           		<td>Canada</td>
 						           			<td>86</td>
@@ -108,7 +108,7 @@
 							           			<button type="button" class="btn btn-danger delcountrybtn" data-toggle="modal" data-target="#countrycancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
-									     </tr> 									     								     									     
+									     </tr> 	 -->								     								     									     
 										</tbody>
 									 </table>
 								</div>	

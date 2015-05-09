@@ -39,55 +39,7 @@
 											<div class="p_item">
 												<table class="table">
 												   <tbody id="shoppingCartList">
-<!-- 												     <tr>
-														<td class="itemImage" rowspan="5"><img src="../images/products/product1.png"
-										           			style="height: 110px; width: 105px;" alt=""></td>
-										           		<td class="itemName">Name:</td>
-										           		<td>Mt-1000</td>
-										           		<td rowspan="5" style="width:30px"><span data-id="1" class="glyphicon glyphicon-remove-sign close_item" style="color:red"></span></td>
-												     </tr>     
-												     <tr>
-												     	<td class="itemName">Capsule Number:</td>
-										           		<td>90 Counts</td>
-												     </tr> 		
-												     <tr>
-												     	<td class="itemName">Price Each:</td>
-										           		<td>99.00$</td>										           		
-												     </tr> 
-												     <tr>
-														<td class="itemName item_qty">Quantity:</td>
-														<td><input class="numbers" type="number" name="numbers" data-id="1" data-price="99.00" min="1" max="9999" value="1"></td>												     
-												     </tr>
-												     <tr>
-												     	<td class="itemName item_sub_price">Subtotal Price:</td>
-												     	<td id="subtotal_id_1" >99.00$</td>
-												     </tr>
-												     <tr>
-														<td class="itemImage" rowspan="5"><img src="../images/products/product1.png"
-										           			style="height: 110px; width: 105px;" alt=""></td>
-										           		<td class="itemName">Name:</td>
-										           		<td>Mt-1000B</td>
-										           		<td rowspan="5" style="width:30px"><span data-id="2" class="glyphicon glyphicon-remove-sign close_item" style="color:red"></span></td>
-												     </tr>     
-												     <tr>
-												     	<td class="itemName">Capsule Number:</td>
-										           		<td>25 Counts</td>
-												     </tr> 		
-												     <tr>
-												     	<td class="itemName">Price Each:</td>
-										           		<td><span class="item_price">41.00</span>$</td>										           		
-												     </tr> 
-												     <tr>
-														<td class="itemName">Quantity:</td>
-														<td><input class="numbers" type="number" name="numbers" data-id="2" data-price="41.00" min="1" max="9999" value="1"></td>												     
-												     </tr>
-												     <tr>
-												     	<td class="itemName">Subtotal Price:</td>
-												     	<td id="subtotal_id_2">41.00$</td>
-												     </tr>
-												     <tr>
-												     	<td align="center" colspan="4"><button id="saveShoppingCart_btn" type="button" class="btn btn-success">Save Shopping Cart</button></td>
-												     </tr>	 -->											     													     										     												           
+											 									     													     										     												           
 												   </tbody>
 												 </table>
 											</div>	
