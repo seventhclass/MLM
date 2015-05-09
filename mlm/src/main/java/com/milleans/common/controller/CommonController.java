@@ -163,5 +163,10 @@ public class CommonController {
         return new ModelAndView("um/contactus");
     }
 
+    @RequestMapping(value = "/aboutus", method = RequestMethod.GET)
+    public ModelAndView getAboutus() {
+        return new ModelAndView("um/aboutus");
+    }
+
 }
 
