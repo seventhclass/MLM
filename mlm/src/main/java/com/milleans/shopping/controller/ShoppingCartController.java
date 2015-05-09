@@ -5,9 +5,9 @@ import com.milleans.model.ShoppingCart;
 import com.milleans.product.services.IProductService;
 import com.milleans.shopping.dto.CartContent;
 import com.milleans.shopping.dto.CartContentJs;
+import com.milleans.shopping.dto.UpdateProductJs;
 import com.milleans.shopping.services.IShoppingCartService;
 import com.milleans.tools.Utils;
-import com.milleans.um.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,8 +32,8 @@ public class ShoppingCartController {
     @Autowired
     private IProductService productService;
 
-    @Autowired
-    private IUserService userService;
+//    @Autowired
+//    private IUserService userService;
 
 
     @RequestMapping(value = "/myshoppingcart", method = RequestMethod.GET)
@@ -79,12 +79,9 @@ public class ShoppingCartController {
         String sid = session.getAttribute("id").toString();
 
         try {
-
             ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(sid);
-
             if (shoppingCart == null) {
                 shoppingCartService.save(shoppingCart);
-
             } else {
                 int amount = shoppingCart.getQuantity();
                 amount = amount + Integer.valueOf(quantity);
@@ -110,18 +107,38 @@ public class ShoppingCartController {
             ShoppingCart tmp = new ShoppingCart();
             tmp.setId(Integer.valueOf(pid));
             //ShoppingCart shoppingCart = shoppingCartService.getItemById(pid);
-
             shoppingCartService.remove(tmp);
-
         } catch (Exception e) {
             e.printStackTrace();
-
             baseJs = Utils.getFailMessage(e.getMessage());
         }
-
-
         return baseJs;
     }
 
+    @RequestMapping(value = "/updateshoppingcart", method = RequestMethod.POST)
+    @ResponseBody
+    public BaseJs updateShoppingCart(@RequestParam("cartId") String cartId,
+                                     @RequestParam("quantity") String quantity) {
+
+        //CartContent cartContent=new CartContent();
+        UpdateProductJs updateProductJs=new UpdateProductJs();
+
+        try {
+            ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(cartId);
+            shoppingCart.setQuantity(Integer.valueOf(quantity));
+            shoppingCartService.update(shoppingCart);
+
+            updateProductJs.setId(shoppingCart.getId());
+            updateProductJs.setQuantity(shoppingCart.getQuantity());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Utils.getFailMessage(e.getMessage());
+        }
+
+
+        return updateProductJs;
+
+    }
 }
 

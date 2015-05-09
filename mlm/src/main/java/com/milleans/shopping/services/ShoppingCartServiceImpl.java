@@ -32,7 +32,7 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
 
     @Override
     public void update(Object object) {
-
+        shoppingCartDao.update(object);
     }
 
     @Override
