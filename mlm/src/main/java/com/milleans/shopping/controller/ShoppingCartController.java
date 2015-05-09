@@ -1,6 +1,7 @@
 package com.milleans.shopping.controller;
 
 import com.milleans.dto.BaseJs;
+import com.milleans.model.Product;
 import com.milleans.model.ShoppingCart;
 import com.milleans.product.services.IProductService;
 import com.milleans.shopping.dto.CartContent;
@@ -126,8 +127,9 @@ public class ShoppingCartController {
 
     @RequestMapping(value = "/updateshoppingcart", method = RequestMethod.POST)
     @ResponseBody
-    public BaseJs updateShoppingCart(@RequestParam("cartId") String cartId,
-                                     @RequestParam("quantity") String quantity) {
+    public UpdateProductJs updateShoppingCart(@RequestParam("cartId") String cartId,
+                                              @RequestParam("quantity") String quantity,
+                                              @RequestParam("productId") String pid) {
         UpdateProductJs updateProductJs=new UpdateProductJs();
 
         try {
@@ -138,11 +140,15 @@ public class ShoppingCartController {
             updateProductJs.setId(shoppingCart.getId());
             updateProductJs.setQuantity(shoppingCart.getQuantity());
 
+            //search product price in p table
+            Product product = (Product) productService.getItemById(pid);
+
+            updateProductJs.setPrice(product.getWholesalePrice());
+
         } catch (Exception e) {
             e.printStackTrace();
             Utils.getFailMessage(e.getMessage());
         }
-
 
         return updateProductJs;
 
