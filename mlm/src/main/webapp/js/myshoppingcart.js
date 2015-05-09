@@ -170,12 +170,12 @@ $(document).ready(function(){
  		alert("qty="+qty);
  	 	//send requrest to server. ** add2cart has the same function with updatecart, so we use add2cart instead of updatecart.
  	    $.ajax({
- 	    	url: basePath+'updatecart',        	
+ 	    	url: basePath+'updateshoppingcart',        	
  			cache:false,
  			async: false,
  			type:'POST',
  			data: {
- 				id: id,
+ 				cartId: id,
  				quantity: qty
  			},
  	    	dataType:'json',
