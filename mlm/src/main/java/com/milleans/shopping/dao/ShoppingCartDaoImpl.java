@@ -19,10 +19,6 @@ import java.util.List;
 public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao {
 
 
-
-
-
-
     @Override
     public ShoppingCart getCurrentCart(String userId) {
 
@@ -91,6 +87,20 @@ public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao
         List<ShoppingCart> list = criteria.list();
 
         if (list.size() == 0) {
+            return null;
+        } else {
+            return list.get(0);
+        }
+    }
+
+    @Override
+    public ShoppingCart getItemById(int sid) {
+
+        Criteria criteria = this.getCurrentSession().createCriteria(ShoppingCart.class);
+        criteria.add(Restrictions.eq("id", sid));
+
+        List<ShoppingCart> list = criteria.list();
+        if (list == null) {
             return null;
         } else {
             return list.get(0);

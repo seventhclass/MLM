@@ -121,7 +121,8 @@ public class ProductDao extends AbstractDao implements IProductDao {
 
     @Override
     public List<CartContent> getProductOfCart(String userId) {
-        String sql = "select p.id as 'pid',al.imagename,p.name,c.quantity,p.wholesaleprice,p.capsulenumber,c.id from  t_user as u, t_shoppingcart as c, t_product as p " +
+
+        String sql = "select p.id,al.imagename,p.name,c.quantity,p.wholesaleprice,p.capsulenumber,c.id from  t_user as u, t_shoppingcart as c, t_product as p " +
                 " left join t_album al on p.id = al.productid " +
                 " where u.userId=" + userId + " and u.id=c.userid and c.productid=p.id group by p.id";
 
@@ -130,6 +131,7 @@ public class ProductDao extends AbstractDao implements IProductDao {
         Query query = this.getCurrentSession().createSQLQuery(sql);
 
         List rs = query.list();
+
 
         for (Object object : rs) {
             CartContent cartContent = new CartContent();
