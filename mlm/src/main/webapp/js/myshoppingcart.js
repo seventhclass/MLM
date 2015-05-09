@@ -16,6 +16,7 @@ $(document).ready(function(){
  	
  	$("input[type='number']").change(function(e){
  		var i_id = $(this).attr("data-id");
+ 		var i_productid = $(this).attr("data-productid");
  		var i_qty = $(this).val();
  		var i_price = $(this).attr("data-price");
  		
@@ -24,7 +25,7 @@ $(document).ready(function(){
  		alert("qty="+i_qty);
  		alert("price="+i_price);
  		alert("sub="+i_subtotal);*/
- 		updateShoppingCartItem(i_id,i_qty);
+ 		updateShoppingCartItem(i_id,i_productid,i_qty);
  		 		
  	});
  	
@@ -110,11 +111,11 @@ $(document).ready(function(){
  						+"</tr>"
  						+"<tr>"
  						+"	<td class='itemName'>Quantity:</td>"
- 						+"	<td><input class='numbers' type='number' name='numbers' data-id='"+item.id+"' data-price='"+item.wholesalePrice+"' min='1' max='9999' value='"+item.quantity+"'></td>"
+ 						+"	<td><input class='numbers' type='number' name='numbers' data-productid='"+item.productId+"' data-id='"+item.id+"' data-price='"+item.wholesalePrice+"' min='1' max='9999' value='"+item.quantity+"'></td>"
  						+"</tr>"
 					    +"<tr>"
 				     	+"<td class='itemName'>Subtotal Price:</td>"
-				     	+"<td class='subtotal_price'>$"+parseFloat(item.wholesalePrice*item.quantity).toFixed(2)+"</td>"
+				     	+"<td id='subtotal_id_"+item.id+"' class='subtotal_price'>$"+parseFloat(item.wholesalePrice*item.quantity).toFixed(2)+"</td>"
 				     	+"</tr>" 						
  					);
  				});
@@ -131,7 +132,7 @@ $(document).ready(function(){
  	
  	function delShoppingCartItem(id){
  		var $id = id;
- 		alert("id="+id);
+ 		//alert("id="+id);
  	 	//send requrest to server.
  	    $.ajax({
  	    	url: basePath+'delcartitem',        	
@@ -165,9 +166,10 @@ $(document).ready(function(){
  		}
  	}
  	
- 	function updateShoppingCartItem(id,qty){
- 		alert("id="+id);
- 		alert("qty="+qty);
+ 	function updateShoppingCartItem(id,productid,qty){
+ 		//alert("id="+id);
+ 		//alert("productid="+productid);
+ 		//alert("qty="+qty);
  	 	//send requrest to server. ** add2cart has the same function with updatecart, so we use add2cart instead of updatecart.
  	    $.ajax({
  	    	url: basePath+'updateshoppingcart',        	
@@ -176,6 +178,7 @@ $(document).ready(function(){
  			type:'POST',
  			data: {
  				cartId: id,
+ 				productId:productid,
  				quantity: qty
  			},
  	    	dataType:'json',
@@ -196,16 +199,14 @@ $(document).ready(function(){
  		 		
  		//get quantity from server and set back to front-end page.
  		if (result == "success") {
- 			/*$(this).val(res.shoppingCart.quantity); 		
- 		 	var i_subtotal = (res.shoppingCart.quantity * res.shoppingCart.price).toFixed(2); 		
- 		 	$('#subtotal_id_'+res.shoppingCart.id).html(i_subtotal+"$");
- 		 	$('#total_qty').html(res.shoppingCart.totalQuantity);
- 		 	$('#total_amt').html(res.shoppingCart.totalAmount);*/
+ 			$(this).val(res.quantity); 		
+ 		 	var i_subtotal = (res.quantity * res.price).toFixed(2); 		
+ 		 	$('#subtotal_id_'+res.id).html(i_subtotal+"$");
  			queryMyShoppingCartSummary();
  		}else{
 			alert("Sorry, update item from shopping cart failed! Try again, please. ");
  			window.location.href=basePath+"myshoppingcart";
- 		} 
+ 		}
  		
  	}
  	

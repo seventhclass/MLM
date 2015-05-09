@@ -11,7 +11,7 @@ $(document).ready(function(){
  	function queryCountryInfo(){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/country',        	
+ 	    	url: basePath+'country',        	
  			cache:false,
  			async: false,
  			type:'POST',			

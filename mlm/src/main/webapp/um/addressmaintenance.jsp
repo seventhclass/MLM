@@ -57,8 +57,8 @@
 												<th></th>
 											</tr>
 										</thead>
-									   <tbody>
-									     <tr>
+									   <tbody id="addresslist">
+									     <!-- <tr>
 											<td>Michael</td>
 							           		<td>Wang</td>
 							           		<td>1234 Rue cote-des-neiges apt. 10 Montreal QC Canada</td>
@@ -117,7 +117,7 @@
 							           			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#addresscancel" data-backdrop="static" >Delete</button>
 							           			</div>
 							           		</td>
-									     </tr>  									     									     
+									     </tr>  --> 									     									     
 										</tbody>
 									 </table>
 								</div>	
@@ -174,8 +174,9 @@
 							</label>
 							<div class="col-sm-3">												
 								<select class="form-control">
-								    <option>Canada</option>
-								    <option>US</option>
+								    <option>None</option>
+								    <!-- <option>Canada</option>
+								    <option>US</option> -->
 								</select>
 							</div>
 						</div>	
@@ -184,7 +185,8 @@
 							</label>
 							<div class="col-sm-3">												
 								<select class="form-control">
-								    <option>Quebec</option>
+								    <option>None</option>
+								    <!-- <option>Quebec</option>
 								    <option>Ontario</option>
 								    <option>British Columbia</option>
 								    <option>Alberta</option>
@@ -193,7 +195,7 @@
 								    <option>Saskatchewan</option>
 								    <option>Manitoba</option>
 								    <option>New Brunswick Canada</option>
-								    <option>Prince Edward Island(PEI)</option>
+								    <option>Prince Edward Island(PEI)</option> -->
 								</select>
 							</div>
 						</div>	

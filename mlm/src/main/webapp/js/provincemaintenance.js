@@ -17,7 +17,7 @@ $(document).ready(function(){
  	function queryCountryMenu(){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/country',        	
+ 	    	url: basePath+'country',        	
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -59,7 +59,7 @@ $(document).ready(function(){
  		//alert(countryCode);
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/province',        	
+ 	    	url: basePath+'province',        	
  			cache:false,
  			async: false,
  			data : {
