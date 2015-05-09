@@ -119,8 +119,6 @@ public class ShoppingCartController {
     @ResponseBody
     public BaseJs updateShoppingCart(@RequestParam("cartId") String cartId,
                                      @RequestParam("quantity") String quantity) {
-
-        //CartContent cartContent=new CartContent();
         UpdateProductJs updateProductJs=new UpdateProductJs();
 
         try {
