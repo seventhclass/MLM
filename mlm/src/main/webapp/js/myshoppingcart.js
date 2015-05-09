@@ -114,7 +114,7 @@ $(document).ready(function(){
  						+"	<td><input class='numbers' type='number' name='numbers' data-productid='"+item.productId+"' data-id='"+item.id+"' data-price='"+item.wholesalePrice+"' min='1' max='9999' value='"+item.quantity+"'></td>"
  						+"</tr>"
 					    +"<tr>"
-				     	+"<td class='itemName'>Subtotal Price:</td>"
+				     	+"<td class='itemName'>Subtotal Amount:</td>"
 				     	+"<td id='subtotal_id_"+item.id+"' class='subtotal_price'>$"+parseFloat(item.wholesalePrice*item.quantity).toFixed(2)+"</td>"
 				     	+"</tr>" 						
  					);
