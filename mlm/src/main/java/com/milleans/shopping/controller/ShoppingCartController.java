@@ -50,7 +50,7 @@ public class ShoppingCartController {
     @RequestMapping(value = "/shoppingcart", method = RequestMethod.POST)
     @ResponseBody
     public CartContentJs getShoppingCart(HttpSession httpSession) {
-        String suid = (String) httpSession.getAttribute("userid");
+        String suid = (String) httpSession.getAttribute("uid");
 
         CartContentJs cartContentJs = new CartContentJs();
         try {
