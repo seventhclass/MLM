@@ -17,8 +17,8 @@
 			<ul class='nav navbar-nav'>
 		  		<li><a href='<%=request.getContextPath()%>/home'>Home</a></li>
   				<li><a href='<%=request.getContextPath()%>/products'>Products</a></li>
-		 		<li><a href='<%=request.getContextPath()%>/aboutus'>About Us</a></li>
-		 		<li><a href='<%=request.getContextPath()%>/contactus'>Contact Us</a></li>
+		 		<li><a href='<%=request.getContextPath()%>common/aboutus'>About Us</a></li>
+		 		<li><a href='<%=request.getContextPath()%>common/contactus'>Contact Us</a></li>
   				<li><a href='<%=request.getContextPath()%>/selectAutoship'>Registration</a></li>
   				<li><a href='<%=request.getContextPath()%>/login'>Login</a></li>
   				<li><a href='<%=request.getContextPath()%>/logout'>Logout</a></li>
