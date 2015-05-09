@@ -75,8 +75,8 @@ public class ShoppingCartController {
         //String price = webRequest.getParameter("price");
         String quantity = webRequest.getParameter("quantity");
 
-        String userId = session.getAttribute("uid").toString();
-        String sid = session.getAttribute("id").toString();
+        //String userId = session.getAttribute("uid").toString();
+        String sid = session.getAttribute("uid").toString();
 
         try {
             ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(sid);
