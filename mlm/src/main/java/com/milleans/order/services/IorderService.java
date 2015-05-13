@@ -1,5 +1,6 @@
 package com.milleans.order.services;
 
+import com.milleans.model.Order;
 import com.milleans.service.ICrud;
 
 /**
@@ -8,5 +9,5 @@ import com.milleans.service.ICrud;
 public interface IorderService extends ICrud{
 
 
-
+    Order getOrder(Integer integer);
 }
