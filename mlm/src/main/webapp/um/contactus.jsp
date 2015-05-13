@@ -17,6 +17,18 @@
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>	
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/contactus.js"></script>	
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script>
+		function initialize() {
+		  var mapProp = {
+		    center:new google.maps.LatLng(45.504977,-73.577130),
+		    zoom:5,
+		    mapTypeId:google.maps.MapTypeId.ROADMAP
+		  };
+		  var map=new google.maps.Map(document.getElementById("google-maps"),mapProp);
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
 </head>
 <body>
 	 <div class="container">
@@ -72,15 +84,33 @@
 						</div>							
 						<div class="form-group">
 							<div class="col-sm-offset-5 col-sm-6">
-								<button type="submit" class="btn btn-success btn-lg btnsubmit">Submit</button>
+								<button type="submit" class="btn btn-danger btn-lg btnsubmit">Submit</button>
 							</div>																				
 						</div>						
 					</form>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6 messagebox">
+					<ul class="list-unstyled contactlist">
+						<li>
+							<span class="glyphicon glyphicon-home" style="color:#5cb85c;font-size:25px;"></span>
+							<strong class="addr_title">Montreal</strong>
+							<div class="addr">102 Madison Ave, Second Floor New York, NY, 10016</div>
+						</li>
+						<li>
+							<span class="glyphicon glyphicon-phone-alt" style="color:#5cb85c;font-size:25px;"></span>
+							<span class="phone_title">Give Us a Call</span>						
+							<div><strong class="phone">800-888-1688</strong></div>
+						</li>
+						<li>
+							<span class="glyphicon glyphicon-print" style="color:#5cb85c;font-size:25px;"></span>
+							<span class="fax_title">Send us a Fax</span>						
+							<div><strong class="fax">1-800-278-0816</strong></div>
+						</li>						
+					</ul>
 				</div>				
 			</div>			
 			<div class="row">
+			<div id="google-maps"></div>
 			</div>
 			<div id="right">
 			</div>
