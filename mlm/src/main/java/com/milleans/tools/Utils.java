@@ -62,4 +62,12 @@ public class Utils {
         return br;
 
     }
+
+    public synchronized String getOrderNumber(String part) {
+        String order;
+
+        long time = System.currentTimeMillis();
+        order = part + time;
+        return order;
+    }
 }
