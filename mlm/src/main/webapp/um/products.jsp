@@ -30,11 +30,11 @@
 				<div class="col-md-3">
 					<div id="left">
 						<div class="btn-group-vertical categorybox">
-							<button class="btn btn-success category_btn" data-categoryid="1" type="button">Anti-Aging             </button>
+							<!-- <button class="btn btn-success category_btn" data-categoryid="1" type="button">Anti-Aging             </button>
 							<button class="btn btn-success category_btn" data-categoryid="2" type="button">Life Extension         </button>
 							<button class="btn btn-success category_btn" data-categoryid="3" type="button">Brain Health           </button>
 							<button class="btn btn-success category_btn" data-categoryid="4" type="button">Energy & Performance   </button>
-							<button class="btn btn-success category_btn" data-categoryid="5" type="button">Wealth Creation        </button>
+							<button class="btn btn-success category_btn" data-categoryid="5" type="button">Wealth Creation        </button> -->
 						</div>
 					</div>
 				</div>
