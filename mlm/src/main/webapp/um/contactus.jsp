@@ -103,7 +103,7 @@
 						</li>
 						<li>
 							<span class="glyphicon glyphicon-print" style="color:#5cb85c;font-size:25px;"></span>
-							<span class="fax_title">Send us a Fax</span>						
+							<span class="fax_title">Send Us a Fax</span>						
 							<div><strong class="fax">1-800-278-0816</strong></div>
 						</li>						
 					</ul>
