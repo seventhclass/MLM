@@ -273,4 +273,13 @@ public class ProductController {
         return imageListJs;
     }
 
+    @RequestMapping(value = "/productDetail", method = RequestMethod.GET)
+    @ResponseBody
+    public BaseJs getProductDetail(@RequestParam("id") String id) {
+
+        BaseJs baseJs = new BaseJs();
+
+        return baseJs;
+    }
+
 }
