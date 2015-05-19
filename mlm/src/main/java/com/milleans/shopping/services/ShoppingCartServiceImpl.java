@@ -39,7 +39,6 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
     public ShoppingCart getItemById(String shoppingCartId) {
         //shoppingCartDao.get
         int sid=Integer.valueOf(shoppingCartId);
-
         return shoppingCartDao.getItemById(sid);
     }
 
@@ -54,6 +53,10 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
         return shoppingCartDao.getCart(productId,userId);
     }
 
+    @Override
+    public void getProuctsOfCart(String uid) {
+
+    }
 
 
     @Override
