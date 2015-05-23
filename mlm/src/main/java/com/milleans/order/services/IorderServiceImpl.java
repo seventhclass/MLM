@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by LeHu on 5/9/15 2:59 PM.
  */
-@Service("iorderService")
+@Service("orderService")
 public class IorderServiceImpl implements IorderService {
     @Override
     public void save(Object object) {
