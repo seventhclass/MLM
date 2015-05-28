@@ -130,7 +130,7 @@ $(document).ready(function () {
                         + "  <td style='display:none;'>" + item.description + "</td>"
                         + "  <td>"
                         + "		<div >"
-                        + "			<button type='button' class='btn btn-success btn-sm editproductbtn' data-toggle='modal' data-target='.productmaintenance' data-backdrop='static' >&nbsp;&nbsp;Edit&nbsp;&nbsp;</button>"
+                        + "			<button type='button' class='btn btn-success btn-sm editproductbtn' data-toggle='modal' data-target='.productmaintenance' data-backdrop='static' >&nbsp;&nbsp;Edit11111&nbsp;&nbsp;<span class='glyphicon glyphicon-penci'></span></button>"
                         + "		</div>"
                         + "		<div >"
                         + "			<button type='button' class='btn btn-danger btn-sm delproductbtn' data-toggle='modal' data-productid='" + item.id + "' data-target='#productcancel' data-backdrop='static' >Delete</button>"
