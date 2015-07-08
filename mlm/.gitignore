@@ -9,4 +9,5 @@ out/
 .project
 .settings/
 .idea/
-log.out
+log.out*
+

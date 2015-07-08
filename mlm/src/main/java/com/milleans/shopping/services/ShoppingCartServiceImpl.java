@@ -54,8 +54,9 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
     }
 
     @Override
-    public void getProuctsOfCart(String uid) {
+    public List<Integer> getProuctsOfCart(String uid) {
 
+        return shoppingCartDao.getAllProductIds(uid);
     }
 
 

@@ -21,5 +21,7 @@ public interface IShoppingCartService extends ICrud {
 
     public ShoppingCart getCart(int productId, String userId);
 
-    void getProuctsOfCart(String uid);
+    List<Integer> getProuctsOfCart(String uid);
+
+
 }

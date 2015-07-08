@@ -152,6 +152,7 @@ CREATE TABLE `t_order` (
   `id`         INT(6) UNSIGNED    NOT NULL AUTO_INCREMENT,
   `date`       DATE            NOT NULL,
   `userid`     BIGINT(8) UNSIGNED NOT NULL,
+  `productId`  INT(6) UNSIGNED NOT NULL,
   `autoshipid` INT(6) UNSIGNED    NOT NULL,
   `paymentid`  INT(6) UNSIGNED    NOT NULL,
   `status`     INT(6) UNSIGNED    NOT NULL,

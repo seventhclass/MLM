@@ -9,6 +9,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -105,6 +106,25 @@ public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao
         } else {
             return list.get(0);
         }
+    }
+
+    @Override
+    public List<Integer> getAllProductIds(String uid) {
+
+        Criteria criteria = this.getCurrentSession().createCriteria(ShoppingCart.class);
+
+        criteria.add(Restrictions.eq("userId", Integer.valueOf(uid)));
+        List<ShoppingCart> rs = criteria.list();
+
+        List<Integer> pids = new ArrayList<>();
+
+        for (ShoppingCart s : rs) {
+            pids.add(s.getProductId());
+        }
+
+        //System.out.println("rs===="+rs);
+
+        return pids;
     }
 
 

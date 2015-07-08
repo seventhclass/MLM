@@ -38,5 +38,10 @@ public class ShoppingCartServiceImplTest extends AbsTest {
     }
 
 
+    @Test
+    public void testGetProuctsOfCart() throws Exception {
+        IShoppingCartService shoppingCartService = (IShoppingCartService) context.getBean("shoppingCartService");
 
+        shoppingCartService.getProuctsOfCart("7");
+    }
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by macbookpro on 2015-03-26.
@@ -46,7 +47,9 @@ public class OrderController {
             if (order == null) {
                 // create order.
                 //order=new Order();
-                shoppingCartService.getProuctsOfCart(uid);
+                List<Integer> pids = shoppingCartService.getProuctsOfCart(uid);
+
+
 
             } else {
 

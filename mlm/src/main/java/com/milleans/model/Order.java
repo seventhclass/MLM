@@ -21,6 +21,9 @@ public class Order {
     @Column(name = "userid")
     private int userid;
 
+    @Column(name = "productId")
+    private int productId;
+
     @Column(name = "autoshiped")
     private int autoshipid;
 
@@ -30,6 +33,13 @@ public class Order {
     @Column(name = "status")
     private int status;
 
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 
     public int getId() {
         return id;
