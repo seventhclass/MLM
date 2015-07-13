@@ -47,10 +47,10 @@
                             <div class="list-group-item">
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        Member ID: <span id="memberId">ABCDE00001</span>
+                                        Member ID: <span id="memberId"></span>
                                     </div>
                                     <div class="col-sm-4">
-                                        <span id="memberName">Michael Wang</span>
+                                        Name : <span id="memberName"></span>
                                     </div>
                                     <div class="col-sm-5">
                                         <div class="list-group">

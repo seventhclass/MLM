@@ -115,6 +115,7 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             Utils.getFailMessage(e.getMessage());
+            
         }
         //jsonResponseDto.setResult("success");
         //jsonResponseDto.setMessage("it's really success.");
