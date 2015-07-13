@@ -401,6 +401,7 @@ DEFAULT CHARACTER SET = utf8;
 -- ----------------------------
 -- Table structure for `t_user`
 -- ----------------------------
+
 DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
   `id` BIGINT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -420,7 +421,7 @@ CREATE TABLE `t_user` (
   `birthday` DATE DEFAULT NULL,
   `email` VARCHAR(60) NOT NULL,
   `address` VARCHAR(60) DEFAULT NULL,
-  `countryid` INT(6) UNSIGNED DEFAULT NULL,
+  `country` VARCHAR(30) DEFAULT NULL,
   `province` VARCHAR(30) DEFAULT NULL,
   `city` VARCHAR(30) DEFAULT NULL,
   `zip` VARCHAR(20) DEFAULT NULL,

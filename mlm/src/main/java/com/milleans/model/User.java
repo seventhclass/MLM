@@ -65,8 +65,8 @@ public class User implements Serializable {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "countryid")
-    private int countryId;
+    @Column(name = "country")
+    private String country;
 
     @Column(name = "province")
     private String province;
@@ -214,12 +214,12 @@ public class User implements Serializable {
         this.address = address;
     }
 
-    public int getCountryId() {
-        return countryId;
+    public String getCountry() {
+        return country;
     }
 
-    public void setCountryId(int countryId) {
-        this.countryId = countryId;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getProvince() {

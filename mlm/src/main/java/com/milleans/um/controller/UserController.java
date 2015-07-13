@@ -91,8 +91,8 @@ public class UserController {
 
             session.setAttribute("userid", memberid);
             session.setAttribute("username", username);
-            session.setAttribute("autoType",user.getAccountId());
-            session.setAttribute("uid",user.getId());
+            session.setAttribute("autoType", user.getAccountId());
+            session.setAttribute("uid", user.getId());
 
             return loginDto;
         } else {
@@ -115,7 +115,7 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             Utils.getFailMessage(e.getMessage());
-            
+
         }
         //jsonResponseDto.setResult("success");
         //jsonResponseDto.setMessage("it's really success.");
@@ -170,7 +170,7 @@ public class UserController {
             user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
 
             user.setAddress(request.getParameter("address"));
-            user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
+            user.setCountry(request.getParameter("countrycode"));
             user.setProvince(request.getParameter("provincecode"));
             user.setCity(request.getParameter("city"));
             user.setZip(request.getParameter("zip"));
@@ -222,7 +222,7 @@ public class UserController {
             user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
 
             user.setAddress(request.getParameter("address"));
-            user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
+            user.setCountry(request.getParameter("countrycode"));
             user.setProvince(request.getParameter("provincecode"));
             user.setCity(request.getParameter("city"));
             user.setZip(request.getParameter("zip"));
@@ -265,7 +265,7 @@ public class UserController {
             user.setPassWord(Utils.getHashPassword(request.getParameter("password1")));
 
             user.setAddress(request.getParameter("address"));
-            user.setCountryId(Integer.valueOf(request.getParameter("countrycode")));
+            user.setCountry(request.getParameter("countrycode"));
             user.setProvince(request.getParameter("provincecode"));
             user.setCity(request.getParameter("city"));
             user.setZip(request.getParameter("zip"));

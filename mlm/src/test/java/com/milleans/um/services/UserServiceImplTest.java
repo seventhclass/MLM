@@ -36,7 +36,7 @@ public class UserServiceImplTest {
         user.setRoleId(77);
         user.setUserId("abc111");
         user.setAddress("5004 QueenMary");
-        String birthdayStr="2009-02-11";
+        String birthdayStr = "2009-02-11";
         SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
         Date convertedCurrentDate = null;
         try {
@@ -47,7 +47,7 @@ public class UserServiceImplTest {
         user.setBirthDate(convertedCurrentDate);
         user.setCompanyName("7th company");
         user.setCompanyType(1);
-        user.setCountryId(86);
+        user.setCountry("china");
         user.setDate(new Date());
         user.setEmail("hu.le.ca@gmail.com");
         user.setFax("5148850513");
@@ -76,7 +76,6 @@ public class UserServiceImplTest {
         Assert.assertNotNull(user);
 
     }
-
 
 
 }
