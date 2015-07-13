@@ -1,19 +1,24 @@
 package com.milleans.order.controller;
 
-import com.milleans.dto.BaseJs;
 import com.milleans.model.Order;
+import com.milleans.model.OrderHasProduct;
+import com.milleans.model.OrderUionProductPKID;
+import com.milleans.model.ShoppingCart;
+import com.milleans.order.dto.*;
+import com.milleans.order.services.IorderHasProductService;
 import com.milleans.order.services.IorderService;
 import com.milleans.shopping.services.IShoppingCartService;
 import com.milleans.tools.Constant;
 import com.milleans.tools.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -21,49 +26,153 @@ import java.util.List;
  */
 @Controller("orderController")
 @RequestMapping("order")
+@Transactional
 public class OrderController {
 
     @Autowired
     private IorderService orderService;
 
     @Autowired
+    private IorderHasProductService orderHasProductService;
+
+    @Autowired
     private IShoppingCartService shoppingCartService;
 
-    @RequestMapping(value = "/orderentry", method = RequestMethod.GET)
-    public ModelAndView orderEntry() {
-        return new ModelAndView("um/orderentry");
+    @RequestMapping(value = "/orderentry/{orderId}", method = RequestMethod.GET)
+    public ModelAndView orderEntry(@PathVariable("orderId") String orderId) {
+        ModelAndView modelAndView = new ModelAndView("um/orderentry");
+        System.out.println("---->>>>" + orderId);
+        modelAndView.addObject("orderId", orderId);
+        return modelAndView;
+    }
+
+
+    @RequestMapping(value = "/products/{orderId}", method = RequestMethod.POST)
+    @ResponseBody
+    public ProductListOfOrder getProductsOfOrder(@PathVariable("orderId") String orderId) {
+        ProductListOfOrder productListOfOrder = new ProductListOfOrder();
+        try {
+            List<OrderProducts> orderProductsList =
+                    orderHasProductService.getProductsByOrderId(Integer.valueOf(orderId));
+
+            for (OrderProducts orderProducts : orderProductsList) {
+                productListOfOrder.setVolumeTotal(productListOfOrder.getVolumeTotal() + orderProducts.getVolume());
+                productListOfOrder.setPriceTotal(productListOfOrder.getPriceTotal().add(orderProducts.getPriceTotal()));
+                productListOfOrder.setPointsTotal(productListOfOrder.getPointsTotal().add(orderProducts.getPointsTotal()));
+            }
+
+            productListOfOrder.setMyOrderInfo(orderProductsList);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            productListOfOrder.setMessage(e.getMessage());
+            productListOfOrder.setMessage("fail");
+        }
+
+        return productListOfOrder;
     }
 
 
     @RequestMapping(value = "/makeOrder", method = RequestMethod.POST)
     @ResponseBody
-    public BaseJs makeOrder(HttpSession httpSession) {
+    @Transactional
+    public MakingOrderDto makeOrder(HttpSession httpSession) {
+
         String uid = httpSession.getAttribute(Constant.Uid).toString();
-        BaseJs baseJs = new BaseJs();
+        MakingOrderDto makingOrderDto = new MakingOrderDto();
 
         try {
-            Order order = orderService.getOrder(Integer.valueOf(uid));
+            List<ShoppingCart> shoppingCartList = shoppingCartService.getListOfShoppingCart(Integer.valueOf(uid));
+            String orderIdL = Utils.getOrderNumber();
+            Order newOrder = new Order();
+            newOrder.setDate(Calendar.getInstance().getTime());
+            newOrder.setOrderIdL(orderIdL);
+            newOrder.setStatus(Constant.OrderPending);
+            newOrder.setUserid(Integer.valueOf(uid));
+            int curOrderId
+                    = orderService.saveOrder(newOrder);
+            //step 1
+            // cp shopping content to order
+            List<OrderHasProduct> orderHasProductList
+                    = new ArrayList<>();
+            for (ShoppingCart shoppingCart : shoppingCartList) {
+                OrderHasProduct orderHasProduct = new OrderHasProduct();
+                OrderUionProductPKID orderUionProductPKID = new OrderUionProductPKID();
+                orderUionProductPKID.setOrderId(curOrderId);
+                orderUionProductPKID.setProductId(shoppingCart.getProductId());
 
-            if (order == null) {
-                // create order.
-                //order=new Order();
-                List<Integer> pids = shoppingCartService.getProuctsOfCart(uid);
+//                orderHasProduct.setOrderId(newOrder.getId());
+//                orderHasProduct.setProductId(shoppingCart.getProductId());
+                orderHasProduct.setOrderUionProductPKID(orderUionProductPKID);
+                orderHasProduct.setQuantity(shoppingCart.getQuantity());
 
-
-
-            } else {
-
+                orderHasProductList.add(orderHasProduct);
             }
+            orderHasProductService.save(orderHasProductList);
+            //step 2:
+            // empty shopping cart
+            shoppingCartService.emptyShoppingCart(Integer.valueOf(uid));
+
+            makingOrderDto.setOrderId(newOrder.getId());
+            makingOrderDto.setOrderIdL(newOrder.getOrderIdL());
+
         } catch (Exception e) {
             e.printStackTrace();
             Utils.getFailMessage(e.getMessage());
+            makingOrderDto.setMessage(e.getMessage());
+            makingOrderDto.setResult("fail");
         }
 
-        //Order order= iorderService.save();
-        //iorderService.save();
-
-        return baseJs;
+        return makingOrderDto;
     }
 
+    @RequestMapping(value = "/bindShippingId", method = RequestMethod.POST)
+    @ResponseBody
+    public OrderAutoShipBinding bindingAutoShip(@RequestParam("orderId") String orderId, @RequestParam("autoShopId") String autoShipId) {
+
+        OrderAutoShipBinding orderAutoShipBinding = new OrderAutoShipBinding();
+
+        try {
+            int _orderId = Integer.valueOf(orderId);
+            int _autoShipId = Integer.valueOf(autoShipId);
+            Order order = orderService.getOrder(_orderId);
+
+            order.setAutoshipid(_autoShipId);
+
+            orderService.update(order);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Utils.getFailMessage(e.getMessage());
+            orderAutoShipBinding.setMessage(e.getMessage());
+            orderAutoShipBinding.setResult("fail");
+        }
+
+        return orderAutoShipBinding;
+    }
+
+    @RequestMapping(value = "/bindPayment", method = RequestMethod.POST)
+    @ResponseBody
+    public OrderPaymentBinding bindingPayment(@RequestParam("orderId") String orderId, @RequestParam("paymentId") String paymentId) {
+        OrderPaymentBinding orderPaymentBinding = new OrderPaymentBinding();
+
+        try {
+            int _orderId = Integer.valueOf(orderId);
+            int _paymentId = Integer.valueOf(paymentId);
+
+            Order order = orderService.getOrder(_orderId);
+
+            order.setPaymentid(_paymentId);
+
+            orderService.update(order);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Utils.getFailMessage(e.getMessage());
+            orderPaymentBinding.setMessage(e.getMessage());
+            orderPaymentBinding.setResult("fail");
+        }
+
+        return orderPaymentBinding;
+    }
 
 }

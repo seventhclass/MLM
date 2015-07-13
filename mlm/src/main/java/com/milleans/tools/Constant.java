@@ -9,4 +9,8 @@ public class Constant {
 
     public static String Uid = "uid";
 
+    public static int OrderPending=1;
+
+//    public static String
+
 }

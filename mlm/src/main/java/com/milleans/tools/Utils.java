@@ -63,11 +63,11 @@ public class Utils {
 
     }
 
-    public synchronized String getOrderNumber(String part) {
-        String order;
+    public synchronized static String getOrderNumber() {
+       // String order;
 
         long time = System.currentTimeMillis();
-        order = part + time;
-        return order;
+//        order = part + time;
+        return String.valueOf(time);
     }
 }

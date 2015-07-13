@@ -15,29 +15,41 @@ import java.util.List;
 /**
  * Created by LeHu on 4/24/15 10:41 PM.
  */
-@Transactional
 @Repository("shoppingCartDao")
+@Transactional
 public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao {
 
 
+//    @Override
+//    public ShoppingCart getCurrentCart(String userId) {
+//
+//        String hql = "select c from ShoppingCart as c, User as u " +
+//                " where c.userId=u.id and u.userId=" + userId;
+//
+//        Query query = this.getCurrentSession().createQuery(hql);
+//
+//        List list = query.list();
+//
+//        ShoppingCart shoppingCart = null;
+//
+//        for (Object object : list) {
+//            Object[] objects = (Object[]) object;
+//            shoppingCart = (ShoppingCart) objects[0];
+//        }
+//
+//        return shoppingCart;
+//    }
+
     @Override
-    public ShoppingCart getCurrentCart(String userId) {
+    public List<ShoppingCart> getListOfShoppingCart(int userId) {
 
-        String hql = "select c from ShoppingCart as c, User as u " +
-                " where c.userId=u.id and u.userId=" + userId;
+        Criteria criteria = this.getCurrentSession().createCriteria(ShoppingCart.class);
 
-        Query query = this.getCurrentSession().createQuery(hql);
+        criteria.add(Restrictions.eq("userId",userId));
 
-        List list = query.list();
+        List<ShoppingCart> list=criteria.list();
 
-        ShoppingCart shoppingCart = null;
-
-        for (Object object : list) {
-            Object[] objects = (Object[]) object;
-            shoppingCart = (ShoppingCart) objects[0];
-        }
-
-        return shoppingCart;
+        return list;
     }
 
     @Override
@@ -125,6 +137,15 @@ public class ShoppingCartDaoImpl extends AbstractDao implements IShoppingCartDao
         //System.out.println("rs===="+rs);
 
         return pids;
+    }
+
+    @Override
+    @Transactional
+    public void emptyShoppingCart(int uid) {
+        String sql="delete  ShoppingCart as s where s.userId=:_uid";
+        Query query= this.getCurrentSession().createQuery(sql);
+        query.setParameter("_uid",uid);
+        int result=query.executeUpdate();
     }
 
 

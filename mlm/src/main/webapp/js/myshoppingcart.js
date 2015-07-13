@@ -36,7 +36,7 @@ $(document).ready(function(){
  	function makeOrder(){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'makeOrder',        	
+ 	    	url: basePath+'order/makeOrder',
  			cache:false,
  			async: false,
  			type:'POST',			
@@ -47,22 +47,26 @@ $(document).ready(function(){
  		                //$('#content').html(xhr.responseText); 		               
  	    			},        	
  	    	success:	function(res) {
+						//alert("zzz==="+res)
+						console.log("res==="+res);
  	    				makeOrderResponse(res);
  	    			}
  	    });  		
  	}
  	
- 	function makeOrderResponse(){
+ 	function makeOrderResponse(res){
  		var result = res.result;			//response code
  		var message = res.message;			//response message
  		
  		if (result == "success") {
- 			window.location.href=basePath+"orderentry";;
+ 			window.location.href=basePath+"order/orderentry/"+res.orderId;
  		}else{
 			alert("Sorry, make order failed! Try again, please. ");
- 			window.location.href=basePath+"myshoppingcart";;
+ 			window.location.href=basePath+"myshoppingcart";
  		}	
  	}
+
+
  	
  	//Query shopping cart information
  	function queryShoppingCartInfo(){

@@ -66,8 +66,9 @@ $(document).ready(function(){
 	
  	function queryOrderInfo(){
  	 	//send requrest to server.
+		var _orderId=$("#orderId").val();
  	    $.ajax({
- 	    	url: basePath+'/order',        	
+ 	    	url: basePath+'order/products/'+_orderId,
  			cache:false,
  			async: false,
  			type:'POST',
@@ -75,12 +76,14 @@ $(document).ready(function(){
  	    	timeout:5000,
  	    	error:	function(xhr, ajaxOptions, thrownError){
  		                alert(xhr.status+"\n"+xhr.responseText);
- 		                //$('#content').html(xhr.responseText); 		               
- 	    			},        	
+ 		                //$('#content').html(xhr.responseText);
+ 	    			},
  	    	success:	function(res) {
+				//alert("222");
+				console.log(res);
  	    		queryOrderInfoResponse(res);
- 	    			}
- 	    });   		
+			}
+ 	    });
  	}
  	
  	function processMyShoppingCart(action){
@@ -126,12 +129,13 @@ $(document).ready(function(){
  			$('#myOrderList').html("");	
  			if(res.myOrderInfo && res.myOrderInfo.length>0){
  				$.each(res.myOrderInfo,function(i, item){
+					//<input class='numbers' type='number' name='numbers' data-id='"+item.id+"' data-seq='"+item.seq+"' min='1' max='9999' value='"+item.quantity+"'>
  					$('#myOrderList').append(
  						"<tr>"
- 						+"	<td>"+item.date+"</td>"
+ 						+"	<td>"+item.id+"</td>"
  						+"	<td>"+item.itemCode+"</td>"
  						+"	<td>"+item.name+"</td>"
- 						+"	<td><input class='numbers' type='number' name='numbers' data-id='"+item.id+"' data-seq='"+item.seq+"' min='1' max='9999' value='"+item.quantity+"'></td>"
+ 						+"	<td>"+item.quantity+"</td>"
 					    +"	<td>"+item.currency+"</td>"	
 					    +"	<td>$"+item.price+"</td>"
  						+"	<td>"+item.volume+"</td>"

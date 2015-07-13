@@ -8,6 +8,11 @@ import com.milleans.service.ICrud;
  */
 public interface IorderService extends ICrud{
 
-
     Order getOrder(Integer integer);
+
+    //void saveOrderHasProduct()
+
+    int saveOrder(Order order);
+
+
 }

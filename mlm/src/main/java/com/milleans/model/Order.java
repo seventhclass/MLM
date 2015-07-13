@@ -11,7 +11,7 @@ import java.util.Date;
 public class Order {
 
     @Id
-    @Column(name = "Id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
@@ -21,10 +21,7 @@ public class Order {
     @Column(name = "userid")
     private int userid;
 
-    @Column(name = "productId")
-    private int productId;
-
-    @Column(name = "autoshiped")
+    @Column(name = "autoshipid")
     private int autoshipid;
 
     @Column(name = "paymentid")
@@ -33,12 +30,15 @@ public class Order {
     @Column(name = "status")
     private int status;
 
-    public int getProductId() {
-        return productId;
+    @Column(name = "orderIdl")
+    private String orderIdL;
+
+    public String getOrderIdL() {
+        return orderIdL;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setOrderIdL(String orderIdL) {
+        this.orderIdL = orderIdL;
     }
 
     public int getId() {

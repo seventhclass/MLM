@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface IShoppingCartDao extends IDao {
 
-    public ShoppingCart getCurrentCart(String userId);
+    public List<ShoppingCart> getListOfShoppingCart(int userId);
 
     void saveOrUpdate(ShoppingCart shoppingCart);
 
@@ -23,7 +23,11 @@ public interface IShoppingCartDao extends IDao {
 
     List<Integer> getAllProductIds(String uid);
 
+    void emptyShoppingCart(int uid);
+
 //    List<CartContent> getProductList(String userId);
+
+
 
 
 }
