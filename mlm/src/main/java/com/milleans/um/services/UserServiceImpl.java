@@ -2,6 +2,7 @@ package com.milleans.um.services;
 
 import com.milleans.model.User;
 import com.milleans.um.dao.IUserDAO;
+import com.milleans.um.dto.AddressDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,7 +21,7 @@ public class UserServiceImpl implements IUserService {
     @Transactional
     public User signUp(User userInfo) {
         System.out.println("user service ---------");
-        User user=userDAO.save(userInfo);
+        User user = userDAO.save(userInfo);
 
         return user;
     }
@@ -36,9 +37,9 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     @Transactional
-    public String checkEmail(String email){
-        String _email=null;
-        _email=userDAO.getEmail(email);
+    public String checkEmail(String email) {
+        String _email = null;
+        _email = userDAO.getEmail(email);
 
         return _email;
     }
@@ -47,6 +48,23 @@ public class UserServiceImpl implements IUserService {
     public String getSponorId(String userId) {
 
         return userDAO.getSponsorId(userId);
+    }
+
+    @Override
+    public AddressDTO getAddress(String userId) {
+        AddressDTO addressDTO = new AddressDTO();
+
+        User user = userDAO.getUser(userId);
+
+        addressDTO.setAddress(user.getAddress());
+        addressDTO.setCity(user.getCity());
+        addressDTO.setCountry(user.getCountry());
+        addressDTO.setName(user.getFirstName() + " " + user.getLastName());
+        addressDTO.setPhone(user.getPhone());
+        addressDTO.setProvince(user.getProvince());
+        addressDTO.setZip(user.getZip());
+
+        return addressDTO;
     }
 
 

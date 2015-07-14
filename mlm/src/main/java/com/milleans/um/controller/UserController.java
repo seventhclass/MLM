@@ -2,6 +2,8 @@ package com.milleans.um.controller;
 
 import com.milleans.model.User;
 import com.milleans.tools.Utils;
+import com.milleans.um.dto.AddressDTO;
+import com.milleans.um.dto.AddressList;
 import com.milleans.um.dto.JsonResponseDto;
 import com.milleans.um.dto.LoginDto;
 import com.milleans.um.services.IUserService;
@@ -21,7 +23,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by macbookpro on 2015-03-07.
@@ -375,5 +379,24 @@ public class UserController {
         return new ModelAndView("um/categorymaintenance");
     }
 
+
+    @RequestMapping(value = "/user/address", method = RequestMethod.POST)
+    @ResponseBody
+    public AddressList getAddress(HttpSession httpSession) {
+        AddressList addressList = new AddressList();
+        List<AddressDTO> addressDTOList = new ArrayList<>();
+        AddressDTO addressDTO = null;
+        try {
+            String userId = httpSession.getAttribute("userid").toString();
+            addressDTO = userService.getAddress(userId);
+            addressDTOList.add(addressDTO);
+            addressList.setShippingAddress(addressDTOList);
+        } catch (Exception e) {
+            e.printStackTrace();
+            addressList.setMessage(e.getMessage());
+            addressList.setResult("fail");
+        }
+        return addressList;
+    }
 
 }
