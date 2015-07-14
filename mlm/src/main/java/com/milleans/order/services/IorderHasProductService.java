@@ -1,9 +1,12 @@
 package com.milleans.order.services;
 
 import com.milleans.model.OrderHasProduct;
+import com.milleans.order.dto.OrderHasProductDTO;
 import com.milleans.order.dto.OrderProducts;
+import com.milleans.order.dto.OrderSummaryDto;
 import com.milleans.service.ICrud;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,5 +20,7 @@ public interface IorderHasProductService extends ICrud {
 
     List<OrderProducts> getProductsByOrderId(int orderId);
 
+    OrderSummaryDto getOrderSummary(int orderId);
 
+    ArrayList<OrderHasProductDTO> getItem(int orderId);
 }

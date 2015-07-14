@@ -46,7 +46,7 @@ public class IorderServiceImpl implements IorderService {
 
     @Override
     public Order getOrder(Integer integer) {
-        return null;
+        return orderDao.getOrder(integer);
     }
 
     @Override

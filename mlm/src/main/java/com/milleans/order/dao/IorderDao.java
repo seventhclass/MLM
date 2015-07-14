@@ -12,4 +12,7 @@ public interface IorderDao extends IDao {
     int saveOrder(Order order);
 
     ArrayList<Order> getOrders(int uid);
+
+
+    Order getOrder(int order);
 }

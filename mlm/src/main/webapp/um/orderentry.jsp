@@ -183,7 +183,7 @@
                                     </form>
                                 </div> -->
                                 <div id="finish_order" class="text-center">
-                                    <a href="<%=request.getContextPath()%>/payandship">
+                                    <a href="<%=request.getContextPath()%>/payandship/${orderId}">
                                         <button type="button" class="btn btn-primary">Finished Order <span
                                                 class="glyphicon glyphicon-ok-sign"></span></button>
                                     </a>

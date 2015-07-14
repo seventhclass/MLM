@@ -18,4 +18,6 @@ public interface IProductService extends ICrud {
 
     public List<CartContent> getProductByCart(String userId);
 
+    //public Product getProduct(int productId);
+
 }
