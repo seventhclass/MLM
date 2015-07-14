@@ -1,6 +1,7 @@
 package com.milleans.payment.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,13 +13,17 @@ import org.springframework.web.servlet.ModelAndView;
 public class PayController {
 
 
-    @RequestMapping(value = "/paymenttype",method = RequestMethod.GET)
+    @RequestMapping(value = "/paymenttype", method = RequestMethod.GET)
     public ModelAndView paymentType() {
         return new ModelAndView("um/paymenttype");
     }
 
-    @RequestMapping(value = "/payandship",method = RequestMethod.GET)
-    public ModelAndView payandShip() {
-        return new ModelAndView("um/payandship");
+    @RequestMapping(value = "/payandship/{orderId}", method = RequestMethod.GET)
+    public ModelAndView payandShip(@PathVariable("orderId") String orderId) {
+
+        ModelAndView modelAndView = new ModelAndView("um/payandship");
+        modelAndView.addObject("orderId", orderId);
+
+        return modelAndView;
     }
 }

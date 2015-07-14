@@ -18,8 +18,11 @@ public class Orderdetails {
     @Column(name = "seq")
     private int seq;
 
-    @Column(name = "date")
-    private Date date;
+    @Column(name = "createddate")
+    private Date createdDate;
+
+    @Column(name = "endedate")
+    private Date endedate;
 
     @Column(name = "productid")
     private int productId;
@@ -27,11 +30,8 @@ public class Orderdetails {
     @Column(name = "itemcode")
     private String itemCode;
 
-    @Column(name = "price")
-    private float price;
-
-    @Column(name = "currencyid")
-    private int currencyId;
+    @Column(name = "transactionprice")
+    private float transactionprice;
 
     @Column(name = "volume")
     private int volume;
@@ -51,29 +51,24 @@ public class Orderdetails {
     @Column(name = "point_total")
     private float pointTotal;
 
+    @Column(name = "userid")
+    private int userid;
 
-    public int getProductId() {
-        return productId;
+    @Column(name = "orderIdl")
+    private String orderIdl;
+
+    @Column(name = "t_currency_id")
+    private int currencyId;
+
+    @Column(name = "t_paymentmethod_id")
+    private int paymentMethodId;
+
+    public int getPaymentMethodId() {
+        return paymentMethodId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
-
-    public String getItemCode() {
-        return itemCode;
-    }
-
-    public void setItemCode(String itemCode) {
-        this.itemCode = itemCode;
-    }
-
-    public int getCurrencyId() {
-        return currencyId;
-    }
-
-    public void setCurrencyId(int currencyId) {
-        this.currencyId = currencyId;
+    public void setPaymentMethodId(int paymentMethodId) {
+        this.paymentMethodId = paymentMethodId;
     }
 
     public int getId() {
@@ -92,22 +87,45 @@ public class Orderdetails {
         this.seq = seq;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
-    public float getPrice() {
-        return price;
+    public Date getEndedate() {
+        return endedate;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public void setEndedate(Date endedate) {
+        this.endedate = endedate;
     }
 
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public String getItemCode() {
+        return itemCode;
+    }
+
+    public void setItemCode(String itemCode) {
+        this.itemCode = itemCode;
+    }
+
+    public float getTransactionprice() {
+        return transactionprice;
+    }
+
+    public void setTransactionprice(float transactionprice) {
+        this.transactionprice = transactionprice;
+    }
 
     public int getVolume() {
         return volume;
@@ -155,5 +173,29 @@ public class Orderdetails {
 
     public void setPointTotal(float pointTotal) {
         this.pointTotal = pointTotal;
+    }
+
+    public int getUserid() {
+        return userid;
+    }
+
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
+
+    public String getOrderIdl() {
+        return orderIdl;
+    }
+
+    public void setOrderIdl(String orderIdl) {
+        this.orderIdl = orderIdl;
+    }
+
+    public int getCurrencyId() {
+        return currencyId;
+    }
+
+    public void setCurrencyId(int currencyId) {
+        this.currencyId = currencyId;
     }
 }

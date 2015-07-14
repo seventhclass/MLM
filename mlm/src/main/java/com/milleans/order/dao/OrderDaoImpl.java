@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by LeHu on 7/10/15 11:19 AM.
@@ -31,5 +32,19 @@ public class OrderDaoImpl extends AbstractDao implements IorderDao {
         ArrayList<Order> list = (ArrayList<Order>) criteria.list();
 
         return list;
+    }
+
+    @Override
+    public Order getOrder(int order) {
+
+        Criteria criteria = this.getCurrentSession().createCriteria(Order.class);
+        criteria.add(Restrictions.eq("id", order));
+
+        List<Order> list = criteria.list();
+
+        if (list == null || list.size() == 0) {
+            return null;
+        } else
+            return list.get(0);
     }
 }

@@ -34,6 +34,7 @@
             </ol>
         </div>
     </div>
+    <input id="orderId" name="orderId" type="hidden" value="${orderId}"/>
     <div id="page">
         <div class="row">
             <div class="col-md-3">
@@ -198,7 +199,7 @@
                                                         <span>Sub Order Total:</span>
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        $<span id="ordersummary_subordertotal">222.00</span>
+                                                        $<span id="ordersummary_subordertotal"></span>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -206,7 +207,7 @@
                                                         <span>Shipping Fee:</span>
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        $<span id="ordersummary_shippingfee">10.00</span>
+                                                        $<span id="ordersummary_shippingfee"></span>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -214,7 +215,7 @@
                                                         <span>Tax:</span>
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        $<span id="ordersummary_tax">34.80</span>
+                                                        $<span id="ordersummary_tax"></span>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -222,7 +223,7 @@
                                                         <span>Order Total:</span>
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        $<span id="ordersummary_ordertotal">266.80</span>
+                                                        $<span id="ordersummary_ordertotal"></span>
                                                     </div>
                                                 </div>
                                             </div>

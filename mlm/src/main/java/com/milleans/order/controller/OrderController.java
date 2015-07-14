@@ -202,5 +202,16 @@ public class OrderController {
         return orderPendingDTO;
     }
 
+    @RequestMapping(value = "/orderSummary/{orderId}", method = RequestMethod.POST)
+    @ResponseBody
+    public OrderSummaryDto getOrderSummary(@PathVariable("orderId") String orderId, HttpSession httpSession) {
+
+        OrderSummaryDto orderSummaryDto =
+                orderHasProductService.getOrderSummary(Integer.valueOf(orderId));
+
+
+        return orderSummaryDto;
+    }
+
 
 }

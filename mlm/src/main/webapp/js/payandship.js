@@ -10,7 +10,7 @@ $(document).ready(function(){
 	//queryUserPaymentMethodInfo();
  	queryUserShippingAddressInfo();
 	//queryShippingMethodInfo();
-	//queryOrderSummaryInfo();
+	queryOrderSummaryInfo();
  	
  	function queryUserPaymentMethodInfo(){
  	 	//send requrest to server.
@@ -177,7 +177,7 @@ $(document).ready(function(){
  	function queryOrderSummaryInfo(){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/orderSummary',        	
+			url: basePath + 'order/orderSummary/' + $('#orderId').val(),
  			cache:false,
  			async: false,
  			type:'POST',
@@ -196,17 +196,17 @@ $(document).ready(function(){
  	function queryOrderSummaryInfoResponse(res){
  		var result = res.result;			//response code
  		var message = res.message;			//response message
- 		
- 		if (result == "success") { 			 		
- 			$('#ordersummary_subordertotal').html(res.orderSummary.subordertotal);
+
+		if (result == "success") {
+			$('#ordersummary_subordertotal').html(res.subTotal);
  			$('#ordersummary_shippingfee').html();
- 			$('#ordersummary_tax').html();	
- 			$('#ordersummary_ordertotal').html(); 			
+			$('#ordersummary_tax').html(res.tax);
+			$('#ordersummary_ordertotal').html(res.total);
  		}		
  	} 	
  	
  	$('#userTotalOrderForm').submit(function(){
-		$.post(basePath+'doOrderProcess', $(this).serialize(), function(res){
+		$.post(basePath + 'orderdetail/process/' + $('#orderId').val(), $(this).serialize(), function (res) {
 			processOrderResponse(res);        				
 		}).fail(function(xhr, ajaxOptions, thrownError) {             	
 			// just in case posting your form failed
