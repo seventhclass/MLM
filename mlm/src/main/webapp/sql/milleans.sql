@@ -251,6 +251,9 @@ CREATE TABLE `t_parameter` (
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8;
 
+INSERT INTO `t_parameter` (`id`, `name`, `value`, `description`) VALUES (NULL, 'TPS', '0.05', 'T.P.S');
+INSERT INTO `t_parameter` (`id`, `name`, `value`, `description`) VALUES (NULL, 'TVQ', '0.09975', 'TVQ');
+
 -- ----------------------------
 -- Records of t_parameter
 -- ----------------------------

@@ -38,6 +38,7 @@ public class OrderController {
     @Autowired
     private IShoppingCartService shoppingCartService;
 
+
     @RequestMapping(value = "/orderentry/{orderId}", method = RequestMethod.GET)
     public ModelAndView orderEntry(@PathVariable("orderId") String orderId) {
         ModelAndView modelAndView = new ModelAndView("um/orderentry");
@@ -175,4 +176,11 @@ public class OrderController {
         return orderPaymentBinding;
     }
 
+
+    @RequestMapping(value = "/myOrderList", method = RequestMethod.POST)
+    public ModelAndView getMyOrderList() {
+        ModelAndView modelAndView = new ModelAndView("um/myorders");
+
+        return modelAndView;
+    }
 }

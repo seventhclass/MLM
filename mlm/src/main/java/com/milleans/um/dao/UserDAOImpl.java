@@ -83,7 +83,6 @@ public class UserDAOImpl extends AbstractDao implements IUserDAO {
             return tmp.getSponsorId();
         }
 
-
     }
 
     @Override
