@@ -16,7 +16,7 @@
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/orderentry.js"></script>		
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/myorders.js"></script>		
 </head>
 <body>
 	 <div class="container">
@@ -74,26 +74,18 @@
 									</div>								
 								</div>
 							    <div class="list-group-item">
-										<div class="subtitle" >Order Checkout</div>
+										<div class="subtitle" >Order List</div>
 										<div class="table-responsive ordertable">
 											<table class="table">
 												<thead>
 													<tr>
 														<th>Date</th>
-														<th>Item Code</th>
-														<th>Name</th>
-														<th>Qty</th>
-														<th>Currency</th>
-														<th>Price Each</th>
-														<th>Volume</th>
-														<th>Volume 2</th>
-														<th>Price Total</th>
-														<th>Points Total</th>
-														<th></th>
+														<th>Order ID</th>
+														<th>Detail</th>
 													</tr>
 												</thead>
 											   <tbody id="myOrderList">
-											     <tr>
+											     <%-- <tr>
 											     	<td>${orderId}</td>
 													<td>A000000001</td>
 									           		<td>MT-1000</td>
@@ -140,7 +132,7 @@
 											     	<td></td>
 											     	<td id="PriceTotal">$222.00</td>
 											     	<td id="PointsTotal">21</td>
-											     </tr>
+											     </tr> --%>
 											   </tbody>
 											 </table>
 										</div>	
