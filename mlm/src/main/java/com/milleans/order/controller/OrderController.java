@@ -192,7 +192,7 @@ public class OrderController {
         OrderPendingDTO orderPendingDTO = new OrderPendingDTO();
         try {
             int uid = Integer.valueOf(httpSession.getAttribute(Constant.Uid).toString());
-            orderPendingDTO.setItem(orderService.getOrders(uid));
+            orderPendingDTO.setMyOrderInfo(orderService.getOrders(uid));
         } catch (Exception e) {
             e.printStackTrace();
             orderPendingDTO.setMessage(e.getMessage());

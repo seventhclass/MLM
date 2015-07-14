@@ -38,12 +38,27 @@
 								<div class="subtitle" >Autoship List</div>
 							</div>														
 						</div>
+						<div class="ashipdatebox">	
+							<div class="row">							
+								<div class="col-md-12">
+									<label for="ashipdate" class="col-sm-2">Choose Date:</label>
+									<div class="col-sm-3">
+										<input type="date" id="ashipdate">
+									</div>									
+									<div class="col-sm-2">
+										<button type="submit" class="btn btn-info">Go</button>
+									</div>				
+								</div>
+							</div>
+												
+						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="table-responsive ordertable">
 									<table class="table">
 										<thead>
 											<tr>
+												<th>Done</th>
 												<th>Member ID</th>
 												<th>Name</th>
 												<th>Volume of Shipping</th>
@@ -51,8 +66,8 @@
 												<th>Method of Payment</th>
 											</tr>
 										</thead>
-									   <tbody>
-									     <tr>									     	
+									   <tbody  id="autoShipList">
+									     <!-- <tr>									     	
 											<td>A000000001</td>
 							           		<td>Michael</td>
 							           		<td>145</td>
@@ -93,12 +108,16 @@
 							           		<td>236</td>
 							           		<td>Feb 24, 2015</td>
 							           		<td>Paypal</td>
-									     </tr>  									     									     									     
+									     </tr>  --> 									     									     									     
 									   </tbody>
 									 </table>
 								</div>														
 							</div>
-						</div>																						
+						</div>
+						
+						<div class="col-md-4 col-md-offset-4">
+							<button type="button" class="btn btn-success" data-toggle="modal" data-target=".accounttypemaintenance" data-backdrop="static">Update</button>
+						</div>
 					</div> <!-- end content -->		
 				</div>			
 			</div>

@@ -78,12 +78,12 @@
 												<input type="date" class="form-control" id="birthday">
 											</div>
 										</div>
-										<div class="form-group">
+										<!-- <div class="form-group">
 											<label for="ssn" class="col-sm-3 control-label">SSN:</label>
 											<div class="col-sm-4">
 												<input type="text" class="form-control" id="ssn">
 											</div>
-										</div>
+										</div> -->
 										<div class="subtitle">Contact
 											Information</div>
 										<div class="form-group">

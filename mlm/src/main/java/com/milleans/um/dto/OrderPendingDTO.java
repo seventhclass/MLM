@@ -10,14 +10,16 @@ import java.util.List;
  */
 public class OrderPendingDTO extends BaseJs {
 
-    private List<Order> item;
+    private List<Order> myOrderInfo;
+
+	public List<Order> getMyOrderInfo() {
+		return myOrderInfo;
+	}
+
+	public void setMyOrderInfo(List<Order> myOrderInfo) {
+		this.myOrderInfo = myOrderInfo;
+	}
 
 
-    public List<Order> getItem() {
-        return item;
-    }
-
-    public void setItem(List<Order> item) {
-        this.item = item;
-    }
+   
 }
