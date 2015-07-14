@@ -49,7 +49,7 @@
 	</div>
 	<div class='col-md-8'>
 		<div class='col-sm-offset-7 col-sm-6'>
-			<a class="myorder_btn" href='<%=request.getContextPath()%>/order/myorders'><button type='button' class='btn btn-info'><span class='glyphicon glyphicon-list-alt'></span> My Order </button></a>
+			<a class="myorder_btn" href='<%=request.getContextPath()%>/order/myOrderList'><button type='button' class='btn btn-info'><span class='glyphicon glyphicon-list-alt'></span> My Orders </button></a>
 			<a class="myshoppingcart_btn" href='<%=request.getContextPath()%>/myshoppingcart'><button type='button' class='btn btn-danger'><span class='glyphicon glyphicon-shopping-cart'></span> My Shopping Cart <span data-totalamount="" class='badge myshoppingcartitemnumber'></span></button></a>
 		</div>
 	</div>

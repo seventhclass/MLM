@@ -177,7 +177,7 @@ public class OrderController {
     }
 
 
-    @RequestMapping(value = "/myOrderList", method = RequestMethod.POST)
+    @RequestMapping(value = "/myOrderList", method = RequestMethod.GET)
     public ModelAndView getMyOrderList() {
         ModelAndView modelAndView = new ModelAndView("um/myorders");
 
