@@ -5,12 +5,17 @@ package com.milleans.tools;
  */
 public class Constant {
 
-    public static String AlbumPath="images/products/";
+    public static String AlbumPath = "images/products/";
 
     public static String Uid = "uid";
 
-    public static int OrderPending=1;
+    public static int OrderPending = 1;
 
 //    public static String
+
+    public static String TPS = "TPS";
+    public static String TVQ = "TVQ";
+
+
 
 }
