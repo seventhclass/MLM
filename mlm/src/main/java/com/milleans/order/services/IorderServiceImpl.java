@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+
 /**
  * Created by LeHu on 5/9/15 2:59 PM.
  */
@@ -15,6 +17,12 @@ public class IorderServiceImpl implements IorderService {
 
     @Autowired
     private IorderDao orderDao;
+
+
+    @Override
+    public ArrayList<Order> getOrders(int uid) {
+        return orderDao.getOrders(uid);
+    }
 
     @Override
     public void save(Object object) {

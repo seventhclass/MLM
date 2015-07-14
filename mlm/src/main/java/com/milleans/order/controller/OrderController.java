@@ -10,6 +10,7 @@ import com.milleans.order.services.IorderService;
 import com.milleans.shopping.services.IShoppingCartService;
 import com.milleans.tools.Constant;
 import com.milleans.tools.Utils;
+import com.milleans.um.dto.OrderPendingDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -183,4 +184,23 @@ public class OrderController {
 
         return modelAndView;
     }
+
+    @RequestMapping(value = "/allOrder", method = RequestMethod.POST)
+    @ResponseBody
+    public OrderPendingDTO getAllOrders(HttpSession httpSession) {
+
+        OrderPendingDTO orderPendingDTO = new OrderPendingDTO();
+        try {
+            int uid = Integer.valueOf(httpSession.getAttribute(Constant.Uid).toString());
+            orderPendingDTO.setItem(orderService.getOrders(uid));
+        } catch (Exception e) {
+            e.printStackTrace();
+            orderPendingDTO.setMessage(e.getMessage());
+            orderPendingDTO.setResult("fail");
+        }
+
+        return orderPendingDTO;
+    }
+
+
 }
