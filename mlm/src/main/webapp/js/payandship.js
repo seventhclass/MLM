@@ -196,8 +196,8 @@ $(document).ready(function(){
  	function queryOrderSummaryInfoResponse(res){
  		var result = res.result;			//response code
  		var message = res.message;			//response message
- 		
- 		if (result == "success") {
+
+		if (result == "success") {
 			$('#ordersummary_subordertotal').html(res.subTotal);
  			$('#ordersummary_shippingfee').html();
 			$('#ordersummary_tax').html(res.tax);
