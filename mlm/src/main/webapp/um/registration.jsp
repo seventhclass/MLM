@@ -543,7 +543,7 @@
 										</div>												
 										<br/><br/>											
 										<div class="form-group">
-											<label class="col-sm-7 control-label"><a>ACCEPT TERMS AND CONDITIONS</a><span class="starsymbol">*</span>
+											<label class="col-sm-7 control-label"><a href="termcondition.jsp" target="_BLANK">ACCEPT TERMS AND CONDITIONS</a><span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-1">
 												<input class="policycheck" name="policycheck" type="checkbox" > 
