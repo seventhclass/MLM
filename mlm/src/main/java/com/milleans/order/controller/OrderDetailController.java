@@ -159,10 +159,10 @@ public class OrderDetailController {
     }
 
 
-    @RequestMapping(value = "/process/view/unpaidorder", method = RequestMethod.POST)
+    @RequestMapping(value = "/process/view/unpaidorder", method = RequestMethod.GET)
     public ModelAndView getOrderdetails() {
 
-        return new ModelAndView("um/unpaiedorder");
+        return new ModelAndView("um/unpaidorders");
     }
 
 
