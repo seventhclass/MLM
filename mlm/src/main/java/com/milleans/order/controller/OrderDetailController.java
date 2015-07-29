@@ -8,6 +8,7 @@ import com.milleans.model.AutoShip;
 import com.milleans.model.Order;
 import com.milleans.model.Orderdetails;
 import com.milleans.model.Product;
+import com.milleans.order.dto.ConfirmOrderPayment;
 import com.milleans.order.dto.OrderHasProductDTO;
 import com.milleans.order.dto.ProcessOrder;
 import com.milleans.order.services.IOrderDetailService;
@@ -19,10 +20,8 @@ import com.milleans.tools.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -123,6 +122,21 @@ public class OrderDetailController {
 
 
         return processOrder;
+    }
+
+    @RequestMapping(value = "/process/admin/dealing", method = RequestMethod.POST)
+    @ResponseBody
+    public ConfirmOrderPayment processingOrderPayment(@RequestParam("orderArr") String orderArr) {
+        ConfirmOrderPayment confirmOrderPayment = new ConfirmOrderPayment();
+
+        return confirmOrderPayment;
+    }
+
+
+    @RequestMapping(value = "/process/admin/unpayidorders", method = RequestMethod.POST)
+    public ModelAndView getOrderdetails() {
+
+        return new ModelAndView("um/unpaiedorder");
     }
 
 
