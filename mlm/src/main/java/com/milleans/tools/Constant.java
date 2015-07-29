@@ -26,5 +26,10 @@ public class Constant {
         OrderStatus.put("3", "Finished");
     }
 
+    public static String UserIdPrefix = "MV";
+
+    public static String DataFormat = "YYMMDD";
+
+
 
 }

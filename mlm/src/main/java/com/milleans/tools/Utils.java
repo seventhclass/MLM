@@ -4,7 +4,10 @@ import com.milleans.dto.BaseJs;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.Base64Utils;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by macbookpro on 2015-04-03.
@@ -15,8 +18,14 @@ public class Utils {
 
 
     public synchronized static String getUserId() {
-        long userId = Calendar.getInstance().getTimeInMillis();
-        return String.valueOf(userId);
+        long sysDate = Calendar.getInstance().getTimeInMillis();
+
+        Date currentDate = new Date(sysDate);
+        DateFormat dateFormat = new SimpleDateFormat(Constant.DataFormat);
+
+        String userId = Constant.UserIdPrefix + dateFormat.format(currentDate) + "-" + Math.random() * 9000 + 1000;
+
+        return userId;
     }
 
     public static String getEncode(String password) {
@@ -64,7 +73,7 @@ public class Utils {
     }
 
     public synchronized static String getOrderNumber() {
-       // String order;
+        // String order;
 
         long time = System.currentTimeMillis();
 //        order = part + time;
