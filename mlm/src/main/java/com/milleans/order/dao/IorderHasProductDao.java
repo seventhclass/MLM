@@ -17,4 +17,7 @@ public interface IorderHasProductDao extends IDao{
     OrderSummaryDto getOrderSummary(int orderId);
 
     ArrayList<OrderHasProductDTO> getItem(int orderId);
+
+
+    void deleteOrderProductShip(String orderId);
 }

@@ -23,7 +23,7 @@ public class Utils {
         Date currentDate = new Date(sysDate);
         DateFormat dateFormat = new SimpleDateFormat(Constant.DataFormat);
 
-        String userId = Constant.UserIdPrefix + dateFormat.format(currentDate) + "-" + Math.random() * 9000 + 1000;
+        String userId = Constant.UserIdPrefix + dateFormat.format(currentDate) + "-" + (int) (Math.random() * 9000 + 1000);
 
         return userId;
     }
@@ -46,6 +46,10 @@ public class Utils {
         String endode = Utils.getEncode(test);
         System.out.println("encode=" + endode);
         System.out.println("decode=" + Utils.getDecode(endode));
+
+
+        //
+        System.out.println(Utils.getUserId());
     }
 
     public static BaseJs getFailMessage(String message) {
@@ -79,4 +83,5 @@ public class Utils {
 //        order = part + time;
         return String.valueOf(time);
     }
+
 }

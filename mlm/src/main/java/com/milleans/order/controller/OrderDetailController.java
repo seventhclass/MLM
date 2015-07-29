@@ -44,18 +44,14 @@ public class OrderDetailController {
     @RequestMapping(value = "/process/{orderId}", method = RequestMethod.POST)
     @ResponseBody
     public ProcessOrder doProcessOrder(@PathVariable("orderId") String orderId) {
-
         ProcessOrder processOrder = new ProcessOrder();
-
         try {
-
             int _orderId = Integer.valueOf(orderId);
             // cp orderinfo & productinfo to detail table
             Order order = orderService.getOrder(_orderId);
 
             ArrayList<OrderHasProductDTO> orderHasProduct = orderHasProductService.getItem(_orderId);
             ArrayList<Orderdetails> orderdetailsesList = new ArrayList<>();
-
 
             Orderdetails orderdetails = null;
             for (OrderHasProductDTO orderHasProductDTO : orderHasProduct) {
@@ -65,7 +61,7 @@ public class OrderDetailController {
 
                 orderdetails.setCreatedDate(order.getDate());
                 //get product
-                Product product = (Product) productService.getItemById(String.valueOf(orderdetails.getProductId()));
+                Product product = (Product) productService.getItemById(String.valueOf(orderHasProductDTO.getProductId()));
                 orderdetails.setCurrencyId(product.getCurrencyId());
                 orderdetails.setDescription(product.getDescription());
                 orderdetails.setEndedate(Calendar.getInstance().getTime());
@@ -83,9 +79,13 @@ public class OrderDetailController {
                 orderdetails.setVolume(product.getVolume());
                 orderdetails.setVolume2(product.getVolume2());
 
-
                 orderDetailService.save(orderdetails);
             }
+            //delete order have product
+            orderHasProductService.deleteOrderProductShip(orderId);
+            // delete order
+            orderService.remove(order);
+
         } catch (Exception e) {
 
             e.printStackTrace();

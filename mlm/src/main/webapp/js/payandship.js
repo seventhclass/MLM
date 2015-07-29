@@ -219,13 +219,18 @@ $(document).ready(function(){
  	function processOrderResponse(res){
     	var result = res.result;			//response code
     	var message = res.message;			//response message
-
+		//alert(message);
     	if (result != "success") {
     		if(message==null || message==""){
     			message = "Sorry, process your order request failed.";
     		}    			
     		alert(message);
-    	}
+		} else {
+			console.log("message===" + message);
+
+			//window.location(basePath+'products');
+			window.location.href = basePath + "products";
+		}
  	}
  	
  });
