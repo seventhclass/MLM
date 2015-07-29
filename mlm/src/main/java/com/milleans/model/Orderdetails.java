@@ -63,6 +63,28 @@ public class Orderdetails {
     @Column(name = "t_paymentmethod_id")
     private int paymentMethodId;
 
+    @Column(name = "status")
+    private int status;
+
+    @Column(name = "autoship_id")
+    private int autoshipId;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public int getAutoshipId() {
+        return autoshipId;
+    }
+
+    public void setAutoshipId(int autoshipId) {
+        this.autoshipId = autoshipId;
+    }
+
     public int getPaymentMethodId() {
         return paymentMethodId;
     }

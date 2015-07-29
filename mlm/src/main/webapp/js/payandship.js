@@ -206,7 +206,9 @@ $(document).ready(function(){
  	} 	
  	
  	$('#userTotalOrderForm').submit(function(){
-		$.post(basePath + 'orderdetail/process/' + $('#orderId').val(), $(this).serialize(), function (res) {
+		$.post(basePath + 'orderdetail/process/' + $('#orderId').val()
+		+ '/' + $('#shippingDateId').val()
+		+ '/' + $('#selectshipmethod').val(), $(this).serialize(), function (res) {
 			processOrderResponse(res);        				
 		}).fail(function(xhr, ajaxOptions, thrownError) {             	
 			// just in case posting your form failed
@@ -227,8 +229,6 @@ $(document).ready(function(){
     		alert(message);
 		} else {
 			console.log("message===" + message);
-
-			//window.location(basePath+'products');
 			window.location.href = basePath + "products";
 		}
  	}

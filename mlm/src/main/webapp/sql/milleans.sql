@@ -248,7 +248,11 @@ CREATE TABLE IF NOT EXISTS `mlm`.`t_orderdetails` (
   COMMENT '',
   `endedate`           DATE                   NOT NULL
   COMMENT '',
-  PRIMARY KEY (`id`)
+  `status`             INT                    NOT NULL
+  COMMENT '',
+  `autoship_id`        INT(6) UNSIGNED        NOT NULL
+  COMMENT '',
+  PRIMARY KEY (`id`, `autoship_id`)
     COMMENT '',
   INDEX `fk_t_orderdetails_t_user1_idx` (`userid` ASC)
     COMMENT '',
@@ -257,6 +261,8 @@ CREATE TABLE IF NOT EXISTS `mlm`.`t_orderdetails` (
   INDEX `fk_t_orderdetails_t_currency1_idx` (`t_currency_id` ASC)
     COMMENT '',
   INDEX `fk_t_orderdetails_t_paymentmethod1_idx` (`t_paymentmethod_id` ASC)
+    COMMENT '',
+  INDEX `fk_t_orderdetails_t_autoship1_idx` (`autoship_id` ASC)
     COMMENT '',
   CONSTRAINT `fk_t_orderdetails_t_user1`
   FOREIGN KEY (`userid`)
@@ -277,10 +283,15 @@ CREATE TABLE IF NOT EXISTS `mlm`.`t_orderdetails` (
   FOREIGN KEY (`t_paymentmethod_id`)
   REFERENCES `mlm`.`t_paymentmethod` (`id`)
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_t_orderdetails_t_autoship1`
+  FOREIGN KEY (`autoship_id`)
+  REFERENCES `mlm`.`t_autoship` (`id`)
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION
 )
   ENGINE = InnoDB
-  DEFAULT CHARACTER SET = utf8
+  DEFAULT CHARACTER SET = utf8;
 
 
 -- ----------------------------

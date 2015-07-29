@@ -14,8 +14,9 @@ import java.util.Date;
  */
 public class Utils {
 
-    public static String MilleanDateFormate = "YYYY-MM-DD";
+    public static String MilleanDateFormate = "yyyy-MM-dd";
 
+    public static SimpleDateFormat DateFormat = new SimpleDateFormat(MilleanDateFormate);
 
     public synchronized static String getUserId() {
         long sysDate = Calendar.getInstance().getTimeInMillis();
