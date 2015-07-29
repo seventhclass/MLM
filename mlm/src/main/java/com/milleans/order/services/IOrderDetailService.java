@@ -14,5 +14,5 @@ public interface IOrderDetailService extends ICrud {
     ArrayList<OrderDealingInfo> getOrderStatus(int status) throws ParseException;
 
 
-
+    void updatePaymentStatus(String orderIdL);
 }

@@ -13,4 +13,5 @@ public interface IOrderDetailDao extends IDao {
 
     ArrayList<OrderDealingInfo> getOrderList(int status) throws ParseException;
 
+    void updatePaymentStatus(String orderIdL);
 }

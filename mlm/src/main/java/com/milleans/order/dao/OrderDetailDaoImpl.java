@@ -36,13 +36,6 @@ public class OrderDetailDaoImpl extends AbstractDao implements IOrderDetailDao {
     @Override
     public ArrayList<OrderDealingInfo> getOrderList(int status) throws ParseException {
 
-//        Criteria criteria = this.getCurrentSession().createCriteria(Orderdetails.class);
-//
-//        criteria.add(Restrictions.eq("status", status));
-//
-//        criteria.setProjection(Projections.property("orderIdl"));
-
-
         String sql = "select DISTINCT od.orderIdl, od.status,od.createddate, u.userId from t_orderdetails od, t_user u " +
                 " where od.userId=u.id  and od.status=" + status;
 
@@ -66,5 +59,11 @@ public class OrderDetailDaoImpl extends AbstractDao implements IOrderDetailDao {
         }
 
         return list;
+    }
+
+    @Override
+    public void updatePaymentStatus(String orderIdL) {
+        String sql = "update t_orderdetails set status=3 where orderidl=" + orderIdL;
+        this.getCurrentSession().createSQLQuery(sql).executeUpdate();
     }
 }

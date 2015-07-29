@@ -46,4 +46,9 @@ public class OrderDetailServiceImpl implements IOrderDetailService {
         return orderDetailDao.getOrderList(status);
 
     }
+
+    @Override
+    public void updatePaymentStatus(String orderIdL) {
+        orderDetailDao.updatePaymentStatus(orderIdL);
+    }
 }
