@@ -14,7 +14,8 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/autoship.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -307,7 +308,7 @@
 		</div>
 	</div>
 	 		 	 
-	<div id="productlist" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<!-- 	<div id="productlist" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header" style="background-color:#428bca;color:#fff;border-top-right-radius: 3px;border-top-left-radius: 3px;padding: 5px;">
@@ -374,7 +375,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	 		 	 
 	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 	

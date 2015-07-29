@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 
 $(document).ready(function(){
  	var basePath=$('#basePath').attr("value"); 	
@@ -166,5 +164,3 @@ $(document).ready(function(){
  	}
  	
  });
-
-

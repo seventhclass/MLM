@@ -6,16 +6,16 @@ $(document).ready(function(){
  	var basePath=$('#basePath').attr("value"); 	
  	var userInfo_userId=$('#get_userInfo').attr("data-userid");
  	var userInfo_userName=$('#get_userInfo').attr("data-username");
- 	
- 	queryUserPaymentMethodInfo();
+
+	//queryUserPaymentMethodInfo();
  	queryUserShippingAddressInfo();
- 	queryShippingMethodInfo();
- 	queryOrderSummaryInfo(); 
+	//queryShippingMethodInfo();
+	queryOrderSummaryInfo();
  	
  	function queryUserPaymentMethodInfo(){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/userPaymentMethod',        	
+			url: basePath + 'userPaymentMethod',
  			cache:false,
  			async: false,
  			type:'POST',
@@ -77,7 +77,7 @@ $(document).ready(function(){
  	function queryUserShippingAddressInfo(){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/userShippingAddress',        	
+			url: basePath + 'user/address',
  			cache:false,
  			async: false,
  			type:'POST',
@@ -108,15 +108,17 @@ $(document).ready(function(){
  					}else{
  						isChecked = "";
  					}
- 					if(item.firstname && item.firstname!=""){
- 						name = item.firstname + " " +item.lastname;
+					//if(item.firstname && item.firstname!=""){
+					if (item.name != "") {
+						//name = item.firstname + " " +item.lastname;
+						name = item.name;
  					}else{
  						name = item.companyname;
  					}
  					
  					$('#shippingAddressList').append(
 						"<tr>"
-						+"	<td><input type='radio' name='shippingAddress' value='"+item.id+"' "+isChecked+"></td>"
+						+ "	<td><input type='radio' name='shippingAddress' value='' " + isChecked + "></td>"
 				        +"	<td>"+name+"</td>"
 				        +"	<td>"+item.address+"</td>"
 				        +"	<td>"+item.city+"</td>"
@@ -175,7 +177,7 @@ $(document).ready(function(){
  	function queryOrderSummaryInfo(){
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'/orderSummary',        	
+			url: basePath + 'order/orderSummary/' + $('#orderId').val(),
  			cache:false,
  			async: false,
  			type:'POST',
@@ -194,17 +196,17 @@ $(document).ready(function(){
  	function queryOrderSummaryInfoResponse(res){
  		var result = res.result;			//response code
  		var message = res.message;			//response message
- 		
- 		if (result == "success") { 			 		
- 			$('#ordersummary_subordertotal').html(res.orderSummary.subordertotal);
+
+		if (result == "success") {
+			$('#ordersummary_subordertotal').html(res.subTotal);
  			$('#ordersummary_shippingfee').html();
- 			$('#ordersummary_tax').html();	
- 			$('#ordersummary_ordertotal').html(); 			
+			$('#ordersummary_tax').html(res.tax);
+			$('#ordersummary_ordertotal').html(res.total);
  		}		
  	} 	
  	
  	$('#userTotalOrderForm').submit(function(){
-		$.post(basePath+'doOrderProcess', $(this).serialize(), function(res){
+		$.post(basePath + 'orderdetail/process/' + $('#orderId').val(), $(this).serialize(), function (res) {
 			processOrderResponse(res);        				
 		}).fail(function(xhr, ajaxOptions, thrownError) {             	
 			// just in case posting your form failed

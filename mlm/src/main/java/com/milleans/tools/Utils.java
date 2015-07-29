@@ -4,19 +4,29 @@ import com.milleans.dto.BaseJs;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.Base64Utils;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by macbookpro on 2015-04-03.
  */
 public class Utils {
 
-    public static String MilleanDateFormate = "YYYY-MM-DD";
+    public static String MilleanDateFormate = "yyyy-MM-dd";
 
+    public static SimpleDateFormat DateFormat = new SimpleDateFormat(MilleanDateFormate);
 
     public synchronized static String getUserId() {
-        long userId = Calendar.getInstance().getTimeInMillis();
-        return String.valueOf(userId);
+        long sysDate = Calendar.getInstance().getTimeInMillis();
+
+        Date currentDate = new Date(sysDate);
+        DateFormat dateFormat = new SimpleDateFormat(Constant.DataFormat);
+
+        String userId = Constant.UserIdPrefix + dateFormat.format(currentDate) + "-" + (int) (Math.random() * 9000 + 1000);
+
+        return userId;
     }
 
     public static String getEncode(String password) {
@@ -37,6 +47,10 @@ public class Utils {
         String endode = Utils.getEncode(test);
         System.out.println("encode=" + endode);
         System.out.println("decode=" + Utils.getDecode(endode));
+
+
+        //
+        System.out.println(Utils.getUserId());
     }
 
     public static BaseJs getFailMessage(String message) {
@@ -64,10 +78,11 @@ public class Utils {
     }
 
     public synchronized static String getOrderNumber() {
-       // String order;
+        // String order;
 
         long time = System.currentTimeMillis();
 //        order = part + time;
         return String.valueOf(time);
     }
+
 }

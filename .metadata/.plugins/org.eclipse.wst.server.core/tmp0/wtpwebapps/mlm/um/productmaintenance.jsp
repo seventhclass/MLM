@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath()%>/css/productmaintenance.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
@@ -253,6 +254,23 @@
 	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/mlm/js/productmaintenance.js"></script>	
+	 <script>
+  		$(function(){
+  			 $('[data-toggle="tooltip"]').tooltip();
+  			 $('.editproductbtn').tooltip({
+  		       title:"Edit",
+  		       placement:'right'
+  		    });
+  			$('.delproductbtn').tooltip({
+   		       title:"Delete",
+   		       placement:'right'
+   		    });
+  			$('.editproductimgbtn').tooltip({
+   		       title:"Upload Images",
+   		       placement:'right'
+   		    });
+  		});
+  </script>
 	<script type="text/javascript">
 		function callback(msg) {
 

@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css" />
+
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
@@ -77,12 +78,12 @@
 												<input type="date" class="form-control" id="birthday">
 											</div>
 										</div>
-										<div class="form-group">
+										<!-- <div class="form-group">
 											<label for="ssn" class="col-sm-3 control-label">SSN:</label>
 											<div class="col-sm-4">
 												<input type="text" class="form-control" id="ssn">
 											</div>
-										</div>
+										</div> -->
 										<div class="subtitle">Contact
 											Information</div>
 										<div class="form-group">

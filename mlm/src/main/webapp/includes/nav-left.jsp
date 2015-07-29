@@ -8,7 +8,7 @@
 	<li><a href='<%=request.getContextPath()%>/modifypassword'>Modify Password</a></li>
 	<li><a href='##'>Search Member</a></li>
 	<li class='nav-divider'></li>
-	<li><a href='<%=request.getContextPath()%>/order/orderentry'>Order Entry</a></li>
+	<li><a href='<%=request.getContextPath()%>/order/myOrderList'>Order Entry</a></li>
 	<li class='nav-divider'></li>
 	<li><a href='<%=request.getContextPath()%>/paymenttype'>Payment Types</a></li>
 	<li class='nav-divider'></li>

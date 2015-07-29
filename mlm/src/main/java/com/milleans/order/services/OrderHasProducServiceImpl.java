@@ -93,5 +93,10 @@ public class OrderHasProducServiceImpl implements IorderHasProductService {
         return orderHasProductDao.getItem(orderId);
     }
 
+    @Override
+    public void deleteOrderProductShip(String orderId) {
+        orderHasProductDao.deleteOrderProductShip(orderId);
+    }
+
 
 }

@@ -1,7 +1,3 @@
-/**
- *
- */
-
 $(document).ready(function () {
     var basePath = $('#basePath').attr("value");
 
@@ -128,6 +124,7 @@ $(document).ready(function () {
         var result = res.result;			//response code
         var message = res.message;			//response message
         //var item = res.item;
+
         
         if (result == "success") {
             $('#myOrderList').html("");
@@ -142,6 +139,7 @@ $(document).ready(function () {
                         + "	<td>" + item.orderIdL + "</td>"
                         + "	<td><a href='" + basePath + "order/orderentry/" + item.id + "'>Detail</a></td>"
                         /*+ "	<td style='width:30px'><span data-id='" + item.id + "' data-seq='" + item.seq + "' class='glyphicon glyphicon-remove-sign close_item' style='color:red's></span></td>"*/
+
                         + "</tr>"
                     );
                 });

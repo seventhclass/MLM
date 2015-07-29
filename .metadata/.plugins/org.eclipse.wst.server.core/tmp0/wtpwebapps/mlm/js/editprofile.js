@@ -1,13 +1,11 @@
-/**
- * 
- */
 $(document).ready(function(){
- 	var basePath=$('#basePath').attr("value");
- 	
- 	queryUserInfo();   
+	var basePath=$('#basePath').attr("value");
+
+	queryUserInfo();
 
  	//Query user information
  	function queryUserInfo(){
+ 		var id = $('#get_userInfo').attr('data-userid');
  	 	//send login requrest to server.
  	    $.ajax({
  	    	url: basePath+'/user',        	
@@ -15,7 +13,7 @@ $(document).ready(function(){
  			async: false,
  			type:'POST',			
  	    	data: {
- 	    		memberid : $('#memberid').val()
+ 	    		memberid : id
  	    	},
  	    	dataType:'json',
  	    	timeout:5000,
@@ -32,7 +30,6 @@ $(document).ready(function(){
  	function queryUserInfoResponse(res){
  		var result = res.result;			//response code
  		var message = res.message;			//response message
- 		    	
  		if (result == "success") {
  			//res.object.companyName = "";
  			if( res.object.companyName != null && res.object.companyName != "" ){
@@ -90,4 +87,3 @@ $(document).ready(function(){
  	}
 
 });
-
