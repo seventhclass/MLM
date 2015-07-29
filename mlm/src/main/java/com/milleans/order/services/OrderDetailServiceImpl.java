@@ -1,9 +1,13 @@
 package com.milleans.order.services;
 
 import com.milleans.order.dao.IOrderDetailDao;
+import com.milleans.order.dto.OrderDealingInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.text.ParseException;
+import java.util.ArrayList;
 
 /**
  * Created by LeHu on 7/14/15 5:58 PM.
@@ -34,5 +38,17 @@ public class OrderDetailServiceImpl implements IOrderDetailService {
     @Override
     public Object getItemById(String id) {
         return null;
+    }
+
+    @Override
+    public ArrayList<OrderDealingInfo> getOrderStatus(int status) throws ParseException {
+
+        return orderDetailDao.getOrderList(status);
+
+    }
+
+    @Override
+    public void updatePaymentStatus(String orderIdL) {
+        orderDetailDao.updatePaymentStatus(orderIdL);
     }
 }
