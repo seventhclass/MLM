@@ -37,40 +37,44 @@
 					<div id="content">				
 						<div id="orderentry">
 							<div class="list-group">
-							    <div class="list-group-item list-group-item-info active"><span class="glyphicon glyphicon-list-alt"></span> My Order </div>
+								<div class="list-group-item list-group-item-info active">
+									<span class="glyphicon glyphicon-list-alt"></span> My Order
+								</div>
 							    <div class="list-group-item">
 									<div class="row">	
-										<div class="col-sm-3">	
-											Member ID: <span id="memberId">ABCDE00001</span>
+										<div class="col-sm-3">
+											Member ID: <span id="memberId"></span>
 										</div>
-										<div class="col-sm-4">	
-											<span id="memberName">Michael Wang</span>
-										</div>	
-										<div class="col-sm-5">
-											<div class="list-group">
-												<div class="list-group-item list-group-item-danger">
-													<div class="row">
-														<div class="col-sm-4">
-															<img style="width: 80px; height: 80px; padding: 10px;" src="<%=request.getContextPath()%>/images/logo/shopping-cart-icon-transparent.png" alt="shopping cart">
-															
-														</div>
-														<div class="col-sm-7 text-right">
-															<div class="row">
-																Shopping Cart Item: <span id="shoppingCartItemNumber">3</span>
-															</div>
-															<div class="row">
-																Total: $<span id="shoppingCartTotalAmt">222.00</span> CAD
-															</div>
-															<div id="order_cart">
-																<div class="row">
-																	<a id="clearShoppingCart" href="#">[Clear]</a> <a id="checkoutShoppingCart" href="#">[Checkout]</a>
-																</div>
-															</div>
-														</div>							    														
-													</div>
-												</div>
-											</div>
-										</div>									
+										<div class="col-sm-4">
+											<span id="memberName"></span>
+										</div>
+										<%--<div class="col-sm-5">--%>
+										<%--<div class="list-group">--%>
+										<%--<div class="list-group-item list-group-item-danger">--%>
+										<%--<div class="row">--%>
+										<%--<div class="col-sm-4">--%>
+										<%--<img style="width: 80px; height: 80px; padding: 10px;" src="<%=request.getContextPath()%>/images/logo/shopping-cart-icon-transparent.png" alt="shopping cart">--%>
+										<%----%>
+										<%--</div>--%>
+
+										<%--&lt;%&ndash;<div class="col-sm-7 text-right">&ndash;%&gt;--%>
+										<%--&lt;%&ndash;<div class="row">&ndash;%&gt;--%>
+										<%--&lt;%&ndash;Shopping Cart Item: <span id="shoppingCartItemNumber">3</span>&ndash;%&gt;--%>
+										<%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+										<%--&lt;%&ndash;<div class="row">&ndash;%&gt;--%>
+										<%--&lt;%&ndash;Total: $<span id="shoppingCartTotalAmt">222.00</span> CAD&ndash;%&gt;--%>
+										<%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+										<%--&lt;%&ndash;<div id="order_cart">&ndash;%&gt;--%>
+										<%--&lt;%&ndash;<div class="row">&ndash;%&gt;--%>
+										<%--&lt;%&ndash;<a id="clearShoppingCart" href="#">[Clear]</a> <a id="checkoutShoppingCart" href="#">[Checkout]</a>&ndash;%&gt;--%>
+										<%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+										<%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+										<%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+
+										<%--</div>--%>
+										<%--</div>--%>
+										<%--</div>--%>
+										<%--</div>									--%>
 									</div>								
 								</div>
 							    <div class="list-group-item">
@@ -156,7 +160,10 @@
 											</form>
 										</div> -->
 										<div id="finish_order" class="text-center">
-											<a href="<%=request.getContextPath()%>/payandship"><button type="button" class="btn btn-primary">Finished Order <span class="glyphicon glyphicon-ok-sign"></span></button></a>
+											<a href="<%=request.getContextPath()%>/payandship">
+												<button type="button" class="btn btn-primary">Finished Order <span
+														class="glyphicon glyphicon-ok-sign"></span></button>
+											</a>
 										</div>
 								</div>	
 							    <div class="list-group-item">
