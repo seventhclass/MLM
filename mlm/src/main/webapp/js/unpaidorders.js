@@ -5,14 +5,11 @@
 $(document).ready(function () {
     var basePath = $('#basePath').attr("value");
 
-    //$('#memberId').val($('#get_userInfo').attr("data-userid"));
-    //$('#memberName').val($('#get_userInfo').attr("data-username"));
+     $('#memberId').text($('#get_userInfo').attr("data-userid"));
+     $('#memberName').text($('#get_userInfo').attr("data-username"));
 
-//    $('#memberId').text($('#get_userInfo').attr("data-userid"));
-//    $('#memberName').text($('#get_userInfo').attr("data-username"));
-
-    //$('#shoppingCartItemNumber').html($('.myshoppingcartitemnumber').html());
-//    $('#shoppingCartTotalAmt').html($('.myshoppingcartitemnumber').attr("data-totalamount"));
+     $('#shoppingCartItemNumber').html($('.myshoppingcartitemnumber').html());
+     $('#shoppingCartTotalAmt').html($('.myshoppingcartitemnumber').attr("data-totalamount"));
 
     queryOrderInfo();
 
@@ -40,7 +37,7 @@ $(document).ready(function () {
          alert("seq="+i_seq);
          alert("qty="+i_qty);*/
 
-        updateOrderItem(i_id, i_seq, i_qty);
+      /*  updateOrderItem(i_id, i_seq, i_qty);*/
 
     });
 
@@ -68,10 +65,10 @@ $(document).ready(function () {
     });
 
     function queryOrderInfo() {
-        //send requrest to server.
+        //send request to server.
         var _orderId = $("#orderId").val();
         $.ajax({
-            url: basePath + 'order/allOrder',
+            url: basePath + '/orderdetail/process/admin/unpayidorders',
             cache: false,
             async: false,
             type: 'POST',
@@ -84,7 +81,7 @@ $(document).ready(function () {
             success: function (res) {
                 //alert("222");
                 console.log(res);
-                queryOrderInfoResponse(res);
+                (res);
             }
         });
     }
@@ -112,7 +109,7 @@ $(document).ready(function () {
     }
 
     //Process query shopping cart information response
-    function processMyShoppingCartResponse(res) {
+    /*function processMyShoppingCartResponse(res) {
         var result = res.result;			//response code
         var message = res.message;			//response message
 
@@ -121,7 +118,7 @@ $(document).ready(function () {
         } else {
             alert("Sorry, process your shopping cart failed! Try again, please. ");
         }
-    }
+    }*/
 
     //Process query shopping cart information response
     function queryOrderInfoResponse(res) {
@@ -130,35 +127,35 @@ $(document).ready(function () {
         //var item = res.item;
         
         if (result == "success") {
-            $('#myOrderList').html("");
+            $('#unpaidOrderList').html("");
             console.log(res.myOrderInfo);
             if (res.myOrderInfo && res.myOrderInfo.length > 0) {
                 $.each(res.myOrderInfo, function (i, item) {
                     //<input class='numbers' type='number' name='numbers' data-id='"+item.id+"' data-seq='"+item.seq+"' min='1' max='9999' value='"+item.quantity+"'>
                     //console.log(item.id);
-                	$('#myOrderList').append(
+                	$('#unpaidOrderList').append(
                         "<tr>"
-                		+ "	<td>" + item.date + "</td>"
-                        + "	<td>" + item.orderIdL + "</td>"
-                        + "	<td><a href='" + basePath + "order/orderentry/" + item.id + "'>Detail</a></td>"
-                        /*+ "	<td style='width:30px'><span data-id='" + item.id + "' data-seq='" + item.seq + "' class='glyphicon glyphicon-remove-sign close_item' style='color:red's></span></td>"*/
+                			+ "	<td>" + item.orderIdL + "</td>"
+                			+ "	<td>" + item.memberID + "</td>"
+                			+ "	<td>" + item.date + "</td>"
+                			+ "	<td><input type='checkbox' value=''></td>"
                         + "</tr>"
                     );
                 });
             } else {
-                $("<tr><td>No order list.</td></tr>").insertAfter('#myOrderList');
+                $("<tr><td>No order list.</td></tr>").insertAfter('#unpaidOrderList');
             }
         }
     }
 
-    $('.close_item').click(function (e) {
+    /*$('.close_item').click(function (e) {
         id = $(this).attr("data-id");
         seq = $(this).attr("data-seq");
         //alert("id="+id+", seq="+seq);
         delOrderItem(id, seq);
-    });
+    });*/
 
-    function delOrderItem(id, seq) {
+/*    function delOrderItem(id, seq) {
         var $id = id;
         var $seq = seq;
 
@@ -299,8 +296,8 @@ $(document).ready(function () {
 
         var counter = 0;
 
-        /* 		alert("tr length="+rowLength);
-         alert("td length="+colLength);*/
+         		alert("tr length="+rowLength);
+         alert("td length="+colLength);
 
         for (var i = 0; i < rowLength; i++) {
             var isChecked = $('#productsList tr:eq(' + i + ') td:eq(8) input').is(":checked");
@@ -352,6 +349,6 @@ $(document).ready(function () {
         } else {
             alert("Sorry, adding products into your order failed! Try again, please. ");
         }
-    }
+    }*/
 });
 

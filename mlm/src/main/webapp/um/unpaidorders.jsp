@@ -23,9 +23,9 @@
 		<div id="header">
 			<%@ include file="../includes/header.jsp"%>
 		</div> <!-- end header -->
-		<div id="functionbar">
+		<%-- <div id="functionbar">
 			<%@ include file="../includes/functionbar.jsp"%>
-		</div>
+		</div> --%>
 		<div id="page">
 			<div class="row">
 				<div class="col-md-3">
@@ -34,7 +34,8 @@
 					</div>
 				</div>
 				<div class="col-md-9">							
-					<div id="content">				
+					<div id="content">
+						<h1 ><small>Please check the orders that have been paid, then click 'Update'.</small></h1>				
 						<div id="unpaidorders">
 							<div class="list-group">
 							    <div class="list-group-item list-group-item-info active"><span class="glyphicon glyphicon-list-alt"></span> Unpaid Orders </div>
@@ -74,7 +75,7 @@
 									</div>							
 								</div> --%> 
 							    <div class="list-group-item">
-										<div class="subtitle" >Please check the orders that have been paid, then click on 'Update'.</div>
+										<!-- <div class="subtitle" >Please check the orders that have been paid, then click on 'Update'.</div> -->
 										<div class="table-hover table-striped unpaidordertable">
 											<table class="table">
 												<thead>
