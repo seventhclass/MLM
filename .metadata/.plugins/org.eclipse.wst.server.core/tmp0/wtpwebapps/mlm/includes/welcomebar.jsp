@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="h4 col-md-5">
 		<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
-		Welcome <strong style="color:red" id="membername"></strong>&nbsp;<strong>&#40;<span id="memberid"></span>&#41;</strong>
+		Welcome <strong style="color:green" id="membername"></strong>&nbsp;<strong>&#40;<span id="memberid"></span>&#41;</strong>
 	</div>
 </div>
 <script type="text/javascript">

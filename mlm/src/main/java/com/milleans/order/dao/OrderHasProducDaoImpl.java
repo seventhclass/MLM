@@ -103,4 +103,13 @@ public class OrderHasProducDaoImpl extends AbstractDao implements IorderHasProdu
 
         return orderHasProductDTOArrayList;
     }
+
+    @Override
+    public void deleteOrderProductShip(String orderId) {
+        String sql = "delete from t_order_has_t_product where t_order_id=" + orderId;
+
+        Query query = this.getCurrentSession().createSQLQuery(sql);
+        query.executeUpdate();
+
+    }
 }

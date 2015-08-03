@@ -15,6 +15,7 @@
 	<li><a href='<%=request.getContextPath()%>/autoship'>AutoShip</a></li>
 	<li><a href='<%=request.getContextPath()%>/autoshiplist'>AutoShip List</a></li>
 	<li class='nav-divider'></li>
+	<li><a href='<%=request.getContextPath()%>/unpaidorders'>Unpaid Orders</a></li>
 	<li><a href='<%=request.getContextPath()%>/accounttypemaintenance'>Account Type Maintenance</a></li>
 	<li><a href='<%=request.getContextPath()%>/productmaintenance'>Product Maintenance</a></li>
 	<li><a href='<%=request.getContextPath()%>/countrymaintenance'>Country Maintenance</a></li>

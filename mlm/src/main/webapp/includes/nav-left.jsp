@@ -8,13 +8,14 @@
 	<li><a href='<%=request.getContextPath()%>/modifypassword'>Modify Password</a></li>
 	<li><a href='##'>Search Member</a></li>
 	<li class='nav-divider'></li>
-	<li><a href='<%=request.getContextPath()%>/order/orderentry'>Order Entry</a></li>
+	<li><a href='<%=request.getContextPath()%>/order/myOrderList'>Order Entry</a></li>
 	<li class='nav-divider'></li>
 	<li><a href='<%=request.getContextPath()%>/paymenttype'>Payment Types</a></li>
 	<li class='nav-divider'></li>
 	<li><a href='<%=request.getContextPath()%>/autoship'>AutoShip</a></li>
 	<li><a href='<%=request.getContextPath()%>/autoshiplist'>AutoShip List</a></li>
 	<li class='nav-divider'></li>
+	<li><a href='<%=request.getContextPath()%>/orderdetail/process/view/unpaidorder'>Unpaid Orders</a></li>
 	<li><a href='<%=request.getContextPath()%>/accounttypemaintenance'>Account Type Maintenance</a></li>
 	<li><a href='<%=request.getContextPath()%>/productmaintenance'>Product Maintenance</a></li>
 	<li><a href='<%=request.getContextPath()%>/countrymaintenance'>Country Maintenance</a></li>

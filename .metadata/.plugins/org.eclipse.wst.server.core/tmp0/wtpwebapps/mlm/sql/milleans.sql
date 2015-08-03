@@ -147,18 +147,64 @@ CREATE TABLE `t_currency` (
 -- ----------------------------
 -- Table structure for `t_order`
 -- ----------------------------
-DROP TABLE IF EXISTS `t_order`;
-CREATE TABLE `t_order` (
-  `id`         INT(6) UNSIGNED    NOT NULL AUTO_INCREMENT,
-  `date`       DATE            NOT NULL,
-  `userid`     BIGINT(8) UNSIGNED NOT NULL,
-  `autoshipid` INT(6) UNSIGNED    NOT NULL,
-  `paymentid`  INT(6) UNSIGNED    NOT NULL,
-  `status`     INT(6) UNSIGNED    NOT NULL,
-  PRIMARY KEY (`id`)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8;
+# DROP TABLE IF EXISTS `t_order`;
+# CREATE TABLE `t_order` (
+#   `id`         INT(6) UNSIGNED    NOT NULL AUTO_INCREMENT,
+#   `date`       DATE            NOT NULL,
+#   `userid`     BIGINT(8) UNSIGNED NOT NULL,
+#   `productId`  INT(6) UNSIGNED NOT NULL,
+#   `autoshipid` INT(6) UNSIGNED    NOT NULL,
+#   `paymentid`  INT(6) UNSIGNED    NOT NULL,
+#   `status`     INT(6) UNSIGNED    NOT NULL,
+#   PRIMARY KEY (`id`)
+# )
+#   ENGINE =InnoDB
+#   DEFAULT CHARSET =utf8;
+
+CREATE TABLE IF NOT EXISTS `t_order` (
+  `id` INT(6) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
+  `date` DATE NOT NULL COMMENT '',
+  `autoshipid` INT(6) UNSIGNED NOT NULL COMMENT '',
+  `paymentid` INT(6) UNSIGNED NOT NULL COMMENT '',
+  `status` INT(6) UNSIGNED NOT NULL COMMENT '',
+  `userid` BIGINT(8) UNSIGNED NOT NULL COMMENT '',
+  `orderIdl` VARCHAR(45) NOT NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '',
+  INDEX `fk_t_order_t_user1_idx` (`userid` ASC)  COMMENT '',
+  UNIQUE INDEX `orderIdl_UNIQUE` (`orderIdl` ASC)  COMMENT '',
+  CONSTRAINT `fk_t_order_t_user1`
+  FOREIGN KEY (`userid`)
+  REFERENCES `t_user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+
+-- ----------------------------
+-- records of relationship between order and products
+-- ----------------------------
+CREATE TABLE IF NOT EXISTS `t_order_has_t_product` (
+  `t_order_id` INT(6) UNSIGNED NOT NULL COMMENT '',
+  `t_product_id` INT(6) UNSIGNED NOT NULL COMMENT '',
+  `quantity` INT(11) NOT NULL COMMENT '',
+  `transactionprice` DECIMAL(6,2) UNSIGNED NOT NULL DEFAULT 0.00 COMMENT '',
+  PRIMARY KEY (`t_order_id`, `t_product_id`)  COMMENT '',
+  INDEX `fk_t_order_has_t_product_t_product1_idx` (`t_product_id` ASC)  COMMENT '',
+  INDEX `fk_t_order_has_t_product_t_order_idx` (`t_order_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_t_order_has_t_product_t_order`
+  FOREIGN KEY (`t_order_id`)
+  REFERENCES `t_order` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_t_order_has_t_product_t_product1`
+  FOREIGN KEY (`t_product_id`)
+  REFERENCES `t_product` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
 
 -- ----------------------------
 -- Records of t_order
@@ -166,7 +212,79 @@ CREATE TABLE `t_order` (
 
 -- ----------------------------
 -- Table structure for `t_orderdetails`
+
+CREATE TABLE IF NOT EXISTS `mlm`.`t_orderdetails` (
+  `id`                 INT(6) UNSIGNED        NOT NULL AUTO_INCREMENT
+  COMMENT '',
+  `seq`                INT(6) UNSIGNED        NOT NULL
+  COMMENT '',
+  `createddate`        DATE                   NOT NULL
+  COMMENT '',
+  `productid`          INT(6) UNSIGNED        NOT NULL
+  COMMENT '',
+  `itemcode`           VARCHAR(20)            NOT NULL
+  COMMENT '',
+  `transactionprice`   DECIMAL(6, 2) UNSIGNED NOT NULL DEFAULT '0.00'
+  COMMENT '',
+  `volume`             INT(11)                NULL     DEFAULT NULL
+  COMMENT '',
+  `volume2`            INT(11)                NULL     DEFAULT NULL
+  COMMENT '',
+  `description`        VARCHAR(255)           NULL     DEFAULT NULL
+  COMMENT '',
+  `quantity`           INT(11)                NOT NULL
+  COMMENT '',
+  `price_total`        DECIMAL(6, 2)          NOT NULL
+  COMMENT '',
+  `point_total`        DECIMAL(6, 2)          NOT NULL
+  COMMENT '',
+  `userid`             BIGINT(8) UNSIGNED     NOT NULL
+  COMMENT '',
+  `orderIdl`           VARCHAR(45)            NOT NULL
+  COMMENT '',
+  `t_currency_id`      INT(6) UNSIGNED        NOT NULL
+  COMMENT '',
+  `t_paymentmethod_id` INT(6) UNSIGNED        NOT NULL
+  COMMENT '',
+  `endedate`           DATE                   NOT NULL
+  COMMENT '',
+  PRIMARY KEY (`id`)
+    COMMENT '',
+  INDEX `fk_t_orderdetails_t_user1_idx` (`userid` ASC)
+    COMMENT '',
+  INDEX `fk_t_orderdetails_t_product1_idx` (`productid` ASC)
+    COMMENT '',
+  INDEX `fk_t_orderdetails_t_currency1_idx` (`t_currency_id` ASC)
+    COMMENT '',
+  INDEX `fk_t_orderdetails_t_paymentmethod1_idx` (`t_paymentmethod_id` ASC)
+    COMMENT '',
+  CONSTRAINT `fk_t_orderdetails_t_user1`
+  FOREIGN KEY (`userid`)
+  REFERENCES `mlm`.`t_user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_t_orderdetails_t_product1`
+  FOREIGN KEY (`productid`)
+  REFERENCES `mlm`.`t_product` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_t_orderdetails_t_currency1`
+  FOREIGN KEY (`t_currency_id`)
+  REFERENCES `mlm`.`t_currency` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_t_orderdetails_t_paymentmethod1`
+  FOREIGN KEY (`t_paymentmethod_id`)
+  REFERENCES `mlm`.`t_paymentmethod` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+)
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8
+
+
 -- ----------------------------
+/*
 DROP TABLE IF EXISTS `t_orderdetails`;
 CREATE TABLE `t_orderdetails` (
   `id`          INT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -186,7 +304,7 @@ CREATE TABLE `t_orderdetails` (
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8;
-
+*/
 -- ----------------------------
 -- Records of t_orderdetails
 -- ----------------------------
@@ -205,6 +323,9 @@ CREATE TABLE `t_parameter` (
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8;
 
+INSERT INTO `t_parameter` (`id`, `name`, `value`, `description`) VALUES (NULL, 'TPS', '0.05', 'T.P.S');
+INSERT INTO `t_parameter` (`id`, `name`, `value`, `description`) VALUES (NULL, 'TVQ', '0.09975', 'TVQ');
+
 -- ----------------------------
 -- Records of t_parameter
 -- ----------------------------
@@ -212,17 +333,32 @@ CREATE TABLE `t_parameter` (
 -- ----------------------------
 -- Table structure for `t_paymentmethod`
 -- ----------------------------
-DROP TABLE IF EXISTS `t_paymentmethod`;
-CREATE TABLE `t_paymentmethod` (
-  `id`              INT(6) UNSIGNED     NOT NULL AUTO_INCREMENT,
-  `paymentmethodid` INT(6) UNSIGNED     NOT NULL,
-  `name`            VARCHAR(100)                 DEFAULT NULL,
-  `description`     VARCHAR(255)                 DEFAULT NULL,
-  `status`          TINYINT(1) UNSIGNED NOT NULL,
+# DROP TABLE IF EXISTS `t_paymentmethod`;
+# CREATE TABLE `t_paymentmethod` (
+#   `id`              INT(6) UNSIGNED     NOT NULL AUTO_INCREMENT,
+#   `paymentmethodid` INT(6) UNSIGNED     NOT NULL,
+#   `name`            VARCHAR(100)                 DEFAULT NULL,
+#   `description`     VARCHAR(255)                 DEFAULT NULL,
+#   `status`          TINYINT(1) UNSIGNED NOT NULL,
+#   PRIMARY KEY (`id`)
+# )
+#   ENGINE =InnoDB
+#   DEFAULT CHARSET =utf8;
+
+CREATE TABLE IF NOT EXISTS `mlm`.`t_paymentmethod` (
+  `id`          INT(6) UNSIGNED NOT NULL AUTO_INCREMENT
+  COMMENT '',
+  `name`        VARCHAR(100)    NULL     DEFAULT NULL
+  COMMENT '',
+  `description` VARCHAR(255)    NULL     DEFAULT NULL
+  COMMENT '',
   PRIMARY KEY (`id`)
+    COMMENT ''
 )
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8;
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8
+
+  INSERT INTO `mlm`.`t_paymentmethod` (`id`, `name`, `description`) VALUES (NULL, 'cheque', 'cheque');
 
 -- ----------------------------
 -- Records of t_paymentmethod
@@ -320,7 +456,7 @@ CREATE TABLE `t_shippingmethod` (
 -- ----------------------------
 -- Table structure for `t_shoppingcart`
 -- ----------------------------
-DROP TABLE IF EXISTS `t_shoppingcart`;
+/*DROP TABLE IF EXISTS `t_shoppingcart`;
 CREATE TABLE `t_shoppingcart` (
   `id`        INT(6) UNSIGNED    NOT NULL AUTO_INCREMENT,
   `userid`    BIGINT(8) UNSIGNED NOT NULL,
@@ -331,10 +467,31 @@ CREATE TABLE `t_shoppingcart` (
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8;
+*/
+
+CREATE TABLE IF NOT EXISTS `mlm`.`t_shoppingcart` (
+  `id` INT(6) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
+  `userid` BIGINT(8) UNSIGNED NOT NULL COMMENT '',
+  `date` DATE NOT NULL COMMENT '',
+  `productid` INT(6) UNSIGNED NOT NULL COMMENT '',
+  `quantity` INT(11) NOT NULL COMMENT '',
+  `transactionprice` DECIMAL(6,2) UNSIGNED NOT NULL DEFAULT '0.00' COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '',
+  INDEX `t_user_fk_idx` (`userid` ASC)  COMMENT '',
+  CONSTRAINT `t_user_fk`
+    FOREIGN KEY (`userid`)
+    REFERENCES `mlm`.`t_user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 22
+DEFAULT CHARACTER SET = utf8;
+
 
 -- ----------------------------
 -- Table structure for `t_user`
 -- ----------------------------
+
 DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
   `id` BIGINT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -354,7 +511,7 @@ CREATE TABLE `t_user` (
   `birthday` DATE DEFAULT NULL,
   `email` VARCHAR(60) NOT NULL,
   `address` VARCHAR(60) DEFAULT NULL,
-  `countryid` INT(6) UNSIGNED DEFAULT NULL,
+  `country` VARCHAR(30) DEFAULT NULL,
   `province` VARCHAR(30) DEFAULT NULL,
   `city` VARCHAR(30) DEFAULT NULL,
   `zip` VARCHAR(20) DEFAULT NULL,
@@ -390,6 +547,9 @@ CREATE TABLE `t_userpayment` (
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8;
+
+
+
 
 -- ----------------------------
 -- Records of t_userpayment

@@ -23,7 +23,7 @@
 		<div class="pagebox">
 			<div class="row">
 				<div class="col-md-12 text-center" >
-					<img class="imagebox" id="img_page1" src="./images/cover/changelife2.jpg" alt="">
+					<img class="img-responsive" id="img_page1" src="./images/cover/changelife2.jpg" alt="">
 					<div class="contentbox content1">
 						Milleans Vie Sciences offers solutions to transform your life
 						The answer you've been looking for!
@@ -35,21 +35,21 @@
 		<div class="pagebox">
 			<div class="row">
 				<div class="col-md-12 text-center" >
-					<img class="imagebox" id="img_page2" src="./images/cover/makemoney.png" alt="">
+					<img class="img-responsive" id="img_page2" src="./images/cover/makemoney.jpg" alt="">
 				</div>
 			</div>
 		</div>	
 		<div class="pagebox">
 			<div class="row">
 				<div class="col-md-12 text-center" >
-					<img class="imagebox" id="img_page3" src="./images/cover/changelife1.jpg" alt="">
+					<img class="img-responsive" id="img_page3" src="./images/cover/changelife1.jpg" alt="">
 				</div>
 			</div>
 		</div>	
 		<div class="pagebox">
 			<div class="row">
 				<div class="col-md-12 text-center" >
-					<img class="imagebox" id="img_page4" src="./images/cover/happy.jpg" alt="">
+					<img class="img-responsive" id="img_page4" src="./images/cover/happy.jpg" alt="">
 				</div>
 			</div>
 		</div>	

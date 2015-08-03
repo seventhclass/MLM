@@ -177,6 +177,15 @@
                                             <option value="2">$20.00 - Express</option>
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="shippingDateId" class="col-sm-3 control-label">
+                                            Shipping Date</label>
+
+                                        <div class="col-sm-3">
+                                            <input type="date" class="form-control" id="shippingDateId"
+                                                   name="shippingDate">
+                                        </div>
+                                    </div>
                                     <!-- 										<div class="col-sm-1 text-right">
                                                                                 <span style="color:#FE642E" class='glyphicon glyphicon-star-empty'></span>
                                                                             </div>

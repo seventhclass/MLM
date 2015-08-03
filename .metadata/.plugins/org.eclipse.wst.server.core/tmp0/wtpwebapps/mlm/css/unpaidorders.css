@@ -1,0 +1,13 @@
+@CHARSET "ISO-8859-1";
+
+.close_item {
+	display:none;
+}
+
+.close_item:hover {
+	cursor:pointer;
+}
+
+.myorder_btn {
+	display:none;
+}

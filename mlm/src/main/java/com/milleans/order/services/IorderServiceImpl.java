@@ -31,7 +31,7 @@ public class IorderServiceImpl implements IorderService {
 
     @Override
     public void remove(Object object) {
-
+        orderDao.remove(object);
     }
 
     @Override
