@@ -18,16 +18,16 @@ $(document).ready(function(){
 		var selectValue=$("#membertype").val();		
 		if(selectValue == 1){
 			$("#corporate").hide();
-			$("#admin").hide();
+			//$("#admin").hide();
 			$("#individual").show();		
 		}else if(selectValue == 2){			
 			$("#individual").hide();
-			$("#admin").hide();
+			//$("#admin").hide();
 			$("#corporate").show();		
 		}else if(selectValue == 9){			
 			$("#individual").hide();
 			$("#corporate").hide();
-			$("#admin").show();		
+			//$("#admin").show();		
 		}	
 		return false;
 	});
