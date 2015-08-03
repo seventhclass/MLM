@@ -23,12 +23,12 @@
 		</div> <!-- end header -->
 		<div id="page">
 			<div class="row">
-				<div class="col-md-3">
+				<%-- <div class="col-md-3">
 					<div id="left">
 						<%@ include file="../includes/nav-left.jsp"%>			
 					</div>
-				</div>
-				<div class="col-md-9">
+				</div> --%>
+				<div class="col-md-12">
 					<div id="content">
 						<div class="row">
 							<div class="col-md-12">
