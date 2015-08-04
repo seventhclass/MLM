@@ -42,10 +42,10 @@
 								</div>
 							    <div class="list-group-item">
 									<div class="row">	
-										<div class="col-sm-3">
+										<div class="col-sm-4">
 											Member ID: <span id="memberId"></span>
 										</div>
-										<div class="col-sm-4">
+										<div class="col-sm-8">
 											<span id="memberName"></span>
 										</div>
 										<%--<div class="col-sm-5">--%>
