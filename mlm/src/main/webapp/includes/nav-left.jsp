@@ -1,20 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-<ul class='nav nav-pills nav-stacked'>
-<li class='nav-divider'></li>
-	<li><a href='<%=request.getContextPath()%>/selectAutoship'>New Member Sign Up</a></li>
-	<li><a href='<%=request.getContextPath()%>/editprofile'>Edit Profile</a></li>
-	<li><a href='<%=request.getContextPath()%>/modifypassword'>Modify Password</a></li>
-	<li><a href='##'>Search Member</a></li>
-	<li class='nav-divider'></li>
-	<li><a href='<%=request.getContextPath()%>/order/myOrderList'>Order Entry</a></li>
-	<li class='nav-divider'></li>
-	<li><a href='<%=request.getContextPath()%>/paymenttype'>Payment Types</a></li>
-	<li class='nav-divider'></li>
-	<li><a href='<%=request.getContextPath()%>/autoship'>AutoShip</a></li>
-	<%-- <li class='nav-divider'></li>
- 	<li><a href='<%=request.getContextPath()%>/addressmaintenance'>Address Maintenance</a></li>
- --%>	<li class='nav-divider'></li>
-</ul>
+<%
+	String roleId = session.getAttribute("roleId")==null?null:session.getAttribute("roleId").toString();
+	if(roleId==null || roleId==""){
+		Cookie[] cookies = request.getCookies();
+		if(cookies!=null && cookies.length>0){
+			for(Cookie c:cookies){
+				if(c.getName().equals("roleId")){
+					roleId = c.getValue();
+				}
+			}
+		}
+	}
+%> 
+<%
+	if(roleId=="1")
+	{
+%>
+		<%@ include file="nav-left4admin.jsp"%>  
+<%		
+	}
+	else
+	{
+%>    
+		<%@ include file="nav-left4regular.jsp"%>  
+<%
+	}
+%>		
+
+    
    
