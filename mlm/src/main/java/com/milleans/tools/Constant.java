@@ -35,7 +35,7 @@ public class Constant {
     public static int RoleType_Individual = 2;
     public static int RoleType_Company = 3;
 
-    public final static Map<String, Integer> RoleTypeMapVal = new HashMap<>();
+    public static Map<String, Integer> RoleTypeMapVal = new HashMap<>();
 
     {
         RoleTypeMapVal.put("admin", 1);
