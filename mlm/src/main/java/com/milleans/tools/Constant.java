@@ -17,10 +17,9 @@ public class Constant {
     public static String TPS = "TPS";
     public static String TVQ = "TVQ";
 
-    public static Map<String, String> OrderStatus =
-            new HashMap<String, String>();
+    public static Map<String, String> OrderStatus = new HashMap<String, String>();
 
-    {
+    static {
         OrderStatus.put("1", "Pending");
         OrderStatus.put("2", "UnPayment");
         OrderStatus.put("3", "Finished");
@@ -35,12 +34,11 @@ public class Constant {
     public static int RoleType_Individual = 2;
     public static int RoleType_Company = 3;
 
-    public static Map<String, Integer> RoleTypeMapVal = new HashMap<>();
+    public static Map<String, Integer> RoleTypeMapVal = new HashMap<String, Integer>();
 
-    {
+    static {
         RoleTypeMapVal.put("admin", 1);
         RoleTypeMapVal.put("individual", 2);
         RoleTypeMapVal.put("company", 3);
     }
-
 }
