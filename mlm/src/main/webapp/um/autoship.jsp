@@ -54,8 +54,13 @@
 									    		<div class="col-sm-offset-1 col-sm-6">
 													<select id="a_paymethod" class="form-control" >
 													    <option selected value="0">Please Choose...</option>
+														<!--
 													    <option value="1">Credit Card</option>
+
 													    <option value="2">Paypal</option>
+														-->
+														<option value="1">Cheque</option>
+
 													</select>
 												</div>
 									    	</div>									    	

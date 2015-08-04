@@ -5,6 +5,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.Base64Utils;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -16,7 +17,11 @@ public class Utils {
 
     public static String MilleanDateFormate = "yyyy-MM-dd";
 
+    public static String TotalFormat = "###.##";
+
     public static SimpleDateFormat DateFormat = new SimpleDateFormat(MilleanDateFormate);
+
+    public static DecimalFormat decimalFormat = new DecimalFormat(TotalFormat);
 
     public synchronized static String getUserId() {
         long sysDate = Calendar.getInstance().getTimeInMillis();

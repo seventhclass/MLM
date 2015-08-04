@@ -165,7 +165,7 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView("um/login");
         try {
             User user = new User();
-            user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
+//            user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
             user.setFirstName(request.getParameter("firstname"));
             user.setLastName(request.getParameter("lastname"));
             user.setGender(request.getParameter("optionsgender"));

@@ -13,7 +13,6 @@
         <property name="password" value="7thclass"/>
 
         <!-- fro product evn -->
-
         <!--<property name="url" value="jdbc:mysql://localhost:3306/tobefore_mlm"/>-->
         <!--<property name="username" value="tobefore_mj"/>-->
         <!--<property name="password" value="1969@em"/>-->

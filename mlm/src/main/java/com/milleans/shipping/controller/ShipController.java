@@ -22,4 +22,6 @@ public class ShipController {
     public ModelAndView autoShipList() {
         return new ModelAndView("um/autoshiplist");
     }
+
+
 }
