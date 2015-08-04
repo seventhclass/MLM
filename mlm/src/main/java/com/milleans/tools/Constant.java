@@ -31,5 +31,16 @@ public class Constant {
     public static String DataFormat = "YYMMDD";
 
 
+    public static int RoleType_Admin = 1;
+    public static int RoleType_Individual = 2;
+    public static int RoleType_Company = 3;
+
+    public final static Map<String, Integer> RoleTypeMapVal = new HashMap<>();
+
+    {
+        RoleTypeMapVal.put("admin", 1);
+        RoleTypeMapVal.put("individual", 2);
+        RoleTypeMapVal.put("company", 3);
+    }
 
 }

@@ -1,6 +1,7 @@
 package com.milleans.um.controller;
 
 import com.milleans.model.User;
+import com.milleans.tools.Constant;
 import com.milleans.tools.Utils;
 import com.milleans.um.dto.AddressDTO;
 import com.milleans.um.dto.AddressList;
@@ -78,8 +79,11 @@ public class UserController {
                 Cookie cookiePwd = new Cookie("username", username);
                 cookieMemberId.setMaxAge(1 * 24 * 60 * 60);
 
+                Cookie cookRoleId = new Cookie("roleId", String.valueOf(user.getRoleId()));
+
                 response.addCookie(cookieMemberId);
                 response.addCookie(cookiePwd);
+                response.addCookie(cookRoleId);
 
             } else {
                 Cookie[] cookies = request.getCookies();
@@ -97,6 +101,7 @@ public class UserController {
             session.setAttribute("username", username);
             session.setAttribute("autoType", user.getAccountId());
             session.setAttribute("uid", user.getId());
+            session.setAttribute("roleId", user.getRoleId());
 
             return loginDto;
         } else {
@@ -155,17 +160,20 @@ public class UserController {
         } else if (type.equals("company")) {
             modelAndView = this.signCompany(request);
         } else {
-            modelAndView = this.signAdmin(request);
+            modelAndView = this.signAdmin(request, type);
         }
         return modelAndView;
     }
 
-    private ModelAndView signAdmin(HttpServletRequest request) {
+    private ModelAndView signAdmin(HttpServletRequest request, String type) {
 
         ModelAndView modelAndView = new ModelAndView("um/login");
         try {
             User user = new User();
 //            user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
+
+            user.setRoleId(Constant.RoleTypeMapVal.get(type));
+
             user.setFirstName(request.getParameter("firstname"));
             user.setLastName(request.getParameter("lastname"));
             user.setGender(request.getParameter("optionsgender"));
@@ -199,6 +207,7 @@ public class UserController {
 
             ModelMap model = new ModelMap();
             model.addAttribute("user", user);
+
 
             modelAndView = new ModelAndView("um/registersuccess", model);
 
