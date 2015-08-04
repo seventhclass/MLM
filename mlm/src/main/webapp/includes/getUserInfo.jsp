@@ -14,7 +14,7 @@
 					userName = c.getValue();
 				}
 			}
-		}		
+		}
 	}
 %> 
 <userInfo data-userid="<%=userId%>" data-username="<%=userName%>" id="get_userInfo"></userInfo>
