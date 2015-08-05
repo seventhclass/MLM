@@ -192,7 +192,7 @@ public class UserController {
             user.setEmail(request.getParameter("email"));
 
             String birthdayStr = request.getParameter("birthday");
-            if (birthdayStr != null && !birthdayStr.equals("")) {
+            if (birthdayStr != null && !birthdayStr.equals("") && birthdayStr.length() > 0) {
                 SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
                 try {
                     Date convertedCurrentDate = sdf.parse(birthdayStr);
@@ -201,6 +201,7 @@ public class UserController {
                     e.printStackTrace();
                 }
             }
+
             user.setDate(new Date());
             user.setUserId(Utils.getUserId());
             user = userService.signUp(user);
@@ -294,7 +295,7 @@ public class UserController {
 
             user.setEmail(request.getParameter("email"));
             String birthdayStr = request.getParameter("birthday");
-            if (birthdayStr != null && !birthdayStr.equals("")) {
+            if (birthdayStr != null && !birthdayStr.equals("") && birthdayStr.length() > 0) {
                 SimpleDateFormat sdf = new SimpleDateFormat(Utils.MilleanDateFormate);
                 try {
                     Date convertedCurrentDate = sdf.parse(birthdayStr);
