@@ -23,9 +23,6 @@
 		<div id="header">
 			<%@ include file="../includes/header.jsp"%>
 		</div> <!-- end header -->
-		<%-- <div id="functionbar">
-			<%@ include file="../includes/functionbar.jsp"%>
-		</div> --%>
 		<div id="page">
 			<div class="row">
 				<div class="col-md-3">
@@ -39,43 +36,7 @@
 						<div id="unpaidorders">
 							<div class="list-group">
 							    <div class="list-group-item list-group-item-info active"><span class="glyphicon glyphicon-list-alt"></span> Unpaid Orders </div>
-<%-- 							    <div class="list-group-item">
-									<div class="row">	
-										<div class="col-sm-3">	
-											Member ID: <span id="memberId">ABCDE00001</span>
-										</div>
-										<div class="col-sm-4">	
-											<span id="memberName">Michael Wang</span>
-										</div>	
-										<div class="col-sm-5">
-											<div class="list-group">
-												<div class="list-group-item list-group-item-danger">
-													<div class="row">
-														<div class="col-sm-4">
-															<img style="width: 80px; height: 80px; padding: 10px;" src="<%=request.getContextPath()%>/images/logo/shopping-cart-icon-transparent.png" alt="shopping cart">
-															
-														</div>
-														<div class="col-sm-7 text-right">
-															<div class="row">
-																Shopping Cart Item: <span id="shoppingCartItemNumber">3</span>
-															</div>
-															<div class="row">
-																Total: $<span id="shoppingCartTotalAmt">222.00</span> CAD
-															</div>
-															<div id="order_cart">
-																<div class="row">
-																	<a id="clearShoppingCart" href="#">[Clear]</a> <a id="checkoutShoppingCart" href="#">[Checkout]</a>
-																</div>
-															</div>
-														</div>							    														
-													</div>
-												</div>
-											</div>
-										</div>									
-									</div>							
-								</div> --%> 
 							    <div class="list-group-item">
-										<!-- <div class="subtitle" >Please check the orders that have been paid, then click on 'Update'.</div> -->
 										<div class="table-hover table-striped unpaidordertable">
 											<table class="table">
 												<thead>
@@ -83,41 +44,59 @@
 														<th>Order ID</th>
 														<th>Member ID</th>
 														<th>Order Date</th>
-														<th>Paid</th>
+														<th class="text-center">Paid&nbsp;&nbsp;<input type='checkbox' onclick="_chooseAll(this,'payornot[]')"/></th>
 													</tr>
 												</thead>
 											   <tbody id="unpaidOrderList">
+											   		<tr>
+											   			<td>
+											   				1111111111
+											   			</td>
+											   			<td>
+											   				MV1508217-2944
+											   			</td>
+											   			<td>
+											   				2015-08-05
+											   			</td>
+											   			<td align="center">
+											   				<input type='checkbox' id="payornot[]" name="payornot[]" value="1111111111"/>
+											   			</td>
+											   		</tr>
+											   		<tr>
+											   			<td>
+											   				2222222222
+											   			</td>
+											   			<td>
+											   				MV1508217-2944
+											   			</td>
+											   			<td>
+											   				2015-08-05
+											   			</td>
+											   			<td align="center">
+											   				<input type='checkbox' id="payornot[]" name="payornot[]" value="2222222222"/>
+											   			</td>
+											   		</tr>
+											   		<tr>
+											   			<td>
+											   				3333333333
+											   			</td>
+											   			<td>
+											   				MV1508217-2944
+											   			</td>
+											   			<td>
+											   				2015-08-05
+											   			</td>
+											   			<td align="center">
+											   				<input type='checkbox' id="payornot[]" name="payornot[]" value="3333333333"/>
+											   			</td>
+											   		</tr>											   													   		
 											   </tbody>
 											 </table>
 										</div>	
-										<!-- <div>											
-											<form id="addProductForm" class="form-horizontal" role="form" action="">
-												<div class="form-group">
-													<div class="col-sm-2">													
-														<button type="button" class="btn btn-success productsList_btn" data-toggle="modal" data-target="#productlist" data-backdrop="static" >Products List <span class="glyphicon glyphicon-circle-arrow-down"></span></button>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" class="form-control" id="itemcode"
-															placeholder="Item Code">														
-													</div>
-													<div class="col-sm-2">
-														Qty:<input id="itemqty" type="number" name="quantity" min="1" max="999" value="1">
-													</div>
-													<div class="col-sm-offset-4 col-sm-2">
-														<button type="submit" class="btn btn-success">Add Item <span class="glyphicon glyphicon-plus-sign"></span></button>
-													</div>
-												</div>											
-											</form>
-										</div> -->
 										<div id="update_orders" class="text-center">
-											<a href="<%=request.getContextPath()%>/payandship"><button type="button" class="btn btn-primary">Update</button></a>
+											<button type="button" class="btn btn-primary upd_payment_btn">Update</button>
 										</div>
 								</div>	
-							    <%-- <div class="list-group-item">
-									<div class="text-center">
-										<a href="<%=request.getContextPath()%>/products">Countinue Shopping</a>
-									</div>
-								</div> --%>															
 							</div>
 						</div> <!-- end orderentry -->							
 					</div> <!-- end content -->		
@@ -131,102 +110,6 @@
 		</div>
 	</div>
 	 	
-	<!-- <div id="productlist" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-header" style="background-color:#428bca;color:#fff;border-top-right-radius: 3px;border-top-left-radius: 3px;padding: 5px;">
-					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title text-center">Products List</h4>
-				</div>
-				<div class="modal-body">
-					<div class="subtitle" >Products Selection</div>
-						<div class="table-responsive ordertable">
-							<table class="table">
-								<thead>
-									<tr>
-										<th>Item Code</th>
-										<th>Name</th>
-										<th>Whole Sale Price</th>
-										<th>Retail Price</th>
-										<th>Currency</th>
-										<th>Numbers of Capsules</th>
-										<th>Business Volumes</th>
-										<th>Qty</th>
-										<th>Sel</th>
-									</tr>
-								</thead>
-							   <tbody id="productsList">
-							     <tr>
-									<td>A000000001</td>
-									<td>MT-1000</td>
-					           		<td>58$</td>
-					           		<td>79$</td>
-					           		<td>CAD</td>
-					           		<td>90</td>
-					           		<td>40BV</td>
-					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
-					           		<td><input type="checkbox" data-id="1"></td>
-							     </tr>  
-							     <tr>
-									<td>A000000002</td>
-									<td>MT-1000 Second Generation</td>
-					           		<td>63$</td>
-					           		<td>82$</td>
-					           		<td>CAD</td>
-					           		<td>50</td>
-					           		<td>40BV</td>
-					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
-					           		<td><input type="checkbox" data-id="2"></td>
-							     </tr> 		
-							     <tr>
-									<td>A000000003</td>
-									<td>Rejwvenetor</td>
-					           		<td>65$</td>
-					           		<td>82$</td>
-					           		<td>CAD</td>
-					           		<td>60</td>
-					           		<td>40BV</td>
-					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
-					           		<td><input type="checkbox" data-id="3"></td>
-							     </tr>	
-							     <tr>
-									<td>A000000004</td>
-									<td>Forever Young</td>
-					           		<td>95$</td>
-					           		<td>105$</td>
-					           		<td>CAD</td>
-					           		<td>50</td>
-					           		<td>55BV</td>
-					           		<td><input type="number" name="quantity" min="1" max="999" value="1"></td>
-					           		<td><input type="checkbox" data-id="4"></td>
-							     </tr>								     				     										       												     													     										     												           
-							   </tbody>
-							 </table>
-						</div>
-						<div class="text-center">						
-							<div id="pagination">
-								<div>Dispaly results: <strong>1-10</strong> of <strong>20</strong></div>
-								<ul class="pagination pagination-sm">
-								  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-step-backward" style="line-height: inherit;"></span></a></li>
-								  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-backward" style="line-height: inherit;"></span></a></li>
-								  <li class="active"><a href="#">1</a></li>
-								  <li><a href="#">2</a></li>
-								  <li><a href="#">3</a></li>
-								  <li><a href="#">4</a></li>
-								  <li><a href="#">5</a></li>
-								  <li><a href="#"><span class="glyphicon glyphicon-forward" style="line-height: inherit;"></span></a></li>
-								  <li><a href="#"><span class="glyphicon glyphicon-step-forward" style="line-height: inherit;"></span></a></li>
-								</ul>								
-							</div>
-						</div>					
-				</div>
-				<div class="modal-footer">					
-					<button type="button" class="btn btn-primary selectProducts">Submit</button>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	 	 
 	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 	
 		 
