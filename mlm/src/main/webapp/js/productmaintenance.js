@@ -324,7 +324,7 @@ $(document).ready(function () {
         var i_volume = $('#volume').val();
         var i_volume2 = $('#volume2').val();
         var i_desc = $('#description').val();
-        alert("model=" + i_model + ", id=" + i_id + ", itemcode=" + i_itemcode + ", name=" + i_name + ", categoryid=" + i_categoryid + ", currencyid=" + i_currencyid + ", wprice=" + i_wprice + ", rprice=" + i_rprice + ", numbers=" + i_numbers + ", volume=" + i_volume + ", volume2=" + i_volume2 + ", description=" + i_desc);
+        //alert("model=" + i_model + ", id=" + i_id + ", itemcode=" + i_itemcode + ", name=" + i_name + ", categoryid=" + i_categoryid + ", currencyid=" + i_currencyid + ", wprice=" + i_wprice + ", rprice=" + i_rprice + ", numbers=" + i_numbers + ", volume=" + i_volume + ", volume2=" + i_volume2 + ", description=" + i_desc);
         $.ajax({
             url: basePath + 'editproduct',
             cache: false,
@@ -365,7 +365,7 @@ $(document).ready(function () {
             if (message == null || message == "") {
                 message = "Sorry, your request is failed.";
             }
-            alert(message);
+            //alert(message);
         }
     }
 
