@@ -1,7 +1,6 @@
 package com.milleans.com.milleans.filter;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -10,8 +9,14 @@ import java.io.IOException;
 /**
  * Created by LeHu on 8/3/15 8:56 PM.
  */
-@WebFilter(filterName = "LoginFilter")
+//@WebFilter(filterName = "LoginFilter", urlPatterns = {"/*"},
+//        initParams = {
+//                @WebInitParam(name = "noCheck",
+//                        value = "login;login.jsp;index.jsp;selectAutoship;selectAccount;registration;logout;registration4admin.jsp;termcondition.jsp")})
 public class LoginFilter implements Filter {
+
+    private FilterConfig filterConfig;
+
     public void destroy() {
     }
 
@@ -20,42 +25,36 @@ public class LoginFilter implements Filter {
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) req;
 
-        if (httpServletRequest.getRequestURI().indexOf("registration4admin.jsp") != -1) {
-            chain.doFilter(req, resp);
-            return;
+        String noCheck = filterConfig.getInitParameter("noCheck");
+
+        if (noCheck != null) {
+            String[] strArray = noCheck.split(noCheck);
+            for (int i = 0; i < strArray.length; i++) {
+
+                if (strArray[i] == null || "".equals(strArray[i]))
+                    continue;
+
+                if (httpServletRequest.getRequestURI().indexOf(strArray[i]) != -1) {
+                    chain.doFilter(req, resp);
+                    return;
+                }
+            }
         }
 
-        if (httpServletRequest.getRequestURI().indexOf("login") != -1) {
-            chain.doFilter(req, resp);
-            return;
-        }
-
-        if (httpServletRequest.getRequestURI().indexOf("logout") != -1) {
-            chain.doFilter(req, resp);
-            return;
-        }
-
-        if (httpServletRequest.getRequestURI().indexOf("registration*") != -1) {
-            chain.doFilter(req, resp);
-            return;
-        }
-
-        HttpSession session = httpServletRequest.getSession();
-
-        //HttpServletResponse httpServletResponse = (HttpServletResponse) resp;
+        HttpSession session = ((HttpServletRequest) req).getSession();
+        HttpServletResponse httpResponse = (HttpServletResponse) resp;
 
         if (session.getAttribute("uid") != null) {
             chain.doFilter(req, resp);
         } else {
-            ((HttpServletResponse) resp).sendRedirect("/login");
+            httpResponse.sendRedirect("login");
         }
 
-        chain.doFilter(req, resp);
         System.out.println("filter end -------------------------------");
     }
 
     public void init(FilterConfig config) throws ServletException {
-
+        this.filterConfig = config;
     }
 
 }

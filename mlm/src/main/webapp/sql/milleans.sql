@@ -367,7 +367,7 @@ CREATE TABLE IF NOT EXISTS `mlm`.`t_paymentmethod` (
     COMMENT ''
 )
   ENGINE = InnoDB
-  DEFAULT CHARACTER SET = utf8
+  DEFAULT CHARACTER SET = utf8;
 
   INSERT INTO `mlm`.`t_paymentmethod` (`id`, `name`, `description`) VALUES (NULL, 'cheque', 'cheque');
 
