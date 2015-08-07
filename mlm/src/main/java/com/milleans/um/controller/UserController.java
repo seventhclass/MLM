@@ -47,6 +47,17 @@ public class UserController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public ModelAndView doLogout(
+            HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+
+        session.invalidate();
+
+        ModelAndView modelAndView = new ModelAndView("um/login");
+        return modelAndView;
+    }
+
+
     @RequestMapping(value = "/doLogin", method = RequestMethod.POST)
     public
     @ResponseBody
@@ -57,6 +68,12 @@ public class UserController {
         log.debug("user do login");
         User user = userService.getUser(memberid);
         LoginDto loginDto = new LoginDto();
+
+        if (user == null) {
+            loginDto.setMessage("memberId or password doesn't match! please input again!");
+            loginDto.setResult("fail");
+            return loginDto;
+        }
 
 //        if (user.getPassWord().equals(password)) {
 
