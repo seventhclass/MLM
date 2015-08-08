@@ -58,15 +58,16 @@ $(document).ready(function () {
         
         if (result == "success") {
             $('#unpaidOrderList').html("");
-            console.log(res.myOrderInfo);
-            if (res.myOrderInfo && res.myOrderInfo.length > 0) {
-                $.each(res.myOrderInfo, function (i, item) {
+            console.log("------");
+            console.log(res.orderList);
+            if (res.orderList && res.orderList.length > 0) {
+                $.each(res.orderList, function (i, item) {
                 	$('#unpaidOrderList').append(
                         "<tr>"
-                			+ "	<td>" + item.orderIdL + "</td>"
-                			+ "	<td>" + item.memberID + "</td>"
-                			+ "	<td>" + item.date + "</td>"
-                			+ "	<td><input type='checkbox' id='payornot[]' name='payornot[]' value='"+item.orderIdL+"'></td>"
+                			+ "	<td>" + item.ordlerIdL + "</td>"
+                			+ "	<td>" + item.userIdL + "</td>"
+                			+ "	<td>" + item.createDate + "</td>"
+                			+ "	<td><input type='checkbox' id='payornot[]' name='payornot[]' value='"+item.ordlerIdL+"'></td>"
                         + "</tr>"
                     );
                 });
@@ -95,14 +96,14 @@ $(document).ready(function () {
     		{                     
     			if(orderids!="")
     			{
-    				orderids += ",";
+    				orderids += ";";
     			}
     			orderids += elms[i].value;
     		}  
     	}
     	alert("orderids="+orderids);
         $.ajax({
-            url: basePath + 'updatePayment',
+            url: basePath + '/orderdetail/process/admin/paying',
             cache: false,
             async: false,
             type: 'POST',
@@ -125,7 +126,7 @@ $(document).ready(function () {
 
         if (result == "success") {
         	alert("Update payment is successed.");
-            window.location.href = basePath + "unpaidorder";
+            window.location.href = basePath + "/orderdetail/process/view/unpaidorder";
         } else {
             if (message == null || message == "") {
                 message = "Sorry, your request is failed.";

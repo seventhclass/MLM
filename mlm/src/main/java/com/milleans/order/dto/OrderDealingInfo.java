@@ -1,7 +1,5 @@
 package com.milleans.order.dto;
 
-import java.util.Date;
-
 /**
  * Created by LeHu on 7/29/15 4:20 PM.
  */
@@ -10,7 +8,7 @@ public class OrderDealingInfo {
 
     private String ordlerIdL;
 
-    private Date createDate;
+    private String createDate;
 
     private String status;
 
@@ -24,11 +22,11 @@ public class OrderDealingInfo {
         this.ordlerIdL = ordlerIdL;
     }
 
-    public Date getCreateDate() {
+    public String getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(String createDate) {
         this.createDate = createDate;
     }
 

@@ -9,8 +9,9 @@ var data = dataString.split(/[&=]/g);
 $(document).ready(function(){
 	var basePath=$('#basePath').attr("value");
 	
-	$("#goLogin_btn").click(function(){		
-		window.location=basePath+"login?memberid="+$('#memberid').text();	
+	$("#goLogin_btn").click(function(){
+		//alert("-000");
+		window.location=basePath+"login?memberid="+$('#memberid').text();
 	});	
 		
 });	

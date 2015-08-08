@@ -48,48 +48,6 @@
 													</tr>
 												</thead>
 											   <tbody id="unpaidOrderList">
-											   		<tr>
-											   			<td>
-											   				1111111111
-											   			</td>
-											   			<td>
-											   				MV1508217-2944
-											   			</td>
-											   			<td>
-											   				2015-08-05
-											   			</td>
-											   			<td align="center">
-											   				<input type='checkbox' id="payornot[]" name="payornot[]" value="1111111111"/>
-											   			</td>
-											   		</tr>
-											   		<tr>
-											   			<td>
-											   				2222222222
-											   			</td>
-											   			<td>
-											   				MV1508217-2944
-											   			</td>
-											   			<td>
-											   				2015-08-05
-											   			</td>
-											   			<td align="center">
-											   				<input type='checkbox' id="payornot[]" name="payornot[]" value="2222222222"/>
-											   			</td>
-											   		</tr>
-											   		<tr>
-											   			<td>
-											   				3333333333
-											   			</td>
-											   			<td>
-											   				MV1508217-2944
-											   			</td>
-											   			<td>
-											   				2015-08-05
-											   			</td>
-											   			<td align="center">
-											   				<input type='checkbox' id="payornot[]" name="payornot[]" value="3333333333"/>
-											   			</td>
-											   		</tr>											   													   		
 											   </tbody>
 											 </table>
 										</div>	

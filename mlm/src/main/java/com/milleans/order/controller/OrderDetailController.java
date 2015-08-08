@@ -127,9 +127,9 @@ public class OrderDetailController {
         return processOrder;
     }
 
-    @RequestMapping(value = "/process/admin/dealing", method = RequestMethod.POST)
+    @RequestMapping(value = "/process/admin/paying", method = RequestMethod.POST)
     @ResponseBody
-    public BaseJs processingOrderPayment(@RequestParam("orderArr") String orderArr) {
+    public BaseJs processingOrderPayment(@RequestParam("orderids") String orderArr) {
         BaseJs baseJs = new BaseJs();
         String[] orderList=orderArr.split(";");
         for(String orderIdL: orderList){

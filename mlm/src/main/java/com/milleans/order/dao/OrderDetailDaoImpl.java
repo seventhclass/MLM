@@ -2,13 +2,11 @@ package com.milleans.order.dao;
 
 import com.milleans.dao.AbstractDao;
 import com.milleans.order.dto.OrderDealingInfo;
-import com.milleans.tools.Utils;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,8 +49,13 @@ public class OrderDetailDaoImpl extends AbstractDao implements IOrderDetailDao {
 
             tmp.setOrdlerIdL(objects[0].toString());
             tmp.setStatus(objects[1].toString());
-            SimpleDateFormat dateFormat = new SimpleDateFormat(Utils.MilleanDateFormate);
-            tmp.setCreateDate(dateFormat.parse(objects[2].toString()));
+            //SimpleDateFormat dateFormat = new SimpleDateFormat(Utils.MilleanDateFormate);
+            //String test= objects[2].toString();
+
+            //long tl=Long.valueOf(test);
+            //Date td=new Date(tl);
+
+            tmp.setCreateDate(objects[2].toString());
             tmp.setUserIdL(objects[3].toString());
 
             list.add(tmp);
