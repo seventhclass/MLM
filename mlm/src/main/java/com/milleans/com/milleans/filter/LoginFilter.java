@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebFilter(filterName = "LoginFilter", urlPatterns = {"/*" },
         initParams = {
                 @WebInitParam(name = "noCheck",
-                        value = "login;doLogin;" +
+                        value = "signUp;login;doLogin;" +
                                 "login.jsp;index;selectAutoship;selectAccount;" +
                                 "registration;logout;registration4admin.jsp;" +
                                 "termcondition.jsp;contactus;aboutus;images;logout;png;jpg")})
