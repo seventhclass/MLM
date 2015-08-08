@@ -5,7 +5,6 @@
 $(document).ready(function () {
     var basePath = $('#basePath').attr("value");
     queryProductInfo();
-
     //Query category information
     function queryCategoryInfo() {
 
@@ -88,7 +87,7 @@ $(document).ready(function () {
 
     //Query product information
     function queryProductInfo() {
-
+    	alert("Here....");
         //send requrest to server.
         $.ajax({
             url: basePath + 'productList',
@@ -113,8 +112,8 @@ $(document).ready(function () {
         var message = res.message;			//response message
 
         if (result == "success") {
-            $('#productlist').html("");
             if (res.productInfo && res.productInfo.length > 0) {
+               	$('#productlist').html("");
                 $.each(res.productInfo, function (i, item) {
                     $('#productlist').append(
                         "<tr>"
@@ -137,6 +136,7 @@ $(document).ready(function () {
                     );
                 });
             } else {
+            	$('#productlist').html("");
                 $("<tr><td colspan='10'>No items. </td></tr>").insertAfter('#productlist');
             }
         }
