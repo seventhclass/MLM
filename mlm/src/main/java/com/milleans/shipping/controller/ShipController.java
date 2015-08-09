@@ -1,7 +1,11 @@
 package com.milleans.shipping.controller;
 
+import com.milleans.shipping.dto.ShipInfoJs;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -25,7 +29,17 @@ public class ShipController {
     }
 
 
-    //@RequestMapping(value = "/")
+    @RequestMapping(value = "/shipList", method = RequestMethod.POST)
+    @ResponseBody
+    public ShipInfoJs getShipList(@RequestParam("date") String date) {
+        ShipInfoJs shipInfoJs = new ShipInfoJs();
+
+
+
+
+
+        return shipInfoJs;
+    }
 
 
 }
