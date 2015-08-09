@@ -277,7 +277,7 @@ public class ProductController {
         return imageListJs;
     }
 
-    @RequestMapping(value = "/productDetail", method = RequestMethod.GET)
+    @RequestMapping(value = "/productDetail", method = RequestMethod.POST)
     @ResponseBody
     public ProductTableJs getProductDetail(@RequestParam("pid") int pid) {
 

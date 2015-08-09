@@ -81,7 +81,7 @@ $(document).ready(function(){
  					parseFloat
  					$('#productslist').append(
 					    "<div class='col-xs-6 col-md-4'>"
- 						+"	<a href='"+basePath+"productDetail?id="+item.id+"' class='thumbnail' target='_BLANK'>"
+ 						+"	<a href='"+basePath+"productInfo?id="+item.id+"' class='thumbnail' target='_BLANK'>"
  						+"		<img src='"+basePath+"images/products/"+item.imageName+"' style='height: 200px; width: 150px; display: block;' alt=''>"
  						+"	</a>"
  						+"	<div class='caption'>"

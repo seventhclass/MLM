@@ -7,16 +7,20 @@ var dataString = unescape(formString);
 var data = dataString.split(/[&=]/g);
 
 $(document).ready(function(){
+	
  	var basePath=$('#basePath').attr("value");
  	 	
  	queryProductDetailInfo();   
  	
+ 	$('.closewindow_btn').click(function(e){
+ 		window.close();
+ 	});
+ 	
  	//Query products information
  	function queryProductDetailInfo(){
- 		alert("pid="+pid);
  	 	//send requrest to server.
  	    $.ajax({
- 	    	url: basePath+'productDetail',        	
+ 	    	url: basePath+'/productDetail',        	
  			cache:false,
  			async: false,
  			type:'POST',			

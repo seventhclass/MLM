@@ -63,6 +63,7 @@ Additional source materials include Mosby's Dental Dictionary, Second Edition, a
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
+					<br>
 					<button type="button" class="btn btn-danger closewindow_btn">Close</button>
 				</div>
 			</div>
