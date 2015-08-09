@@ -13,6 +13,7 @@ $(document).ready(function(){
  	
  	//Query products information
  	function queryProductDetailInfo(){
+ 		alert("pid="+pid);
  	 	//send requrest to server.
  	    $.ajax({
  	    	url: basePath+'productDetail',        	

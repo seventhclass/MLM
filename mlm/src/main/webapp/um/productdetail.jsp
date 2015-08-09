@@ -28,12 +28,12 @@
 					<div id="content">
 						<div id="shopwindow">
 							<div id="productdetailinfo" class="row">
-								<div id="productthumbnail" class="col-md-3">
+								<%-- <div id="productthumbnail" class="col-md-3">
 									<img src="<%=request.getContextPath()%>/images/products/product1.png"
 										style="height: 200px; width: 150px; display: block;" alt="">
 								</div>
 								<div id="productcontent" class="col-md-9">
-									<!-- <div class="caption">
+									<div class="caption">
 										<h3 class="p_name">MT-1000</h3>
 										<p class="p_itemCode"><font style="font-weight:bold;">Item No:&nbsp;&nbsp;</font>A000000001</p>																				
 										<p><font style="font-weight:bold;">Price:&nbsp;&nbsp;</font>Reatil&nbsp;<span class="p_rPrice">99.00</span>$<span>&nbsp;&#47;&nbsp;</span>
@@ -54,8 +54,8 @@ The Medical dictionary also draws from The Gale Encyclopedia of Medicine,Second 
 
 Additional source materials include Mosby's Dental Dictionary, Second Edition, a compilation of 2,100 dentistry-related definitions; Mosby's Dictionary of Complementary and Alternative Medicine, which catalogs terms used in non-conventional medical and healing practices; and Saunders Comprehensive Veterinary Dictionary, Third Edition, which includes information on large and small animals and features more than 65,000 entries and over 1,000 new terms.
 										</p>
-									</div>		 -->							
-								</div>
+									</div>									
+								</div> --%>
 							</div>
 						</div> <!-- end shopwindow -->
 					</div> <!-- end content -->					
