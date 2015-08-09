@@ -293,4 +293,10 @@ public class ProductController {
         return productTableJs;
     }
 
+    @RequestMapping(value = "/productInfo", method = RequestMethod.GET)
+    public ModelAndView getProductDetail() {
+        ModelAndView modelAndView = new ModelAndView("um/productdetail");
+        return modelAndView;
+    }
+
 }

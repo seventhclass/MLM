@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by macbookpro on 2015-04-11.
  */
 @Controller("shipController")
+@RequestMapping("ship")
 public class ShipController {
 
 
@@ -23,6 +24,8 @@ public class ShipController {
         return new ModelAndView("um/autoshiplist");
     }
 
+
+    //@RequestMapping(value = "/")
 
 
 }
