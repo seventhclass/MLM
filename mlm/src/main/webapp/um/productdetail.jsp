@@ -28,34 +28,7 @@
 					<div id="content">
 						<div id="shopwindow">
 							<div id="productdetailinfo" class="row">
-								<%-- <div id="productthumbnail" class="col-md-3">
-									<img src="<%=request.getContextPath()%>/images/products/product1.png"
-										style="height: 200px; width: 150px; display: block;" alt="">
-								</div>
-								<div id="productcontent" class="col-md-9">
-									<div class="caption">
-										<h3 class="p_name">MT-1000</h3>
-										<p class="p_itemCode"><font style="font-weight:bold;">Item No:&nbsp;&nbsp;</font>A000000001</p>																				
-										<p><font style="font-weight:bold;">Price:&nbsp;&nbsp;</font>Reatil&nbsp;<span class="p_rPrice">99.00</span>$<span>&nbsp;&#47;&nbsp;</span>
-										Assoc&nbsp;<span class="p_wPrice">58.00</span>$<span>&nbsp;&#47;&nbsp;</span>
-										<span class="p_BV">40</span>BV
-										</p>
-										<p><font style="font-weight:bold;">Volume:&nbsp;&nbsp;</font><span class="p_numbers">90</span>&nbsp;Counts</p>
-										<font style="font-weight:bold;">Description:</font>
-										<hr/>
-										<p>
-											The main sources of TheFreeDictionary's Medical dictionary are The American Heritage® Stedman's Medical Dictionary, Second Edition and Dorland's Medical Dictionary for Health Care Consumers, which provide authoritative descriptions of medical conditions, medications, anatomical terms, noted medical personalities and much more.
-
-The American Heritage® Stedman's Medical Dictionary is ideal for both medical professionals and anyone who wants to keep up with the burgeoning array of terminology found in today's medical news. By avoiding jargon, the dictionary offers concise and easily accessible information for users searching for descriptions of over-the-counter or prescription medications, medical abbreviations, test procedures, medical research topics, or illnesses. Over 45,000 entries from all areas of medicine and healthcare are included.
-
-Dorland's Medical Dictionary for Health Care Consumers is based on the content of Dorland's Illustrated Medical Dictionary, which has been the premier dictionary for health care professionals for over 100 years. Created especially with the health care consumer in mind, Dorland's contains approximately 40,000 entries and more than 350 illustrations and provides authoritative, concise definitions for a wide range of terms used in the health sciences, including those related to anatomy, physiology, diseases, drugs, tests and procedures, and much, much more.
-
-The Medical dictionary also draws from The Gale Encyclopedia of Medicine,Second Edition, which provides information on nearly 1,700 common medical disorders, tests, and treatments, and bridges the gap between basic consumer resources and highly technical professional materials.
-
-Additional source materials include Mosby's Dental Dictionary, Second Edition, a compilation of 2,100 dentistry-related definitions; Mosby's Dictionary of Complementary and Alternative Medicine, which catalogs terms used in non-conventional medical and healing practices; and Saunders Comprehensive Veterinary Dictionary, Third Edition, which includes information on large and small animals and features more than 65,000 entries and over 1,000 new terms.
-										</p>
-									</div>									
-								</div> --%>
+								
 							</div>
 						</div> <!-- end shopwindow -->
 					</div> <!-- end content -->					
