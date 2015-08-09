@@ -68,6 +68,7 @@ public class ProductController {
         return productTableJs;
     }
 
+
     @RequestMapping(value = "/editproduct", method = RequestMethod.POST)
     @ResponseBody
     public BaseJs editProduct(WebRequest webRequest) {
@@ -157,7 +158,7 @@ public class ProductController {
                            HttpSession httpSession, HttpServletResponse httpServletResponse) {
         try {
 
-            System.out.println("productId=="+productId);
+            System.out.println("productId==" + productId);
 
             String fileName = uploadFile.getOriginalFilename();
             String fileType = fileName.substring(fileName.lastIndexOf("."),
@@ -278,11 +279,18 @@ public class ProductController {
 
     @RequestMapping(value = "/productDetail", method = RequestMethod.GET)
     @ResponseBody
-    public BaseJs getProductDetail(@RequestParam("id") String id) {
+    public ProductTableJs getProductDetail(@RequestParam("pid") int pid) {
 
-        BaseJs baseJs = new BaseJs();
-
-        return baseJs;
+        ProductTableJs productTableJs = new ProductTableJs();
+        try {
+            List<ProductTable> productTableList = productService.getProduct(pid);
+            productTableJs.setProductInfo(productTableList);
+        } catch (Exception e) {
+            e.printStackTrace();
+            productTableJs.setMessage(e.getMessage());
+            productTableJs.setResult("fail");
+        }
+        return productTableJs;
     }
 
 }

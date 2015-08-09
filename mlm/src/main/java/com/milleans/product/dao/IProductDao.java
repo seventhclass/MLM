@@ -16,6 +16,9 @@ public interface IProductDao extends IDao {
 
     public List<ProductTable> getProductList();
 
+
+    public List<ProductTable> getProductList(int pid);
+
     public Product getItemById(String id);
 
     public List<CartContent> getProductOfCart(String userId);

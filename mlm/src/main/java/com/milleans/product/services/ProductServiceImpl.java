@@ -35,6 +35,12 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
+    public List<ProductTable> getProduct(int pid) {
+        List list = productDao.getProductList(pid);
+        return list;
+    }
+
+    @Override
     public List<CartContent> getProductByCart(String userId) {
         List<CartContent> cartContents = new ArrayList<CartContent>();
         cartContents = productDao.getProductOfCart(userId);
