@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -183,7 +185,7 @@
 
                                         <div class="col-sm-3">
                                             <input type="date" class="form-control" id="shippingDateId"
-                                                   name="shippingDate">
+                                                   name="shippingDate" value=<%=new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime()) %>>
                                         </div>
                                     </div>
                                     <!-- 										<div class="col-sm-1 text-right">
