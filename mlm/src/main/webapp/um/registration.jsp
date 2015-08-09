@@ -134,54 +134,59 @@
 										<div class="subtitle">Contact
 											Information</div>
 										<div class="form-group">
-											<label for="address" class="col-sm-3 control-label">Address
+											<label for="address" class="col-sm-3 control-label">Address<span class="starsymbol">*</span>
 											</label>
-											<div class="col-sm-6">												
+											<div class="col-sm-4">												
 												<textarea id="address" name="address" class="form-control" rows="2"></textarea>												
 											</div>
+											<div id="errmsg_address" class="col-sm-5 text-danger"></div>
 										</div>											
 										<div class="form-group">
-											<label for="country" class="col-sm-3 control-label">Country
+											<label for="country" class="col-sm-3 control-label">Country<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-3">												
-												<select name="countrycode" class="form-control">
+												<select id="countrycode" name="countrycode" class="form-control">
 												    <option value="86">Canada</option>
 												    <option value="87">US</option>
 												</select>
 											</div>
+											<div id="errmsg_countrycode" class="col-sm-5 text-danger"></div>
 										</div>												
 										<div class="form-group">
-											<label for="state" class="col-sm-3 control-label">State/Province
+											<label for="state" class="col-sm-3 control-label">State/Province<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-3">												
-												<select name="provincecode" class="form-control">
+												<select id="provincecode" name="provincecode" class="form-control">
 												    <option value="QC">Quebec</option>
 												    <option value="ON">Ontario</option>
-												    <option>British Columbia</option>
+												    <!-- <option>British Columbia</option>
 												    <option>Alberta</option>
 												    <option>Nova Scotia</option>
 												    <option>Newfoundland and Labrador</option>
 												    <option>Saskatchewan</option>
 												    <option>Manitoba</option>
 												    <option>New Brunswick Canada</option>
-												    <option>Prince Edward Island(PEI)</option>
+												    <option>Prince Edward Island(PEI)</option> -->
 												</select>
 											</div>
+											<div id="errmsg_provincecode" class="col-sm-5 text-danger"></div>
 										</div>	
 										<div class="form-group">
-											<label for="city" class="col-sm-3 control-label">City
+											<label for="city" class="col-sm-3 control-label">City<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
 												<input type="text" class="form-control" id="city" name="city"
 													placeholder="Enter city name, please">
 											</div>
+											<div id="errmsg_city" class="col-sm-5 text-danger"></div>
 										</div>										
 										<div class="form-group">
-											<label for="zip" class="col-sm-3 control-label">Zip
+											<label for="zip" class="col-sm-3 control-label">Post Code<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-3">
 												<input type="text" class="form-control" id="zip" name="zip">
 											</div>
+											<div id="errmsg_zip" class="col-sm-5 text-danger"></div>
 										</div>											
 										<div class="form-group">
 											<label for="mobilephone" class="col-sm-3 control-label">Mobile Phone<span class="starsymbol">*</span>
@@ -292,27 +297,29 @@
 										<div class="subtitle">Contact
 											Information</div>
 										<div class="form-group">
-											<label for="c_address" class="col-sm-3 control-label">Address
+											<label for="c_address" class="col-sm-3 control-label">Address<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-6">												
 												<textarea id="c_address" name="address" class="form-control" rows="2"></textarea>												
 											</div>
+											<div id="errmsg_c_address" class="col-sm-5 text-danger"></div>
 										</div>											
 										<div class="form-group">
-											<label for="c_country" class="col-sm-3 control-label">Country
+											<label for="c_country" class="col-sm-3 control-label">Country<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-3">												
-												<select name="countrycode" class="form-control">
+												<select id="c_countrycode" name="countrycode" class="form-control">
 												    <option value="86">Canada</option>
 												    <option value="87">US</option>
 												</select>
 											</div>
+											<div id="errmsg_c_countrycode" class="col-sm-5 text-danger"></div>
 										</div>												
 										<div class="form-group">
-											<label for="c_state" class="col-sm-3 control-label">State/Province
+											<label for="c_state" class="col-sm-3 control-label">State/Province<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-3">												
-												<select name="provincecode" class="form-control">
+												<select id="c_provincecode" name="provincecode" class="form-control">
 												    <option value="QC">Quebec</option>
 												    <option value="ON">Ontario</option>
 												    <option>British Columbia</option>
@@ -325,21 +332,24 @@
 												    <option>Prince Edward Island(PEI)</option>
 												</select>
 											</div>
+											<div id="errmsg_c_provincecode" class="col-sm-5 text-danger"></div>
 										</div>	
 										<div class="form-group">
-											<label for="c_city" class="col-sm-3 control-label">City
+											<label for="c_city" class="col-sm-3 control-label">City<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
 												<input type="text" class="form-control" id="c_city" name="city"
 													placeholder="Enter city name, please">
 											</div>
+											<div id="errmsg_c_city" class="col-sm-5 text-danger"></div>
 										</div>										
 										<div class="form-group">
-											<label for="c_zip" class="col-sm-3 control-label">Zip
+											<label for="c_zip" class="col-sm-3 control-label">Post Code<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-3">
 												<input type="text" class="form-control" id="c_zip" name="zip">
 											</div>
+											<div id="errmsg_c_zip" class="col-sm-5 text-danger"></div>
 										</div>											
 										<div class="form-group">
 											<label for="c_mobilephone" class="col-sm-3 control-label">Mobile Phone<span class="starsymbol">*</span>
