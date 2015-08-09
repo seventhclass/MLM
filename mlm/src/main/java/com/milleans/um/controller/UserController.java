@@ -143,8 +143,6 @@ public class UserController {
             Utils.getFailMessage(e.getMessage());
 
         }
-        //jsonResponseDto.setResult("success");
-        //jsonResponseDto.setMessage("it's really success.");
         return jsonResponseDto;
     }
 
@@ -171,11 +169,12 @@ public class UserController {
     public ModelAndView registration(@RequestParam("type") String type, HttpServletRequest request) {
 
         ModelAndView modelAndView = null;
-//        String forwardUrl=null;
         if (type.equals("individual")) {
-            modelAndView = this.signIndividual(request);
+            int accountType = Integer.valueOf(request.getParameter("accounttype").toString());
+            modelAndView = this.signIndividual(request, accountType);
         } else if (type.equals("company")) {
-            modelAndView = this.signCompany(request);
+            int accountType = Integer.valueOf(request.getParameter("accounttype").toString());
+            modelAndView = this.signCompany(request, accountType);
         } else {
             modelAndView = this.signAdmin(request, type);
         }
@@ -237,13 +236,13 @@ public class UserController {
 
     }
 
-    private ModelAndView signCompany(HttpServletRequest request) {
+    private ModelAndView signCompany(HttpServletRequest request, int accountType) {
 
         ModelAndView modelAndView = this.login();
         try {
 
             User user = new User();
-
+            user.setAccountId(accountType);
             user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
             user.setCompanyName(request.getParameter("companyname"));
             user.setCompanyType(Integer.valueOf(request.getParameter("companytype")));
@@ -280,11 +279,12 @@ public class UserController {
         return modelAndView;
     }
 
-    private ModelAndView signIndividual(HttpServletRequest request) {
+    private ModelAndView signIndividual(HttpServletRequest request, int accountType) {
 
         ModelAndView modelAndView = new ModelAndView("um/login");
         try {
             User user = new User();
+            user.setAccountId(accountType);
             user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
             user.setFirstName(request.getParameter("firstname"));
             user.setLastName(request.getParameter("lastname"));

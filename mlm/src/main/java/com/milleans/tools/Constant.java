@@ -41,4 +41,7 @@ public class Constant {
         RoleTypeMapVal.put("individual", 2);
         RoleTypeMapVal.put("company", 3);
     }
+
+
+
 }
