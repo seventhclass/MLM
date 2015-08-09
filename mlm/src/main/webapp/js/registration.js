@@ -106,6 +106,66 @@ $(document).ready(function(){
         }
         return true;
 	});			
+	$('#address').blur(function() {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_address").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Address can not be empty.").css("color", "red");
+                $('#address').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#errmsg_address").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+        }
+        return true;
+	});
+	$('#countrycode').blur(function() {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_countrycode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Country can not be empty.").css("color", "red");
+                $('#countrycode').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#errmsg_countrycode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+        }
+        return true;
+	});
+	$('#provincecode').blur(function() {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_provincecode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Provincecode can not be empty.").css("color", "red");
+                $('#provincecode').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#errmsg_provincecode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+        }
+        return true;
+	});
+	$('#city').blur(function() {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_city").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;City can not be empty.").css("color", "red");
+                $('#city').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#errmsg_city").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+        }
+        return true;
+	});
+	$('#zip').blur(function() {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_zip").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Post Code can not be empty.").css("color", "red");
+                $('#zip').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#errmsg_zip").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+        }
+        return true;
+	});	
 	$('#mobilephone').blur(function() {
         if ($(this).val() == "") {
         		$('#response').hide(); 
@@ -182,6 +242,31 @@ $(document).ready(function(){
      		$('#password2').focus();
      		return false;
      	}
+     	if($('#address').val() == ""){
+     		$("#errmsg_address").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Address can not be empty.").css("color", "red");
+     		$('#address').focus();
+     		return false;
+     	}
+     	if($('#countrycode').val() == ""){
+            $("#errmsg_countrycode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Country can not be empty.").css("color", "red");
+            $('#countrycode').focus();
+            return false;
+    	}
+     	if($('#provincecode').val() == ""){
+            $("#errmsg_provincecode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Province can not be empty.").css("color", "red");
+            $('#provincecode').focus();
+            return false;
+    	}
+     	if($('#city').val() == ""){
+            $("#errmsg_city").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;City can not be empty.").css("color", "red");
+            $('#city').focus();
+            return false;
+    	}
+     	if($('#zip').val() == ""){
+            $("#errmsg_zip").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Post Code can not be empty.").css("color", "red");
+            $('#zip').focus();
+            return false;
+    	}
      	if($('#mobilephone').val() == ""){
      		$("#errmsg_mphone").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Mobile phone can not be empty.").css("color", "red");
      		$('#mobilephone').focus();
@@ -275,6 +360,66 @@ $(document).ready(function(){
         }
         return true;
 	});			
+	$('#c_address').blur(function() {
+        if ($(this).text() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_c_address").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Address can not be empty.").css("color", "red");
+                $('#c_address').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#errmsg_c_address").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+        }
+        return true;
+	});
+	$('#c_countrycode').blur(function() {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_c_countrycode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Country can not be empty.").css("color", "red");
+                $('#c_countrycode').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#errmsg_c_countrycode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+        }
+        return true;
+	});
+	$('#c_provincecode').blur(function() {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_c_provincecode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Province can not be empty.").css("color", "red");
+                $('#c_provincecode').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#errmsg_c_provincecode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+        }
+        return true;
+	});
+	$('#c_city').blur(function() {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_c_city").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;City can not be empty.").css("color", "red");
+                $('#c_city').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#errmsg_c_city").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+        }
+        return true;
+	});
+	$('#c_zip').blur(function() {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_c_zip").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Post Code can not be empty.").css("color", "red");
+                $('#c_zip').focus();
+        } else {
+                $(this).css("border-color", "#999");
+                $("#errmsg_c_zip").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+        }
+        return true;
+	});	
 	$('#c_mobilephone').blur(function() {
         if ($(this).val() == "") {
         		$('#response').hide(); 
@@ -344,6 +489,31 @@ $(document).ready(function(){
      		$('#c_password2').focus();
      		return false;
      	}
+     	if($('#c_address').val() == ""){
+     		$("#errmsg_c_address").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Address can not be empty.").css("color", "red");
+     		$('#c_address').focus();
+     		return false;
+     	}
+     	if($('#c_countrycode').val() == ""){
+            $("#errmsg_c_countrycode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Country can not be empty.").css("color", "red");
+            $('#c_countrycode').focus();
+            return false;
+    	}
+     	if($('#c_provincecode').val() == ""){
+            $("#errmsg_c_provincecode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Province can not be empty.").css("color", "red");
+            $('#c_provincecode').focus();
+            return false;
+    	}
+     	if($('#c_city').val() == ""){
+            $("#errmsg_c_city").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;City can not be empty.").css("color", "red");
+            $('#c_city').focus();
+            return false;
+    	}
+     	if($('#c_zip').val() == ""){
+            $("#errmsg_c_zip").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Post Code can not be empty.").css("color", "red");
+            $('#c_zip').focus();
+            return false;
+    	}
      	if($('#c_mobilephone').val() == ""){
      		$("#errmsg_cmphone").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Mobile phone can not be empty.").css("color", "red");
      		$('#c_mobilephone').focus();

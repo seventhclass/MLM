@@ -6,12 +6,41 @@ $(document).ready(function(){
  	var basePath=$('#basePath').attr("value"); 	
  	var userInfo_userId=$('#get_userInfo').attr("data-userid");
  	var userInfo_userName=$('#get_userInfo').attr("data-username");
-
+    
+ 	//alert(showDate());
+ 	//$('#shippingDateId').val(showDate());
 	//queryUserPaymentMethodInfo();
  	queryUserShippingAddressInfo();
 	//queryShippingMethodInfo();
 	queryOrderSummaryInfo();
  	
+	function showDate(){
+		  
+		   var mydate = new Date();  
+		  
+		   var str = "" + mydate.getFullYear() + "-";  
+		  
+		   if((mydate.getMonth()+1)>10)
+		   {
+			   str += (mydate.getMonth()+1) + "-";  
+		   }
+		   else
+		   {
+			   str += '0'+(mydate.getMonth()+1) + "-";  
+		   }
+		  
+		   if(mydate.getDate()>10)
+		   {
+			   str += mydate.getDate() ;  
+		   }
+		   else
+ 		   {
+			   str += '0'+mydate.getDate() ;  
+		   }
+		  
+		   return str;  
+	}
+	
  	function queryUserPaymentMethodInfo(){
  	 	//send requrest to server.
  	    $.ajax({
@@ -206,6 +235,18 @@ $(document).ready(function(){
  	} 	
  	
  	$('#userTotalOrderForm').submit(function(){
+ 		var shipday = $('#shippingDateId').val().substr(8,2);
+ 		if($('#shippingDateId').val()<showDate())
+ 		{
+ 			alert("Shipping date should be greater than the current date");
+ 			return false;
+ 		}
+ 		if(shipday>28)
+ 		{
+ 			alert("Shipping day should be less than 28");
+ 			return false;
+ 		}
+ 			
 		$.post(basePath + 'orderdetail/process/' + $('#orderId').val()
 		+ '/' + $('#shippingDateId').val()
 		+ '/' + $('#selectshipmethod').val(), $(this).serialize(), function (res) {

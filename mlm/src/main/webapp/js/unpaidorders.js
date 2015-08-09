@@ -101,7 +101,7 @@ $(document).ready(function () {
     			orderids += elms[i].value;
     		}  
     	}
-    	alert("orderids="+orderids);
+    	//alert("orderids="+orderids);
         $.ajax({
             url: basePath + '/orderdetail/process/admin/paying',
             cache: false,
