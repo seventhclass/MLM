@@ -20,10 +20,16 @@ public class Constant {
     public static Map<String, String> OrderStatus = new HashMap<String, String>();
 
     static {
-        OrderStatus.put("1", "Pending");
-        OrderStatus.put("2", "UnPayment");
+        OrderStatus.put("1", "unPayment");
+        OrderStatus.put("2", "unShipping");
         OrderStatus.put("3", "Finished");
+
     }
+
+    public static String OrderStatusUnPayment = "1";
+    public static String OrderStatusUnShipping = "2";
+    public static String OrderStatusFinished = "3";
+
 
     public static String UserIdPrefix = "MV";
 

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by LeHu on 7/14/15 5:58 PM.
@@ -47,8 +48,18 @@ public class OrderDetailServiceImpl implements IOrderDetailService {
 
     }
 
+//    @Override
+//    public void updatePaymentStatus(String orderIdL) {
+//        orderDetailDao.updatePaymentStatus(orderIdL);
+//    }
+
     @Override
-    public void updatePaymentStatus(String orderIdL) {
-        orderDetailDao.updatePaymentStatus(orderIdL);
+    public void updateOrderStatus(String orderIdL, int status) {
+        orderDetailDao.updateOrderStatus(orderIdL, status);
+    }
+
+    @Override
+    public ArrayList<String> getOrdersAutoShip(Date date) {
+        return orderDetailDao.getOrderAutoShip(date);
     }
 }

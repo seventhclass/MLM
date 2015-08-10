@@ -18,6 +18,7 @@ import com.milleans.order.services.IorderHasProductService;
 import com.milleans.order.services.IorderService;
 import com.milleans.product.services.IProductService;
 import com.milleans.shipping.service.IAutoShip;
+import com.milleans.tools.Constant;
 import com.milleans.tools.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -59,19 +60,14 @@ public class OrderDetailController {
 
         ProcessOrder processOrder = new ProcessOrder();
         try {
-
-
-            String _shippingMethod = shippingDate;
-
-
             int _orderId = Integer.valueOf(orderId);
             // cp orderinfo & productinfo to detail table
             Order order = orderService.getOrder(_orderId);
             //set autoship
             AutoShip autoShip = new AutoShip();
             autoShip.setUserid(order.getUserid());
+            autoShip.setShipmethodid(Integer.valueOf(shippingMehtod));
 
-            //String _shippingDate=shippingDate;
             SimpleDateFormat dateFormat = new SimpleDateFormat(Utils.MilleanDateFormate);
             Date autoDate = dateFormat.parse(shippingDate);
             autoShip.setDate(autoDate);
@@ -131,9 +127,9 @@ public class OrderDetailController {
     @ResponseBody
     public BaseJs processingOrderPayment(@RequestParam("orderids") String orderArr) {
         BaseJs baseJs = new BaseJs();
-        String[] orderList=orderArr.split(";");
-        for(String orderIdL: orderList){
-            orderDetailService.updatePaymentStatus(orderIdL);
+        String[] orderList = orderArr.split(";");
+        for (String orderIdL : orderList) {
+            orderDetailService.updateOrderStatus(orderIdL, Integer.valueOf(Constant.OrderStatusUnPayment));
         }
         return baseJs;
     }

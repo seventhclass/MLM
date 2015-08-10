@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -64,9 +65,35 @@ public class OrderDetailDaoImpl extends AbstractDao implements IOrderDetailDao {
         return list;
     }
 
+//    @Override
+//    public void updatePaymentStatus(String orderIdL) {
+//        String sql = "update t_orderdetails set status=3 where orderidl=" + orderIdL;
+//        this.getCurrentSession().createSQLQuery(sql).executeUpdate();
+//    }
+
     @Override
-    public void updatePaymentStatus(String orderIdL) {
-        String sql = "update t_orderdetails set status=3 where orderidl=" + orderIdL;
+    public void updateOrderStatus(String orderIdl, int status) {
+        String sql = "update t_orderdetails set status=" + status +
+                " where orderidl=" + orderIdl;
         this.getCurrentSession().createSQLQuery(sql).executeUpdate();
+    }
+
+    @Override
+    public ArrayList<String> getOrderAutoShip(Date date) {
+
+        String sql = "SELECT o.orderIdl " +
+                " FROM t_autoship s, t_account a, t_orderdetails o, t_user u" +
+                " WHERE s.userid = u.id " +
+                " AND u.accountid = a.id " +
+                " AND o.autoship_id = s.id " +
+                " AND a.isautoship =1 " +
+                " GROUP BY o.orderIdl";
+
+        List<String> relist = new ArrayList<>();
+
+        Query query = this.getCurrentSession().createSQLQuery(sql);
+        relist = query.list();
+
+        return (ArrayList) relist;
     }
 }
