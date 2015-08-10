@@ -16,7 +16,7 @@ public interface IAutoShip extends ICrud {
 
     ArrayList<ShipInfo> getShipList(Date date);
 
-    ArrayList<String> getAutoShipOrderIdLs(Date date);
+//    ArrayList<String> getAutoShipOrderIdLs(Date date);
 
 
 

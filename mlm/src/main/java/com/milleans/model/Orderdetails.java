@@ -230,6 +230,7 @@ public class Orderdetails implements Cloneable{
         orderdetails.setCreatedDate(Calendar.getInstance().getTime());
         orderdetails.setCurrencyId(this.getCurrencyId());
         orderdetails.setDescription(this.getDescription());
+        orderdetails.setEndedate(null);
 
 
 
