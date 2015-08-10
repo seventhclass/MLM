@@ -254,7 +254,7 @@
 	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<!-- <script type="text/javascript" src="/mlm/js/productmaintenance.js"></script> -->	
-	 <script>
+<!-- 	 <script>
   		$(function(){
   			 $('[data-toggle="tooltip"]').tooltip();
   			 $('.editproductbtn').tooltip({
@@ -270,7 +270,7 @@
    		       placement:'right'
    		    });
   		});
-  </script>
+  </script> -->
 	<script type="text/javascript">
 		function callback(msg) {
 

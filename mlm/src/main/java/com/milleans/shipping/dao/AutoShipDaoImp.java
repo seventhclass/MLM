@@ -50,6 +50,7 @@ public class AutoShipDaoImp extends AbstractDao implements IAutoShipDao {
                 shipInfo.setAutoShipDate(Utils.DateFormat.parse(objects[0].toString()));
                 shipInfo.setUserId(objects[1].toString());
                 shipInfo.setOrderIdL(objects[3].toString());
+
                 if (objects[2] != null) {
                     int auto = Integer.valueOf(objects[2].toString());
                     if (auto == 0) {

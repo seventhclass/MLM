@@ -127,9 +127,9 @@ $(document).ready(function () {
                         + "	<td>" + item.volume2 + "</td>"
                         + "  <td style='display:none;'>" + item.description + "</td>"
                         + "  <td>"
-                        + "		<button type='button' class='btn btn-success btn-sm editproductbtn' data-toggle='modal' data-target='.productmaintenance' data-backdrop='static' ><span class='glyphicon glyphicon-pencil'></span></button>"
-                        + "		<button type='button' class='btn btn-warning btn-sm delproductbtn' data-toggle='modal' data-productid='" + item.id + "' data-target='#productcancel' data-backdrop='static' ><span class='glyphicon glyphicon-trash'></span></button>"
-                        + "	 	<button type='button' class='btn btn-primary btn-sm editproductimgbtn' data-toggle='modal' data-productid='" + item.id + "' data-target='.productimg' data-backdrop='static' ><span class='glyphicon glyphicon-picture'></span></button>"
+                        + "		<button type='button' class='btn btn-success btn-sm editproductbtn' data-toggle='modal' data-target='.productmaintenance' data-backdrop='static' >&nbsp;&nbsp;Edit&nbsp;&nbsp;</button>"
+                        + "		<button type='button' class='btn btn-warning btn-sm delproductbtn' data-toggle='modal' data-productid='" + item.id + "' data-target='#productcancel' data-backdrop='static' >Delete</button>"
+                        + "	 	<button type='button' class='btn btn-primary btn-sm editproductimgbtn' data-toggle='modal' data-productid='" + item.id + "' data-target='.productimg' data-backdrop='static' >Image</button>"
                         + "	</td>"
                         + " </tr>"
                     );
@@ -142,10 +142,8 @@ $(document).ready(function () {
     }
 
     $('.pdt_maintenance').click( function(e) {
-
         queryCategoryInfo();
         queryCurrencyInfo();
-
         if ( $(e.target).is('.editproductbtn') ) {
             editProduct(e);
         } 
@@ -165,11 +163,12 @@ $(document).ready(function () {
 
     function editProductImage(e) {
         var id = $(e.target).attr("data-productid");
-        $('#msg').html("");
+        $('#msg').html("");        
         queryProductImages(id);
     }
 
     function queryProductImages(id) {
+    	alert("productid="+id);
         $('#uploadFilebtn').attr("data-productid", id);
         $('#productId').val(id);
         //send requrest to server.
@@ -323,7 +322,7 @@ $(document).ready(function () {
         var i_volume = $('#volume').val();
         var i_volume2 = $('#volume2').val();
         var i_desc = $('#description').val();
-        //alert("model=" + i_model + ", id=" + i_id + ", itemcode=" + i_itemcode + ", name=" + i_name + ", categoryid=" + i_categoryid + ", currencyid=" + i_currencyid + ", wprice=" + i_wprice + ", rprice=" + i_rprice + ", numbers=" + i_numbers + ", volume=" + i_volume + ", volume2=" + i_volume2 + ", description=" + i_desc);
+        alert("model=" + i_model + ", id=" + i_id + ", itemcode=" + i_itemcode + ", name=" + i_name + ", categoryid=" + i_categoryid + ", currencyid=" + i_currencyid + ", wprice=" + i_wprice + ", rprice=" + i_rprice + ", numbers=" + i_numbers + ", volume=" + i_volume + ", volume2=" + i_volume2 + ", description=" + i_desc);
         $.ajax({
             url: basePath + 'editproduct',
             cache: false,
