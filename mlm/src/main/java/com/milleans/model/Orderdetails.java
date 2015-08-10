@@ -1,5 +1,7 @@
 package com.milleans.model;
 
+import com.milleans.tools.Constant;
+
 import javax.persistence.*;
 import java.util.Calendar;
 import java.util.Date;
@@ -9,7 +11,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "t_orderdetails")
-public class Orderdetails implements Cloneable{
+public class Orderdetails implements Cloneable {
 
     @Id
     @Column(name = "Id")
@@ -224,14 +226,27 @@ public class Orderdetails implements Cloneable{
 
     public Object clone() {
 
-        Orderdetails orderdetails=new Orderdetails();
+        Orderdetails orderdetails = new Orderdetails();
 
         orderdetails.setAutoshipId(this.getAutoshipId());
         orderdetails.setCreatedDate(Calendar.getInstance().getTime());
         orderdetails.setCurrencyId(this.getCurrencyId());
         orderdetails.setDescription(this.getDescription());
-        orderdetails.setEndedate(null);
-
+        //orderdetails.setEndedate(null);
+        // orderdetails.setId();
+        orderdetails.setItemCode(this.getItemCode());
+        //orderdetails.setOrderIdl(null);
+        orderdetails.setPaymentMethodId(this.getPaymentMethodId());
+        orderdetails.setPointTotal(this.getPointTotal());
+        orderdetails.setPriceTotal(this.getPriceTotal());
+        orderdetails.setProductId(this.getProductId());
+        orderdetails.setQuantity(this.getQuantity());
+        orderdetails.setSeq(this.getSeq());
+        orderdetails.setStatus(Integer.valueOf(Constant.OrderStatusUnPayment));
+        orderdetails.setTransactionprice(this.getTransactionprice());
+        orderdetails.setUserid(this.getUserid());
+        orderdetails.setVolume(this.getVolume());
+        orderdetails.setVolume2(this.getVolume2());
 
 
         return orderdetails;
