@@ -159,7 +159,6 @@ public class ProductController {
         try {
 
             System.out.println("productId==" + productId);
-
             String fileName = uploadFile.getOriginalFilename();
             String fileType = fileName.substring(fileName.lastIndexOf("."),
                     fileName.length());

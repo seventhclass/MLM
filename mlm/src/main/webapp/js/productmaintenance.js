@@ -207,7 +207,7 @@ $(document).ready(function () {
                         + "		<input type='checkbox' name='productimage' value='" + item.id + "'>"
                         + "	</div>"
                         + "	<div class='col-sm-6'>"
-                        + "		<img src='" + basePath + "/images/products/" + item.imageName + "' style='height: 80px; width: 50px; display: block;' alt=''>"
+                        + "		<img src='" + basePath + "images/products/" + item.imageName + "' style='height: 80px; width: 50px; display: block;' alt=''>"
                         + "	</div>"
                         + "</div>"
                     );
