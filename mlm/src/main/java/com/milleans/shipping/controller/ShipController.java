@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -78,14 +79,26 @@ public class ShipController {
     private void makeAutoShipOrder(String dates) {
         try {
             Date date = Utils.DateFormat.parse(dates);
+            ArrayList<String> orders=orderDetailService.getOrdersAutoShip(date);
 
+            if(orders!=null && !orders.isEmpty()) {
+                //copy order info , create new orders
+                for (String orderIdl : orders) {
+                    this.copyOrder(orderIdl);
+                }
+            }
 
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    private void copyOrder(String orderIdL) {
+
+        // search order;
+       // List<Orderdetails> orderdetails=orderDetailService.
 
 
     }
-
 
 }
