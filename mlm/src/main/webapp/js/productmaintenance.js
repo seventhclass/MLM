@@ -87,7 +87,6 @@ $(document).ready(function () {
 
     //Query product information
     function queryProductInfo() {
-    	alert("Here....");
         //send requrest to server.
         $.ajax({
             url: basePath + 'productList',
@@ -384,6 +383,8 @@ $(document).ready(function () {
     function getAndSetData(e) {
 
         var $td = $(e.target).parents("tr").children("td");
+
+        //alert("productid=" + $td.eq(0).attr("data-value") + ", itemcode=" + $td.eq(0).text());
 
         $('#productid').val($td.eq(0).attr("data-value"));
         $('#itemcode').val($td.eq(0).text());
