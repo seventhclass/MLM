@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -73,7 +74,8 @@ public class ShipController {
                     Integer.valueOf(Constant.OrderStatusUnShipping));
         }
 
-
+        //make orders
+        makeAutoShipOrder(date);
         return baseJs;
     }
 
@@ -81,9 +83,9 @@ public class ShipController {
     private void makeAutoShipOrder(String dates) {
         try {
             Date date = Utils.DateFormat.parse(dates);
-            ArrayList<String> orders=orderDetailService.getOrdersAutoShip(date);
+            ArrayList<String> orders = orderDetailService.getOrdersAutoShip(date);
 
-            if(orders!=null && !orders.isEmpty()) {
+            if (orders != null && !orders.isEmpty()) {
                 //copy order info , create new orders
                 for (String orderIdl : orders) {
                     this.copyOrder(orderIdl);
@@ -96,11 +98,19 @@ public class ShipController {
     }
 
     private void copyOrder(String orderIdL) {
-
         // search order;
-         List<Orderdetails> orderdetails=orderDetailService.getOrderdetails(orderIdL);
+        List<Orderdetails> orderdetails = orderDetailService.getOrderdetails(orderIdL);
 
+        for (Orderdetails ele : orderdetails) {
 
+            Orderdetails dest = (Orderdetails) ele.clone();
+
+            dest.setCreatedDate(Calendar.getInstance().getTime());
+            dest.setStatus(Integer.valueOf(Constant.OrderStatusUnPayment));
+            dest.setOrderIdl(Utils.getOrderNumber());
+
+            orderDetailService.save(dest);
+        }
 
     }
 
