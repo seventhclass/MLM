@@ -1,6 +1,7 @@
 package com.milleans.order.dao;
 
 import com.milleans.dao.AbstractDao;
+import com.milleans.model.Orderdetails;
 import com.milleans.order.dto.OrderDealingInfo;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
@@ -95,5 +96,21 @@ public class OrderDetailDaoImpl extends AbstractDao implements IOrderDetailDao {
         relist = query.list();
 
         return (ArrayList) relist;
+    }
+
+    @Override
+    public List<Orderdetails> getOrderdetails(String orderIdL) {
+
+        //Criteria criteria=this.getCurrentSession().create
+        String hql="select o from Orderdetails o, User u, Account a "+
+                " where o.orderIdl='"+orderIdL+"' " +
+                " and o.userid=u.id " +
+                " and u.accountId=a.id " +
+                " and a.autoship=1";
+
+        Query query = this.getCurrentSession().createQuery(hql);
+
+        List<Orderdetails> list=query.list();
+        return list;
     }
 }

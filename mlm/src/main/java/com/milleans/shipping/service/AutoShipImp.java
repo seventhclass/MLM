@@ -33,6 +33,11 @@ public class AutoShipImp extends AbstractDao implements IAutoShip {
     }
 
     @Override
+    public ArrayList<String> getAutoShipOrderIdLs(Date date) {
+        return null;
+    }
+
+    @Override
     public void save(Object object) {
 
     }

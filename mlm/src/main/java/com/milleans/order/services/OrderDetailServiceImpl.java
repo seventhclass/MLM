@@ -1,5 +1,6 @@
 package com.milleans.order.services;
 
+import com.milleans.model.Orderdetails;
 import com.milleans.order.dao.IOrderDetailDao;
 import com.milleans.order.dto.OrderDealingInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by LeHu on 7/14/15 5:58 PM.
@@ -61,5 +63,10 @@ public class OrderDetailServiceImpl implements IOrderDetailService {
     @Override
     public ArrayList<String> getOrdersAutoShip(Date date) {
         return orderDetailDao.getOrderAutoShip(date);
+    }
+
+    @Override
+    public List<Orderdetails> getOrderdetails(String orderIdL) {
+        return orderDetailDao.getOrderdetails(orderIdL);
     }
 }

@@ -1,6 +1,7 @@
 package com.milleans.shipping.controller;
 
 import com.milleans.dto.BaseJs;
+import com.milleans.model.Orderdetails;
 import com.milleans.order.services.IOrderDetailService;
 import com.milleans.shipping.dto.ShipInfoJs;
 import com.milleans.shipping.service.IAutoShip;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by macbookpro on 2015-04-11.
@@ -96,7 +98,8 @@ public class ShipController {
     private void copyOrder(String orderIdL) {
 
         // search order;
-       // List<Orderdetails> orderdetails=orderDetailService.
+         List<Orderdetails> orderdetails=orderDetailService.getOrderdetails(orderIdL);
+
 
 
     }

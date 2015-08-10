@@ -1,11 +1,13 @@
 package com.milleans.order.services;
 
+import com.milleans.model.Orderdetails;
 import com.milleans.order.dto.OrderDealingInfo;
 import com.milleans.service.ICrud;
 
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by LeHu on 7/14/15 5:54 PM.
@@ -20,4 +22,5 @@ public interface IOrderDetailService extends ICrud {
 
     ArrayList<String> getOrdersAutoShip(Date date);
 
+    List<Orderdetails> getOrderdetails(String orderIdL);
 }

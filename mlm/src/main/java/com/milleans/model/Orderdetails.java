@@ -1,6 +1,7 @@
 package com.milleans.model;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "t_orderdetails")
-public class Orderdetails {
+public class Orderdetails implements Cloneable{
 
     @Id
     @Column(name = "Id")
@@ -220,4 +221,19 @@ public class Orderdetails {
     public void setCurrencyId(int currencyId) {
         this.currencyId = currencyId;
     }
+
+    public Object clone() {
+
+        Orderdetails orderdetails=new Orderdetails();
+
+        orderdetails.setAutoshipId(this.getAutoshipId());
+        orderdetails.setCreatedDate(Calendar.getInstance().getTime());
+        orderdetails.setCurrencyId(this.getCurrencyId());
+        orderdetails.setDescription(this.getDescription());
+
+
+
+        return orderdetails;
+    }
+
 }
