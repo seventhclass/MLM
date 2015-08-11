@@ -7,7 +7,7 @@
 	<li><a href='<%=request.getContextPath()%>/editprofile'>Edit Profile</a></li>
 	<li><a href='<%=request.getContextPath()%>/modifypassword'>Modify Password</a></li>
 	<li class='nav-divider'></li>
-	<li><a href='<%=request.getContextPath()%>/autoshiplist'>AutoShip List</a></li>
+	<li><a href='<%=request.getContextPath()%>/ship/autoshiplist'>AutoShip List</a></li>
 	<li class='nav-divider'></li>
 	<li><a href='<%=request.getContextPath()%>/orderdetail/process/view/unpaidorder'>Unpaid Orders</a></li>
 	<li><a href='<%=request.getContextPath()%>/accounttypemaintenance'>Account Type Maintenance</a></li>

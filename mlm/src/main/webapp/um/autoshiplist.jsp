@@ -1,3 +1,5 @@
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Calendar" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -43,7 +45,8 @@
 								<div class="col-md-12">
 									<label for="ashipdate" class="col-sm-2">Choose Date:</label>
 									<div class="col-sm-3">
-										<input type="date" id="ashipdate">
+										<input type="date" id="ashipdate"
+											   value=<%=new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime()) %>>
 									</div>									
 									<div class="col-sm-2">
 										<button type="submit" class="btn btn-info">Go</button>
