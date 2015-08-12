@@ -1,6 +1,3 @@
-/**
- *
- */
 
 function _chooseAll(obj,name)
 {
@@ -23,68 +20,82 @@ function _chooseAll(obj,name)
 			}
 		}  
 	}           
-}   
+}
 
 $(document).ready(function () {
-
     var basePath = $('#basePath').attr("value");
+    var userInfo_userId = $('#get_userInfo').attr("data-userid");
+    var userInfo_userName = $('#get_userInfo').attr("data-username");
 
-    queryOrderInfo();
+    $('.shippinglist_btn').click(function(){
+    	var shippingDate = $('#ashipdate').val();
+    	queryAutoShipListInfo(shippingDate);
+    });
 
-    function queryOrderInfo() {
-        //send request to server.
+    $('.updshippingstatus_btn').click(function () {
+        sendRequestOfUpdShipping();
+    });
+    
+    function queryAutoShipListInfo(date) {
+        //send requrest to server.
         $.ajax({
-            url: basePath + '/orderdetail/process/admin/unpayidorders',
+            url: basePath + 'ship/shipList',
             cache: false,
             async: false,
             type: 'POST',
+            data: {
+            	date: date
+ 			},
             dataType: 'json',
             timeout: 5000,
             error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status + "\n" + xhr.responseText);
             },
             success: function (res) {
-                //alert("222");
-            	queryOrderInfoResponse(res);
+                queryAutoShipListInfoResponse(res);
             }
         });
     }
 
-    //Process query shopping cart information response
-    function queryOrderInfoResponse(res) {
+    function queryAutoShipListInfoResponse(res) {
         var result = res.result;			//response code
         var message = res.message;			//response message
-        //var item = res.item;
-        
+
         if (result == "success") {
-            $('#unpaidOrderList').html("");
-            console.log("------");
-            console.log(res.orderList);
-            if (res.orderList && res.orderList.length > 0) {
-                $.each(res.orderList, function (i, item) {
-                	$('#unpaidOrderList').append(
+            $('#autoShipList').html("");
+            if (res.autoshipList && res.autoshipList.length > 0) {
+                $.each(res.autoshipList, function (i, item) {
+                    $('#autoShipList').append(
                         "<tr>"
-                			+ "	<td>" + item.ordlerIdL + "</td>"
-                			+ "	<td>" + item.userIdL + "</td>"
-                			+ "	<td>" + item.createDate + "</td>"
-                			+ "	<td><input type='checkbox' id='payornot[]' name='payornot[]' value='"+item.ordlerIdL+"'></td>"
+                        + "	<td><input type='checkbox' id='shippingstatus[]' name='shippingstatus[]' value='"+item.orderIdL+"|"+item.isAutoShip+"'></td>"
+                        + "	<td>" + item.userId + "</td>"
+                        + "	<td>" + item.orderIdL + "</td>"
+                        + "	<td>" + item.isAutoShip + "</td>"
+                        + "	<td>" + item.autoShipDate + "</td>"
+                        + "	<td>" + item.shipMethod + "</td>"
+                        + "	<td>" + item.address + "</td>"
                         + "</tr>"
                     );
                 });
+                $('#autoShipList').append(
+                	"<tr>"
+					+"	<td colspan='7' align='center'>"
+					+"		<button type='button' class='btn btn-success updshippingstatus_btn' >Update</button>"
+					+"	</td>"
+					+"</tr>"
+                );
             } else {
-                $("<tr><td>No order list.</td></tr>").insertAfter('#unpaidOrderList');
+                $("<div>No Shipping List info.</div>").insertAfter('#autoShipList');
             }
+        } else {
+            alert("Sorry, loading Shipping List info failed! Try again, please. ");
         }
     }
     
-    $('.upd_payment_btn').click(function () {
-        sendRequestOfUpdPayment();
-    });
-    
-    function sendRequestOfUpdPayment()
+    function sendRequestOfUpdShipping()
     {
     	var orderids = "";
-    	var elms = document.getElementsByName("payornot[]");       
+    	var elms = document.getElementsByName("shippingstatus[]");       
         if(elms.length<1)  
         {
         	alert("No record was selected.");
@@ -108,14 +119,16 @@ $(document).ready(function () {
         	alert("No record was selected.");
         	return;   
     	}
-    	//alert("orderids="+orderids);
+
+    	var shippingDate = $('#ashipdate').val();
         $.ajax({
-            url: basePath + '/orderdetail/process/admin/paying',
+            url: basePath + 'ship/finishedShip',
             cache: false,
             async: false,
             type: 'POST',
             data: {
-                orderids: orderids
+            	date: shippingDate,
+                orderArr: orderids
             },
             dataType: 'json',
             timeout: 5000,
@@ -123,17 +136,17 @@ $(document).ready(function () {
                 alert(xhr.status + "\n" + xhr.responseText);
             },
             success: function (res) {
-            	sendRequestOfUpdPaymentResponse(res);
+            	sendRequestOfUpdShippingResponse(res);
             }
         });
     }
-    function sendRequestOfUpdPaymentResponse(res) {
+    function sendRequestOfUpdShippingResponse(res) {
         var result = res.result;			//response code
         var message = res.message;			//response message
 
         if (result == "success") {
-        	alert("Update payment is successed.");
-            window.location.href = basePath + "/orderdetail/process/view/unpaidorder";
+        	alert("Update shipping is successed.");
+            window.location.href = basePath + "ship/autoshiplist";
         } else {
             if (message == null || message == "") {
                 message = "Sorry, your request is failed.";

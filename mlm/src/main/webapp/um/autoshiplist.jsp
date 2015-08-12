@@ -17,6 +17,7 @@
 	<![endif]-->	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/autoshiplist.js"></script>	
 </head>
 <body>
 	 <div class="container">
@@ -45,11 +46,11 @@
 								<div class="col-md-12">
 									<label for="ashipdate" class="col-sm-2">Choose Date:</label>
 									<div class="col-sm-3">
-										<input type="date" id="ashipdate"
+										<input type="date" id="ashipdate" name="ashipdate"
 											   value=<%=new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime()) %>>
 									</div>									
 									<div class="col-sm-2">
-										<button type="submit" class="btn btn-info">Go</button>
+										<button type="button" class="btn btn-info shippinglist_btn">Go</button>
 									</div>				
 								</div>
 							</div>
@@ -61,66 +62,45 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th>Done</th>
+												<th class="text-center">Done&nbsp;&nbsp;<input type='checkbox' onclick="_chooseAll(this,'shippingstatus[]')"/></th>
 												<th>Member ID</th>
-												<th>Name</th>
-												<th>Volume of Shipping</th>
+												<th>Order ID</th>
+												<th>isAutoShip</th>
 												<th>Date of Shipping</th>
 												<th>Method of Payment</th>
+												<th>Address</th>
 											</tr>
 										</thead>
 									   <tbody  id="autoShipList">
-									     <!-- <tr>									     	
-											<td>A000000001</td>
-							           		<td>Michael</td>
-							           		<td>145</td>
-							           		<td>Feb 21, 2015</td>
-							           		<td>Credit Card</td>
-									     </tr> 
-									     <tr>									     	
-											<td>A000000002</td>
-							           		<td>Leo</td>
-							           		<td>145</td>
-							           		<td>Feb 22, 2015</td>
-							           		<td>Credit Card</td>
-									     </tr>  
-									     <tr>									     	
-											<td>A000000003</td>
-							           		<td>Jack</td>
-							           		<td>137</td>
-							           		<td>Feb 21, 2015</td>
-							           		<td>Paypal</td>
-									     </tr>  
-									     <tr>									     	
-											<td>A000000004</td>
-							           		<td>Cavin</td>
-							           		<td>95</td>
-							           		<td>Feb 23, 2015</td>
-							           		<td>Credit Card</td>
-									     </tr>  
-									     <tr>									     	
-											<td>A000000005</td>
-							           		<td>William</td>
-							           		<td>110</td>
-							           		<td>Feb 23, 2015</td>
-							           		<td>Paypal</td>
-									     </tr>  
-									     <tr>									     	
-											<td>A000000006</td>
-							           		<td>Marie</td>
-							           		<td>236</td>
-							           		<td>Feb 24, 2015</td>
-							           		<td>Paypal</td>
-									     </tr>  --> 									     									     									     
+											<!-- <tr>
+												<td> <input type="checkbox" id="shippingstatus[]" name="shippingstatus[]" value="123456789|1"/> </td>
+												<td> MV1508219-5345 </td>
+												<td> 1234567890 </td>
+												<td> Yes </td>
+												<td> 2015-08-11 </td>
+												<td> Regular </td>
+												<td> 2100 Sherbrooke Street apt.8 Montreal QC Canada 1A1 C0C</td>
+											</tr>									     									     									     
+											<tr>
+												<td> <input type="checkbox" id="shippingstatus[]" name="shippingstatus[]" value="123456789|1"/> </td>
+												<td> MV1508219-5345 </td>
+												<td> 1234567890 </td>
+												<td> Yes </td>
+												<td> 2015-08-11 </td>
+												<td> Regular </td>
+												<td> 2100 Sherbrooke Street apt.8 Montreal QC Canada 1A1 C0C</td>
+											</tr>
+											<tr>
+												<td colspan="7" align="center">
+													<button type="button" class="btn btn-success updshippingstatus_btn" >Update</button>
+												</td>
+											</tr> -->
 									   </tbody>
 									 </table>
 								</div>														
 							</div>
 						</div>
 						
-						<div class="col-md-4 col-md-offset-4">
-							<button type="button" class="btn btn-success" data-toggle="modal" data-target=".accounttypemaintenance" data-backdrop="static">Update</button>
-						</div>
 					</div> <!-- end content -->		
 				</div>			
 			</div>
