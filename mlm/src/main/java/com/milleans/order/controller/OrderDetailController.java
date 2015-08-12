@@ -129,7 +129,7 @@ public class OrderDetailController {
         BaseJs baseJs = new BaseJs();
         String[] orderList = orderArr.split(";");
         for (String orderIdL : orderList) {
-            orderDetailService.updateOrderStatus(orderIdL, Integer.valueOf(Constant.OrderStatusUnPayment));
+            orderDetailService.updateOrderStatus(orderIdL, Integer.valueOf(Constant.OrderStatusUnShipping));
         }
         return baseJs;
     }

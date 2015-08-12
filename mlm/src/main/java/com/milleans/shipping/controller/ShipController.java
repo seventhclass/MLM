@@ -10,6 +10,7 @@ import com.milleans.tools.Constant;
 import com.milleans.tools.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -63,6 +64,7 @@ public class ShipController {
 
     @RequestMapping(value = "/finishedShip", method = RequestMethod.POST)
     @ResponseBody
+    @Transactional
     public BaseJs updateOrderStatus(@RequestParam("orderArr") String orderArr,
                                     @RequestParam("date") String date) {
         BaseJs baseJs = new BaseJs();
@@ -71,7 +73,7 @@ public class ShipController {
         Map<String, String> ordersMap = new HashMap<>();
 
         for (String ele : ordersPair) {
-            String[] pair = ele.split("|");
+            String[] pair = ele.split(":");
             ordersMap.put(pair[0], pair[1]);
         }
         String[] orderKeyArr = new String[ordersMap.size()];
@@ -85,7 +87,7 @@ public class ShipController {
         //make orders for autoship;
         for (int i = 0; i < orderKeyArr.length; i++) {
 
-            if (ordersMap.get(orderKeyArr).equals("1")) {
+            if (ordersMap.get(orderKeyArr[i]).equals("1")) {
                 makeAutoShipOrder(orderKeyArr[i], date);
             }
         }
@@ -120,7 +122,7 @@ public class ShipController {
         AutoShip autoShip = null;
         AutoShip newAutoShip = null;
         int newId = 0;
-        if (orderdetails.isEmpty()) {
+        if (!orderdetails.isEmpty()) {
             autoShip = autoShipService.getItem(orderdetails.get(0).getAutoshipId());
             newAutoShip = (AutoShip) autoShip.clone();
             newAutoShip.setDate(_sqlDate);
@@ -135,6 +137,7 @@ public class ShipController {
             dest.setCreatedDate(Calendar.getInstance().getTime());
             dest.setStatus(Integer.valueOf(Constant.OrderStatusUnPayment));
             dest.setOrderIdl(Utils.getOrderNumber());
+            dest.setEndedate(dest.getCreatedDate());
             dest.setAutoshipId(newId);
 
             orderDetailService.save(dest);

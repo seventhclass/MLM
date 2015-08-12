@@ -63,27 +63,27 @@ $(document).ready(function () {
 
         if (result == "success") {
             $('#autoShipList').html("");
-            if (res.autoshipList && res.autoshipList.length > 0) {
-                $.each(res.autoshipList, function (i, item) {
+            if (res.shipInfos && res.shipInfos.length > 0) {
+                $.each(res.shipInfos, function (i, item) {
                     $('#autoShipList').append(
                         "<tr>"
-                        + "	<td><input type='checkbox' id='shippingstatus[]' name='shippingstatus[]' value='"+item.orderIdL+"|"+item.isAutoShip+"'></td>"
+                        + "	<td><input type='checkbox' id='shippingstatus[]' name='shippingstatus[]' value='"+item.orderIdL+":"+item.autoShip+"'></td>"
                         + "	<td>" + item.userId + "</td>"
                         + "	<td>" + item.orderIdL + "</td>"
-                        + "	<td>" + item.isAutoShip + "</td>"
+                        + "	<td>" + item.autoShip + "</td>"
                         + "	<td>" + item.autoShipDate + "</td>"
                         + "	<td>" + item.shipMethod + "</td>"
                         + "	<td>" + item.address + "</td>"
                         + "</tr>"
                     );
                 });
-                $('#autoShipList').append(
-                	"<tr>"
-					+"	<td colspan='7' align='center'>"
-					+"		<button type='button' class='btn btn-success updshippingstatus_btn' >Update</button>"
-					+"	</td>"
-					+"</tr>"
-                );
+                //$('#autoShipList').append(
+                //	"<tr>"
+					//+"	<td colspan='7' align='center'>"
+					//+"		<button type='button' class='btn btn-success updshippingstatus_btn' >Update</button>"
+					//+"	</td>"
+					//+"</tr>"
+                //);
             } else {
                 $("<div>No Shipping List info.</div>").insertAfter('#autoShipList');
             }

@@ -11,7 +11,7 @@ public class ShipInfo {
 
     private String userId;
 
-    private boolean isAutoShip;
+    private int autoShip;
 
     private Date autoShipDate;
 
@@ -45,12 +45,12 @@ public class ShipInfo {
         this.userId = userId;
     }
 
-    public boolean isAutoShip() {
-        return isAutoShip;
+    public int getAutoShip() {
+        return autoShip;
     }
 
-    public void setAutoShip(boolean isAutoShip) {
-        this.isAutoShip = isAutoShip;
+    public void setAutoShip(int autoShip) {
+        this.autoShip = autoShip;
     }
 
     public Date getAutoShipDate() {

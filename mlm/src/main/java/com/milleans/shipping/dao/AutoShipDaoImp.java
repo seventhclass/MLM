@@ -59,14 +59,19 @@ public class AutoShipDaoImp extends AbstractDao implements IAutoShipDao {
 
                 if (objects[2] != null) {
                     int auto = Integer.valueOf(objects[2].toString());
-                    if (auto == 0) {
-                        shipInfo.setAutoShip(false);
-                    } else {
-                        shipInfo.setAutoShip(true);
-                    }
-                } else {
-                    //shipInfo.setAutoShip(false);
+                    shipInfo.setAutoShip(auto);
                 }
+
+//                if (objects[2] != null) {
+//                    int auto = Integer.valueOf(objects[2].toString());
+//                    if (auto == 0) {
+//                        shipInfo.setAutoShip(false);
+//                    } else {
+//                        shipInfo.setAutoShip(true);
+//                    }
+//                } else {
+//                    //shipInfo.setAutoShip(false);
+//                }
                 // shipInfo.setAutoShip(objects[2] == 0 ? false : true);
                 shipInfo.setShipMethod(objects[4].toString());
                 shipInfo.setAddress(objects[5] == null ? null : objects[5].toString());
