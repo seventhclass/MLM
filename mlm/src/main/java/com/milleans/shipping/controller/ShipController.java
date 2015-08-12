@@ -130,13 +130,15 @@ public class ShipController {
             newId = autoShipService.save(newAutoShip);
         }
 
+        String newOrderIdl= Utils.getOrderNumber();
+
         for (Orderdetails ele : orderdetails) {
 
             Orderdetails dest = (Orderdetails) ele.clone();
 
             dest.setCreatedDate(Calendar.getInstance().getTime());
             dest.setStatus(Integer.valueOf(Constant.OrderStatusUnPayment));
-            dest.setOrderIdl(Utils.getOrderNumber());
+            dest.setOrderIdl(newOrderIdl);
             dest.setEndedate(dest.getCreatedDate());
             dest.setAutoshipId(newId);
 
