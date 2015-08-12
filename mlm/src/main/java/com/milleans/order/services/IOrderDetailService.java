@@ -6,7 +6,6 @@ import com.milleans.service.ICrud;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,7 +19,7 @@ public interface IOrderDetailService extends ICrud {
 
     void updateOrderStatus(String orderIdL, int status);
 
-    ArrayList<String> getOrdersAutoShip(Date date);
+//    ArrayList<String> getOrdersAutoShip(String[] orderArr);
 
     List<Orderdetails> getOrderdetails(String orderIdL);
 }

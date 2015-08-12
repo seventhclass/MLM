@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -60,10 +59,10 @@ public class OrderDetailServiceImpl implements IOrderDetailService {
         orderDetailDao.updateOrderStatus(orderIdL, status);
     }
 
-    @Override
-    public ArrayList<String> getOrdersAutoShip(Date date) {
-        return orderDetailDao.getOrderAutoShip(date);
-    }
+//    @Override
+//    public ArrayList<String> getOrdersAutoShip(String[] orderArr) {
+//        return orderDetailDao.getOrderAutoShip(orderArr);
+//    }
 
     @Override
     public List<Orderdetails> getOrderdetails(String orderIdL) {

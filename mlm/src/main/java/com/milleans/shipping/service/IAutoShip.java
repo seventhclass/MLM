@@ -18,6 +18,6 @@ public interface IAutoShip extends ICrud {
 
 //    ArrayList<String> getAutoShipOrderIdLs(Date date);
 
-
+    public AutoShip getItem(int id);
 
 }

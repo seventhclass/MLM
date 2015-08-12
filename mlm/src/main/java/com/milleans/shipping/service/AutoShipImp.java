@@ -32,6 +32,12 @@ public class AutoShipImp extends AbstractDao implements IAutoShip {
         return autoShipDao.getShipList(date);
     }
 
+    @Override
+    public AutoShip getItem(int id) {
+
+        return autoShipDao.getItem(id);
+    }
+
 //    @Override
 //    public ArrayList<String> getAutoShipOrderIdLs(Date date) {
 //

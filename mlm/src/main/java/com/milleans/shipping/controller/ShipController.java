@@ -1,6 +1,7 @@
 package com.milleans.shipping.controller;
 
 import com.milleans.dto.BaseJs;
+import com.milleans.model.AutoShip;
 import com.milleans.model.Orderdetails;
 import com.milleans.order.services.IOrderDetailService;
 import com.milleans.shipping.dto.ShipInfoJs;
@@ -16,10 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by macbookpro on 2015-04-11.
@@ -68,38 +66,67 @@ public class ShipController {
     public BaseJs updateOrderStatus(@RequestParam("orderArr") String orderArr,
                                     @RequestParam("date") String date) {
         BaseJs baseJs = new BaseJs();
-        String[] orders = orderArr.split(";");
-        for (int i = 0; i < orders.length; i++) {
-            orderDetailService.updateOrderStatus(orders[i],
-                    Integer.valueOf(Constant.OrderStatusUnShipping));
+        //
+        String[] ordersPair = orderArr.split(";");
+        Map<String, String> ordersMap = new HashMap<>();
+
+        for (String ele : ordersPair) {
+            String[] pair = ele.split("|");
+            ordersMap.put(pair[0], pair[1]);
+        }
+        String[] orderKeyArr = new String[ordersMap.size()];
+        ordersMap.keySet().toArray(orderKeyArr);
+
+        for (int i = 0; i < orderKeyArr.length; i++) {
+            orderDetailService.updateOrderStatus(orderKeyArr[i],
+                    Integer.valueOf(Constant.OrderStatusFinished));
         }
 
-        //make orders
-        makeAutoShipOrder(date);
+        //make orders for autoship;
+        for (int i = 0; i < orderKeyArr.length; i++) {
+
+            if (ordersMap.get(orderKeyArr).equals("1")) {
+                makeAutoShipOrder(orderKeyArr[i], date);
+            }
+        }
+        //makeAutoShipOrder(orderStrArr);
         return baseJs;
     }
 
 
-    private void makeAutoShipOrder(String dates) {
+    private void makeAutoShipOrder(String orderIdL, String date) {
+
         try {
-            Date date = Utils.DateFormat.parse(dates);
-            ArrayList<String> orders = orderDetailService.getOrdersAutoShip(date);
+            Date _date = Utils.DateFormat.parse(date);
 
-            if (orders != null && !orders.isEmpty()) {
-                //copy order info , create new orders
-                for (String orderIdl : orders) {
-                    this.copyOrder(orderIdl);
-                }
-            }
+            //create new date
+            Calendar rightNow = Calendar.getInstance();
+            rightNow.setTime(_date);
+            rightNow.add(Calendar.MONTH, 1);
 
-        } catch (ParseException e) {
+            this.copyOrder(orderIdL, rightNow.getTime());
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void copyOrder(String orderIdL) {
+    private void copyOrder(String orderIdL, Date date) {
+
+        java.sql.Date _sqlDate = new java.sql.Date(date.getTime());
+
         // search order;
         List<Orderdetails> orderdetails = orderDetailService.getOrderdetails(orderIdL);
+        AutoShip autoShip = null;
+        AutoShip newAutoShip = null;
+        int newId = 0;
+        if (orderdetails.isEmpty()) {
+            autoShip = autoShipService.getItem(orderdetails.get(0).getAutoshipId());
+            newAutoShip = (AutoShip) autoShip.clone();
+            newAutoShip.setDate(_sqlDate);
+
+            newId = autoShipService.save(newAutoShip);
+        }
 
         for (Orderdetails ele : orderdetails) {
 
@@ -108,6 +135,7 @@ public class ShipController {
             dest.setCreatedDate(Calendar.getInstance().getTime());
             dest.setStatus(Integer.valueOf(Constant.OrderStatusUnPayment));
             dest.setOrderIdl(Utils.getOrderNumber());
+            dest.setAutoshipId(newId);
 
             orderDetailService.save(dest);
         }

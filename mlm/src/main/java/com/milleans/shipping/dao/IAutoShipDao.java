@@ -16,4 +16,6 @@ public interface IAutoShipDao extends IDao {
 
     ArrayList<ShipInfo> getShipList(Date date);
 
+    AutoShip getItem(int id);
+
 }

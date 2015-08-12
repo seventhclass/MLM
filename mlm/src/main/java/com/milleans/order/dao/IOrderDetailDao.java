@@ -6,7 +6,6 @@ import com.milleans.order.dto.OrderDealingInfo;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,7 +17,7 @@ public interface IOrderDetailDao extends IDao {
 
     void updateOrderStatus(String orderIdl, int status);
 
-    ArrayList<String> getOrderAutoShip(Date date);
+//    ArrayList<String> getOrderAutoShip(String[] orderArr);
 
     List<Orderdetails> getOrderdetails(String orderIdL);
 }

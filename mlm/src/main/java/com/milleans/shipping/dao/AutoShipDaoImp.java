@@ -3,8 +3,11 @@ package com.milleans.shipping.dao;
 import com.milleans.dao.AbstractDao;
 import com.milleans.model.AutoShip;
 import com.milleans.shipping.dto.ShipInfo;
+import com.milleans.tools.Constant;
 import com.milleans.tools.Utils;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,6 +32,8 @@ public class AutoShipDaoImp extends AbstractDao implements IAutoShipDao {
     @Override
     public ArrayList<ShipInfo> getShipList(Date date) {
 
+        java.sql.Date _sqlDate = new java.sql.Date(date.getTime());
+
         ArrayList<ShipInfo> listTable = new ArrayList<>();
         try {
             String sql = "SELECT s.date, u.userid, a.isautoship, o.orderIdl, m.name, CONCAT_WS(u.address,u.zip) " +
@@ -37,7 +42,8 @@ public class AutoShipDaoImp extends AbstractDao implements IAutoShipDao {
                     " AND s.shipmethodid = m.id " +
                     " AND u.accountid = a.id " +
                     " AND o.autoship_id = s.id " +
-                    " AND s.date=" + date +
+                    " and o.status=" + Constant.OrderStatusUnShipping +
+                    " AND s.date='" + _sqlDate + "'" +
                     " GROUP BY o.orderIdl";
 
             Query query = this.getCurrentSession().createSQLQuery(sql);
@@ -72,5 +78,12 @@ public class AutoShipDaoImp extends AbstractDao implements IAutoShipDao {
         }
 
         return listTable;
+    }
+
+    @Override
+    public AutoShip getItem(int id) {
+        Criteria criteria = this.getCurrentSession().createCriteria(AutoShip.class);
+        criteria.add(Restrictions.eq("id", id));
+        return (AutoShip) criteria.list().get(0);
     }
 }

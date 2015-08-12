@@ -1,6 +1,6 @@
 package com.milleans.service;
 
-import java.util.List;
+import com.milleans.model.AutoShip;
 
 public interface ICrud {
 
@@ -11,6 +11,7 @@ public interface ICrud {
     public void update(Object object);
 
     public Object getItemById(String id);
+
 
 
 }

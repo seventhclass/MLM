@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -79,24 +78,34 @@ public class OrderDetailDaoImpl extends AbstractDao implements IOrderDetailDao {
         this.getCurrentSession().createSQLQuery(sql).executeUpdate();
     }
 
-    @Override
-    public ArrayList<String> getOrderAutoShip(Date date) {
+//    @Override
+//    public ArrayList<String> getOrderAutoShip(String[] orderArr) {
+//
+//
+//
+//        return null;
+//    }
 
-        String sql = "SELECT o.orderIdl " +
-                " FROM t_autoship s, t_account a, t_orderdetails o, t_user u" +
-                " WHERE s.userid = u.id " +
-                " AND u.accountid = a.id " +
-                " AND o.autoship_id = s.id " +
-                " AND a.isautoship =1 " +
-                " GROUP BY o.orderIdl";
-
-        List<String> relist = new ArrayList<>();
-
-        Query query = this.getCurrentSession().createSQLQuery(sql);
-        relist = query.list();
-
-        return (ArrayList) relist;
-    }
+//    @Override
+//    public ArrayList<String> getOrderAutoShip(Date date) {
+//
+//        java.sql.Date _sqlDate=new java.sql.Date(date.getTime());
+//
+//        String sql = "SELECT o.orderIdl " +
+//                " FROM t_autoship s, t_account a, t_orderdetails o, t_user u" +
+//                " WHERE s.userid = u.id " +
+//                " AND u.accountid = a.id " +
+//                " AND o.autoship_id = s.id " +
+//                " AND a.isautoship =1 " +
+//                " GROUP BY o.orderIdl";
+//
+//        List<String> relist = new ArrayList<>();
+//
+//        Query query = this.getCurrentSession().createSQLQuery(sql);
+//        relist = query.list();
+//
+//        return (ArrayList) relist;
+//    }
 
     @Override
     public List<Orderdetails> getOrderdetails(String orderIdL) {

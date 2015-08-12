@@ -17,6 +17,8 @@ public class ShipInfo {
 
     private String shipMethod;
 
+    private String address;
+
     public String getAddress() {
         return address;
     }
@@ -25,7 +27,7 @@ public class ShipInfo {
         this.address = address;
     }
 
-    private String address;
+
 
     public String getOrderIdL() {
         return orderIdL;

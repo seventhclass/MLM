@@ -112,4 +112,20 @@ public class AutoShip {
     public void setPaymentid(int paymentid) {
         this.paymentid = paymentid;
     }
+
+    public Object clone() {
+
+        AutoShip autoShip = new AutoShip();
+        autoShip.setAddressid(this.getAddressid());
+        autoShip.setDate(this.getDate());
+        autoShip.setFee(this.getFee());
+        autoShip.setPaymentid(this.getPaymentid());
+        autoShip.setShipdate(this.getShipdate());
+        autoShip.setShipmethodid(this.getShipmethodid());
+        autoShip.setUserid(this.getUserid());
+        autoShip.setVolume(this.getVolume());
+
+        return autoShip;
+    }
+
 }
