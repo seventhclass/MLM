@@ -39,7 +39,7 @@
                 <div id="content">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="subtitle">Autoship List</div>
+                            <div class="subtitle">Shipping List</div>
                         </div>
                     </div>
                     <div class="ashipdatebox">
@@ -67,12 +67,12 @@
                                         <th class="text-center">Done&nbsp;&nbsp;<input type='checkbox'
                                                                                        onclick="_chooseAll(this,'shippingstatus[]')"/>
                                         </th>
-                                        <th>Member ID</th>
-                                        <th>Order ID</th>
-                                        <th>isAutoShip</th>
-                                        <th>Date of Shipping</th>
-                                        <th>Method of Payment</th>
-                                        <th>Address</th>
+                                        <th align="center">Member ID</th>
+                                        <th align="center">Order ID</th>
+                                        <th align="center">isAutoShip</th>
+                                        <th align="center">Date of Shipping</th>
+                                        <th align="center">Method of Payment</th>
+                                        <th align="center">Address</th>
                                     </tr>
                                     </thead>
                                     <tbody id="autoShipList">

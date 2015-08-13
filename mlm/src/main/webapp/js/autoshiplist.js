@@ -73,11 +73,11 @@ $(document).ready(function () {
                     $('#autoShipList').append(
                         "<tr>"
                         + "	<td align='center'><input type='checkbox' id='shippingstatus[]' name='shippingstatus[]' value='"+item.orderIdL+":"+item.autoShip+"'></td>"
-                        + "	<td align='center'>" + item.userId + "</td>"
-                        + "	<td align='center'>" + item.orderIdL + "</td>"
+                        + "	<td >" + item.userId + "</td>"
+                        + "	<td >" + item.orderIdL + "</td>"
                         + "	<td align='center'>" + isAutoShip + "</td>"
-                        + "	<td align='center'>" + item.autoShipDate + "</td>"
-                        + "	<td align='center'>" + item.shipMethod + "</td>"
+                        + "	<td >" + item.autoShipDate + "</td>"
+                        + "	<td >" + item.shipMethod + "</td>"
                         + "	<td align='left'>" + item.address + "</td>"
                         + "</tr>"
                     );
