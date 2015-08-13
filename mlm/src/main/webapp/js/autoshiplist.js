@@ -65,27 +65,29 @@ $(document).ready(function () {
             $('#autoShipList').html("");
             if (res.shipInfos && res.shipInfos.length > 0) {
                 $.each(res.shipInfos, function (i, item) {
+               		var isAutoShip = "No";
+                	if(item.autoShip==1)
+                	{
+                		isAutoShip = "Yes";
+                	}
                     $('#autoShipList').append(
                         "<tr>"
-                        + "	<td><input type='checkbox' id='shippingstatus[]' name='shippingstatus[]' value='"+item.orderIdL+":"+item.autoShip+"'></td>"
-                        + "	<td>" + item.userId + "</td>"
-                        + "	<td>" + item.orderIdL + "</td>"
-                        + "	<td>" + item.autoShip + "</td>"
-                        + "	<td>" + item.autoShipDate + "</td>"
-                        + "	<td>" + item.shipMethod + "</td>"
-                        + "	<td>" + item.address + "</td>"
+                        + "	<td align='center'><input type='checkbox' id='shippingstatus[]' name='shippingstatus[]' value='"+item.orderIdL+":"+item.autoShip+"'></td>"
+                        + "	<td >" + item.userId + "</td>"
+                        + "	<td >" + item.orderIdL + "</td>"
+                        + "	<td align='center'>" + isAutoShip + "</td>"
+                        + "	<td >" + item.autoShipDate + "</td>"
+                        + "	<td >" + item.shipMethod + "</td>"
+                        + "	<td align='left'>" + item.address + "</td>"
                         + "</tr>"
                     );
                 });
-                //$('#autoShipList').append(
-                //	"<tr>"
-					//+"	<td colspan='7' align='center'>"
-					//+"		<button type='button' class='btn btn-success updshippingstatus_btn' >Update</button>"
-					//+"	</td>"
-					//+"</tr>"
-                //);
-            } else {
-                $("<div>No Shipping List info.</div>").insertAfter('#autoShipList');
+            }else {
+            	$('#autoShipList').append(
+            		"<tr>"
+            		+"	<td colspan='7'>No Shipping List info.</td>"
+            		+"</tr>"
+            	);
             }
         } else {
             alert("Sorry, loading Shipping List info failed! Try again, please. ");

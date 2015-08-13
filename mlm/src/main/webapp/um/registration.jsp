@@ -109,7 +109,7 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<label for="ssn" class="col-sm-3 control-label">SSN</label>
+											<label for="ssn" class="col-sm-3 control-label">SSN / Government ID</label>
 											<div class="col-sm-4">
 												<input type="text" class="form-control" id="ssn" name="ssn">
 											</div>

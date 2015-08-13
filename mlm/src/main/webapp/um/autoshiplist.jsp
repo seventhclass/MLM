@@ -39,7 +39,7 @@
                 <div id="content">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="subtitle">Autoship List</div>
+                            <div class="subtitle">Shipping List</div>
                         </div>
                     </div>
                     <div class="ashipdatebox">
@@ -67,35 +67,16 @@
                                         <th class="text-center">Done&nbsp;&nbsp;<input type='checkbox'
                                                                                        onclick="_chooseAll(this,'shippingstatus[]')"/>
                                         </th>
-                                        <th>Member ID</th>
-                                        <th>Order ID</th>
-                                        <th>isAutoShip</th>
-                                        <th>Date of Shipping</th>
-                                        <th>Method of Payment</th>
-                                        <th>Address</th>
+                                        <th align="center">Member ID</th>
+                                        <th align="center">Order ID</th>
+                                        <th align="center">isAutoShip</th>
+                                        <th align="center">Date of Shipping</th>
+                                        <th align="center">Method of Payment</th>
+                                        <th align="center">Address</th>
                                     </tr>
                                     </thead>
                                     <tbody id="autoShipList">
-                                    <!-- <tr>
-                                        <td> <input type="checkbox" id="shippingstatus[]" name="shippingstatus[]" value="123456789|1"/> </td>
-                                        <td> MV1508219-5345 </td>
-                                        <td> 1234567890 </td>
-                                        <td> Yes </td>
-                                        <td> 2015-08-11 </td>
-                                        <td> Regular </td>
-                                        <td> 2100 Sherbrooke Street apt.8 Montreal QC Canada 1A1 C0C</td>
-                                    </tr>
-                                    <tr>
-                                        <td> <input type="checkbox" id="shippingstatus[]" name="shippingstatus[]" value="123456789|1"/> </td>
-                                        <td> MV1508219-5345 </td>
-                                        <td> 1234567890 </td>
-                                        <td> Yes </td>
-                                        <td> 2015-08-11 </td>
-                                        <td> Regular </td>
-                                        <td> 2100 Sherbrooke Street apt.8 Montreal QC Canada 1A1 C0C</td>
-                                    </tr>
-                                    -->
-
+                                    
                                     </tbody>
                                 </table>
                             </div>
