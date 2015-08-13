@@ -1,7 +1,5 @@
 package com.milleans.shipping.dto;
 
-import java.util.Date;
-
 /**
  * Created by LeHu on 8/9/15 2:58 PM.
  */
@@ -13,7 +11,7 @@ public class ShipInfo {
 
     private int autoShip;
 
-    private Date autoShipDate;
+    private String autoShipDate;
 
     private String shipMethod;
 
@@ -53,11 +51,11 @@ public class ShipInfo {
         this.autoShip = autoShip;
     }
 
-    public Date getAutoShipDate() {
+    public String getAutoShipDate() {
         return autoShipDate;
     }
 
-    public void setAutoShipDate(Date autoShipDate) {
+    public void setAutoShipDate(String autoShipDate) {
         this.autoShipDate = autoShipDate;
     }
 

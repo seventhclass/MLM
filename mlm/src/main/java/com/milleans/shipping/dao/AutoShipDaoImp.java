@@ -4,14 +4,12 @@ import com.milleans.dao.AbstractDao;
 import com.milleans.model.AutoShip;
 import com.milleans.shipping.dto.ShipInfo;
 import com.milleans.tools.Constant;
-import com.milleans.tools.Utils;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -54,7 +52,7 @@ public class AutoShipDaoImp extends AbstractDao implements IAutoShipDao {
                 ShipInfo shipInfo = new ShipInfo();
                 Object[] objects = (Object[]) object;
 
-                shipInfo.setAutoShipDate(Utils.DateFormat.parse(objects[0].toString()));
+                shipInfo.setAutoShipDate(objects[0].toString());
                 shipInfo.setUserId(objects[1].toString());
                 shipInfo.setOrderIdL(objects[3].toString());
 
@@ -79,7 +77,7 @@ public class AutoShipDaoImp extends AbstractDao implements IAutoShipDao {
 
                 listTable.add(shipInfo);
             }
-        } catch (ParseException p) {
+        } catch (Exception p) {
             p.printStackTrace();
         }
 
