@@ -9,7 +9,9 @@ import java.util.List;
  */
 public interface IUserDAO {
 
-    public int update(User userInfo);
+    public void updateOrSave(User userInfo);
+
+    public void update(User userInfo);
 
     public User save(User user);
 
@@ -17,6 +19,7 @@ public interface IUserDAO {
 
     public User getUser(String userId);
 
+    User getUser(int uid);
 
     public String getEmail(String email);
 

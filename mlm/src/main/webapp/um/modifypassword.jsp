@@ -42,14 +42,14 @@
 									<div class="form-group">
 										<label for="password" class="col-sm-3 control-label">Old Password:</label>
 										<div class="col-sm-4">
-											<input type="password" class="form-control" id="password">
+											<input type="password" class="form-control" id="password" name="password">
 										</div>
 										<div id="errmsg_opass" class="col-sm-5 text-danger"></div>
 									</div>
 									<div class="form-group">
 										<label for="newpassword1" class="col-sm-3 control-label">New Password:</label>
 										<div class="col-sm-4">
-											<input type="password" class="form-control" id="newpassword1">
+											<input type="password" class="form-control" id="newpassword1" name="newpassword1">
 										</div>
 										<div id="errmsg_npass" class="col-sm-5 text-danger"></div>
 									</div>									
@@ -90,7 +90,7 @@
 		</div>
 	</div>
 	 	 
-	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<%--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>--%>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 	
 		 
 </body>

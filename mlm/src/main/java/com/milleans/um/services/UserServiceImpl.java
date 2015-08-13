@@ -36,6 +36,11 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public User getUser(int uid) {
+        return userDAO.getUser(uid);
+    }
+
+    @Override
     @Transactional
     public String checkEmail(String email) {
         String _email = null;
@@ -65,6 +70,16 @@ public class UserServiceImpl implements IUserService {
         addressDTO.setZip(user.getZip());
 
         return addressDTO;
+    }
+
+    @Override
+    public void save(User user) {
+        userDAO.save(user);
+    }
+
+    @Override
+    public void update(User user) {
+        userDAO.update(user);
     }
 
 

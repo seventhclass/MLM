@@ -1,5 +1,6 @@
 package com.milleans.um.controller;
 
+import com.milleans.dto.BaseJs;
 import com.milleans.model.User;
 import com.milleans.tools.Constant;
 import com.milleans.tools.Utils;
@@ -424,6 +425,29 @@ public class UserController {
             addressList.setResult("fail");
         }
         return addressList;
+    }
+
+
+    @RequestMapping(value = "/updatePwd", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    BaseJs updatePassword(HttpServletRequest request, HttpSession session) {
+        BaseJs baseJs = new BaseJs();
+        try {
+            String old = request.getParameter("password");
+            String newPwd = request.getParameter("newpassword1");
+            String uid = session.getAttribute(Constant.Uid).toString();
+            User user = userService.getUser(Integer.valueOf(uid));
+
+            String _newPwd = Utils.getHashPassword(newPwd);
+            user.setPassWord(_newPwd);
+            // user.setMobile("1111");
+            userService.update(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return baseJs;
     }
 
 }

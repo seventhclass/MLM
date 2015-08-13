@@ -12,6 +12,7 @@ public interface IUserService {
 
     public User getUser(String userId);
 
+    User getUser(int uid);
 
     public String checkEmail(String email);
 
@@ -19,5 +20,7 @@ public interface IUserService {
 
     AddressDTO getAddress(String userId);
 
+    void save(User user);
 
+    void update(User user);
 }

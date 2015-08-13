@@ -17,9 +17,15 @@ import java.util.List;
 @Repository("userDao")
 @Transactional
 public class UserDAOImpl extends AbstractDao implements IUserDAO {
+
     @Override
-    public int update(User userInfo) {
-        return 0;
+    public void update(User userInfo) {
+        super.update(userInfo);
+    }
+
+    @Override
+    public void updateOrSave(User userInfo) {
+        super.updateOrSave(userInfo);
     }
 
     @Override
@@ -47,8 +53,24 @@ public class UserDAOImpl extends AbstractDao implements IUserDAO {
 
         if (list == null || list.size() == 0) {
             return null;
-        } else{
-            User user=(User)list.get(0);
+        } else {
+            User user = (User) list.get(0);
+            return user;
+        }
+    }
+
+    @Override
+    public User getUser(int uid) {
+
+        Criteria criteria = this.getCurrentSession().createCriteria(User.class);
+        criteria.add(Restrictions.eq("id", uid));
+
+        List<User> list = criteria.list();
+
+        if (list == null || list.size() == 0) {
+            return null;
+        } else {
+            User user = (User) list.get(0);
             return user;
         }
     }
@@ -89,7 +111,6 @@ public class UserDAOImpl extends AbstractDao implements IUserDAO {
     public String getRefenerceId(String userId) {
         return null;
     }
-
 
 
 }

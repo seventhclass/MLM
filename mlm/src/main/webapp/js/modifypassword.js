@@ -2,7 +2,8 @@
  * 
  */
 $(document).ready(function(){
-	$('#response').hide(); 
+    var basePath=$('#basePath').attr("value");
+    $('#response').hide();
 	
 	$('#password').blur(function() {
         if ($(this).val() == "") {
@@ -94,7 +95,7 @@ $(document).ready(function(){
      	
      	$('#response').html("");
      	
-        $.post('doModifyPassword.jsp', $(this).serialize(), function(data){
+        $.post(basePath+'updatePwd', $(this).serialize(), function(data){
             // show the response        	
             $('#response').html(data);   
             $('#response').show();
