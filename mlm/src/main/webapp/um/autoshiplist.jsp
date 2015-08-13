@@ -76,26 +76,7 @@
                                     </tr>
                                     </thead>
                                     <tbody id="autoShipList">
-                                    <!-- <tr>
-                                        <td> <input type="checkbox" id="shippingstatus[]" name="shippingstatus[]" value="123456789|1"/> </td>
-                                        <td> MV1508219-5345 </td>
-                                        <td> 1234567890 </td>
-                                        <td> Yes </td>
-                                        <td> 2015-08-11 </td>
-                                        <td> Regular </td>
-                                        <td> 2100 Sherbrooke Street apt.8 Montreal QC Canada 1A1 C0C</td>
-                                    </tr>
-                                    <tr>
-                                        <td> <input type="checkbox" id="shippingstatus[]" name="shippingstatus[]" value="123456789|1"/> </td>
-                                        <td> MV1508219-5345 </td>
-                                        <td> 1234567890 </td>
-                                        <td> Yes </td>
-                                        <td> 2015-08-11 </td>
-                                        <td> Regular </td>
-                                        <td> 2100 Sherbrooke Street apt.8 Montreal QC Canada 1A1 C0C</td>
-                                    </tr>
-                                    -->
-
+                                    
                                     </tbody>
                                 </table>
                             </div>
