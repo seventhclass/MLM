@@ -7,13 +7,13 @@ import com.milleans.order.dto.OrderHasProductDTO;
 import com.milleans.order.dto.OrderProducts;
 import com.milleans.order.dto.OrderSummaryDto;
 import com.milleans.tools.Constant;
+import com.milleans.tools.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by LeHu on 7/10/15 12:11 PM.
@@ -73,17 +73,23 @@ public class OrderHasProducServiceImpl implements IorderHasProductService {
 
         OrderSummaryDto orderSummaryDto = null;
 
-        Map<String, String> map = parameterDao.getMapValues();
+        //Map<String, String> map = parameterDao.getMapValues();
 
+        //
         orderSummaryDto = this.orderHasProductDao.getOrderSummary(orderId);
 
-        double tps = Double.valueOf(map.get(Constant.TPS));
-        double tvq = Double.valueOf(map.get(Constant.TVQ));
-        double total = Double.valueOf(orderSummaryDto.getSubTotal()) * (tps + 1) * (tvq + 1);
+//        double tps = Double.valueOf(map.get(Constant.TPS));
+//        double tvq = Double.valueOf(map.get(Constant.TVQ));
+//        double total = Double.valueOf(orderSummaryDto.getSubTotal()) * (tps + 1) * (tvq + 1);
+        double subTotal = Double.valueOf(orderSummaryDto.getSubTotal());
+        orderSummaryDto.setSubTotal(Utils.decimalFormat.format(subTotal));
+        orderSummaryDto.setTax(Utils.decimalFormat.format(subTotal * Constant.TaxRate).toString());
+        orderSummaryDto.setTaxRate(String.valueOf(Constant.TaxRate));
 
-        orderSummaryDto.setTotal(String.valueOf(total));
+//        orderSummaryDto.setTotal(String.valueOf(total));
+//        orderSummaryDto.setTax((float) (Double.valueOf(orderSummaryDto.getTotal()) - Double.valueOf(orderSummaryDto.getSubTotal())));
 
-        orderSummaryDto.setTax((float) (Double.valueOf(orderSummaryDto.getTotal()) - Double.valueOf(orderSummaryDto.getSubTotal())));
+        //orderSummaryDto.setTotal();
 
         return orderSummaryDto;
     }

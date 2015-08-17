@@ -66,7 +66,7 @@ public class OrderHasProducDaoImpl extends AbstractDao implements IorderHasProdu
                 " AND oh.t_order_id =" + orderId;
 
         Query query = this.getCurrentSession().createSQLQuery(sql);
-        List<OrderProducts> orderProductses = new ArrayList<>();
+       // List<OrderProducts> orderProductses = new ArrayList<>();
         List rs = query.list();
 
         if (rs != null && rs.size() > 0) {
