@@ -4,7 +4,7 @@
 
 $(document).ready(function(){
  	var basePath=$('#basePath').attr("value"); 	
- 	
+ 	$('#makeOrder_btn').attr("disabled",true);
  	queryShoppingCartInfo(); 	
  	queryMyShoppingCartSummary();
  	
@@ -97,6 +97,7 @@ $(document).ready(function(){
  		if (result == "success") {
  			$('#shoppingCartList').html("");	
  			if(res.cartContentList && res.cartContentList.length>0){
+ 				$('#makeOrder_btn').attr("disabled",false);
  				$.each(res.cartContentList,function(i, item){
  					$('#shoppingCartList').append(
  						"<tr>"
@@ -124,7 +125,7 @@ $(document).ready(function(){
  					);
  				});
  			}else{
- 				$("<button class='btn btn-success' type='button'>No Any Category Item</button>").insertAfter('.categorybox');
+ 				$("<tr><td colspan='2'>No Any Items</td></tr>").insertAfter('#shoppingCartList');
  			}
  		}
  	} 	  	

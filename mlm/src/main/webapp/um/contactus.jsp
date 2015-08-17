@@ -44,7 +44,7 @@
 						</div>
 						<div class="h3 text-center">
 							See how your business can benefit with<br/> 
-							Blue Fountain Media on Your team.
+							you and your team.
 						</div>
 					</div> <!-- end content -->					
 				</div>
@@ -94,18 +94,25 @@
 						<li>
 							<span class="glyphicon glyphicon-home" style="color:#5cb85c;font-size:25px;"></span>
 							<strong class="addr_title">Montreal</strong>
-							<div class="addr">102 Madison Ave, Second Floor New York, NY, 10016</div>
+							<!-- <div class="addr">102 Madison Ave, Second Floor New York, NY, 10016</div> -->
+							<div class="addr"></div>
 						</li>
 						<li>
 							<span class="glyphicon glyphicon-phone-alt" style="color:#5cb85c;font-size:25px;"></span>
 							<span class="phone_title">Give Us a Call</span>						
-							<div><strong class="phone">800-888-1688</strong></div>
+							<!-- <div><strong class="phone">800-888-1688</strong></div> -->
+							<div><strong class="phone">1-855-251-7833</strong></div>
 						</li>
-						<li>
+						<!-- <li>
 							<span class="glyphicon glyphicon-print" style="color:#5cb85c;font-size:25px;"></span>
 							<span class="fax_title">Send Us a Fax</span>						
 							<div><strong class="fax">1-800-278-0816</strong></div>
-						</li>						
+						</li>	 -->					
+						<li>
+							<span class="glyphicon glyphicon-envelope" style="color:#5cb85c;font-size:25px;"></span>
+							<span class="fax_title">Email</span>						
+							<div><strong class="fax">milleansvie@gmail.com</strong></div>
+						</li>	
 					</ul>
 				</div>				
 			</div>			
