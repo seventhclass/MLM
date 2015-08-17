@@ -174,9 +174,11 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-4">
-                                        <select id="selectshipmethod" class="form-control">
-                                            <option value="1">$10.00 - Regular</option>
-                                            <option value="2">$20.00 - Express</option>
+                                        <select id="selectshipmethod" class="form-control" >
+                                            <option value="1" data-shippingfee="9.95" selected>CAD  9.95 - Regular(North America)</option>
+                                            <option value="2" data-shippingfee="15.00">CAD 15.00 - Express(North America)</option>
+                                            <option value="3" data-shippingfee="12.95">CAD 12.95 - Regular(International)</option>
+                                            <option value="4" data-shippingfee="39.00">CAD 39.00 - Express(International)</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -188,15 +190,6 @@
                                                    name="shippingDate" value=<%=new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime()) %>>
                                         </div>
                                     </div>
-                                    <!-- 										<div class="col-sm-1 text-right">
-                                                                                <span style="color:#FE642E" class='glyphicon glyphicon-star-empty'></span>
-                                                                            </div>
-                                                                            <div class="col-sm-7 text-left shippingmethoddesc">
-                                                                                sldkfjsl;kdfjskljfsl;kjfsldkfjsfdsfsdfsdf
-                                                                                dfsdfasfsefsdfsdfsvbefrvsdf
-                                                                                sadfsadfsadfsdfsdfsdfasdf
-                                                                                sdfsdfsdfsdfs
-                                                                            </div>	 -->
                                 </div>
                                 <br/>
 

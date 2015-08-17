@@ -227,12 +227,22 @@ $(document).ready(function(){
  		var message = res.message;			//response message
 
 		if (result == "success") {
+			var shippingfee = $('#selectshipmethod').find("option:selected").attr("data-shippingfee");
 			$('#ordersummary_subordertotal').html(res.subTotal);
- 			$('#ordersummary_shippingfee').html();
+ 			$('#ordersummary_shippingfee').html(shippingfee);
 			$('#ordersummary_tax').html(res.tax);
-			$('#ordersummary_ordertotal').html(res.total);
+ 			var total=(shippingfee-0)+(res.total-0);
+			$('#ordersummary_ordertotal').html(total);
  		}		
  	} 	
+ 	
+ 	$('#selectshipmethod').change(function(){
+ 		var shippingfee = $('#selectshipmethod').find("option:selected").attr("data-shippingfee");
+ 		$('#ordersummary_shippingfee').html(shippingfee);
+ 		var total_1 = $('#ordersummary_ordertotal').html();
+ 		var total_2=(shippingfee-0)+(total_1-0);
+		$('#ordersummary_ordertotal').html(total_2);
+ 	});
  	
  	$('#userTotalOrderForm').submit(function(){
  		var shipday = $('#shippingDateId').val().substr(8,2);
