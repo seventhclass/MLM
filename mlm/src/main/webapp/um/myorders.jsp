@@ -159,12 +159,12 @@
 												</div>											
 											</form>
 										</div> -->
-										<div id="finish_order" class="text-center">
-											<a href="<%=request.getContextPath()%>/payandship">
-												<button type="button" class="btn btn-primary">Finished Order <span
-														class="glyphicon glyphicon-ok-sign"></span></button>
-											</a>
-										</div>
+										<%--<div id="finish_order" class="text-center">--%>
+											<%--<a href="<%=request.getContextPath()%>/payandship">--%>
+												<%--<button type="button" class="btn btn-primary">Finished Order <span--%>
+														<%--class="glyphicon glyphicon-ok-sign"></span></button>--%>
+											<%--</a>--%>
+										<%--</div>--%>
 								</div>	
 							    <div class="list-group-item">
 									<div class="text-center">
