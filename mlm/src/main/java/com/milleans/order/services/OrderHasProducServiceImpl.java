@@ -83,8 +83,11 @@ public class OrderHasProducServiceImpl implements IorderHasProductService {
 //        double total = Double.valueOf(orderSummaryDto.getSubTotal()) * (tps + 1) * (tvq + 1);
         double subTotal = Double.valueOf(orderSummaryDto.getSubTotal());
         orderSummaryDto.setSubTotal(Utils.decimalFormat.format(subTotal));
-        orderSummaryDto.setTax(Utils.decimalFormat.format(subTotal * Constant.TaxRate).toString());
+        double tax = subTotal * Constant.TaxRate;
+        orderSummaryDto.setTax(String.valueOf(Utils.decimalFormat.format(tax)));
         orderSummaryDto.setTaxRate(String.valueOf(Constant.TaxRate));
+
+        orderSummaryDto.setTotal(Utils.decimalFormat.format(subTotal + tax));
 
 //        orderSummaryDto.setTotal(String.valueOf(total));
 //        orderSummaryDto.setTax((float) (Double.valueOf(orderSummaryDto.getTotal()) - Double.valueOf(orderSummaryDto.getSubTotal())));
