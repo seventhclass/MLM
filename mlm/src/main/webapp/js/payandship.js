@@ -231,8 +231,8 @@ $(document).ready(function(){
 			$('#ordersummary_subordertotal').html(res.subTotal);
  			$('#ordersummary_shippingfee').html(shippingfee);
 			$('#ordersummary_tax').html(res.tax);
- 			var total=(shippingfee-0)+(res.total-0);
-			$('#ordersummary_ordertotal').html(total);
+ 			var total=(parseFloat(shippingfee).toFixed(2)-0)+(parseFloat(res.total).toFixed(2)-0);
+			$('#ordersummary_ordertotal').html(parseFloat(total).toFixed(2));
  		}		
  	} 	
  	
@@ -240,8 +240,8 @@ $(document).ready(function(){
  		var shippingfee = $('#selectshipmethod').find("option:selected").attr("data-shippingfee");
  		$('#ordersummary_shippingfee').html(shippingfee);
  		var total_1 = $('#ordersummary_ordertotal').html();
- 		var total_2=(shippingfee-0)+(total_1-0);
-		$('#ordersummary_ordertotal').html(total_2);
+		var total_2=(parseFloat(shippingfee).toFixed(2)-0)+(parseFloat(total_1).toFixed(2)-0);
+		$('#ordersummary_ordertotal').html(parseFloat(total_2).toFixed(2));
  	});
  	
  	$('#userTotalOrderForm').submit(function(){

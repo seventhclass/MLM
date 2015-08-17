@@ -25,31 +25,12 @@
 			<%@ include file="../includes/header.jsp"%>
 		</div> <!-- end header -->
 		<div id="page">
-			<h2>Who are we?</h2>
-			<div class="media">
-				<div class="media-right media-middle">
-				<img style="float:right" src="<%=request.getContextPath()%>/images/about/happy.jpg" class="img-thumbnail"/>
-				<div class="content-heading"><h3>Who are we?</h3></div>
-				<p  style="clear:both">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-					Duae sunt enim res quoque, ne tu verba solum putes. 
-					Istam voluptatem, inquit, Epicurus ignorat? 
-					Quia dolori non voluptas contraria est, sed doloris privatio. 
-					Egone non intellego, quid sit don Graece, Latine voluptas? 
-					Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint. 
-					Duo Reges: constructio interrete.</p>
-				</div>
+			<iframe src="http://abcnews.go.com/video/embed?id=12270692" width="640" height="360" style="border:none;"></iframe>
+			<div>
+				<p>
+				The connection between cellular ageing and telomere length is rooted in solid research. Telomeres become shorter every time a cell divides, and when they are lost, cells can no longer reproduce. The enzyme telomerase can lengthen telomeres, possibly slowing or reversing degenerative diseases. In one study, mice genetically engineered to lack functional telomerase showed brain degeneration and shrunken testes, but those effects were reversed when the enzyme was reactivated. Our product - MT-1000 induces the enzyme-telomerase production at a low but very significant level.
+				</p>
 			</div>
-			
-			<h2>What do we do?</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-			Duae sunt enim res quoque, ne tu verba solum putes. 
-			Istam voluptatem, inquit, Epicurus ignorat? 
-			Quia dolori non voluptas contraria est, sed doloris privatio. 
-			Egone non intellego, quid sit don Graece, Latine voluptas? 
-			Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint. 
-			Duo Reges: constructio interrete.</p>
-			<p><a href='<%=request.getContextPath()%>/common/contactus'>Click here to contact us</a>.</p>
-			
 		</div>
 	</div><!-- end container -->
 	<div id="footer">		  			
