@@ -1,5 +1,6 @@
 package com.milleans.tools;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,10 +13,14 @@ public class Constant {
 
     public static String Uid = "uid";
 
+    public static DecimalFormat form = new DecimalFormat("0.00");
+
     public static int OrderPending = 1;
 
     public static String TPS = "TPS";
     public static String TVQ = "TVQ";
+
+    public static float TaxRate = 0.062f;
 
     public static Map<String, String> OrderStatus = new HashMap<String, String>();
 
@@ -47,7 +52,6 @@ public class Constant {
         RoleTypeMapVal.put("individual", 2);
         RoleTypeMapVal.put("company", 3);
     }
-
 
 
 }

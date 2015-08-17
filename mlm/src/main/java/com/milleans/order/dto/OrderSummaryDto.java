@@ -7,29 +7,30 @@ import com.milleans.dto.BaseJs;
  */
 public class OrderSummaryDto extends BaseJs {
 
-    private String total;
+    // private String total;
 
-    //private String fee;
+    // private String shipFee;
 
-    private float tax;
+    private String tax;
 
+    private String taxRate;
 
     private String subTotal;
 
-
-    public String getTotal() {
-        return total;
+    public String getTaxRate() {
+        return taxRate;
     }
 
-    public void setTotal(String total) {
-        this.total = total;
+    public void setTaxRate(String taxRate) {
+        this.taxRate = taxRate;
     }
 
-    public float getTax() {
+
+    public String getTax() {
         return tax;
     }
 
-    public void setTax(float tax) {
+    public void setTax(String tax) {
         this.tax = tax;
     }
 
