@@ -87,6 +87,8 @@ public class OrderHasProducServiceImpl implements IorderHasProductService {
         orderSummaryDto.setTax(String.valueOf(Utils.decimalFormat.format(tax)));
         orderSummaryDto.setTaxRate(String.valueOf(Constant.TaxRate));
 
+        System.out.println("=-----" + (subTotal + tax));
+
         orderSummaryDto.setTotal(Utils.decimalFormat.format(subTotal + tax));
 
 //        orderSummaryDto.setTotal(String.valueOf(total));
