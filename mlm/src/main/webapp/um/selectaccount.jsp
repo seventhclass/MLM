@@ -43,7 +43,7 @@
 									<div class="panel-body">
 										<div class="radio">
 											<label>
-												<input type="radio" name="optionsatype" id="account1" value="2" checked>Associate Account (without AutoShip) $28 Annual Membership Cost - If you like to have the lowest possible product pricing and have the possibility to make a substantial income in the process then this is the best choice for you! Get scheduled delivery of your favorite products, paks at our lowest prices, which reflect special rewards pricing on select items. Also, enjoy the benefits of our generous Compensation Plan and exclusive special promotions. 
+												<input type="radio" name="optionsatype" id="account1" value="2" checked>Associate Account (without AutoShip) $38 Annual Membership Cost - If you like to have the lowest possible product pricing and have the possibility to make a substantial income in the process then this is the best choice for you! Get scheduled delivery of your favorite products, paks at our lowest prices, which reflect special rewards pricing on select items. Also, enjoy the benefits of our generous Compensation Plan and exclusive special promotions. 
 											</label>
 										</div>										
 										<br/>
