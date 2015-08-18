@@ -44,6 +44,25 @@
 									<div>'<u><span id="address" style="color:blue;">1234, Street Sherbrook APT.8, Montreal, QC, Canada 1A2 B3C</span></u>'.</div>
 								</div>
 							</div>
+							<div id="return_btn">
+								<div class="row">
+									<br>
+								</div>
+								<div class="row">
+									<br>
+								</div>
+								<div class="row">
+									<br>
+								</div>
+								<div class="row">
+									<br>
+								</div>
+								<div class="row">
+									<div class="text-center">
+										<a href='<%=request.getContextPath()%>/products'><button type="button" class="btn btn-danger">OK</button></a>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div> <!-- end content -->	

@@ -280,7 +280,7 @@ $(document).ready(function(){
     		alert(message);
 		} else {
 			console.log("message===" + message);
-			window.location.href = basePath + "um/paymentsuccess.jsp?orderid="+$('#orderIdL').val()+"&total="+$('#ordersummary_ordertotal').html();
+			window.location.href = basePath + "orderdetail/process/essay?orderid="+$('#orderIdL').val()+"&total="+$('#ordersummary_ordertotal').html();
 		}
  	}
  	
