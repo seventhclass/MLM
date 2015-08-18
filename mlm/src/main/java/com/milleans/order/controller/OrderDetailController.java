@@ -161,5 +161,9 @@ public class OrderDetailController {
         return new ModelAndView("um/unpaidorders");
     }
 
+    @RequestMapping(value = "/process/essay", method = RequestMethod.GET)
+    public ModelAndView getEssay() {
+        return new ModelAndView("um/paymentsuccess");
+    }
 
 }

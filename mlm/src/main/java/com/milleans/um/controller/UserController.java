@@ -171,10 +171,10 @@ public class UserController {
 
         ModelAndView modelAndView = null;
         if (type.equals("individual")) {
-            int accountType = Integer.valueOf(request.getParameter("accounttype").toString());
+            int accountType = Integer.valueOf(request.getParameter("accountid").toString());
             modelAndView = this.signIndividual(request, accountType);
         } else if (type.equals("company")) {
-            int accountType = Integer.valueOf(request.getParameter("accounttype").toString());
+            int accountType = Integer.valueOf(request.getParameter("accountid").toString());
             modelAndView = this.signCompany(request, accountType);
         } else {
             modelAndView = this.signAdmin(request, type);
