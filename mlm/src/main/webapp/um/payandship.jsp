@@ -37,6 +37,7 @@
         </div>
     </div>
     <input id="orderId" name="orderId" type="hidden" value="${orderId}"/>
+    <input id="orderIdL" name="orderIdL" type="hidden" value="${orderIdL}"/>
     <div id="page">
         <div class="row">
             <div class="col-md-3">
