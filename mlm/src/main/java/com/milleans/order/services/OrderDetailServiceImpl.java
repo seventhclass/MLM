@@ -49,23 +49,21 @@ public class OrderDetailServiceImpl implements IOrderDetailService {
 
     }
 
-//    @Override
-//    public void updatePaymentStatus(String orderIdL) {
-//        orderDetailDao.updatePaymentStatus(orderIdL);
-//    }
-
     @Override
     public void updateOrderStatus(String orderIdL, int status) {
         orderDetailDao.updateOrderStatus(orderIdL, status);
     }
 
-//    @Override
-//    public ArrayList<String> getOrdersAutoShip(String[] orderArr) {
-//        return orderDetailDao.getOrderAutoShip(orderArr);
-//    }
 
     @Override
     public List<Orderdetails> getOrderdetails(String orderIdL) {
         return orderDetailDao.getOrderdetails(orderIdL);
+    }
+
+    @Override
+    public float getAmount(String orderIdL) {
+        float amount =
+                orderDetailDao.getAmount(orderIdL);
+        return amount;
     }
 }

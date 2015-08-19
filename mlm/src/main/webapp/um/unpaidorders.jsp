@@ -44,6 +44,8 @@
 														<th>Order ID</th>
 														<th>Member ID</th>
 														<th>Order Date</th>
+														<th>Name</th>
+														<th>Amount</th>
 														<th class="text-center">Paid&nbsp;&nbsp;<input type='checkbox' onclick="_chooseAll(this,'payornot[]')"/></th>
 													</tr>
 												</thead>

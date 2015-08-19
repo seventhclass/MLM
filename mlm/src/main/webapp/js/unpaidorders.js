@@ -67,6 +67,8 @@ $(document).ready(function () {
                 			+ "	<td>" + item.ordlerIdL + "</td>"
                 			+ "	<td>" + item.userIdL + "</td>"
                 			+ "	<td>" + item.createDate + "</td>"
+                        + "	<td>" + item.userName + "</td>"
+                        + "	<td>" + item.amount + "</td>"
                 			+ "	<td><input type='checkbox' id='payornot[]' name='payornot[]' value='"+item.ordlerIdL+"'></td>"
                         + "</tr>"
                     );

@@ -3,7 +3,11 @@ package com.milleans.order.dao;
 import com.milleans.dao.AbstractDao;
 import com.milleans.model.Orderdetails;
 import com.milleans.order.dto.OrderDealingInfo;
+import com.milleans.tools.Constant;
+import com.milleans.tools.Utils;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,13 +39,23 @@ public class OrderDetailDaoImpl extends AbstractDao implements IOrderDetailDao {
     @Override
     public ArrayList<OrderDealingInfo> getOrderList(int status) throws ParseException {
 
-        String sql = "select DISTINCT od.orderIdl, od.status,od.createddate, u.userId from t_orderdetails od, t_user u " +
-                " where od.userId=u.id  and od.status=" + status;
+        String sql = "SELECT od.orderIdl, od.status, od.createddate, u.userId, " +
+                " CONCAT( u.firstname,  ' ', u.lastname )," +
+                " SUM( od.price_total )*" + (1 + Constant.TaxRate) +
+                " + m.fee " +
+                " FROM t_orderdetails od, t_user u, t_autoship s, t_shippingmethod m " +
+                " WHERE od.userId = u.id " +
+                " AND od.status =1 " +
+                " AND od.autoship_id = s.id " +
+                " AND s.shipmethodid = m.id " +
+                " GROUP BY od.orderIdl ";
+
 
         Query query = this.getCurrentSession().createSQLQuery(sql);
 
         ArrayList<OrderDealingInfo> list = new ArrayList<>();
         List rs = query.list();
+
 
         for (Object object : rs) {
             Object[] objects = (Object[]) object;
@@ -52,12 +66,17 @@ public class OrderDetailDaoImpl extends AbstractDao implements IOrderDetailDao {
             tmp.setStatus(objects[1].toString());
             //SimpleDateFormat dateFormat = new SimpleDateFormat(Utils.MilleanDateFormate);
             //String test= objects[2].toString();
-
             //long tl=Long.valueOf(test);
             //Date td=new Date(tl);
-
             tmp.setCreateDate(objects[2].toString());
             tmp.setUserIdL(objects[3].toString());
+
+            tmp.setUserName(objects[4].toString());
+
+            tmp.setAmount(objects[5].toString());
+
+            float amountf = Float.valueOf(tmp.getAmount());
+            tmp.setAmount(Utils.decimalFormat.format(amountf));
 
             list.add(tmp);
         }
@@ -111,15 +130,31 @@ public class OrderDetailDaoImpl extends AbstractDao implements IOrderDetailDao {
     public List<Orderdetails> getOrderdetails(String orderIdL) {
 
         //Criteria criteria=this.getCurrentSession().create
-        String hql="select o from Orderdetails o, User u, Account a "+
-                " where o.orderIdl='"+orderIdL+"' " +
+        String hql = "select o from Orderdetails o, User u, Account a " +
+                " where o.orderIdl='" + orderIdL + "' " +
                 " and o.userid=u.id " +
                 " and u.accountId=a.id " +
                 " and a.autoship=1";
 
         Query query = this.getCurrentSession().createQuery(hql);
 
-        List<Orderdetails> list=query.list();
+        List<Orderdetails> list = query.list();
         return list;
+    }
+
+    @Override
+    public float getAmount(String orderIdL) {
+
+        Criteria criteria = this.getCurrentSession().createCriteria(Orderdetails.class);
+        criteria.add(Restrictions.eq("orderIdL", orderIdL));
+
+        List<Orderdetails> rs = criteria.list();
+
+        float amount = 0f;
+
+        for (Orderdetails order : rs) {
+            amount += order.getPriceTotal();
+        }
+        return amount;
     }
 }

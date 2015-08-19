@@ -20,4 +20,6 @@ public interface IOrderDetailDao extends IDao {
 //    ArrayList<String> getOrderAutoShip(String[] orderArr);
 
     List<Orderdetails> getOrderdetails(String orderIdL);
+
+    float getAmount(String orderIdL);
 }

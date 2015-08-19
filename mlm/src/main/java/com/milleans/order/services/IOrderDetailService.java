@@ -22,4 +22,6 @@ public interface IOrderDetailService extends ICrud {
 //    ArrayList<String> getOrdersAutoShip(String[] orderArr);
 
     List<Orderdetails> getOrderdetails(String orderIdL);
+
+    float getAmount(String orderIdL);
 }

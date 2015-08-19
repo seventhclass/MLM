@@ -47,15 +47,15 @@ public class Utils {
 
     public static void main(String[] args) {
 
-        // Utils.getUserId();
-        String test = "Happy";
-        String endode = Utils.getEncode(test);
-        System.out.println("encode=" + endode);
-        System.out.println("decode=" + Utils.getDecode(endode));
-
-
-        //
-        System.out.println(Utils.getUserId());
+//        // Utils.getUserId();
+//        String test = "Happy";
+//        String endode = Utils.getEncode(test);
+//        System.out.println("encode=" + endode);
+//        System.out.println("decode=" + Utils.getDecode(endode));
+//
+//
+//        //
+//        System.out.println(Utils.getUserId());
     }
 
     public static BaseJs getFailMessage(String message) {
@@ -77,7 +77,7 @@ public class Utils {
 
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         boolean br = passwordEncoder.matches(rawPassword, hashPwd);
-        System.out.println("br=====>" + br);
+        System.out.println("pwd is ok =====>" + br);
         return br;
 
     }

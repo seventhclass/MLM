@@ -20,7 +20,7 @@ public class Constant {
     public static String TPS = "TPS";
     public static String TVQ = "TVQ";
 
-    public static float TaxRate = 0.062f;
+    public static float TaxRate = (float) 0.062;
 
     public static Map<String, String> OrderStatus = new HashMap<String, String>();
 

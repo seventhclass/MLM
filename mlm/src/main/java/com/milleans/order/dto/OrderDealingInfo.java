@@ -14,6 +14,26 @@ public class OrderDealingInfo {
 
     private String userIdL;
 
+    private String amount;
+
+    private String userName;
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public String getOrdlerIdL() {
         return ordlerIdL;
     }
