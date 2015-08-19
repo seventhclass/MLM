@@ -35,7 +35,7 @@ public class AutoShipDaoImp extends AbstractDao implements IAutoShipDao {
         ArrayList<ShipInfo> listTable = new ArrayList<>();
         try {
             String sql = "SELECT s.date, u.userid, a.isautoship, o.orderIdl, m.name, " +
-                    "CONCAT(u.address,', ',u.city,', ',u.province,', ',u.country,', ',u.zip,', ',u.mobile) " +
+                    "CONCAT(u.address,', ',u.city,', ',u.province,', ',u.country,', ',u.zip,', ',u.mobile,', ',u.email) " +
                     " FROM t_autoship s, t_account a, t_orderdetails o, t_shippingmethod m, t_user u " +
                     " WHERE s.userid = u.id " +
                     " AND s.shipmethodid = m.id " +
