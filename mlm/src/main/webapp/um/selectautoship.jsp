@@ -6,7 +6,6 @@
 	<title>Welcome to milleans vie science</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
@@ -14,6 +13,8 @@
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>		
 </head>
 <body>
 	 <div class="container">
