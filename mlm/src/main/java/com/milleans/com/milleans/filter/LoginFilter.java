@@ -11,13 +11,14 @@ import java.io.IOException;
  * Created by LeHu on 8/3/15 8:56 PM.
  */
 
-@WebFilter(filterName = "LoginFilter", urlPatterns = {"/*" },
+@WebFilter(filterName = "LoginFilter",
+        urlPatterns = {"/*" },
         initParams = {
                 @WebInitParam(name = "noCheck",
-                        value = "signUp;login;doLogin;" +
+                        value = "signUp;login;doLogin;.js;.css" +
                                 "login.jsp;index;selectAutoship;selectAccount;" +
                                 "registration;logout;registration4admin.jsp;" +
-                                "termcondition.jsp;contactus;aboutus;images;logout;png;jpg")})
+                                "termcondition.jsp;contactus;aboutus;images;logout;.png;.jpg")})
 public class LoginFilter implements Filter {
 
     private FilterConfig filterConfig;
