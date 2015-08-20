@@ -7,13 +7,15 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+	<link href="<%=request.getContextPath()%>/js/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script language="javascript" type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.11.1.js"></script>
+	<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/mlm.js"></script>		
 </head>
 <body>
@@ -80,8 +82,8 @@
 		</div>
 	</div>
 	 	 
-	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 	
+	<!-- <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>  -->	
 		 
 </body>
 </html>

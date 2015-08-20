@@ -65,7 +65,7 @@
 						<div class="row text-center">
 							<div class="col-md-3"></div>
 							<div class="col-md-3">
-								<a href="selectautoship.jsp"><button class="btn btn-primary" type="button" >Back</button></a>							
+								<a href="<%=request.getContextPath()%>/selectAutoship"><button class="btn btn-primary" type="button" >Back</button></a>
 							</div>
 							<div class="col-md-3">
 								<button id="selectatype" class="btn btn-primary" type="button" >Next</button>
@@ -85,8 +85,8 @@
 		</div>
 	</div>
 	 	 
-	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 	
+	<!-- <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 	 -->
 		 
 </body>
 </html>
