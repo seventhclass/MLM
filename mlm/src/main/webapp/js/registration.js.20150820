@@ -36,14 +36,25 @@ $(document).ready(function(){
 	
 	/*Individual register page form element verification*/
 	$('#firstname').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_fname").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;First name can not be empty.").css("color", "red");
+                $('#firstname').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_fname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
+                //$("#errmsg_fname").html("");
         }
         return true;
 	});	
 	$('#lastname').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_lname").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Last name can not be empty.").css("color", "red");
+                $('#lastname').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_lname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
@@ -96,62 +107,101 @@ $(document).ready(function(){
         return true;
 	});			
 	$('#address').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_address").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Address can not be empty.").css("color", "red");
+                $('#address').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_address").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});
 	$('#countrycode').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_countrycode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Country can not be empty.").css("color", "red");
+                $('#countrycode').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_countrycode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});
 	$('#provincecode').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_provincecode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Provincecode can not be empty.").css("color", "red");
+                $('#provincecode').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_provincecode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});
 	$('#city').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_city").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;City can not be empty.").css("color", "red");
+                $('#city').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_city").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});
 	$('#zip').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_zip").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Post Code can not be empty.").css("color", "red");
+                $('#zip').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_zip").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});	
 	$('#mobilephone').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_mphone").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Mobile phone can not be empty.").css("color", "red");
+                $('#mobilephone').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_mphone").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
 	$('#email').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_email").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;E-mail can not be empty.").css("color", "red");
+                $('#email').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_email").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
 	$('#sponsorid').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_spsid").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Sponsor id can not be empty.").css("color", "red");
+                $('#sponsorid').focus();
+        } else {
                 $(thbtnsubmit1is).css("border-color", "#999");
                 $("#errmsg_spsid").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
-
 //	$('#individualregForm').submit(function(){
 	$('.sm_individal').click(function(){
     	$('#response').hide(); 
@@ -159,11 +209,6 @@ $(document).ready(function(){
     	$("#errmsg_lname").html("");		
     	$("#errmsg_pss").html("");
     	$("#errmsg_cpass").html("");	
-    	$("#errmsg_address").html("");	
-    	$("#errmsg_countrycode").html("");	
-    	$("#errmsg_provincecode").html("");	
-    	$("#errmsg_city").html("");	
-    	$("#errmsg_zip").html("");	
     	$("#errmsg_mphone").html("");	
     	$("#errmsg_email").html("");
     	$("#errmsg_spsid").html("");
@@ -177,31 +222,16 @@ $(document).ready(function(){
      		$('#firstname').focus();
      		return false;
      	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_fname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#lastname').val() == ""){
      		$("#errmsg_lname").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Last name can not be empty.").css("color", "red");
      		$('#lastname').focus();
      		return false;
      	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_lname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#password1').val() == ""){
      		$("#errmsg_pss").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Password can not be empty.").css("color", "red");
      		$('#password1').focus();
      		return false;
-     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_pss").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
+     	}  
      	if($('#password2').val() == ""){
      		$("#errmsg_cpass").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Confirm password can not be empty.").css("color", "red");
      		$('#password2').focus();
@@ -212,91 +242,46 @@ $(document).ready(function(){
      		$('#password2').focus();
      		return false;
      	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_cpass").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#address').val() == ""){
      		$("#errmsg_address").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Address can not be empty.").css("color", "red");
      		$('#address').focus();
      		return false;
-     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_address").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
      	}
      	if($('#countrycode').val() == ""){
             $("#errmsg_countrycode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Country can not be empty.").css("color", "red");
             $('#countrycode').focus();
             return false;
     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_countrycode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#provincecode').val() == ""){
             $("#errmsg_provincecode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Province can not be empty.").css("color", "red");
             $('#provincecode').focus();
             return false;
     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_provincecode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#city').val() == ""){
             $("#errmsg_city").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;City can not be empty.").css("color", "red");
             $('#city').focus();
             return false;
     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_city").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#zip').val() == ""){
             $("#errmsg_zip").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Post Code can not be empty.").css("color", "red");
             $('#zip').focus();
             return false;
     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_zip").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#mobilephone').val() == ""){
      		$("#errmsg_mphone").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Mobile phone can not be empty.").css("color", "red");
      		$('#mobilephone').focus();
      		return false;
      	}  
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_mphone").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#email').val() == ""){
      		$("#errmsg_email").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;E-mail can not be empty.").css("color", "red");
      		$('#email').focus();
      		return false;
      	}  
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_email").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#sponsorid').val() == ""){
      		$("#errmsg_spsid").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Sponsor id can not be empty.").css("color", "red");
      		$('#sponsorid').focus();
      		return false;
      	}      	
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_spsid").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	
      	$('#individualregForm').submit();
      	/*	
@@ -318,7 +303,12 @@ $(document).ready(function(){
 
 	/*Company register page form element verification*/
 	$('#c_companyname').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_cname").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Company name can not be empty.").css("color", "red");
+                $('#c_companyname').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_cname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
@@ -371,56 +361,97 @@ $(document).ready(function(){
         return true;
 	});			
 	$('#c_address').blur(function() {
-        if ($(this).text() != "") {
+		alert($(this).text());
+        if ($(this).text() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_c_address").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Address can not be empty.").css("color", "red");
+                $('#c_address').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_c_address").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});
 	$('#c_countrycode').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_c_countrycode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Country can not be empty.").css("color", "red");
+                $('#c_countrycode').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_c_countrycode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});
 	$('#c_provincecode').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_c_provincecode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Province can not be empty.").css("color", "red");
+                $('#c_provincecode').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_c_provincecode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});
 	$('#c_city').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_c_city").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;City can not be empty.").css("color", "red");
+                $('#c_city').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_c_city").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});
 	$('#c_zip').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_c_zip").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Post Code can not be empty.").css("color", "red");
+                $('#c_zip').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_c_zip").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});	
 	$('#c_mobilephone').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_cmphone").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Mobile phone can not be empty.").css("color", "red");
+                $('#c_mobilephone').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_cmphone").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
 	$('#c_email').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_cemail").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;E-mail can not be empty.").css("color", "red");
+                $('#c_email').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_cemail").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
 	$('#c_sponsorid').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_cspsid").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Sponsor id can not be empty.").css("color", "red");
+                $('#c_sponsorid').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_cspsid").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
@@ -432,11 +463,6 @@ $(document).ready(function(){
     	$("#errmsg_cname").html("");	
     	$("#errmsg_cpas").html("");
     	$("#errmsg_ccpass").html("");	
-    	$("#errmsg_c_address").html("");	
-    	$("#errmsg_c_countrycode").html("");	
-    	$("#errmsg_c_provincecode").html("");	
-    	$("#errmsg_c_city").html("");	
-    	$("#errmsg_c_zip").html("");	
     	$("#errmsg_cmphone").html("");	
     	$("#errmsg_cemail").html("");
     	$("#errmsg_cspsid").html("");
@@ -449,21 +475,11 @@ $(document).ready(function(){
      		$('#c_companyname').focus();
      		return false;
      	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_cname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#c_password1').val() == ""){
      		$("#errmsg_cpas").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Password can not be empty.").css("color", "red");
      		$('#c_password1').focus();
      		return false;
      	}  
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_cpas").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#c_password2').val() == ""){
      		$("#errmsg_ccpass").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Confirm password can not be empty.").css("color", "red");
      		$('#c_password2').focus();
@@ -474,91 +490,46 @@ $(document).ready(function(){
      		$('#c_password2').focus();
      		return false;
      	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_ccpass").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#c_address').val() == ""){
      		$("#errmsg_c_address").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Address can not be empty.").css("color", "red");
      		$('#c_address').focus();
      		return false;
-     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_c_address").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
      	}
      	if($('#c_countrycode').val() == ""){
             $("#errmsg_c_countrycode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Country can not be empty.").css("color", "red");
             $('#c_countrycode').focus();
             return false;
     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_c_countrycode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#c_provincecode').val() == ""){
             $("#errmsg_c_provincecode").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Province can not be empty.").css("color", "red");
             $('#c_provincecode').focus();
             return false;
     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_c_provincecode").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#c_city').val() == ""){
             $("#errmsg_c_city").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;City can not be empty.").css("color", "red");
             $('#c_city').focus();
             return false;
     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_c_city").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#c_zip').val() == ""){
             $("#errmsg_c_zip").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Post Code can not be empty.").css("color", "red");
             $('#c_zip').focus();
             return false;
     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_c_zip").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#c_mobilephone').val() == ""){
      		$("#errmsg_cmphone").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Mobile phone can not be empty.").css("color", "red");
      		$('#c_mobilephone').focus();
      		return false;
      	}  
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_cmphone").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#c_email').val() == ""){
      		$("#errmsg_cemail").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;E-mail can not be empty.").css("color", "red");
      		$('#c_email').focus();
      		return false;
      	}  
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_cemail").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#c_sponsorid').val() == ""){
      		$("#errmsg_cspsid").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Sponsor id can not be empty.").css("color", "red");
      		$('#c_sponsorid').focus();
      		return false;
      	}      	
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_cspsid").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	
      	$('#companyregForm').submit();
 
@@ -579,14 +550,24 @@ $(document).ready(function(){
 	
 	/*Administrator register page form element verification*/
 	$('#adminfirstname').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_afname").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;First name can not be empty.").css("color", "red");
+                $('#adminfirstname').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_afname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});	
 	$('#adminlastname').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_alname").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Last name can not be empty.").css("color", "red");
+                $('#adminlastname').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_alname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
@@ -639,14 +620,24 @@ $(document).ready(function(){
         return true;
 	});			
 	$('#adminmobilephone').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_amphone").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Mobile phone can not be empty.").css("color", "red");
+                $('#adminmobilephone').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_amphone").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
         return true;
 	});		
 	$('#adminemail').blur(function() {
-        if ($(this).val() != "") {
+        if ($(this).val() == "") {
+        		$('#response').hide(); 
+                $(this).css("border-color", "#FF0000");
+                $("#errmsg_aemail").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;E-mail can not be empty.").css("color", "red");
+                $('#adminemail').focus();
+        } else {
                 $(this).css("border-color", "#999");
                 $("#errmsg_aemail").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
         }
@@ -671,31 +662,16 @@ $(document).ready(function(){
      		$('#adminfirstname').focus();
      		return false;
      	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_afname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#adminlastname').val() == ""){
      		$("#errmsg_alname").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Last name can not be empty.").css("color", "red");
      		$('#adminlastname').focus();
      		return false;
-     	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_alname").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
      	}
      	if($('#adminpassword1').val() == ""){
      		$("#errmsg_apass").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Password can not be empty.").css("color", "red");
      		$('#adminpassword1').focus();
      		return false;
      	}  
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_apass").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#adminpassword2').val() == ""){
      		$("#errmsg_acpass").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Confirm password can not be empty.").css("color", "red");
      		$('#adminpassword2').focus();
@@ -706,31 +682,16 @@ $(document).ready(function(){
      		$('#adminpassword2').focus();
      		return false;
      	}
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_acpass").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#adminmobilephone').val() == ""){
      		$("#errmsg_amphone").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;Mobile phone can not be empty.").css("color", "red");
      		$('#adminmobilephone').focus();
      		return false;
      	}  
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_amphone").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	if($('#adminemail').val() == ""){
      		$("#errmsg_aemail").html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;E-mail can not be empty.").css("color", "red");
      		$('#adminemail').focus();
      		return false;
      	}        	
-     	else
-     	{
-            $(this).css("border-color", "#999");
-            $("#errmsg_aemail").html("<span class='glyphicon glyphicon-ok-sign'></span>").css("color","green");
-     	}
      	
      	$('#adminregForm').submit();
 

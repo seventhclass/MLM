@@ -50,7 +50,7 @@ $(document).ready(function(){
  					$('#c_companytype').val("Cooperative");
  				}
  				$('#c_address').val(res.object.address);
- 				$("#c_countryid").val(res.object.countryId);
+ 				$("#c_countryid").val(res.object.country);
  				$("#c_provinceid").val(res.object.province); 
  				$("#c_city").val(res.object.city);
  				$("#c_zip").val(res.object.zip); 				
@@ -70,7 +70,7 @@ $(document).ready(function(){
  				$('#birthday').val(res.object.birthDate);
  				$('#ssn').val(res.object.ssn);
  				$('#address').val(res.object.address);
- 				$("#countryid").val(res.object.countryId); 
+ 				$("#countryid").val(res.object.country); 
  				$("#provinceid").val(res.object.province); 
  				$("#city").val(res.object.city);
  				$("#zip").val(res.object.zip);

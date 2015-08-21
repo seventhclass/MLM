@@ -62,7 +62,7 @@
 								<div id="response" class="alert alert-danger" role="alert"></div> 
 							</div>
 						</div>	
-						<div id="individual">
+						<div id="individual" style="display:none;">
 							<div class="row">
 								<div class="col-md-12">															
 									<form id="individualregForm" class="form-horizontal" role="form" action="<%=request.getContextPath()%>/signUp?type=individual" method="post">
@@ -141,32 +141,20 @@
 											<div id="errmsg_address" class="col-sm-5 text-danger"></div>
 										</div>											
 										<div class="form-group">
-											<label for="country" class="col-sm-3 control-label">Country<span class="starsymbol">*</span>
+											<label for="countrycode" class="col-sm-3 control-label">Country<span class="starsymbol">*</span>
 											</label>
-											<div class="col-sm-3">												
-												<select id="countrycode" name="countrycode" class="form-control">
-												    <option value="86">Canada</option>
-												    <option value="87">US</option>
-												</select>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="countrycode" name="countrycode"
+													placeholder="Enter country name, please">
 											</div>
 											<div id="errmsg_countrycode" class="col-sm-5 text-danger"></div>
-										</div>												
+										</div>	
 										<div class="form-group">
-											<label for="state" class="col-sm-3 control-label">State/Province<span class="starsymbol">*</span>
+											<label for="provincecode" class="col-sm-3 control-label">Province<span class="starsymbol">*</span>
 											</label>
-											<div class="col-sm-3">												
-												<select id="provincecode" name="provincecode" class="form-control">
-												    <option value="QC">Quebec</option>
-												    <option value="ON">Ontario</option>
-												    <!-- <option>British Columbia</option>
-												    <option>Alberta</option>
-												    <option>Nova Scotia</option>
-												    <option>Newfoundland and Labrador</option>
-												    <option>Saskatchewan</option>
-												    <option>Manitoba</option>
-												    <option>New Brunswick Canada</option>
-												    <option>Prince Edward Island(PEI)</option> -->
-												</select>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="provincecode" name="provincecode"
+													placeholder="Enter province name, please">
 											</div>
 											<div id="errmsg_provincecode" class="col-sm-5 text-danger"></div>
 										</div>	
@@ -247,7 +235,7 @@
 								</div>
 							</div>										
 						</div>
-						<div id="corporate">
+						<div id="corporate" style="display:none;">
 							<div class="row">
 								<div class="col-md-12">															
 									<form id="companyregForm" class="form-horizontal" role="form" action="<%=request.getContextPath()%>/signUp?type=company" method="post">
@@ -304,32 +292,20 @@
 											<div id="errmsg_c_address" class="col-sm-5 text-danger"></div>
 										</div>											
 										<div class="form-group">
-											<label for="c_country" class="col-sm-3 control-label">Country<span class="starsymbol">*</span>
+											<label for="countrycode" class="col-sm-3 control-label">Country<span class="starsymbol">*</span>
 											</label>
-											<div class="col-sm-3">												
-												<select id="c_countrycode" name="countrycode" class="form-control">
-												    <option value="86">Canada</option>
-												    <option value="87">US</option>
-												</select>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="c_countrycode" name="countrycode"
+													placeholder="Enter country name, please">
 											</div>
 											<div id="errmsg_c_countrycode" class="col-sm-5 text-danger"></div>
-										</div>												
+										</div>	
 										<div class="form-group">
-											<label for="c_state" class="col-sm-3 control-label">State/Province<span class="starsymbol">*</span>
+											<label for="provincecode" class="col-sm-3 control-label">Province<span class="starsymbol">*</span>
 											</label>
-											<div class="col-sm-3">												
-												<select id="c_provincecode" name="provincecode" class="form-control">
-												    <option value="QC">Quebec</option>
-												    <option value="ON">Ontario</option>
-												    <option>British Columbia</option>
-												    <option>Alberta</option>
-												    <option>Nova Scotia</option>
-												    <option>Newfoundland and Labrador</option>
-												    <option>Saskatchewan</option>
-												    <option>Manitoba</option>
-												    <option>New Brunswick Canada</option>
-												    <option>Prince Edward Island(PEI)</option>
-												</select>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="c_provincecode" name="provincecode"
+													placeholder="Enter province name, please">
 											</div>
 											<div id="errmsg_c_provincecode" class="col-sm-5 text-danger"></div>
 										</div>	

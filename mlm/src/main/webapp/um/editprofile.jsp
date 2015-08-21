@@ -94,31 +94,15 @@
 											</div>
 										</div>											
 										<div class="form-group">
-											<label for="country" class="col-sm-3 control-label">Country:
-											</label>
-											<div class="col-sm-3">												
-												<select id="countryid" name="countryid" class="form-control">
-												    <option value="86">Canada</option>
-												    <option value="87">US</option>
-												</select>
+											<label for="countryid" class="col-sm-3 control-label">Country:</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="countryid" name="countryid" >
 											</div>
-										</div>												
+										</div>	
 										<div class="form-group">
-											<label for="state" class="col-sm-3 control-label">State/Province:
-											</label>
-											<div class="col-sm-3">												
-												<select id="provinceid" name="provinceid" class="form-control">
-												    <option value="QC">Quebec</option>
-												    <option value="p002">Ontario</option>
-												    <option value="p003">British Columbia</option>
-												    <option value="p004">Alberta</option>
-												    <option value="p005">Nova Scotia</option>
-												    <option value="p006">Newfoundland and Labrador</option>
-												    <option value="p007">Saskatchewan</option>
-												    <option value="p008">Manitoba</option>
-												    <option value="p009">New Brunswick Canada</option>
-												    <option value="p010">Prince Edward Island(PEI)</option>
-												</select>
+											<label for="provinceid" class="col-sm-3 control-label">Province:</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="provinceid" name="provinceid" >
 											</div>
 										</div>	
 										<div class="form-group">
