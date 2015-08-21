@@ -286,7 +286,7 @@
 										<div class="form-group">
 											<label for="c_address" class="col-sm-3 control-label">Address<span class="starsymbol">*</span>
 											</label>
-											<div class="col-sm-6">												
+											<div class="col-sm-4">												
 												<textarea id="c_address" name="address" class="form-control" rows="2"></textarea>												
 											</div>
 											<div id="errmsg_c_address" class="col-sm-5 text-danger"></div>

@@ -108,54 +108,47 @@
 										<div class="subtitle">Contact
 											Information</div>
 										<div class="form-group">
-											<label for="adminaddress" class="col-sm-3 control-label">Address
+											<label for="adminaddress" class="col-sm-3 control-label">Address<span class="starsymbol">*</span>
 											</label>
-											<div class="col-sm-6">												
+											<div class="col-sm-4">												
 												<textarea id="adminaddress" name="address" class="form-control" rows="2"></textarea>												
 											</div>
-										</div>											
-										<div class="form-group">
-											<label for="admincountry" class="col-sm-3 control-label">Country
-											</label>
-											<div class="col-sm-3">												
-												<select name="countrycode" class="form-control">
-												    <option value="86">Canada</option>
-												    <option value="87">US</option>
-												</select>
-											</div>
-										</div>												
-										<div class="form-group">
-											<label for="adminstate" class="col-sm-3 control-label">State/Province
-											</label>
-											<div class="col-sm-3">												
-												<select name="provincecode" class="form-control">
-												    <option value="QC">Quebec</option>
-												    <option value="ON">Ontario</option>
-												    <option>British Columbia</option>
-												    <option>Alberta</option>
-												    <option>Nova Scotia</option>
-												    <option>Newfoundland and Labrador</option>
-												    <option>Saskatchewan</option>
-												    <option>Manitoba</option>
-												    <option>New Brunswick Canada</option>
-												    <option>Prince Edward Island(PEI)</option>
-												</select>
-											</div>
+											<div id="errmsg_aaddress" class="col-sm-5 text-danger"></div>
 										</div>	
 										<div class="form-group">
-											<label for="admincity" class="col-sm-3 control-label">City
+											<label for="admincountry" class="col-sm-3 control-label">Country<span class="starsymbol">*</span>
+											</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="admincountry" name="countrycode"
+													placeholder="Enter country name, please">
+											</div>
+											<div id="errmsg_admincountry" class="col-sm-5 text-danger"></div>
+										</div>	
+										<div class="form-group">
+											<label for="adminprovince" class="col-sm-3 control-label">Province<span class="starsymbol">*</span>
+											</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="adminprovince" name="provincecode"
+													placeholder="Enter province name, please">
+											</div>
+											<div id="errmsg_adminprovince" class="col-sm-5 text-danger"></div>
+										</div>	
+										<div class="form-group">
+											<label for="admincity" class="col-sm-3 control-label">City<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-4">
 												<input type="text" class="form-control" id="admincity" name="city"
 													placeholder="Enter city name, please">
 											</div>
+											<div id="errmsg_admincity" class="col-sm-5 text-danger"></div>
 										</div>										
 										<div class="form-group">
-											<label for="adminzip" class="col-sm-3 control-label">Zip
+											<label for="adminzip" class="col-sm-3 control-label">Zip<span class="starsymbol">*</span>
 											</label>
 											<div class="col-sm-3">
 												<input type="text" class="form-control" id="adminzip" name="zip">
 											</div>
+											<div id="errmsg_adminzip" class="col-sm-5 text-danger"></div>
 										</div>											
 										<div class="form-group">
 											<label for="adminmobilephone" class="col-sm-3 control-label">Mobile Phone<span class="starsymbol">*</span>
