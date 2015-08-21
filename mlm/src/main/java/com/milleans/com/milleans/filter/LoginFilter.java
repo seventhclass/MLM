@@ -15,7 +15,7 @@ import java.io.IOException;
         urlPatterns = {"/*" },
         initParams = {
                 @WebInitParam(name = "noCheck",
-                        value = "signUp;login;doLogin;.js;.css" +
+                        value = "signUp;login;doLogin;.js;.css;" +
                                 "login.jsp;index;selectAutoship;selectAccount;" +
                                 "registration;logout;registration4admin.jsp;" +
                                 "termcondition.jsp;contactus;aboutus;images;logout;.png;.jpg")})
