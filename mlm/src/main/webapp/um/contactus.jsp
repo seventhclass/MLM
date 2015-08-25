@@ -15,13 +15,14 @@
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> 
 	<![endif]-->	
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js"></script>	
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/contactus.js"></script>	
-	<script src="http://maps.googleapis.com/maps/api/js"></script>
+
 	<script>
 		function initialize() {
 		  var mapProp = {
-		    center:new google.maps.LatLng(45.504977,-73.577130),
+		    center:new google.maps.LatLng(45.5021677,-73.5740518),
 		    zoom:5,
 		    mapTypeId:google.maps.MapTypeId.ROADMAP
 		  };
@@ -92,26 +93,24 @@
 				<div class="col-md-6 messagebox">
 					<ul class="list-unstyled contactlist">
 						<li>
-							<span class="glyphicon glyphicon-home" style="color:#5cb85c;font-size:25px;"></span>
-							<strong class="addr_title">Montreal</strong>
-							<!-- <div class="addr">102 Madison Ave, Second Floor New York, NY, 10016</div> -->
-							<div class="addr"></div>
+							<span class="glyphicon glyphicon-home" style="color:#5cb85c;font-size:25px;">
+							<b>Address</b></span>
+							<div class="content">952 maisonneuve blvd. w, Montreal, Quebec, Canada H3A 0A5</div>						
 						</li>
 						<li>
-							<span class="glyphicon glyphicon-phone-alt" style="color:#5cb85c;font-size:25px;"></span>
-							<span class="phone_title">Give Us a Call</span>						
-							<!-- <div><strong class="phone">800-888-1688</strong></div> -->
-							<div><strong class="phone">1-855-251-7833</strong></div>
+							<span class="glyphicon glyphicon-phone-alt" style="color:#5cb85c;font-size:25px;">
+                                                        <b>Phone</b></span>						
+							<div class="content">1-855-251-7833</div>
 						</li>
 						<!-- <li>
-							<span class="glyphicon glyphicon-print" style="color:#5cb85c;font-size:25px;"></span>
-							<span class="fax_title">Send Us a Fax</span>						
-							<div><strong class="fax">1-800-278-0816</strong></div>
+							<span class="glyphicon glyphicon-print" style="color:#5cb85c;font-size:25px;"> 
+                                                        <b>Send Us a Fax</b></span>						
+							<div class="content">1-800-278-0816</strong></div>
 						</li>	 -->					
 						<li>
-							<span class="glyphicon glyphicon-envelope" style="color:#5cb85c;font-size:25px;"></span>
-							<span class="fax_title">Email</span>						
-							<div><strong class="fax">milleansvie@gmail.com</strong></div>
+							<span class="glyphicon glyphicon-envelope" style="color:#5cb85c;font-size:25px;">
+                                                        <b>Email</b></span>						
+							<div class="content">milleansvie@gmail.com</div>
 						</li>	
 					</ul>
 				</div>				

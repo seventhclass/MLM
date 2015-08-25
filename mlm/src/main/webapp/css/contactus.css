@@ -29,30 +29,17 @@
 	min-height:55px;
 }
 
-.contactlist .addr_title{
+.contactlist .title{
 	font-size:28px;
 	font-weight:bold;
-	color:#0078ae;
-	display:bolck;
+	color: #0078ae;
+	display:block;
 	margin-left:25px;
 	font-family:'roboto-medium-webfont', sans-serif;
 }
 
-.addr {
+.contactlist .content {
 	margin-left:55px;
-}
-
-.contactlist .phone_title,.fax_title{
-	margin-left:25px;
-}
-
-.phone,.fax{
-	font-size:28px;
-	font-weight:bold;
-	color:#0078ae;
-	display:bolck;
-	margin-left:55px;
-	font-family:'roboto-medium-webfont', sans-serif;
 }
 
 #google-maps {
