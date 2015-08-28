@@ -34,7 +34,7 @@ public class Orderdetails implements Cloneable {
     private String itemCode;
 
     @Column(name = "transactionprice")
-    private float transactionprice;
+    private float transactionPrice;
 
     @Column(name = "volume")
     private int volume;
@@ -144,12 +144,12 @@ public class Orderdetails implements Cloneable {
         this.itemCode = itemCode;
     }
 
-    public float getTransactionprice() {
-        return transactionprice;
+    public float getTransactionPrice() {
+        return transactionPrice;
     }
 
-    public void setTransactionprice(float transactionprice) {
-        this.transactionprice = transactionprice;
+    public void setTransactionPrice(float transactionPrice) {
+        this.transactionPrice = transactionPrice;
     }
 
     public int getVolume() {
@@ -243,7 +243,9 @@ public class Orderdetails implements Cloneable {
         orderdetails.setQuantity(this.getQuantity());
         orderdetails.setSeq(this.getSeq());
         orderdetails.setStatus(Integer.valueOf(Constant.OrderStatusUnPayment));
-        orderdetails.setTransactionprice(this.getTransactionprice());
+
+        orderdetails.setTransactionPrice(this.getTransactionPrice());
+
         orderdetails.setUserid(this.getUserid());
         orderdetails.setVolume(this.getVolume());
         orderdetails.setVolume2(this.getVolume2());

@@ -75,6 +75,7 @@ public class OrderDetailController {
             int autoId = autoShipService.save(autoShip);
 
             ArrayList<OrderHasProductDTO> orderHasProduct = orderHasProductService.getItem(_orderId);
+
             ArrayList<Orderdetails> orderdetailsesList = new ArrayList<>();
 
             Orderdetails orderdetails = null;
@@ -95,6 +96,7 @@ public class OrderDetailController {
                 orderdetails.setOrderIdl(order.getOrderIdL());
                 orderdetails.setPaymentMethodId(1);
                 // calc tatol
+                orderdetails.setTransactionPrice(orderHasProductDTO.getTransactionPrice());
                 orderdetails.setPointTotal(orderHasProductDTO.getQuantity() * product.getVolume());
                 orderdetails.setPriceTotal(orderHasProductDTO.getQuantity() * orderHasProductDTO.getTransactionPrice());
 //                orderdetails.setPointTotal(orderHasProductDTO.getQuantity() * product.getVolume());

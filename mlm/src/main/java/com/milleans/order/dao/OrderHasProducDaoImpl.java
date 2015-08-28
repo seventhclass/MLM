@@ -72,7 +72,7 @@ public class OrderHasProducDaoImpl extends AbstractDao implements IorderHasProdu
 //                " FROM t_product p , t_order_has_t_product oh " +
 //                " WHERE p.id = oh.t_product_id " +
 //                " AND oh.t_order_id =" + orderId;
-        String sql = "SELECT oh.quantity*oh.transactionprice as total " +
+        String sql = "SELECT sum(oh.quantity*oh.transactionprice) as total " +
                 " FROM t_order_has_t_product oh " +
                 " WHERE oh.t_order_id=" + orderId;
 
