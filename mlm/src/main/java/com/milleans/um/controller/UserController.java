@@ -218,7 +218,6 @@ public class UserController {
                     e.printStackTrace();
                 }
             }
-
             user.setDate(new Date());
             user.setUserId(Utils.getUserId());
             user = userService.signUp(user);
@@ -226,9 +225,7 @@ public class UserController {
             ModelMap model = new ModelMap();
             model.addAttribute("user", user);
 
-
             modelAndView = new ModelAndView("um/registersuccess", model);
-
         } catch (Exception e) {
             e.printStackTrace();
             modelAndView = new ModelAndView("um/registerfail");
@@ -241,6 +238,10 @@ public class UserController {
 
         ModelAndView modelAndView = this.login();
         try {
+            String sponsorId = request.getParameter("sponsorid").toString();
+            if (!checkSponsor(sponsorId)) {
+                return new ModelAndView("um/registerfail");
+            }
 
             User user = new User();
             user.setAccountId(accountType);
@@ -270,7 +271,6 @@ public class UserController {
             ModelMap model = new ModelMap();
             model.addAttribute("user", user);
 
-
             modelAndView = new ModelAndView("um/registersuccess", model);
         } catch (Exception e) {
             e.printStackTrace();
@@ -280,10 +280,26 @@ public class UserController {
         return modelAndView;
     }
 
+    private boolean checkSponsor(String sponsorId) {
+        User user = userService.getUser(sponsorId);
+
+        if (user == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     private ModelAndView signIndividual(HttpServletRequest request, int accountType) {
 
         ModelAndView modelAndView = new ModelAndView("um/login");
         try {
+            String sponsorId = request.getParameter("sponsorid").toString();
+
+            if (!checkSponsor(sponsorId)) {
+                return new ModelAndView("um/registerfail");
+            }
+
             User user = new User();
             user.setAccountId(accountType);
             user.setAccountId(Integer.valueOf(request.getParameter("accountid")));
@@ -329,8 +345,7 @@ public class UserController {
             ModelMap model = new ModelMap();
             model.addAttribute("user", user);
 
-            modelAndView =
-                    new ModelAndView("um/registersuccess", model);
+            modelAndView = new ModelAndView("um/registersuccess", model);
         } catch (Exception e) {
             e.printStackTrace();
             modelAndView = new ModelAndView("um/registerfail");
