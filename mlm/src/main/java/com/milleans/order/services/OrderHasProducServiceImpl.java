@@ -75,7 +75,6 @@ public class OrderHasProducServiceImpl implements IorderHasProductService {
 
         //Map<String, String> map = parameterDao.getMapValues();
 
-        //
         orderSummaryDto = this.orderHasProductDao.getOrderSummary(orderId);
 
 //        double tps = Double.valueOf(map.get(Constant.TPS));

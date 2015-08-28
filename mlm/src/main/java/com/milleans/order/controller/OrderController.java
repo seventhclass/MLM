@@ -95,8 +95,7 @@ public class OrderController {
                     = orderService.saveOrder(newOrder);
             //step 1
             // cp shopping content to order
-            List<OrderHasProduct> orderHasProductList
-                    = new ArrayList<>();
+            List<OrderHasProduct> orderHasProductList = new ArrayList<>();
             for (ShoppingCart shoppingCart : shoppingCartList) {
                 OrderHasProduct orderHasProduct = new OrderHasProduct();
                 OrderUionProductPKID orderUionProductPKID = new OrderUionProductPKID();
@@ -107,7 +106,8 @@ public class OrderController {
 //                orderHasProduct.setProductId(shoppingCart.getProductId());
                 orderHasProduct.setOrderUionProductPKID(orderUionProductPKID);
                 orderHasProduct.setQuantity(shoppingCart.getQuantity());
-
+                // set transcation price;
+                orderHasProduct.setTransactionPrice(shoppingCart.getTransactionPrice());
                 orderHasProductList.add(orderHasProduct);
             }
             orderHasProductService.save(orderHasProductList);
@@ -208,10 +208,7 @@ public class OrderController {
 
         OrderSummaryDto orderSummaryDto =
                 orderHasProductService.getOrderSummary(Integer.valueOf(orderId));
-
-
         return orderSummaryDto;
     }
-
 
 }

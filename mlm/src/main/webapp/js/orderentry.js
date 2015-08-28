@@ -82,7 +82,6 @@ $(document).ready(function () {
                 //$('#content').html(xhr.responseText);
             },
             success: function (res) {
-                //alert("222");
                 console.log(res);
                 queryOrderInfoResponse(res);
             }

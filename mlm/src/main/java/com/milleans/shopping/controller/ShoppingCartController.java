@@ -8,6 +8,7 @@ import com.milleans.shopping.dto.CartContent;
 import com.milleans.shopping.dto.CartContentJs;
 import com.milleans.shopping.dto.UpdateProductJs;
 import com.milleans.shopping.services.IShoppingCartService;
+import com.milleans.tools.Constant;
 import com.milleans.tools.Utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,7 @@ public class ShoppingCartController {
     @RequestMapping(value = "/shoppingcart", method = RequestMethod.POST)
     @ResponseBody
     public CartContentJs getShoppingCart(HttpSession httpSession) {
-        String suid =  httpSession.getAttribute("userid").toString();
+        String suid = httpSession.getAttribute("userid").toString();
 
         CartContentJs cartContentJs = new CartContentJs();
         try {
@@ -78,19 +79,27 @@ public class ShoppingCartController {
         String productId = webRequest.getParameter("productid");
         //String price = webRequest.getParameter("price");
         String quantity = webRequest.getParameter("quantity");
-
+        //match price map to --> account type;
+        String accountType = session.getAttribute("autoType").toString();
         //String userId = session.getAttribute("userid").toString();
         String sid = session.getAttribute("uid").toString();
 
         try {
-            //ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(sid);
             ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getCart(Integer.valueOf(productId), sid);
+            Product product = productService.getProductById(Integer.valueOf(productId));
+
             if (shoppingCart == null) {
-            	shoppingCart = new ShoppingCart();
-            	shoppingCart.setProductId(Integer.valueOf(productId));
-            	shoppingCart.setQuantity(Integer.valueOf(quantity));
-            	shoppingCart.setDate(new Date());
-            	shoppingCart.setUserId(Integer.valueOf(sid));
+                shoppingCart = new ShoppingCart();
+                shoppingCart.setProductId(Integer.valueOf(productId));
+                shoppingCart.setQuantity(Integer.valueOf(quantity));
+                shoppingCart.setDate(new Date());
+                shoppingCart.setUserId(Integer.valueOf(sid));
+                // deal with transcation price
+                if (Constant.PriceStrategy.get(accountType).equals(Constant.RetailerPrice)) {
+                    shoppingCart.setTransactionPrice(product.getRetailPrice());
+                } else {
+                    shoppingCart.setTransactionPrice(product.getWholesalePrice());
+                }
                 shoppingCartService.save(shoppingCart);
             } else {
                 int amount = shoppingCart.getQuantity();
@@ -98,7 +107,6 @@ public class ShoppingCartController {
                 shoppingCart.setQuantity(amount);
                 shoppingCartService.saveOrUpdate(shoppingCart);
             }
-
         } catch (Exception e) {
             e.printStackTrace();
             baseJs = Utils.getFailMessage(e.getMessage());
@@ -130,7 +138,7 @@ public class ShoppingCartController {
     public UpdateProductJs updateShoppingCart(@RequestParam("cartId") String cartId,
                                               @RequestParam("quantity") String quantity,
                                               @RequestParam("productId") String pid) {
-        UpdateProductJs updateProductJs=new UpdateProductJs();
+        UpdateProductJs updateProductJs = new UpdateProductJs();
 
         try {
             ShoppingCart shoppingCart = (ShoppingCart) shoppingCartService.getItemById(cartId);

@@ -103,63 +103,7 @@
                                         </tr>
                                         </thead>
                                         <tbody id="myOrderList">
-                                        <%--<tr>--%>
-                                            <%--<td>${orderId}</td>--%>
-                                            <%--<td>A000000001</td>--%>
-                                            <%--<td>MT-1000</td>--%>
-                                            <%--<td><input class="numbers" type="number" name="numbers" data-id="1"--%>
-                                                       <%--data-seq="1" min="1" max="9999" value="1"></td>--%>
-                                            <%--<td>CAD</td>--%>
-                                            <%--<td>99.00</td>--%>
-                                            <%--<td>90</td>--%>
-                                            <%--<td></td>--%>
-                                            <%--<td id="subPriceTotal_id_11">$99.00</td>--%>
-                                            <%--<td id="subPointsTotal_id_11">9</td>--%>
-                                            <%--<td style="width:30px"><span data-id="1" data-seq="1"--%>
-                                                                         <%--class="glyphicon glyphicon-remove-sign close_item"--%>
-                                                                         <%--style="color:red"></span></td>--%>
-                                        <%--</tr>--%>
-                                        <%--<tr>--%>
-                                            <%--<td>2015-03-15 10:20</td>--%>
-                                            <%--<td>A000000002</td>--%>
-                                            <%--<td>MT-1000B</td>--%>
-                                            <%--<td><input class="numbers" type="number" name="numbers" data-id="1"--%>
-                                                       <%--data-seq="2" min="1" max="9999" value="2"></td>--%>
-                                            <%--<td>CAD</td>--%>
-                                            <%--<td>41.00</td>--%>
-                                            <%--<td>25</td>--%>
-                                            <%--<td></td>--%>
-                                            <%--<td id="subPriceTotal_id_12">$41.00</td>--%>
-                                            <%--<td id="subPointsTotal_id_12">4</td>--%>
-                                            <%--<td style="width:30px"><span data-id="1" data-seq="2"--%>
-                                                                         <%--class="glyphicon glyphicon-remove-sign close_item"--%>
-                                                                         <%--style="color:red"></span></td>--%>
-                                        <%--</tr>--%>
-                                        <%--<tr>--%>
-                                            <%--<td>2015-04-04 13:22</td>--%>
-                                            <%--<td>A000000003</td>--%>
-                                            <%--<td>Rejwvienator</td>--%>
-                                            <%--<td><input class="numbers" type="number" name="numbers" data-id="1"--%>
-                                                       <%--data-seq="3" min="1" max="9999" value="1"></td>--%>
-                                            <%--<td>CAD</td>--%>
-                                            <%--<td>82.00</td>--%>
-                                            <%--<td>30</td>--%>
-                                            <%--<td></td>--%>
-                                            <%--<td id="subPriceTotal_id_13">$82.00</td>--%>
-                                            <%--<td id="subPointsTotal_id_13">8</td>--%>
-                                            <%--<td style="width:30px"><span data-id="1" data-seq="3"--%>
-                                                                         <%--class="glyphicon glyphicon-remove-sign close_item"--%>
-                                                                         <%--style="color:red"></span></td>--%>
-                                        <%--</tr>--%>
-                                        <%--<tr>--%>
-                                            <%--<td colspan="4"></td>--%>
-                                            <%--<td>Total:</td>--%>
-                                            <%--<td></td>--%>
-                                            <%--<td id="VolumTotal">145</td>--%>
-                                            <%--<td></td>--%>
-                                            <%--<td id="PriceTotal">$222.00</td>--%>
-                                            <%--<td id="PointsTotal">21</td>--%>
-                                        <%--</tr>--%>
+
                                         </tbody>
                                     </table>
                                 <%--</div>--%>

@@ -71,7 +71,6 @@ public class OrderDetailController {
             SimpleDateFormat dateFormat = new SimpleDateFormat(Utils.MilleanDateFormate);
             Date autoDate = dateFormat.parse(shippingDate);
             autoShip.setDate(autoDate);
-
             //
             int autoId = autoShipService.save(autoShip);
 
@@ -95,8 +94,12 @@ public class OrderDetailController {
                 orderdetails.setItemCode(product.getItemCode());
                 orderdetails.setOrderIdl(order.getOrderIdL());
                 orderdetails.setPaymentMethodId(1);
+                // calc tatol
                 orderdetails.setPointTotal(orderHasProductDTO.getQuantity() * product.getVolume());
-                orderdetails.setPriceTotal(orderHasProductDTO.getQuantity() * product.getRetailPrice());
+                orderdetails.setPriceTotal(orderHasProductDTO.getQuantity() * orderHasProductDTO.getTransactionPrice());
+//                orderdetails.setPointTotal(orderHasProductDTO.getQuantity() * product.getVolume());
+//                orderdetails.setPriceTotal(orderHasProductDTO.getQuantity() * product.getRetailPrice());
+
                 orderdetails.setProductId(product.id);
                 orderdetails.setQuantity(orderHasProductDTO.getQuantity());
                 orderdetails.setStatus(1);
@@ -142,7 +145,6 @@ public class OrderDetailController {
 
         try {
             ArrayList<OrderDealingInfo> rs = orderDetailService.getOrderStatus(1);
-
             confirmOrderPayment.setOrderList(rs);
 
         } catch (ParseException e) {

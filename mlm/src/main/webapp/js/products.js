@@ -87,7 +87,7 @@ $(document).ready(function(){
  						+"	<div class='caption'>"
  						+"		<h3 class='p_name'>"+item.name+"</h3>"
  						+"		<p class='p_itemCode'>"+item.itemCode+"</p>"
- 						+"		<p>Reatil&nbsp;<span class='p_rPrice'>"+parseFloat(item.retailPrice).toFixed(2)+"</span>$<span>&nbsp;&#47;&nbsp;</span>Assoc&nbsp;<span class='p_wPrice'>"+parseFloat(item.wholesalePrice).toFixed(2)+"</span>$<span>&nbsp;&#47;&nbsp;</span><span class='p_BV'>"+item.volume+"</span>BV</p>"
+						+ "		<p><span class='p_rPrice'>" + parseFloat(item.matchPrice).toFixed(2) + "</span>$<span>&nbsp;&#47;&nbsp;</span><span class='p_BV'>" + item.volume + "</span>BV</p>"
  						+"		<p><span class='p_numbers'>"+item.capsuleNumber+"</span>&nbsp;Counts</p>" 						
  						+"		<p>"
 						+"			Quantity:<input class='p_quantity' type='number' name='quantity' min='1' max='999' value='1'> " 
