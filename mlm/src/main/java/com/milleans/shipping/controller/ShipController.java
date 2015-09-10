@@ -100,7 +100,6 @@ public class ShipController {
 
         try {
             Date _date = Utils.DateFormat.parse(date);
-
             //create new date
             Calendar rightNow = Calendar.getInstance();
             rightNow.setTime(_date);
