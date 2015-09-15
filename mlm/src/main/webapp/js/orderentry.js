@@ -150,13 +150,10 @@ $(document).ready(function () {
                     );
                 });
                 $('#myOrderList').append(
-                    "<td colspan='4'></td>"
-                    + "<td align='center'>Total:</td>"
-                    + "<td></td>"
-                    + "<td id='VolumTotal' align='center'>" + res.volumeTotal + "</td>"
-                    + "<td></td>"
-                    + "<td id='PriceTotal' align='center'>$" + res.priceTotal + "</td>"
-                    + "<td id='PointsTotal' align='center'>" + res.pointsTotal + "</td>"
+                    "<td colspan='6' align='right'>Total:</td>"
+                    + "<td id='VolumTotal' align='left' colspan='2'>" + res.volumeTotal + "</td>"
+                    + "<td id='PriceTotal' align='left'>$" + res.priceTotal + "</td>"
+                    + "<td id='PointsTotal' align='left'>" + res.pointsTotal + "</td>"
                 );
             } else {
                 $("<tr><td>No order item.</td></tr>").insertAfter('#myOrderList');
