@@ -19,6 +19,8 @@ public class ProductTable {
 
     public float retailPrice;
 
+    public float matchPrice;
+
     public Date date;
 
     public String currencyName;
@@ -38,6 +40,14 @@ public class ProductTable {
     public int categoryId;
 
     public String imageName;
+
+    public float getMatchPrice() {
+        return matchPrice;
+    }
+
+    public void setMatchPrice(float matchPrice) {
+        this.matchPrice = matchPrice;
+    }
 
     public String getImageName() {
         return imageName;

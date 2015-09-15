@@ -18,6 +18,17 @@ public class OrderHasProduct {
     @Column(name = "quantity")
     private int quantity;
 
+    @Column(name = "transactionprice")
+    private float transactionPrice;
+
+    public float getTransactionPrice() {
+        return transactionPrice;
+    }
+
+    public void setTransactionPrice(float transactionPrice) {
+        this.transactionPrice = transactionPrice;
+    }
+
     public OrderUionProductPKID getOrderUionProductPKID() {
         return orderUionProductPKID;
     }

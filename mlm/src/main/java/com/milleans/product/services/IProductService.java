@@ -14,12 +14,12 @@ public interface IProductService extends ICrud {
 
     public List<Product> getAllProduct();
 
-    public List<ProductTable> getProduct();
+    public List<ProductTable> getProduct(String accountType);
 
     public List<ProductTable> getProduct(int pid);
 
     public List<CartContent> getProductByCart(String userId);
 
-    //public Product getProduct(int productId);
+    public Product getProductById(int productId);
 
 }

@@ -4,6 +4,7 @@ import com.milleans.model.Product;
 import com.milleans.product.dao.IProductDao;
 import com.milleans.product.dto.ProductTable;
 import com.milleans.shopping.dto.CartContent;
+import com.milleans.tools.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,8 +30,18 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public List<ProductTable> getProduct() {
-        List list = productDao.getProductList();
+    public List<ProductTable> getProduct(String accountType) {
+        //List<ProductTable> tmp = new ArrayList<ProductTable>();
+        List<ProductTable> list = productDao.getProductList();
+        if (Constant.PriceStrategy.get(accountType).equals(Constant.RetailerPrice)) {
+            for (ProductTable e : list) {
+                e.setMatchPrice(e.getRetailPrice());
+            }
+        } else {
+            for (ProductTable e : list) {
+                e.setMatchPrice(e.getWholesalePrice());
+            }
+        }
         return list;
     }
 
@@ -45,6 +56,12 @@ public class ProductServiceImpl implements IProductService {
         List<CartContent> cartContents = new ArrayList<CartContent>();
         cartContents = productDao.getProductOfCart(userId);
         return cartContents;
+    }
+
+    @Override
+    public Product getProductById(int productId) {
+        Product product = (Product) this.getItemById(String.valueOf(productId));
+        return product;
     }
 
     @Override

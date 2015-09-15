@@ -1,10 +1,15 @@
 package com.milleans.order.dao;
 
 import com.milleans.dao.AbstractDao;
+import com.milleans.model.OrderHasProduct;
+import com.milleans.model.OrderUionProductPKID;
 import com.milleans.order.dto.OrderHasProductDTO;
 import com.milleans.order.dto.OrderProducts;
 import com.milleans.order.dto.OrderSummaryDto;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,10 +27,13 @@ public class OrderHasProducDaoImpl extends AbstractDao implements IorderHasProdu
 
     @Override
     public List<OrderProducts> getProducts(int orderId) {
-        String sql = "SELECT p.id,p.itemcode,p.name,p.retailprice,c.symbol,p.volume,p.volume2,p.volume*oh.quantity as point,oh.quantity,oh.quantity*p.retailprice as total\n" +
-                "FROM t_product AS p join t_currency as c on p.currencyid=c.id, t_order_has_t_product AS oh\n" +
-                "WHERE p.id = oh.t_product_id\n" +
-                "AND oh.t_order_id =" + orderId;
+        String sql = "SELECT p.id,p.itemcode,p.name,oh.transactionprice," +
+                " c.symbol,p.volume,p.volume2,p.volume*oh.quantity as point," +
+                " oh.quantity,oh.quantity*oh.transactionprice as total " +
+                " FROM t_product AS p join t_currency as c on p.currencyid=c.id, " +
+                " t_order_has_t_product AS oh " +
+                " WHERE p.id = oh.t_product_id " +
+                " AND oh.t_order_id =" + orderId;
 
         Query query = this.getCurrentSession().createSQLQuery(sql);
 
@@ -60,13 +68,16 @@ public class OrderHasProducDaoImpl extends AbstractDao implements IorderHasProdu
 
         OrderSummaryDto orderSummaryDto = new OrderSummaryDto();
 
-        String sql = "SELECT oh.quantity*p.retailprice as total " +
-                " FROM t_product p , t_order_has_t_product oh " +
-                " WHERE p.id = oh.t_product_id " +
-                " AND oh.t_order_id =" + orderId;
+//        String sql = "SELECT oh.quantity*p.retailprice as total " +
+//                " FROM t_product p , t_order_has_t_product oh " +
+//                " WHERE p.id = oh.t_product_id " +
+//                " AND oh.t_order_id =" + orderId;
+        String sql = "SELECT sum(oh.quantity*oh.transactionprice) as total " +
+                " FROM t_order_has_t_product oh " +
+                " WHERE oh.t_order_id=" + orderId;
 
         Query query = this.getCurrentSession().createSQLQuery(sql);
-       // List<OrderProducts> orderProductses = new ArrayList<>();
+
         List rs = query.list();
 
         if (rs != null && rs.size() > 0) {
@@ -79,7 +90,8 @@ public class OrderHasProducDaoImpl extends AbstractDao implements IorderHasProdu
     @Override
     public ArrayList<OrderHasProductDTO> getItem(int orderId) {
 
-        String sql = "select o.t_order_id, o.t_product_id,o.quantity from t_order_has_t_product o" +
+        String sql = "select o.t_order_id, o.t_product_id,o.quantity, o.transactionprice " +
+                " from t_order_has_t_product o " +
                 " where o.t_order_id=" + orderId;
 
         Query query = this.getCurrentSession().createSQLQuery(sql);
@@ -97,6 +109,7 @@ public class OrderHasProducDaoImpl extends AbstractDao implements IorderHasProdu
             orderHasProductDTO.setOrderId(Integer.valueOf(objects[0].toString()));
             orderHasProductDTO.setProductId(Integer.valueOf(objects[1].toString()));
             orderHasProductDTO.setQuantity(Integer.valueOf(objects[2].toString()));
+            orderHasProductDTO.setTransactionPrice(Float.valueOf(objects[3].toString()));
 
             orderHasProductDTOArrayList.add(orderHasProductDTO);
         }

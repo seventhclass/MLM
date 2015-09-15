@@ -53,11 +53,13 @@ public class ProductController {
 
     @RequestMapping(value = "/productList", method = RequestMethod.POST)
     @ResponseBody
-    public ProductTableJs productList() {
+    public ProductTableJs productList(HttpSession session) {
 
         ProductTableJs productTableJs = new ProductTableJs();
+
+        String accountType = session.getAttribute("autoType").toString();
         try {
-            List<ProductTable> productTableList = productService.getProduct();
+            List<ProductTable> productTableList = productService.getProduct(accountType);
             productTableJs.setProductInfo(productTableList);
         } catch (Exception e) {
             e.printStackTrace();

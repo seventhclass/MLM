@@ -22,6 +22,18 @@ public class Constant {
 
     public static float TaxRate = (float) 0.062;
 
+    public static int RetailerPrice = 1;
+    public static int WholePrice = 0;
+
+    public static Map<String, Integer> PriceStrategy = new HashMap<>();
+
+    static {
+        PriceStrategy.put("1", Constant.RetailerPrice);
+        PriceStrategy.put("2", Constant.WholePrice);
+        PriceStrategy.put("3", Constant.RetailerPrice);
+        PriceStrategy.put("4", Constant.WholePrice);
+    }
+
     public static Map<String, String> OrderStatus = new HashMap<String, String>();
 
     static {

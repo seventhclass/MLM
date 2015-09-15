@@ -30,48 +30,14 @@ public class ProductDao extends AbstractDao implements IProductDao {
     @Override
     public List<ProductTable> getProductList() {
 
-//        String hql = "select p, ca, cu ,b.imageName from  Category as ca, Currency as cu, " +
-//                " Product as p left join fetch p.id " +
-//                " where p.categoryId=ca.id and p.currencyId=cu.id " +
-//                " group by p.id";
-//
-//        List<ProductTable> lsTable = new ArrayList<>();
-//        org.hibernate.Query query = this.getCurrentSession().createQuery(hql);
-//
-//        List rl = query.list();
-//
-//        for (Object object : rl) {
-//            ProductTable productTable = new ProductTable();
-//            Object[] objects = (Object[]) object;
-//            Product product = (Product) objects[0];
-//            Category category = (Category) objects[1];
-//            Currency currency = (Currency) objects[2];
-//
-//            productTable.setCapsuleNumber(product.getCapsuleNumber());
-//            productTable.setCategoryName(category.getName());
-//            productTable.setCategoryId(category.getId());
-//            productTable.setCurrencyName(currency.getName());
-//            productTable.setCurrencySymbol(currency.getSymbol());
-//            productTable.setCurrrencyId(currency.getId());
-//            productTable.setDate(product.getDate());
-//            productTable.setDescription(product.getDescription());
-//            productTable.setId(product.getId());
-//            productTable.setItemCode(product.getItemCode());
-//            productTable.setName(product.getName());
-//            productTable.setRetailPrice(product.getRetailPrice());
-//            productTable.setVolume(product.getVolume());
-//            productTable.setVolume2(product.getVolume2());
-//
-//            lsTable.add(productTable);
-//        }
-//
-//        return lsTable;
 
         String sql = "SELECT p.id,p.itemcode,p.name AS 'pname', p.capsulenumber,p.wholesaleprice," +
                 "p.retailprice,p.date,p.currencyid " +
                 ",p.volume,p.volume2,p.description,p.categoryid, c.name, cu.symbol, a.imagename  " +
                 " FROM t_product p left join t_album a on p.id=a.productid, t_category c,t_currency cu "
                 +" where p.categoryid=c.id and p.currencyid=cu.id group by p.id;";
+
+        System.out.println("sss=> " + sql);
 
         List<ProductTable> listTable = new ArrayList<>();
 
