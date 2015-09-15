@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>Welcome to milleans vie science</title>
+	<title>Welcome to MilleanVie Science</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -26,7 +26,7 @@
 					<div class="col-md-6">					
 						<div class="panel panel-default">
 					   		<div class="panel-heading text-center h2">	
-					   			Milleans<img style='width: 20px; height: 25px' src='<%=request.getContextPath()%>/images/logo/logo.png' alt=''>					   									   			
+					   			Millean<img style='width: 20px; height: 25px' src='<%=request.getContextPath()%>/images/logo/logo.png' alt=''>					   									   			
 				   			</div>
 						    <div class="panel-body text-center">
 						    	<br/>

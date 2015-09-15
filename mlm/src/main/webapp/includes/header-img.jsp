@@ -4,7 +4,7 @@
 <div class="row">
 	<div class="col-md-12">
 		<img style='width: 100%; height: 75px'
-			 src='<%=request.getContextPath()%>/images/header7.jpg' alt='milleans vie science'/>
+			 src='<%=request.getContextPath()%>/images/header7.jpg' alt='MilleanVie Science'/>
 	</div>
 	<%
 		String path = request.getContextPath();
