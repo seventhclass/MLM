@@ -41,7 +41,8 @@
 								<div class="col-sm-offset-1 col-sm-11">							
 									<div>Order No: <span id="orderid" style="color:red;"></span></div>
 									<div>Please send the check of <span id="ordertotal" style="color:red;"></span> to</div>
-									<div>'<u><span id="address" style="color:blue;">952 Maisonneuve blvd. w, Montreal, QC H3A 0A5</span></u>'.</div>
+									<div>'<u><span id="address" style="color:blue;">
+										925 Maisonneuve blvd. w, Suite 368, Montreal, QC H3A 0A5</span></u>'.</div>
 								</div>
 							</div>
 							<div id="return_btn">

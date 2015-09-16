@@ -1,5 +1,7 @@
 package com.milleans.order.controller;
 
+import com.fasterxml.jackson.databind.deser.Deserializers;
+import com.milleans.dto.BaseJs;
 import com.milleans.model.Order;
 import com.milleans.model.OrderHasProduct;
 import com.milleans.model.OrderUionProductPKID;
@@ -48,6 +50,23 @@ public class OrderController {
         return modelAndView;
     }
 
+
+    @RequestMapping(value = "/cancel/{orderId}", method = RequestMethod.POST)
+    @ResponseBody
+    public BaseJs cancelCurrentOrder(@PathVariable("orderId") String orderId) {
+        // ModelAndView modelAndView = new ModelAndView("um/products");
+        BaseJs baseJs = new BaseJs();
+        try {
+
+            orderHasProductService.deleteOrderProductShip(orderId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            baseJs.setMessage(e.getMessage());
+            baseJs.setMessage("fail");
+        }
+
+        return baseJs;
+    }
 
     @RequestMapping(value = "/products/{orderId}", method = RequestMethod.POST)
     @ResponseBody

@@ -132,6 +132,15 @@
                                                 class="glyphicon glyphicon-ok-sign"></span></button>
                                     </a>
                                 </div>
+                                    <br>
+                                    <div id="cancel_order" class="text-center">
+                                        <!--
+                                        <a href="<%=request.getContextPath()%>/payandship/${orderId}">
+                                        -->
+                                            <button type="button" class="btn btn-primary">Cancel Order <span
+                                                    class="glyphicon glyphicon-ok-sign"></span></button>
+                                        </a>
+                                    </div>
                             </div>
                             <div class="list-group-item">
                                 <div class="text-center">
@@ -141,7 +150,7 @@
                         </div>
                     </div>
                     <!-- end orderentry -->
-                </div>
+                </div
                 <!-- end content -->
             </div>
         </div>

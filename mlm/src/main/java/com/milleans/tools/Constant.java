@@ -28,9 +28,9 @@ public class Constant {
     public static Map<String, Integer> PriceStrategy = new HashMap<>();
 
     static {
-        PriceStrategy.put("1", Constant.RetailerPrice);
+        PriceStrategy.put("1", Constant.WholePrice);
         PriceStrategy.put("2", Constant.WholePrice);
-        PriceStrategy.put("3", Constant.RetailerPrice);
+        PriceStrategy.put("3", Constant.WholePrice);
         PriceStrategy.put("4", Constant.WholePrice);
     }
 

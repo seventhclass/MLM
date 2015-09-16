@@ -52,6 +52,39 @@ $(document).ready(function () {
         addProduct2Order(e);
     });
 
+    $('#cancel_order').click(function (e) {
+        if(window.confirm("Are sure to cancel current order?")){
+            cancelOrder(e);
+        }
+    });
+
+    function cancelOrder() {
+        var _orderId = $("#orderId").val();
+        console.log("======"+_orderId);
+        $.ajax({
+            url: basePath + 'order/cancel/' + _orderId,
+            cache: false,
+            async: false,
+            type: 'POST',
+            dataType: 'json',
+            timeout: 5000,
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + "\n" + xhr.responseText);
+            },
+            success: function (res) {
+               // console.log(res);
+               // queryOrderInfoResponse(res);
+                var result = res.result;			//response code
+                var message = res.message;
+                if (result == "success") {
+                    window.location.href=basePath+'/products';
+                } else {
+                    alert("Sorry, cancel fail! you can try again or go to other page. ");
+                }
+            }
+        });
+    };
+
     $('#addProductForm').submit(function () {
         var p_items = new Array();
         var p_item = new Array();
@@ -176,7 +209,7 @@ $(document).ready(function () {
 
         //send requrest to server.
         $.ajax({
-            url: basePath + '/delOrderItem',
+            url: basePath + 'delOrderItem',
             cache: false,
             async: false,
             type: 'POST',
