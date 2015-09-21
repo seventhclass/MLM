@@ -23,7 +23,7 @@
 				<span class='icon-bar'></span>
 				<span class='icon-bar'></span>
 			</button>
-			<a href='##' class='navbar-brand text-center'><img style='width: 25px; height: 30px' src='<%=request.getContextPath()%>/images/logo/logo-new.png' alt='Vital States Inc'>Vital States Inc</a>
+			<a href='##' class='navbar-brand text-center'><img style='width: 25px; height: 30px' src='<%=request.getContextPath()%>/images/logo/logo-new.png' alt='MilleanVie Science'>MilleanVie Science</a>
  		</div>
  		<!-- when screen width less than 768px, the content of div.navbar-responsive-collapse will be hidden, show icon-bar, when click icon-bar, it will extend. when screen width greater than 768px, show as default. -->
 		<div class='collapse navbar-collapse navbar-responsive-collapse'>

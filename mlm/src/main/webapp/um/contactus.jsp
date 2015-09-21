@@ -95,7 +95,8 @@
 						<li>
 							<span class="glyphicon glyphicon-home" style="color:#5cb85c;font-size:25px;">
 							<b>Address</b></span>
-							<div class="content">952 maisonneuve blvd. w, Montreal, Quebec, Canada H3A 0A5</div>						
+							<!-- <div class="content">952 maisonneuve blvd. w, Montreal, Quebec, Canada H3A 0A5</div> -->						
+							<div class="content">71 COMMERCIAL ST BOSTON, MA 02109</div>						
 						</li>
 						<li>
 							<span class="glyphicon glyphicon-phone-alt" style="color:#5cb85c;font-size:25px;">

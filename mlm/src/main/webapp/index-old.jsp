@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Welcome to Vital States Inc</title>
+<title>Welcome to MilleanVie Science</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -25,9 +25,9 @@
 				<div class="col-md-12 text-center" >
 					<img class="img-responsive" id="img_page1" src="./images/cover/changelife2.jpg" alt="">
 					<div class="contentbox content1">
-						Vital States Inc offers solutions to transform your life
+						MilleanVie Science offers solutions to transform your life
 						The answer you've been looking for!
-						Welcome to Vital States Inc. We offer lifestyle solutions that really work.
+						Welcome to MilleanVie Science. We offer lifestyle solutions that really work.
 					</div>					
 				</div>
 			</div>
