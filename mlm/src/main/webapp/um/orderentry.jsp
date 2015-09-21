@@ -150,7 +150,7 @@
                         </div>
                     </div>
                     <!-- end orderentry -->
-                </div
+                </div>
                 <!-- end content -->
             </div>
         </div>
