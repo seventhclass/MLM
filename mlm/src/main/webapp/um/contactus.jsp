@@ -111,7 +111,8 @@
 						<li>
 							<span class="glyphicon glyphicon-envelope" style="color:#5cb85c;font-size:25px;">
                                                         <b>Email</b></span>						
-							<div class="content">milleansvie@gmail.com</div>
+							<!-- <div class="content">milleansvie@gmail.com</div> -->
+							<div class="content">vitalstate@vitalstatenutraceutical.com</div>
 						</li>	
 					</ul>
 				</div>				
