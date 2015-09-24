@@ -37,7 +37,7 @@
 <%
 	}
 %>
-		 		<li><a href='<%=request.getContextPath()%>/common/aboutus'>Sites</a></li>
+		 		<%-- <li><a href='<%=request.getContextPath()%>/common/aboutus'>Sites</a></li> --%>
 		 		<li><a href='<%=request.getContextPath()%>/common/contactus'>Contact Us</a></li>
 <%
 	if( roleId==null || !roleId.equals("1") )

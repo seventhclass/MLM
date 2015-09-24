@@ -46,14 +46,14 @@
 				</div>
 			</div>
 		</div>	
-		<div class="pagebox">
+		<!-- <div class="pagebox">
 			<div class="row">
 				<div class="col-md-12 text-center" >
-					<!-- <img class="img-responsive" id="img_page4" src="./images/cover/happy.jpg" alt=""> -->
+					<img class="img-responsive" id="img_page4" src="./images/cover/happy.jpg" alt="">
 					<img class="img-responsive" id="img_page4" src="./images/cover/products.jpg" alt="">
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="buttonbox">
 			<div class="link link-miss">
 				<span class="icon"></span> 
